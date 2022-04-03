@@ -1,0 +1,48 @@
+{
+    "small" : {
+        "tier_1" : [
+            {
+                "name" : "Tuhug-tuhog Stall",
+                "image_path" : "",
+                "cost" : 2000.0,
+                "daily_quota" : 300.0,
+                "daily_capital" : 200.0,
+                "profit" : 100.0
+            }
+        ],
+
+        "tier_2" : [
+            
+        ],
+
+        "tier_3" : [
+            
+        ]
+    },
+    "medium" : {
+        "tier_1" : [
+
+        ],
+
+        "tier_2" : [
+            
+        ],
+
+        "tier_3" : [
+            
+        ]
+    },
+    "big" : {
+        "tier_1" : [
+
+        ],
+
+        "tier_2" : [
+            
+        ],
+        
+        "tier_3" : [
+            
+        ]
+    }
+}
