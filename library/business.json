@@ -2,17 +2,44 @@
     "small" : {
         "tier_1" : [
             {
-                "name" : "Tuhug-tuhog Stall",
+                "name" : "Streetfoods Stall",
                 "image_path" : "",
-                "cost" : 2000.0,
-                "daily_quota" : 300.0,
-                "daily_capital" : 200.0,
-                "profit" : 100.0
+                "initial_cost" : 1500.0,
+                "daily_investment" : 200.0,
+                "customer_flow_start" : 10,
+                "customer_flow_end" : 19,
+                "income_per_customer" : 9.0
+            }, 
+            {
+                "name" : "Sari Sari Store",
+                "image_path" : "",
+                "initial_cost" : 2000.0,
+                "daily_investment" : 150.0,
+                "customer_flow_start" : 0,
+                "customer_flow_end" : 23,
+                "income_per_customer" : 3.0
             }
         ],
 
         "tier_2" : [
-            
+            {
+                "name" : "Ukay Ukay",
+                "image_path" : "",
+                "initial_cost" : 4000.0,
+                "daily_investment" : 500.0,
+                "customer_flow_start" : 7,
+                "customer_flow_end" : 22,
+                "income_per_customer" : 25.0
+            }, 
+            {
+                "name" : "Foodcart",
+                "image_path" : "",
+                "initial_cost" : 5000.0,
+                "daily_investment" : 750.0,
+                "customer_flow_start" : 6,
+                "customer_flow_end" : 20,
+                "income_per_customer" : 40.0
+            }
         ],
 
         "tier_3" : [
@@ -40,7 +67,7 @@
         "tier_2" : [
             
         ],
-        
+
         "tier_3" : [
             
         ]
