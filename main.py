@@ -1,4 +1,3 @@
-from black import main
 from game.library import Library
 import pygame
 import os, sys

@@ -13,7 +13,7 @@ class Library():
         self.meta = self.get_dict_from_json("config", "meta.json")
         self.setting = self.get_dict_from_json("config", "settings.json")
         
-        # Images
+        # Images 
         self.icon = self.get_image("game_icon.png")
         
         # Colors
@@ -22,7 +22,7 @@ class Library():
     
     def get_dict_from_json(self, folder_name: str, json_name: str):
         dirname = os.path.dirname(__file__)
-        json_path = os.path.join(dirname, "..", folder_name, json_name)
+        json_path = os.path.join(dirname, folder_name, json_name)
 
         with open(json_path) as json_file:
             json_dict = json.load(json_file)
