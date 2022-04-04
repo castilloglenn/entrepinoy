@@ -14,10 +14,16 @@ class Library():
         self.setting = self.get_dict_from_json("config", "settings.json")
         
         # Images 
-        self.icon = self.get_image("game_icon.png")
+        self.icon = self.get_image("meta", "game_icon.png")
+        self.studio = self.get_image("meta", "flash_card.png")
+        
+        self.title_screen = {
+            "bg" : self.get_image("title_screen", "bg.png")
+        }
         
         # Colors
         self.black = (0, 0, 0)
+        self.white = (255, 255, 255)
     
     
     def get_dict_from_json(self, folder_name: str, json_name: str):
@@ -29,9 +35,9 @@ class Library():
             return json_dict
         
     
-    def get_image(self, image_name: str):
+    def get_image(self, folder_name: str,image_name: str):
         dirname = os.path.dirname(__file__)
-        image_path = os.path.join(dirname, "..", "assets", "images", image_name)
+        image_path = os.path.join(dirname, "..", "assets", "images", folder_name, image_name)
         return pygame.image.load(image_path)
 
 

@@ -1,4 +1,6 @@
+from game.debug import Debugger
 from game.library import Library
+from datetime import datetime
 import pygame
 import os, sys
 
@@ -7,20 +9,35 @@ import os, sys
 class Main():
     """
     This will be the main module of the game.
+    This runs the main menu of the game when played.
     """
 
     def __init__(self):
         # Setting up the game
+        self.debug = Debugger()
         self.data = Library()
         self.screen = None
         self.clock = None
         self.initialize_game()
+        
+        # Screen surface (for transitions)
+        self.display_surface = pygame.Surface(
+            (self.data.setting["game_width"], 
+             self.data.setting["game_height"])
+        )
+        self.display_surface.fill(self.data.black)
+        self.display_surface.convert_alpha()
         
         # Centering the game window on the screen
         os.environ['SDL_VIDEO_CENTERED'] = '1'
         
         # Sprites and sprite groups
         self.all_sprites = pygame.sprite.Group()
+        
+        # Introduction
+        self.intro_duration = 3 # whole numbers only (seconds)
+        self.intro_transition = 1 # whole numbers only (seconds)
+        self.present_intro()
         
         # Main loop
         self.running = True
@@ -36,6 +53,8 @@ class Main():
             self.data.meta["title"] + " " +
             self.data.meta["version"]
         )
+        self.debug.log(f"Game Title: {self.data.meta['title']}")
+        self.debug.log(f"Game Version: {self.data.meta['version']}")
         
         # Icon
         pygame.display.set_icon(self.data.icon)
@@ -45,9 +64,12 @@ class Main():
             (self.data.setting["game_width"],
             self.data.setting["game_height"])
         )
+        self.debug.log(f"Display Width: {self.data.setting['game_width']}")
+        self.debug.log(f"Display Height: {self.data.setting['game_height']}")
         
         # Setting the clock
         self.clock = pygame.time.Clock()
+        self.debug.log(f"Game FPS: {self.data.setting['fps']}")
         
     
     def refresh_display(self):
@@ -58,6 +80,7 @@ class Main():
     def close_game(self):
         pygame.mixer.quit()
         pygame.quit()
+        self.debug.close()
         sys.exit()
         
         
@@ -119,10 +142,58 @@ class Main():
             pass
         
         
+    def present_intro(self):
+        intro = True
+        second = 0
+        frame_count = 0
+        alpha = 255
+        increment = (255 / self.data.setting["fps"]) / self.intro_transition
+        fade = "in" # values: in, out, hold
+        
+        while intro:
+            # Screen rendering
+            self.screen.fill(self.data.white)
+            self.screen.blit(self.data.studio, (0, 0))
+            self.display_surface.set_alpha(alpha)
+            
+            if fade == "in":
+                alpha -= increment
+                alpha = max(alpha, 0)
+            elif fade == "out":
+                alpha += increment
+                alpha = min(alpha, 255)
+                
+            self.screen.blit(self.display_surface, (0, 0))
+            
+            # Event processing
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT: 
+                    # Closing the game properly
+                    self.close_game()
+            
+            # Updating the display
+            self.refresh_display()
+            
+            frame_count += 1
+            if frame_count == self.data.setting["fps"]:
+                frame_count = 0
+                second += 1
+                
+                if fade == "in" and second >= self.intro_transition:
+                    fade = "hold"
+                    second = 0
+                elif fade == "hold" and second >= self.intro_duration:
+                    fade = "out"
+                    second = 0
+                elif fade == "out" and second >= self.intro_transition:
+                    intro = False
+        
+        
     def main_loop(self):
         while self.running:
             # Screen rendering
-            self.screen.blit
+            self.screen.fill(self.data.white)
+            self.screen.blit(self.data.title_screen["bg"], (0, 0))
             
             # Event processing
             for event in pygame.event.get():
