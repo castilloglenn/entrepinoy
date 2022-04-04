@@ -6,6 +6,7 @@ import os
 class Library():
     """
     The library contains all the data from the json folder with the same name.
+    This also includes the images in the assets folder, organized in dictionary type.
     """
     def __init__(self):
         # JSON data
@@ -18,8 +19,16 @@ class Library():
         self.studio = self.get_image("meta", "flash_card.png")
         
         self.title_screen = {
-            "bg" : self.get_image("title_screen", "bg.png")
+            "bg" : self.get_image("title_screen", "bg.png"),
+            "new_game_idle" : self.get_image("title_screen", "new_game_button_idle.png"),
+            "new_game_hovered" : self.get_image("title_screen", "new_game_button_hovered.png"),
+            "continue_idle" : self.get_image("title_screen", "continue_button_idle.png"),
+            "continue_hovered" : self.get_image("title_screen", "continue_button_hovered.png")
         }
+        
+        # Common Coordinates (converted to integers)
+        self.vertical_center = int(self.setting["game_height"] / 2)
+        self.horizontal_center = int(self.setting["game_width"] / 2)
         
         # Colors
         self.black = (0, 0, 0)

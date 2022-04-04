@@ -1,6 +1,6 @@
+from game.button import Button
 from game.debug import Debugger
 from game.library import Library
-from datetime import datetime
 import pygame
 import os, sys
 
@@ -13,6 +13,9 @@ class Main():
     """
 
     def __init__(self):
+        # Centering the game window on the screen
+        os.environ['SDL_VIDEO_CENTERED'] = '1'
+        
         # Setting up the game
         self.debug = Debugger()
         self.data = Library()
@@ -28,15 +31,37 @@ class Main():
         self.display_surface.fill(self.data.black)
         self.display_surface.convert_alpha()
         
-        # Centering the game window on the screen
-        os.environ['SDL_VIDEO_CENTERED'] = '1'
-        
         # Sprites and sprite groups
-        self.all_sprites = pygame.sprite.Group()
+        self.buttons = pygame.sprite.Group()
+        self.new_game_button = Button(
+            self.screen, 
+            self.data.title_screen["new_game_idle"],
+            self.data.title_screen["new_game_hovered"],
+                (
+                    self.data.horizontal_center, 
+                    int(self.data.setting["game_height"] * 0.65)
+                ),
+            self.create_new_game
+        )
+        self.continue_button = Button(
+            self.screen, 
+            self.data.title_screen["continue_idle"],
+            self.data.title_screen["continue_hovered"],
+                (
+                    self.data.horizontal_center, 
+                    int(self.data.setting["game_height"] * 0.85)
+                ),
+            self.continue_game
+        )
+        self.buttons.add(self.new_game_button)
+        self.buttons.add(self.continue_button)
+        
+        # Mouse related variable
+        self.last_mouse_pos = None
         
         # Introduction
-        self.intro_duration = 3 # whole numbers only (seconds)
-        self.intro_transition = 1 # whole numbers only (seconds)
+        self.intro_duration = self.data.meta["intro_duration"]
+        self.intro_transition = self.data.meta["intro_transition"]
         self.present_intro()
         
         # Main loop
@@ -82,21 +107,15 @@ class Main():
         pygame.quit()
         self.debug.close()
         sys.exit()
-        
-        
-    def input_events(self, event):
-        for event in pygame.event.get():
-            if event.type == pygame.MOUSEBUTTONDOWN: 
-                self.mouse_click_events(event)
-                
-            if event.type == pygame.MOUSEMOTION: 
-                self.mouse_drag_events(event)
                 
                                 
     def mouse_click_events(self, event):
+        click_coordinates = event.pos
+        
         # If the user clicked on left mouse button
         if event.button == 1: 
-            pass
+            for button in self.buttons:
+                button.check_clicked(click_coordinates)
 
         # If the user clicked on the right mouse button
         if event.button == 3: 
@@ -119,13 +138,16 @@ class Main():
 
         # Making sure the user only holds one button at a time
         if event.buttons[0] + event.buttons[1] + event.buttons[2] == 1:
-            # relativeLocation = getRelativeLocation(event.pos)
-
             # If the user is dragging the mouse with left mouse button
             if event.buttons[0] == 1: pass
 
             # If the user is dragging the mouse with the right mouse button
             if event.buttons[2] == 1: pass
+            
+        # Hovering through display check
+        else:
+            for button in self.buttons:
+                button.check_hovered(self.last_mouse_pos)
 
 
     def key_events(self, keys):
@@ -140,6 +162,14 @@ class Main():
         # If the user pressed the "d" key, (enter explanation here)
         if keys[pygame.K_d]: 
             pass
+        
+        
+    def create_new_game(self):
+        self.debug.log("Create new game entered")
+        
+        
+    def continue_game(self):
+        self.debug.log("Continue game entered")
         
         
     def present_intro(self):
@@ -195,19 +225,21 @@ class Main():
             self.screen.fill(self.data.white)
             self.screen.blit(self.data.title_screen["bg"], (0, 0))
             
+            # Updating sprites
+            self.buttons.update()
+            
             # Event processing
             for event in pygame.event.get():
                 if event.type == pygame.QUIT: 
                     self.running = False
-                self.input_events(event)
-                
+                if event.type == pygame.MOUSEBUTTONDOWN: 
+                    self.mouse_click_events(event)
+                if event.type == pygame.MOUSEMOTION: 
+                    self.mouse_drag_events(event)
                 
             # Key pressing events (holding keys applicable)
             keys = pygame.key.get_pressed()
             self.key_events(keys)
-                
-            # Updating sprites TODO can change
-            self.all_sprites.update()
             
             # Updating the display
             self.refresh_display()
