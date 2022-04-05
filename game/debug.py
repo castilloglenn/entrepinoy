@@ -18,14 +18,19 @@ class Debugger():
             open(self.file_path, "w+").close()
         
         self.log("Debug started")
-        self.log(f"Log Date: {datetime.today().strftime('%Y/%m/%d-%H:%M:%S')}\n")
+        self.new_line()
         
         
     def close(self):
-        self.log(f"\nDebug Closed at: {datetime.today().strftime('%Y/%m/%d-%H:%M:%S')}")
+        self.new_line()
+        self.log(f"Debug closed")
         
         
     def log(self, log_message: str):
+        time = datetime.today().strftime('[%H:%M:%S:%f')[:-3] + "] "
         with open(self.file_path, "a+") as text_file:
-            text_file.write(log_message + "\n")
+            text_file.write(time + log_message + "\n")
             
+    def new_line(self):
+        with open(self.file_path, "a+") as text_file:
+            text_file.write("\n")

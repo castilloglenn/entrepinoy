@@ -1,8 +1,13 @@
-from game.button import Button
+from game.sprite.button import Button
 from game.debug import Debugger
 from game.library import Library
+
+from scene import Scene
+
 import pygame
 import os, sys
+
+
 
 
 
@@ -53,8 +58,9 @@ class Main():
                 ),
             self.continue_game
         )
-        self.buttons.add(self.new_game_button)
-        self.buttons.add(self.continue_button)
+        
+        self.new_game_button.add(self.buttons)
+        self.continue_button.add(self.buttons)
         
         # Mouse related variable
         self.last_mouse_pos = None
@@ -166,6 +172,7 @@ class Main():
         
     def create_new_game(self):
         self.debug.log("Create new game entered")
+        Scene(self)
         
         
     def continue_game(self):
@@ -193,7 +200,7 @@ class Main():
                 alpha += increment
                 alpha = min(alpha, 255)
                 
-            self.screen.blit(self.display_surface, (0, 0))
+            self.screen.blit(self.display_surface, (0, 0)) 
             
             # Event processing
             for event in pygame.event.get():
@@ -220,6 +227,7 @@ class Main():
         
         
     def main_loop(self):
+        self.debug.new_line()
         while self.running:
             # Screen rendering
             self.screen.fill(self.data.white)
