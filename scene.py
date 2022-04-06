@@ -1,9 +1,11 @@
 from game.sprite.background import Background
 from game.sprite.message import Message
 from game.sprite.button import Button
+
 from game.library import Library
 from game.debug import Debugger
 from game.time import Time
+
 import pygame
 
 
@@ -27,7 +29,6 @@ class Scene():
             "month" : self.time_callback_month,
             "year" : self.time_callback_year
         }
-        
         self.time = Time(
             self.main.debug,
             self.main.data.progress["time"],
@@ -47,7 +48,15 @@ class Scene():
             self.time, 
             **self.main.data.background
         )
+        self.message = Message(
+            self.main.screen, 
+            [self.time.get_date(), self.time.get_time()], 
+            self.main.data.paragraph_font, 
+            self.main.data.white,
+            (10, 10)
+        )
         self.background.add(self.general_sprites)
+        self.message.add(self.general_sprites)
         
         # Main loop
         self.running = True
@@ -59,7 +68,7 @@ class Scene():
         
     
     def time_callback_minute(self):
-        pass
+        self.message.set_message([self.time.get_date(), self.time.get_time()])
         
     
     def time_callback_hour(self):
@@ -142,22 +151,11 @@ class Scene():
         
         
     def run(self):
-        # TODO test only
-        message = Message(
-            self.main.screen, 
-            [self.time.get_date(), self.time.get_time()], 
-            self.main.data.paragraph_font, 
-            self.main.data.white,
-            (10, 10)
-        )
-        message.add(self.general_sprites)
-        
         while self.running:
             # Screen rendering
             self.main.screen.fill(self.main.data.white)
             
             # Rendering sprites
-            message.set_message([self.time.get_date(), self.time.get_time()])
             self.general_sprites.update()
             
             # Event processing

@@ -8,9 +8,6 @@ import pygame
 import os, sys
 
 
-
-
-
 class Main():
     """
     This will be the main module of the game.
@@ -68,9 +65,9 @@ class Main():
         self.last_mouse_pos = None
         
         # Introduction TODO temporarily disabled
-        # self.intro_duration = self.data.meta["intro_duration"]
-        # self.intro_transition = self.data.meta["intro_transition"]
-        # self.present_intro()
+        self.intro_duration = self.data.meta["intro_duration"]
+        self.intro_transition = self.data.meta["intro_transition"]
+        self.present_intro()
         
         # Main loop
         self.running = True

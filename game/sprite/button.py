@@ -5,7 +5,9 @@ class Button(pygame.sprite.Sprite):
     Base clas for constructing basic buttons with functionality and different
     states when hovered.
     """
-    def __init__(self, screen, idle_image, hovered_image, center_coordinates, callback_function):
+    def __init__(self, screen, idle_image, 
+                 hovered_image, center_coordinates, 
+                 callback_function):
         super().__init__()
         
         self.screen = screen
@@ -50,3 +52,4 @@ class Button(pygame.sprite.Sprite):
     def check_clicked(self, click_coordinates):
         if self.rect.collidepoint(click_coordinates):
             self.callback()
+            

@@ -1,2 +1,2 @@
-time aplified simulation done, next is to show it to the screen
-and display on the scene.py, and show accurate background in different time
+simulate one business 
+

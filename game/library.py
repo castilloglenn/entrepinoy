@@ -18,14 +18,13 @@ class Library():
         
         # Fonts
         self.paragraph_font = {
-            "family" : self.get_font("dlxfont.ttf", 14),
-            "size" : 14
+            "family" : self.get_font("dlxfont.ttf", 20),
+            "size" : 20
         }
         
         # Images 
         self.icon = self.get_image("meta", "game_icon.png")
-        self.studio = self.get_image("meta", "flash_card.png")
-        self.cursor = self.get_image("meta", "cursor.png")
+        self.studio = self.get_image("meta", "studio.png")
         
         self.title_screen = {
             "bg" : self.get_image("title_screen", "bg.png"),
@@ -87,4 +86,3 @@ class Library():
 #         "time" : "2022/04/05, 18:50:40"
 #     }
 #     test.set_dict_to_json("progress", "progress.json", test_data)
-
