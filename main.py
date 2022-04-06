@@ -21,6 +21,8 @@ class Main():
         # Setting up the game
         pygame.init()
         pygame.mixer.init()
+        pygame.mouse.set_cursor(pygame.cursors.tri_left)
+        
         self.debug = Debugger()
         self.data = Library()
         self.screen = None
@@ -65,9 +67,9 @@ class Main():
         self.last_mouse_pos = None
         
         # Introduction TODO temporarily disabled
-        self.intro_duration = self.data.meta["intro_duration"]
-        self.intro_transition = self.data.meta["intro_transition"]
-        self.present_intro()
+        # self.intro_duration = self.data.meta["intro_duration"]
+        # self.intro_transition = self.data.meta["intro_transition"]
+        # self.present_intro()
         
         # Main loop
         self.running = True

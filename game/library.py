@@ -18,8 +18,8 @@ class Library():
         
         # Fonts
         self.paragraph_font = {
-            "family" : self.get_font("dlxfont.ttf", 20),
-            "size" : 20
+            "family" : self.get_font("PixelEmulator-xq08.ttf", 8),
+            "size" : 8
         }
         
         # Images 
@@ -40,6 +40,10 @@ class Library():
             "noon" : self.get_image("scene", "noon.png"),
             "afternoon" : self.get_image("scene", "afternoon.png"),
             "night" : self.get_image("scene", "night.png")
+        }
+        self.scene = {
+            "profile_holder_idle" : self.get_image("scene", "profile_holder_idle.png"),
+            "profile_holder_hovered" : self.get_image("scene", "profile_holder_hovered.png")
         }
         
         # Common Coordinates (converted to integers)

@@ -1,2 +1,3 @@
 simulate one business 
+add coordinate setting on buttons to place in xy coordinates in top-left spot
 

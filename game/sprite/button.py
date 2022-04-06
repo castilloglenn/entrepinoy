@@ -2,7 +2,7 @@ import pygame
 
 class Button(pygame.sprite.Sprite):
     """
-    Base clas for constructing basic buttons with functionality and different
+    Base class for constructing basic buttons with functionality and different
     states when hovered.
     """
     def __init__(self, screen, idle_image, 

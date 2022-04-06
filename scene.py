@@ -43,19 +43,28 @@ class Scene():
         
         # Sprites and sprite groups
         self.general_sprites = pygame.sprite.Group()
+        self.buttons = pygame.sprite.Group()
         self.background = Background(
             self.main.screen, 
             self.time, 
             **self.main.data.background
         )
+        self.profile_holder = Button(
+            self.main.screen,
+            self.main.data.scene["profile_holder_idle"],
+            self.main.data.scene["profile_holder_hovered"],
+            (165, 80),
+            self.profile_callback
+        )
         self.message = Message(
             self.main.screen, 
             [self.time.get_date(), self.time.get_time()], 
             self.main.data.paragraph_font, 
-            self.main.data.white,
-            (10, 10)
+            self.main.data.black,
+            (135, 35)
         )
         self.background.add(self.general_sprites)
+        self.profile_holder.add(self.general_sprites, self.buttons)
         self.message.add(self.general_sprites)
         
         # Main loop
@@ -86,6 +95,10 @@ class Scene():
     
     def time_callback_year(self):
         pass
+    
+    
+    def profile_callback(self):
+        print("profile")
                 
                                 
     def mouse_click_events(self, event):
@@ -93,9 +106,8 @@ class Scene():
         
         # If the user clicked on left mouse button
         if event.button == 1: 
-            # for button in self.buttons:
-            #     button.check_clicked(click_coordinates)
-            pass
+            for button in self.buttons:
+                button.check_clicked(click_coordinates)
             
         # If the user clicked on the right mouse button
         if event.button == 3: 
@@ -126,9 +138,8 @@ class Scene():
             
         # Hovering through display check
         else:
-            # for button in self.buttons:
-            #     button.check_hovered(self.last_mouse_pos)
-            pass
+            for button in self.buttons:
+                button.check_hovered(self.last_mouse_pos)
 
 
     def key_events(self, keys):

@@ -26,7 +26,7 @@ class Message(pygame.sprite.Sprite):
         self.font = font["family"]
         self.size = font["size"]
         self.color = color
-        self.text_spacing = 10
+        self.text_spacing = 3
         
         self.image = None
         self.rect = None
