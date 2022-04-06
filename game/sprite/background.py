@@ -19,59 +19,64 @@ class Background(pygame.sprite.Sprite):
         # Different backgrounds
         self.backgrounds = [
             {
-                "image" : data.background["early_morning"],
+                "image" : data["early_morning"],
                 "time" : (3, 5)
             },
             {
-                "image" : data.background["morning"],
+                "image" : data["morning"],
                 "time" : (5, 9)
             },
             {
-                "image" : data.background["noon"],
+                "image" : data["noon"],
                 "time" : (9, 15)
             },
             {
-                "image" : data.background["afternoon"],
+                "image" : data["afternoon"],
                 "time" : (15, 18)
             },
             {
-                "image" : data.background["night"],
+                "image" : data["night"],
                 "time" : (18, 21)
             },
             {
-                "image" : data.background["midnight"],
+                "image" : data["midnight"],
                 "time" : (21, 3)
             }
         ]
         
         self.time = time.time
-        self.previous_hour = self.time.hour
         
         self.screen = screen
         self.image = None
         self.rect = None
         
         self.initialize = True
-        self.update()
+        self.check_change()
         
         
     def update(self):
-        if self.initialize or self.time.hour != self.previous_hour:
-            self.initialize = False
-            self.previous_hour = self.time.hour
-            
-            is_midnight = True
-            for background in self.backgrounds:
-                if background["time"][0] >= self.previous_hour and \
-                   background["time"][1] < self.previous_hour:
-                       self.image = background["image"]
-                       is_midnight = False
-                       break
-            
-            if is_midnight:
-                self.image = background[5]["image"]
-                
-            self.rect = self.image.get_rect()
-
         self.screen.blit(self.image, self.rect)
         
+    
+    def set_time(self, time: Time):
+        self.time = time.time
+        
+    
+    def check_change(self):
+        self.current_hour = self.time.hour
+        
+        is_midnight = True
+        for background in self.backgrounds:
+            inc_start_time = background['time'][0]
+            exc_end_time = background['time'][1]
+            
+            if self.current_hour >= inc_start_time and self.current_hour < exc_end_time:
+                self.image = background["image"]
+                is_midnight = False
+                break
+        
+        if is_midnight:
+            self.image = self.backgrounds[5]["image"]
+            
+        self.rect = self.image.get_rect()
+            

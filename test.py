@@ -13,4 +13,4 @@ print(time3.days)
 print(time3.seconds)
 """
 
-
+print(21 >= 8 and 3 < 8)

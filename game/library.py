@@ -16,6 +16,12 @@ class Library():
         self.setting = self.get_dict_from_json("config", "settings.json")
         self.progress = self.get_dict_from_json("progress", "progress.json")
         
+        # Fonts
+        self.paragraph_font = {
+            "family" : self.get_font("dlxfont.ttf", 14),
+            "size" : 14
+        }
+        
         # Images 
         self.icon = self.get_image("meta", "game_icon.png")
         self.studio = self.get_image("meta", "flash_card.png")
@@ -59,6 +65,12 @@ class Library():
         dirname = os.path.dirname(__file__)
         image_path = os.path.join(dirname, "..", "assets", "images", folder_name, image_name)
         return pygame.image.load(image_path)
+    
+
+    def get_font(self, font_name: str, size: int):
+        dirname = os.path.dirname(__file__)
+        font_path = os.path.join(dirname, "..", "assets", "fonts", font_name)
+        return pygame.font.Font(font_path, size)
     
     
     def set_dict_to_json(self, folder_name: str, json_name: str, data: dict):

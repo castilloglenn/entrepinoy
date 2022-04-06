@@ -22,6 +22,8 @@ class Main():
         os.environ['SDL_VIDEO_CENTERED'] = '1'
         
         # Setting up the game
+        pygame.init()
+        pygame.mixer.init()
         self.debug = Debugger()
         self.data = Library()
         self.screen = None
@@ -65,10 +67,10 @@ class Main():
         # Mouse related variable
         self.last_mouse_pos = None
         
-        # Introduction
-        self.intro_duration = self.data.meta["intro_duration"]
-        self.intro_transition = self.data.meta["intro_transition"]
-        self.present_intro()
+        # Introduction TODO temporarily disabled
+        # self.intro_duration = self.data.meta["intro_duration"]
+        # self.intro_transition = self.data.meta["intro_transition"]
+        # self.present_intro()
         
         # Main loop
         self.running = True
@@ -76,9 +78,6 @@ class Main():
         
         
     def initialize_game(self):
-        pygame.init()
-        pygame.mixer.init()
-        
         # Title
         pygame.display.set_caption(
             self.data.meta["title"] + " " +

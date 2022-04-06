@@ -1,4 +1,5 @@
 from game.sprite.background import Background
+from game.sprite.message import Message
 from game.sprite.button import Button
 from game.library import Library
 from game.debug import Debugger
@@ -17,16 +18,65 @@ class Scene():
         # Settings up the scene
         self.main = main
         
-        # Sprites and sprite groups
-        self.general_sprites = pygame.sprite.Group()
+        # Setting up the clock
+        self.callbacks = {
+            "second" : self.time_callback_seconds,
+            "minute" : self.time_callback_minute,
+            "hour" : self.time_callback_hour,
+            "day" : self.time_callback_day,
+            "month" : self.time_callback_month,
+            "year" : self.time_callback_year
+        }
+        
         self.time = Time(
+            self.main.debug,
             self.main.data.progress["time"],
             self.main.data.setting["fps"],
-            self.main.data.setting["time_amplify"]
+            self.main.data.setting["time_amplify"],
+            **self.callbacks
         )
         
+        # Logging entry point
+        self.main.debug.log("Entered scene")
+        self.main.debug.new_line()
+        
+        # Sprites and sprite groups
+        self.general_sprites = pygame.sprite.Group()
+        self.background = Background(
+            self.main.screen, 
+            self.time, 
+            **self.main.data.background
+        )
+        self.background.add(self.general_sprites)
+        
+        # Main loop
         self.running = True
         self.run()
+        
+    
+    def time_callback_seconds(self, time_amplification):
+        pass
+        
+    
+    def time_callback_minute(self):
+        pass
+        
+    
+    def time_callback_hour(self):
+        self.background.set_time(self.time)
+        self.background.check_change()
+        
+    
+    def time_callback_day(self):
+        pass
+        
+    
+    def time_callback_month(self):
+        pass
+        
+    
+    def time_callback_year(self):
+        pass
                 
                                 
     def mouse_click_events(self, event):
@@ -92,9 +142,23 @@ class Scene():
         
         
     def run(self):
+        # TODO test only
+        message = Message(
+            self.main.screen, 
+            [self.time.get_date(), self.time.get_time()], 
+            self.main.data.paragraph_font, 
+            self.main.data.white,
+            (10, 10)
+        )
+        message.add(self.general_sprites)
+        
         while self.running:
             # Screen rendering
             self.main.screen.fill(self.main.data.white)
+            
+            # Rendering sprites
+            message.set_message([self.time.get_date(), self.time.get_time()])
+            self.general_sprites.update()
             
             # Event processing
             for event in pygame.event.get():
