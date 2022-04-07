@@ -45,6 +45,12 @@ class Library():
             "profile_holder_idle" : self.get_image("scene", "profile_holder_idle.png"),
             "profile_holder_hovered" : self.get_image("scene", "profile_holder_hovered.png")
         }
+        self.spritesheets = {
+            "test" : {
+                "sheet" : self.get_image("test", "test.png"),
+                "data" : self.get_dict_from_spritesheet("test", "test.json")
+            }
+        }
         
         # Common Coordinates (converted to integers)
         self.vertical_center = int(self.setting["game_height"] / 2)
@@ -59,6 +65,16 @@ class Library():
     def get_dict_from_json(self, folder_name: str, json_name: str):
         dirname = os.path.dirname(__file__)
         json_path = os.path.join(dirname, folder_name, json_name)
+
+        with open(json_path) as json_file:
+            json_dict = json.load(json_file)
+        
+        return json_dict
+    
+    
+    def get_dict_from_spritesheet(self, folder_name: str, json_name: str):
+        dirname = os.path.dirname(__file__)
+        json_path = os.path.join(dirname, "..", "assets", "images", folder_name, json_name)
 
         with open(json_path) as json_file:
             json_dict = json.load(json_file)

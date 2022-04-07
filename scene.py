@@ -1,4 +1,4 @@
-from tkinter import Toplevel
+from game.sprite.spritesheet import Spritesheet
 from game.sprite.background import Background
 from game.sprite.message import Message
 from game.sprite.button import Button
@@ -20,6 +20,7 @@ class Scene():
     def __init__(self, main):
         # Settings up the scene
         self.main = main
+        self.location = "Location1"
         
         # Setting up the clock
         self.callbacks = {
@@ -57,6 +58,20 @@ class Scene():
             self.time, 
             **self.main.data.background
         )
+        
+        # Scene components
+        self.test_runner = Spritesheet(
+            self.main.screen,
+            "test", 
+            self.main.data.spritesheets["test"]["sheet"],
+            self.main.data.spritesheets["test"]["data"],
+            self.main.data.setting["fps"],
+            0.1,
+            mid_bottom_coordinates=
+                (self.main.data.horizontal_center, 
+                 self.main.data.setting["game_height"] * 0.85)
+        )
+        
         self.profile_holder = Button(
             self.main.screen,
             self.main.data.scene["profile_holder_idle"],
@@ -77,6 +92,7 @@ class Scene():
             (160, 75)
         )
         self.background.add(self.general_sprites)
+        self.test_runner.add(self.general_sprites)
         self.profile_holder.add(self.general_sprites, self.buttons)
         self.profile_message.add(self.general_sprites)
         

@@ -19,27 +19,27 @@ class Background(pygame.sprite.Sprite):
         # Different backgrounds
         self.backgrounds = [
             {
-                "image" : data["early_morning"],
+                "image" : data["early_morning"].convert_alpha(),
                 "time" : (3, 5)
             },
             {
-                "image" : data["morning"],
+                "image" : data["morning"].convert_alpha(),
                 "time" : (5, 9)
             },
             {
-                "image" : data["noon"],
+                "image" : data["noon"].convert_alpha(),
                 "time" : (9, 15)
             },
             {
-                "image" : data["afternoon"],
+                "image" : data["afternoon"].convert_alpha(),
                 "time" : (15, 18)
             },
             {
-                "image" : data["night"],
+                "image" : data["night"].convert_alpha(),
                 "time" : (18, 21)
             },
             {
-                "image" : data["midnight"],
+                "image" : data["midnight"].convert_alpha(),
                 "time" : (21, 3)
             }
         ]

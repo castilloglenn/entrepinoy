@@ -27,8 +27,9 @@ class Button(pygame.sprite.Sprite):
         self.state = "idle"
         self.visible = True
         
-        self.idle = idle_image
-        self.hovered = hovered_image
+        self.idle = idle_image.convert_alpha()
+        self.hovered = hovered_image.convert_alpha()
+        
         self.center_coordinates = center_coordinates
         self.top_left_coordinates = top_left_coordinates
         
