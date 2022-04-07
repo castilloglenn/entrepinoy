@@ -1,3 +1,4 @@
+from tkinter import Toplevel
 from game.sprite.background import Background
 from game.sprite.message import Message
 from game.sprite.button import Button
@@ -37,6 +38,13 @@ class Scene():
             **self.callbacks
         )
         
+        # Setting up the autosave feature
+        self.autosave_id = pygame.USEREVENT + 1
+        pygame.time.set_timer(
+            self.autosave_id, 
+            self.main.data.setting["autosave_timeout"]
+        )
+        
         # Logging entry point
         self.main.debug.log("Entered scene")
         self.main.debug.new_line()
@@ -53,19 +61,24 @@ class Scene():
             self.main.screen,
             self.main.data.scene["profile_holder_idle"],
             self.main.data.scene["profile_holder_hovered"],
-            (165, 80),
-            self.profile_callback
+            self.profile_callback,
+            top_left_coordinates=(10, 10)
         )
-        self.message = Message(
+        self.profile_message = Message(
             self.main.screen, 
-            [self.time.get_date(), self.time.get_time()], 
+                [
+                    self.time.get_date(), 
+                    self.time.get_time(),
+                    "Cash:",
+                    f"P{self.main.data.progress['cash']:15,.2f}"
+                ], 
             self.main.data.paragraph_font, 
-            self.main.data.black,
-            (135, 35)
+            self.main.data.orange,
+            (160, 75)
         )
         self.background.add(self.general_sprites)
         self.profile_holder.add(self.general_sprites, self.buttons)
-        self.message.add(self.general_sprites)
+        self.profile_message.add(self.general_sprites)
         
         # Main loop
         self.running = True
@@ -77,28 +90,34 @@ class Scene():
         
     
     def time_callback_minute(self):
-        self.message.set_message([self.time.get_date(), self.time.get_time()])
+        self.profile_message.set_message([
+            self.time.get_date(), 
+            self.time.get_time(),
+            "Cash:",
+            f"P{self.main.data.progress['cash']:15,.2f}"
+        ])
         
     
     def time_callback_hour(self):
+        self.main.debug.log("Hour callback")
         self.background.set_time(self.time)
         self.background.check_change()
         
     
     def time_callback_day(self):
-        pass
+        self.main.debug.log("Day callback")
         
     
     def time_callback_month(self):
-        pass
+        self.main.debug.log("Month callback")
         
     
     def time_callback_year(self):
-        pass
+        self.main.debug.log("Year callback")
     
     
     def profile_callback(self):
-        print("profile")
+        self.main.debug.log("Profile clicked")
                 
                                 
     def mouse_click_events(self, event):
@@ -160,6 +179,23 @@ class Scene():
         self.main.refresh_display()
         self.time.tick()
         
+    
+    def update_data(self):
+        # Update the json data from the main class
+        self.main.data.progress["time"] = self.time.get_full()
+        
+        # Saving the json to the save file
+        self.main.data.set_dict_to_json(
+            "progress", "progress.json",
+            self.main.data.progress
+        )
+        
+        
+    def close_game(self):
+        self.update_data()
+        self.main.debug.log("Autosaved progress before exit")
+        self.main.close_game()
+        
         
     def run(self):
         while self.running:
@@ -173,11 +209,16 @@ class Scene():
             for event in pygame.event.get():
                 if event.type == pygame.QUIT: 
                     self.running = False
-                    self.main.close_game()
+                    self.close_game()
                 if event.type == pygame.MOUSEBUTTONDOWN: 
                     self.mouse_click_events(event)
                 if event.type == pygame.MOUSEMOTION: 
                     self.mouse_drag_events(event)
+                
+                # Custom event timers
+                if event.type == self.autosave_id:
+                    self.update_data()
+                    self.main.debug.log("Autosaved progress")
                 
             # Key pressing events (holding keys applicable)
             keys = pygame.key.get_pressed()

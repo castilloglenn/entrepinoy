@@ -3,5 +3,6 @@
     "game_height" : 720,
     "fps" : 60,
 
-    "time_amplify" : 180
+    "time_amplify" : 300,
+    "autosave_timeout" : 10000
 }

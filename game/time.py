@@ -20,6 +20,12 @@ class Time():
         self.time_display_format = "%I:%M %p"
         self.increment = 86400 / amplify / fps
         
+        # Recording of data
+        debug.log(
+            f"\nTime amplification: \n"
+            f"1 second in real life = {self.increment} second(s) in-game\n"
+            f"{amplify / 60:,.2f} minutes in real life = 1 day in game")
+        
         # Parse time
         self.time = datetime.strptime(start_time, self.format)
         
@@ -64,6 +70,10 @@ class Time():
     
     def get_time(self):
         return datetime.strftime(self.time, self.time_display_format)
+    
+
+    def get_full(self):
+        return datetime.strftime(self.time, self.format)
     
     
     def update_previous_time(self):

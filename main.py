@@ -43,21 +43,19 @@ class Main():
             self.screen, 
             self.data.title_screen["new_game_idle"],
             self.data.title_screen["new_game_hovered"],
-                (
-                    self.data.horizontal_center, 
-                    int(self.data.setting["game_height"] * 0.65)
-                ),
-            self.create_new_game
+            self.create_new_game,
+            center_coordinates=
+                (self.data.horizontal_center, 
+                int(self.data.setting["game_height"] * 0.65)),
         )
         self.continue_button = Button(
             self.screen, 
             self.data.title_screen["continue_idle"],
             self.data.title_screen["continue_hovered"],
-                (
-                    self.data.horizontal_center, 
-                    int(self.data.setting["game_height"] * 0.85)
-                ),
-            self.continue_game
+            self.continue_game,
+            center_coordinates=
+                (self.data.horizontal_center, 
+                int(self.data.setting["game_height"] * 0.85)),
         )
         
         self.new_game_button.add(self.buttons)

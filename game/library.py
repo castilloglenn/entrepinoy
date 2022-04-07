@@ -18,8 +18,8 @@ class Library():
         
         # Fonts
         self.paragraph_font = {
-            "family" : self.get_font("PixelEmulator-xq08.ttf", 8),
-            "size" : 8
+            "family" : self.get_font("PixelEmulator-xq08.ttf", 10),
+            "size" : 10
         }
         
         # Images 
@@ -53,6 +53,7 @@ class Library():
         # Colors
         self.black = (0, 0, 0)
         self.white = (255, 255, 255)
+        self.orange = (249, 154, 77)
     
     
     def get_dict_from_json(self, folder_name: str, json_name: str):
@@ -61,7 +62,8 @@ class Library():
 
         with open(json_path) as json_file:
             json_dict = json.load(json_file)
-            return json_dict
+        
+        return json_dict
         
     
     def get_image(self, folder_name: str,image_name: str):
