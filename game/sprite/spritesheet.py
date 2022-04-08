@@ -7,7 +7,7 @@ class Spritesheet(pygame.sprite.Sprite):
     """
     def __init__(self, screen: pygame.Surface,
                  name: str, spritesheet: pygame.Surface, 
-                 meta_data: dict, fps: int, speed: float, 
+                 meta_data: dict, fps: int, animation_rate: float, 
                  mid_bottom_coordinates=None,
                  center_coordinates=None,
                  top_left_coordinates=None):
@@ -24,7 +24,7 @@ class Spritesheet(pygame.sprite.Sprite):
 
         # This speed controls when to switch from sprite animation to the
         #   next animation in the spritesheet
-        self.animate_speed = fps * speed
+        self.animate_speed = fps * animation_rate
         self.animation_tick = 0
 
         # Parsing all the sprites contained in the spritesheet
@@ -38,6 +38,7 @@ class Spritesheet(pygame.sprite.Sprite):
         self.mid_bottom_coordinates = mid_bottom_coordinates
         self.center_coordinates = center_coordinates
         self.top_left_coordinates = top_left_coordinates
+        self.is_flipped = False
         
         if self.mid_bottom_coordinates is not None:
             self.rect.midbottom = self.mid_bottom_coordinates
@@ -52,8 +53,7 @@ class Spritesheet(pygame.sprite.Sprite):
     def fetch_sprite(self, name):
         sprite = self.data['frames'][name]['frame']
         x, y, width, height = sprite["x"], sprite["y"], sprite["w"], sprite["h"]
-        image = pygame.Surface((width, height))
-        image.set_colorkey((0,0,0))
+        image = pygame.Surface((width, height), pygame.SRCALPHA, 32)
         image.blit(self.sprite_sheet,(0, 0),(x, y, width, height))
         return image.convert_alpha()
 
@@ -65,6 +65,9 @@ class Spritesheet(pygame.sprite.Sprite):
             self.animation_tick = 0
             self.sprite_index = (self.sprite_index + 1) % len(self.sprites)
             
-            self.image = self.sprites[self.sprite_index]
+            if self.is_flipped:
+                self.image = pygame.transform.flip(self.sprites[self.sprite_index], True, False)
+            else:
+                self.image = self.sprites[self.sprite_index]
             
         self.screen.blit(self.image, self.rect)

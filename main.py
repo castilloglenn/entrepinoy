@@ -13,7 +13,6 @@ class Main():
     This will be the main module of the game.
     This runs the main menu of the game when played.
     """
-
     def __init__(self):
         # Centering the game window on the screen
         os.environ['SDL_VIDEO_CENTERED'] = '1'
