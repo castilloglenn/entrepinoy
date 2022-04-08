@@ -34,6 +34,14 @@ class Time():
         self.previous_time = {}
         self.callbacks = callbacks
         self.update_previous_time()
+        
+        # Crowd summon percentage per hour
+        self.crowd_chance = [
+        #   0  1  2  3  4   5   6   7   8   9 10  11  12  13  
+            5, 5, 5, 5, 8, 10, 30, 50, 30, 10, 8, 50, 60, 50, 
+        #   14  15  16   17  18  19  20  21  22 23
+            50, 50, 60, 100, 80, 70, 50, 30, 10, 8
+        ]
 
         
     def tick(self):

@@ -46,8 +46,6 @@ class Spritesheet(pygame.sprite.Sprite):
             self.rect.center = self.center_coordinates
         elif self.top_left_coordinates is not None:
             self.rect.topleft = self.top_left_coordinates
-        else:
-            self.rect = (0, 0)
 
 
     def fetch_sprite(self, name):
@@ -55,12 +53,12 @@ class Spritesheet(pygame.sprite.Sprite):
         x, y, width, height = sprite["x"], sprite["y"], sprite["w"], sprite["h"]
         image = pygame.Surface((width, height), pygame.SRCALPHA, 32)
         image.blit(self.sprite_sheet,(0, 0),(x, y, width, height))
+        self.rect = image.get_rect()
         return image.convert_alpha()
 
 
     def update(self):
         self.animation_tick += 1
-        
         if self.animation_tick >= self.animate_speed:
             self.animation_tick = 0
             self.sprite_index = (self.sprite_index + 1) % len(self.sprites)
@@ -70,4 +68,4 @@ class Spritesheet(pygame.sprite.Sprite):
             else:
                 self.image = self.sprites[self.sprite_index]
             
-        self.screen.blit(self.image, self.rect)
+        # self.screen.blit(self.image, self.rect)

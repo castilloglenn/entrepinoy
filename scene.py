@@ -1,4 +1,4 @@
-from game.sprite.spritesheet import Spritesheet
+from game.sprite.sprite_group import SpriteGroup
 from game.sprite.background import Background
 from game.sprite.message import Message
 from game.sprite.button import Button
@@ -48,6 +48,13 @@ class Scene():
             self.main.data.setting["autosave_timeout"]
         )
         
+        # Crowd spawner
+        self.crowd_spawner_id = pygame.USEREVENT + 2
+        pygame.time.set_timer(
+            self.crowd_spawner_id,
+            500
+        )
+        
         # Logging entry point
         self.main.debug.log("Entered scene")
         self.main.debug.new_line()
@@ -55,6 +62,7 @@ class Scene():
         # Sprites and sprite groups
         self.general_sprites = pygame.sprite.Group()
         self.buttons = pygame.sprite.Group()
+        self.crowd = SpriteGroup()
         self.background = Background(
             self.main.screen, 
             self.time, 
@@ -62,21 +70,6 @@ class Scene():
         )
         
         # Scene components
-        self.scene_runners = []
-        for index in range(1):
-            self.scene_runners.append(NPC(
-                self.main.screen,
-                "test", 
-                self.main.data.spritesheets["test"]["sheet"],
-                self.main.data.spritesheets["test"]["data"],
-                self.main.data.setting["fps"], 
-                0.1, 180, "left",
-                mid_bottom_coordinates=
-                    (self.main.data.setting["game_width"], 
-                    (self.main.data.setting["game_height"] * 0.70) + (index * 5))
-            )
-        )
-        
         self.profile_holder = Button(
             self.main.screen,
             self.main.data.scene["profile_holder_idle"],
@@ -96,13 +89,18 @@ class Scene():
             self.main.data.orange,
             (160, 75)
         )
+        self.footprint_counter = 0
+        self.footprint_message = Message(
+            self.main.screen, 
+            [f"Footprint: {self.footprint_counter:,} people"], 
+            self.main.data.paragraph_font, 
+            self.main.data.orange,
+            (850, 75)
+        )
         self.background.add(self.general_sprites)
-        
-        for runner in self.scene_runners:
-            runner.add(self.general_sprites)
-        
         self.profile_holder.add(self.general_sprites, self.buttons)
         self.profile_message.add(self.general_sprites)
+        self.footprint_message.add(self.general_sprites)
         
         # Main loop
         self.running = True
@@ -228,6 +226,7 @@ class Scene():
             
             # Rendering sprites
             self.general_sprites.update()
+            self.crowd.draw(self.main.screen)
             
             # Event processing
             for event in pygame.event.get():
@@ -243,6 +242,21 @@ class Scene():
                 if event.type == self.autosave_id:
                     self.update_data()
                     self.main.debug.log("Autosaved progress")
+                if event.type == self.crowd_spawner_id:
+                    random_value = random.randint(0, 100)
+                    if random_value <= self.time.crowd_chance[self.time.time.hour]:
+                        self.footprint_counter += 1
+                        NPC(
+                            self.main.screen,
+                            "test", 
+                            self.main.data.spritesheets["test"]["sheet"],
+                            self.main.data.spritesheets["test"]["data"],
+                            self.main.data.setting["fps"], 
+                            0.1, random.randint(120, 180)
+                        ).add(self.general_sprites, self.crowd)
+                        self.footprint_message.set_message(
+                            [f"Footprint: {self.footprint_counter:,} people"]
+                        )
                 
             # Key pressing events (holding keys applicable)
             keys = pygame.key.get_pressed()
