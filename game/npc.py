@@ -12,8 +12,8 @@ class NPC(Spritesheet):
     """
     def __init__(self, screen: pygame.Surface, name: str, 
                  spritesheet: pygame.Surface, meta_data: dict, fps: int):
-        self.min_speed = 60
-        self.max_speed = 90
+        self.min_speed = 90
+        self.max_speed = 120
         
         self.min_animation_speed = 8
         self.max_animation_speed = 12
