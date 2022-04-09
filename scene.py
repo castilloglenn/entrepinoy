@@ -257,13 +257,13 @@ class Scene():
                     random_value = random.randint(0, 100)
                     if random_value <= self.crowd_chance[self.time.time.hour]:
                         self.footprint_counter += 1
+                        npc_form = str(random.randint(0, 1))
                         NPC(
-                            self.main.screen,
-                            "test", 
-                            self.main.data.spritesheets["test"]["sheet"],
-                            self.main.data.spritesheets["test"]["data"],
+                            self.main.screen, npc_form, 
+                            self.main.data.crowd_spritesheets[npc_form]["sheet"],
+                            self.main.data.crowd_spritesheets[npc_form]["data"],
                             self.main.data.setting["fps"], 
-                            0.1, random.randint(120, 180)
+                            0.1, random.randint(60, 90)
                         ).add(self.general_sprites, self.crowd)
                 if event.type == self.memory_debug_id:
                     self.main.debug.log(f"[A] Objects in memory: {len(self.general_sprites)}")

@@ -50,18 +50,19 @@ class Main():
                 (self.data.horizontal_center, 
                 int(self.data.setting["game_height"] * 0.65)),
         )
-        self.continue_button = Button(
-            self.screen, 
-            self.data.title_screen["continue_idle"],
-            self.data.title_screen["continue_hovered"],
-            self.continue_game,
-            center_coordinates=
-                (self.data.horizontal_center, 
-                int(self.data.setting["game_height"] * 0.85)),
-        )
-        
         self.new_game_button.add(self.buttons)
-        self.continue_button.add(self.buttons)
+        
+        if self.data.progress is not None:
+            self.continue_button = Button(
+                self.screen, 
+                self.data.title_screen["continue_idle"],
+                self.data.title_screen["continue_hovered"],
+                self.continue_game,
+                center_coordinates=
+                    (self.data.horizontal_center, 
+                    int(self.data.setting["game_height"] * 0.85)),
+            )
+            self.continue_button.add(self.buttons)
         
         # Mouse related variable
         self.last_mouse_pos = None
@@ -173,12 +174,15 @@ class Main():
         
         
     def create_new_game(self):
+        # TODO Add confirmation
         self.debug.log("Create new game entered")
+        self.data.create_new_save_file()
         Scene(self)
         
         
     def continue_game(self):
         self.debug.log("Continue game entered")
+        Scene(self)
         
         
     def present_intro(self):

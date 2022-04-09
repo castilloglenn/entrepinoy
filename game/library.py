@@ -1,3 +1,4 @@
+from datetime import datetime
 import pygame
 import json
 import os
@@ -16,7 +17,12 @@ class Library():
         self.crowd_statistics = self.get_dict_from_json("library", "crowd_statistics.json")
         self.meta = self.get_dict_from_json("config", "meta.json")
         self.setting = self.get_dict_from_json("config", "settings.json")
-        self.progress = self.get_dict_from_json("progress", "progress.json")
+        
+        # Checking the save data
+        try:
+            self.progress = self.get_dict_from_json("progress", "progress.json")
+        except FileNotFoundError:
+            self.progress = None
         
         # Fonts
         self.paragraph_font = {
@@ -47,11 +53,15 @@ class Library():
             "profile_holder_idle" : self.get_image("scene", "profile_holder_idle.png"),
             "profile_holder_hovered" : self.get_image("scene", "profile_holder_hovered.png")
         }
-        self.spritesheets = {
-            "test" : {
+        self.crowd_spritesheets = {
+            "0" : {
+                "sheet" : self.get_image("crowd", "0.png"),
+                "data" : self.get_dict_from_spritesheet("crowd", "0.json")
+            },
+            "1" : {
                 "sheet" : self.get_image("test", "test.png"),
                 "data" : self.get_dict_from_spritesheet("test", "test.json")
-            }
+            },
         }
         
         # Common Coordinates (converted to integers)
@@ -102,6 +112,15 @@ class Library():
 
         with open(json_path, "w+") as json_file:
             json.dump(data, json_file, indent=4)
+            
+    
+    def create_new_save_file(self):
+        self.progress = {
+            "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
+            "last_login": "",
+            "cash": 5000.0000000000000
+        }
+        self.set_dict_to_json("progress", "progress.json", self.progress)
 
 
 # if __name__ == "__main__":
