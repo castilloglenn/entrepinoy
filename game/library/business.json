@@ -1,76 +1,47 @@
 {
-    "small" : {
-        "tier_1" : [
-            {
-                "name" : "Streetfoods Stall",
-                "initial_cost" : 5000.0,
-                "daily_expenses" : 350.0,
-                "employee_cost": 150.0,
-                "customer_flow_start" : 14,
-                "customer_flow_end" : 20,
-                "income_per_customer_min" : 10.0,
-                "income_per_customer_max" : 20.0
-            }, 
-            {
-                "name" : "Sari Sari Store",
-                "initial_cost" : 2000.0,
-                "daily_expenses" : 150.0,
-                "customer_flow_start" : 0,
-                "customer_flow_end" : 23,
-                "income_per_customer_min" : 10.0,
-                "income_per_customer_max" : 20.0
-            }
+    "street_food" : {
+        "name" : "Streetfoods Stall",
+        "image_name" : [
+            "buko_stall",
+            "fish_ball_stand",
+            "sorbetes"
         ],
-
-        "tier_2" : [
-            {
-                "name" : "Ukay Ukay",
-                "initial_cost" : 4000.0,
-                "daily_expenses" : 500.0,
-                "customer_flow_start" : 7,
-                "customer_flow_end" : 22,
-                "income_per_customer_min" : 10.0,
-                "income_per_customer_max" : 20.0
-            }, 
-            {
-                "name" : "Foodcart",
-                "initial_cost" : 5000.0,
-                "daily_expenses" : 750.0,
-                "customer_flow_start" : 6,
-                "customer_flow_end" : 20,
-                "income_per_customer_min" : 10.0,
-                "income_per_customer_max" : 20.0
-            }
-        ],
-
-        "tier_3" : [
-            
-        ]
+        "initial_cost" : 5000.0,
+        "daily_expenses" : 350.0,
+        "employee_cost": 150.0,
+        "customer_flow_start" : 14,
+        "customer_flow_end" : 20,
+        "income_per_customer_min" : 10.0,
+        "income_per_customer_max" : 20.0
+    }, 
+    "sari_sari_store" : {
+        "name" : "Sari Sari Store",
+        "image_name" : "sari_sari_store",
+        "initial_cost" : 2000.0,
+        "daily_expenses" : 150.0,
+        "customer_flow_start" : 0,
+        "customer_flow_end" : 23,
+        "income_per_customer_min" : 10.0,
+        "income_per_customer_max" : 20.0
     },
-    "medium" : {
-        "tier_1" : [
-
-        ],
-
-        "tier_2" : [
-            
-        ],
-
-        "tier_3" : [
-            
-        ]
-    },
-    "big" : {
-        "tier_1" : [
-
-        ],
-
-        "tier_2" : [
-            
-        ],
-
-        "tier_3" : [
-            
-        ]
+    "ukay_ukay" : {
+        "name" : "Ukay Ukay",
+        "image_name" : "ukay_ukay",
+        "initial_cost" : 4000.0,
+        "daily_expenses" : 500.0,
+        "customer_flow_start" : 7,
+        "customer_flow_end" : 22,
+        "income_per_customer_min" : 10.0,
+        "income_per_customer_max" : 20.0
+    }, 
+    "food_cart" : {
+        "name" : "Foodcart",
+        "image_name" : "food_cart",
+        "initial_cost" : 5000.0,
+        "daily_expenses" : 750.0,
+        "customer_flow_start" : 6,
+        "customer_flow_end" : 20,
+        "income_per_customer_min" : 10.0,
+        "income_per_customer_max" : 20.0
     }
 }

@@ -1,0 +1,37 @@
+{
+    "small" : {
+        "tier_1" : [
+            "street_food",
+            "sari_sari_store"
+        ],
+        "tier_2" : [
+            "ukay_ukay",
+            "food_cart"
+        ],
+        "tier_3" : [
+
+        ]
+    },
+    "medium" : {
+        "tier_1" : [
+
+        ],
+        "tier_2" : [
+
+        ],
+        "tier_3" : [
+
+        ]
+    },
+    "large" : {
+        "tier_1" : [
+
+        ],
+        "tier_2" : [
+
+        ],
+        "tier_3" : [
+
+        ]
+    }
+}

@@ -2,6 +2,8 @@ from game.sprite.spritesheet import Spritesheet
 import pygame
 import random
 
+import gc
+
 
 class NPC(Spritesheet):
     """
@@ -20,7 +22,7 @@ class NPC(Spritesheet):
         self.direction = random.choice(["left", "right"])
         
         self.crowd_top = int(self.screen.get_height() * 0.75)
-        self.crowd_bottom = int(self.screen.get_height() * 0.82)
+        self.crowd_bottom = int(self.screen.get_height() * 0.81)
         
         if self.direction == "left":
             self.rect.midbottom = (
@@ -45,10 +47,11 @@ class NPC(Spritesheet):
                 self.rect.x += absolute_movement
             
             if self.rect.x <= 0 - self.rect.width and self.direction == "left":
-                self.kill()
+                self.free()
             elif self.rect.x >= self.screen.get_width() + self.rect.width and self.direction == "right":
-                self.kill()
+                self.free()
             
             self.speed_tick -= absolute_movement
         
         super().update()
+    

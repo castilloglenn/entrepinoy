@@ -3,8 +3,11 @@ import pygame
 
 class SpriteGroup(pygame.sprite.Group):
     """
-    Code source: https://stackoverflow.com/questions/55233448/pygame-overlapping-sprites-draw-order-based-on-location
-    Explanation: Problem with rendering when summoning a random crowd with a correct rendering based on y-coordinates
+    Source: https://stackoverflow.com/questions/55233448/pygame-overlapping-sprites-draw-order-based-on-location
+    
+    Explanation: 
+        Problem with rendering when summoning a random crowd with a correct rendering 
+        based on y-coordinates
     """
     def by_y(self, spr):
         return spr.rect.y

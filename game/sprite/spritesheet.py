@@ -68,4 +68,10 @@ class Spritesheet(pygame.sprite.Sprite):
             else:
                 self.image = self.sprites[self.sprite_index]
             
+        # Prevents the self-blitting due to the custom sprite group handles
+        #   which sprite blits first based on their y-coordinates
         # self.screen.blit(self.image, self.rect)
+        
+        
+    def free(self):
+        self.kill()

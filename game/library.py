@@ -12,6 +12,8 @@ class Library():
     def __init__(self):
         # JSON data
         self.business = self.get_dict_from_json("library", "business.json")
+        self.category = self.get_dict_from_json("library", "category.json")
+        self.crowd_statistics = self.get_dict_from_json("library", "crowd_statistics.json")
         self.meta = self.get_dict_from_json("config", "meta.json")
         self.setting = self.get_dict_from_json("config", "settings.json")
         self.progress = self.get_dict_from_json("progress", "progress.json")

@@ -14,6 +14,9 @@ class Main():
     This runs the main menu of the game when played.
     """
     def __init__(self):
+        # Setting up the debugger
+        self.debug = Debugger()
+        
         # Centering the game window on the screen
         os.environ['SDL_VIDEO_CENTERED'] = '1'
         
@@ -22,7 +25,7 @@ class Main():
         pygame.mixer.init()
         pygame.mouse.set_cursor(pygame.cursors.tri_left)
         
-        self.debug = Debugger()
+        # Setting up the data
         self.data = Library()
         self.screen = None
         self.clock = None
@@ -69,6 +72,10 @@ class Main():
         # self.present_intro()
         
         # Main loop
+        self.debug.new_line()
+        self.debug.log("Memory after initializing main menu:")
+        self.debug.memory_log()
+        
         self.running = True
         self.main_loop()
         

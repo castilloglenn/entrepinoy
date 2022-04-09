@@ -22,7 +22,8 @@ class Scene():
     def __init__(self, main):
         # Settings up the scene
         self.main = main
-        self.location = "Location1"
+        self.location = "location_a" # TODO test location
+        self.crowd_chance = self.main.data.crowd_statistics[self.location]
         
         # Setting up the clock
         self.callbacks = {
@@ -41,23 +42,30 @@ class Scene():
             **self.callbacks
         )
         
+        # CUSTOM EVENTS
         # Setting up the autosave feature
         self.autosave_id = pygame.USEREVENT + 1
         pygame.time.set_timer(
             self.autosave_id, 
             self.main.data.setting["autosave_timeout"]
         )
-        
         # Crowd spawner
         self.crowd_spawner_id = pygame.USEREVENT + 2
         pygame.time.set_timer(
             self.crowd_spawner_id,
             500
         )
+        # Memory monitoring
+        self.footprint_counter = 0
+        self.memory_debug_id = pygame.USEREVENT + 3
+        pygame.time.set_timer(
+            self.memory_debug_id,
+            60000
+        )
         
         # Logging entry point
-        self.main.debug.log("Entered scene")
         self.main.debug.new_line()
+        self.main.debug.log("Entered scene")
         
         # Sprites and sprite groups
         self.general_sprites = pygame.sprite.Group()
@@ -89,20 +97,15 @@ class Scene():
             self.main.data.orange,
             (160, 75)
         )
-        self.footprint_counter = 0
-        self.footprint_message = Message(
-            self.main.screen, 
-            [f"Footprint: {self.footprint_counter:,} people"], 
-            self.main.data.paragraph_font, 
-            self.main.data.orange,
-            (850, 75)
-        )
         self.background.add(self.general_sprites)
         self.profile_holder.add(self.general_sprites, self.buttons)
         self.profile_message.add(self.general_sprites)
-        self.footprint_message.add(self.general_sprites)
         
         # Main loop
+        self.main.debug.log(f"Initial memory and object statistics:")
+        self.main.debug.log(f"Total crowd objects: {len(self.general_sprites)}")
+        self.main.debug.memory_log()
+        self.main.debug.new_line()
         self.running = True
         self.run()
         
@@ -181,9 +184,15 @@ class Scene():
         else:
             for button in self.buttons:
                 button.check_hovered(self.last_mouse_pos)
+                
+                
+    def key_down_events(self, key):
+        if key == pygame.K_F1:
+            self.main.debug.log(f"[T] Objects in memory: {len(self.general_sprites)}")
+            self.main.debug.memory_log()
 
 
-    def key_events(self, keys):
+    def key_hold_events(self, keys):
         # If the user pressed the "del" key, (enter explanation here)
         if keys[pygame.K_DELETE]: 
             pass
@@ -237,6 +246,8 @@ class Scene():
                     self.mouse_click_events(event)
                 if event.type == pygame.MOUSEMOTION: 
                     self.mouse_drag_events(event)
+                if event.type == pygame.KEYDOWN:
+                    self.key_down_events(event.key)
                 
                 # Custom event timers
                 if event.type == self.autosave_id:
@@ -244,7 +255,7 @@ class Scene():
                     self.main.debug.log("Autosaved progress")
                 if event.type == self.crowd_spawner_id:
                     random_value = random.randint(0, 100)
-                    if random_value <= self.time.crowd_chance[self.time.time.hour]:
+                    if random_value <= self.crowd_chance[self.time.time.hour]:
                         self.footprint_counter += 1
                         NPC(
                             self.main.screen,
@@ -254,13 +265,13 @@ class Scene():
                             self.main.data.setting["fps"], 
                             0.1, random.randint(120, 180)
                         ).add(self.general_sprites, self.crowd)
-                        self.footprint_message.set_message(
-                            [f"Footprint: {self.footprint_counter:,} people"]
-                        )
+                if event.type == self.memory_debug_id:
+                    self.main.debug.log(f"[A] Objects in memory: {len(self.general_sprites)}")
+                    self.main.debug.memory_log()
                 
             # Key pressing events (holding keys applicable)
             keys = pygame.key.get_pressed()
-            self.key_events(keys)
+            self.key_hold_events(keys)
             
             # Updating the display
             self.refresh_display()

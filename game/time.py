@@ -5,7 +5,9 @@ class Time():
     """
     This class handles the time of the game.
     """
-    def __init__(self, debug, start_time: str, fps: int, amplify: int, **callbacks):
+    def __init__(self, debug, start_time: str, 
+                 fps: int, amplify: int, 
+                 **callbacks):
         """
         Time class manipulates in-game time.
 
@@ -23,7 +25,7 @@ class Time():
         # Recording of data
         debug.log(
             f"\nTime amplification: \n"
-            f"1 second in real life = {self.increment} second(s) in-game\n"
+            f"1 second in real life = {86400 / amplify:,.2f} second(s) in-game\n"
             f"{amplify / 60:,.2f} minutes in real life = 1 day in game")
         
         # Parse time
@@ -34,14 +36,6 @@ class Time():
         self.previous_time = {}
         self.callbacks = callbacks
         self.update_previous_time()
-        
-        # Crowd summon percentage per hour
-        self.crowd_chance = [
-        #   0  1  2  3  4   5   6   7   8   9 10  11  12  13  
-            5, 5, 5, 5, 8, 10, 30, 50, 30, 10, 8, 50, 60, 50, 
-        #   14  15  16   17  18  19  20  21  22 23
-            50, 50, 60, 100, 80, 70, 50, 30, 10, 8
-        ]
 
         
     def tick(self):
