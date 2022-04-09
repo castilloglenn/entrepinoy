@@ -11,13 +11,26 @@ class NPC(Spritesheet):
     at a certain speed.
     """
     def __init__(self, screen: pygame.Surface, name: str, 
-                 spritesheet: pygame.Surface, meta_data: dict, 
-                 fps: int, animation_rate: float, speed: int):
+                 spritesheet: pygame.Surface, meta_data: dict, fps: int):
+        self.min_speed = 60
+        self.max_speed = 90
+        
+        self.min_animation_speed = 8
+        self.max_animation_speed = 12
+        
+        self.speed_value = random.randint(self.min_speed, self.max_speed)
+        self.speed_ratio = (self.speed_value - self.min_speed) / (self.max_speed - self.min_speed)
+        
+        self.animation_scale = self.max_animation_speed - self.min_animation_speed
+        self.animation_rate = (self.max_animation_speed - (self.animation_scale * self.speed_ratio)) / 100
+        
+        print(f"Speed: {self.speed_value}, Animation: {self.animation_rate}")
+        
         super().__init__(screen, name, spritesheet, meta_data, 
-                         fps, animation_rate)
+                         fps, self.animation_rate)
         
         self.fps = fps
-        self.speed = speed / fps
+        self.speed = self.speed_value / fps
         self.speed_tick = 0
         self.direction = random.choice(["left", "right"])
         

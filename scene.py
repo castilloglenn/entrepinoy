@@ -262,8 +262,7 @@ class Scene():
                             self.main.screen, npc_form, 
                             self.main.data.crowd_spritesheets[npc_form]["sheet"],
                             self.main.data.crowd_spritesheets[npc_form]["data"],
-                            self.main.data.setting["fps"], 
-                            0.1, random.randint(60, 90)
+                            self.main.data.setting["fps"]
                         ).add(self.general_sprites, self.crowd)
                 if event.type == self.memory_debug_id:
                     self.main.debug.log(f"[A] Objects in memory: {len(self.general_sprites)}")
