@@ -1,5 +1,6 @@
 from game.sprite.sprite_group import SpriteGroup
-from game.sprite.background import Background
+from game.sprite.scene_background import SceneBackground
+from game.sprite.menu_background import MenuBackground
 from game.sprite.message import Message
 from game.sprite.button import Button
 from game.npc import NPC
@@ -10,7 +11,6 @@ from game.time import Time
 
 import pygame
 import random
-
 
 
 class Scene():
@@ -71,7 +71,7 @@ class Scene():
         self.general_sprites = pygame.sprite.Group()
         self.buttons = pygame.sprite.Group()
         self.crowd = SpriteGroup()
-        self.background = Background(
+        self.background = SceneBackground(
             self.main.screen, 
             self.time, 
             **self.main.data.background
@@ -93,21 +93,16 @@ class Scene():
                     "Cash:",
                     f"P{self.main.data.progress['cash']:15,.2f}"
                 ], 
-            self.main.data.paragraph_font, 
-            self.main.data.orange,
-            (160, 75)
+            self.main.data.small_font, 
+            self.main.data.colors["orange"],
+            top_left_coordinates=(160, 75)
         )
         self.background.add(self.general_sprites)
         self.profile_holder.add(self.general_sprites, self.buttons)
         self.profile_message.add(self.general_sprites)
         
         # Main loop
-        self.main.debug.log(f"Initial memory and object statistics:")
-        self.main.debug.log(f"Total crowd objects: {len(self.general_sprites)}")
-        self.main.debug.memory_log()
-        self.main.debug.new_line()
-        self.running = True
-        self.run()
+        self.running = False
         
     
     def time_callback_seconds(self, time_amplification):
@@ -190,6 +185,11 @@ class Scene():
         if key == pygame.K_F1:
             self.main.debug.log(f"[T] Objects in memory: {len(self.general_sprites)}")
             self.main.debug.memory_log()
+        elif key == pygame.K_F2:
+            self.main.debug.log("Exited scene via F2-shortcut")
+            self.update_data()
+            self.main.debug.log("Autosaved progress before exit")  
+            self.running = False
 
 
     def key_hold_events(self, keys):
@@ -229,10 +229,13 @@ class Scene():
         
         
     def run(self):
+        self.main.debug.log(f"Initial memory and object statistics:")
+        self.main.debug.log(f"Total crowd objects: {len(self.general_sprites)}")
+        self.main.debug.memory_log()
+        self.main.debug.new_line()
+        
+        self.running = True
         while self.running:
-            # Screen rendering
-            self.main.screen.fill(self.main.data.white)
-            
             # Rendering sprites
             self.general_sprites.update()
             self.crowd.draw(self.main.screen)

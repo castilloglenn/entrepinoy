@@ -23,6 +23,7 @@ class Time():
         self.increment = 86400 / amplify / fps
         
         # Recording of data
+        debug.new_line()
         debug.log(
             f"\nTime amplification: \n"
             f"1 second in real life = {86400 / amplify:,.2f} second(s) in-game\n"

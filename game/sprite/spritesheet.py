@@ -1,12 +1,14 @@
-import pygame
-import json
+from pygame.sprite import Sprite
+from pygame.surface import Surface
+from pygame import SRCALPHA, transform
 
-class Spritesheet(pygame.sprite.Sprite):
+
+class Spritesheet(Sprite):
     """
     This class handles the spritesheet of a moving object in a screen display.
     """
-    def __init__(self, screen: pygame.Surface,
-                 name: str, spritesheet: pygame.Surface, 
+    def __init__(self, screen: Surface,
+                 name: str, spritesheet: Surface, 
                  meta_data: dict, fps: int, animation_rate: float, 
                  mid_bottom_coordinates=None,
                  center_coordinates=None,
@@ -51,7 +53,7 @@ class Spritesheet(pygame.sprite.Sprite):
     def fetch_sprite(self, name):
         sprite = self.data['frames'][name]['frame']
         x, y, width, height = sprite["x"], sprite["y"], sprite["w"], sprite["h"]
-        image = pygame.Surface((width, height), pygame.SRCALPHA, 32)
+        image = Surface((width, height), SRCALPHA, 32)
         image.blit(self.sprite_sheet,(0, 0),(x, y, width, height))
         self.rect = image.get_rect()
         return image.convert_alpha()
@@ -64,7 +66,7 @@ class Spritesheet(pygame.sprite.Sprite):
             self.sprite_index = (self.sprite_index + 1) % len(self.sprites)
             
             if self.is_flipped:
-                self.image = pygame.transform.flip(self.sprites[self.sprite_index], True, False)
+                self.image = transform.flip(self.sprites[self.sprite_index], True, False)
             else:
                 self.image = self.sprites[self.sprite_index]
             

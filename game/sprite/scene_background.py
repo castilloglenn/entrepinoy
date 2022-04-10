@@ -1,12 +1,13 @@
-import pygame
+from pygame.sprite import Sprite
+from pygame.surface import Surface
 
 from game.time import Time
 
-class Background(pygame.sprite.Sprite):
+class SceneBackground(Sprite):
     """
     This sprite handles the appropriate background for a specific time of in-game day.
     """
-    def __init__(self, screen: pygame.Surface, time: Time, **data):
+    def __init__(self, screen: Surface, time: Time, **data):
         """
         Background of the scene in the game.
 

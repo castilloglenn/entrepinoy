@@ -1,7 +1,7 @@
-from tkinter import Toplevel
-import pygame
+from pygame.sprite import Sprite
 
-class Button(pygame.sprite.Sprite):
+
+class Button(Sprite):
     """
     Base class for constructing basic buttons with functionality and different
     states when hovered.
@@ -69,6 +69,8 @@ class Button(pygame.sprite.Sprite):
         
     
     def check_clicked(self, click_coordinates):
-        if self.rect.collidepoint(click_coordinates):
+        if self.rect.collidepoint(click_coordinates) and self.visible:
+            self.state = "idle"
+            self.set_image_and_rect()
             self.callback()
             

@@ -25,15 +25,21 @@ class Library():
             self.progress = None
         
         # Fonts
-        self.paragraph_font = {
+        self.small_font = {
             "family" : self.get_font("PixelEmulator-xq08.ttf", 10),
             "size" : 10
         }
+        self.medium_font = {
+            "family" : self.get_font("PixelEmulator-xq08.ttf", 25),
+            "size" : 25
+        }
         
         # Images 
-        self.icon = self.get_image("meta", "game_icon.png")
-        self.studio = self.get_image("meta", "studio.png")
-        
+        self.meta_images = {
+            "icon" : self.get_image("meta", "game_icon.png"),
+            "studio" : self.get_image("meta", "studio.png"),
+            "menu_background" : self.get_image("meta", "menu_background.png")
+        }
         self.title_screen = {
             "bg" : self.get_image("title_screen", "bg.png"),
             "new_game_idle" : self.get_image("title_screen", "new_game_button_idle.png"),
@@ -69,9 +75,11 @@ class Library():
         self.horizontal_center = int(self.setting["game_width"] / 2)
         
         # Colors
-        self.black = (0, 0, 0)
-        self.white = (255, 255, 255)
-        self.orange = (249, 154, 77)
+        self.colors = {
+            "black" : (0, 0, 0),
+            "white" : (255, 255, 255),
+            "orange" : (249, 154, 77)
+        }
     
     
     def get_dict_from_json(self, folder_name: str, json_name: str):

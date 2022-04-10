@@ -1,2 +1,2 @@
 simulate one business 
-
+try to find another way to monitor memory usage since WIM takes too long to boot

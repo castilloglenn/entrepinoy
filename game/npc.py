@@ -24,8 +24,6 @@ class NPC(Spritesheet):
         self.animation_scale = self.max_animation_speed - self.min_animation_speed
         self.animation_rate = (self.max_animation_speed - (self.animation_scale * self.speed_ratio)) / 100
         
-        print(f"Speed: {self.speed_value}, Animation: {self.animation_rate}")
-        
         super().__init__(screen, name, spritesheet, meta_data, 
                          fps, self.animation_rate)
         

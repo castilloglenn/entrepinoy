@@ -1,3 +1,5 @@
+from game.sprite.menu_background import MenuBackground
+from game.sprite.message import Message
 from game.sprite.button import Button
 from game.debug import Debugger
 from game.library import Library
@@ -31,12 +33,15 @@ class Main():
         self.clock = None
         self.initialize_game()
         
+        # Setting up other windows
+        self.scene_window = Scene(self)
+        
         # Screen surface (for transitions)
         self.display_surface = pygame.Surface(
             (self.data.setting["game_width"], 
              self.data.setting["game_height"])
         )
-        self.display_surface.fill(self.data.black)
+        self.display_surface.fill(self.data.colors["black"])
         self.display_surface.convert_alpha()
         
         # Sprites and sprite groups
@@ -45,23 +50,24 @@ class Main():
             self.screen, 
             self.data.title_screen["new_game_idle"],
             self.data.title_screen["new_game_hovered"],
-            self.create_new_game,
+            self.check_save_file,
             center_coordinates=
                 (self.data.horizontal_center, 
                 int(self.data.setting["game_height"] * 0.65)),
         )
         self.new_game_button.add(self.buttons)
         
+        self.continue_button = Button(
+            self.screen, 
+            self.data.title_screen["continue_idle"],
+            self.data.title_screen["continue_hovered"],
+            self.continue_game,
+            center_coordinates=
+                (self.data.horizontal_center, 
+                int(self.data.setting["game_height"] * 0.82)),
+        )
+        self.continue_button_included = False
         if self.data.progress is not None:
-            self.continue_button = Button(
-                self.screen, 
-                self.data.title_screen["continue_idle"],
-                self.data.title_screen["continue_hovered"],
-                self.continue_game,
-                center_coordinates=
-                    (self.data.horizontal_center, 
-                    int(self.data.setting["game_height"] * 0.85)),
-            )
             self.continue_button.add(self.buttons)
         
         # Mouse related variable
@@ -91,7 +97,7 @@ class Main():
         self.debug.log(f"Game Version: {self.data.meta['version']}")
         
         # Icon
-        pygame.display.set_icon(self.data.icon)
+        pygame.display.set_icon(self.data.meta_images["icon"])
         
         # Setting the screen size
         self.screen = pygame.display.set_mode(
@@ -172,17 +178,59 @@ class Main():
         if keys[pygame.K_d]: 
             pass
         
+    
+    def check_save_file(self):
+        if self.data.progress == None:
+            self.create_new_game()
+        else:
+            self.new_game_confirmation()
+        
         
     def create_new_game(self):
-        # TODO Add confirmation
         self.debug.log("Create new game entered")
         self.data.create_new_save_file()
-        Scene(self)
+        self.scene_window.run()
         
         
     def continue_game(self):
         self.debug.log("Continue game entered")
-        Scene(self)
+        self.scene_window.run()
+        
+        
+    def new_game_confirmation(self):
+        # Sprite groups
+        objects = pygame.sprite.Group()
+        
+        # Screen objects
+        background = MenuBackground(
+            self.screen, 0.5,
+            image=self.data.meta_images["menu_background"])
+        objects.add(background)
+        # confirmation_message = Message(
+        #     self.screen, 
+        #     ["Are you sure you want to "]
+        # )
+        
+        # Screen dimming
+        self.display_surface.set_alpha(128)
+        self.screen.blit(self.display_surface, (0, 0)) 
+        
+        while background.enable:
+            objects.update()
+            
+            # Event processing
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT: 
+                    # Closing the game properly
+                    self.close_game()
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    if event.button == 1:
+                        mouse_pos = event.pos
+                        for obj in objects:
+                            obj.check_clicked(mouse_pos)
+            
+            # Updating the display
+            self.refresh_display()
         
         
     def present_intro(self):
@@ -195,8 +243,7 @@ class Main():
         
         while intro:
             # Screen rendering
-            self.screen.fill(self.data.white)
-            self.screen.blit(self.data.studio, (0, 0))
+            self.screen.blit(self.data.meta_images["studio"], (0, 0))
             self.display_surface.set_alpha(alpha)
             
             if fade == "in":
@@ -236,7 +283,6 @@ class Main():
         self.debug.new_line()
         while self.running:
             # Screen rendering
-            self.screen.fill(self.data.white)
             self.screen.blit(self.data.title_screen["bg"], (0, 0))
             
             # Updating sprites
@@ -246,14 +292,19 @@ class Main():
             for event in pygame.event.get():
                 if event.type == pygame.QUIT: 
                     self.running = False
-                if event.type == pygame.MOUSEBUTTONDOWN: 
+                elif event.type == pygame.MOUSEBUTTONDOWN: 
                     self.mouse_click_events(event)
-                if event.type == pygame.MOUSEMOTION: 
+                elif event.type == pygame.MOUSEMOTION: 
                     self.mouse_drag_events(event)
                 
             # Key pressing events (holding keys applicable)
             keys = pygame.key.get_pressed()
             self.key_events(keys)
+            
+            # Final checks on the continue button for initial game exit to menu
+            if self.data.progress is not None and not self.continue_button_included:
+                self.continue_button_included = True
+                self.continue_button.add(self.buttons)
             
             # Updating the display
             self.refresh_display()

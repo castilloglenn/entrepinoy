@@ -1,7 +1,7 @@
-import pygame
+from pygame.sprite import Group
 
 
-class SpriteGroup(pygame.sprite.Group):
+class SpriteGroup(Group):
     """
     Source: https://stackoverflow.com/questions/55233448/pygame-overlapping-sprites-draw-order-based-on-location
     

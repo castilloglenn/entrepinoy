@@ -1,23 +1,16 @@
-import pygame
+from pygame.sprite import Sprite
+from pygame.surface import Surface
 
 
-class Message(pygame.sprite.Sprite):
+class Message(Sprite):
     """
     This class will handle the displaying of message in the screen.
     """
-    def __init__(self, screen: pygame.Surface, 
+    def __init__(self, screen: Surface, 
                  messages: list, font: dict, 
-                 color: tuple, coordinates: tuple):
-        """
-        Handling message display on the screen
-
-        Args:
-            screen (pygame.Surface): pygame display for the message to displayed at
-            message (str): message to display
-            font (dict): pygame font to be used
-            color (tuple): 3-integer tuple from 0 to 255 RGB value
-            coordinates (tuple): x, y coordinates on the screen
-        """
+                 color: tuple, 
+                 center_coordinates=None,
+                 top_left_coordinates=None):
         super().__init__()
         
         self.screen = screen
@@ -30,7 +23,9 @@ class Message(pygame.sprite.Sprite):
         
         self.image = None
         self.rect = None
-        self.coordinates = coordinates
+        
+        self.center_coordinates = center_coordinates
+        self.top_left_coordinates = top_left_coordinates
         
         
     def update(self):
@@ -38,8 +33,8 @@ class Message(pygame.sprite.Sprite):
             self.render_image(message)
             self.screen.blit(
                 self.image, 
-                (self.coordinates[0], 
-                 self.coordinates[1] 
+                (self.rect[0], 
+                 self.rect[1] 
                  + (index * (self.text_spacing + self.size)))
             )
         
@@ -51,4 +46,9 @@ class Message(pygame.sprite.Sprite):
     def render_image(self, message: str):
         self.image = self.font.render(message, False, self.color)
         self.rect = self.image.get_rect()
+        
+        if self.center_coordinates is not None:
+            self.rect.center = self.center_coordinates
+        elif self.top_left_coordinates is not None:
+            self.rect.topleft = self.top_left_coordinates
         
