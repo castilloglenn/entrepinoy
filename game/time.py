@@ -79,6 +79,10 @@ class Time():
         return datetime.strftime(self.time, self.format)
     
     
+    def set_time(self, new_time):
+        self.time = datetime.strptime(new_time, self.format)
+    
+    
     def update_previous_time(self):
         self.previous_time = {
             "second" : {

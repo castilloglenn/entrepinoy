@@ -38,7 +38,11 @@ class Library():
         self.meta_images = {
             "icon" : self.get_image("meta", "game_icon.png"),
             "studio" : self.get_image("meta", "studio.png"),
-            "menu_background" : self.get_image("meta", "menu_background.png")
+            "menu_background" : self.get_image("meta", "menu_background.png"),
+            "confirm_button_idle" : self.get_image("meta", "confirm_button_idle.png"),
+            "confirm_button_hovered" : self.get_image("meta", "confirm_button_hovered.png"),
+            "cancel_button_idle" : self.get_image("meta", "cancel_button_idle.png"),
+            "cancel_button_hovered" : self.get_image("meta", "cancel_button_hovered.png")
         }
         self.title_screen = {
             "bg" : self.get_image("title_screen", "bg.png"),

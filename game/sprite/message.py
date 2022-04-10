@@ -9,6 +9,8 @@ class Message(Sprite):
     def __init__(self, screen: Surface, 
                  messages: list, font: dict, 
                  color: tuple, 
+                 outline_color: tuple | None = None,
+                 outline_thickness: int = 0,
                  center_coordinates=None,
                  top_left_coordinates=None):
         super().__init__()
@@ -18,10 +20,15 @@ class Message(Sprite):
         self.messages = messages
         self.font = font["family"]
         self.size = font["size"]
+        
         self.color = color
+        self.outline_color = outline_color
+        
         self.text_spacing = 3
+        self.outline_thickness = outline_thickness
         
         self.image = None
+        self.outline_image = None
         self.rect = None
         
         self.center_coordinates = center_coordinates
@@ -31,12 +38,18 @@ class Message(Sprite):
     def update(self):
         for index, message in enumerate(self.messages):
             self.render_image(message)
-            self.screen.blit(
-                self.image, 
-                (self.rect[0], 
-                 self.rect[1] 
-                 + (index * (self.text_spacing + self.size)))
-            )
+            
+            # testing with outline
+            base_x = self.rect[0]
+            base_y = self.rect[1] + (index * (self.text_spacing + self.size))
+            
+            if self.outline_image != None:
+                self.screen.blit(self.outline_image, (base_x + self.outline_thickness, base_y))
+                self.screen.blit(self.outline_image, (base_x, base_y + self.outline_thickness))
+                self.screen.blit(self.outline_image, (base_x - self.outline_thickness, base_y))
+                self.screen.blit(self.outline_image, (base_x, base_y - self.outline_thickness))
+            
+            self.screen.blit(self.image, (base_x, base_y))
         
         
     def set_message(self, messages: list):
@@ -44,6 +57,9 @@ class Message(Sprite):
         
         
     def render_image(self, message: str):
+        if self.outline_thickness > 0:
+            self.outline_image = self.font.render(message, False, self.outline_color)
+        
         self.image = self.font.render(message, False, self.color)
         self.rect = self.image.get_rect()
         

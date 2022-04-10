@@ -177,6 +177,12 @@ class Main():
         # If the user pressed the "d" key, (enter explanation here)
         if keys[pygame.K_d]: 
             pass
+                
+                
+    def global_key_down_events(self, key):
+        if key == pygame.K_F1:
+            self.debug.log(f"F1 Trigger: Memory check")
+            self.debug.memory_log()
         
     
     def check_save_file(self):
@@ -189,10 +195,13 @@ class Main():
     def create_new_game(self):
         self.debug.log("Create new game entered")
         self.data.create_new_save_file()
+        
+        self.scene_window.reset()
         self.scene_window.run()
         
         
     def continue_game(self):
+        self.debug.new_line()
         self.debug.log("Continue game entered")
         self.scene_window.run()
         
@@ -200,16 +209,63 @@ class Main():
     def new_game_confirmation(self):
         # Sprite groups
         objects = pygame.sprite.Group()
+        hoverable_buttons = pygame.sprite.Group()
+        buttons = pygame.sprite.Group()
         
         # Screen objects
         background = MenuBackground(
-            self.screen, 0.5,
+            self.screen, 0.45,
             image=self.data.meta_images["menu_background"])
-        objects.add(background)
-        # confirmation_message = Message(
-        #     self.screen, 
-        #     ["Are you sure you want to "]
-        # )
+        background.add(objects, buttons)
+        
+        # Inner functions just for the functionality of the buttons
+        def confirm():
+            background.enable = False
+            self.create_new_game()
+        def cancel():
+            background.enable = False
+        
+        canvas_rect = background.rect
+        confirmation_message = Message(
+            self.screen, 
+            ["Are you sure you want",
+             " to start a new game?", "",
+             "All your progress will", 
+             "be reset."],
+            self.data.medium_font,
+            self.data.colors["white"],
+            outline_color=self.data.colors["black"],
+            outline_thickness=2,
+            center_coordinates=(
+                int(canvas_rect.width * 0.50) + canvas_rect.x,
+                int(canvas_rect.height * 0.22) + canvas_rect.y
+            )
+        )
+        confirmation_message.add(objects)
+        
+        confirm_button = Button(
+            self.screen,
+            self.data.meta_images["confirm_button_idle"],
+            self.data.meta_images["confirm_button_hovered"],
+            confirm,
+            center_coordinates=(
+                int(canvas_rect.width * 0.32) + canvas_rect.x,
+                int(canvas_rect.height * 0.77) + canvas_rect.y
+            )
+        )
+        confirm_button.add(objects, buttons, hoverable_buttons)
+        
+        cancel_button = Button(
+            self.screen,
+            self.data.meta_images["cancel_button_idle"],
+            self.data.meta_images["cancel_button_hovered"],
+            cancel,
+            center_coordinates=(
+                int(canvas_rect.width * 0.73) + canvas_rect.x,
+                int(canvas_rect.height * 0.77) + canvas_rect.y
+            )
+        )
+        cancel_button.add(objects, buttons, hoverable_buttons)
         
         # Screen dimming
         self.display_surface.set_alpha(128)
@@ -223,11 +279,14 @@ class Main():
                 if event.type == pygame.QUIT: 
                     # Closing the game properly
                     self.close_game()
+                elif event.type == pygame.MOUSEMOTION: 
+                    for button in hoverable_buttons:
+                        button.check_hovered(event.pos)
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 1:
                         mouse_pos = event.pos
-                        for obj in objects:
-                            obj.check_clicked(mouse_pos)
+                        for button in buttons:
+                            button.check_clicked(mouse_pos)
             
             # Updating the display
             self.refresh_display()
@@ -296,6 +355,8 @@ class Main():
                     self.mouse_click_events(event)
                 elif event.type == pygame.MOUSEMOTION: 
                     self.mouse_drag_events(event)
+                elif event.type == pygame.KEYDOWN:
+                    self.global_key_down_events(event.key)
                 
             # Key pressing events (holding keys applicable)
             keys = pygame.key.get_pressed()

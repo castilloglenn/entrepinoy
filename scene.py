@@ -104,6 +104,10 @@ class Scene():
         # Main loop
         self.running = False
         
+        
+    def reset(self):
+        self.time.set_time(self.main.data.progress["time"])
+    
     
     def time_callback_seconds(self, time_amplification):
         pass
@@ -182,9 +186,9 @@ class Scene():
                 
                 
     def key_down_events(self, key):
+        self.main.global_key_down_events(key)
         if key == pygame.K_F1:
-            self.main.debug.log(f"[T] Objects in memory: {len(self.general_sprites)}")
-            self.main.debug.memory_log()
+            self.main.debug.log(f"Objects in memory: {len(self.general_sprites)}")
         elif key == pygame.K_F2:
             self.main.debug.log("Exited scene via F2-shortcut")
             self.update_data()
@@ -240,23 +244,25 @@ class Scene():
             self.general_sprites.update()
             self.crowd.draw(self.main.screen)
             
+            self.main.data.progress["cash"] += 1
+            
             # Event processing
             for event in pygame.event.get():
                 if event.type == pygame.QUIT: 
                     self.running = False
                     self.close_game()
-                if event.type == pygame.MOUSEBUTTONDOWN: 
+                elif event.type == pygame.MOUSEBUTTONDOWN: 
                     self.mouse_click_events(event)
-                if event.type == pygame.MOUSEMOTION: 
+                elif event.type == pygame.MOUSEMOTION: 
                     self.mouse_drag_events(event)
-                if event.type == pygame.KEYDOWN:
+                elif event.type == pygame.KEYDOWN:
                     self.key_down_events(event.key)
                 
                 # Custom event timers
-                if event.type == self.autosave_id:
+                elif event.type == self.autosave_id:
                     self.update_data()
                     self.main.debug.log("Autosaved progress")
-                if event.type == self.crowd_spawner_id:
+                elif event.type == self.crowd_spawner_id:
                     random_value = random.randint(0, 100)
                     if random_value <= self.crowd_chance[self.time.time.hour]:
                         self.footprint_counter += 1
@@ -267,7 +273,7 @@ class Scene():
                             self.main.data.crowd_spritesheets[npc_form]["data"],
                             self.main.data.setting["fps"]
                         ).add(self.general_sprites, self.crowd)
-                if event.type == self.memory_debug_id:
+                elif event.type == self.memory_debug_id:
                     self.main.debug.log(f"[A] Objects in memory: {len(self.general_sprites)}")
                     self.main.debug.memory_log()
                 
