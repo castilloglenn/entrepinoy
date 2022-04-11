@@ -83,8 +83,7 @@ class Main():
         # self.present_intro()
         
         # Main loop
-        self.debug.new_line()
-        self.debug.log("Memory after initializing main menu:")
+        self.debug.log("Memory after initialization:")
         self.debug.memory_log()
         
         self.running = True

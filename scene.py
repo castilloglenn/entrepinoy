@@ -66,7 +66,7 @@ class Scene():
         
         # Logging entry point
         self.main.debug.new_line()
-        self.main.debug.log("Entered scene")
+        self.main.debug.log("Initialized scene")
         
         # Sprites and sprite groups
         self.general_sprites = pygame.sprite.Group()
