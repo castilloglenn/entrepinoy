@@ -1,91 +1,28 @@
-[19:00:39:247] Debug started
-[19:00:39:321] Memory Usage: 36.65MB
+[19:34:54:171] Debug started
+[19:34:54:209] Memory Usage: 24.20MB
 
-[19:00:39:691] Game Title: EntrePinoy
-[19:00:39:692] Game Version: 0.0.1
-[19:00:39:724] Display Width: 1280
-[19:00:39:732] Display Height: 720
-[19:00:39:742] Game FPS: 60
+[19:34:54:477] Game Title: EntrePinoy
+[19:34:54:481] Game Version: 0.0.1
+[19:34:54:505] Display Width: 1280
+[19:34:54:511] Display Height: 720
+[19:34:54:515] Game FPS: 60
 
-[19:00:39:768] 
+[19:34:54:522] 
 Time amplification: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 
-[19:00:39:795] Entered scene
+[19:34:54:532] Entered scene
 
-[19:00:39:842] Memory after initializing main menu:
-[19:00:39:908] Memory Usage: 129.24MB
+[19:34:54:556] Memory after initializing main menu:
+[19:34:54:597] Memory Usage: 113.90MB
 
+[19:34:55:443] Create new game entered
+[19:34:55:447] Initial memory and object statistics:
+[19:34:55:450] Total crowd objects: 4
+[19:34:55:487] Memory Usage: 115.28MB
 
-[19:00:55:951] Continue game entered
-[19:00:55:958] Initial memory and object statistics:
-[19:00:55:965] Total crowd objects: 4
-[19:00:56:016] Memory Usage: 128.72MB
+[19:34:55:496] Hour callback
+[19:35:04:063] Autosaved progress before exit
 
-[19:00:59:798] Autosaved progress
-[19:01:09:799] Autosaved progress
-[19:01:10:142] Profile clicked
-[19:01:11:087] Profile clicked
-[19:01:11:367] Profile clicked
-[19:01:11:402] Profile clicked
-[19:01:11:561] Profile clicked
-[19:01:13:834] Hour callback
-[19:01:19:802] Autosaved progress
-[19:01:20:815] Profile clicked
-[19:01:29:794] Autosaved progress
-[19:01:38:460] Hour callback
-[19:01:39:805] [A] Objects in memory: 6
-[19:01:39:859] Memory Usage: 127.44MB
-[19:01:39:868] Autosaved progress
-[19:01:49:792] Autosaved progress
-[19:01:59:806] Autosaved progress
-[19:02:03:103] Hour callback
-[19:02:09:795] Autosaved progress
-[19:02:19:806] Autosaved progress
-[19:02:27:883] Hour callback
-[19:02:29:803] Autosaved progress
-[19:02:39:804] [A] Objects in memory: 12
-[19:02:39:888] Memory Usage: 129.25MB
-[19:02:39:902] Autosaved progress
-[19:02:49:806] Autosaved progress
-[19:02:52:900] Hour callback
-[19:02:59:803] Autosaved progress
-[19:03:09:794] Autosaved progress
-[19:03:18:149] Hour callback
-[19:03:19:856] Autosaved progress
-[19:03:29:835] Autosaved progress
-[19:03:39:802] [A] Objects in memory: 11
-[19:03:39:862] Memory Usage: 133.25MB
-[19:03:39:874] Autosaved progress
-[19:03:43:816] Hour callback
-[19:03:49:816] Autosaved progress
-[19:03:59:816] Autosaved progress
-[19:04:08:526] Hour callback
-[19:04:09:820] Autosaved progress
-[19:04:19:822] Autosaved progress
-[19:04:29:822] Autosaved progress
-[19:04:33:682] Hour callback
-[19:04:39:806] [A] Objects in memory: 10
-[19:04:39:892] Memory Usage: 133.28MB
-[19:04:39:903] Autosaved progress
-[19:04:49:823] Autosaved progress
-[19:04:58:731] Hour callback
-[19:04:59:819] Autosaved progress
-[19:05:09:833] Autosaved progress
-[19:05:19:832] Autosaved progress
-[19:05:23:567] Hour callback
-[19:05:29:836] Autosaved progress
-[19:05:39:805] [A] Objects in memory: 20
-[19:05:45:099] Memory Usage: 133.80MB
-[19:05:45:108] Autosaved progress
-[19:05:49:826] Autosaved progress
-[19:05:54:344] Hour callback
-[19:05:59:833] Autosaved progress
-[19:06:09:844] Autosaved progress
-[19:06:19:803] Hour callback
-[19:06:19:841] Autosaved progress
-[19:06:29:824] Autosaved progress
-[19:06:31:130] Autosaved progress before exit
-
-[19:06:31:187] Debug closed
+[19:35:04:121] Debug closed
