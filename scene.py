@@ -1,3 +1,4 @@
+from game.sprite.business import Business
 from game.sprite.sprite_group import SpriteGroup
 from game.sprite.scene_background import SceneBackground
 from game.sprite.menu_background import MenuBackground
@@ -71,20 +72,42 @@ class Scene():
         self.general_sprites = pygame.sprite.Group()
         self.buttons = pygame.sprite.Group()
         self.crowd = SpriteGroup()
+        
+        # Scene components
         self.background = SceneBackground(
             self.main.screen, 
             self.time, 
             **self.main.data.background
         )
+        self.background.add(self.general_sprites)
         
-        # Scene components
+        self.business_1 = Business(
+            self.main.screen, 
+            "sari_sari_store",
+            self.business_1_callback,
+            center_coordinates=(
+                int(self.main.data.setting["game_width"] * 0.35),
+                int(self.main.data.setting["game_height"] * 0.28)
+            ), **{
+                "idle" : self.main.data.business_images["sari_sari_store"]["idle"],
+                "hovered" : self.main.data.business_images["sari_sari_store"]["hovered"],
+                "closed" : self.main.data.business_images["sari_sari_store"]["closed"],
+                "closed_hovered" : self.main.data.business_images["sari_sari_store"]["closed_hovered"],
+            }
+        )
+        self.business_1.add(self.general_sprites)
+        
         self.profile_holder = Button(
             self.main.screen,
-            self.main.data.scene["profile_holder_idle"],
-            self.main.data.scene["profile_holder_hovered"],
             self.profile_callback,
-            top_left_coordinates=(10, 10)
+            top_left_coordinates=(10, 10),
+            **{
+                "idle" : self.main.data.scene["profile_holder_idle"],
+                "hovered" : self.main.data.scene["profile_holder_hovered"]
+            }
         )
+        self.profile_holder.add(self.general_sprites)
+        
         self.profile_message = Message(
             self.main.screen, 
                 [
@@ -97,9 +120,11 @@ class Scene():
             self.main.data.colors["orange"],
             top_left_coordinates=(160, 75)
         )
-        self.background.add(self.general_sprites)
-        self.profile_holder.add(self.general_sprites, self.buttons)
         self.profile_message.add(self.general_sprites)
+        
+        # Buttons layering hierarchy (the top layer must be add first)
+        self.profile_holder.add(self.buttons)
+        self.business_1.add(self.buttons)
         
         # Main loop
         self.running = False
@@ -110,6 +135,7 @@ class Scene():
     
     
     def time_callback_seconds(self, time_amplification):
+        # self.main.data.progress["cash"] += 1
         pass
         
     
@@ -142,6 +168,14 @@ class Scene():
     
     def profile_callback(self):
         self.main.debug.log("Profile clicked")
+        
+    
+    def business_1_callback(self):
+        state = self.business_1.business_state
+        if state == "open":
+            self.business_1.set_business_state("closed")
+        elif state == "closed":
+            self.business_1.set_business_state("open")
                 
                                 
     def mouse_click_events(self, event):
@@ -150,7 +184,10 @@ class Scene():
         # If the user clicked on left mouse button
         if event.button == 1: 
             for button in self.buttons:
-                button.check_clicked(click_coordinates)
+                # Adding halting statement to prevent other buttons to
+                #   react the same way/overlap reactions
+                if button.check_clicked(click_coordinates):
+                    break
             
         # If the user clicked on the right mouse button
         if event.button == 3: 
@@ -181,8 +218,15 @@ class Scene():
             
         # Hovering through display check
         else:
+            overlapped = False
             for button in self.buttons:
-                button.check_hovered(self.last_mouse_pos)
+                # Adding halting statement to prevent other buttons to
+                #   react the same way/overlap reactions
+                if overlapped:
+                    button.state = "idle"
+                    button.set_image_and_rect()
+                elif button.check_hovered(self.last_mouse_pos):
+                    overlapped = True
                 
                 
     def key_down_events(self, key):
@@ -244,8 +288,6 @@ class Scene():
             self.general_sprites.update()
             self.crowd.draw(self.main.screen)
             
-            self.main.data.progress["cash"] += 1
-            
             # Event processing
             for event in pygame.event.get():
                 if event.type == pygame.QUIT: 
@@ -266,7 +308,7 @@ class Scene():
                     random_value = random.randint(0, 100)
                     if random_value <= self.crowd_chance[self.time.time.hour]:
                         self.footprint_counter += 1
-                        npc_form = str(random.randint(0, 1))
+                        npc_form = str(random.randint(0, 2))
                         NPC(
                             self.main.screen, npc_form, 
                             self.main.data.crowd_spritesheets[npc_form]["sheet"],

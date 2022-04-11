@@ -48,23 +48,27 @@ class Main():
         self.buttons = pygame.sprite.Group()
         self.new_game_button = Button(
             self.screen, 
-            self.data.title_screen["new_game_idle"],
-            self.data.title_screen["new_game_hovered"],
             self.check_save_file,
             center_coordinates=
                 (self.data.horizontal_center, 
                 int(self.data.setting["game_height"] * 0.65)),
+            **{
+                "idle" : self.data.title_screen["new_game_idle"],
+                "hovered" : self.data.title_screen["new_game_hovered"],
+            }
         )
         self.new_game_button.add(self.buttons)
         
         self.continue_button = Button(
             self.screen, 
-            self.data.title_screen["continue_idle"],
-            self.data.title_screen["continue_hovered"],
             self.continue_game,
             center_coordinates=
                 (self.data.horizontal_center, 
                 int(self.data.setting["game_height"] * 0.82)),
+            **{
+                "idle" : self.data.title_screen["continue_idle"],
+                "hovered" : self.data.title_screen["continue_hovered"],
+            }
         )
         self.continue_button_included = False
         if self.data.progress is not None:
@@ -244,26 +248,28 @@ class Main():
         confirmation_message.add(objects)
         
         confirm_button = Button(
-            self.screen,
-            self.data.meta_images["confirm_button_idle"],
-            self.data.meta_images["confirm_button_hovered"],
-            confirm,
+            self.screen,  confirm,
             center_coordinates=(
                 int(canvas_rect.width * 0.32) + canvas_rect.x,
                 int(canvas_rect.height * 0.77) + canvas_rect.y
-            )
+            ),
+            **{
+                "idle" : self.data.meta_images["confirm_button_idle"],
+                "hovered" : self.data.meta_images["confirm_button_hovered"]
+            }
         )
         confirm_button.add(objects, buttons, hoverable_buttons)
         
         cancel_button = Button(
-            self.screen,
-            self.data.meta_images["cancel_button_idle"],
-            self.data.meta_images["cancel_button_hovered"],
-            cancel,
+            self.screen, cancel,
             center_coordinates=(
                 int(canvas_rect.width * 0.73) + canvas_rect.x,
                 int(canvas_rect.height * 0.77) + canvas_rect.y
-            )
+            ),
+            **{
+                "idle" : self.data.meta_images["cancel_button_idle"],
+                "hovered" : self.data.meta_images["cancel_button_hovered"]
+            },
         )
         cancel_button.add(objects, buttons, hoverable_buttons)
         
@@ -279,6 +285,9 @@ class Main():
                 if event.type == pygame.QUIT: 
                     # Closing the game properly
                     self.close_game()
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        background.enable = False
                 elif event.type == pygame.MOUSEMOTION: 
                     for button in hoverable_buttons:
                         button.check_hovered(event.pos)

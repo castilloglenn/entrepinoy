@@ -64,14 +64,60 @@ class Library():
             "profile_holder_hovered" : self.get_image("scene", "profile_holder_hovered.png")
         }
         self.crowd_spritesheets = {
+            "-1" : {
+                "sheet" : self.get_image("test", "test.png"),
+                "data" : self.get_dict_from_spritesheet("test", "test.json")
+            },
             "0" : {
                 "sheet" : self.get_image("crowd", "0.png"),
                 "data" : self.get_dict_from_spritesheet("crowd", "0.json")
             },
             "1" : {
-                "sheet" : self.get_image("test", "test.png"),
-                "data" : self.get_dict_from_spritesheet("test", "test.json")
+                "sheet" : self.get_image("crowd", "1.png"),
+                "data" : self.get_dict_from_spritesheet("crowd", "1.json")
             },
+            "2" : {
+                "sheet" : self.get_image("crowd", "2.png"),
+                "data" : self.get_dict_from_spritesheet("crowd", "2.json")
+            },
+        }
+        self.business_images = {
+            "buko_stall" : {
+                "idle" : self.get_image("business", "buko_stall_idle.png"),
+                "hovered" : self.get_image("business", "buko_stall_hovered.png"),
+                "closed" : None,
+                "closed_hovered" : None
+            },
+            "fish_ball_stand" : {
+                "idle" : self.get_image("business", "fish_ball_stand_idle.png"),
+                "hovered" : self.get_image("business", "fish_ball_stand_hovered.png"),
+                "closed" : None,
+                "closed_hovered" : None
+            },
+            "sorbetes" : {
+                "idle" : self.get_image("business", "sorbetes_idle.png"),
+                "hovered" : self.get_image("business", "sorbetes_hovered.png"),
+                "closed" : None,
+                "closed_hovered" : None
+            },
+            "sari_sari_store" : {
+                "idle" : self.get_image("business", "sari_sari_store_idle.png"),
+                "hovered" : self.get_image("business", "sari_sari_store_hovered.png"),
+                "closed" : self.get_image("business", "sari_sari_store_closed_idle.png"),
+                "closed_hovered" : self.get_image("business", "sari_sari_store_closed_hovered.png")
+            },
+            "ukay_ukay" : {
+                "idle" : self.get_image("business", "ukay_ukay_idle.png"),
+                "hovered" : self.get_image("business", "ukay_ukay_hovered.png"),
+                "closed" : self.get_image("business", "ukay_ukay_closed_idle.png"),
+                "closed_hovered" : self.get_image("business", "ukay_ukay_closed_hovered.png")
+            },
+            "food_cart" : {
+                "idle" : self.get_image("business", "food_cart_idle.png"),
+                "hovered" : self.get_image("business", "food_cart_hovered.png"),
+                "closed" : None,
+                "closed_hovered" : None
+            }
         }
         
         # Common Coordinates (converted to integers)
