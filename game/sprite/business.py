@@ -10,11 +10,13 @@ class Business(Button):
     def __init__(self, screen, name, callback_function, 
                  top_left_coordinates=None, 
                  center_coordinates=None, 
+                 collide_rect=None,
                  **states):
         super().__init__(screen,
             callback_function, 
             top_left_coordinates=top_left_coordinates, 
             center_coordinates=center_coordinates,
+            collide_rect=collide_rect,
             **states)
         
         self.name = name

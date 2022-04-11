@@ -86,9 +86,11 @@ class Scene():
             "sari_sari_store",
             self.business_1_callback,
             center_coordinates=(
-                int(self.main.data.setting["game_width"] * 0.35),
-                int(self.main.data.setting["game_height"] * 0.28)
-            ), **{
+                int(self.main.data.setting["game_width"] * 0.37),
+                int(self.main.data.setting["game_height"] * 0.35)
+            ), 
+            collide_rect=(0.77, 1),
+            **{
                 "idle" : self.main.data.business_images["sari_sari_store"]["idle"],
                 "hovered" : self.main.data.business_images["sari_sari_store"]["hovered"],
                 "closed" : self.main.data.business_images["sari_sari_store"]["closed"],

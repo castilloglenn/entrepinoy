@@ -1,104 +1,36 @@
-<<<<<<< HEAD
-[19:34:00:058] Debug started
-[19:34:00:108] Memory Usage: 36.61MB
+[21:14:41:356] Debug started
+[21:14:41:412] Memory Usage: 36.89MB
 
-[19:34:00:450] Game Title: EntrePinoy
-[19:34:00:451] Game Version: 0.0.1
-[19:34:00:483] Display Width: 1280
-[19:34:00:492] Display Height: 720
-[19:34:00:501] Game FPS: 60
+[21:14:41:739] Game Title: EntrePinoy
+[21:14:41:740] Game Version: 0.0.1
+[21:14:41:773] Display Width: 1280
+[21:14:41:781] Display Height: 720
+[21:14:41:789] Game FPS: 60
 
-[19:34:00:519] 
-=======
-[19:34:54:171] Debug started
-[19:34:54:209] Memory Usage: 24.20MB
-
-[19:34:54:477] Game Title: EntrePinoy
-[19:34:54:481] Game Version: 0.0.1
-[19:34:54:505] Display Width: 1280
-[19:34:54:511] Display Height: 720
-[19:34:54:515] Game FPS: 60
-
-[19:34:54:522] 
->>>>>>> f41928acdf025b568339d675842e3c790057dab2
+[21:14:41:803] 
 Time amplification: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 
-<<<<<<< HEAD
-[19:34:00:539] Initialized scene
-[19:34:00:566] Memory after initialization:
-[19:34:00:616] Memory Usage: 129.39MB
+[21:14:41:826] Initialized scene
+[21:14:41:863] Memory after initialization:
+[21:14:41:926] Memory Usage: 126.37MB
 
 
-[19:34:07:161] Continue game entered
-[19:34:07:168] Initial memory and object statistics:
-[19:34:07:173] Total crowd objects: 4
-[19:34:07:224] Memory Usage: 129.54MB
+[21:14:42:920] Continue game entered
+[21:14:42:925] Initial memory and object statistics:
+[21:14:42:931] Total crowd objects: 4
+[21:14:42:981] Memory Usage: 126.50MB
 
-[19:34:10:543] Autosaved progress
-[19:34:11:024] Profile clicked
-[19:34:11:283] Profile clicked
-[19:34:11:520] Profile clicked
-[19:34:11:743] Profile clicked
-[19:34:15:121] Profile clicked
-[19:34:20:551] Autosaved progress
-[19:34:20:799] Hour callback
-[19:34:30:547] Autosaved progress
-[19:34:40:537] Autosaved progress
-[19:34:45:247] Hour callback
-[19:34:50:551] Autosaved progress
-[19:35:00:537] [A] Objects in memory: 34
-[19:35:00:590] Memory Usage: 142.55MB
-[19:35:00:598] Autosaved progress
-[19:35:10:542] Autosaved progress
-[19:35:10:603] Hour callback
-[19:35:20:535] Autosaved progress
-[19:35:30:542] Autosaved progress
-[19:35:35:863] Hour callback
-[19:35:40:542] Autosaved progress
-[19:35:50:535] Autosaved progress
-[19:36:00:545] [A] Objects in memory: 28
-[19:36:00:652] Memory Usage: 141.18MB
-[19:36:00:653] Autosaved progress
-[19:36:01:700] Hour callback
-[19:36:10:538] Autosaved progress
-[19:36:20:544] Autosaved progress
-[19:36:26:831] Hour callback
-[19:36:30:537] Autosaved progress
-[19:36:40:551] Autosaved progress
-[19:36:50:543] Autosaved progress
-[19:36:51:818] Hour callback
-[19:37:00:545] [A] Objects in memory: 6
-[19:37:00:597] Memory Usage: 139.06MB
-[19:37:00:603] Autosaved progress
-[19:37:10:553] Autosaved progress
-[19:37:16:597] Hour callback
-[19:37:20:551] Autosaved progress
-[19:37:30:555] Autosaved progress
-[19:37:40:552] Autosaved progress
-[19:37:41:881] Hour callback
-[19:37:41:882] Day callback
-[19:37:50:555] Autosaved progress
-[19:38:00:548] [A] Objects in memory: 6
-[19:38:00:613] Memory Usage: 139.08MB
-[19:38:00:615] Autosaved progress
-[19:38:03:200] Autosaved progress before exit
+[21:14:51:832] Autosaved progress
+[21:14:59:382] Profile clicked
+[21:15:00:185] Profile clicked
+[21:15:00:574] Profile clicked
+[21:15:01:586] Profile clicked
+[21:15:01:832] Autosaved progress
+[21:15:01:832] Profile clicked
+[21:15:02:026] Profile clicked
+[21:15:02:204] Profile clicked
+[21:15:04:374] Autosaved progress before exit
 
-[19:38:03:258] Debug closed
-=======
-[19:34:54:532] Entered scene
-
-[19:34:54:556] Memory after initializing main menu:
-[19:34:54:597] Memory Usage: 113.90MB
-
-[19:34:55:443] Create new game entered
-[19:34:55:447] Initial memory and object statistics:
-[19:34:55:450] Total crowd objects: 4
-[19:34:55:487] Memory Usage: 115.28MB
-
-[19:34:55:496] Hour callback
-[19:35:04:063] Autosaved progress before exit
-
-[19:35:04:121] Debug closed
->>>>>>> f41928acdf025b568339d675842e3c790057dab2
+[21:15:04:430] Debug closed
