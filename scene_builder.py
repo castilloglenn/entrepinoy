@@ -4,12 +4,15 @@ from game.sprite.scene_background import SceneBackground
 from game.sprite.menu_background import MenuBackground
 from game.sprite.message import Message
 from game.sprite.button import Button
+from game.customer import Customer
 from game.npc import NPC
 
 from game.library import Library
 from game.debug import Debugger
 from game.time import Time
 
+from datetime import datetime
+from pprint import pprint
 import pygame
 import random
 
@@ -25,6 +28,7 @@ class Scene():
         self.main = main
         self.location = "location_a" # TODO test location
         self.crowd_chance = self.main.data.crowd_statistics[self.location]
+        self.customer_chance = self.main.data.customer_statistics[self.location]
         
         # Setting up the clock
         self.callbacks = {
@@ -81,6 +85,16 @@ class Scene():
         )
         self.background.add(self.general_sprites)
         
+        # Internal variables
+        self.business_data = {}
+        # Safe spot is somewhere in the middle so that the customers will
+        #   go there first before going to the back layer of businesses
+        #   to avoid rendering confusions or going through walls
+        # This is location-specific
+        self.safe_spot = (0.5, 0.70)
+        self.crowd_limit = 50
+        
+        # TODO business_1 will deprecate soon when dynamic scene builder is completed
         self.business_1 = Business(
             self.main.screen, 
             "sari_sari_store",
@@ -97,7 +111,11 @@ class Scene():
                 "closed_hovered" : self.main.data.business_images["sari_sari_store"]["closed_hovered"],
             }
         )
+        self.business_data["sari_sari_store"] = {}
+        self.business_data["sari_sari_store"]["meta"] = self.main.data.business["sari_sari_store"]
+        self.business_data["sari_sari_store"]["object"] = self.business_1
         self.business_1.add(self.general_sprites)
+        pprint(self.business_data)
         
         self.profile_holder = Button(
             self.main.screen,
@@ -133,6 +151,8 @@ class Scene():
         
         
     def reset(self):
+        self.location = "location_a" # TODO test location
+        self.crowd_chance = self.main.data.crowd_statistics[self.location]
         self.time.set_time(self.main.data.progress["time"])
     
     
@@ -264,6 +284,8 @@ class Scene():
     def update_data(self):
         # Update the json data from the main class
         self.main.data.progress["time"] = self.time.get_full()
+        self.main.data.progress["last_login"] = datetime.strftime(
+            datetime.now(), self.time.format)
         
         # Saving the json to the save file
         self.main.data.set_dict_to_json(
@@ -307,16 +329,27 @@ class Scene():
                     self.update_data()
                     self.main.debug.log("Autosaved progress")
                 elif event.type == self.crowd_spawner_id:
-                    random_value = random.randint(0, 100)
-                    if random_value <= self.crowd_chance[self.time.time.hour]:
+                    npc_chance = random.randint(0, 100) 
+                    if npc_chance <= self.crowd_chance[self.time.time.hour] \
+                            and len(self.crowd) < self.crowd_limit: 
                         self.footprint_counter += 1
                         npc_form = str(random.randint(0, 2))
-                        NPC(
-                            self.main.screen, npc_form, 
-                            self.main.data.crowd_spritesheets[npc_form]["sheet"],
-                            self.main.data.crowd_spritesheets[npc_form]["data"],
-                            self.main.data.setting["fps"]
-                        ).add(self.general_sprites, self.crowd)
+                        customer_chance = random.randint(0, 100) 
+                        if customer_chance <= self.customer_chance[self.time.time.hour]:
+                            Customer(
+                                self.main.screen, npc_form,
+                                self.main.data.crowd_spritesheets[npc_form]["sheet"],
+                                self.main.data.crowd_spritesheets[npc_form]["data"],
+                                self.main.data.setting["fps"],
+                                self.safe_spot, **self.business_data
+                            ).add(self.general_sprites, self.crowd)
+                        else:
+                            NPC(
+                                self.main.screen, npc_form, 
+                                self.main.data.crowd_spritesheets[npc_form]["sheet"],
+                                self.main.data.crowd_spritesheets[npc_form]["data"],
+                                self.main.data.setting["fps"]
+                            ).add(self.general_sprites, self.crowd)
                 elif event.type == self.memory_debug_id:
                     self.main.debug.log(f"[A] Objects in memory: {len(self.general_sprites)}")
                     self.main.debug.memory_log()

@@ -2,8 +2,6 @@ from game.sprite.spritesheet import Spritesheet
 import pygame
 import random
 
-import gc
-
 
 class NPC(Spritesheet):
     """
@@ -46,6 +44,10 @@ class NPC(Spritesheet):
                 0 - self.rect.width,
                 random.randint(self.crowd_top, self.crowd_bottom)
             )
+            
+    
+    def animate(self):
+        super().update()
         
         
     def update(self):
@@ -64,5 +66,5 @@ class NPC(Spritesheet):
             
             self.speed_tick -= absolute_movement
         
-        super().update()
+        self.animate()
     

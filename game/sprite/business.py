@@ -7,7 +7,8 @@ class Business(Button):
     This class handles the business interface in the scene.
     It controls its attributes and the states when it is open or closed.
     """
-    def __init__(self, screen, name, callback_function, 
+    def __init__(self, screen, name, 
+                 callback_function, 
                  top_left_coordinates=None, 
                  center_coordinates=None, 
                  collide_rect=None,
@@ -22,6 +23,7 @@ class Business(Button):
         self.name = name
         self.states = states
         self.business_state = "open"
+        self.has_employee = False
         
         
     def set_business_state(self, new_state: str):

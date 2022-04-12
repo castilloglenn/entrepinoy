@@ -4,7 +4,7 @@ from game.sprite.button import Button
 from game.debug import Debugger
 from game.library import Library
 
-from scene import Scene
+from scene_builder import Scene
 
 import pygame
 import os, sys

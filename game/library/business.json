@@ -6,6 +6,8 @@
             "fish_ball_stand",
             "sorbetes"
         ],
+        "placement": "front",
+        "queuing_point" : 0.5,
         "initial_cost" : 5000.0,
         "daily_expenses" : 350.0,
         "employee_cost": 150.0,
@@ -17,6 +19,8 @@
     "sari_sari_store" : {
         "name" : "Sari Sari Store",
         "image_name" : "sari_sari_store",
+        "queuing_point" : 0.75,
+        "placement": "back",
         "initial_cost" : 2000.0,
         "daily_expenses" : 150.0,
         "customer_flow_start" : 0,
@@ -27,6 +31,8 @@
     "ukay_ukay" : {
         "name" : "Ukay Ukay",
         "image_name" : "ukay_ukay",
+        "queuing_point" : 0.5,
+        "placement": "back",
         "initial_cost" : 4000.0,
         "daily_expenses" : 500.0,
         "customer_flow_start" : 7,
@@ -37,6 +43,8 @@
     "food_cart" : {
         "name" : "Foodcart",
         "image_name" : "food_cart",
+        "queuing_point" : 0.5,
+        "placement": "front",
         "initial_cost" : 5000.0,
         "daily_expenses" : 750.0,
         "customer_flow_start" : 6,

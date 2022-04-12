@@ -32,6 +32,10 @@ class Spritesheet(Sprite):
         # Parsing all the sprites contained in the spritesheet
         for index in range(len(self.data['frames'])):
             self.sprites.append(self.fetch_sprite(f'{self.name}_{index + 1}.png'))
+        
+        # Setting the standing animation for the sprite
+        self.standing = False
+        self.standing_sprite = self.sprites.pop()
             
         self.image = self.sprites[self.sprite_index]
         self.rect = self.image.get_rect()
@@ -60,15 +64,21 @@ class Spritesheet(Sprite):
 
 
     def update(self):
-        self.animation_tick += 1
-        if self.animation_tick >= self.animate_speed:
-            self.animation_tick = 0
-            self.sprite_index = (self.sprite_index + 1) % len(self.sprites)
-            
+        if self.standing:
             if self.is_flipped:
-                self.image = transform.flip(self.sprites[self.sprite_index], True, False)
+                self.image = transform.flip(self.standing_sprite, True, False)
             else:
-                self.image = self.sprites[self.sprite_index]
+                self.image = self.standing_sprite
+        else:
+            self.animation_tick += 1
+            if self.animation_tick >= self.animate_speed:
+                self.animation_tick = 0
+                self.sprite_index = (self.sprite_index + 1) % len(self.sprites)
+                
+                if self.is_flipped:
+                    self.image = transform.flip(self.sprites[self.sprite_index], True, False)
+                else:
+                    self.image = self.sprites[self.sprite_index]
             
         # Prevents the self-blitting due to the custom sprite group handles
         #   which sprite blits first based on their y-coordinates

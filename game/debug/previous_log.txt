@@ -1,36 +1,34 @@
-[21:14:41:356] Debug started
-[21:14:41:412] Memory Usage: 36.89MB
+[20:26:17:180] Debug started
+[20:26:17:229] Memory Usage: 37.13MB
 
-[21:14:41:739] Game Title: EntrePinoy
-[21:14:41:740] Game Version: 0.0.1
-[21:14:41:773] Display Width: 1280
-[21:14:41:781] Display Height: 720
-[21:14:41:789] Game FPS: 60
+[20:26:17:599] Game Title: EntrePinoy
+[20:26:17:600] Game Version: 0.0.1
+[20:26:17:634] Display Width: 1280
+[20:26:17:642] Display Height: 720
+[20:26:17:649] Game FPS: 60
 
-[21:14:41:803] 
+[20:26:17:663] 
 Time amplification: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 
-[21:14:41:826] Initialized scene
-[21:14:41:863] Memory after initialization:
-[21:14:41:926] Memory Usage: 126.37MB
+[20:26:17:686] Initialized scene
+[20:26:17:723] Memory after initialization:
+[20:26:17:776] Memory Usage: 126.51MB
 
 
-[21:14:42:920] Continue game entered
-[21:14:42:925] Initial memory and object statistics:
-[21:14:42:931] Total crowd objects: 4
-[21:14:42:981] Memory Usage: 126.50MB
+[20:26:18:298] Continue game entered
+[20:26:18:304] Initial memory and object statistics:
+[20:26:18:309] Total crowd objects: 4
+[20:26:18:351] Memory Usage: 126.60MB
 
-[21:14:51:832] Autosaved progress
-[21:14:59:382] Profile clicked
-[21:15:00:185] Profile clicked
-[21:15:00:574] Profile clicked
-[21:15:01:586] Profile clicked
-[21:15:01:832] Autosaved progress
-[21:15:01:832] Profile clicked
-[21:15:02:026] Profile clicked
-[21:15:02:204] Profile clicked
-[21:15:04:374] Autosaved progress before exit
+[20:26:25:974] Hour callback
+[20:26:27:691] Autosaved progress
+[20:26:37:688] Autosaved progress
+[20:26:47:689] Autosaved progress
+[20:26:50:719] Hour callback
+[20:26:57:693] Autosaved progress
+[20:27:07:687] Autosaved progress
+[20:27:10:358] Autosaved progress before exit
 
-[21:15:04:430] Debug closed
+[20:27:10:420] Debug closed
