@@ -54,7 +54,7 @@ class Main():
                 int(self.data.setting["game_height"] * 0.65)),
             **{
                 "idle" : self.data.title_screen["new_game_idle"],
-                "hovered" : self.data.title_screen["new_game_hovered"],
+                "outline" : self.data.title_screen["new_game_hovered"],
             }
         )
         self.new_game_button.add(self.buttons)
@@ -67,7 +67,7 @@ class Main():
                 int(self.data.setting["game_height"] * 0.82)),
             **{
                 "idle" : self.data.title_screen["continue_idle"],
-                "hovered" : self.data.title_screen["continue_hovered"],
+                "outline" : self.data.title_screen["continue_hovered"],
             }
         )
         self.continue_button_included = False
@@ -254,7 +254,7 @@ class Main():
             ),
             **{
                 "idle" : self.data.meta_images["confirm_button_idle"],
-                "hovered" : self.data.meta_images["confirm_button_hovered"]
+                "outline" : self.data.meta_images["confirm_button_hovered"]
             }
         )
         confirm_button.add(objects, buttons, hoverable_buttons)
@@ -267,7 +267,7 @@ class Main():
             ),
             **{
                 "idle" : self.data.meta_images["cancel_button_idle"],
-                "hovered" : self.data.meta_images["cancel_button_hovered"]
+                "outline" : self.data.meta_images["cancel_button_hovered"]
             },
         )
         cancel_button.add(objects, buttons, hoverable_buttons)

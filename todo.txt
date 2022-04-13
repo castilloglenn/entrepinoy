@@ -1,2 +1,4 @@
 simulate one business 
 try to find another way to monitor memory usage since WIM takes too long to boot
+change the hovering algorithm to adapt on outline-based instead of separate
+    outline graphics per state

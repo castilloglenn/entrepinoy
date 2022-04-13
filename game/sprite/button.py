@@ -35,7 +35,9 @@ class Button(Sprite):
         self.callback = callback_function
         
         self.idle = states["idle"].convert_alpha()
-        self.hovered = states["hovered"].convert_alpha()
+        self.hovered = states["idle"].convert_alpha()
+        self.outline = states["outline"].convert_alpha()
+        self.hovered.blit(self.outline, (0, 0))
         
         self.center_coordinates = center_coordinates
         self.top_left_coordinates = top_left_coordinates

@@ -106,7 +106,7 @@ class Scene():
             collide_rect=(0.77, 1),
             **{
                 "idle" : self.main.data.business_images["sari_sari_store"]["idle"],
-                "hovered" : self.main.data.business_images["sari_sari_store"]["hovered"],
+                "outline" : self.main.data.business_images["sari_sari_store"]["hovered"],
                 "closed" : self.main.data.business_images["sari_sari_store"]["closed"],
                 "closed_hovered" : self.main.data.business_images["sari_sari_store"]["closed_hovered"],
             }
@@ -123,7 +123,7 @@ class Scene():
             top_left_coordinates=(10, 10),
             **{
                 "idle" : self.main.data.scene["profile_holder_idle"],
-                "hovered" : self.main.data.scene["profile_holder_hovered"]
+                "outline" : self.main.data.scene["profile_holder_outline"]
             }
         )
         self.profile_holder.add(self.general_sprites)
@@ -198,6 +198,42 @@ class Scene():
             self.business_1.set_business_state("closed")
         elif state == "closed":
             self.business_1.set_business_state("open")
+            
+            
+    def check_queues_if_full(self):
+        for name, data in self.business_data.items():
+            print("length of the business queue: ", len(data["object"].queue))
+            if len(data["object"].queue) < data["object"].queue_limit:
+                return False
+        return True
+            
+            
+    def spawn_crowd_customer(self):
+        npc_chance = random.randint(0, 100) 
+        if npc_chance <= self.crowd_chance[self.time.time.hour] \
+                and len(self.crowd) < self.crowd_limit: 
+            self.footprint_counter += 1 # TODO Deprecated
+            npc_form = str(random.randint(0, 2))
+            is_businesses_full = self.check_queues_if_full()
+            print(f"is businesses full? {is_businesses_full}")
+            
+            customer_chance = random.randint(0, 100) 
+            if customer_chance <= self.customer_chance[self.time.time.hour] \
+                and not is_businesses_full:
+                Customer(
+                    self.main.screen, npc_form,
+                    self.main.data.crowd_spritesheets[npc_form]["sheet"],
+                    self.main.data.crowd_spritesheets[npc_form]["data"],
+                    self.main.data.setting["fps"],
+                    self.safe_spot, **self.business_data
+                ).add(self.general_sprites, self.crowd)
+            else:
+                NPC(
+                    self.main.screen, npc_form, 
+                    self.main.data.crowd_spritesheets[npc_form]["sheet"],
+                    self.main.data.crowd_spritesheets[npc_form]["data"],
+                    self.main.data.setting["fps"]
+                ).add(self.general_sprites, self.crowd)
                 
                                 
     def mouse_click_events(self, event):
@@ -260,6 +296,8 @@ class Scene():
             self.update_data()
             self.main.debug.log("Autosaved progress before exit")  
             self.running = False
+        elif key == pygame.K_F3:
+            self.business_data["sari_sari_store"]["object"].serve_customer()
 
 
     def key_hold_events(self, keys):
@@ -329,27 +367,7 @@ class Scene():
                     self.update_data()
                     self.main.debug.log("Autosaved progress")
                 elif event.type == self.crowd_spawner_id:
-                    npc_chance = random.randint(0, 100) 
-                    if npc_chance <= self.crowd_chance[self.time.time.hour] \
-                            and len(self.crowd) < self.crowd_limit: 
-                        self.footprint_counter += 1
-                        npc_form = str(random.randint(0, 2))
-                        customer_chance = random.randint(0, 100) 
-                        if customer_chance <= self.customer_chance[self.time.time.hour]:
-                            Customer(
-                                self.main.screen, npc_form,
-                                self.main.data.crowd_spritesheets[npc_form]["sheet"],
-                                self.main.data.crowd_spritesheets[npc_form]["data"],
-                                self.main.data.setting["fps"],
-                                self.safe_spot, **self.business_data
-                            ).add(self.general_sprites, self.crowd)
-                        else:
-                            NPC(
-                                self.main.screen, npc_form, 
-                                self.main.data.crowd_spritesheets[npc_form]["sheet"],
-                                self.main.data.crowd_spritesheets[npc_form]["data"],
-                                self.main.data.setting["fps"]
-                            ).add(self.general_sprites, self.crowd)
+                    self.spawn_crowd_customer()
                 elif event.type == self.memory_debug_id:
                     self.main.debug.log(f"[A] Objects in memory: {len(self.general_sprites)}")
                     self.main.debug.memory_log()
