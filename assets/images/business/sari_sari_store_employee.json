@@ -1,0 +1,195 @@
+{
+	"frames": {
+		"sari_sari_store_employee_1.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 447,
+				"h": 399
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 447,
+				"h": 399
+			},
+			"sourceSize": {
+				"w": 447,
+				"h": 399
+			}
+		},
+		"sari_sari_store_employee_2.png": {
+			"frame": {
+				"x": 450,
+				"y": 1,
+				"w": 447,
+				"h": 399
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 447,
+				"h": 399
+			},
+			"sourceSize": {
+				"w": 447,
+				"h": 399
+			}
+		},
+		"sari_sari_store_employee_3.png": {
+			"frame": {
+				"x": 1,
+				"y": 402,
+				"w": 447,
+				"h": 399
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 447,
+				"h": 399
+			},
+			"sourceSize": {
+				"w": 447,
+				"h": 399
+			}
+		},
+		"sari_sari_store_employee_4.png": {
+			"frame": {
+				"x": 450,
+				"y": 402,
+				"w": 447,
+				"h": 399
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 447,
+				"h": 399
+			},
+			"sourceSize": {
+				"w": 447,
+				"h": 399
+			}
+		},
+		"sari_sari_store_employee_5.png": {
+			"frame": {
+				"x": 1,
+				"y": 803,
+				"w": 447,
+				"h": 399
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 447,
+				"h": 399
+			},
+			"sourceSize": {
+				"w": 447,
+				"h": 399
+			}
+		},
+		"sari_sari_store_employee_6.png": {
+			"frame": {
+				"x": 450,
+				"y": 803,
+				"w": 447,
+				"h": 399
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 447,
+				"h": 399
+			},
+			"sourceSize": {
+				"w": 447,
+				"h": 399
+			}
+		},
+		"sari_sari_store_employee_7.png": {
+			"frame": {
+				"x": 899,
+				"y": 1,
+				"w": 447,
+				"h": 399
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 447,
+				"h": 399
+			},
+			"sourceSize": {
+				"w": 447,
+				"h": 399
+			}
+		},
+		"sari_sari_store_employee_8.png": {
+			"frame": {
+				"x": 899,
+				"y": 402,
+				"w": 447,
+				"h": 399
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 447,
+				"h": 399
+			},
+			"sourceSize": {
+				"w": 447,
+				"h": 399
+			}
+		},
+		"sari_sari_store_employee_9.png": {
+			"frame": {
+				"x": 899,
+				"y": 803,
+				"w": 447,
+				"h": 399
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 447,
+				"h": 399
+			},
+			"sourceSize": {
+				"w": 447,
+				"h": 399
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 1347,
+			"h": 1203
+		},
+		"scale": "1"
+	}
+}
