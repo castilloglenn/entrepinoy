@@ -86,5 +86,4 @@ class Spritesheet(Sprite):
         
         
     def free(self):
-        print(f"freed coords: {self.rect} direction: {self.direction}")
         self.kill()

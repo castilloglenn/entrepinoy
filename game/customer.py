@@ -114,26 +114,45 @@ class Customer(NPC):
             if self.business_target["meta"]["queue_direction"] == "left":
                 self.direction = "right"
                 self.is_flipped = True
+            
+            if self.queue_number > 0:
+                current_queue = self.business_target["object"].queue
+                person_ahead_of_line = current_queue[self.queue_number - 1]
+                if not person_ahead_of_line.is_standing:
+                    queue_holder = current_queue[self.queue_number]
+                    current_queue[self.queue_number] = current_queue[self.queue_number - 1]
+                    current_queue[self.queue_number - 1] = queue_holder
+                    
+                    person_ahead_of_line.queue_move(1)
+                    self.queue_move(-1)
             return
         
         self.speed_tick += self.speed
         if self.speed_tick >= 1:
-            try:
-                if self.rect.midbottom == self.target_points[self.target_index]:
-                    self.target_index += 1
-                    
-                self.target_slope = self.get_slope(self.current_position_in_float, self.target_points[self.target_index])
-            except IndexError:
-                if self.is_served:
-                    self.is_exiting = True
-                    self.speed_tick = 0
-                    return
-                elif not self.is_served:
-                    self.is_standing = True
-            self.previous_position_in_float = copy.deepcopy(self.current_position_in_float)
+            absolute_movement = int(self.speed_tick)
             
-            self.current_position_in_float[0] += self.target_slope[0]
-            self.current_position_in_float[1] += self.target_slope[1]
+            self.total_slope_movement = [0, 0]
+            for iterations in range(absolute_movement):
+                try:
+                    # TODO fix the earthquake movement here
+                    if self.rect.midbottom == self.target_points[self.target_index]:
+                        self.target_index += 1
+                        
+                    self.target_slope = self.get_slope(self.current_position_in_float, self.target_points[self.target_index])
+                except IndexError:
+                    if self.is_served:
+                        self.is_exiting = True
+                        self.speed_tick = 0
+                        return
+                    elif not self.is_served:
+                        self.is_standing = True
+                self.previous_position_in_float = copy.deepcopy(self.current_position_in_float)
+                
+                self.total_slope_movement[0] += self.target_slope[0]
+                self.total_slope_movement[1] += self.target_slope[1]
+            
+            self.current_position_in_float[0] += self.total_slope_movement[0]
+            self.current_position_in_float[1] += self.total_slope_movement[1]
             
             if int(self.previous_position_in_float[0]) != int(self.current_position_in_float[0]) or \
                 int(self.previous_position_in_float[1]) != int(self.current_position_in_float[1]):
@@ -155,6 +174,8 @@ class Customer(NPC):
                     
                     self.rect.midbottom = tuple(current_midbottom)
             
+            self.speed_tick -= absolute_movement
+            
         
     def served_and_leave(self):
         self.is_served = True
@@ -163,10 +184,10 @@ class Customer(NPC):
         self.target_index = 0
         
     
-    def queue_move(self):
+    def queue_move(self, relative_position: int):
         self.is_standing = False
         
-        self.queue_number -= 1
+        self.queue_number += relative_position
         self.business_queuing_position = self.get_queuing_position()
         
         self.target_points.append((

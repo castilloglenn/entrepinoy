@@ -92,7 +92,7 @@ class Scene():
         #   to avoid rendering confusions or going through walls
         # This is location-specific
         self.safe_spot = (0.5, 0.70)
-        self.crowd_limit = 50
+        self.crowd_limit = 1
         
         # TODO business_1 will deprecate soon when dynamic scene builder is completed
         self.business_1 = Business(
@@ -204,7 +204,7 @@ class Scene():
             
             
     def spawn_crowd_customer(self):
-        npc_chance = random.randint(0, 100) 
+        npc_chance = random.randint(0, 1) 
         if npc_chance <= self.crowd_chance[self.time.time.hour] \
                 and len(self.crowd) < self.crowd_limit: 
             self.footprint_counter += 1 # TODO Deprecated
@@ -212,7 +212,7 @@ class Scene():
             is_businesses_full = self.check_queues_if_full()
             print(f"is businesses full? {is_businesses_full}")
             
-            customer_chance = random.randint(0, 100) 
+            customer_chance = random.randint(0, 1) 
             if customer_chance <= self.customer_chance[self.time.time.hour] \
                 and not is_businesses_full:
                 Customer(
@@ -284,13 +284,16 @@ class Scene():
                 
     def key_down_events(self, key):
         self.main.global_key_down_events(key)
+        
         if key == pygame.K_F1:
             self.main.debug.log(f"Objects in memory: {len(self.general_sprites)}")
+            
         elif key == pygame.K_F2:
             self.main.debug.log("Exited scene via F2-shortcut")
             self.update_data()
             self.main.debug.log("Autosaved progress before exit")  
             self.running = False
+            
         elif key == pygame.K_F3:
             self.business_data["sari_sari_store"]["object"].serve_customer()
 
