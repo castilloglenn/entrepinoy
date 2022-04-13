@@ -91,8 +91,8 @@ class Scene():
         #   go there first before going to the back layer of businesses
         #   to avoid rendering confusions or going through walls
         # This is location-specific
-        self.safe_spot = (0.5, 0.70)
-        self.crowd_limit = 1
+        self.safe_spot = (0.5, 0.675)
+        self.crowd_limit = 50
         
         # TODO business_1 will deprecate soon when dynamic scene builder is completed
         self.business_1 = Business(
@@ -197,22 +197,20 @@ class Scene():
             
     def check_queues_if_full(self):
         for name, data in self.business_data.items():
-            print("length of the business queue: ", len(data["object"].queue))
             if len(data["object"].queue) < data["object"].queue_limit:
                 return False
         return True
             
             
     def spawn_crowd_customer(self):
-        npc_chance = random.randint(0, 1) 
+        npc_chance = random.randint(0, 100) 
         if npc_chance <= self.crowd_chance[self.time.time.hour] \
                 and len(self.crowd) < self.crowd_limit: 
             self.footprint_counter += 1 # TODO Deprecated
             npc_form = str(random.randint(0, 2))
             is_businesses_full = self.check_queues_if_full()
-            print(f"is businesses full? {is_businesses_full}")
             
-            customer_chance = random.randint(0, 1) 
+            customer_chance = random.randint(0, 100) 
             if customer_chance <= self.customer_chance[self.time.time.hour] \
                 and not is_businesses_full:
                 Customer(

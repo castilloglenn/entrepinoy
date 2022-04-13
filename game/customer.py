@@ -109,6 +109,10 @@ class Customer(NPC):
             super().update()
             return
         
+        # TODO make the customers autoleave when the store closes
+        if self.business_target["object"].business_state == "closed":
+            self.served_and_leave()
+        
         super().animate()
         if self.is_standing:
             if self.business_target["meta"]["queue_direction"] == "left":
@@ -130,29 +134,37 @@ class Customer(NPC):
         self.speed_tick += self.speed
         if self.speed_tick >= 1:
             absolute_movement = int(self.speed_tick)
+            try:
+                # TODO fix the earthquake movement here
+                target_point = self.target_points[self.target_index]
+                if self.rect.midbottom == target_point:
+                    self.target_index += 1
+                    
+                self.target_slope = self.get_slope(self.current_position_in_float, self.target_points[self.target_index])
+            except IndexError:
+                if self.is_served:
+                    self.is_exiting = True
+                    self.speed_tick = 0
+                    return
+                elif not self.is_served:
+                    self.is_standing = True
+            self.previous_position_in_float = copy.deepcopy(self.current_position_in_float)
             
-            self.total_slope_movement = [0, 0]
-            for iterations in range(absolute_movement):
-                try:
-                    # TODO fix the earthquake movement here
-                    if self.rect.midbottom == self.target_points[self.target_index]:
-                        self.target_index += 1
-                        
-                    self.target_slope = self.get_slope(self.current_position_in_float, self.target_points[self.target_index])
-                except IndexError:
-                    if self.is_served:
-                        self.is_exiting = True
-                        self.speed_tick = 0
-                        return
-                    elif not self.is_served:
-                        self.is_standing = True
-                self.previous_position_in_float = copy.deepcopy(self.current_position_in_float)
+            total_increment = [0, 0]
+            for increments in range(absolute_movement):
+                total_increment[0] += self.target_slope[0]
+                total_increment[1] += self.target_slope[1]
                 
-                self.total_slope_movement[0] += self.target_slope[0]
-                self.total_slope_movement[1] += self.target_slope[1]
-            
-            self.current_position_in_float[0] += self.total_slope_movement[0]
-            self.current_position_in_float[1] += self.total_slope_movement[1]
+                assumed_position = copy.deepcopy(self.current_position_in_float)
+                assumed_position[0] += total_increment[0]
+                assumed_position[1] += total_increment[1]
+                assumed_position = tuple(assumed_position)
+                
+                if assumed_position == target_point:
+                    break
+                
+            self.current_position_in_float[0] += total_increment[0]
+            self.current_position_in_float[1] += total_increment[1]
             
             if int(self.previous_position_in_float[0]) != int(self.current_position_in_float[0]) or \
                 int(self.previous_position_in_float[1]) != int(self.current_position_in_float[1]):
@@ -180,6 +192,7 @@ class Customer(NPC):
     def served_and_leave(self):
         self.is_served = True
         self.is_standing = False
+        
         self.target_points = self.exit_points
         self.target_index = 0
         

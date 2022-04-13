@@ -50,16 +50,12 @@ class Business(Button):
     
     def serve_customer(self):
         if len(self.queue) == 0:
-            print("bro no customers")
             return
         
         if self.queue[0].is_standing:
-            print("already standing, proceeding to serve")
             self.queue.pop(0).served_and_leave()
             for customer in self.queue:
                 customer.queue_move(-1)
-        else:
-            print("customer not nearby")
             
             
     def fetch_sprite(self, name):

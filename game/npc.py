@@ -13,7 +13,7 @@ class NPC(Spritesheet):
         self.min_speed = 90
         self.max_speed = 120
         
-        self.min_animation_speed = 8
+        self.min_animation_speed = 10
         self.max_animation_speed = 12
         
         self.speed_value = random.randint(self.min_speed, self.max_speed)
