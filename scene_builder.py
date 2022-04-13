@@ -104,12 +104,7 @@ class Scene():
                 int(self.main.data.setting["game_height"] * 0.35)
             ), 
             collide_rect=(0.77, 1),
-            **{
-                "idle" : self.main.data.business_images["sari_sari_store"]["idle"],
-                "outline" : self.main.data.business_images["sari_sari_store"]["hovered"],
-                "closed" : self.main.data.business_images["sari_sari_store"]["closed"],
-                "closed_hovered" : self.main.data.business_images["sari_sari_store"]["closed_hovered"],
-            }
+            **self.main.data.business_images["sari_sari_store"]
         )
         self.business_data["sari_sari_store"] = {}
         self.business_data["sari_sari_store"]["meta"] = self.main.data.business["sari_sari_store"]

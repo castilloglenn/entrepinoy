@@ -22,6 +22,7 @@ class Business(Button):
         
         self.name = name
         self.states = states
+        self.outline = self.states["outline"].convert_alpha()
         self.business_state = "open"
         self.has_employee = False
         self.queue = []
@@ -30,14 +31,21 @@ class Business(Button):
         
     def set_business_state(self, new_state: str):
         self.business_state = new_state
+        
         if self.business_state == "open":
             self.idle = self.states["idle"].convert_alpha()
-            self.hovered = self.states["outline"].convert_alpha()
+            self.hovered = self.states["idle"].convert_alpha()
+            
         elif self.business_state == "closed":
             self.idle = self.states["closed"].convert_alpha()
-            self.hovered = self.states["closed_hovered"].convert_alpha()
+            self.hovered = self.states["closed"].convert_alpha()
         
+        self.hovered.blit(self.outline, (0, 0))
         self.set_image_and_rect()
+        
+    
+    def set_employee_state(self, new_state: bool):
+        self.has_employee = new_state
         
     
     def serve_customer(self):
@@ -48,4 +56,13 @@ class Business(Button):
                 customer.queue_move()
         else:
             print("customer not nearby")
+            
+            
+    def fetch_sprite(self, name):
+        sprite = self.data['frames'][name]['frame']
+        x, y, width, height = sprite["x"], sprite["y"], sprite["w"], sprite["h"]
+        image = pygame.Surface((width, height), pygame.SRCALPHA, 32)
+        image.blit(self.sprite_sheet,(0, 0),(x, y, width, height))
+        self.rect = image.get_rect()
+        return image.convert_alpha()
             

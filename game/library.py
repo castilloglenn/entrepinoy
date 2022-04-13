@@ -84,40 +84,59 @@ class Library():
         }
         self.business_images = {
             "buko_stall" : {
-                "idle" : self.get_image("business", "buko_stall_idle.png"),
-                "hovered" : self.get_image("business", "buko_stall_hovered.png"),
+                # "idle" : self.get_image("business", "buko_stall_idle.png"),
                 "closed" : None,
-                "closed_hovered" : None
+                "outline" : None,
+                "employee": {
+                    "spritesheet" : None,
+                    "json" : None
+                }
             },
             "fish_ball_stand" : {
-                "idle" : self.get_image("business", "fish_ball_stand_idle.png"),
-                "hovered" : self.get_image("business", "fish_ball_stand_hovered.png"),
+                # "idle" : self.get_image("business", "fish_ball_stand_idle.png"),
                 "closed" : None,
-                "closed_hovered" : None
+                "outline" : None,
+                "employee": {
+                    "spritesheet" : None,
+                    "json" : None
+                }
             },
             "sorbetes" : {
-                "idle" : self.get_image("business", "sorbetes_idle.png"),
-                "hovered" : self.get_image("business", "sorbetes_hovered.png"),
+                # "idle" : self.get_image("business", "sorbetes_idle.png"),
                 "closed" : None,
-                "closed_hovered" : None
+                "outline" : None,
+                "employee": {
+                    "spritesheet" : None,
+                    "json" : None
+                }
             },
             "sari_sari_store" : {
                 "idle" : self.get_image("business", "sari_sari_store_idle.png"),
-                "hovered" : self.get_image("business", "sari_sari_store_hovered.png"),
-                "closed" : self.get_image("business", "sari_sari_store_closed_idle.png"),
-                "closed_hovered" : self.get_image("business", "sari_sari_store_closed_hovered.png")
+                "closed" : self.get_image("business", "sari_sari_store_closed.png"),
+                "outline" : self.get_image("business", "sari_sari_store_outline.png"),
+                "employee": {
+                    "spritesheet" : self.get_image("business", "sari_sari_store_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "sari_sari_store_employee.json")
+                }
             },
             "ukay_ukay" : {
-                "idle" : self.get_image("business", "ukay_ukay_idle.png"),
-                "hovered" : self.get_image("business", "ukay_ukay_hovered.png"),
-                "closed" : self.get_image("business", "ukay_ukay_closed_idle.png"),
-                "closed_hovered" : self.get_image("business", "ukay_ukay_closed_hovered.png")
+                # "idle" : self.get_image("business", "ukay_ukay_idle.png"),
+                # "closed" : self.get_image("business", "ukay_ukay_closed.png"),
+                "outline" : None,
+                "employee": {
+                    "spritesheet" : None,
+                    "json" : None
+                }
             },
             "food_cart" : {
-                "idle" : self.get_image("business", "food_cart_idle.png"),
-                "hovered" : self.get_image("business", "food_cart_hovered.png"),
+                # "idle" : self.get_image("business", "food_cart_idle.png"),
+                # "hovered" : self.get_image("business", "food_cart_hovered.png"),
                 "closed" : None,
-                "closed_hovered" : None
+                "outline" : None,
+                "employee": {
+                    "spritesheet" : None,
+                    "json" : None
+                }
             }
         }
         
