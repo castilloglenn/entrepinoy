@@ -34,7 +34,7 @@ class Spritesheet(Sprite):
             self.sprites.append(self.fetch_sprite(f'{self.name}_{index + 1}.png'))
         
         # Setting the standing animation for the sprite
-        self.standing = False
+        self.is_standing = False
         self.standing_sprite = self.sprites.pop()
             
         self.image = self.sprites[self.sprite_index]
@@ -64,7 +64,7 @@ class Spritesheet(Sprite):
 
 
     def update(self):
-        if self.standing:
+        if self.is_standing:
             if self.is_flipped:
                 self.image = transform.flip(self.standing_sprite, True, False)
             else:
@@ -86,4 +86,5 @@ class Spritesheet(Sprite):
         
         
     def free(self):
+        print(f"freed coords: {self.rect} direction: {self.direction}")
         self.kill()

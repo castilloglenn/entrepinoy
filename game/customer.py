@@ -17,13 +17,24 @@ class Customer(NPC):
         super().__init__(screen, name, spritesheet, meta_data, fps)
         
         keys = list(businesses.keys())
-        self.business_target = businesses[random.choice(keys)]
+        # Randomly selecting businesses
+        while True:
+            self.business_target = businesses[random.choice(keys)]
+            if len(self.business_target["object"].queue) < self.business_target["object"].queue_limit:
+                self.queue_number = len(self.business_target["object"].queue)
+                self.business_target["object"].queue.append(self)
+                break
+        
+        # Customer attributes
+        self.is_served = False
+        self.is_exiting = False
         self.safe_spot = safe_spot
         
         # Generating points for the customer to traverse across the scene
         self.target_points = []
         self.target_index = 0
         self.business_queue_space = 20
+        self.queue_horizontal_space = int(self.rect.width * 0.75)
         
         # 2D Movement variables
         self.target_slope = ()
@@ -47,12 +58,16 @@ class Customer(NPC):
                 int(self.screen.get_width() * self.safe_spot[0]),
                 int(self.screen.get_height() * self.safe_spot[1])
             ))
+        
+        # Setting the exit points
+        self.exit_points = list(reversed(self.target_points))
             
         # Adding the queuing point of the business
+        self.business_queuing_point_start = self.business_target["object"].rect.x + \
+            int(self.business_target["object"].rect.width * self.business_target["meta"]["queuing_point"])
+        self.business_queuing_position = self.get_queuing_position()
         self.target_points.append((
-            self.business_target["object"].rect.x +
-                int(self.business_target["object"].rect.width *
-                    self.business_target["meta"]["queuing_point"]),
+            self.business_queuing_position,
             self.business_target["object"].rect.y +
             self.business_target["object"].rect.height +
             self.business_queue_space
@@ -61,6 +76,15 @@ class Customer(NPC):
         self.target_slope = self.get_slope(self.current_position_in_float, self.target_points[self.target_index])
         
         
+    def get_queuing_position(self):
+        if self.business_target["meta"]["queue_direction"] == "left":
+            return self.business_queuing_point_start - \
+                (self.queue_horizontal_space * self.queue_number)
+        elif self.business_target["meta"]["queue_direction"] == "right":
+            return self.business_queuing_point_start + \
+                (self.queue_horizontal_space * self.queue_number)
+        
+    
     def get_slope(self, current_position, target_position):
         x = abs(target_position[0] - current_position[0])
         y = abs(target_position[1] - current_position[1])
@@ -80,9 +104,16 @@ class Customer(NPC):
         return (sx, sy)
     
     
-    def update(self):          
+    def update(self):
+        if self.is_exiting:
+            super().update()
+            return
+        
         super().animate()
-        if self.standing:
+        if self.is_standing:
+            if self.business_target["meta"]["queue_direction"] == "left":
+                self.direction = "right"
+                self.is_flipped = True
             return
         
         self.speed_tick += self.speed
@@ -93,7 +124,12 @@ class Customer(NPC):
                     
                 self.target_slope = self.get_slope(self.current_position_in_float, self.target_points[self.target_index])
             except IndexError:
-                self.standing = True
+                if self.is_served:
+                    self.is_exiting = True
+                    self.speed_tick = 0
+                    return
+                elif not self.is_served:
+                    self.is_standing = True
             self.previous_position_in_float = copy.deepcopy(self.current_position_in_float)
             
             self.current_position_in_float[0] += self.target_slope[0]
@@ -120,6 +156,23 @@ class Customer(NPC):
                     self.rect.midbottom = tuple(current_midbottom)
             
         
+    def served_and_leave(self):
+        self.is_served = True
+        self.is_standing = False
+        self.target_points = self.exit_points
+        self.target_index = 0
         
+    
+    def queue_move(self):
+        self.is_standing = False
         
+        self.queue_number -= 1
+        self.business_queuing_position = self.get_queuing_position()
+        
+        self.target_points.append((
+            self.business_queuing_position,
+            self.business_target["object"].rect.y +
+            self.business_target["object"].rect.height +
+            self.business_queue_space
+        ))
         
