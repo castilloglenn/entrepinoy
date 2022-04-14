@@ -8,6 +8,7 @@ class Debugger():
     Handles all the recording of necessary data from the game to a text file.
     """
     def __init__(self):
+        self.highest_memory = 0
         self.save_only_previous_log = True
         
         if self.save_only_previous_log:
@@ -28,6 +29,7 @@ class Debugger():
         
     def close(self):
         self.new_line()
+        self.memory_log()
         self.log(f"Debug closed")
         
         
@@ -43,5 +45,20 @@ class Debugger():
 
 
     def memory_log(self):
-        memory = psutil.Process().memory_info().rss / (1024 * 1024)
-        self.log(f"Memory Usage: {memory:,.2f}MB")
+        self.log(self.get_memory_usage())
+        self.log(self.get_highest_usage())
+        
+        
+    def get_memory_usage(self):
+        current_usage = psutil.Process().memory_info().rss / (1024 * 1024)
+        if current_usage > self.highest_memory:
+            self.highest_memory = current_usage
+            
+        virtual_mem = psutil.virtual_memory()
+        free = virtual_mem.free / 1024 / 1024
+        percent = virtual_mem.percent
+        return f"Memory Usage: {current_usage:,.2f}MB/{free:,.2f}MB ({percent}%)"
+        
+        
+    def get_highest_usage(self):
+        return f"Highest Usage: {self.highest_memory:,.2f}MB"

@@ -121,12 +121,8 @@ class Customer(NPC):
             if self.queue_number > 0:
                 current_queue = self.business_target["object"].queue
                 person_ahead_of_line = current_queue[self.queue_number - 1]
-                persons_rect = person_ahead_of_line.rect
-                
-                is_in_queue = persons_rect.midbottom[1] == self.rect.midbottom[1]
-                is_in_front = abs(persons_rect.x - self.rect.x) <= self.queue_horizontal_space
                     
-                if not person_ahead_of_line.is_standing and not is_in_queue and not is_in_front:
+                if not person_ahead_of_line.is_standing:
                     queue_holder = current_queue[self.queue_number]
                     current_queue[self.queue_number] = current_queue[self.queue_number - 1]
                     current_queue[self.queue_number - 1] = queue_holder

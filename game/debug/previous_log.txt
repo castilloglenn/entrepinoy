@@ -1,123 +1,37 @@
-[12:23:12:089] Debug started
-[12:23:12:089] Memory Usage: 30.38MB
+[12:50:52:272] Debug started
+[12:50:52:272] Memory Usage: 30.72MB/2,430.29MB (60.1%)
+[12:50:52:279] Highest Usage: 30.72MB
 
-[12:23:12:399] Game Title: EntrePinoy
-[12:23:12:400] Game Version: 0.0.1
-[12:23:12:433] Display Width: 1280
-[12:23:12:441] Display Height: 720
-[12:23:12:448] Game FPS: 60
+[12:50:52:605] Game Title: EntrePinoy
+[12:50:52:605] Game Version: 0.0.1
+[12:50:52:636] Display Width: 1280
+[12:50:52:643] Display Height: 720
+[12:50:52:651] Game FPS: 60
 
-[12:23:12:460] 
+[12:50:52:665] 
 Time amplification: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 
-[12:23:12:484] Initialized scene
-[12:23:12:516] Memory after initialization:
-[12:23:12:522] Memory Usage: 115.84MB
+[12:50:52:687] Initialized scene
+[12:50:52:724] Memory after initialization:
+[12:50:52:732] Memory Usage: 116.12MB/2,346.34MB (61.5%)
+[12:50:52:738] Highest Usage: 116.12MB
 
 
-[12:23:18:199] Continue game entered
-[12:23:18:205] Initial memory and object statistics:
-[12:23:18:209] Total crowd objects: 5
-[12:23:18:215] Memory Usage: 115.95MB
+[12:50:54:300] Continue game entered
+[12:50:54:305] Initial memory and object statistics:
+[12:50:54:309] Total crowd objects: 5
+[12:50:54:314] Memory Usage: 116.19MB/2,356.96MB (61.3%)
+[12:50:54:320] Highest Usage: 116.19MB
 
-[12:23:21:368] F1 Trigger: Memory check
-[12:23:21:369] Memory Usage: 116.14MB
-[12:23:21:375] Objects in memory: 5
-[12:23:21:837] F1 Trigger: Memory check
-[12:23:21:838] Memory Usage: 116.60MB
-[12:23:21:843] Objects in memory: 6
-[12:23:21:970] F1 Trigger: Memory check
-[12:23:21:970] Memory Usage: 116.60MB
-[12:23:21:976] Objects in memory: 6
-[12:23:22:497] Autosaved progress
-[12:23:22:985] F1 Trigger: Memory check
-[12:23:22:985] Memory Usage: 116.60MB
-[12:23:22:991] Objects in memory: 6
-[12:23:23:163] F1 Trigger: Memory check
-[12:23:23:164] Memory Usage: 116.60MB
-[12:23:23:171] Objects in memory: 6
-[12:23:23:340] F1 Trigger: Memory check
-[12:23:23:341] Memory Usage: 116.60MB
-[12:23:23:346] Objects in memory: 6
-[12:23:23:504] F1 Trigger: Memory check
-[12:23:23:505] Memory Usage: 116.60MB
-[12:23:23:511] Objects in memory: 6
-[12:23:23:685] F1 Trigger: Memory check
-[12:23:23:686] Memory Usage: 116.61MB
-[12:23:23:691] Objects in memory: 6
-[12:23:23:878] F1 Trigger: Memory check
-[12:23:23:879] Memory Usage: 116.61MB
-[12:23:23:885] Objects in memory: 6
-[12:23:24:039] F1 Trigger: Memory check
-[12:23:24:040] Memory Usage: 116.61MB
-[12:23:24:045] Objects in memory: 6
-[12:23:24:218] F1 Trigger: Memory check
-[12:23:24:219] Memory Usage: 116.61MB
-[12:23:24:224] Objects in memory: 6
-[12:23:24:384] F1 Trigger: Memory check
-[12:23:24:385] Memory Usage: 116.61MB
-[12:23:24:391] Objects in memory: 6
-[12:23:26:097] F1 Trigger: Memory check
-[12:23:26:098] Memory Usage: 116.61MB
-[12:23:26:104] Objects in memory: 6
-[12:23:26:261] F1 Trigger: Memory check
-[12:23:26:262] Memory Usage: 116.61MB
-[12:23:26:268] Objects in memory: 6
-[12:23:26:423] F1 Trigger: Memory check
-[12:23:26:424] Memory Usage: 116.61MB
-[12:23:26:429] Objects in memory: 6
-[12:23:26:587] F1 Trigger: Memory check
-[12:23:26:588] Memory Usage: 117.05MB
-[12:23:26:593] Objects in memory: 7
-[12:23:26:735] F1 Trigger: Memory check
-[12:23:26:736] Memory Usage: 117.11MB
-[12:23:26:742] Objects in memory: 7
-[12:23:26:869] F1 Trigger: Memory check
-[12:23:26:870] Memory Usage: 117.11MB
-[12:23:26:876] Objects in memory: 7
-[12:23:27:020] F1 Trigger: Memory check
-[12:23:27:021] Memory Usage: 117.11MB
-[12:23:27:026] Objects in memory: 7
-[12:23:27:135] F1 Trigger: Memory check
-[12:23:27:136] Memory Usage: 117.11MB
-[12:23:27:141] Objects in memory: 7
-[12:23:27:280] F1 Trigger: Memory check
-[12:23:27:281] Memory Usage: 117.50MB
-[12:23:27:288] Objects in memory: 8
-[12:23:27:428] F1 Trigger: Memory check
-[12:23:27:429] Memory Usage: 117.55MB
-[12:23:27:436] Objects in memory: 8
-[12:23:27:559] F1 Trigger: Memory check
-[12:23:27:560] Memory Usage: 117.55MB
-[12:23:27:566] Objects in memory: 8
-[12:23:27:673] F1 Trigger: Memory check
-[12:23:27:673] Memory Usage: 117.55MB
-[12:23:27:679] Objects in memory: 8
-[12:23:27:821] F1 Trigger: Memory check
-[12:23:27:822] Memory Usage: 117.96MB
-[12:23:27:827] Objects in memory: 9
-[12:23:27:970] F1 Trigger: Memory check
-[12:23:27:970] Memory Usage: 117.96MB
-[12:23:27:976] Objects in memory: 9
-[12:23:30:854] F1 Trigger: Memory check
-[12:23:30:855] Memory Usage: 118.36MB
-[12:23:30:861] Objects in memory: 10
-[12:23:31:018] F1 Trigger: Memory check
-[12:23:31:019] Memory Usage: 118.36MB
-[12:23:31:025] Objects in memory: 10
-[12:23:31:195] F1 Trigger: Memory check
-[12:23:31:196] Memory Usage: 118.36MB
-[12:23:31:202] Objects in memory: 10
-[12:23:31:377] F1 Trigger: Memory check
-[12:23:31:378] Memory Usage: 118.36MB
-[12:23:31:384] Objects in memory: 10
-[12:23:31:555] F1 Trigger: Memory check
-[12:23:31:556] Memory Usage: 118.36MB
-[12:23:31:562] Objects in memory: 10
-[12:23:32:438] Hour callback
-[12:23:32:489] Autosaved progress
-[12:23:34:099] Autosaved progress before exit
+[12:51:02:696] Autosaved progress
+[12:51:07:241] Hour callback
+[12:51:07:241] Day callback
+[12:51:12:696] Autosaved progress
+[12:51:22:685] Autosaved progress
+[12:51:28:267] Autosaved progress before exit
 
-[12:23:34:157] Debug closed
+[12:51:28:323] Memory Usage: 116.68MB/2,369.93MB (61.1%)
+[12:51:28:332] Highest Usage: 120.01MB
+[12:51:28:341] Debug closed

@@ -392,6 +392,8 @@ class Scene():
             # TODO DEBUGGING ONLY
             self.debug_message.set_message(
                 [
+                    f"{self.main.debug.get_memory_usage()}",
+                    f"{self.main.debug.get_highest_usage()}",
                     f"Location: {self.location}",
                     f"Total crowd spawned: {self.footprint_counter}",
                     f"Customers spawned: {self.customers_spawned}",
