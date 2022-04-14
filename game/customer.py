@@ -119,9 +119,9 @@ class Customer(NPC):
             if self.queue_number > 0:
                 current_queue = self.business_target["object"].queue
                 person_ahead_of_line = current_queue[self.queue_number - 1]
-                is_slow = person_ahead_of_line.speed < self.speed
+                is_in_line = person_ahead_of_line.rect.midbottom[1] == self.rect.midbottom[1]
                     
-                if not person_ahead_of_line.is_standing and is_slow:
+                if not person_ahead_of_line.is_standing and not is_in_line:
                     queue_holder = current_queue[self.queue_number]
                     current_queue[self.queue_number] = current_queue[self.queue_number - 1]
                     current_queue[self.queue_number - 1] = queue_holder
@@ -140,14 +140,19 @@ class Customer(NPC):
                 if self.rect.midbottom == target_point:
                     self.target_index += 1
                     
-                self.target_slope = self.get_slope(self.current_position_in_float, self.target_points[self.target_index])
+                self.target_slope = self.get_slope(
+                    self.current_position_in_float, 
+                    self.target_points[self.target_index]
+                )
+                
             except IndexError:
                 if self.is_served:
                     self.is_exiting = True
                     self.speed_tick = 0
-                    return
                 elif not self.is_served:
                     self.is_standing = True
+                return
+                    
             self.previous_position_in_float = copy.deepcopy(self.current_position_in_float)
             
             total_increment = [0, 0]
@@ -211,6 +216,14 @@ class Customer(NPC):
             self.business_queue_space
         ))
         
-        if self.target_index > len(self.exit_points) - 1:
-            self.target_index = len(self.target_points) - 1
-        
+        self.adjust_coordinates()
+            
+    
+    def adjust_coordinates(self):
+        if len(self.target_points) > len(self.exit_points) + 1:
+            self.final_destination = copy.deepcopy(self.target_points[-1])
+            self.target_points = copy.deepcopy(self.target_points[:len(self.exit_points)])
+            self.target_points.append(self.final_destination)
+            
+            if self.target_index > len(self.exit_points) - 1:
+                self.target_index = len(self.target_points) - 1

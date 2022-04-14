@@ -309,7 +309,7 @@ class Scene():
             self.business_data["sari_sari_store"]["object"].serve_customer()
             
         elif key == pygame.K_F4:
-            self.spawn_crowd_customer()
+            self.time.set_time("2022/04/14, 16:56:08.424778")
 
 
     def key_hold_events(self, keys):
