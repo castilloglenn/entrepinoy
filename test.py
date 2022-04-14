@@ -13,10 +13,7 @@ print(time3.days)
 print(time3.seconds)
 """
 
-import psutil
-import numpy as np
 
-arr = np.ones((170_000,), dtype=np.uint8)
-print(psutil.Process().memory_info().rss / (1024 * 1024))
-
+for index in range(8):
+    print(index % 8)
 

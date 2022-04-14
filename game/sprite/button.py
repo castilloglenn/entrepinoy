@@ -1,4 +1,5 @@
 from pygame.sprite import Sprite
+from pygame import Surface
 from pygame import Rect
 
 
@@ -28,6 +29,7 @@ class Button(Sprite):
         
         # Debugging
         self.show_bound = False
+        self.bound_color = (255, 255, 255)
         
         self.visible = True
         self.screen = screen
@@ -39,16 +41,16 @@ class Button(Sprite):
         self.outline = states["outline"].convert_alpha()
         self.hovered.blit(self.outline, (0, 0))
         
-        self.center_coordinates = center_coordinates
         self.top_left_coordinates = top_left_coordinates
+        self.center_coordinates = center_coordinates
         
         self.image = self.idle
         self.rect = self.image.get_rect()
         self.collide_rect = None
         
-        if self.top_left_coordinates is not None:
+        if self.top_left_coordinates != None:
             self.rect.topleft = self.top_left_coordinates
-        elif self.center_coordinates is not None:
+        elif self.center_coordinates != None:
             self.rect.center = self.center_coordinates
         else:
             self.rect = (0, 0)
@@ -66,6 +68,12 @@ class Button(Sprite):
         self.collide_width = self.rect.width * self.collide_rect_rel[0]
         self.collide_height = self.rect.height * self.collide_rect_rel[1]
         
+        # Screen surface (for displaying hitbox)
+        self.hitbox = Surface((self.collide_width, self.collide_height))
+        self.hitbox.fill(self.bound_color)
+        self.hitbox.convert_alpha()
+        self.hitbox.set_alpha(128)
+        
         self.set_image_and_rect()
         
         
@@ -74,7 +82,7 @@ class Button(Sprite):
             self.screen.blit(self.image, self.rect)
         
         if self.show_bound:
-            self.screen.fill((100, 10, 10), self.collide_rect)
+            self.screen.blit(self.hitbox, (self.collide_x, self.collide_y)) 
             
         
     def set_image_and_rect(self):

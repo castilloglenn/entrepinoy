@@ -92,12 +92,13 @@ class Scene():
         #   to avoid rendering confusions or going through walls
         # This is location-specific
         self.safe_spot = (0.5, 0.675)
-        self.object_limit = 50
+        self.object_limit = 6
         
         # TODO business_1 will deprecate soon when dynamic scene builder is completed
         self.business_1 = Business(
             self.main.screen, 
             "sari_sari_store",
+            self.main.data.setting["fps"],
             self.business_1_callback,
             center_coordinates=(
                 int(self.main.data.setting["game_width"] * 0.37),
@@ -110,7 +111,6 @@ class Scene():
         self.business_data["sari_sari_store"]["meta"] = self.main.data.business["sari_sari_store"]
         self.business_data["sari_sari_store"]["object"] = self.business_1
         self.business_1.add(self.general_sprites)
-        pprint(self.business_data)
         
         self.profile_holder = Button(
             self.main.screen,
@@ -255,7 +255,8 @@ class Scene():
             
         # If the user clicked on the right mouse button
         if event.button == 3: 
-            pass
+            # TODO TEST ONLY
+            self.business_1.switch_animation(click_coordinates)
 
         # If the user scrolls the mouse wheel upward
         if event.button == 4:  
@@ -306,7 +307,7 @@ class Scene():
             self.running = False
             
         elif key == pygame.K_F3:
-            self.business_data["sari_sari_store"]["object"].serve_customer()
+            self.business_data["sari_sari_store"]["object"].set_serve_animation()
             
         elif key == pygame.K_F4:
             self.time.set_time("2022/04/14, 16:56:08.424778")

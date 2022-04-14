@@ -26,6 +26,7 @@ class Customer(NPC):
                 break
         
         # Customer attributes
+        self.is_standing = False
         self.is_served = False
         self.is_exiting = False
         self.safe_spot = safe_spot
@@ -110,27 +111,33 @@ class Customer(NPC):
             return
         
         super().animate()
-        business_state = self.business_target["object"].business_state
-        if self.is_standing and business_state == "open":
-            if self.business_target["meta"]["queue_direction"] == "left":
-                self.direction = "right"
-                self.is_flipped = True
-            
-            if self.queue_number > 0:
-                current_queue = self.business_target["object"].queue
-                person_ahead_of_line = current_queue[self.queue_number - 1]
-                is_in_line = person_ahead_of_line.rect.midbottom[1] == self.rect.midbottom[1]
-                    
-                if not person_ahead_of_line.is_standing and not is_in_line:
-                    queue_holder = current_queue[self.queue_number]
-                    current_queue[self.queue_number] = current_queue[self.queue_number - 1]
-                    current_queue[self.queue_number - 1] = queue_holder
-                    
-                    person_ahead_of_line.queue_move(1)
-                    self.queue_move(-1)
-            return
-        else:
-            self.served_and_leave()
+        try:
+            if self.is_standing and self.business_target["object"].business_state == "open" \
+                and len(self.business_target["object"].queue) != 0:
+                if self.business_target["meta"]["queue_direction"] == "left":
+                    self.direction = "right"
+                    self.is_flipped = True
+                else:
+                    self.direction = "left"
+                    self.is_flipped = False
+                
+                if self.queue_number > 0:
+                    current_queue = self.business_target["object"].queue
+                    person_ahead_of_line = current_queue[self.queue_number - 1]
+                    is_in_line = person_ahead_of_line.rect.midbottom[1] == self.rect.midbottom[1]
+                        
+                    if not person_ahead_of_line.is_standing and not is_in_line:
+                        queue_holder = current_queue[self.queue_number]
+                        current_queue[self.queue_number] = current_queue[self.queue_number - 1]
+                        current_queue[self.queue_number - 1] = queue_holder
+                        
+                        person_ahead_of_line.queue_move(1)
+                        self.queue_move(-1)
+                return
+            else:
+                self.leave()
+        except IndexError:
+            self.leave()
         
         self.speed_tick += self.speed
         if self.speed_tick >= 1:
@@ -194,7 +201,7 @@ class Customer(NPC):
             self.speed_tick -= absolute_movement
             
         
-    def served_and_leave(self):
+    def leave(self):
         if not self.is_served and self.is_standing:
             self.is_served = True
             self.is_standing = False
