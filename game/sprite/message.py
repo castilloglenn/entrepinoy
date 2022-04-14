@@ -22,7 +22,11 @@ class Message(Sprite):
         self.size = font["size"]
         
         self.color = color
-        self.outline_color = outline_color
+        if outline_color == None:
+            # Default color
+            self.outline_color = (0, 0, 0)
+        else:
+            self.outline_color = outline_color
         
         self.text_spacing = 3
         self.outline_thickness = outline_thickness

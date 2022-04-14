@@ -37,6 +37,9 @@ class Business(Button):
             self.hovered = self.states["idle"].convert_alpha()
             
         elif self.business_state == "closed":
+            # Free the queue
+            self.queue = []
+            
             self.idle = self.states["closed"].convert_alpha()
             self.hovered = self.states["closed"].convert_alpha()
         

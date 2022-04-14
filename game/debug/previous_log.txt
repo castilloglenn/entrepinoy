@@ -1,37 +1,31 @@
-[21:32:06:538] Debug started
-[21:32:06:586] Memory Usage: 36.83MB
+[11:59:19:097] Debug started
+[11:59:24:165] Memory Usage: 36.93MB
 
-[21:32:06:915] Game Title: EntrePinoy
-[21:32:06:915] Game Version: 0.0.1
-[21:32:06:946] Display Width: 1280
-[21:32:06:955] Display Height: 720
-[21:32:06:963] Game FPS: 60
+[11:59:24:468] Game Title: EntrePinoy
+[11:59:24:468] Game Version: 0.0.1
+[11:59:24:505] Display Width: 1280
+[11:59:24:512] Display Height: 720
+[11:59:24:521] Game FPS: 60
 
-[21:32:06:978] 
+[11:59:24:534] 
 Time amplification: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 
-[21:32:07:003] Initialized scene
-[21:32:07:045] Memory after initialization:
-[21:32:07:106] Memory Usage: 124.96MB
+[11:59:24:555] Initialized scene
+[11:59:24:606] Memory after initialization:
+[11:59:24:669] Memory Usage: 125.25MB
 
 
-[21:32:07:965] Continue game entered
-[21:32:07:970] Initial memory and object statistics:
-[21:32:07:976] Total crowd objects: 4
-[21:32:08:025] Memory Usage: 125.05MB
+[11:59:25:378] Continue game entered
+[11:59:25:384] Initial memory and object statistics:
+[11:59:25:389] Total crowd objects: 5
+[11:59:25:438] Memory Usage: 125.36MB
 
-[21:32:17:013] Autosaved progress
-[21:32:27:006] Autosaved progress
-[21:32:31:208] Hour callback
-[21:32:33:704] F1 Trigger: Memory check
-[21:32:33:745] Memory Usage: 137.56MB
-[21:32:33:751] Objects in memory: 26
-[21:32:35:742] F1 Trigger: Memory check
-[21:32:35:784] Memory Usage: 137.58MB
-[21:32:35:790] Objects in memory: 27
-[21:32:37:015] Autosaved progress
-[21:32:42:453] Autosaved progress before exit
+[11:59:34:368] Hour callback
+[11:59:34:555] Autosaved progress
+[11:59:44:563] Autosaved progress
+[11:59:54:566] Autosaved progress
+[11:59:57:608] Autosaved progress before exit
 
-[21:32:42:512] Debug closed
+[11:59:57:667] Debug closed

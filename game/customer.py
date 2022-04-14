@@ -34,7 +34,8 @@ class Customer(NPC):
         self.target_points = []
         self.target_index = 0
         self.business_queue_space = 20
-        self.queue_horizontal_space = int(self.rect.width * 0.75)
+        self.business_queue_horizontal_space = int(self.rect.width * 0.75)
+        self.queue_horizontal_space = self.business_queue_horizontal_space * self.queue_number
         
         # 2D Movement variables
         self.target_slope = ()
@@ -75,15 +76,6 @@ class Customer(NPC):
         
         self.target_slope = self.get_slope(self.current_position_in_float, self.target_points[self.target_index])
         
-        
-    def get_queuing_position(self):
-        if self.business_target["meta"]["queue_direction"] == "left":
-            return self.business_queuing_point_start - \
-                (self.queue_horizontal_space * self.queue_number)
-        elif self.business_target["meta"]["queue_direction"] == "right":
-            return self.business_queuing_point_start + \
-                (self.queue_horizontal_space * self.queue_number)
-        
     
     def get_slope(self, current_position, target_position):
         x = abs(target_position[0] - current_position[0])
@@ -102,6 +94,14 @@ class Customer(NPC):
             sy = -sy
         
         return (sx, sy)
+        
+        
+    def get_queuing_position(self):
+        self.queue_horizontal_space = self.business_queue_horizontal_space * self.queue_number
+        if self.business_target["meta"]["queue_direction"] == "left":
+            return self.business_queuing_point_start - self.queue_horizontal_space
+        elif self.business_target["meta"]["queue_direction"] == "right":
+            return self.business_queuing_point_start + self.queue_horizontal_space
     
     
     def update(self):
@@ -109,7 +109,6 @@ class Customer(NPC):
             super().update()
             return
         
-        # TODO make the customers autoleave when the store closes
         if self.business_target["object"].business_state == "closed":
             self.served_and_leave()
         
@@ -122,7 +121,12 @@ class Customer(NPC):
             if self.queue_number > 0:
                 current_queue = self.business_target["object"].queue
                 person_ahead_of_line = current_queue[self.queue_number - 1]
-                if not person_ahead_of_line.is_standing:
+                persons_rect = person_ahead_of_line.rect
+                
+                is_in_queue = persons_rect.midbottom[1] == self.rect.midbottom[1]
+                is_in_front = abs(persons_rect.x - self.rect.x) <= self.queue_horizontal_space
+                    
+                if not person_ahead_of_line.is_standing and not is_in_queue and not is_in_front:
                     queue_holder = current_queue[self.queue_number]
                     current_queue[self.queue_number] = current_queue[self.queue_number - 1]
                     current_queue[self.queue_number - 1] = queue_holder
@@ -135,7 +139,6 @@ class Customer(NPC):
         if self.speed_tick >= 1:
             absolute_movement = int(self.speed_tick)
             try:
-                # TODO fix the earthquake movement here
                 target_point = self.target_points[self.target_index]
                 if self.rect.midbottom == target_point:
                     self.target_index += 1
@@ -190,11 +193,12 @@ class Customer(NPC):
             
         
     def served_and_leave(self):
-        self.is_served = True
-        self.is_standing = False
-        
-        self.target_points = self.exit_points
-        self.target_index = 0
+        if not self.is_served and self.is_standing:
+            self.is_served = True
+            self.is_standing = False
+            
+            self.target_points = self.exit_points
+            self.target_index = 0
         
     
     def queue_move(self, relative_position: int):

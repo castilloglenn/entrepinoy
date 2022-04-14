@@ -237,7 +237,6 @@ class Main():
              "be reset."],
             self.data.medium_font,
             self.data.colors["white"],
-            outline_color=self.data.colors["black"],
             outline_thickness=2,
             center_coordinates=(
                 int(canvas_rect.width * 0.50) + canvas_rect.x,

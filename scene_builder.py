@@ -62,6 +62,7 @@ class Scene():
         )
         # Memory monitoring
         self.footprint_counter = 0
+        self.customers_spawned = 0
         self.memory_debug_id = pygame.USEREVENT + 3
         pygame.time.set_timer(
             self.memory_debug_id,
@@ -92,7 +93,7 @@ class Scene():
         #   to avoid rendering confusions or going through walls
         # This is location-specific
         self.safe_spot = (0.5, 0.675)
-        self.crowd_limit = 50
+        self.object_limit = 50
         
         # TODO business_1 will deprecate soon when dynamic scene builder is completed
         self.business_1 = Business(
@@ -123,19 +124,30 @@ class Scene():
         )
         self.profile_holder.add(self.general_sprites)
         
+        self.cash_format = f"P{self.main.data.progress['cash']:18,.2f}"
         self.profile_message = Message(
             self.main.screen, 
                 [
                     self.time.get_date(), 
                     self.time.get_time(),
-                    "Cash:",
-                    f"P{self.main.data.progress['cash']:15,.2f}"
+                    "Bank Balance:",
+                    self.cash_format
                 ], 
             self.main.data.small_font, 
             self.main.data.colors["orange"],
-            top_left_coordinates=(160, 75)
+            top_left_coordinates=(165, 75)
         )
         self.profile_message.add(self.general_sprites)
+        
+        self.debug_message = Message(
+            self.main.screen,
+            [""],
+            self.main.data.small_font, 
+            self.main.data.colors["white"],
+            top_left_coordinates=(10, 600),
+            outline_thickness=1
+        )
+        self.debug_message.add(self.general_sprites)
         
         # Buttons layering hierarchy (the top layer must be add first)
         self.profile_holder.add(self.buttons)
@@ -160,8 +172,8 @@ class Scene():
         self.profile_message.set_message([
             self.time.get_date(), 
             self.time.get_time(),
-            "Cash:",
-            f"P{self.main.data.progress['cash']:15,.2f}"
+            "Bank Balance:",
+            self.cash_format
         ])
         
     
@@ -197,15 +209,16 @@ class Scene():
             
     def check_queues_if_full(self):
         for name, data in self.business_data.items():
-            if len(data["object"].queue) < data["object"].queue_limit:
-                return False
+            if len(data["object"].queue) < data["object"].queue_limit \
+                and data["object"].business_state == "open":
+                    return False
         return True
             
             
     def spawn_crowd_customer(self):
         npc_chance = random.randint(0, 100) 
         if npc_chance <= self.crowd_chance[self.time.time.hour] \
-                and len(self.crowd) < self.crowd_limit: 
+                and len(self.general_sprites) < self.object_limit: 
             self.footprint_counter += 1 # TODO Deprecated
             npc_form = str(random.randint(0, 2))
             is_businesses_full = self.check_queues_if_full()
@@ -213,6 +226,7 @@ class Scene():
             customer_chance = random.randint(0, 100) 
             if customer_chance <= self.customer_chance[self.time.time.hour] \
                 and not is_businesses_full:
+                self.customers_spawned += 1 # TODO For debugging only
                 Customer(
                     self.main.screen, npc_form,
                     self.main.data.crowd_spritesheets[npc_form]["sheet"],
@@ -371,6 +385,17 @@ class Scene():
             # Key pressing events (holding keys applicable)
             keys = pygame.key.get_pressed()
             self.key_hold_events(keys)
+            
+            # TODO DEBUGGING ONLY
+            self.debug_message.set_message(
+                [
+                    f"Location: {self.location}",
+                    f"Total crowd spawned: {self.footprint_counter}",
+                    f"Customers spawned: {self.customers_spawned}",
+                    f"Objects/Max displayed: {len(self.general_sprites)}/{self.object_limit}",
+                    f"Queue: {len(self.business_1.queue)}/{self.business_1.queue_limit}"
+                ]
+            )
             
             # Updating the display
             self.refresh_display()
