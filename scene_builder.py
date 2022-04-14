@@ -58,7 +58,7 @@ class Scene():
         self.crowd_spawner_id = pygame.USEREVENT + 2
         pygame.time.set_timer(
             self.crowd_spawner_id,
-            500
+            250
         )
         # Memory monitoring
         self.footprint_counter = 0
@@ -241,6 +241,9 @@ class Scene():
                     self.main.data.crowd_spritesheets[npc_form]["data"],
                     self.main.data.setting["fps"]
                 ).add(self.general_sprites, self.crowd)
+            
+            # TODO Remove this for debug automation only
+            self.business_data["sari_sari_store"]["object"].serve_customer()
                 
                                 
     def mouse_click_events(self, event):

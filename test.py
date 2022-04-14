@@ -13,7 +13,10 @@ print(time3.days)
 print(time3.seconds)
 """
 
-t = [(2, 4), (5, 6), (6, 2)]
+import psutil
+import numpy as np
 
-print(t)
-print(list(reversed(t)))
+arr = np.ones((170_000,), dtype=np.uint8)
+print(psutil.Process().memory_info().rss / (1024 * 1024))
+
+

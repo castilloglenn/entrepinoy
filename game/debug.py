@@ -1,5 +1,5 @@
 from datetime import datetime
-from wmi import WMI
+import psutil
 import os
 
 
@@ -8,7 +8,6 @@ class Debugger():
     Handles all the recording of necessary data from the game to a text file.
     """
     def __init__(self):
-        self.w = WMI('.')
         self.save_only_previous_log = True
         
         if self.save_only_previous_log:
@@ -44,12 +43,5 @@ class Debugger():
 
 
     def memory_log(self):
-        """
-        Source: https://stackoverflow.com/questions/938733/total-memory-used-by-python-process
-        Explanation: 
-            Need a code that can give me the current memory usage of the program so I can monitor
-            it and give adjustments and refactorings if necessary.
-        """
-        result = self.w.query("SELECT WorkingSet FROM Win32_PerfRawData_PerfProc_Process WHERE IDProcess=%d" % os.getpid())
-        memory = int(result[0].WorkingSet) / 1000000
+        memory = psutil.Process().memory_info().rss / (1024 * 1024)
         self.log(f"Memory Usage: {memory:,.2f}MB")
