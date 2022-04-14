@@ -74,9 +74,9 @@ class Scene():
         self.main.debug.log("Initialized scene")
         
         # Sprites and sprite groups
-        self.general_sprites = pygame.sprite.Group()
+        self.general_sprites = SpriteGroup()
+        self.ui_components = pygame.sprite.Group()
         self.buttons = pygame.sprite.Group()
-        self.crowd = SpriteGroup()
         
         # Scene components
         self.background = SceneBackground(
@@ -84,7 +84,6 @@ class Scene():
             self.time, 
             **self.main.data.background
         )
-        self.background.add(self.general_sprites)
         
         # Internal variables
         self.business_data = {}
@@ -122,7 +121,7 @@ class Scene():
                 "outline" : self.main.data.scene["profile_holder_outline"]
             }
         )
-        self.profile_holder.add(self.general_sprites)
+        self.profile_holder.add(self.ui_components)
         
         self.cash_format = f"P{self.main.data.progress['cash']:18,.2f}"
         self.profile_message = Message(
@@ -137,7 +136,7 @@ class Scene():
             self.main.data.colors["orange"],
             top_left_coordinates=(165, 75)
         )
-        self.profile_message.add(self.general_sprites)
+        self.profile_message.add(self.ui_components)
         
         self.debug_message = Message(
             self.main.screen,
@@ -147,7 +146,7 @@ class Scene():
             top_left_coordinates=(10, 600),
             outline_thickness=1
         )
-        self.debug_message.add(self.general_sprites)
+        self.debug_message.add(self.ui_components)
         
         # Buttons layering hierarchy (the top layer must be add first)
         self.profile_holder.add(self.buttons)
@@ -233,17 +232,14 @@ class Scene():
                     self.main.data.crowd_spritesheets[npc_form]["data"],
                     self.main.data.setting["fps"],
                     self.safe_spot, **self.business_data
-                ).add(self.general_sprites, self.crowd)
+                ).add(self.general_sprites)
             else:
                 NPC(
                     self.main.screen, npc_form, 
                     self.main.data.crowd_spritesheets[npc_form]["sheet"],
                     self.main.data.crowd_spritesheets[npc_form]["data"],
                     self.main.data.setting["fps"]
-                ).add(self.general_sprites, self.crowd)
-            
-            # TODO Remove this for debug automation only
-            self.business_data["sari_sari_store"]["object"].serve_customer()
+                ).add(self.general_sprites)
                 
                                 
     def mouse_click_events(self, event):
@@ -311,6 +307,9 @@ class Scene():
             
         elif key == pygame.K_F3:
             self.business_data["sari_sari_store"]["object"].serve_customer()
+            
+        elif key == pygame.K_F4:
+            self.spawn_crowd_customer()
 
 
     def key_hold_events(self, keys):
@@ -352,16 +351,15 @@ class Scene():
         
         
     def run(self):
-        self.main.debug.log(f"Initial memory and object statistics:")
-        self.main.debug.log(f"Total crowd objects: {len(self.general_sprites)}")
         self.main.debug.memory_log()
         self.main.debug.new_line()
         
         self.running = True
         while self.running:
             # Rendering sprites
-            self.general_sprites.update()
-            self.crowd.draw(self.main.screen)
+            self.background.update()
+            self.general_sprites.draw(self.main.screen)
+            self.ui_components.update()
             
             # Event processing
             for event in pygame.event.get():
@@ -392,8 +390,9 @@ class Scene():
             # TODO DEBUGGING ONLY
             self.debug_message.set_message(
                 [
-                    f"{self.main.debug.get_memory_usage()}",
                     f"{self.main.debug.get_highest_usage()}",
+                    f"{self.main.debug.get_memory_usage()}",
+                    f"{self.main.debug.get_free_usage()}",
                     f"Location: {self.location}",
                     f"Total crowd spawned: {self.footprint_counter}",
                     f"Customers spawned: {self.customers_spawned}",

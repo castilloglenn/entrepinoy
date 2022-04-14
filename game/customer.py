@@ -109,11 +109,9 @@ class Customer(NPC):
             super().update()
             return
         
-        if self.business_target["object"].business_state == "closed":
-            self.served_and_leave()
-        
         super().animate()
-        if self.is_standing:
+        business_state = self.business_target["object"].business_state
+        if self.is_standing and business_state == "open":
             if self.business_target["meta"]["queue_direction"] == "left":
                 self.direction = "right"
                 self.is_flipped = True
@@ -121,8 +119,9 @@ class Customer(NPC):
             if self.queue_number > 0:
                 current_queue = self.business_target["object"].queue
                 person_ahead_of_line = current_queue[self.queue_number - 1]
+                is_slow = person_ahead_of_line.speed < self.speed
                     
-                if not person_ahead_of_line.is_standing:
+                if not person_ahead_of_line.is_standing and is_slow:
                     queue_holder = current_queue[self.queue_number]
                     current_queue[self.queue_number] = current_queue[self.queue_number - 1]
                     current_queue[self.queue_number - 1] = queue_holder
@@ -130,6 +129,8 @@ class Customer(NPC):
                     person_ahead_of_line.queue_move(1)
                     self.queue_move(-1)
             return
+        else:
+            self.served_and_leave()
         
         self.speed_tick += self.speed
         if self.speed_tick >= 1:
@@ -209,4 +210,7 @@ class Customer(NPC):
             self.business_target["object"].rect.height +
             self.business_queue_space
         ))
+        
+        if self.target_index > len(self.exit_points) - 1:
+            self.target_index = len(self.target_points) - 1
         

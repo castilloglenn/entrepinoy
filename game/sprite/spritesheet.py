@@ -82,7 +82,7 @@ class Spritesheet(Sprite):
             
         # Prevents the self-blitting due to the custom sprite group handles
         #   which sprite blits first based on their y-coordinates
-        # self.screen.blit(self.image, self.rect)
+        self.screen.blit(self.image, self.rect)
         
         
     def free(self):

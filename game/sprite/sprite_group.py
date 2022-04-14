@@ -16,6 +16,7 @@ class SpriteGroup(Group):
         sprites = self.sprites()
         surface_blit = surface.blit
         for spr in sorted(sprites, key=self.by_y):
-            self.spritedict[spr] = surface_blit(spr.image, spr.rect)
+            # self.spritedict[spr] = surface_blit(spr.image, spr.rect)
+            spr.update()
         self.lostsprites = []
         

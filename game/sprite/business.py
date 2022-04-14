@@ -38,6 +38,8 @@ class Business(Button):
             
         elif self.business_state == "closed":
             # Free the queue
+            for customer in self.queue:
+                customer.served_and_leave()
             self.queue = []
             
             self.idle = self.states["closed"].convert_alpha()

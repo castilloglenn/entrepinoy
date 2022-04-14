@@ -46,6 +46,7 @@ class Debugger():
 
     def memory_log(self):
         self.log(self.get_memory_usage())
+        self.log(self.get_free_usage())
         self.log(self.get_highest_usage())
         
         
@@ -55,9 +56,12 @@ class Debugger():
             self.highest_memory = current_usage
             
         virtual_mem = psutil.virtual_memory()
-        free = virtual_mem.free / 1024 / 1024
         percent = virtual_mem.percent
-        return f"Memory Usage: {current_usage:,.2f}MB/{free:,.2f}MB ({percent}%)"
+        return f"Memory Usage: {current_usage:,.2f}MB ({percent}%)"
+    
+    def get_free_usage(self):
+        free = psutil.virtual_memory().free / 1024 / 1024
+        return f"Free Memory: {free:,.2f}MB"
         
         
     def get_highest_usage(self):
