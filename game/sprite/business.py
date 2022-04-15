@@ -147,4 +147,3 @@ class Business(Button):
     def switch_animation(self, hover_coordinates):
         if self.collide_rect.collidepoint(hover_coordinates) and not self.is_serving:
             self.has_employee = not self.has_employee
-            print(f"Employee status: {self.has_employee}")
