@@ -1,0 +1,215 @@
+{
+	"frames": {
+		"buko_stall_employee_1.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 278,
+				"h": 150
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 278,
+				"h": 150
+			},
+			"sourceSize": {
+				"w": 278,
+				"h": 150
+			}
+		},
+		"buko_stall_employee_10.png": {
+			"frame": {
+				"x": 281,
+				"y": 1,
+				"w": 278,
+				"h": 150
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 278,
+				"h": 150
+			},
+			"sourceSize": {
+				"w": 278,
+				"h": 150
+			}
+		},
+		"buko_stall_employee_2.png": {
+			"frame": {
+				"x": 1,
+				"y": 153,
+				"w": 278,
+				"h": 150
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 278,
+				"h": 150
+			},
+			"sourceSize": {
+				"w": 278,
+				"h": 150
+			}
+		},
+		"buko_stall_employee_3.png": {
+			"frame": {
+				"x": 281,
+				"y": 153,
+				"w": 278,
+				"h": 150
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 278,
+				"h": 150
+			},
+			"sourceSize": {
+				"w": 278,
+				"h": 150
+			}
+		},
+		"buko_stall_employee_4.png": {
+			"frame": {
+				"x": 1,
+				"y": 305,
+				"w": 278,
+				"h": 150
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 278,
+				"h": 150
+			},
+			"sourceSize": {
+				"w": 278,
+				"h": 150
+			}
+		},
+		"buko_stall_employee_5.png": {
+			"frame": {
+				"x": 281,
+				"y": 305,
+				"w": 278,
+				"h": 150
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 278,
+				"h": 150
+			},
+			"sourceSize": {
+				"w": 278,
+				"h": 150
+			}
+		},
+		"buko_stall_employee_6.png": {
+			"frame": {
+				"x": 1,
+				"y": 457,
+				"w": 278,
+				"h": 150
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 278,
+				"h": 150
+			},
+			"sourceSize": {
+				"w": 278,
+				"h": 150
+			}
+		},
+		"buko_stall_employee_7.png": {
+			"frame": {
+				"x": 281,
+				"y": 457,
+				"w": 278,
+				"h": 150
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 278,
+				"h": 150
+			},
+			"sourceSize": {
+				"w": 278,
+				"h": 150
+			}
+		},
+		"buko_stall_employee_8.png": {
+			"frame": {
+				"x": 561,
+				"y": 1,
+				"w": 278,
+				"h": 150
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 278,
+				"h": 150
+			},
+			"sourceSize": {
+				"w": 278,
+				"h": 150
+			}
+		},
+		"buko_stall_employee_9.png": {
+			"frame": {
+				"x": 561,
+				"y": 153,
+				"w": 278,
+				"h": 150
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 278,
+				"h": 150
+			},
+			"sourceSize": {
+				"w": 278,
+				"h": 150
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 840,
+			"h": 608
+		},
+		"scale": "1"
+	}
+}
