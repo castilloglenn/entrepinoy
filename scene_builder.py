@@ -58,7 +58,7 @@ class Scene():
         self.crowd_spawner_id = pygame.USEREVENT + 2
         pygame.time.set_timer(
             self.crowd_spawner_id,
-            250
+            500
         )
         # Memory monitoring
         self.footprint_counter = 0
@@ -92,9 +92,15 @@ class Scene():
         #   to avoid rendering confusions or going through walls
         # This is location-specific
         self.safe_spot = (0.5, 0.675)
-        self.object_limit = 20
+        self.object_limit = 50
         
         # TODO business_1 will deprecate soon when dynamic scene builder is completed
+        self.business1_images = self.main.data.business_images["sari_sari_store"]
+        self.business1_images["buttons"] = {}
+        self.business1_images["buttons"]["serve"] = {}
+        self.business1_images["buttons"]["serve"]["idle"] = self.main.data.scene["serve_button_idle"]
+        self.business1_images["buttons"]["serve"]["hovered"] = self.main.data.scene["serve_button_hovered"]
+
         self.business_1 = Business(
             self.main.screen, 
             "sari_sari_store",
@@ -105,7 +111,7 @@ class Scene():
                 int(self.main.data.setting["game_height"] * 0.35)
             ), 
             collide_rect=(0.77, 1),
-            **self.main.data.business_images["sari_sari_store"]
+            **self.business1_images
         )
         self.business_data["sari_sari_store"] = {}
         self.business_data["sari_sari_store"]["meta"] = self.main.data.business["sari_sari_store"]

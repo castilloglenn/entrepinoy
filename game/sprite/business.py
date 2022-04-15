@@ -27,6 +27,9 @@ class Business(Button):
         
         self.employee_spritesheet = self.states["employee"]["spritesheet"]
         self.employee_json = self.states["employee"]["json"]
+
+        self.serve_button_idle = self.states["buttons"]["serve"]["idle"].convert_alpha()
+        self.serve_button_hovered = self.states["buttons"]["serve"]["idle"].convert_alpha()
         
         self.employee_frames = []
         self.employee_index = 0
@@ -104,17 +107,9 @@ class Business(Button):
     def set_serve_animation(self):
         # Trigger one full sprite animation then trigger serve command
         #   and makes the first customer leave
-        if not self.has_employee:
-            return
-        
-        if len(self.queue) == 0:
-            return
-        
-        if not self.queue[0].is_standing:
-            return
-        
-        self.is_standby = False
-        self.is_serving = True
+        if len(self.queue) > 0 and self.has_employee and self.queue[0].is_standing:
+            self.is_standby = False
+            self.is_serving = True
         
     
     def serve_customer(self):

@@ -62,7 +62,9 @@ class Library():
         }
         self.scene = {
             "profile_holder_idle" : self.get_image("scene", "profile_holder_idle.png"),
-            "profile_holder_outline" : self.get_image("scene", "profile_holder_outline.png")
+            "profile_holder_outline" : self.get_image("scene", "profile_holder_outline.png"),
+            "serve_button_idle" : self.get_image("scene", "serve_button_idle.png"),
+            "serve_button_hovered" : self.get_image("scene", "serve_button_hovered.png")
         }
         self.crowd_spritesheets = {
             "-1" : {
