@@ -92,7 +92,7 @@ class Scene():
         #   to avoid rendering confusions or going through walls
         # This is location-specific
         self.safe_spot = (0.5, 0.675)
-        self.object_limit = 6
+        self.object_limit = 20
         
         # TODO business_1 will deprecate soon when dynamic scene builder is completed
         self.business_1 = Business(

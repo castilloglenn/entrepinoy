@@ -27,7 +27,8 @@ class Time():
         debug.log(
             f"\nTime amplification: \n"
             f"1 second in real life = {86400 / amplify:,.2f} second(s) in-game\n"
-            f"{amplify / 60:,.2f} minutes in real life = 1 day in game")
+            f"{amplify / 60:,.2f} minutes in real life = 1 day in game\n"
+            # f"{amplify / 60 / 24:,.2f} seconds in real life = 1 hour in game")
         
         # Parse time
         self.time = datetime.strptime(start_time, self.format)

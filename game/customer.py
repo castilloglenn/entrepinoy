@@ -112,6 +112,9 @@ class Customer(NPC):
         
         super().animate()
         try:
+            if self.business_target["object"].queue[self.queue_number] is not self:
+                self.leave()
+                
             if self.is_standing and self.business_target["object"].business_state == "open" \
                 and len(self.business_target["object"].queue) != 0:
                 if self.business_target["meta"]["queue_direction"] == "left":
@@ -202,7 +205,7 @@ class Customer(NPC):
             
         
     def leave(self):
-        if not self.is_served and self.is_standing:
+        if self.is_standing:
             self.is_served = True
             self.is_standing = False
             
