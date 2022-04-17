@@ -2,6 +2,8 @@ from game.sprite.button import Button
 import pygame
 import copy
 
+from pprint import pprint
+
 
 class Business(Button):
     """
@@ -29,7 +31,8 @@ class Business(Button):
         self.employee_json = self.states["employee"]["json"]
 
         self.serve_button_idle = self.states["buttons"]["serve"]["idle"].convert_alpha()
-        self.serve_button_hovered = self.states["buttons"]["serve"]["idle"].convert_alpha()
+        self.serve_button_hovered = self.states["buttons"]["serve"]["hovered"].convert_alpha()
+        self.serve_button_relative_location = (0.5, 0.5)
         
         self.employee_frames = []
         self.employee_index = 0
@@ -54,6 +57,15 @@ class Business(Button):
         self.queue_limit = 5
         
         super().update()
+        
+        # Setting up pop-up buttons
+        self.serve_button = Button(
+            self.screen, self.serve_customer,
+            **{
+                "idle" : self.serve_button_idle,
+                "outline" : self.serve_button_hovered
+            }
+        )
     
     
     def update(self):
@@ -77,12 +89,52 @@ class Business(Button):
         self.set_image_and_rect()
         super().update()
         
+        # Checks for the manual serving button
+        if len(self.queue) > 0 and not self.has_employee:
+            if self.queue[0].is_standing:
+                self.serve_button.rect.center = self.rect.center
+                self.serve_button.visible = True
+            else:
+                self.serve_button.visible = False
+        else:
+            self.serve_button.visible = False
+        
+        self.serve_button.update()
+        
+        
+    def set_serve_animation(self):
+        # Trigger one full sprite animation then trigger serve command
+        #   and makes the first customer leave
+        if len(self.queue) > 0 and self.has_employee and self.queue[0].is_standing:
+            self.is_standby = False
+            self.is_serving = True
+        
         
     def set_business_state(self, new_state: str):
         # Open or close
         self.business_state = new_state
         self.update_business_images()
         self.set_image_and_rect()
+    
+    
+    def check_hovered(self, hover_coordinates):
+        if self.serve_button.check_hovered(hover_coordinates) \
+            and self.serve_button.visible:
+                self.state = "idle"
+                self.set_image_and_rect()
+                return True
+        else:
+            self.state = "hovered"
+            self.set_image_and_rect()
+            super().check_hovered(hover_coordinates)
+        
+    
+    def check_clicked(self, click_coordinates):
+        if self.serve_button.check_clicked(click_coordinates) \
+            and self.serve_button.visible:
+                return True
+        else:
+            super().check_clicked(click_coordinates)
         
         
     def update_business_images(self):
@@ -102,14 +154,6 @@ class Business(Button):
             self.hovered = self.states["closed"].convert_alpha()
             
         self.hovered.blit(self.outline, (0, 0))
-        
-        
-    def set_serve_animation(self):
-        # Trigger one full sprite animation then trigger serve command
-        #   and makes the first customer leave
-        if len(self.queue) > 0 and self.has_employee and self.queue[0].is_standing:
-            self.is_standby = False
-            self.is_serving = True
         
     
     def serve_customer(self):

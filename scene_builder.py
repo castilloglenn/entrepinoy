@@ -313,10 +313,10 @@ class Scene():
             self.running = False
             
         elif key == pygame.K_F3:
-            self.business_data["sari_sari_store"]["object"].set_serve_animation()
+            self.time.set_time("2022/04/14, 16:56:08.424778")
             
         elif key == pygame.K_F4:
-            self.time.set_time("2022/04/14, 16:56:08.424778")
+            pass
 
 
     def key_hold_events(self, keys):

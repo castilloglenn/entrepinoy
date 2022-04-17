@@ -30,6 +30,7 @@ class Button(Sprite):
         # Debugging
         self.show_bound = False
         self.bound_color = (255, 255, 255)
+        self.bound_opacity = 128
         
         self.visible = True
         self.screen = screen
@@ -37,9 +38,12 @@ class Button(Sprite):
         self.callback = callback_function
         
         self.idle = states["idle"].convert_alpha()
-        self.hovered = states["idle"].convert_alpha()
-        self.outline = states["outline"].convert_alpha()
-        self.hovered.blit(self.outline, (0, 0))
+        try:
+            self.hovered = states["hovered"].convert_alpha()
+        except KeyError:
+            self.hovered = states["idle"].convert_alpha()
+            self.outline = states["outline"].convert_alpha()
+            self.hovered.blit(self.outline, (0, 0))
         
         self.top_left_coordinates = top_left_coordinates
         self.center_coordinates = center_coordinates
@@ -53,7 +57,7 @@ class Button(Sprite):
         elif self.center_coordinates != None:
             self.rect.center = self.center_coordinates
         else:
-            self.rect = (0, 0)
+            self.rect.topleft = (0, 0)
         
         # Collide rect refers to the inner rectangle of the button to where
         #   specifically the triggers function inside the box, this avoids
@@ -72,17 +76,19 @@ class Button(Sprite):
         self.hitbox = Surface((self.collide_width, self.collide_height))
         self.hitbox.fill(self.bound_color)
         self.hitbox.convert_alpha()
-        self.hitbox.set_alpha(128)
+        self.hitbox.set_alpha(self.bound_opacity)
         
         self.set_image_and_rect()
         
         
     def update(self):
         if self.visible:
+            self.collide_x = self.rect.x + (self.rect.width * ((1 - self.collide_rect_rel[0]) / 2))
+            self.collide_y = self.rect.y + (self.rect.height * ((1 - self.collide_rect_rel[1]) / 2))
             self.screen.blit(self.image, self.rect)
         
-        if self.show_bound:
-            self.screen.blit(self.hitbox, (self.collide_x, self.collide_y)) 
+            if self.show_bound:
+                self.screen.blit(self.hitbox, (self.collide_x, self.collide_y)) 
             
         
     def set_image_and_rect(self):
@@ -97,8 +103,8 @@ class Button(Sprite):
         elif self.center_coordinates is not None:
             self.rect.center = self.center_coordinates
         else:
-            self.rect = (0, 0)
-        
+            self.rect.topleft = (0, 0)
+            
         self.collide_rect = Rect(
             self.collide_x, self.collide_y,
             self.collide_width, self.collide_height

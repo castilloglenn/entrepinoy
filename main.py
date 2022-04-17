@@ -346,7 +346,6 @@ class Main():
         
         
     def main_loop(self):
-        self.debug.new_line()
         while self.running:
             # Screen rendering
             self.screen.blit(self.data.title_screen["bg"], (0, 0))
