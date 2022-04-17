@@ -37,9 +37,16 @@ class Business(Button):
         self.employee_frames = []
         self.employee_index = 0
 
+        self.fps = fps
+        self.frame_length = 1 / self.fps
+        self.frame_counter = 0
+        
+        self.seconds_counter = 0
+        self.serving_cooldown = 1
+        
         # This speed controls when to switch from sprite animation to the
         #   next animation in the spritesheet
-        self.animate_speed = fps * 0.12
+        self.animate_speed = self.fps * 0.12
         self.animation_tick = 0
         
         # Parsing all the sprites contained in the spritesheet
@@ -82,7 +89,23 @@ class Business(Button):
                 if self.employee_index == len(self.employee_frames) - 1:
                     self.is_serving = False
                     self.is_standby = True
+                    
+                    self.update_business_images()
                     self.serve_customer()
+                    
+        elif self.has_employee and self.is_standby and not self.is_serving \
+            and len(self.queue) > 0:
+                if self.queue[0].is_standing:
+                    self.frame_counter += self.frame_length
+                    if int(self.frame_counter) >= 1:
+                        self.frame_counter -= 1
+                        self.seconds_counter += 1
+                        
+                        # Automatic serving when employees is present
+                        if self.seconds_counter >= self.serving_cooldown:
+                            self.seconds_counter = 0
+                            self.set_serve_animation()
+                    
         else:
             self.update_business_images()
           
