@@ -326,8 +326,11 @@ class Scene():
         elif key == pygame.K_F3:
             self.time.set_time("2022/01/01, 00:00:00.000000")
             
+            for key, business in self.business_data.items():
+                business["object"].served_count = 0
+            
         elif key == pygame.K_F4:
-            pass
+            self.time.set_time("2022/01/01, 17:00:00.000000")
 
 
     def key_hold_events(self, keys):

@@ -197,8 +197,24 @@ class Library():
             
     
     def create_new_save_file(self):
+        # self.progress = {
+        #     "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
+        #     "last_login": "",
+        #     "last_location" : "location_a",
+        #     "cash": 5000.0000000000000,
+    
+        #     "businesses": {
+        #         "location_a": {
+        #             "street_food": {
+        #                 "type": {
+        #                     "name": "buko_stall"
+        #                 }
+        #             }
+        #         }
+        #     }
+        # }
         self.progress = {
-            "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
+            "time": "2022/01/01, 00:00:00.000000",
             "last_login": "",
             "last_location" : "location_a",
             "cash": 5000.0000000000000,
