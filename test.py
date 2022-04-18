@@ -13,7 +13,11 @@ print(time3.days)
 print(time3.seconds)
 """
 
+e = {
+    "2" : 5,
+    "6" : 2
+}
 
-for index in range(8):
-    print(index % 8)
+
+print("qwe_employee_1".replace("_employee_1", ""))
 

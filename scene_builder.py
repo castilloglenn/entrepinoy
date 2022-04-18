@@ -26,7 +26,8 @@ class Scene():
     def __init__(self, main):
         # Settings up the scene
         self.main = main
-        self.location = "location_a" # TODO test location
+        
+        self.location = self.main.data.progress["last_location"]
         self.crowd_chance = self.main.data.crowd_statistics[self.location]
         self.customer_chance = self.main.data.customer_statistics[self.location]
         
@@ -43,7 +44,7 @@ class Scene():
             self.main.debug,
             self.main.data.progress["time"],
             self.main.data.setting["fps"],
-            self.main.data.setting["time_amplify"],
+            self.main.data.meta["time_amplify"],
             **self.callbacks
         )
         
@@ -58,7 +59,7 @@ class Scene():
         self.crowd_spawner_id = pygame.USEREVENT + 2
         pygame.time.set_timer(
             self.crowd_spawner_id,
-            500
+            self.main.data.meta["crowd_spawn_timeout"]
         )
         # Memory monitoring
         self.footprint_counter = 0
@@ -66,7 +67,7 @@ class Scene():
         self.memory_debug_id = pygame.USEREVENT + 3
         pygame.time.set_timer(
             self.memory_debug_id,
-            60000
+            self.main.data.meta["memory_log_timeout"]
         )
         
         # Logging entry point
@@ -91,32 +92,40 @@ class Scene():
         #   go there first before going to the back layer of businesses
         #   to avoid rendering confusions or going through walls
         # This is location-specific
-        self.safe_spot = (0.5, 0.675)
-        self.object_limit = 50
+        self.safe_spot = self.main.data.location[self.location]["safe_spot"]
+        self.object_limit = self.main.data.location[self.location]["object_limit"]
         
-        # TODO business_1 will deprecate soon when dynamic scene builder is completed
-        self.business1_images = self.main.data.business_images["sari_sari_store"]
-        self.business1_images["buttons"] = {}
-        self.business1_images["buttons"]["serve"] = {}
-        self.business1_images["buttons"]["serve"]["idle"] = self.main.data.scene["serve_button_idle"]
-        self.business1_images["buttons"]["serve"]["hovered"] = self.main.data.scene["serve_button_hovered"]
-
-        self.business_1 = Business(
-            self.main.screen, 
-            "sari_sari_store",
-            self.main.data.setting["fps"],
-            self.business_1_callback,
-            center_coordinates=(
-                int(self.main.data.setting["game_width"] * 0.37),
-                int(self.main.data.setting["game_height"] * 0.35)
-            ), 
-            collide_rect=(0.77, 1),
-            **self.business1_images
-        )
-        self.business_data["sari_sari_store"] = {}
-        self.business_data["sari_sari_store"]["meta"] = self.main.data.business["sari_sari_store"]
-        self.business_data["sari_sari_store"]["object"] = self.business_1
-        self.business_1.add(self.general_sprites)
+        for business_name in self.main.data.location[self.location]["businesses"]:
+            if business_name == "street_food":
+                business_name = self.main.data.progress["businesses"][self.location]["street_food"]["type"]["name"]
+                data = "street_food"
+            else:
+                data = business_name
+                
+            scene_business = Business(
+                self.main.screen, 
+                business_name,
+                self.main.data.setting["fps"],
+                self.business_callback,
+                Button(
+                    self.main.screen, None,
+                    **{
+                        "idle" : self.main.data.scene["serve_button_idle"].convert_alpha(),
+                        "outline" : self.main.data.scene["serve_button_hovered"].convert_alpha()
+                    }
+                ),
+                self.main.data.business[data],
+                center_coordinates=(
+                    int(self.main.data.setting["game_width"] * self.main.data.business[data]["rel_center_coordinates"][0]),
+                    int(self.main.data.setting["game_height"] * self.main.data.business[data]["rel_center_coordinates"][1])
+                ), 
+                collide_rect=self.main.data.business[data]["collide_rect"],
+                **self.main.data.business_images[business_name]
+            )
+            self.business_data[business_name] = {}
+            self.business_data[business_name]["meta"] = self.main.data.business[data]
+            self.business_data[business_name]["object"] = scene_business
+            scene_business.add(self.general_sprites)
         
         self.profile_holder = Button(
             self.main.screen,
@@ -149,14 +158,17 @@ class Scene():
             [""],
             self.main.data.small_font, 
             self.main.data.colors["white"],
-            top_left_coordinates=(10, 600),
+            top_left_coordinates=(10, 575),
             outline_thickness=1
         )
         self.debug_message.add(self.ui_components)
         
         # Buttons layering hierarchy (the top layer must be add first)
         self.profile_holder.add(self.buttons)
-        self.business_1.add(self.buttons)
+        # Loop out the businesses then add them after this line to make the buttons
+        #   discovered first before the layer of businesses
+        for key, business in self.business_data.items():
+            business["object"].add(self.buttons)
         
         # Main loop
         self.running = False
@@ -204,12 +216,12 @@ class Scene():
         self.main.debug.log("Profile clicked")
         
     
-    def business_1_callback(self):
-        state = self.business_1.business_state
+    def business_callback(self, *args):
+        state = args[0].business_state
         if state == "open":
-            self.business_1.set_business_state("closed")
+            args[0].set_business_state("closed")
         elif state == "closed":
-            self.business_1.set_business_state("open")
+            args[0].set_business_state("open")
             
             
     def check_queues_if_full(self):
@@ -261,8 +273,7 @@ class Scene():
             
         # If the user clicked on the right mouse button
         if event.button == 3: 
-            # TODO TEST ONLY
-            self.business_1.switch_animation(click_coordinates)
+            pass
 
         # If the user scrolls the mouse wheel upward
         if event.button == 4:  
@@ -313,7 +324,7 @@ class Scene():
             self.running = False
             
         elif key == pygame.K_F3:
-            self.time.set_time("2022/04/14, 16:56:08.424778")
+            self.time.set_time("2022/01/01, 00:00:00.000000")
             
         elif key == pygame.K_F4:
             pass
@@ -404,7 +415,10 @@ class Scene():
                     f"Total crowd spawned: {self.footprint_counter}",
                     f"Customers spawned: {self.customers_spawned}",
                     f"Objects/Max displayed: {len(self.general_sprites)}/{self.object_limit}",
-                    f"Queue: {len(self.business_1.queue)}/{self.business_1.queue_limit}"
+                    f"Sari-sari store: {len(self.business_data['sari_sari_store']['object'].queue)}/{self.business_data['sari_sari_store']['object'].queue_limit} Served customers: {self.business_data['sari_sari_store']['object'].served_count}",
+                    f"Food cart: {len(self.business_data['food_cart']['object'].queue)}/{self.business_data['food_cart']['object'].queue_limit} Served customers: {self.business_data['food_cart']['object'].served_count}",
+                    f"Buko stall: {len(self.business_data['buko_stall']['object'].queue)}/{self.business_data['buko_stall']['object'].queue_limit} Served customers: {self.business_data['buko_stall']['object'].served_count}",
+                    f"Ukay-ukay: {len(self.business_data['ukay_ukay']['object'].queue)}/{self.business_data['ukay_ukay']['object'].queue_limit} Served customers: {self.business_data['ukay_ukay']['object'].served_count}",
                 ]
             )
             

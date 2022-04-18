@@ -11,7 +11,8 @@ class Business(Button):
     It controls its attributes and the states when it is open or closed.
     """
     def __init__(self, screen, name, fps,
-                 callback_function, 
+                 callback_function, serve_button,
+                 business_data,
                  top_left_coordinates=None, 
                  center_coordinates=None, 
                  collide_rect=None,
@@ -27,11 +28,13 @@ class Business(Button):
         self.states = states
         self.outline = self.states["outline"].convert_alpha()
         
+        # Business attributes
+        self.business_data = business_data
+        self.served_count = 0
+        self.sales_stash = 0
+        
         self.employee_spritesheet = self.states["employee"]["spritesheet"]
         self.employee_json = self.states["employee"]["json"]
-
-        self.serve_button_idle = self.states["buttons"]["serve"]["idle"].convert_alpha()
-        self.serve_button_hovered = self.states["buttons"]["serve"]["hovered"].convert_alpha()
         self.serve_button_relative_location = (0.5, 0.5)
         
         self.employee_frames = []
@@ -50,8 +53,12 @@ class Business(Button):
         self.animation_tick = 0
         
         # Parsing all the sprites contained in the spritesheet
+        for frame_name, content in self.employee_json['frames'].items():
+            self.name_keyword = frame_name.replace("_employee_1.png", "")
+            break
+            
         for index in range(len(self.employee_json['frames'])):
-            self.employee_frames.append(self.fetch_sprite(f'{self.name}_employee_{index + 1}.png'))
+            self.employee_frames.append(self.fetch_sprite(f'{self.name_keyword}_employee_{index + 1}.png'))
             
         # Setting the standing animation for the sprite
         self.standby_image = self.employee_frames.pop()
@@ -66,13 +73,8 @@ class Business(Button):
         super().update()
         
         # Setting up pop-up buttons
-        self.serve_button = Button(
-            self.screen, self.serve_customer,
-            **{
-                "idle" : self.serve_button_idle,
-                "outline" : self.serve_button_hovered
-            }
-        )
+        self.serve_button = serve_button
+        self.serve_button.set_callback(self.serve_customer)
     
     
     def update(self):
@@ -179,11 +181,12 @@ class Business(Button):
         self.hovered.blit(self.outline, (0, 0))
         
     
-    def serve_customer(self):
+    def serve_customer(self, *args):
         if len(self.queue) == 0:
             return
         
         if self.queue[0].is_standing:
+            self.served_count += 1
             self.queue.pop(0).leave()
             for customer in self.queue:
                 customer.queue_move(-1)
@@ -209,3 +212,5 @@ class Business(Button):
     def switch_animation(self, hover_coordinates):
         if self.collide_rect.collidepoint(hover_coordinates) and not self.is_serving:
             self.has_employee = not self.has_employee
+            self.update_business_images()
+            self.set_image_and_rect()

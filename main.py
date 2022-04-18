@@ -188,7 +188,7 @@ class Main():
             self.debug.memory_log()
         
     
-    def check_save_file(self):
+    def check_save_file(self, *args):
         if self.data.progress == None:
             self.create_new_game()
         else:
@@ -203,7 +203,7 @@ class Main():
         self.scene_window.run()
         
         
-    def continue_game(self):
+    def continue_game(self, *args):
         self.debug.new_line()
         self.debug.log("Continue game entered")
         self.scene_window.run()
@@ -222,10 +222,10 @@ class Main():
         background.add(objects, buttons)
         
         # Inner functions just for the functionality of the buttons
-        def confirm():
+        def confirm(*args):
             background.enable = False
             self.create_new_game()
-        def cancel():
+        def cancel(*args):
             background.enable = False
         
         canvas_rect = background.rect

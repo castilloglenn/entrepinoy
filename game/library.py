@@ -12,12 +12,15 @@ class Library():
     """
     def __init__(self):
         # JSON data
+        #   config folder
+        self.meta = self.get_dict_from_json("config", "meta.json")
+        self.setting = self.get_dict_from_json("config", "settings.json")
+        #   library folder
         self.business = self.get_dict_from_json("library", "business.json")
         self.category = self.get_dict_from_json("library", "category.json")
         self.crowd_statistics = self.get_dict_from_json("library", "crowd_statistics.json")
         self.customer_statistics = self.get_dict_from_json("library", "customer_statistics.json")
-        self.meta = self.get_dict_from_json("config", "meta.json")
-        self.setting = self.get_dict_from_json("config", "settings.json")
+        self.location = self.get_dict_from_json("library", "location.json")
         
         # Checking the save data
         try:
@@ -85,34 +88,34 @@ class Library():
             },
         }
         self.business_images = {
-            "buko_stall" : {
-                # "idle" : self.get_image("business", "buko_stall_idle.png"),
-                "closed" : None,
-                "outline" : None,
+            "buko_stall" : { # 100% complete
+                "idle" : self.get_image("business", "buko_stall_idle.png"),
+                "closed" : self.get_image("business", "buko_stall_closed.png"),
+                "outline" : self.get_image("business", "buko_stall_closed_outline.png"),
                 "employee": {
-                    "spritesheet" : None,
-                    "json" : None
+                    "spritesheet" : self.get_image("business", "buko_stall_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "buko_stall_employee.json")
                 }
             },
             "fish_ball_stand" : {
-                # "idle" : self.get_image("business", "fish_ball_stand_idle.png"),
-                "closed" : None,
-                "outline" : None,
+                "idle" : self.get_image("business", "fish_ball_stand_idle.png"),
+                "closed" : self.get_image("business", "fish_ball_stand_idle.png"),
+                "outline" : self.get_image("business", "fish_ball_stand_idle.png"),
                 "employee": {
-                    "spritesheet" : None,
-                    "json" : None
+                    "spritesheet" : self.get_image("business", "buko_stall_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "buko_stall_employee.json")
                 }
             },
             "sorbetes" : {
-                # "idle" : self.get_image("business", "sorbetes_idle.png"),
-                "closed" : None,
-                "outline" : None,
+                "idle" : self.get_image("business", "sorbetes_idle.png"),
+                "closed" : self.get_image("business", "sorbetes_idle.png"),
+                "outline" : self.get_image("business", "sorbetes_idle.png"),
                 "employee": {
-                    "spritesheet" : None,
-                    "json" : None
+                    "spritesheet" : self.get_image("business", "buko_stall_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "buko_stall_employee.json")
                 }
             },
-            "sari_sari_store" : {
+            "sari_sari_store" : { # 100% complete
                 "idle" : self.get_image("business", "sari_sari_store_idle.png"),
                 "closed" : self.get_image("business", "sari_sari_store_closed.png"),
                 "outline" : self.get_image("business", "sari_sari_store_outline.png"),
@@ -122,22 +125,21 @@ class Library():
                 }
             },
             "ukay_ukay" : {
-                # "idle" : self.get_image("business", "ukay_ukay_idle.png"),
-                # "closed" : self.get_image("business", "ukay_ukay_closed.png"),
-                "outline" : None,
+                "idle" : self.get_image("business", "ukay_ukay_idle.png"),
+                "closed" : self.get_image("business", "ukay_ukay_closed.png"),
+                "outline" : self.get_image("business", "ukay_ukay_closed.png"),
                 "employee": {
-                    "spritesheet" : None,
-                    "json" : None
+                    "spritesheet" : self.get_image("business", "sari_sari_store_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "sari_sari_store_employee.json")
                 }
             },
             "food_cart" : {
-                # "idle" : self.get_image("business", "food_cart_idle.png"),
-                # "hovered" : self.get_image("business", "food_cart_hovered.png"),
-                "closed" : None,
-                "outline" : None,
+                "idle" : self.get_image("business", "food_cart_idle.png"),
+                "closed" : self.get_image("business", "food_cart_closed.png"),
+                "outline" : self.get_image("business", "food_cart_outline.png"),
                 "employee": {
-                    "spritesheet" : None,
-                    "json" : None
+                    "spritesheet" : self.get_image("business", "buko_stall_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "buko_stall_employee.json")
                 }
             }
         }
@@ -198,8 +200,10 @@ class Library():
         self.progress = {
             "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
             "last_login": "",
+            "last_location" : "location_a",
             "cash": 5000.0000000000000
         }
+        
         self.set_dict_to_json("progress", "progress.json", self.progress)
 
 
