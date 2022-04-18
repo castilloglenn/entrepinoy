@@ -3,5 +3,9 @@
     "version" : "0.0.1",
     
     "intro_duration" : 1,
-    "intro_transition" : 1
+    "intro_transition" : 1,
+
+    "time_amplify" : 600,
+    "crowd_spawn_timeout" : 500,
+    "memory_log_timeout" : 60000
 }

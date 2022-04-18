@@ -1,10 +1,14 @@
 {
-    "location_a" : [
-        "street_food",
-        "food_stall",
-        "sari_sari_store",
-        "ukay_ukay"
-    ],
+    "location_a" : {
+        "businesses" : [
+            "street_food",
+            "food_cart",
+            "sari_sari_store",
+            "ukay_ukay"
+        ],
+        "safe_spot" : [0.5, 0.675],
+        "object_limit" : 50
+    },
     "location_b" : [
 
     ],

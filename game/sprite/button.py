@@ -65,12 +65,12 @@ class Button(Sprite):
         #   points inside the button/background
         self.collide_rect_rel = collide_rect
         if collide_rect == None:
-            self.collide_rect_rel = (1, 1)
+            self.collide_rect_rel = (0, 0, 1, 1)
             
-        self.collide_x = self.rect.x + (self.rect.width * ((1 - self.collide_rect_rel[0]) / 2))
-        self.collide_y = self.rect.y + (self.rect.height * ((1 - self.collide_rect_rel[1]) / 2))
-        self.collide_width = self.rect.width * self.collide_rect_rel[0]
-        self.collide_height = self.rect.height * self.collide_rect_rel[1]
+        self.collide_x = self.rect.x + self.rect.width * self.collide_rect_rel[0]
+        self.collide_y = self.rect.y + self.rect.height * self.collide_rect_rel[1]
+        self.collide_width = self.rect.width * self.collide_rect_rel[2]
+        self.collide_height = self.rect.height * self.collide_rect_rel[3]
         
         # Screen surface (for displaying hitbox)
         self.hitbox = Surface((self.collide_width, self.collide_height))
@@ -83,8 +83,8 @@ class Button(Sprite):
         
     def update(self):
         if self.visible:
-            self.collide_x = self.rect.x + (self.rect.width * ((1 - self.collide_rect_rel[0]) / 2))
-            self.collide_y = self.rect.y + (self.rect.height * ((1 - self.collide_rect_rel[1]) / 2))
+            self.collide_x = self.rect.x + self.rect.width * self.collide_rect_rel[0]
+            self.collide_y = self.rect.y + self.rect.height * self.collide_rect_rel[1]
             self.screen.blit(self.image, self.rect)
         
             if self.show_bound:
@@ -125,9 +125,14 @@ class Button(Sprite):
     
     def check_clicked(self, click_coordinates):
         if self.collide_rect.collidepoint(click_coordinates) and self.visible:
-            self.callback()
+            self.callback(self)
         
         # Return booleans to prevent overlapping buttons to react the same
             return True
         return False
+    
+    
+    def set_callback(self, new_callback):
+        self.callback = new_callback
+        
             

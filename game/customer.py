@@ -34,7 +34,7 @@ class Customer(NPC):
         # Generating points for the customer to traverse across the scene
         self.target_points = []
         self.target_index = 0
-        self.business_queue_space = 20
+        self.business_queue_space = 10
         self.business_queue_horizontal_space = int(self.rect.width * 0.75)
         self.queue_horizontal_space = self.business_queue_horizontal_space * self.queue_number
         
