@@ -1,9 +1,8 @@
 {
-    "time": "2022/04/19, 05:50:05.976834",
-    "last_login": "2022/04/18, 15:51:49.780523",
+    "time": "2022/01/01, 00:34:16.800000",
+    "last_login": "2022/04/18, 18:52:53.890268",
     "last_location": "location_a",
     "cash": 5000.0,
-    
     "businesses": {
         "location_a": {
             "street_food": {
