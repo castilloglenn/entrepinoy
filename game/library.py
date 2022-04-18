@@ -201,7 +201,17 @@ class Library():
             "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
             "last_login": "",
             "last_location" : "location_a",
-            "cash": 5000.0000000000000
+            "cash": 5000.0000000000000,
+    
+            "businesses": {
+                "location_a": {
+                    "street_food": {
+                        "type": {
+                            "name": "buko_stall"
+                        }
+                    }
+                }
+            }
         }
         
         self.set_dict_to_json("progress", "progress.json", self.progress)
