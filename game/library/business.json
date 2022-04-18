@@ -37,7 +37,7 @@
     "ukay_ukay" : {
         "name" : "Ukay Ukay",
         "image_name" : "ukay_ukay",
-        "rel_center_coordinates" : [0.69, 0.35],
+        "rel_center_coordinates" : [0.74, 0.31],
         "collide_rect" : [0, 0, 1, 1],
         "queuing_point" : 0.5,
         "queue_direction" : "right",
@@ -52,7 +52,7 @@
     "food_cart" : {
         "name" : "Foodcart",
         "image_name" : "food_cart",
-        "rel_center_coordinates" : [0.84, 0.60],
+        "rel_center_coordinates" : [0.84, 0.70],
         "collide_rect" : [0, 0, 1, 1],
         "queuing_point" : 0.2,
         "queue_direction" : "left",

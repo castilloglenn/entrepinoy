@@ -127,7 +127,7 @@ class Library():
             "ukay_ukay" : {
                 "idle" : self.get_image("business", "ukay_ukay_idle.png"),
                 "closed" : self.get_image("business", "ukay_ukay_closed.png"),
-                "outline" : self.get_image("business", "ukay_ukay_closed.png"),
+                "outline" : self.get_image("business", "ukay_ukay_outline.png"),
                 "employee": {
                     "spritesheet" : self.get_image("business", "sari_sari_store_employee.png"),
                     "json" : self.get_dict_from_spritesheet("business", "sari_sari_store_employee.json")

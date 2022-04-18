@@ -158,7 +158,7 @@ class Scene():
             [""],
             self.main.data.small_font, 
             self.main.data.colors["white"],
-            top_left_coordinates=(10, 575),
+            top_left_coordinates=(10, 500),
             outline_thickness=1
         )
         self.debug_message.add(self.ui_components)
