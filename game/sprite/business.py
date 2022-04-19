@@ -63,7 +63,7 @@ class Business(Button):
         # Setting the standing animation for the sprite
         self.standby_image = self.employee_frames.pop()
         self.business_state = "open"
-        self.has_employee = False
+        self.has_employee = True
         self.is_standby = True
         self.is_serving = False
         
@@ -199,7 +199,8 @@ class Business(Button):
         
         if self.queue[0].is_standing:
             self.served_count += 1
-            self.queue.pop(0).leave()
+            self.queue.pop(0).serve()
+            
             for customer in self.queue:
                 customer.queue_move(-1)
                 

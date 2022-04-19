@@ -1,3 +1,4 @@
+from pprint import pprint
 from game.npc import NPC
 import pygame
 import random
@@ -11,7 +12,9 @@ class Customer(NPC):
     def __init__(self, screen: 
                 pygame.Surface, name: str, 
                 spritesheet: pygame.Surface, 
-                meta_data: dict, fps: int, 
+                meta_data: dict, 
+                emojis: dict,
+                fps: int, 
                 safe_spot: tuple[float],
                 **businesses):
         super().__init__(screen, name, spritesheet, meta_data, fps)
@@ -26,10 +29,24 @@ class Customer(NPC):
                 break
         
         # Customer attributes
+        self.happy_emoji = emojis["happy_emoji"].convert_alpha()
+        self.angry_emoji = emojis["angry_emoji"].convert_alpha()
+        self.show_emoji = False
+        self.emoji_timeout = 5
+        self.on_queue = False
         self.is_standing = False
         self.is_served = False
+        self.exit_switch = False
         self.is_exiting = False
         self.safe_spot = safe_spot
+        
+        # Waiting attributes
+        self.fps = fps
+        self.frame_length = 1 / self.fps
+        self.frame_counter = 0
+        self.seconds_counter = 0
+        self.temper_in_queue = random.randint(5, 10)
+        self.temper_reached = False
         
         # Generating points for the customer to traverse across the scene
         self.target_points = []
@@ -106,15 +123,37 @@ class Customer(NPC):
     
     
     def update(self):
+        if self.show_emoji:
+            if self.is_served:
+                rect = self.happy_emoji.get_rect()
+                rect.topleft = (self.rect.midtop[0], self.rect.midtop[1] - rect.height)
+                self.screen.blit(self.happy_emoji, rect)
+            else:
+                rect = self.angry_emoji.get_rect()
+                rect.topleft = (self.rect.midtop[0], self.rect.midtop[1] - rect.height)
+                self.screen.blit(self.angry_emoji, rect)
+            
+            self.frame_counter += self.frame_length
+            if int(self.frame_counter) >= 1:
+                self.frame_counter -= 1
+                self.seconds_counter += 1
+                
+                if self.seconds_counter >= self.emoji_timeout:
+                    self.show_emoji = False
+                    
         if self.is_exiting:
             super().update()
             return
         
         super().animate()
+        
         try:
-            if self.business_target["object"].queue[self.queue_number] is not self:
-                self.leave()
-                
+            if self.business_target["object"].queue[self.queue_number] is self:
+                self.on_queue = True
+        except IndexError:
+            self.on_queue = False
+        
+        try:
             if self.is_standing and self.business_target["object"].business_state == "open" \
                 and len(self.business_target["object"].queue) != 0:
                 if self.business_target["meta"]["queue_direction"] == "left":
@@ -136,6 +175,22 @@ class Customer(NPC):
                         
                         person_ahead_of_line.queue_move(1)
                         self.queue_move(-1)
+                else: 
+                    self.frame_counter += self.frame_length
+                    if int(self.frame_counter) >= 1:
+                        self.frame_counter -= 1
+                        self.seconds_counter += 1
+                        
+                        if self.seconds_counter >= self.temper_in_queue:
+                            self.frame_counter = 0
+                            self.seconds_counter = 0
+                            self.temper_reached = True
+                            
+                            self.business_target["object"].queue.pop(0)
+                            for customer in self.business_target["object"].queue:
+                                customer.queue_move(-1)
+                            
+                            self.leave()
                 return
             else:
                 self.leave()
@@ -154,11 +209,12 @@ class Customer(NPC):
                     self.current_position_in_float, 
                     self.target_points[self.target_index]
                 )
-                
             except IndexError:
-                if self.is_served:
-                    self.is_exiting = True
-                    self.speed_tick = 0
+                if self.is_served or self.temper_reached or not self.on_queue:
+                    if self.target_points == self.exit_points and \
+                        self.target_index == len(self.exit_points):
+                            self.is_exiting = True
+                            self.speed_tick = 0
                 elif not self.is_served:
                     self.is_standing = True
                 return
@@ -203,14 +259,21 @@ class Customer(NPC):
             
             self.speed_tick -= absolute_movement
             
+            
+    def serve(self):
+        self.is_served = True
+        self.leave()
+            
         
     def leave(self):
         if self.is_standing:
-            self.is_served = True
             self.is_standing = False
+            self.show_emoji = True
             
-            self.target_points = self.exit_points
-            self.target_index = 0
+            if not self.exit_switch:
+                self.exit_switch = True
+                self.target_points = self.exit_points
+                self.target_index = 0
         
     
     def queue_move(self, relative_position: int):

@@ -233,14 +233,14 @@ class Scene():
             
             
     def spawn_crowd_customer(self):
-        npc_chance = random.randint(0, 100) 
+        npc_chance = random.randint(0, 1)
         if npc_chance <= self.crowd_chance[self.time.time.hour] \
                 and len(self.general_sprites) < self.object_limit: 
             self.footprint_counter += 1 # TODO Deprecated
             npc_form = str(random.randint(0, 2))
             is_businesses_full = self.check_queues_if_full()
             
-            customer_chance = random.randint(0, 100) 
+            customer_chance = random.randint(0, 1)
             if customer_chance <= self.customer_chance[self.time.time.hour] \
                 and not is_businesses_full:
                 self.customers_spawned += 1 # TODO For debugging only
@@ -248,6 +248,7 @@ class Scene():
                     self.main.screen, npc_form,
                     self.main.data.crowd_spritesheets[npc_form]["sheet"],
                     self.main.data.crowd_spritesheets[npc_form]["data"],
+                    self.main.data.emojis,
                     self.main.data.setting["fps"],
                     self.safe_spot, **self.business_data
                 ).add(self.general_sprites)
@@ -418,10 +419,10 @@ class Scene():
                     f"Total crowd spawned: {self.footprint_counter}",
                     f"Customers spawned: {self.customers_spawned}",
                     f"Objects/Max displayed: {len(self.general_sprites)}/{self.object_limit}",
-                    f"Sari-sari store: {len(self.business_data['sari_sari_store']['object'].queue)}/{self.business_data['sari_sari_store']['object'].queue_limit} Served customers: {self.business_data['sari_sari_store']['object'].served_count}",
-                    f"Food cart: {len(self.business_data['food_cart']['object'].queue)}/{self.business_data['food_cart']['object'].queue_limit} Served customers: {self.business_data['food_cart']['object'].served_count}",
-                    f"Buko stall: {len(self.business_data['buko_stall']['object'].queue)}/{self.business_data['buko_stall']['object'].queue_limit} Served customers: {self.business_data['buko_stall']['object'].served_count}",
-                    f"Ukay-ukay: {len(self.business_data['ukay_ukay']['object'].queue)}/{self.business_data['ukay_ukay']['object'].queue_limit} Served customers: {self.business_data['ukay_ukay']['object'].served_count}",
+                    f"Tindahan: {len(self.business_data['sari_sari_store']['object'].queue)}/{self.business_data['sari_sari_store']['object'].queue_limit} Served customers: {self.business_data['sari_sari_store']['object'].served_count}",
+                    # f"Food cart: {len(self.business_data['food_cart']['object'].queue)}/{self.business_data['food_cart']['object'].queue_limit} Served customers: {self.business_data['food_cart']['object'].served_count}",
+                    # f"Buko stall: {len(self.business_data['buko_stall']['object'].queue)}/{self.business_data['buko_stall']['object'].queue_limit} Served customers: {self.business_data['buko_stall']['object'].served_count}",
+                    # f"Ukay-ukay: {len(self.business_data['ukay_ukay']['object'].queue)}/{self.business_data['ukay_ukay']['object'].queue_limit} Served customers: {self.business_data['ukay_ukay']['object'].served_count}",
                 ]
             )
             

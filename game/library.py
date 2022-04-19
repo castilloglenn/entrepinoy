@@ -69,6 +69,10 @@ class Library():
             "serve_button_idle" : self.get_image("scene", "serve_button_idle.png"),
             "serve_button_hovered" : self.get_image("scene", "serve_button_hovered.png")
         }
+        self.emojis = {
+            "happy_emoji" : self.get_image("scene", "happy_emoji.png"),
+            "angry_emoji" : self.get_image("scene", "angry_emoji.png")
+        }
         self.crowd_spritesheets = {
             "-1" : {
                 "sheet" : self.get_image("test", "test.png"),
