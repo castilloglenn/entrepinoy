@@ -63,7 +63,7 @@ class Business(Button):
         # Setting the standing animation for the sprite
         self.standby_image = self.employee_frames.pop()
         self.business_state = "open"
-        self.has_employee = True
+        self.has_employee = False
         self.is_standby = True
         self.is_serving = False
         
@@ -117,7 +117,19 @@ class Business(Button):
         # Checks for the manual serving button
         if len(self.queue) > 0 and not self.has_employee:
             if self.queue[0].is_standing:
-                self.serve_button.rect.center = self.rect.center
+                # self.business_data["rel_serve_coordinates"]
+                if self.business_data["placement"] == "front":
+                    new_center = (
+                        self.rect.center[0],
+                        self.screen.get_rect().height * 0.43
+                    )
+                elif self.business_data["placement"] == "back":
+                    new_center = (
+                        self.rect.center[0],
+                        self.screen.get_rect().height * 0.3
+                    )
+                
+                self.serve_button.rect.center = new_center
                 self.serve_button.visible = True
             else:
                 self.serve_button.visible = False
@@ -151,7 +163,7 @@ class Business(Button):
         else:
             self.state = "hovered"
             self.set_image_and_rect()
-            super().check_hovered(hover_coordinates)
+            return super().check_hovered(hover_coordinates)
         
     
     def check_clicked(self, click_coordinates):
@@ -159,7 +171,7 @@ class Business(Button):
             and self.serve_button.visible:
                 return True
         else:
-            super().check_clicked(click_coordinates)
+            return super().check_clicked(click_coordinates)
         
         
     def update_business_images(self):

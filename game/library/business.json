@@ -7,7 +7,7 @@
             "sorbetes"
         ],
         "rel_center_coordinates" : [0.16, 0.60],
-        "collide_rect" : [0, 0, 1, 1],
+        "collide_rect" : [0, 0.4, 1, 0.6],
         "queuing_point" : 0.8,
         "queue_direction" : "right",
         "placement": "front",
@@ -37,8 +37,8 @@
     "ukay_ukay" : {
         "name" : "Ukay Ukay",
         "image_name" : "ukay_ukay",
-        "rel_center_coordinates" : [0.69, 0.35],
-        "collide_rect" : [0, 0, 1, 1],
+        "rel_center_coordinates" : [0.71, 0.255],
+        "collide_rect" : [0.12, 0, 0.78, 1],
         "queuing_point" : 0.5,
         "queue_direction" : "right",
         "placement": "back",
@@ -52,7 +52,7 @@
     "food_cart" : {
         "name" : "Foodcart",
         "image_name" : "food_cart",
-        "rel_center_coordinates" : [0.84, 0.60],
+        "rel_center_coordinates" : [0.84, 0.56],
         "collide_rect" : [0, 0, 1, 1],
         "queuing_point" : 0.2,
         "queue_direction" : "left",

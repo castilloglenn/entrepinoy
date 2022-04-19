@@ -158,7 +158,7 @@ class Scene():
             [""],
             self.main.data.small_font, 
             self.main.data.colors["white"],
-            top_left_coordinates=(10, 500),
+            top_left_coordinates=(10, 575),
             outline_thickness=1
         )
         self.debug_message.add(self.ui_components)
@@ -212,7 +212,7 @@ class Scene():
         self.main.debug.log("Year callback")
     
     
-    def profile_callback(self):
+    def profile_callback(self, *args):
         self.main.debug.log("Profile clicked")
         
     

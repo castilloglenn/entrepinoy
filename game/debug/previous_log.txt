@@ -1,42 +1,39 @@
-[19:36:42:854] Debug started
-[19:36:42:855] Memory Usage: 31.01MB (70.5%)
-[19:36:42:866] Free Memory: 1,800.10MB
-[19:36:42:877] Highest Usage: 31.01MB
+[14:21:54:829] Debug started
+[14:21:54:829] Memory Usage: 30.43MB (49.1%)
+[14:21:54:838] Free Memory: 3,104.62MB
+[14:21:54:842] Highest Usage: 30.43MB
 
-[19:36:43:463] Game Title: EntrePinoy
-[19:36:43:463] Game Version: 0.0.1
-[19:36:43:518] Display Width: 1280
-[19:36:43:527] Display Height: 720
-[19:36:43:538] Game FPS: 60
+[14:21:55:262] Game Title: EntrePinoy
+[14:21:55:263] Game Version: 0.0.1
+[14:21:55:301] Display Width: 1280
+[14:21:55:310] Display Height: 720
+[14:21:55:319] Game FPS: 60
 
-[19:36:43:560] 
+[14:21:55:336] 
 Time amplification: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 25.00 seconds in real life = 1 hour in game
 
-[19:36:43:589] Initialized scene
-[19:36:43:835] Memory after initialization:
-[19:36:43:836] Memory Usage: 160.73MB (72.3%)
-[19:36:43:847] Free Memory: 1,690.87MB
-[19:36:43:855] Highest Usage: 160.73MB
+[14:21:55:362] Initialized scene
+[14:21:55:536] Memory after initialization:
+[14:21:55:537] Memory Usage: 160.77MB (51.1%)
+[14:21:55:543] Free Memory: 2,979.44MB
+[14:21:55:548] Highest Usage: 160.77MB
 
-[19:36:46:170] Continue game entered
-[19:36:46:179] Memory Usage: 160.85MB (72.4%)
-[19:36:46:184] Free Memory: 1,684.58MB
-[19:36:46:190] Highest Usage: 160.85MB
+[14:21:56:574] Continue game entered
+[14:21:56:579] Memory Usage: 160.82MB (51.1%)
+[14:21:56:586] Free Memory: 2,979.68MB
+[14:21:56:591] Highest Usage: 160.82MB
 
-[19:36:50:798] Exited scene via F2-shortcut
-[19:36:50:799] Autosaved progress before exit
-[19:36:52:926] Create new game entered
-[19:36:52:928] Memory Usage: 161.12MB (72.3%)
-[19:36:52:933] Free Memory: 1,685.52MB
-[19:36:52:941] Highest Usage: 161.12MB
+[14:21:57:358] Hour callback
+[14:22:05:375] Autosaved progress
+[14:22:15:363] Autosaved progress
+[14:22:22:076] Hour callback
+[14:22:25:376] Autosaved progress
+[14:22:26:496] Autosaved progress before exit
 
-[19:36:53:601] Autosaved progress
-[19:36:56:553] Autosaved progress before exit
-
-[19:36:56:634] Memory Usage: 158.00MB (72.2%)
-[19:36:56:648] Free Memory: 1,696.11MB
-[19:36:56:659] Highest Usage: 161.45MB
-[19:36:56:669] Debug closed
+[14:22:26:559] Memory Usage: 161.13MB (50.6%)
+[14:22:26:570] Free Memory: 3,010.58MB
+[14:22:26:577] Highest Usage: 164.43MB
+[14:22:26:590] Debug closed
