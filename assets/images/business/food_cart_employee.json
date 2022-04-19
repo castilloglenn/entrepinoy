@@ -1,0 +1,195 @@
+{
+	"frames": {
+		"food_cart_employee_1.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 336,
+				"h": 213
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 336,
+				"h": 213
+			},
+			"sourceSize": {
+				"w": 336,
+				"h": 213
+			}
+		},
+		"food_cart_employee_2.png": {
+			"frame": {
+				"x": 339,
+				"y": 1,
+				"w": 336,
+				"h": 213
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 336,
+				"h": 213
+			},
+			"sourceSize": {
+				"w": 336,
+				"h": 213
+			}
+		},
+		"food_cart_employee_3.png": {
+			"frame": {
+				"x": 1,
+				"y": 216,
+				"w": 336,
+				"h": 213
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 336,
+				"h": 213
+			},
+			"sourceSize": {
+				"w": 336,
+				"h": 213
+			}
+		},
+		"food_cart_employee_4.png": {
+			"frame": {
+				"x": 339,
+				"y": 216,
+				"w": 336,
+				"h": 213
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 336,
+				"h": 213
+			},
+			"sourceSize": {
+				"w": 336,
+				"h": 213
+			}
+		},
+		"food_cart_employee_5.png": {
+			"frame": {
+				"x": 1,
+				"y": 431,
+				"w": 336,
+				"h": 213
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 336,
+				"h": 213
+			},
+			"sourceSize": {
+				"w": 336,
+				"h": 213
+			}
+		},
+		"food_cart_employee_6.png": {
+			"frame": {
+				"x": 339,
+				"y": 431,
+				"w": 336,
+				"h": 213
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 336,
+				"h": 213
+			},
+			"sourceSize": {
+				"w": 336,
+				"h": 213
+			}
+		},
+		"food_cart_employee_7.png": {
+			"frame": {
+				"x": 677,
+				"y": 1,
+				"w": 336,
+				"h": 213
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 336,
+				"h": 213
+			},
+			"sourceSize": {
+				"w": 336,
+				"h": 213
+			}
+		},
+		"food_cart_employee_8.png": {
+			"frame": {
+				"x": 677,
+				"y": 216,
+				"w": 336,
+				"h": 213
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 336,
+				"h": 213
+			},
+			"sourceSize": {
+				"w": 336,
+				"h": 213
+			}
+		},
+		"food_cart_employee_9.png": {
+			"frame": {
+				"x": 677,
+				"y": 431,
+				"w": 336,
+				"h": 213
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 336,
+				"h": 213
+			},
+			"sourceSize": {
+				"w": 336,
+				"h": 213
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 1014,
+			"h": 645
+		},
+		"scale": "1"
+	}
+}
