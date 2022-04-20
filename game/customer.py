@@ -23,7 +23,8 @@ class Customer(NPC):
         # Randomly selecting businesses
         while True:
             self.business_target = businesses[random.choice(keys)]
-            if len(self.business_target["object"].queue) < self.business_target["object"].queue_limit:
+            if len(self.business_target["object"].queue) < self.business_target["object"].queue_limit \
+                and self.business_target["object"].business_state == "open":
                 self.queue_number = len(self.business_target["object"].queue)
                 self.business_target["object"].queue.append(self)
                 break
@@ -131,6 +132,26 @@ class Customer(NPC):
 
     def check_business_if_queue_is_empty(self):
         return len(self.business_target["object"].queue) != 0
+    
+    
+    def animate_emoji(self):
+        if self.show_emoji:
+            if self.is_served:
+                rect = self.happy_emoji.get_rect()
+                rect.topleft = (self.rect.midtop[0], self.rect.midtop[1] - rect.height)
+                self.screen.blit(self.happy_emoji, rect)
+            else:
+                rect = self.angry_emoji.get_rect()
+                rect.topleft = (self.rect.midtop[0], self.rect.midtop[1] - rect.height)
+                self.screen.blit(self.angry_emoji, rect)
+
+            self.frame_counter += self.frame_length
+            if int(self.frame_counter) >= 1:
+                self.frame_counter -= 1
+                self.seconds_counter += 1
+
+                if self.seconds_counter >= self.emoji_timeout:
+                    self.show_emoji = False
             
             
     def animate_queue(self):
@@ -160,6 +181,22 @@ class Customer(NPC):
                         
                         person_ahead_of_line.queue_move(1)
                         self.queue_move(-1)
+                else: 
+                    self.frame_counter += self.frame_length
+                    if int(self.frame_counter) >= 1:
+                        self.frame_counter -= 1
+                        self.seconds_counter += 1
+
+                        if self.seconds_counter >= self.temper_in_queue:
+                            self.frame_counter = 0
+                            self.seconds_counter = 0
+                            self.temper_reached = True
+
+                            self.business_target["object"].queue.pop(0)
+                            for customer in self.business_target["object"].queue:
+                                customer.queue_move(-1)
+
+                            self.leave()
                 return False
             else:
                 self.leave()
@@ -182,13 +219,13 @@ class Customer(NPC):
                     self.current_position_in_float, 
                     self.target_points[self.target_index]
                 )
-                
             except IndexError:
-                if self.is_served:
+                # End points
+                if self.on_queue:
+                    self.is_standing = True
+                else:
                     self.is_exiting = True
                     self.speed_tick = 0
-                elif not self.is_served:
-                    self.is_standing = True
                 return
                     
             self.previous_position_in_float = copy.deepcopy(self.current_position_in_float)
@@ -233,6 +270,7 @@ class Customer(NPC):
     
     
     def update(self):
+        self.animate_emoji()
         if self.is_exiting:
             super().update()
             return
@@ -250,11 +288,12 @@ class Customer(NPC):
     def leave(self):
         if self.is_standing:
             self.is_standing = False
-            self.show_emoji = True
             
             if not self.exit_switch:
-                self.on_queue = False
                 self.exit_switch = True
+                self.on_queue = False
+                self.show_emoji = True
+                
                 self.target_points = self.exit_points
                 self.target_index = 0
         

@@ -142,8 +142,8 @@ class Library():
                 "closed" : self.get_image("business", "food_cart_closed.png"),
                 "outline" : self.get_image("business", "food_cart_outline.png"),
                 "employee": {
-                    "spritesheet" : self.get_image("business", "buko_stall_employee.png"),
-                    "json" : self.get_dict_from_spritesheet("business", "buko_stall_employee.json")
+                    "spritesheet" : self.get_image("business", "food_cart_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "food_cart_employee.json")
                 }
             }
         }

@@ -20,7 +20,7 @@ class Main():
         self.debug = Debugger()
         
         # Centering the game window on the screen
-        os.environ['SDL_VIDEO_CENTERED'] = '1'
+        os.environ['SDL_VIDEO_CENTERED'] = "1"
         
         # Setting up the game
         pygame.init()
