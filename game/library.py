@@ -103,7 +103,7 @@ class Library():
             },
             "fish_ball_stand" : {
                 "idle" : self.get_image("business", "fish_ball_stand_idle.png"),
-                "closed" : self.get_image("business", "fish_ball_stand_idle.png"),
+                "closed" : self.get_image("business", "fish_ball_stand_closed.png"),
                 "outline" : self.get_image("business", "fish_ball_stand_outline.png"),
                 "employee": {
                     "spritesheet" : self.get_image("business", "buko_stall_employee.png"),
@@ -112,7 +112,7 @@ class Library():
             },
             "sorbetes" : {
                 "idle" : self.get_image("business", "sorbetes_idle.png"),
-                "closed" : self.get_image("business", "sorbetes_idle.png"),
+                "closed" : self.get_image("business", "sorbetes_closed.png"),
                 "outline" : self.get_image("business", "sorbetes_outline.png"),
                 "employee": {
                     "spritesheet" : self.get_image("business", "buko_stall_employee.png"),
@@ -200,7 +200,7 @@ class Library():
             json.dump(data, json_file, indent=4)
             
     
-    def create_new_save_file(self):
+    def create_new_save_file(self, starter):
         self.progress = {
             "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
             "last_login": "",
@@ -210,9 +210,21 @@ class Library():
             "businesses": {
                 "location_a": {
                     "street_food": {
-                        "type": {
-                            "name": "buko_stall"
-                        }
+                        "type": "buko_stall",
+                        "ownership": True,
+                        "sales" : 0
+                    },
+                    "sari_sari_store": {
+                        "ownership": False,
+                        "sales" : 0
+                    },
+                    "ukay_ukay": {
+                        "ownership": False,
+                        "sales" : 0
+                    },
+                    "food_cart": {
+                        "ownership": False,
+                        "sales" : 0
                     }
                 }
             }

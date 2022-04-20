@@ -1,9 +1,10 @@
 from game.sprite.business import Business
 from game.sprite.sprite_group import SpriteGroup
 from game.sprite.scene_background import SceneBackground
-from game.sprite.menu_background import MenuBackground
 from game.sprite.message import Message
 from game.sprite.button import Button
+
+from game.business_menu import BusinessMenu
 from game.customer import Customer
 from game.npc import NPC
 
@@ -88,6 +89,7 @@ class Scene():
         
         # Internal variables
         self.business_data = {}
+        self.business_menu = BusinessMenu(self.main)
         # Safe spot is somewhere in the middle so that the customers will
         #   go there first before going to the back layer of businesses
         #   to avoid rendering confusions or going through walls
@@ -97,9 +99,11 @@ class Scene():
         
         for business_name in self.main.data.location[self.location]["businesses"]:
             if business_name == "street_food":
-                business_name = self.main.data.progress["businesses"][self.location]["street_food"]["type"]["name"]
+                business_name = self.main.data.progress["businesses"][self.location]["street_food"]["type"]
+                ownership = self.main.data.progress["businesses"][self.location]["street_food"]["ownership"]
                 data = "street_food"
             else:
+                ownership = self.main.data.progress["businesses"][self.location][business_name]["ownership"]
                 data = business_name
                 
             scene_business = Business(
@@ -115,6 +119,7 @@ class Scene():
                     }
                 ),
                 self.main.data.business[data],
+                ownership,
                 midbottom_coordinates=(
                     int(self.main.data.setting["game_width"] * self.main.data.business[data]["rel_midbottom_coordinates"][0]),
                     int(self.main.data.setting["game_height"] * self.main.data.business[data]["rel_midbottom_coordinates"][1])
@@ -181,7 +186,6 @@ class Scene():
     
     
     def time_callback_seconds(self, time_amplification):
-        # self.main.data.progress["cash"] += 1
         pass
         
     
@@ -218,6 +222,8 @@ class Scene():
     
     def business_callback(self, *args):
         print(f"{args[0].name} is clicked")
+        self.business_menu.set_data(args[0])
+        self.business_menu.run()
             
             
     def check_queues_if_full(self):

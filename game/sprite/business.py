@@ -12,7 +12,7 @@ class Business(Button):
     """
     def __init__(self, screen, name, fps,
                  callback_function, serve_button,
-                 business_data,
+                 business_data, ownership,
                  top_left_coordinates=None, 
                  center_coordinates=None, 
                  midbottom_coordinates=None,
@@ -32,9 +32,9 @@ class Business(Button):
         
         # Business attributes
         self.business_data = business_data
-        pprint(self.business_data)
+        self.ownership = ownership
         self.served_count = 0
-        self.sales_stash = 0
+        self.sales = 0
         
         self.employee_spritesheet = self.states["employee"]["spritesheet"]
         self.employee_json = self.states["employee"]["json"]
@@ -65,7 +65,10 @@ class Business(Button):
             
         # Setting the standing animation for the sprite
         self.standby_image = self.employee_frames.pop()
-        self.business_state = "open"
+        if self.ownership:
+            self.business_state = "open"
+        else:
+            self.business_state = "closed"
         self.has_employee = False
         self.is_standby = True
         self.is_serving = False

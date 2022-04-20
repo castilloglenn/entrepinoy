@@ -197,7 +197,7 @@ class Main():
         
     def create_new_game(self):
         self.debug.log("Create new game entered")
-        self.data.create_new_save_file()
+        self.data.create_new_save_file("buko_stall")
         
         self.scene_window.reset()
         self.scene_window.run()
