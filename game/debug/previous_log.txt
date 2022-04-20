@@ -1,38 +1,40 @@
-[20:09:48:458] Debug started
-[20:09:48:459] Memory Usage: 30.66MB (50.1%)
-[20:09:48:474] Free Memory: 3,040.67MB
-[20:09:48:487] Highest Usage: 30.66MB
+[12:13:59:575] Debug started
+[12:13:59:576] Memory Usage: 30.62MB (64.5%)
+[12:13:59:585] Free Memory: 2,161.43MB
+[12:13:59:595] Highest Usage: 30.62MB
 
-[20:09:49:102] Game Title: EntrePinoy
-[20:09:49:103] Game Version: 0.0.1
-[20:09:49:139] Display Width: 1280
-[20:09:49:149] Display Height: 720
-[20:09:49:157] Game FPS: 60
+[12:14:00:015] Game Title: EntrePinoy
+[12:14:00:016] Game Version: 0.0.1
+[12:14:00:054] Display Width: 1280
+[12:14:00:063] Display Height: 720
+[12:14:00:071] Game FPS: 60
 
-[20:09:49:174] 
+[12:14:00:086] 
 Time amplification: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 25.00 seconds in real life = 1 hour in game
 
-[20:09:49:199] Initialized scene
-[20:09:49:290] Memory after initialization:
-[20:09:49:290] Memory Usage: 143.57MB (51.8%)
-[20:09:49:297] Free Memory: 2,938.53MB
-[20:09:49:303] Highest Usage: 143.57MB
+[12:14:00:110] Initialized scene
+[12:14:00:192] Memory after initialization:
+[12:14:00:195] Memory Usage: 144.41MB (66.4%)
+[12:14:00:202] Free Memory: 2,049.45MB
+[12:14:00:210] Highest Usage: 144.41MB
 
-[20:10:07:251] Continue game entered
-[20:10:07:261] Memory Usage: 144.38MB (52.1%)
-[20:10:07:270] Free Memory: 2,921.16MB
-[20:10:07:277] Highest Usage: 144.38MB
+[12:14:01:257] Continue game entered
+[12:14:01:262] Memory Usage: 144.52MB (66.3%)
+[12:14:01:269] Free Memory: 2,052.55MB
+[12:14:01:274] Highest Usage: 144.52MB
 
-[20:10:09:204] Autosaved progress
-[20:10:18:149] Hour callback
-[20:10:19:204] Autosaved progress
-[20:10:29:201] Autosaved progress
-[20:10:33:454] Autosaved progress before exit
+[12:14:10:115] Autosaved progress
+[12:14:20:115] Autosaved progress
+[12:14:22:206] Hour callback
+[12:14:23:591] Hour callback
+[12:14:30:112] Autosaved progress
+[12:14:40:123] Autosaved progress
+[12:14:41:776] Autosaved progress before exit
 
-[20:10:33:527] Memory Usage: 144.63MB (51.8%)
-[20:10:33:539] Free Memory: 2,937.89MB
-[20:10:33:549] Highest Usage: 147.95MB
-[20:10:33:557] Debug closed
+[12:14:41:847] Memory Usage: 144.84MB (65.9%)
+[12:14:41:855] Free Memory: 2,077.62MB
+[12:14:41:863] Highest Usage: 148.16MB
+[12:14:41:872] Debug closed

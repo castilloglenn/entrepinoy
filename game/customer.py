@@ -120,42 +120,27 @@ class Customer(NPC):
             return self.business_queuing_point_start - self.queue_horizontal_space
         elif self.business_target["meta"]["queue_direction"] == "right":
             return self.business_queuing_point_start + self.queue_horizontal_space
-    
-    
-    def update(self):
-        if self.show_emoji:
-            if self.is_served:
-                rect = self.happy_emoji.get_rect()
-                rect.topleft = (self.rect.midtop[0], self.rect.midtop[1] - rect.height)
-                self.screen.blit(self.happy_emoji, rect)
-            else:
-                rect = self.angry_emoji.get_rect()
-                rect.topleft = (self.rect.midtop[0], self.rect.midtop[1] - rect.height)
-                self.screen.blit(self.angry_emoji, rect)
+        
+        
+    def check_self_if_in_queue(self):
+        return self.business_target["object"].queue[self.queue_number] is not self
+
+
+    def check_business_if_open(self):
+        return self.business_target["object"].business_state == "open"
+
+    def check_business_if_queue_is_empty(self):
+        return len(self.business_target["object"].queue) != 0
             
-            self.frame_counter += self.frame_length
-            if int(self.frame_counter) >= 1:
-                self.frame_counter -= 1
-                self.seconds_counter += 1
-                
-                if self.seconds_counter >= self.emoji_timeout:
-                    self.show_emoji = False
-                    
-        if self.is_exiting:
-            super().update()
-            return
-        
-        super().animate()
-        
+            
+    def animate_queue(self):
         try:
-            if self.business_target["object"].queue[self.queue_number] is self:
+            if self.check_self_if_in_queue():
+                self.leave()
+            else:
                 self.on_queue = True
-        except IndexError:
-            self.on_queue = False
-        
-        try:
-            if self.is_standing and self.business_target["object"].business_state == "open" \
-                and len(self.business_target["object"].queue) != 0:
+                
+            if self.is_standing and self.check_business_if_open() and self.check_business_if_queue_is_empty():
                 if self.business_target["meta"]["queue_direction"] == "left":
                     self.direction = "right"
                     self.is_flipped = True
@@ -175,28 +160,16 @@ class Customer(NPC):
                         
                         person_ahead_of_line.queue_move(1)
                         self.queue_move(-1)
-                else: 
-                    self.frame_counter += self.frame_length
-                    if int(self.frame_counter) >= 1:
-                        self.frame_counter -= 1
-                        self.seconds_counter += 1
-                        
-                        if self.seconds_counter >= self.temper_in_queue:
-                            self.frame_counter = 0
-                            self.seconds_counter = 0
-                            self.temper_reached = True
-                            
-                            self.business_target["object"].queue.pop(0)
-                            for customer in self.business_target["object"].queue:
-                                customer.queue_move(-1)
-                            
-                            self.leave()
-                return
+                return False
             else:
                 self.leave()
         except IndexError:
             self.leave()
         
+        return True
+
+            
+    def animate_movement(self):
         self.speed_tick += self.speed
         if self.speed_tick >= 1:
             absolute_movement = int(self.speed_tick)
@@ -209,12 +182,11 @@ class Customer(NPC):
                     self.current_position_in_float, 
                     self.target_points[self.target_index]
                 )
+                
             except IndexError:
-                if self.is_served or self.temper_reached or not self.on_queue:
-                    if self.target_points == self.exit_points and \
-                        self.target_index == len(self.exit_points):
-                            self.is_exiting = True
-                            self.speed_tick = 0
+                if self.is_served:
+                    self.is_exiting = True
+                    self.speed_tick = 0
                 elif not self.is_served:
                     self.is_standing = True
                 return
@@ -258,6 +230,16 @@ class Customer(NPC):
                     self.rect.midbottom = tuple(current_midbottom)
             
             self.speed_tick -= absolute_movement
+    
+    
+    def update(self):
+        if self.is_exiting:
+            super().update()
+            return
+        
+        super().animate()
+        if self.animate_queue():
+            self.animate_movement()
             
             
     def serve(self):
@@ -271,6 +253,7 @@ class Customer(NPC):
             self.show_emoji = True
             
             if not self.exit_switch:
+                self.on_queue = False
                 self.exit_switch = True
                 self.target_points = self.exit_points
                 self.target_index = 0
@@ -300,3 +283,4 @@ class Customer(NPC):
             
             if self.target_index > len(self.exit_points) - 1:
                 self.target_index = len(self.target_points) - 1
+                
