@@ -6,62 +6,50 @@
             "fish_ball_stand",
             "sorbetes"
         ],
-        "rel_center_coordinates" : [0.16, 0.60],
-        "collide_rect" : [0, 0.4, 1, 0.6],
+        "rel_midbottom_coordinates" : [0.16, 0.70],
+        "collide_rect" : [0, 0.25, 1, 0.75],
         "queuing_point" : 0.8,
         "queue_direction" : "right",
         "placement": "front",
         "initial_cost" : 5000.0,
         "daily_expenses" : 350.0,
         "employee_cost": 150.0,
-        "customer_flow_start" : 14,
-        "customer_flow_end" : 20,
-        "income_per_customer_min" : 10.0,
-        "income_per_customer_max" : 20.0
+        "income_per_customer_range" : [10.0, 20.0]
     }, 
     "sari_sari_store" : {
         "name" : "Sari Sari Store",
         "image_name" : "sari_sari_store",
-        "rel_center_coordinates" : [0.31, 0.35],
+        "rel_midbottom_coordinates" : [0.31, 0.62],
         "collide_rect" : [0.11, 0, 0.77, 1],
         "queuing_point" : 0.4,
         "queue_direction" : "left",
         "placement": "back",
         "initial_cost" : 2000.0,
         "daily_expenses" : 150.0,
-        "customer_flow_start" : 0,
-        "customer_flow_end" : 23,
-        "income_per_customer_min" : 10.0,
-        "income_per_customer_max" : 20.0
+        "income_per_customer_range" : [10.0, 20.0]
     },
     "ukay_ukay" : {
         "name" : "Ukay Ukay",
         "image_name" : "ukay_ukay",
-        "rel_center_coordinates" : [0.71, 0.255],
+        "rel_midbottom_coordinates" : [0.71, 0.62],
         "collide_rect" : [0.12, 0, 0.78, 1],
         "queuing_point" : 0.5,
         "queue_direction" : "right",
         "placement": "back",
         "initial_cost" : 4000.0,
         "daily_expenses" : 500.0,
-        "customer_flow_start" : 7,
-        "customer_flow_end" : 22,
-        "income_per_customer_min" : 10.0,
-        "income_per_customer_max" : 20.0
+        "income_per_customer_range" : [10.0, 20.0]
     }, 
     "food_cart" : {
         "name" : "Foodcart",
         "image_name" : "food_cart",
-        "rel_center_coordinates" : [0.84, 0.56],
+        "rel_midbottom_coordinates" : [0.84, 0.70],
         "collide_rect" : [0, 0, 1, 1],
         "queuing_point" : 0.3,
         "queue_direction" : "left",
         "placement": "front",
         "initial_cost" : 5000.0,
         "daily_expenses" : 750.0,
-        "customer_flow_start" : 6,
-        "customer_flow_end" : 20,
-        "income_per_customer_min" : 10.0,
-        "income_per_customer_max" : 20.0
+        "income_per_customer_range" : [10.0, 20.0]
     }
 }

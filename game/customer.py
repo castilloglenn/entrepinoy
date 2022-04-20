@@ -75,8 +75,8 @@ class Customer(NPC):
         # Checking if the target is behind or front
         if self.business_target["meta"]["placement"] == "back":
             self.target_points.append((
-                int(self.screen.get_width() * self.safe_spot[0]),
-                int(self.screen.get_height() * self.safe_spot[1])
+                int(self.screen.get_width() * (random.uniform(self.safe_spot[0], self.safe_spot[1]))),
+                int(self.screen.get_height() * (random.uniform(self.safe_spot[2], self.safe_spot[3])))
             ))
         
         # Setting the exit points

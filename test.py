@@ -13,11 +13,7 @@ print(time3.days)
 print(time3.seconds)
 """
 
-e = {
-    "2" : 5,
-    "6" : 2
-}
-
-
-print("qwe_employee_1".replace("_employee_1", ""))
+import random
+for x in range(10):
+    print(random.uniform(0.5, 0.9))
 

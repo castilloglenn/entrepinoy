@@ -115,9 +115,9 @@ class Scene():
                     }
                 ),
                 self.main.data.business[data],
-                center_coordinates=(
-                    int(self.main.data.setting["game_width"] * self.main.data.business[data]["rel_center_coordinates"][0]),
-                    int(self.main.data.setting["game_height"] * self.main.data.business[data]["rel_center_coordinates"][1])
+                midbottom_coordinates=(
+                    int(self.main.data.setting["game_width"] * self.main.data.business[data]["rel_midbottom_coordinates"][0]),
+                    int(self.main.data.setting["game_height"] * self.main.data.business[data]["rel_midbottom_coordinates"][1])
                 ), 
                 collide_rect=self.main.data.business[data]["collide_rect"],
                 **self.main.data.business_images[business_name]
@@ -217,11 +217,7 @@ class Scene():
         
     
     def business_callback(self, *args):
-        state = args[0].business_state
-        if state == "open":
-            args[0].set_business_state("closed")
-        elif state == "closed":
-            args[0].set_business_state("open")
+        print(f"{args[0].name} is clicked")
             
             
     def check_queues_if_full(self):

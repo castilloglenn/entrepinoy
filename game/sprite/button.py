@@ -11,6 +11,7 @@ class Button(Sprite):
     def __init__(self, screen, callback_function, 
                  top_left_coordinates=None, 
                  center_coordinates=None, 
+                 midbottom_coordinates=None,
                  collide_rect : tuple[float]=None,
                  **states):
         """
@@ -47,6 +48,7 @@ class Button(Sprite):
         
         self.top_left_coordinates = top_left_coordinates
         self.center_coordinates = center_coordinates
+        self.midbottom_coordinates = midbottom_coordinates
         
         self.image = self.idle
         self.rect = self.image.get_rect()
@@ -56,6 +58,8 @@ class Button(Sprite):
             self.rect.topleft = self.top_left_coordinates
         elif self.center_coordinates != None:
             self.rect.center = self.center_coordinates
+        elif self.midbottom_coordinates != None:
+            self.rect.midbottom = self.midbottom_coordinates
         else:
             self.rect.topleft = (0, 0)
         
@@ -102,6 +106,8 @@ class Button(Sprite):
             self.rect.topleft = self.top_left_coordinates
         elif self.center_coordinates is not None:
             self.rect.center = self.center_coordinates
+        elif self.midbottom_coordinates != None:
+            self.rect.midbottom = self.midbottom_coordinates
         else:
             self.rect.topleft = (0, 0)
             

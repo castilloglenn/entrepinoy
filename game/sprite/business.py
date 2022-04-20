@@ -15,12 +15,14 @@ class Business(Button):
                  business_data,
                  top_left_coordinates=None, 
                  center_coordinates=None, 
+                 midbottom_coordinates=None,
                  collide_rect=None,
                  **states):
         super().__init__(screen,
             callback_function, 
             top_left_coordinates=top_left_coordinates, 
             center_coordinates=center_coordinates,
+            midbottom_coordinates=midbottom_coordinates,
             collide_rect=collide_rect,
             **states)
         
@@ -30,6 +32,7 @@ class Business(Button):
         
         # Business attributes
         self.business_data = business_data
+        pprint(self.business_data)
         self.served_count = 0
         self.sales_stash = 0
         

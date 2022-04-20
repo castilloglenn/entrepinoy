@@ -104,7 +104,7 @@ class Library():
             "fish_ball_stand" : {
                 "idle" : self.get_image("business", "fish_ball_stand_idle.png"),
                 "closed" : self.get_image("business", "fish_ball_stand_idle.png"),
-                "outline" : self.get_image("business", "fish_ball_stand_idle.png"),
+                "outline" : self.get_image("business", "fish_ball_stand_outline.png"),
                 "employee": {
                     "spritesheet" : self.get_image("business", "buko_stall_employee.png"),
                     "json" : self.get_dict_from_spritesheet("business", "buko_stall_employee.json")
@@ -113,7 +113,7 @@ class Library():
             "sorbetes" : {
                 "idle" : self.get_image("business", "sorbetes_idle.png"),
                 "closed" : self.get_image("business", "sorbetes_idle.png"),
-                "outline" : self.get_image("business", "sorbetes_idle.png"),
+                "outline" : self.get_image("business", "sorbetes_outline.png"),
                 "employee": {
                     "spritesheet" : self.get_image("business", "buko_stall_employee.png"),
                     "json" : self.get_dict_from_spritesheet("business", "buko_stall_employee.json")
