@@ -33,7 +33,7 @@
         "image_name" : "ukay_ukay",
         "rel_midbottom_coordinates" : [0.71, 0.62],
         "collide_rect" : [0.04, 0.21, 0.92, 0.79],
-        "queuing_point" : 0.5,
+        "queuing_point" : 0.35,
         "queue_direction" : "right",
         "placement": "back",
         "initial_cost" : 4000.0,

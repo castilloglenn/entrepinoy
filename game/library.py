@@ -89,7 +89,7 @@ class Library():
             "2" : {
                 "sheet" : self.get_image("crowd", "2.png"),
                 "data" : self.get_dict_from_spritesheet("crowd", "2.json")
-            },
+            }
         }
         self.business_images = {
             "buko_stall" : { # 100% complete
@@ -133,8 +133,8 @@ class Library():
                 "closed" : self.get_image("business", "ukay_ukay_closed.png"),
                 "outline" : self.get_image("business", "ukay_ukay_outline.png"),
                 "employee": {
-                    "spritesheet" : self.get_image("business", "sari_sari_store_employee.png"),
-                    "json" : self.get_dict_from_spritesheet("business", "sari_sari_store_employee.json")
+                    "spritesheet" : self.get_image("business", "ukay_ukay_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "ukay_ukay_employee.json")
                 }
             },
             "food_cart" : {
