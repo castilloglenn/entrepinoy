@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [15:52:18:464] Debug started
 [15:52:18:464] Memory Usage: 19.12MB (53.3%)
 [15:52:18:473] Free Memory: 7,590.59MB
@@ -10,11 +11,26 @@
 [15:52:18:906] Game FPS: 60
 
 [15:52:18:917] 
+=======
+[15:32:19:060] Debug started
+[15:32:19:061] Memory Usage: 30.37MB (59.5%)
+[15:32:19:069] Free Memory: 2,470.06MB
+[15:32:19:075] Highest Usage: 30.37MB
+
+[15:32:19:439] Game Title: EntrePinoy
+[15:32:19:440] Game Version: 0.0.1
+[15:32:19:474] Display Width: 1280
+[15:32:19:482] Display Height: 720
+[15:32:19:490] Game FPS: 60
+
+[15:32:19:505] 
+>>>>>>> 3b4da559985276a52f5eed690b1727fa1d964f6b
 Time amplification: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 25.00 seconds in real life = 1 hour in game
 
+<<<<<<< HEAD
 [15:52:18:936] Initialized scene
 [15:52:19:101] Memory after initialization:
 [15:52:19:106] Memory Usage: 149.92MB (54.2%)
@@ -30,3 +46,23 @@ Time amplification:
 [15:52:28:630] Free Memory: 7,178.85MB
 [15:52:28:636] Highest Usage: 153.19MB
 [15:52:28:643] Debug closed
+=======
+[15:32:19:529] Initialized scene
+[15:32:19:673] Memory after initialization:
+[15:32:19:673] Memory Usage: 161.01MB (61.5%)
+[15:32:19:678] Free Memory: 2,345.23MB
+[15:32:19:684] Highest Usage: 161.01MB
+
+[15:32:20:606] Continue game entered
+[15:32:20:612] Memory Usage: 161.13MB (61.4%)
+[15:32:20:618] Free Memory: 2,350.29MB
+[15:32:20:623] Highest Usage: 161.13MB
+
+[15:32:31:591] Hour callback
+[15:32:37:615] Autosaved progress before exit
+
+[15:32:37:678] Memory Usage: 164.43MB (61.4%)
+[15:32:37:701] Free Memory: 2,346.10MB
+[15:32:37:710] Highest Usage: 168.50MB
+[15:32:37:719] Debug closed
+>>>>>>> 3b4da559985276a52f5eed690b1727fa1d964f6b

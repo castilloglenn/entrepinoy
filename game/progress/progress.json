@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "time": "2022/04/21, 15:52:20.186200",
     "last_login": "",
+=======
+    "time": "2022/01/01, 19:13:19.200000",
+    "last_login": "2022/04/21, 15:32:37.614369",
+>>>>>>> 3b4da559985276a52f5eed690b1727fa1d964f6b
     "last_location": "location_a",
     "cash": 5000.0,
     "businesses": {
@@ -15,7 +20,7 @@
                 "sales": 0
             },
             "ukay_ukay": {
-                "ownership": false,
+                "ownership": true,
                 "sales": 0
             },
             "food_cart": {

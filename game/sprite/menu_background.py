@@ -99,5 +99,4 @@ class MenuBackground(Sprite):
     
     def close(self):
         self.enable = False
-        self.kill()
         
