@@ -223,7 +223,7 @@ class Scene():
     def business_callback(self, *args):
         print(f"{args[0].name} is clicked")
         self.business_menu.set_data(args[0])
-        self.business_menu.run()
+        self.business_menu.enable = True
             
             
     def check_queues_if_full(self):
@@ -385,8 +385,15 @@ class Scene():
             self.general_sprites.draw(self.main.screen)
             self.ui_components.update()
             
+            # Menu overlays
+            self.business_menu.update()
+            
             # Event processing
             for event in pygame.event.get():
+                if self.business_menu.enable:
+                    self.business_menu.handle_event(event)
+                    continue
+                
                 if event.type == pygame.QUIT: 
                     self.running = False
                     self.close_game()

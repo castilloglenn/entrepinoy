@@ -1,71 +1,35 @@
-[14:20:30:264] Debug started
-[14:20:30:265] Memory Usage: 19.05MB (43.4%)
-[14:20:30:271] Free Memory: 9,206.07MB
-[14:20:30:275] Highest Usage: 19.05MB
+[15:32:19:060] Debug started
+[15:32:19:061] Memory Usage: 30.37MB (59.5%)
+[15:32:19:069] Free Memory: 2,470.06MB
+[15:32:19:075] Highest Usage: 30.37MB
 
-[14:20:31:673] Game Title: EntrePinoy
-[14:20:31:675] Game Version: 0.0.1
-[14:20:31:702] Display Width: 1280
-[14:20:31:710] Display Height: 720
-[14:20:31:714] Game FPS: 60
+[15:32:19:439] Game Title: EntrePinoy
+[15:32:19:440] Game Version: 0.0.1
+[15:32:19:474] Display Width: 1280
+[15:32:19:482] Display Height: 720
+[15:32:19:490] Game FPS: 60
 
-[14:20:31:720] 
+[15:32:19:505] 
 Time amplification: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 25.00 seconds in real life = 1 hour in game
 
-[14:20:31:778] Initialized scene
-[14:20:31:888] Memory after initialization:
-[14:20:31:894] Memory Usage: 150.03MB (44.1%)
-[14:20:31:897] Free Memory: 9,094.65MB
-[14:20:31:900] Highest Usage: 150.03MB
-[14:20:33:216] Create new game entered
-[14:20:33:220] Memory Usage: 151.31MB (44.2%)
-[14:20:33:223] Free Memory: 9,070.18MB
-[14:20:33:227] Highest Usage: 151.31MB
+[15:32:19:529] Initialized scene
+[15:32:19:673] Memory after initialization:
+[15:32:19:673] Memory Usage: 161.01MB (61.5%)
+[15:32:19:678] Free Memory: 2,345.23MB
+[15:32:19:684] Highest Usage: 161.01MB
 
-[14:20:33:241] Hour callback
-[14:20:33:247] Day callback
-[14:20:33:250] Month callback
-[14:20:39:485] Hour callback
-[14:20:39:491] Day callback
-[14:20:39:494] Month callback
-[14:20:40:006] Exited scene via F2-shortcut
-[14:20:40:010] Autosaved progress before exit
-[14:20:41:411] Create new game entered
-[14:20:41:415] Memory Usage: 154.64MB (45.3%)
-[14:20:41:419] Free Memory: 8,892.03MB
-[14:20:41:422] Highest Usage: 154.64MB
+[15:32:20:606] Continue game entered
+[15:32:20:612] Memory Usage: 161.13MB (61.4%)
+[15:32:20:618] Free Memory: 2,350.29MB
+[15:32:20:623] Highest Usage: 161.13MB
 
-[14:20:41:439] Hour callback
-[14:20:41:442] Day callback
-[14:20:41:446] Month callback
-[14:20:41:777] Autosaved progress
-[14:20:42:157] F1 Trigger: Memory check
-[14:20:42:162] Memory Usage: 154.93MB (45.4%)
-[14:20:42:165] Free Memory: 8,880.21MB
-[14:20:42:169] Highest Usage: 155.21MB
-[14:20:42:172] Objects in memory: 6
-[14:20:42:541] Exited scene via F2-shortcut
-[14:20:42:547] Autosaved progress before exit
-[14:20:43:952] Create new game entered
-[14:20:43:957] Memory Usage: 155.57MB (45.2%)
-[14:20:43:961] Free Memory: 8,912.81MB
-[14:20:43:963] Highest Usage: 155.57MB
+[15:32:31:591] Hour callback
+[15:32:37:615] Autosaved progress before exit
 
-[14:20:44:702] Hour callback
-[14:20:44:706] Day callback
-[14:20:44:710] Month callback
-[14:20:51:785] Autosaved progress
-[14:21:01:785] Autosaved progress
-[14:21:10:131] Hour callback
-[14:21:11:783] Autosaved progress
-[14:21:21:792] Autosaved progress
-[14:21:31:786] [A] Objects in memory: 27
-[14:21:31:790] Memory Usage: 169.00MB (45.1%)
-[14:21:31:794] Free Memory: 8,928.26MB
-[14:21:31:797] Highest Usage: 169.74MB
-[14:21:31:802] Autosaved progress
-[14:21:34:830] Hour callback
-[14:21:41:787] Autosaved progress
+[15:32:37:678] Memory Usage: 164.43MB (61.4%)
+[15:32:37:701] Free Memory: 2,346.10MB
+[15:32:37:710] Highest Usage: 168.50MB
+[15:32:37:719] Debug closed
