@@ -108,6 +108,7 @@ class Scene():
                 
             scene_business = Business(
                 self.main.screen, 
+                self.main.data.progress,
                 business_name,
                 self.main.data.setting["fps"],
                 self.business_callback,
@@ -180,9 +181,96 @@ class Scene():
         
         
     def reset(self):
-        self.location = "location_a" # TODO test location
+        self.location = self.main.data.progress["last_location"]
         self.crowd_chance = self.main.data.crowd_statistics[self.location]
+        self.customer_chance = self.main.data.customer_statistics[self.location]
+        
+        # Setting up the clock
         self.time.set_time(self.main.data.progress["time"])
+        
+        # Logging entry point
+        self.main.debug.new_line()
+        self.main.debug.log("Re-initializing scene")
+        
+        # Sprites and sprite groups
+        for general_sprite in self.general_sprites:
+            general_sprite.kill()
+            del general_sprite
+        self.general_sprites.empty()
+        for ui_component in self.ui_components:
+            ui_component.kill()
+            del ui_component
+        self.ui_components.empty()
+        for button in self.buttons:
+            button.kill()
+            del button
+        self.buttons.empty()
+        
+        # Scene components
+        self.background = SceneBackground(
+            self.main.screen, 
+            self.time, 
+            **self.main.data.background
+        )
+        
+        # Internal variables
+        self.business_data = {}
+        # Safe spot is somewhere in the middle so that the customers will
+        #   go there first before going to the back layer of businesses
+        #   to avoid rendering confusions or going through walls
+        # This is location-specific
+        self.safe_spot = self.main.data.location[self.location]["safe_spot"]
+        self.object_limit = self.main.data.location[self.location]["object_limit"]
+        
+        for business_name in self.main.data.location[self.location]["businesses"]:
+            if business_name == "street_food":
+                business_name = self.main.data.progress["businesses"][self.location]["street_food"]["type"]
+                ownership = self.main.data.progress["businesses"][self.location]["street_food"]["ownership"]
+                data = "street_food"
+            else:
+                ownership = self.main.data.progress["businesses"][self.location][business_name]["ownership"]
+                data = business_name
+                
+            scene_business = Business(
+                self.main.screen, 
+                self.main.data.progress,
+                business_name,
+                self.main.data.setting["fps"],
+                self.business_callback,
+                Button(
+                    self.main.screen, None,
+                    **{
+                        "idle" : self.main.data.scene["serve_button_idle"].convert_alpha(),
+                        "outline" : self.main.data.scene["serve_button_hovered"].convert_alpha()
+                    }
+                ),
+                self.main.data.business[data],
+                ownership,
+                midbottom_coordinates=(
+                    int(self.main.data.setting["game_width"] * self.main.data.business[data]["rel_midbottom_coordinates"][0]),
+                    int(self.main.data.setting["game_height"] * self.main.data.business[data]["rel_midbottom_coordinates"][1])
+                ), 
+                collide_rect=self.main.data.business[data]["collide_rect"],
+                **self.main.data.business_images[business_name]
+            )
+            self.business_data[business_name] = {}
+            self.business_data[business_name]["meta"] = self.main.data.business[data]
+            self.business_data[business_name]["object"] = scene_business
+            scene_business.add(self.general_sprites)
+        
+        self.profile_holder.add(self.ui_components)
+        self.profile_message.add(self.ui_components)
+        self.debug_message.add(self.ui_components)
+        
+        # Buttons layering hierarchy (the top layer must be add first)
+        self.profile_holder.add(self.buttons)
+        # Loop out the businesses then add them after this line to make the buttons
+        #   discovered first before the layer of businesses
+        for key, business in self.business_data.items():
+            business["object"].add(self.buttons)
+        
+        # Main loop
+        self.running = False
     
     
     def time_callback_seconds(self, time_amplification):

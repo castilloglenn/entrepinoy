@@ -33,9 +33,6 @@ class Main():
         self.clock = None
         self.initialize_game()
         
-        # Setting up other windows
-        self.scene_window = Scene(self)
-        
         # Screen surface (for transitions)
         self.display_surface = pygame.Surface(
             (self.data.setting["game_width"], 
@@ -43,6 +40,9 @@ class Main():
         )
         self.display_surface.fill(self.data.colors["black"])
         self.display_surface.convert_alpha()
+        
+        # Setting up other windows
+        self.scene_window = Scene(self)
         
         # Sprites and sprite groups
         self.buttons = pygame.sprite.Group()

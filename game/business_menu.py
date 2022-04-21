@@ -39,12 +39,14 @@ class BusinessMenu():
             )
         )
         
+        # Screen dimming
+        self.main.display_surface.set_alpha(128)
+        
         
     def set_data(self, data):
         self.data = data
         
         self.clear()
-        
         self.background.add(self.objects, self.buttons)
         
         self.business_title_message.set_message([self.data.business_data["name"]])
@@ -87,8 +89,6 @@ class BusinessMenu():
             return
         
         if self.background.enable:
-            # Screen dimming
-            self.main.display_surface.set_alpha(128)
             self.screen.blit(self.main.display_surface, (0, 0)) 
             self.objects.update()
         

@@ -1,3 +1,4 @@
+import random
 from game.sprite.button import Button
 import pygame
 import copy
@@ -10,7 +11,7 @@ class Business(Button):
     This class handles the business interface in the scene.
     It controls its attributes and the states when it is open or closed.
     """
-    def __init__(self, screen, name, fps,
+    def __init__(self, screen, progress, name, fps,
                  callback_function, serve_button,
                  business_data, ownership,
                  top_left_coordinates=None, 
@@ -27,6 +28,8 @@ class Business(Button):
             **states)
         
         self.name = name
+        self.progress = progress
+        
         self.states = states
         self.outline = self.states["outline"].convert_alpha()
         
@@ -34,7 +37,6 @@ class Business(Button):
         self.business_data = business_data
         self.ownership = ownership
         self.served_count = 0
-        self.sales = 0
         
         self.employee_spritesheet = self.states["employee"]["spritesheet"]
         self.employee_json = self.states["employee"]["json"]
@@ -227,9 +229,21 @@ class Business(Button):
         return image.convert_alpha()
     
     
-    # TODO Debug only
-    def switch_animation(self, hover_coordinates):
-        if self.collide_rect.collidepoint(hover_coordinates) and not self.is_serving:
-            self.has_employee = not self.has_employee
-            self.update_business_images()
-            self.set_image_and_rect()
+    def switch_employee_status(self):
+        self.has_employee = not self.has_employee
+        self.update_business_images()
+        self.set_image_and_rect()
+        
+
+    def generate_income(self):
+        income = random.uniform(
+            self.business_data["income_per_customer_range"][0],
+            self.business_data["income_per_customer_range"][1]
+        )
+        if self.business_data["name"] == "Street Foods Stall":
+            self.progress["businesses"][self.progress["last_location"]]["street_food"]["sales"] += income
+            print(f"{self.business_data['name']} generated P{income:,.2f}, total P{self.progress['businesses'][self.progress['last_location']]['street_food']['sales']:,.2f}")
+        else:
+            self.progress["businesses"][self.progress["last_location"]][self.name]["sales"] += income
+            print(f"{self.business_data['name']} generated P{income:,.2f}, total P{self.progress['businesses'][self.progress['last_location']][self.name]['sales']:,.2f}")
+        

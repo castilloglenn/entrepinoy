@@ -282,6 +282,7 @@ class Customer(NPC):
             
     def serve(self):
         self.is_served = True
+        self.business_target["object"].generate_income()
         self.leave()
             
         
