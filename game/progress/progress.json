@@ -1,6 +1,6 @@
 {
-    "time": "2022/01/01, 19:01:55.200000",
-    "last_login": "2022/04/21, 21:48:53.216733",
+    "time": "2022/01/02, 01:27:55.200000",
+    "last_login": "2022/04/22, 14:55:13.271780",
     "last_location": "location_a",
     "cash": 5000.0,
     "businesses": {
@@ -8,19 +8,19 @@
             "street_food": {
                 "type": "buko_stall",
                 "ownership": true,
-                "sales": 1577.8504289051064
+                "sales": 2075.364466958604
             },
             "sari_sari_store": {
                 "ownership": true,
-                "sales": 499.99475922077136
+                "sales": 923.8598522926784
             },
             "ukay_ukay": {
                 "ownership": true,
-                "sales": 457.75173129756587
+                "sales": 937.8612346230103
             },
             "food_cart": {
                 "ownership": true,
-                "sales": 492.84664733359386
+                "sales": 961.8790521773369
             }
         }
     }

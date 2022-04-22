@@ -119,6 +119,13 @@ class Scene():
                         "outline" : self.main.data.scene["serve_button_hovered"].convert_alpha()
                     }
                 ),
+                Message(
+                    self.main.screen,
+                    [""],
+                    self.main.data.medium_font, 
+                    self.main.data.colors["yellow"],
+                    outline_thickness=1
+                ),
                 self.main.data.business[data],
                 ownership,
                 midbottom_coordinates=(

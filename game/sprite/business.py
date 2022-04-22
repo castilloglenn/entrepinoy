@@ -5,14 +5,17 @@ import copy
 
 from pprint import pprint
 
+from game.sprite.message import Message
+
 
 class Business(Button):
     """
     This class handles the business interface in the scene.
     It controls its attributes and the states when it is open or closed.
     """
-    def __init__(self, screen, progress, name, fps,
-                 callback_function, serve_button,
+    def __init__(self, screen, progress, name, 
+                 fps, callback_function, 
+                 serve_button, income_message,
                  business_data, ownership,
                  top_left_coordinates=None, 
                  center_coordinates=None, 
@@ -71,7 +74,7 @@ class Business(Button):
             self.business_state = "open"
         else:
             self.business_state = "closed"
-        self.has_employee = False
+        self.has_employee = True
         self.is_standby = True
         self.is_serving = False
         
@@ -83,10 +86,29 @@ class Business(Button):
         # Setting up pop-up buttons
         self.serve_button = serve_button
         self.serve_button.set_callback(self.serve_customer)
+        
+        # Income display message 
+        # TODO Use these variables for the display of income generated
+        self.income_message = income_message
+        # self.fps = fps
+        # self.frame_length = 1 / self.fps
+        # self.frame_counter = 0
+        
+        # self.seconds_counter = 0
+        # self.serving_cooldown = 1
+        
+        
+    def is_business_serving(self):
+        return self.has_employee and not self.is_standby and self.is_serving
+    
+    
+    def is_business_ready_to_serve(self):
+        return self.has_employee and self.is_standby and \
+            not self.is_serving and len(self.queue) > 0
     
     
     def update(self):
-        if self.has_employee and not self.is_standby and self.is_serving:
+        if self.is_business_serving():
             self.animation_tick += 1
             if self.animation_tick >= self.animate_speed:
                 self.animation_tick = 0
@@ -103,8 +125,7 @@ class Business(Button):
                     self.update_business_images()
                     self.serve_customer()
                     
-        elif self.has_employee and self.is_standby and not self.is_serving \
-            and len(self.queue) > 0:
+        elif self.is_business_ready_to_serve():
                 if self.queue[0].is_standing:
                     self.frame_counter += self.frame_length
                     if int(self.frame_counter) >= 1:
@@ -143,8 +164,10 @@ class Business(Button):
                 self.serve_button.visible = False
         else:
             self.serve_button.visible = False
-        
         self.serve_button.update()
+        
+        # Checks for income generation presentation
+        
         
         
     def set_serve_animation(self):

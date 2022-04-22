@@ -156,7 +156,8 @@ class Library():
         self.colors = {
             "black" : (0, 0, 0),
             "white" : (255, 255, 255),
-            "orange" : (249, 154, 77)
+            "orange" : (249, 154, 77),
+            "yellow" : (255, 233, 73)
         }
     
     
