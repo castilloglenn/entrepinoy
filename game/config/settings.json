@@ -3,5 +3,5 @@
     "game_height" : 720,
     "fps" : 60,
 
-    "autosave_timeout" : 10000
+    "autosave_timeout" : 5000
 }

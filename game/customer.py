@@ -57,6 +57,7 @@ class Customer(NPC):
         self.queue_horizontal_space = self.business_queue_horizontal_space * self.queue_number
         
         # 2D Movement variables
+        self.destination_allowance = 3 # pixels
         self.target_slope = ()
         self.previous_position_in_float = []
         self.current_position_in_float = [
@@ -81,7 +82,7 @@ class Customer(NPC):
         
         # Setting the exit points
         self.exit_points = list(reversed(self.target_points))
-            
+        
         # Adding the queuing point of the business
         self.business_queuing_point_start = self.business_target["object"].rect.x + \
             int(self.business_target["object"].rect.width * self.business_target["meta"]["queuing_point"])
@@ -212,7 +213,9 @@ class Customer(NPC):
             absolute_movement = int(self.speed_tick)
             try:
                 target_point = self.target_points[self.target_index]
-                if self.rect.midbottom == target_point:
+                allowable_gap = abs(target_point[1] - self.rect.midbottom[1]) \
+                              + abs(target_point[0] - self.rect.midbottom[0])
+                if allowable_gap <= (self.destination_allowance * 2):
                     self.target_index += 1
                     
                 self.target_slope = self.get_slope(

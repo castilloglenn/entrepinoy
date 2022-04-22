@@ -144,7 +144,7 @@ class Main():
             pass
 
         # If the user scrolls the mouse wheel downward
-        if event.button == 5:  
+        if event.button == 5: 
             pass
 
 
