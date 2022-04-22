@@ -11,7 +11,7 @@ class SpriteGroup(Group):
     """
     def by_midbottom_y(self, spr):
         return spr.rect.midbottom[1]
-
+    
     def draw(self, surface):
         sprites = self.sprites()
         surface_blit = surface.blit
