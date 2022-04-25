@@ -89,6 +89,14 @@ class Library():
             "2" : {
                 "sheet" : self.get_image("crowd", "2.png"),
                 "data" : self.get_dict_from_spritesheet("crowd", "2.json")
+            },
+            "3" : {
+                "sheet" : self.get_image("crowd", "3.png"),
+                "data" : self.get_dict_from_spritesheet("crowd", "3.json")
+            },
+            "4" : {
+                "sheet" : self.get_image("crowd", "4.png"),
+                "data" : self.get_dict_from_spritesheet("crowd", "4.json")
             }
         }
         self.business_images = {
@@ -157,7 +165,7 @@ class Library():
             "black" : (0, 0, 0),
             "white" : (255, 255, 255),
             "orange" : (249, 154, 77),
-            "yellow" : (255, 233, 73)
+            "yellow" : (255, 215, 0)
         }
     
     
@@ -213,18 +221,22 @@ class Library():
                     "street_food": {
                         "type": "buko_stall",
                         "ownership": True,
+                        "has_employee" : False,
                         "sales" : 0
                     },
                     "sari_sari_store": {
                         "ownership": False,
+                        "has_employee" : False,
                         "sales" : 0
                     },
                     "ukay_ukay": {
                         "ownership": False,
+                        "has_employee" : False,
                         "sales" : 0
                     },
                     "food_cart": {
                         "ownership": False,
+                        "has_employee" : False,
                         "sales" : 0
                     }
                 }

@@ -16,7 +16,7 @@ class Business(Button):
     def __init__(self, screen, progress, name, 
                  fps, callback_function, 
                  serve_button, income_message,
-                 business_data, ownership,
+                 business_data,
                  top_left_coordinates=None, 
                  center_coordinates=None, 
                  midbottom_coordinates=None,
@@ -38,7 +38,11 @@ class Business(Button):
         
         # Business attributes
         self.business_data = business_data
-        self.ownership = ownership
+        if self.business_data["name"] == "Street Foods Stall":
+            self.name_code = "street_food"
+        else:
+            self.name_code = self.name
+        self.ownership = self.progress["businesses"][self.progress["last_location"]][self.name_code]["ownership"]
         self.served_count = 0
         
         self.employee_spritesheet = self.states["employee"]["spritesheet"]
@@ -50,10 +54,22 @@ class Business(Button):
 
         self.fps = fps
         self.frame_length = 1 / self.fps
-        self.frame_counter = 0
         
-        self.seconds_counter = 0
-        self.serving_cooldown = 1
+        # Serving animation waiting attributes
+        self.serving_frame_counter = 0
+        self.serving_seconds_counter = 0
+        self.serving_cooldown = 1 # seconds
+        
+        # Income display message 
+        self.current_income = 0.0
+        self.income_visible = False
+        self.income_message = income_message
+        self.income_opacity = 255
+        self.income_frame_counter = 0
+        self.income_seconds_counter = 0
+        self.income_display_duration = 1 # seconds
+        self.income_display_fade_duration = 1 # seconds
+        self.income_decrement = (self.frame_length / self.income_display_fade_duration) * 255
         
         # This speed controls when to switch from sprite animation to the
         #   next animation in the spritesheet
@@ -70,11 +86,8 @@ class Business(Button):
             
         # Setting the standing animation for the sprite
         self.standby_image = self.employee_frames.pop()
-        if self.ownership:
-            self.business_state = "open"
-        else:
-            self.business_state = "closed"
-        self.has_employee = True
+        self.business_state = "open" if self.ownership else "closed"
+        self.has_employee = self.progress["businesses"][self.progress["last_location"]][self.name_code]["has_employee"]
         self.is_standby = True
         self.is_serving = False
         
@@ -86,16 +99,6 @@ class Business(Button):
         # Setting up pop-up buttons
         self.serve_button = serve_button
         self.serve_button.set_callback(self.serve_customer)
-        
-        # Income display message 
-        # TODO Use these variables for the display of income generated
-        self.income_message = income_message
-        # self.fps = fps
-        # self.frame_length = 1 / self.fps
-        # self.frame_counter = 0
-        
-        # self.seconds_counter = 0
-        # self.serving_cooldown = 1
         
         
     def is_business_serving(self):
@@ -127,14 +130,14 @@ class Business(Button):
                     
         elif self.is_business_ready_to_serve():
                 if self.queue[0].is_standing:
-                    self.frame_counter += self.frame_length
-                    if int(self.frame_counter) >= 1:
-                        self.frame_counter -= 1
-                        self.seconds_counter += 1
+                    self.serving_frame_counter += self.frame_length
+                    if int(self.serving_frame_counter) >= 1:
+                        self.serving_frame_counter -= 1
+                        self.serving_seconds_counter += 1
                         
                         # Automatic serving when employees is present
-                        if self.seconds_counter >= self.serving_cooldown:
-                            self.seconds_counter = 0
+                        if self.serving_seconds_counter >= self.serving_cooldown:
+                            self.serving_seconds_counter = 0
                             self.set_serve_animation()
                     
         else:
@@ -143,8 +146,30 @@ class Business(Button):
         self.set_image_and_rect()
         super().update()
         
+        # Checks for income generation presentation
+        if self.income_visible:
+            if self.income_opacity <= 0:
+                self.reset_income_display()
+                return
+            
+            if self.income_seconds_counter != self.income_display_duration:
+                self.income_frame_counter += self.frame_length
+                if int(self.income_frame_counter) >= 1:
+                    self.income_frame_counter -= 1
+                    self.income_seconds_counter += 1
+                    
+                self.income_message.center_coordinates = (
+                    self.income_message.center_coordinates[0],
+                    self.income_message.center_coordinates[1] - 1
+                )
+            else:
+                self.income_opacity = max(self.income_opacity - self.income_decrement, 0)
+                self.income_message.set_opacity(self.income_opacity)
+                
+            self.income_message.update()
+        
         # Checks for the manual serving button
-        if len(self.queue) > 0 and not self.has_employee:
+        if len(self.queue) > 0 and not self.has_employee and self.visible:
             if self.queue[0].is_standing:
                 # self.business_data["rel_serve_coordinates"]
                 if self.business_data["placement"] == "front":
@@ -166,8 +191,19 @@ class Business(Button):
             self.serve_button.visible = False
         self.serve_button.update()
         
-        # Checks for income generation presentation
         
+    def reset_income_display(self):
+        # Placing the income message relative to the position of the serve button
+        self.income_message.center_coordinates = (
+            int(self.rect.center[0]),
+            int(self.rect.top + (self.rect.height * 0.45))
+        )
+        
+        self.income_frame_counter = 0
+        self.income_seconds_counter = 0
+        self.income_message.set_opacity(255)
+        self.income_opacity = 255
+        self.income_visible = False
         
         
     def set_serve_animation(self):
@@ -259,14 +295,19 @@ class Business(Button):
         
 
     def generate_income(self):
-        income = random.uniform(
-            self.business_data["income_per_customer_range"][0],
-            self.business_data["income_per_customer_range"][1]
+        self.income_step = 0.25
+        self.income_range = (
+            int(self.business_data["income_per_customer_range"][0] / self.income_step),
+            int(self.business_data["income_per_customer_range"][1] / self.income_step)
         )
-        if self.business_data["name"] == "Street Foods Stall":
-            self.progress["businesses"][self.progress["last_location"]]["street_food"]["sales"] += income
-            print(f"{self.business_data['name']} generated P{income:,.2f}, total P{self.progress['businesses'][self.progress['last_location']]['street_food']['sales']:,.2f}")
-        else:
-            self.progress["businesses"][self.progress["last_location"]][self.name]["sales"] += income
-            print(f"{self.business_data['name']} generated P{income:,.2f}, total P{self.progress['businesses'][self.progress['last_location']][self.name]['sales']:,.2f}")
+        self.current_income = random.randint(
+            self.income_range[0],
+            self.income_range[1]
+        ) * self.income_step
         
+        self.progress["businesses"][self.progress["last_location"]][self.name_code]["sales"] += self.current_income
+        
+        # Setting the income animation
+        self.reset_income_display()
+        self.income_message.set_message([f"+P{self.current_income:,.2f}"])
+        self.income_visible = True

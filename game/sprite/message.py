@@ -18,6 +18,7 @@ class Message(Sprite):
         self.screen = screen
         
         self.messages = messages
+        self.opacity = 255
         self.font = font["family"]
         self.size = font["size"]
         
@@ -38,20 +39,22 @@ class Message(Sprite):
         self.center_coordinates = center_coordinates
         self.top_left_coordinates = top_left_coordinates
         
+        # self.update()
+        
         
     def update(self):
         for index, message in enumerate(self.messages):
             self.render_image(message)
             
-            # testing with outline
             base_x = self.rect[0]
             base_y = self.rect[1] + (index * (self.text_spacing + self.size))
             
             if self.outline_image != None:
-                self.screen.blit(self.outline_image, (base_x + self.outline_thickness, base_y))
-                self.screen.blit(self.outline_image, (base_x, base_y + self.outline_thickness))
-                self.screen.blit(self.outline_image, (base_x - self.outline_thickness, base_y))
-                self.screen.blit(self.outline_image, (base_x, base_y - self.outline_thickness))
+                for outline in range(self.outline_thickness):
+                    self.screen.blit(self.outline_image, (base_x + (outline + 1), base_y))
+                    self.screen.blit(self.outline_image, (base_x, base_y + (outline + 1)))
+                    self.screen.blit(self.outline_image, (base_x - (outline + 1), base_y))
+                    self.screen.blit(self.outline_image, (base_x, base_y - (outline + 1)))
             
             self.screen.blit(self.image, (base_x, base_y))
         
@@ -60,9 +63,17 @@ class Message(Sprite):
         self.messages = messages
         
         
+    def set_opacity(self, opacity: int):
+        # First time I will be using assert statements!
+        assert opacity <= 255, "opacity must not exceed 255"
+        assert opacity >= 0, "opacity must be zero or above"
+        self.opacity = opacity
+        
+        
     def render_image(self, message: str):
         if self.outline_thickness > 0:
             self.outline_image = self.font.render(message, False, self.outline_color)
+            self.outline_image.set_alpha(self.opacity)
         
         self.image = self.font.render(message, False, self.color)
         self.rect = self.image.get_rect()
@@ -71,4 +82,6 @@ class Message(Sprite):
             self.rect.center = self.center_coordinates
         elif self.top_left_coordinates is not None:
             self.rect.topleft = self.top_left_coordinates
+            
+        self.image.set_alpha(self.opacity)
         

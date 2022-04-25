@@ -13,7 +13,3 @@ print(time3.days)
 print(time3.seconds)
 """
 
-import random
-for x in range(10):
-    print(random.uniform(0.5, 0.9))
-

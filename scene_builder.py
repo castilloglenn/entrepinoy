@@ -121,13 +121,12 @@ class Scene():
                 ),
                 Message(
                     self.main.screen,
-                    [""],
+                    ["+P0.00"],
                     self.main.data.medium_font, 
                     self.main.data.colors["yellow"],
-                    outline_thickness=1
+                    outline_thickness=2
                 ),
                 self.main.data.business[data],
-                ownership,
                 midbottom_coordinates=(
                     int(self.main.data.setting["game_width"] * self.main.data.business[data]["rel_midbottom_coordinates"][0]),
                     int(self.main.data.setting["game_height"] * self.main.data.business[data]["rel_midbottom_coordinates"][1])
@@ -334,7 +333,7 @@ class Scene():
         if npc_chance <= self.crowd_chance[self.time.time.hour] \
                 and len(self.general_sprites) < self.object_limit: 
             self.footprint_counter += 1 # TODO Deprecated
-            npc_form = str(random.randint(0, 2))
+            npc_form = str(random.randint(0, 4))
             is_businesses_full = self.check_queues_if_full()
             
             customer_chance = random.randint(0, 100)
