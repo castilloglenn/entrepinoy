@@ -250,8 +250,14 @@ class Scene():
                         "outline" : self.main.data.scene["serve_button_hovered"].convert_alpha()
                     }
                 ),
+                Message(
+                    self.main.screen,
+                    ["+P0.00"],
+                    self.main.data.medium_font, 
+                    self.main.data.colors["yellow"],
+                    outline_thickness=2
+                ),
                 self.main.data.business[data],
-                ownership,
                 midbottom_coordinates=(
                     int(self.main.data.setting["game_width"] * self.main.data.business[data]["rel_midbottom_coordinates"][0]),
                     int(self.main.data.setting["game_height"] * self.main.data.business[data]["rel_midbottom_coordinates"][1])
