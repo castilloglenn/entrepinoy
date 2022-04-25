@@ -11,7 +11,7 @@
         "queuing_point" : 0.8,
         "queue_direction" : "right",
         "placement": "front",
-        "initial_cost" : 5000.0,
+        "initial_cost" : 5000.0, 
         "daily_expenses" : 350.0,
         "employee_cost": 150.0,
         "income_per_customer_range" : [10.0, 20.0]
