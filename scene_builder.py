@@ -333,7 +333,7 @@ class Scene():
         if npc_chance <= self.crowd_chance[self.time.time.hour] \
                 and len(self.general_sprites) < self.object_limit: 
             self.footprint_counter += 1 # TODO Deprecated
-            npc_form = str(random.randint(0, 4))
+            npc_form = str(random.randint(0, 5))
             is_businesses_full = self.check_queues_if_full()
             
             customer_chance = random.randint(0, 100)

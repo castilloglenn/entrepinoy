@@ -1,28 +1,8 @@
 {
 	"frames": {
-		"ukay_ukay_employee.png": {
-			"frame": {
-				"x": 1,
-				"y": 1,
-				"w": 496,
-				"h": 428
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 496,
-				"h": 428
-			},
-			"sourceSize": {
-				"w": 496,
-				"h": 428
-			}
-		},
 		"ukay_ukay_employee_1.png": {
 			"frame": {
-				"x": 499,
+				"x": 1,
 				"y": 1,
 				"w": 496,
 				"h": 428
@@ -42,8 +22,8 @@
 		},
 		"ukay_ukay_employee_2.png": {
 			"frame": {
-				"x": 1,
-				"y": 431,
+				"x": 499,
+				"y": 1,
 				"w": 496,
 				"h": 428
 			},
@@ -62,7 +42,7 @@
 		},
 		"ukay_ukay_employee_3.png": {
 			"frame": {
-				"x": 499,
+				"x": 1,
 				"y": 431,
 				"w": 496,
 				"h": 428
@@ -82,8 +62,8 @@
 		},
 		"ukay_ukay_employee_4.png": {
 			"frame": {
-				"x": 1,
-				"y": 861,
+				"x": 499,
+				"y": 431,
 				"w": 496,
 				"h": 428
 			},
@@ -102,7 +82,7 @@
 		},
 		"ukay_ukay_employee_5.png": {
 			"frame": {
-				"x": 499,
+				"x": 1,
 				"y": 861,
 				"w": 496,
 				"h": 428
@@ -122,8 +102,8 @@
 		},
 		"ukay_ukay_employee_6.png": {
 			"frame": {
-				"x": 997,
-				"y": 1,
+				"x": 499,
+				"y": 861,
 				"w": 496,
 				"h": 428
 			},
@@ -143,7 +123,7 @@
 		"ukay_ukay_employee_7.png": {
 			"frame": {
 				"x": 997,
-				"y": 431,
+				"y": 1,
 				"w": 496,
 				"h": 428
 			},
@@ -163,7 +143,7 @@
 		"ukay_ukay_employee_8.png": {
 			"frame": {
 				"x": 997,
-				"y": 861,
+				"y": 431,
 				"w": 496,
 				"h": 428
 			},
@@ -181,6 +161,26 @@
 			}
 		},
 		"ukay_ukay_employee_9.png": {
+			"frame": {
+				"x": 997,
+				"y": 861,
+				"w": 496,
+				"h": 428
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 496,
+				"h": 428
+			},
+			"sourceSize": {
+				"w": 496,
+				"h": 428
+			}
+		},
+		"ukay_ukay_employee_10.png": {
 			"frame": {
 				"x": 1,
 				"y": 1291,
