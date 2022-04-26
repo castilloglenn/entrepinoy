@@ -64,6 +64,9 @@ class Business(Button):
         self.current_income = 0.0
         self.income_visible = False
         self.income_message = income_message
+        self.income_travel_distance = 50
+        self.income_travel_distance_per_frame = self.income_travel_distance * self.frame_length
+        self.income_travel_counter = 0
         self.income_opacity = 255
         self.income_frame_counter = 0
         self.income_seconds_counter = 0
@@ -157,11 +160,14 @@ class Business(Button):
                 if int(self.income_frame_counter) >= 1:
                     self.income_frame_counter -= 1
                     self.income_seconds_counter += 1
-                    
-                self.income_message.center_coordinates = (
-                    self.income_message.center_coordinates[0],
-                    self.income_message.center_coordinates[1] - 1
-                )
+                
+                self.income_travel_counter += self.income_travel_distance_per_frame
+                if self.income_travel_counter >= 1:
+                    self.income_message.center_coordinates = (
+                        self.income_message.center_coordinates[0],
+                        self.income_message.center_coordinates[1] - int(self.income_travel_counter)
+                    )
+                    self.income_travel_counter -= int(self.income_travel_counter)
             else:
                 self.income_opacity = max(self.income_opacity - self.income_decrement, 0)
                 self.income_message.set_opacity(self.income_opacity)
@@ -201,6 +207,8 @@ class Business(Button):
         
         self.income_frame_counter = 0
         self.income_seconds_counter = 0
+        self.income_travel_counter = 0
+        
         self.income_message.set_opacity(255)
         self.income_opacity = 255
         self.income_visible = False

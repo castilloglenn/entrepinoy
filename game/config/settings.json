@@ -1,7 +1,7 @@
 {
     "game_width" : 1280,
     "game_height" : 720,
-    "fps" : 60,
+    "fps" : 30,
 
     "autosave_timeout" : 5000
 }

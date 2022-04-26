@@ -215,8 +215,8 @@ class Library():
     
     def create_new_save_file(self, starter):
         self.progress = {
-            "time": "2022/01/01, 00:00:00.000000",
-            # "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
+            "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
+            # "time": "2022/01/01, 00:00:00.000000",
             "last_login": "",
             "last_location" : "location_a",
             "cash": 5000.0000000000000,
@@ -226,29 +226,29 @@ class Library():
                     "street_food": {
                         "type": "buko_stall",
                         "ownership": True,
-                        # "has_employee" : False,
-                        "has_employee" : True,
+                        "has_employee" : False,
+                        # "has_employee" : True,
                         "sales" : 0
                     },
                     "sari_sari_store": {
-                        # "ownership": False,
-                        # "has_employee" : False,
-                        "ownership": True,
-                        "has_employee" : True,
+                        "ownership": False,
+                        "has_employee" : False,
+                        # "ownership": True,
+                        # "has_employee" : True,
                         "sales" : 0
                     },
                     "ukay_ukay": {
-                        # "ownership": False,
-                        # "has_employee" : False,
-                        "ownership": True,
-                        "has_employee" : True,
+                        "ownership": False,
+                        "has_employee" : False,
+                        # "ownership": True,
+                        # "has_employee" : True,
                         "sales" : 0
                     },
                     "food_cart": {
-                        # "ownership": False,
-                        # "has_employee" : False,
-                        "ownership": True,
-                        "has_employee" : True,
+                        "ownership": False,
+                        "has_employee" : False,
+                        # "ownership": True,
+                        # "has_employee" : True,
                         "sales" : 0
                     }
                 }

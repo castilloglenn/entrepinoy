@@ -13,3 +13,7 @@ print(time3.days)
 print(time3.seconds)
 """
 
+inc = 0.0167
+
+for x in range(1, 61):
+    print(f"n: {x} eval: {(inc * x) % 0.1}")
