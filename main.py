@@ -235,7 +235,7 @@ class Main():
              " to start a new game?", "",
              "All your progress will", 
              "be reset."],
-            self.data.medium_font,
+            self.data.large_font,
             self.data.colors["white"],
             outline_thickness=2,
             center_coordinates=(

@@ -1,30 +1,38 @@
 {
-    "time": "2022/01/01, 12:54:48.000000",
-    "last_login": "2022/04/26, 13:57:23.226835",
+    "time": "2022/01/02, 06:33:07.200000",
+    "last_login": "2022/04/26, 19:58:30.261137",
     "last_location": "location_a",
     "cash": 5000.0,
     "businesses": {
         "location_a": {
             "street_food": {
+                "date_acquired": "",
                 "type": "buko_stall",
                 "ownership": true,
                 "has_employee": true,
-                "sales": 820.0
+                "sales": 1885.0,
+                "lifetime_sales": 0
             },
             "sari_sari_store": {
+                "date_acquired": "",
                 "ownership": true,
                 "has_employee": true,
-                "sales": 1165.5
+                "sales": 1165.5,
+                "lifetime_sales": 0
             },
             "ukay_ukay": {
+                "date_acquired": "",
                 "ownership": true,
                 "has_employee": true,
-                "sales": 4679.5
+                "sales": 4679.5,
+                "lifetime_sales": 0
             },
             "food_cart": {
+                "date_acquired": "",
                 "ownership": true,
                 "has_employee": true,
-                "sales": 1866.5
+                "sales": 1866.5,
+                "lifetime_sales": 0
             }
         }
     }

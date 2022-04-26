@@ -34,6 +34,10 @@ class Library():
             "size" : 10
         }
         self.medium_font = {
+            "family" : self.get_font("PixelEmulator-xq08.ttf", 18),
+            "size" : 18
+        }
+        self.large_font = {
             "family" : self.get_font("PixelEmulator-xq08.ttf", 25),
             "size" : 25
         }
@@ -67,7 +71,9 @@ class Library():
             "profile_holder_idle" : self.get_image("scene", "profile_holder_idle.png"),
             "profile_holder_outline" : self.get_image("scene", "profile_holder_outline.png"),
             "serve_button_idle" : self.get_image("scene", "serve_button_idle.png"),
-            "serve_button_hovered" : self.get_image("scene", "serve_button_hovered.png")
+            "serve_button_hovered" : self.get_image("scene", "serve_button_hovered.png"),
+            "collect_sales_button_idle" : self.get_image("scene", "collect_sales_button_idle.png"),
+            "collect_sales_button_hovered" : self.get_image("scene", "collect_sales_button_hovered.png")
         }
         self.emojis = {
             "happy_emoji" : self.get_image("scene", "happy_emoji.png"),
@@ -181,7 +187,8 @@ class Library():
             "black" : (0, 0, 0),
             "white" : (255, 255, 255),
             "orange" : (249, 154, 77),
-            "yellow" : (255, 215, 0)
+            "yellow" : (255, 215, 0),
+            "brown" : (54, 35, 35)
         }
     
     
@@ -236,32 +243,40 @@ class Library():
             "businesses": {
                 "location_a": {
                     "street_food": {
+                        "date_acquired" : datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
                         "type": "buko_stall",
                         "ownership": True,
                         "has_employee" : False,
                         # "has_employee" : True,
-                        "sales" : 0
+                        "sales" : 0,
+                        "lifetime_sales" : 0
                     },
                     "sari_sari_store": {
+                        "date_acquired" : "",
                         "ownership": False,
                         "has_employee" : False,
                         # "ownership": True,
                         # "has_employee" : True,
-                        "sales" : 0
+                        "sales" : 0,
+                        "lifetime_sales" : 0
                     },
                     "ukay_ukay": {
+                        "date_acquired" : "",
                         "ownership": False,
                         "has_employee" : False,
                         # "ownership": True,
                         # "has_employee" : True,
-                        "sales" : 0
+                        "sales" : 0,
+                        "lifetime_sales" : 0
                     },
                     "food_cart": {
+                        "date_acquired" : "",
                         "ownership": False,
                         "has_employee" : False,
                         # "ownership": True,
                         # "has_employee" : True,
-                        "sales" : 0
+                        "sales" : 0,
+                        "lifetime_sales" : 0
                     }
                 }
             }

@@ -1,37 +1,18 @@
 {
-    "small" : {
-        "tier_1" : [
-            "street_food",
-            "sari_sari_store"
-        ],
-        "tier_2" : [
-            "ukay_ukay",
-            "food_cart"
-        ],
-        "tier_3" : [
-
-        ]
+    "street_food" : {
+        "size" : "small",
+        "tier" : "I"
     },
-    "medium" : {
-        "tier_1" : [
-
-        ],
-        "tier_2" : [
-
-        ],
-        "tier_3" : [
-
-        ]
+    "sari_sari_store" : {
+        "size" : "small",
+        "tier" : "I"
     },
-    "large" : {
-        "tier_1" : [
-
-        ],
-        "tier_2" : [
-
-        ],
-        "tier_3" : [
-
-        ]
+    "ukay_ukay" : {
+        "size" : "small",
+        "tier" : "II"
+    },
+    "food_cart" : {
+        "size" : "small",
+        "tier" : "II"
     }
 }

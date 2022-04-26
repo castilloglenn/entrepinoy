@@ -123,7 +123,7 @@ class Scene():
                 Message(
                     self.main.screen,
                     ["+P0.00"],
-                    self.main.data.medium_font, 
+                    self.main.data.large_font, 
                     self.main.data.colors["yellow"],
                     outline_thickness=2
                 ),
@@ -253,7 +253,7 @@ class Scene():
                 Message(
                     self.main.screen,
                     ["+P0.00"],
-                    self.main.data.medium_font, 
+                    self.main.data.large_font, 
                     self.main.data.colors["yellow"],
                     outline_thickness=2
                 ),
@@ -306,6 +306,8 @@ class Scene():
     
     def time_callback_day(self):
         self.main.debug.log("Day callback")
+        
+        # TODO Update reports of each individual owned businesses
         
     
     def time_callback_month(self):
@@ -536,10 +538,10 @@ class Scene():
                         f"Total crowd spawned: {self.footprint_counter}",
                         f"Customers spawned: {self.customers_spawned}",
                         f"Objects/Max displayed: {len(self.general_sprites)}/{self.object_limit}",
-                        f"Tindahan: {len(self.business_data['sari_sari_store']['object'].queue)}/{self.business_data['sari_sari_store']['object'].queue_limit} Served customers: {self.business_data['sari_sari_store']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['sari_sari_store']['sales']:,.2f}",
-                        f"Food cart: {len(self.business_data['food_cart']['object'].queue)}/{self.business_data['food_cart']['object'].queue_limit} Served customers: {self.business_data['food_cart']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['food_cart']['sales']:,.2f}",
+                        # f"Tindahan: {len(self.business_data['sari_sari_store']['object'].queue)}/{self.business_data['sari_sari_store']['object'].queue_limit} Served customers: {self.business_data['sari_sari_store']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['sari_sari_store']['sales']:,.2f}",
+                        # f"Food cart: {len(self.business_data['food_cart']['object'].queue)}/{self.business_data['food_cart']['object'].queue_limit} Served customers: {self.business_data['food_cart']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['food_cart']['sales']:,.2f}",
                         f"Buko stall: {len(self.business_data['buko_stall']['object'].queue)}/{self.business_data['buko_stall']['object'].queue_limit} Served customers: {self.business_data['buko_stall']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['street_food']['sales']:,.2f}",
-                        f"Ukay-ukay: {len(self.business_data['ukay_ukay']['object'].queue)}/{self.business_data['ukay_ukay']['object'].queue_limit} Served customers: {self.business_data['ukay_ukay']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['ukay_ukay']['sales']:,.2f}",
+                        # f"Ukay-ukay: {len(self.business_data['ukay_ukay']['object'].queue)}/{self.business_data['ukay_ukay']['object'].queue_limit} Served customers: {self.business_data['ukay_ukay']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['ukay_ukay']['sales']:,.2f}",
                     ]
                 )
             
