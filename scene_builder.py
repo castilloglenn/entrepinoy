@@ -418,7 +418,10 @@ class Scene():
         self.main.global_key_down_events(key)
         
         if key == pygame.K_F1:
-            self.main.debug.log(f"Objects in memory: {len(self.general_sprites)}")
+            self.main.debug.log("Exited scene via F2-shortcut")
+            self.update_data()
+            self.main.debug.log("Autosaved progress before exit")  
+            self.running = False
             
         elif key == pygame.K_F2:
             self.show_debug_info = not self.show_debug_info
@@ -430,16 +433,15 @@ class Scene():
                 self.main.debug.log("Debug details hidden")
             
         elif key == pygame.K_F3:
-            self.main.debug.log("Exited scene via F2-shortcut")
-            self.update_data()
-            self.main.debug.log("Autosaved progress before exit")  
-            self.running = False
+            pass
+            # self.main.debug.log(f"Objects in memory: {len(self.general_sprites)}")
             
         elif key == pygame.K_F4:
-            self.time.set_time("2022/01/01, 00:00:00.000000")
+            pass
+            # self.time.set_time("2022/01/01, 00:00:00.000000")
             
-            for key, business in self.business_data.items():
-                business["object"].served_count = 0
+            # for key, business in self.business_data.items():
+            #     business["object"].served_count = 0
 
 
     def key_hold_events(self, keys):
@@ -498,20 +500,23 @@ class Scene():
             for event in pygame.event.get():
                 if self.business_menu.enable:
                     self.business_menu.handle_event(event)
-                    continue
+                else:
+                    if event.type == pygame.QUIT: 
+                        self.running = False
+                        self.close_game()
+                    elif event.type == pygame.MOUSEBUTTONDOWN: 
+                        self.mouse_click_events(event)
+                    elif event.type == pygame.MOUSEMOTION: 
+                        self.mouse_drag_events(event)
+                    elif event.type == pygame.KEYDOWN:
+                        self.key_down_events(event.key)
                 
-                if event.type == pygame.QUIT: 
-                    self.running = False
-                    self.close_game()
-                elif event.type == pygame.MOUSEBUTTONDOWN: 
-                    self.mouse_click_events(event)
-                elif event.type == pygame.MOUSEMOTION: 
-                    self.mouse_drag_events(event)
-                elif event.type == pygame.KEYDOWN:
-                    self.key_down_events(event.key)
+                    # Key pressing events (holding keys applicable)
+                    keys = pygame.key.get_pressed()
+                    self.key_hold_events(keys)
                 
                 # Custom event timers
-                elif event.type == self.autosave_id:
+                if event.type == self.autosave_id:
                     self.update_data()
                     self.main.debug.log("Autosaved progress")
                 elif event.type == self.crowd_spawner_id:
@@ -519,10 +524,6 @@ class Scene():
                 elif event.type == self.memory_debug_id:
                     self.main.debug.log(f"[A] Objects in memory: {len(self.general_sprites)}")
                     self.main.debug.memory_log()
-                
-            # Key pressing events (holding keys applicable)
-            keys = pygame.key.get_pressed()
-            self.key_hold_events(keys)
             
             # TODO DEBUGGING ONLY/ considering to turning into feature
             if self.show_debug_info:

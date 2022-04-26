@@ -1,6 +1,6 @@
 {
-    "time": "2022/01/02, 04:40:04.800000",
-    "last_login": "2022/04/26, 11:42:51.750252",
+    "time": "2022/01/01, 12:54:48.000000",
+    "last_login": "2022/04/26, 13:57:23.226835",
     "last_location": "location_a",
     "cash": 5000.0,
     "businesses": {
@@ -9,22 +9,22 @@
                 "type": "buko_stall",
                 "ownership": true,
                 "has_employee": true,
-                "sales": 1131.5
+                "sales": 820.0
             },
             "sari_sari_store": {
                 "ownership": true,
                 "has_employee": true,
-                "sales": 1612.75
+                "sales": 1165.5
             },
             "ukay_ukay": {
                 "ownership": true,
                 "has_employee": true,
-                "sales": 8694.0
+                "sales": 4679.5
             },
             "food_cart": {
                 "ownership": true,
                 "has_employee": true,
-                "sales": 2844.25
+                "sales": 1866.5
             }
         }
     }
