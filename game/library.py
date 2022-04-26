@@ -101,6 +101,18 @@ class Library():
             "5" : {
                 "sheet" : self.get_image("crowd", "5.png"),
                 "data" : self.get_dict_from_spritesheet("crowd", "5.json")
+            },
+            "6" : {
+                "sheet" : self.get_image("crowd", "6.png"),
+                "data" : self.get_dict_from_spritesheet("crowd", "6.json")
+            },
+            "7" : {
+                "sheet" : self.get_image("crowd", "7.png"),
+                "data" : self.get_dict_from_spritesheet("crowd", "7.json")
+            },
+            "8" : {
+                "sheet" : self.get_image("crowd", "8.png"),
+                "data" : self.get_dict_from_spritesheet("crowd", "8.json")
             }
         }
         self.business_images = {

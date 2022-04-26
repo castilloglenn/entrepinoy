@@ -27,6 +27,7 @@ class Scene():
     def __init__(self, main):
         # Settings up the scene
         self.main = main
+        self.show_debug_info = False
         
         self.location = self.main.data.progress["last_location"]
         self.crowd_chance = self.main.data.crowd_statistics[self.location]
@@ -173,7 +174,6 @@ class Scene():
             top_left_coordinates=(10, 575), # 575, 450 for ernest
             outline_thickness=1
         )
-        self.debug_message.add(self.ui_components)
         
         # Buttons layering hierarchy (the top layer must be add first)
         self.profile_holder.add(self.buttons)
@@ -339,7 +339,7 @@ class Scene():
         if npc_chance <= self.crowd_chance[self.time.time.hour] \
                 and len(self.general_sprites) < self.object_limit: 
             self.footprint_counter += 1 # TODO Deprecated
-            npc_form = str(random.randint(0, 5))
+            npc_form = str(random.randint(0, 8))
             is_businesses_full = self.check_queues_if_full()
             
             customer_chance = random.randint(0, 100)
@@ -421,19 +421,25 @@ class Scene():
             self.main.debug.log(f"Objects in memory: {len(self.general_sprites)}")
             
         elif key == pygame.K_F2:
+            self.show_debug_info = not self.show_debug_info
+            if self.show_debug_info:
+                self.debug_message.add(self.ui_components)
+                self.main.debug.log("Debug details shown")
+            else:
+                self.debug_message.kill()
+                self.main.debug.log("Debug details hidden")
+            
+        elif key == pygame.K_F3:
             self.main.debug.log("Exited scene via F2-shortcut")
             self.update_data()
             self.main.debug.log("Autosaved progress before exit")  
             self.running = False
             
-        elif key == pygame.K_F3:
+        elif key == pygame.K_F4:
             self.time.set_time("2022/01/01, 00:00:00.000000")
             
             for key, business in self.business_data.items():
                 business["object"].served_count = 0
-            
-        elif key == pygame.K_F4:
-            self.time.set_time("2022/01/01, 17:00:00.000000")
 
 
     def key_hold_events(self, keys):
@@ -518,22 +524,23 @@ class Scene():
             keys = pygame.key.get_pressed()
             self.key_hold_events(keys)
             
-            # TODO DEBUGGING ONLY
-            self.debug_message.set_message(
-                [
-                    f"{self.main.debug.get_highest_usage()}",
-                    f"{self.main.debug.get_memory_usage()}",
-                    f"{self.main.debug.get_free_usage()}",
-                    f"Location: {self.location}",
-                    f"Total crowd spawned: {self.footprint_counter}",
-                    f"Customers spawned: {self.customers_spawned}",
-                    f"Objects/Max displayed: {len(self.general_sprites)}/{self.object_limit}",
-                    f"Tindahan: {len(self.business_data['sari_sari_store']['object'].queue)}/{self.business_data['sari_sari_store']['object'].queue_limit} Served customers: {self.business_data['sari_sari_store']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['sari_sari_store']['sales']:,.2f}",
-                    f"Food cart: {len(self.business_data['food_cart']['object'].queue)}/{self.business_data['food_cart']['object'].queue_limit} Served customers: {self.business_data['food_cart']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['food_cart']['sales']:,.2f}",
-                    f"Buko stall: {len(self.business_data['buko_stall']['object'].queue)}/{self.business_data['buko_stall']['object'].queue_limit} Served customers: {self.business_data['buko_stall']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['street_food']['sales']:,.2f}",
-                    f"Ukay-ukay: {len(self.business_data['ukay_ukay']['object'].queue)}/{self.business_data['ukay_ukay']['object'].queue_limit} Served customers: {self.business_data['ukay_ukay']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['ukay_ukay']['sales']:,.2f}",
-                ]
-            )
+            # TODO DEBUGGING ONLY/ considering to turning into feature
+            if self.show_debug_info:
+                self.debug_message.set_message(
+                    [
+                        f"{self.main.debug.get_highest_usage()}",
+                        f"{self.main.debug.get_memory_usage()}",
+                        f"{self.main.debug.get_free_usage()}",
+                        f"Location: {self.location}",
+                        f"Total crowd spawned: {self.footprint_counter}",
+                        f"Customers spawned: {self.customers_spawned}",
+                        f"Objects/Max displayed: {len(self.general_sprites)}/{self.object_limit}",
+                        f"Tindahan: {len(self.business_data['sari_sari_store']['object'].queue)}/{self.business_data['sari_sari_store']['object'].queue_limit} Served customers: {self.business_data['sari_sari_store']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['sari_sari_store']['sales']:,.2f}",
+                        f"Food cart: {len(self.business_data['food_cart']['object'].queue)}/{self.business_data['food_cart']['object'].queue_limit} Served customers: {self.business_data['food_cart']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['food_cart']['sales']:,.2f}",
+                        f"Buko stall: {len(self.business_data['buko_stall']['object'].queue)}/{self.business_data['buko_stall']['object'].queue_limit} Served customers: {self.business_data['buko_stall']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['street_food']['sales']:,.2f}",
+                        f"Ukay-ukay: {len(self.business_data['ukay_ukay']['object'].queue)}/{self.business_data['ukay_ukay']['object'].queue_limit} Served customers: {self.business_data['ukay_ukay']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['ukay_ukay']['sales']:,.2f}",
+                    ]
+                )
             
             # Updating the display
             self.refresh_display()
