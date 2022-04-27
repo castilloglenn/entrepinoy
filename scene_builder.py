@@ -90,7 +90,7 @@ class Scene():
         
         # Internal variables
         self.business_data = {}
-        self.business_menu = BusinessMenu(self.main)
+        self.business_menu = BusinessMenu(self.main, self.location)
         # Safe spot is somewhere in the middle so that the customers will
         #   go there first before going to the back layer of businesses
         #   to avoid rendering confusions or going through walls
@@ -151,14 +151,13 @@ class Scene():
         )
         self.profile_holder.add(self.ui_components)
         
-        self.cash_format = f"P{self.main.data.progress['cash']:18,.2f}"
         self.profile_message = Message(
             self.main.screen, 
                 [
                     self.time.get_date(), 
                     self.time.get_time(),
                     "Bank Balance:",
-                    self.cash_format
+                    f"P{self.main.data.progress['cash']:18,.2f}"
                 ], 
             self.main.data.small_font, 
             self.main.data.colors["orange"],
@@ -294,7 +293,7 @@ class Scene():
             self.time.get_date(), 
             self.time.get_time(),
             "Bank Balance:",
-            self.cash_format
+            f"P{self.main.data.progress['cash']:18,.2f}"
         ])
         
     

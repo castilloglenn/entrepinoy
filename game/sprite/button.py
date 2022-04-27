@@ -34,17 +34,22 @@ class Button(Sprite):
         self.bound_opacity = 128
         
         self.visible = True
+        self.is_disabled = False
         self.screen = screen
         self.state = "idle"
         self.callback = callback_function
         
         self.idle = states["idle"].convert_alpha()
-        try:
+        
+        if "hovered" in states:
             self.hovered = states["hovered"].convert_alpha()
-        except KeyError:
+        else:
             self.hovered = states["idle"].convert_alpha()
             self.outline = states["outline"].convert_alpha()
             self.hovered.blit(self.outline, (0, 0))
+            
+        if "disabled" in states:
+            self.disabled = states["disabled"].convert_alpha()
         
         self.top_left_coordinates = top_left_coordinates
         self.center_coordinates = center_coordinates
@@ -96,7 +101,9 @@ class Button(Sprite):
             
         
     def set_image_and_rect(self):
-        if self.state == "idle":
+        if self.is_disabled:
+            self.image = self.disabled
+        elif self.state == "idle":
             self.image = self.idle
         elif self.state == "hovered":
             self.image = self.hovered
@@ -115,10 +122,18 @@ class Button(Sprite):
             self.collide_x, self.collide_y,
             self.collide_width, self.collide_height
         )
+        
+
+    def set_is_disabled(self, is_disabled):
+        self.is_disabled = is_disabled
+        self.set_image_and_rect()
             
             
     def check_hovered(self, hover_coordinates):
         # Return booleans to prevent overlapping buttons to react the same
+        if self.is_disabled:
+            return False
+        
         if self.collide_rect.collidepoint(hover_coordinates):
             self.state = "hovered"
             self.set_image_and_rect()
@@ -130,7 +145,12 @@ class Button(Sprite):
         
     
     def check_clicked(self, click_coordinates):
+        if self.is_disabled:
+            return False
+        
         if self.collide_rect.collidepoint(click_coordinates) and self.visible:
+            self.state = "idle"
+            self.set_image_and_rect()
             self.callback(self)
         
         # Return booleans to prevent overlapping buttons to react the same

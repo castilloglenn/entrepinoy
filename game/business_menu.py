@@ -12,12 +12,13 @@ class BusinessMenu():
     clicked. This will contain the details, buttons to manage the business
     and the profits and loss statistics.
     """
-    def __init__(self, main):
+    def __init__(self, main, location):
         self.enable = False
         
         self.main = main
         self.screen = self.main.screen
         self.data = None
+        self.location = location
         
         # Sprite groups
         self.objects = pygame.sprite.Group()
@@ -59,7 +60,8 @@ class BusinessMenu():
             ),
             **{
                 "idle" : self.main.data.scene["collect_sales_button_idle"].convert_alpha(),
-                "outline" : self.main.data.scene["collect_sales_button_hovered"].convert_alpha()
+                "outline" : self.main.data.scene["collect_sales_button_hovered"].convert_alpha(),
+                "disabled" : self.main.data.scene["collect_sales_button_disabled"].convert_alpha()
             }
         )
         
@@ -67,8 +69,32 @@ class BusinessMenu():
         self.main.display_surface.set_alpha(128)
         
         
+    def get_sales(self):
+        return self.main.data.progress["businesses"][self.location][self.data.name_code]["sales"]
+    
+    
+    def clear_sales(self):
+        self.main.data.progress["businesses"][self.location][self.data.name_code]["sales"] = 0
+        
+        
     def collect_sales_button_callback(self, *args):
-        print("collect sales button clicked")
+        self.collect_sales_button.set_is_disabled(True)
+        self.main.data.progress["cash"] += self.main.data.progress["businesses"][self.location][self.data.name_code]["sales"]
+        self.clear_sales()
+        
+        
+    def set_button_states(self):
+        if self.get_sales() <= 0:
+            self.collect_sales_button.set_is_disabled(True)
+        else:
+            self.collect_sales_button.set_is_disabled(False)
+            
+            
+    def update_data(self):
+        # This will be called in conjunction with the screen update to always
+        #   make the details in the business update and buttons will be enabled
+        #   when a sale is made and etc.
+        self.set_button_states()
         
         
     def set_data(self, data):
@@ -89,6 +115,7 @@ class BusinessMenu():
         self.business_tier_and_size.add(self.objects)
         self.collect_sales_button.add(self.objects, self.buttons, self.hoverable_buttons)
         
+        self.set_button_states()
         self.background.enable = True
         
         pprint(self.data)
@@ -129,6 +156,9 @@ class BusinessMenu():
             return
         
         if self.background.enable:
+            # Updating the data
+            self.update_data()
+            
             self.screen.blit(self.main.display_surface, (0, 0)) 
             self.objects.update()
         

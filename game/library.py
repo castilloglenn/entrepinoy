@@ -73,7 +73,8 @@ class Library():
             "serve_button_idle" : self.get_image("scene", "serve_button_idle.png"),
             "serve_button_hovered" : self.get_image("scene", "serve_button_hovered.png"),
             "collect_sales_button_idle" : self.get_image("scene", "collect_sales_button_idle.png"),
-            "collect_sales_button_hovered" : self.get_image("scene", "collect_sales_button_hovered.png")
+            "collect_sales_button_hovered" : self.get_image("scene", "collect_sales_button_hovered.png"),
+            "collect_sales_button_disabled" : self.get_image("scene", "collect_sales_button_disabled.png")
         }
         self.emojis = {
             "happy_emoji" : self.get_image("scene", "happy_emoji.png"),
