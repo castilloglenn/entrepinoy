@@ -1,8 +1,8 @@
 {
-    "time": "2022/04/28, 15:44:48.883849",
-    "last_login": "2022/04/27, 19:03:15.906841",
+    "time": "2022/04/29, 19:05:48.883849",
+    "last_login": "2022/04/27, 20:01:02.212126",
     "last_location": "location_a",
-    "cash": 5939.5,
+    "cash": 8031.25,
     "businesses": {
         "location_a": {
             "street_food": {
@@ -10,7 +10,7 @@
                 "type": "buko_stall",
                 "ownership": true,
                 "has_employee": true,
-                "sales": 10.5,
+                "sales": 245.25,
                 "lifetime_sales": 0
             },
             "sari_sari_store": {

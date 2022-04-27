@@ -35,7 +35,7 @@ class Library():
         }
         self.medium_font = {
             "family" : self.get_font("PixelEmulator-xq08.ttf", 18),
-            "size" : 18
+            "size" : 16
         }
         self.large_font = {
             "family" : self.get_font("PixelEmulator-xq08.ttf", 25),

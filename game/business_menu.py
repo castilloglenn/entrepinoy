@@ -12,12 +12,13 @@ class BusinessMenu():
     clicked. This will contain the details, buttons to manage the business
     and the profits and loss statistics.
     """
-    def __init__(self, main, location):
+    def __init__(self, main, time, location):
         self.enable = False
         
         self.main = main
         self.screen = self.main.screen
         self.data = None
+        self.time = time
         self.location = location
         
         # Sprite groups
@@ -44,11 +45,21 @@ class BusinessMenu():
         self.business_tier_and_size = Message(
             self.screen, 
             [""],
-            self.main.data.small_font,
+            self.main.data.medium_font,
             self.main.data.colors["brown"],
             top_left_coordinates=(
                 int(self.canvas_rect.width * 0.035) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.11) + self.canvas_rect.y
+            )
+        )
+        self.left_side_description = Message(
+            self.screen, 
+            [""],
+            self.main.data.medium_font,
+            self.main.data.colors["brown"],
+            top_left_coordinates=(
+                int(self.canvas_rect.width * 0.035) + self.canvas_rect.x,
+                int(self.canvas_rect.height * 0.2) + self.canvas_rect.y
             )
         )
         self.collect_sales_button = Button(
@@ -94,6 +105,16 @@ class BusinessMenu():
         # This will be called in conjunction with the screen update to always
         #   make the details in the business update and buttons will be enabled
         #   when a sale is made and etc.
+        self.left_side_description.set_message([
+            f"Open until:     1:52 AM, April 28, 2022", 
+            f"================================================",
+            f"Date acquired:  9:53 PM, January 1, 2022",
+            f"Daily expense:   P0,000.00",
+            f"Gross income",
+            f"per customer:   P{123456789:,.2f}",
+            f"Sales:          P{self.get_sales():,.2f}"
+        ])
+        
         self.set_button_states()
         
         
@@ -110,12 +131,15 @@ class BusinessMenu():
             f"{self.main.data.category[self.data.name_code]['size']} Business"
         ])
         
+        # Updating the data
+        self.update_data()
+        
         # Object add
         self.business_title_message.add(self.objects)
         self.business_tier_and_size.add(self.objects)
+        self.left_side_description.add(self.objects)
         self.collect_sales_button.add(self.objects, self.buttons, self.hoverable_buttons)
         
-        self.set_button_states()
         self.background.enable = True
         
         pprint(self.data)

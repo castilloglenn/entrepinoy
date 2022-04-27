@@ -90,7 +90,7 @@ class Scene():
         
         # Internal variables
         self.business_data = {}
-        self.business_menu = BusinessMenu(self.main, self.location)
+        self.business_menu = BusinessMenu(self.main, self.time, self.location)
         # Safe spot is somewhere in the middle so that the customers will
         #   go there first before going to the back layer of businesses
         #   to avoid rendering confusions or going through walls
