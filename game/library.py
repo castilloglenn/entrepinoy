@@ -74,7 +74,22 @@ class Library():
             "serve_button_hovered" : self.get_image("scene", "serve_button_hovered.png"),
             "collect_sales_button_idle" : self.get_image("scene", "collect_sales_button_idle.png"),
             "collect_sales_button_hovered" : self.get_image("scene", "collect_sales_button_hovered.png"),
-            "collect_sales_button_disabled" : self.get_image("scene", "collect_sales_button_disabled.png")
+            "collect_sales_button_disabled" : self.get_image("scene", "collect_sales_button_disabled.png"),
+            "close_business_button_idle" : self.get_image("scene", "close_business_button_idle.png"),
+            "close_business_button_hovered" : self.get_image("scene", "close_business_button_hovered.png"),
+            "close_business_button_disabled" : self.get_image("scene", "close_business_button_disabled.png"),
+            "hire_employee_button_idle" : self.get_image("scene", "hire_employee_button_idle.png"),
+            "hire_employee_button_hovered" : self.get_image("scene", "hire_employee_button_hovered.png"),
+            "hire_employee_button_disabled" : self.get_image("scene", "hire_employee_button_disabled.png"),
+            "purchase_business_button_idle" : self.get_image("scene", "purchase_business_button_idle.png"),
+            "purchase_business_button_hovered" : self.get_image("scene", "purchase_business_button_hovered.png"),
+            "purchase_business_button_disabled" : self.get_image("scene", "purchase_business_button_disabled.png"),
+            "sell_business_button_idle" : self.get_image("scene", "sell_business_button_idle.png"),
+            "sell_business_button_hovered" : self.get_image("scene", "sell_business_button_hovered.png"),
+            "sell_business_button_disabled" : self.get_image("scene", "sell_business_button_disabled.png"),
+            "start_business_button_idle" : self.get_image("scene", "start_business_button_idle.png"),
+            "start_business_button_hovered" : self.get_image("scene", "start_business_button_hovered.png"),
+            "start_business_button_disabled" : self.get_image("scene", "start_business_button_disabled.png")
         }
         self.emojis = {
             "happy_emoji" : self.get_image("scene", "happy_emoji.png"),
@@ -120,6 +135,10 @@ class Library():
             "8" : {
                 "sheet" : self.get_image("crowd", "8.png"),
                 "data" : self.get_dict_from_spritesheet("crowd", "8.json")
+            },
+            "9" : {
+                "sheet" : self.get_image("crowd", "9.png"),
+                "data" : self.get_dict_from_spritesheet("crowd", "9.json")
             }
         }
         self.business_images = {

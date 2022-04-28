@@ -1,6 +1,8 @@
 from game.sprite.menu_background import MenuBackground
 from game.sprite.message import Message
 from game.sprite.button import Button
+
+from game.confirm_menu import ConfirmMenu
 from game.debug import Debugger
 from game.library import Library
 
@@ -73,6 +75,9 @@ class Main():
         self.continue_button_included = False
         if self.data.progress is not None:
             self.continue_button.add(self.buttons)
+            
+        # Menus
+        self.confirm_menu = ConfirmMenu(self)
         
         # Mouse related variable
         self.last_mouse_pos = None
@@ -192,7 +197,14 @@ class Main():
         if self.data.progress == None:
             self.create_new_game()
         else:
-            self.new_game_confirmation()
+            self.confirm_menu.set_message_and_callback(
+                ["Are you sure you want",
+                " to start a new game?", "",
+                "All your progress will", 
+                "be reset."],
+                self.create_new_game
+            )
+            self.confirm_menu.run()
         
         
     def create_new_game(self):
@@ -207,96 +219,6 @@ class Main():
         self.debug.new_line()
         self.debug.log("Continue game entered")
         self.scene_window.run()
-        
-        
-    def new_game_confirmation(self):
-        # Sprite groups
-        objects = pygame.sprite.Group()
-        hoverable_buttons = pygame.sprite.Group()
-        buttons = pygame.sprite.Group()
-        
-        # Screen objects
-        background = MenuBackground(
-            self.screen, 0.45,
-            image=self.data.meta_images["menu_background"])
-        background.add(objects, buttons)
-        
-        # Inner functions just for the functionality of the buttons
-        def confirm(*args):
-            background.enable = False
-            self.create_new_game()
-        def cancel(*args):
-            background.enable = False
-        
-        canvas_rect = background.rect
-        confirmation_message = Message(
-            self.screen, 
-            ["Are you sure you want",
-             " to start a new game?", "",
-             "All your progress will", 
-             "be reset."],
-            self.data.large_font,
-            self.data.colors["white"],
-            outline_thickness=2,
-            center_coordinates=(
-                int(canvas_rect.width * 0.50) + canvas_rect.x,
-                int(canvas_rect.height * 0.22) + canvas_rect.y
-            )
-        )
-        confirmation_message.add(objects)
-        
-        confirm_button = Button(
-            self.screen,  confirm,
-            center_coordinates=(
-                int(canvas_rect.width * 0.32) + canvas_rect.x,
-                int(canvas_rect.height * 0.77) + canvas_rect.y
-            ),
-            **{
-                "idle" : self.data.meta_images["confirm_button_idle"],
-                "outline" : self.data.meta_images["confirm_button_hovered"]
-            }
-        )
-        confirm_button.add(objects, buttons, hoverable_buttons)
-        
-        cancel_button = Button(
-            self.screen, cancel,
-            center_coordinates=(
-                int(canvas_rect.width * 0.73) + canvas_rect.x,
-                int(canvas_rect.height * 0.77) + canvas_rect.y
-            ),
-            **{
-                "idle" : self.data.meta_images["cancel_button_idle"],
-                "outline" : self.data.meta_images["cancel_button_hovered"]
-            },
-        )
-        cancel_button.add(objects, buttons, hoverable_buttons)
-        
-        # Screen dimming
-        self.display_surface.set_alpha(128)
-        self.screen.blit(self.display_surface, (0, 0)) 
-        
-        while background.enable:
-            objects.update()
-            
-            # Event processing
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT: 
-                    # Closing the game properly
-                    self.close_game()
-                elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_ESCAPE:
-                        background.enable = False
-                elif event.type == pygame.MOUSEMOTION: 
-                    for button in hoverable_buttons:
-                        button.check_hovered(event.pos)
-                elif event.type == pygame.MOUSEBUTTONDOWN:
-                    if event.button == 1:
-                        mouse_pos = event.pos
-                        for button in buttons:
-                            button.check_clicked(mouse_pos)
-            
-            # Updating the display
-            self.refresh_display()
         
         
     def present_intro(self):

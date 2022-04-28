@@ -39,7 +39,7 @@ class BusinessMenu():
             self.main.data.colors["brown"],
             top_left_coordinates=(
                 int(self.canvas_rect.width * 0.035) + self.canvas_rect.x,
-                int(self.canvas_rect.height * 0.05) + self.canvas_rect.y
+                int(self.canvas_rect.height * 0.09) + self.canvas_rect.y
             )
         )
         self.business_tier_and_size = Message(
@@ -49,7 +49,7 @@ class BusinessMenu():
             self.main.data.colors["brown"],
             top_left_coordinates=(
                 int(self.canvas_rect.width * 0.035) + self.canvas_rect.x,
-                int(self.canvas_rect.height * 0.11) + self.canvas_rect.y
+                int(self.canvas_rect.height * 0.15) + self.canvas_rect.y
             )
         )
         self.left_side_description = Message(
@@ -66,13 +66,26 @@ class BusinessMenu():
             self.screen,
             self.collect_sales_button_callback,
             top_left_coordinates=(
-                int(self.canvas_rect.width * 0.035) + self.canvas_rect.x,
-                int(self.canvas_rect.height * 0.71) + self.canvas_rect.y
+                int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
+                int(self.canvas_rect.height * 0.065) + self.canvas_rect.y
             ),
             **{
                 "idle" : self.main.data.scene["collect_sales_button_idle"].convert_alpha(),
                 "outline" : self.main.data.scene["collect_sales_button_hovered"].convert_alpha(),
                 "disabled" : self.main.data.scene["collect_sales_button_disabled"].convert_alpha()
+            }
+        )
+        self.purchase_business_button = Button(
+            self.screen,
+            self.purchase_business_button_callback,
+            top_left_coordinates=(
+                int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
+                int(self.canvas_rect.height * 0.065) + self.canvas_rect.y
+            ),
+            **{
+                "idle" : self.main.data.scene["purchase_business_button_idle"].convert_alpha(),
+                "outline" : self.main.data.scene["purchase_business_button_hovered"].convert_alpha(),
+                "disabled" : self.main.data.scene["purchase_business_button_disabled"].convert_alpha()
             }
         )
         
@@ -93,6 +106,11 @@ class BusinessMenu():
         self.main.data.progress["cash"] += self.main.data.progress["businesses"][self.location][self.data.name_code]["sales"]
         self.clear_sales()
         
+    
+    def purchase_business_button_callback(self, *args):
+        business_cost = self.data.business_data["initial_cost"]
+        print(business_cost)
+        
         
     def set_button_states(self):
         if self.get_sales() <= 0:
@@ -106,13 +124,16 @@ class BusinessMenu():
         #   make the details in the business update and buttons will be enabled
         #   when a sale is made and etc.
         self.left_side_description.set_message([
+            f"================================================",
             f"Open until:     1:52 AM, April 28, 2022", 
             f"================================================",
             f"Date acquired:  9:53 PM, January 1, 2022",
+            f"================================================",
+            f"Sales:          P{self.get_sales():,.2f}",
             f"Daily expense:   P0,000.00",
             f"Gross income",
-            f"per customer:   P{123456789:,.2f}",
-            f"Sales:          P{self.get_sales():,.2f}"
+            f"  per customer:   P{123456789:,.2f}",
+            f"================================================",
         ])
         
         self.set_button_states()
@@ -139,6 +160,7 @@ class BusinessMenu():
         self.business_tier_and_size.add(self.objects)
         self.left_side_description.add(self.objects)
         self.collect_sales_button.add(self.objects, self.buttons, self.hoverable_buttons)
+        self.purchase_business_button.add(self.objects, self.buttons, self.hoverable_buttons)
         
         self.background.enable = True
         

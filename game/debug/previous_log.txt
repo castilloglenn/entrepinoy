@@ -1,37 +1,34 @@
-[20:00:49:199] Debug started
-[20:00:49:200] Memory Usage: 30.83MB (71.8%)
-[20:00:49:208] Free Memory: 1,721.62MB
-[20:00:49:216] Highest Usage: 30.83MB
+[16:11:17:346] Debug started
+[16:11:17:346] Memory Usage: 30.48MB (63.1%)
+[16:11:17:356] Free Memory: 2,251.07MB
+[16:11:17:365] Highest Usage: 30.48MB
 
-[20:00:49:641] Game Title: EntrePinoy
-[20:00:49:642] Game Version: 0.0.1
-[20:00:49:674] Display Width: 1280
-[20:00:49:682] Display Height: 720
-[20:00:49:689] Game FPS: 60
+[16:11:17:794] Game Title: EntrePinoy
+[16:11:17:794] Game Version: 0.0.1
+[16:11:17:831] Display Width: 1280
+[16:11:17:841] Display Height: 720
+[16:11:17:849] Game FPS: 60
 
-[20:00:49:709] 
+[16:11:17:872] 
 Time amplification: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 25.00 seconds in real life = 1 hour in game
 
-[20:00:49:731] Initialized scene
-[20:00:49:779] Memory after initialization:
-[20:00:49:785] Memory Usage: 145.82MB (73.4%)
-[20:00:49:792] Free Memory: 1,622.70MB
-[20:00:49:797] Highest Usage: 145.82MB
+[16:11:17:894] Initialized scene
+[16:11:17:935] Memory after initialization:
+[16:11:17:940] Memory Usage: 149.44MB (64.7%)
+[16:11:17:947] Free Memory: 2,149.46MB
+[16:11:17:954] Highest Usage: 149.44MB
 
-[20:00:50:162] Continue game entered
-[20:00:50:172] Memory Usage: 145.88MB (73.4%)
-[20:00:50:178] Free Memory: 1,622.32MB
-[20:00:50:184] Highest Usage: 145.88MB
+[16:11:19:799] Continue game entered
+[16:11:19:805] Memory Usage: 149.64MB (64.7%)
+[16:11:19:809] Free Memory: 2,152.03MB
+[16:11:19:815] Highest Usage: 149.64MB
 
-[20:00:54:739] Autosaved progress
-[20:00:59:690] Hour callback
-[20:00:59:737] Autosaved progress
-[20:01:02:213] Autosaved progress before exit
+[16:11:22:084] Autosaved progress before exit
 
-[20:01:02:281] Memory Usage: 152.47MB (73.8%)
-[20:01:02:291] Free Memory: 1,594.85MB
-[20:01:02:301] Highest Usage: 152.47MB
-[20:01:02:309] Debug closed
+[16:11:22:153] Memory Usage: 148.22MB (64.5%)
+[16:11:22:163] Free Memory: 2,163.18MB
+[16:11:22:174] Highest Usage: 149.64MB
+[16:11:22:183] Debug closed
