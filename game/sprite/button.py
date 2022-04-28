@@ -131,7 +131,7 @@ class Button(Sprite):
             
     def check_hovered(self, hover_coordinates):
         # Return booleans to prevent overlapping buttons to react the same
-        if self.is_disabled:
+        if self.is_disabled or not self.visible:
             return False
         
         if self.collide_rect.collidepoint(hover_coordinates):
@@ -145,7 +145,7 @@ class Button(Sprite):
         
     
     def check_clicked(self, click_coordinates):
-        if self.is_disabled:
+        if self.is_disabled or not self.visible:
             return False
         
         if self.collide_rect.collidepoint(click_coordinates) and self.visible:

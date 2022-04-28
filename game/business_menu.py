@@ -3,6 +3,7 @@ from game.sprite.message import Message
 from game.sprite.button import Button
 import pygame
 
+from datetime import datetime, timedelta
 from pprint import pprint
 
 
@@ -88,6 +89,32 @@ class BusinessMenu():
                 "disabled" : self.main.data.scene["purchase_business_button_disabled"].convert_alpha()
             }
         )
+        self.hire_employee_button = Button(
+            self.screen,
+            self.hire_employee_button_callback,
+            top_left_coordinates=(
+                int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
+                int(self.canvas_rect.height * 0.285) + self.canvas_rect.y
+            ),
+            **{
+                "idle" : self.main.data.scene["hire_employee_button_idle"].convert_alpha(),
+                "outline" : self.main.data.scene["hire_employee_button_hovered"].convert_alpha(),
+                "disabled" : self.main.data.scene["hire_employee_button_disabled"].convert_alpha()
+            }
+        )
+        self.start_business_button = Button(
+            self.screen,
+            self.start_business_button_callback,
+            top_left_coordinates=(
+                int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
+                int(self.canvas_rect.height * 0.435) + self.canvas_rect.y
+            ),
+            **{
+                "idle" : self.main.data.scene["start_business_button_idle"].convert_alpha(),
+                "outline" : self.main.data.scene["start_business_button_hovered"].convert_alpha(),
+                "disabled" : self.main.data.scene["start_business_button_disabled"].convert_alpha()
+            }
+        )
         
         # Screen dimming
         self.main.display_surface.set_alpha(128)
@@ -101,6 +128,18 @@ class BusinessMenu():
         self.main.data.progress["businesses"][self.location][self.data.name_code]["sales"] = 0
         
         
+    def purchase_business(self):
+        self.main.data.progress["cash"] -= self.data.business_data["initial_cost"]
+        self.main.data.progress["businesses"][self.location][self.data.name_code]["ownership"] = True
+        self.main.data.progress["businesses"][self.location][self.data.name_code]["date_acquired"] = \
+            datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f")
+        self.data.set_business_state("open")
+        
+    
+    def check_if_business_is_owned(self):
+        return self.main.data.progress["businesses"][self.location][self.data.name_code]["ownership"]
+        
+        
     def collect_sales_button_callback(self, *args):
         self.collect_sales_button.set_is_disabled(True)
         self.main.data.progress["cash"] += self.main.data.progress["businesses"][self.location][self.data.name_code]["sales"]
@@ -109,10 +148,43 @@ class BusinessMenu():
     
     def purchase_business_button_callback(self, *args):
         business_cost = self.data.business_data["initial_cost"]
-        print(business_cost)
+        bank_balance = self.main.data.progress["cash"]
+        assumed_balance = bank_balance - business_cost
+        
+        if bank_balance >= business_cost:
+            self.main.confirm_menu.set_message_and_callback(
+                ["Are you sure you want",
+                " to purchase the business?", "",
+                "Your new balance",
+                f"will be: P{assumed_balance:,.2f}"],
+                self.purchase_business
+            )
+            self.main.confirm_menu.run()
+        else:
+            self.main.response_menu.set_message(
+                ["You do not have ", 
+                 "enough balance on", 
+                 "your bank account.", "",
+                 f"You still need P{abs(assumed_balance):,.2f}."])
+            self.main.response_menu.run()
+            
+            
+    def hire_employee_button_callback(self, *args):
+        print("hire employee clicked")
+        
+    
+    def start_business_button_callback(self, *args):
+        print("start business clicked")
         
         
     def set_button_states(self):
+        if self.check_if_business_is_owned():
+            self.purchase_business_button.visible = False
+            self.collect_sales_button.visible = True
+        else:
+            self.purchase_business_button.visible = True
+            self.collect_sales_button.visible = False
+        
         if self.get_sales() <= 0:
             self.collect_sales_button.set_is_disabled(True)
         else:
@@ -123,17 +195,47 @@ class BusinessMenu():
         # This will be called in conjunction with the screen update to always
         #   make the details in the business update and buttons will be enabled
         #   when a sale is made and etc.
+        current_income = ""
+        if self.check_if_business_is_owned():
+            date_acquired = self.main.data.progress["businesses"][self.location][self.data.name_code]["date_acquired"][:-7]
+            sales = f"P{self.get_sales():,.2f}"
+            if self.get_sales() > 0:
+                current_income = f" +(P{self.data.current_income:,.2f})"
+            lifetime_sales = f"P{self.main.data.progress['businesses'][self.location][self.data.name_code]['lifetime_sales']:,.2f}"
+        else:
+            date_acquired = "N/A"
+            sales = "N/A"
+            lifetime_sales = "N/A"
+            
+        # Attributes that must be shown regardless of ownership
+        business_cost = f"P{self.data.business_data['initial_cost']:,.2f}"
+        daily_expense = f"P{self.data.business_data['daily_expenses']:,.2f}"
+        employee_cost = f"P{self.data.business_data['employee_cost']:,.2f}"
+        income_per_customer = \
+            f"P{self.data.business_data['income_per_customer_range'][0]:,.2f} - " \
+            f"P{self.data.business_data['income_per_customer_range'][1]:,.2f}"
+        
         self.left_side_description.set_message([
-            f"================================================",
-            f"Open until:     1:52 AM, April 28, 2022", 
-            f"================================================",
-            f"Date acquired:  9:53 PM, January 1, 2022",
-            f"================================================",
-            f"Sales:          P{self.get_sales():,.2f}",
-            f"Daily expense:   P0,000.00",
-            f"Gross income",
-            f"  per customer:   P{123456789:,.2f}",
-            f"================================================",
+            f"==================================================",
+            f"Open until:",
+            f"  1:52 AM, April 28, 2022",
+            f"==================================================",
+            f"Business cost",
+            f"  {business_cost}",
+            f"Operation cost: (8 hours)",
+            f"  {daily_expense} - Status: Not operating",
+            f"Employment cost: (8 hours):",
+            f"  {employee_cost} - Status: Not operating",
+            f"Gross income per customer:",
+            f"  {income_per_customer}",
+            f"Date of acquisition:",
+            f"  {date_acquired}",
+            f"==================================================",
+            f"Sales:",
+            f"  {sales}{current_income}",
+            f"Lifetime sales:",
+            f"  {lifetime_sales}",
+            f"==================================================",
         ])
         
         self.set_button_states()
@@ -161,6 +263,8 @@ class BusinessMenu():
         self.left_side_description.add(self.objects)
         self.collect_sales_button.add(self.objects, self.buttons, self.hoverable_buttons)
         self.purchase_business_button.add(self.objects, self.buttons, self.hoverable_buttons)
+        self.hire_employee_button.add(self.objects, self.buttons, self.hoverable_buttons)
+        self.start_business_button.add(self.objects, self.buttons, self.hoverable_buttons)
         
         self.background.enable = True
         

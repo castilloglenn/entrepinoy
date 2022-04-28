@@ -223,7 +223,7 @@ class Business(Button):
         
         
     def set_business_state(self, new_state: str):
-        # Open or close
+        # Open or closed
         self.business_state = new_state
         self.update_business_images()
         self.set_image_and_rect()
@@ -314,6 +314,7 @@ class Business(Button):
         ) * self.income_step
         
         self.progress["businesses"][self.progress["last_location"]][self.name_code]["sales"] += self.current_income
+        self.progress["businesses"][self.progress["last_location"]][self.name_code]["lifetime_sales"] += self.current_income
         
         # Setting the income animation
         self.reset_income_display()

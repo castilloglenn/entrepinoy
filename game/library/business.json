@@ -26,6 +26,7 @@
         "placement": "back",
         "initial_cost" : 2000.0,
         "daily_expenses" : 150.0,
+        "employee_cost": 150.0,
         "income_per_customer_range" : [15.0, 35.0]
     },
     "ukay_ukay" : {
@@ -38,6 +39,7 @@
         "placement": "back",
         "initial_cost" : 4000.0,
         "daily_expenses" : 500.0,
+        "employee_cost": 150.0,
         "income_per_customer_range" : [75.0, 120.0]
     }, 
     "food_cart" : {
@@ -50,6 +52,7 @@
         "placement": "front",
         "initial_cost" : 5000.0,
         "daily_expenses" : 750.0,
+        "employee_cost": 150.0,
         "income_per_customer_range" : [30.0, 50.0]
     }
 }

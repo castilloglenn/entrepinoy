@@ -21,7 +21,7 @@ class ConfirmMenu():
         
         # Screen objects
         self.background = MenuBackground(
-            self.main.screen, 0.45,
+            self.main.screen, 0.40,
             image=self.main.data.meta_images["menu_background"])
         self.background.add(self.objects, self.buttons)
         
@@ -29,7 +29,7 @@ class ConfirmMenu():
         self.confirmation_message = Message(
             self.main.screen, 
             ["No message has been set"],
-            self.main.data.large_font,
+            self.main.data.medium_font,
             self.main.data.colors["white"],
             outline_thickness=2,
             center_coordinates=(

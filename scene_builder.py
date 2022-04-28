@@ -89,6 +89,7 @@ class Scene():
         )
         
         # Internal variables
+        self.available_businesses = 0 # this will be used in limiting customer conversion rate
         self.business_data = {}
         self.business_menu = BusinessMenu(self.main, self.time, self.location)
         # Safe spot is somewhere in the middle so that the customers will
@@ -230,10 +231,8 @@ class Scene():
         for business_name in self.main.data.location[self.location]["businesses"]:
             if business_name == "street_food":
                 business_name = self.main.data.progress["businesses"][self.location]["street_food"]["type"]
-                ownership = self.main.data.progress["businesses"][self.location]["street_food"]["ownership"]
                 data = "street_food"
             else:
-                ownership = self.main.data.progress["businesses"][self.location][business_name]["ownership"]
                 data = business_name
                 
             scene_business = Business(
@@ -328,11 +327,15 @@ class Scene():
             
             
     def check_queues_if_full(self):
+        self.available_businesses = 0
         for name, data in self.business_data.items():
             if len(data["object"].queue) < data["object"].queue_limit \
                 and data["object"].business_state == "open":
-                    return False
-        return True
+                    self.available_businesses += 1
+        
+        if self.available_businesses == 0:
+            return True
+        return False
             
             
     def spawn_crowd_customer(self):
@@ -344,8 +347,10 @@ class Scene():
             is_businesses_full = self.check_queues_if_full()
             
             customer_chance = random.randint(0, 100)
-            if customer_chance <= self.customer_chance[self.time.time.hour] \
-                and not is_businesses_full:
+            weighted_customer_chance = \
+                self.customer_chance[self.time.time.hour] * \
+                (self.available_businesses / len(self.business_data))
+            if customer_chance <= int(weighted_customer_chance) and not is_businesses_full:
                 self.customers_spawned += 1 # TODO For debugging only
                 Customer(
                     self.main.screen, npc_form,
@@ -537,10 +542,10 @@ class Scene():
                         f"Total crowd spawned: {self.footprint_counter}",
                         f"Customers spawned: {self.customers_spawned}",
                         f"Objects/Max displayed: {len(self.general_sprites)}/{self.object_limit}",
-                        # f"Tindahan: {len(self.business_data['sari_sari_store']['object'].queue)}/{self.business_data['sari_sari_store']['object'].queue_limit} Served customers: {self.business_data['sari_sari_store']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['sari_sari_store']['sales']:,.2f}",
-                        # f"Food cart: {len(self.business_data['food_cart']['object'].queue)}/{self.business_data['food_cart']['object'].queue_limit} Served customers: {self.business_data['food_cart']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['food_cart']['sales']:,.2f}",
+                        f"Tindahan: {len(self.business_data['sari_sari_store']['object'].queue)}/{self.business_data['sari_sari_store']['object'].queue_limit} Served customers: {self.business_data['sari_sari_store']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['sari_sari_store']['sales']:,.2f}",
+                        f"Food cart: {len(self.business_data['food_cart']['object'].queue)}/{self.business_data['food_cart']['object'].queue_limit} Served customers: {self.business_data['food_cart']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['food_cart']['sales']:,.2f}",
                         f"Buko stall: {len(self.business_data['buko_stall']['object'].queue)}/{self.business_data['buko_stall']['object'].queue_limit} Served customers: {self.business_data['buko_stall']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['street_food']['sales']:,.2f}",
-                        # f"Ukay-ukay: {len(self.business_data['ukay_ukay']['object'].queue)}/{self.business_data['ukay_ukay']['object'].queue_limit} Served customers: {self.business_data['ukay_ukay']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['ukay_ukay']['sales']:,.2f}",
+                        f"Ukay-ukay: {len(self.business_data['ukay_ukay']['object'].queue)}/{self.business_data['ukay_ukay']['object'].queue_limit} Served customers: {self.business_data['ukay_ukay']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['ukay_ukay']['sales']:,.2f}",
                     ]
                 )
             

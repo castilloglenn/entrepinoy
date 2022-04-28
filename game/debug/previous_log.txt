@@ -1,34 +1,36 @@
-[16:11:17:346] Debug started
-[16:11:17:346] Memory Usage: 30.48MB (63.1%)
-[16:11:17:356] Free Memory: 2,251.07MB
-[16:11:17:365] Highest Usage: 30.48MB
+[19:15:26:609] Debug started
+[19:15:26:610] Memory Usage: 30.75MB (54.2%)
+[19:15:26:618] Free Memory: 2,788.66MB
+[19:15:26:623] Highest Usage: 30.75MB
 
-[16:11:17:794] Game Title: EntrePinoy
-[16:11:17:794] Game Version: 0.0.1
-[16:11:17:831] Display Width: 1280
-[16:11:17:841] Display Height: 720
-[16:11:17:849] Game FPS: 60
+[19:15:27:052] Game Title: EntrePinoy
+[19:15:27:052] Game Version: 0.0.1
+[19:15:27:084] Display Width: 1280
+[19:15:27:092] Display Height: 720
+[19:15:27:101] Game FPS: 60
 
-[16:11:17:872] 
+[19:15:27:122] 
 Time amplification: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 25.00 seconds in real life = 1 hour in game
 
-[16:11:17:894] Initialized scene
-[16:11:17:935] Memory after initialization:
-[16:11:17:940] Memory Usage: 149.44MB (64.7%)
-[16:11:17:947] Free Memory: 2,149.46MB
-[16:11:17:954] Highest Usage: 149.44MB
+[19:15:27:145] Initialized scene
+[19:15:27:320] Memory after initialization:
+[19:15:27:320] Memory Usage: 175.48MB (56.3%)
+[19:15:27:326] Free Memory: 2,664.53MB
+[19:15:27:332] Highest Usage: 175.48MB
 
-[16:11:19:799] Continue game entered
-[16:11:19:805] Memory Usage: 149.64MB (64.7%)
-[16:11:19:809] Free Memory: 2,152.03MB
-[16:11:19:815] Highest Usage: 149.64MB
+[19:15:27:977] Continue game entered
+[19:15:27:985] Memory Usage: 175.53MB (55.7%)
+[19:15:27:990] Free Memory: 2,701.86MB
+[19:15:27:997] Highest Usage: 175.53MB
 
-[16:11:22:084] Autosaved progress before exit
+[19:15:32:152] Autosaved progress
+[19:15:37:151] Autosaved progress
+[19:15:40:903] Autosaved progress before exit
 
-[16:11:22:153] Memory Usage: 148.22MB (64.5%)
-[16:11:22:163] Free Memory: 2,163.18MB
-[16:11:22:174] Highest Usage: 149.64MB
-[16:11:22:183] Debug closed
+[19:15:40:964] Memory Usage: 181.72MB (55.5%)
+[19:15:40:982] Free Memory: 2,717.29MB
+[19:15:40:992] Highest Usage: 181.72MB
+[19:15:41:004] Debug closed

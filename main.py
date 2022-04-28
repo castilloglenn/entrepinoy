@@ -2,6 +2,7 @@ from game.sprite.menu_background import MenuBackground
 from game.sprite.message import Message
 from game.sprite.button import Button
 
+from game.response_menu import ResponseMenu
 from game.confirm_menu import ConfirmMenu
 from game.debug import Debugger
 from game.library import Library
@@ -78,6 +79,7 @@ class Main():
             
         # Menus
         self.confirm_menu = ConfirmMenu(self)
+        self.response_menu = ResponseMenu(self)
         
         # Mouse related variable
         self.last_mouse_pos = None
