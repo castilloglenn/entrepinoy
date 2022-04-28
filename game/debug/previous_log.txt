@@ -1,36 +1,45 @@
-[19:15:26:609] Debug started
-[19:15:26:610] Memory Usage: 30.75MB (54.2%)
-[19:15:26:618] Free Memory: 2,788.66MB
-[19:15:26:623] Highest Usage: 30.75MB
+[19:32:10:633] Debug started
+[19:32:10:634] Memory Usage: 30.87MB (62.6%)
+[19:32:10:641] Free Memory: 2,281.26MB
+[19:32:10:647] Highest Usage: 30.87MB
 
-[19:15:27:052] Game Title: EntrePinoy
-[19:15:27:052] Game Version: 0.0.1
-[19:15:27:084] Display Width: 1280
-[19:15:27:092] Display Height: 720
-[19:15:27:101] Game FPS: 60
+[19:32:11:073] Game Title: EntrePinoy
+[19:32:11:074] Game Version: 0.0.1
+[19:32:11:110] Display Width: 1280
+[19:32:11:120] Display Height: 720
+[19:32:11:129] Game FPS: 60
 
-[19:15:27:122] 
+[19:32:11:149] 
 Time amplification: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 25.00 seconds in real life = 1 hour in game
 
-[19:15:27:145] Initialized scene
-[19:15:27:320] Memory after initialization:
-[19:15:27:320] Memory Usage: 175.48MB (56.3%)
-[19:15:27:326] Free Memory: 2,664.53MB
-[19:15:27:332] Highest Usage: 175.48MB
+[19:32:11:171] Initialized scene
+[19:32:11:357] Memory after initialization:
+[19:32:11:358] Memory Usage: 176.38MB (64.8%)
+[19:32:11:365] Free Memory: 2,145.25MB
+[19:32:11:369] Highest Usage: 176.38MB
 
-[19:15:27:977] Continue game entered
-[19:15:27:985] Memory Usage: 175.53MB (55.7%)
-[19:15:27:990] Free Memory: 2,701.86MB
-[19:15:27:997] Highest Usage: 175.53MB
+[19:32:11:824] Continue game entered
+[19:32:11:831] Memory Usage: 176.43MB (64.8%)
+[19:32:11:836] Free Memory: 2,144.14MB
+[19:32:11:841] Highest Usage: 176.43MB
 
-[19:15:32:152] Autosaved progress
-[19:15:37:151] Autosaved progress
-[19:15:40:903] Autosaved progress before exit
+[19:32:16:189] Autosaved progress
+[19:32:21:196] Autosaved progress
+[19:32:26:174] Autosaved progress
+[19:32:31:191] Autosaved progress
+[19:32:36:186] Autosaved progress
+[19:32:41:180] Autosaved progress
+[19:32:42:498] Hour callback
+[19:32:46:187] Autosaved progress
+[19:32:51:185] Autosaved progress
+[19:32:56:188] Autosaved progress
+[19:33:01:195] Autosaved progress
+[19:33:04:123] Autosaved progress before exit
 
-[19:15:40:964] Memory Usage: 181.72MB (55.5%)
-[19:15:40:982] Free Memory: 2,717.29MB
-[19:15:40:992] Highest Usage: 181.72MB
-[19:15:41:004] Debug closed
+[19:33:04:183] Memory Usage: 192.12MB (64.2%)
+[19:33:04:192] Free Memory: 2,180.56MB
+[19:33:04:200] Highest Usage: 196.04MB
+[19:33:04:208] Debug closed

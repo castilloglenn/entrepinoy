@@ -27,7 +27,7 @@ class Scene():
     def __init__(self, main):
         # Settings up the scene
         self.main = main
-        self.show_debug_info = False
+        self.show_debug_info = True
         
         self.location = self.main.data.progress["last_location"]
         self.crowd_chance = self.main.data.crowd_statistics[self.location]
@@ -181,6 +181,8 @@ class Scene():
         #   discovered first before the layer of businesses
         for key, business in self.business_data.items():
             business["object"].add(self.buttons)
+            
+        self.debug_message.add(self.ui_components)
         
         # Main loop
         self.running = False

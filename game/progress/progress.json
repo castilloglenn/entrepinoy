@@ -1,6 +1,6 @@
 {
-    "time": "2022/05/01, 13:41:51.247122",
-    "last_login": "2022/04/28, 19:15:40.901206",
+    "time": "2022/05/01, 23:45:05.647122",
+    "last_login": "2022/04/28, 19:33:04.122620",
     "last_location": "location_a",
     "cash": 2138.75,
     "businesses": {
@@ -10,15 +10,15 @@
                 "type": "buko_stall",
                 "ownership": true,
                 "has_employee": false,
-                "sales": 51.75,
-                "lifetime_sales": 2252.75
+                "sales": 316.75,
+                "lifetime_sales": 2517.75
             },
             "sari_sari_store": {
                 "date_acquired": "2022/04/28, 18:28:16.664546",
                 "ownership": true,
                 "has_employee": false,
-                "sales": 0,
-                "lifetime_sales": 1142.25
+                "sales": 338.5,
+                "lifetime_sales": 1480.75
             },
             "ukay_ukay": {
                 "date_acquired": "",

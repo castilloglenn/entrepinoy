@@ -68,7 +68,7 @@ class BusinessMenu():
             self.collect_sales_button_callback,
             top_left_coordinates=(
                 int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
-                int(self.canvas_rect.height * 0.065) + self.canvas_rect.y
+                int(self.canvas_rect.height * 0.105) + self.canvas_rect.y
             ),
             **{
                 "idle" : self.main.data.scene["collect_sales_button_idle"].convert_alpha(),
@@ -81,7 +81,7 @@ class BusinessMenu():
             self.purchase_business_button_callback,
             top_left_coordinates=(
                 int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
-                int(self.canvas_rect.height * 0.065) + self.canvas_rect.y
+                int(self.canvas_rect.height * 0.105) + self.canvas_rect.y
             ),
             **{
                 "idle" : self.main.data.scene["purchase_business_button_idle"].convert_alpha(),
@@ -94,7 +94,7 @@ class BusinessMenu():
             self.hire_employee_button_callback,
             top_left_coordinates=(
                 int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
-                int(self.canvas_rect.height * 0.285) + self.canvas_rect.y
+                int(self.canvas_rect.height * 0.325) + self.canvas_rect.y
             ),
             **{
                 "idle" : self.main.data.scene["hire_employee_button_idle"].convert_alpha(),
@@ -107,12 +107,38 @@ class BusinessMenu():
             self.start_business_button_callback,
             top_left_coordinates=(
                 int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
-                int(self.canvas_rect.height * 0.435) + self.canvas_rect.y
+                int(self.canvas_rect.height * 0.475) + self.canvas_rect.y
             ),
             **{
                 "idle" : self.main.data.scene["start_business_button_idle"].convert_alpha(),
                 "outline" : self.main.data.scene["start_business_button_hovered"].convert_alpha(),
                 "disabled" : self.main.data.scene["start_business_button_disabled"].convert_alpha()
+            }
+        )
+        self.sell_business_button = Button(
+            self.screen,
+            self.sell_business_button_callback,
+            top_left_coordinates=(
+                int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
+                int(self.canvas_rect.height * 0.625) + self.canvas_rect.y
+            ),
+            **{
+                "idle" : self.main.data.scene["sell_business_button_idle"].convert_alpha(),
+                "outline" : self.main.data.scene["sell_business_button_hovered"].convert_alpha(),
+                "disabled" : self.main.data.scene["sell_business_button_disabled"].convert_alpha()
+            }
+        )
+        self.close_business_button = Button(
+            self.screen,
+            self.close_business_button_callback,
+            top_left_coordinates=(
+                int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
+                int(self.canvas_rect.height * 0.775) + self.canvas_rect.y
+            ),
+            **{
+                "idle" : self.main.data.scene["close_business_button_idle"].convert_alpha(),
+                "outline" : self.main.data.scene["close_business_button_hovered"].convert_alpha(),
+                "disabled" : self.main.data.scene["close_business_button_disabled"].convert_alpha()
             }
         )
         
@@ -176,6 +202,14 @@ class BusinessMenu():
     def start_business_button_callback(self, *args):
         print("start business clicked")
         
+        
+    def sell_business_button_callback(self, *args):
+        print("sell business clicked")
+        
+    
+    def close_business_button_callback(self, *args):
+        print("close business clicked")
+            
         
     def set_button_states(self):
         if self.check_if_business_is_owned():
@@ -265,6 +299,8 @@ class BusinessMenu():
         self.purchase_business_button.add(self.objects, self.buttons, self.hoverable_buttons)
         self.hire_employee_button.add(self.objects, self.buttons, self.hoverable_buttons)
         self.start_business_button.add(self.objects, self.buttons, self.hoverable_buttons)
+        self.sell_business_button.add(self.objects, self.buttons, self.hoverable_buttons)
+        self.close_business_button.add(self.objects, self.buttons, self.hoverable_buttons)
         
         self.background.enable = True
         
