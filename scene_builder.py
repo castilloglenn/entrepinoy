@@ -551,7 +551,7 @@ class Scene():
             if self.show_debug_info:
                 self.debug_message.set_message(
                     [
-                        f"FPS: {self.fps_previous_count}/{self.main.data.setting['fps']}",
+                        f"Frames per second: {self.fps_previous_count}/{self.main.data.setting['fps']}",
                         f"{self.main.debug.get_highest_usage()}",
                         f"{self.main.debug.get_memory_usage()}",
                         f"{self.main.debug.get_free_usage()}",

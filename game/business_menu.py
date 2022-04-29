@@ -22,6 +22,11 @@ class BusinessMenu():
         self.time = time
         self.location = location
         
+        self.business_cost = None
+        self.daily_expense = None
+        self.employee_cost = None
+        self.income_per_customer = None
+        
         # Sprite groups
         self.objects = pygame.sprite.Group()
         self.hoverable_buttons = pygame.sprite.Group()
@@ -89,30 +94,30 @@ class BusinessMenu():
                 "disabled" : self.main.data.scene["purchase_business_button_disabled"].convert_alpha()
             }
         )
-        self.hire_employee_button = Button(
-            self.screen,
-            self.hire_employee_button_callback,
-            top_left_coordinates=(
-                int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
-                int(self.canvas_rect.height * 0.325) + self.canvas_rect.y
-            ),
-            **{
-                "idle" : self.main.data.scene["hire_employee_button_idle"].convert_alpha(),
-                "outline" : self.main.data.scene["hire_employee_button_hovered"].convert_alpha(),
-                "disabled" : self.main.data.scene["hire_employee_button_disabled"].convert_alpha()
-            }
-        )
         self.start_business_button = Button(
             self.screen,
             self.start_business_button_callback,
             top_left_coordinates=(
                 int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
-                int(self.canvas_rect.height * 0.475) + self.canvas_rect.y
+                int(self.canvas_rect.height * 0.325) + self.canvas_rect.y
             ),
             **{
                 "idle" : self.main.data.scene["start_business_button_idle"].convert_alpha(),
                 "outline" : self.main.data.scene["start_business_button_hovered"].convert_alpha(),
                 "disabled" : self.main.data.scene["start_business_button_disabled"].convert_alpha()
+            }
+        )
+        self.hire_employee_button = Button(
+            self.screen,
+            self.hire_employee_button_callback,
+            top_left_coordinates=(
+                int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
+                int(self.canvas_rect.height * 0.475) + self.canvas_rect.y
+            ),
+            **{
+                "idle" : self.main.data.scene["hire_employee_button_idle"].convert_alpha(),
+                "outline" : self.main.data.scene["hire_employee_button_hovered"].convert_alpha(),
+                "disabled" : self.main.data.scene["hire_employee_button_disabled"].convert_alpha()
             }
         )
         self.sell_business_button = Button(
@@ -240,14 +245,6 @@ class BusinessMenu():
             date_acquired = "N/A"
             sales = "N/A"
             lifetime_sales = "N/A"
-            
-        # Attributes that must be shown regardless of ownership
-        business_cost = f"P {self.data.business_data['initial_cost']:,.2f}"
-        daily_expense = f"P {self.data.business_data['daily_expenses']:,.2f}"
-        employee_cost = f"P {self.data.business_data['employee_cost']:,.2f}"
-        income_per_customer = \
-            f"P {self.data.business_data['income_per_customer_range'][0]:,.2f} - " \
-            f"P {self.data.business_data['income_per_customer_range'][1]:,.2f}"
         
         self.left_side_description.set_message([
             f"==================================================",
@@ -255,13 +252,13 @@ class BusinessMenu():
             f"  1:52 AM, April 28, 2022",
             f"==================================================",
             f"Business cost",
-            f"  {business_cost}",
+            f"  {self.business_cost}",
             f"Operation cost: (8 hours)",
-            f"  {daily_expense} - Status: Not operating",
+            f"  {self.daily_expense} - Status: Not operating",
             f"Employment cost: (8 hours):",
-            f"  {employee_cost} - Status: Not operating",
+            f"  {self.employee_cost} - Status: Not operating",
             f"Gross income per customer:",
-            f"  {income_per_customer}",
+            f"  {self.income_per_customer}",
             f"Date of acquisition:",
             f"  {date_acquired}",
             f"==================================================",
@@ -288,6 +285,14 @@ class BusinessMenu():
             f"{self.main.data.category[self.data.name_code]['size']} Business"
         ])
         
+        # Attributes that must be shown regardless of ownership
+        self.business_cost = f"P {self.data.business_data['initial_cost']:,.2f}"
+        self.daily_expense = f"P {self.data.business_data['daily_expenses']:,.2f}"
+        self.employee_cost = f"P {self.data.business_data['employee_cost']:,.2f}"
+        self.income_per_customer = \
+            f"P {self.data.business_data['income_per_customer_range'][0]:,.2f} - " \
+            f"P {self.data.business_data['income_per_customer_range'][1]:,.2f}"
+        
         # Updating the data
         self.update_data()
         
@@ -297,15 +302,12 @@ class BusinessMenu():
         self.left_side_description.add(self.objects)
         self.collect_sales_button.add(self.objects, self.buttons, self.hoverable_buttons)
         self.purchase_business_button.add(self.objects, self.buttons, self.hoverable_buttons)
-        self.hire_employee_button.add(self.objects, self.buttons, self.hoverable_buttons)
         self.start_business_button.add(self.objects, self.buttons, self.hoverable_buttons)
+        self.hire_employee_button.add(self.objects, self.buttons, self.hoverable_buttons)
         self.sell_business_button.add(self.objects, self.buttons, self.hoverable_buttons)
         self.close_business_button.add(self.objects, self.buttons, self.hoverable_buttons)
         
         self.background.enable = True
-        
-        pprint(self.data)
-        pprint(self.main.data.progress)
         
     
     def clear(self):
@@ -346,7 +348,7 @@ class BusinessMenu():
             self.update_data()
             
             self.screen.blit(self.main.display_surface, (0, 0)) 
-            self.objects.update()
+            self.objects.update() 
         
         
     def close(self):
