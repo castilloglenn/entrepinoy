@@ -99,48 +99,15 @@ class Library():
             "-1" : {
                 "sheet" : self.get_image("test", "test.png"),
                 "data" : self.get_dict_from_spritesheet("test", "test.json")
-            },
-            "0" : {
-                "sheet" : self.get_image("crowd", "0.png"),
-                "data" : self.get_dict_from_spritesheet("crowd", "0.json")
-            },
-            "1" : {
-                "sheet" : self.get_image("crowd", "1.png"),
-                "data" : self.get_dict_from_spritesheet("crowd", "1.json")
-            },
-            "2" : {
-                "sheet" : self.get_image("crowd", "2.png"),
-                "data" : self.get_dict_from_spritesheet("crowd", "2.json")
-            },
-            "3" : {
-                "sheet" : self.get_image("crowd", "3.png"),
-                "data" : self.get_dict_from_spritesheet("crowd", "3.json")
-            },
-            "4" : {
-                "sheet" : self.get_image("crowd", "4.png"),
-                "data" : self.get_dict_from_spritesheet("crowd", "4.json")
-            },
-            "5" : {
-                "sheet" : self.get_image("crowd", "5.png"),
-                "data" : self.get_dict_from_spritesheet("crowd", "5.json")
-            },
-            "6" : {
-                "sheet" : self.get_image("crowd", "6.png"),
-                "data" : self.get_dict_from_spritesheet("crowd", "6.json")
-            },
-            "7" : {
-                "sheet" : self.get_image("crowd", "7.png"),
-                "data" : self.get_dict_from_spritesheet("crowd", "7.json")
-            },
-            "8" : {
-                "sheet" : self.get_image("crowd", "8.png"),
-                "data" : self.get_dict_from_spritesheet("crowd", "8.json")
-            },
-            "9" : {
-                "sheet" : self.get_image("crowd", "9.png"),
-                "data" : self.get_dict_from_spritesheet("crowd", "9.json")
             }
         }
+        for crowd_index in range(0, 11):
+            string_index = str(crowd_index)
+            self.crowd_spritesheets[string_index] = {
+                "sheet" : self.get_image("crowd", f"{string_index}.png"),
+                "data" : self.get_dict_from_spritesheet("crowd", f"{string_index}.json")
+            }
+            
         self.business_images = {
             "buko_stall" : { # 100% complete
                 "idle" : self.get_image("business", "buko_stall_idle.png"),

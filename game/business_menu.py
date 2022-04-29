@@ -232,22 +232,22 @@ class BusinessMenu():
         current_income = ""
         if self.check_if_business_is_owned():
             date_acquired = self.main.data.progress["businesses"][self.location][self.data.name_code]["date_acquired"][:-7]
-            sales = f"P{self.get_sales():,.2f}"
+            sales = f"P {self.get_sales():,.2f}"
             if self.get_sales() > 0:
-                current_income = f" +(P{self.data.current_income:,.2f})"
-            lifetime_sales = f"P{self.main.data.progress['businesses'][self.location][self.data.name_code]['lifetime_sales']:,.2f}"
+                current_income = f" +(P {self.data.current_income:,.2f})"
+            lifetime_sales = f"P {self.main.data.progress['businesses'][self.location][self.data.name_code]['lifetime_sales']:,.2f}"
         else:
             date_acquired = "N/A"
             sales = "N/A"
             lifetime_sales = "N/A"
             
         # Attributes that must be shown regardless of ownership
-        business_cost = f"P{self.data.business_data['initial_cost']:,.2f}"
-        daily_expense = f"P{self.data.business_data['daily_expenses']:,.2f}"
-        employee_cost = f"P{self.data.business_data['employee_cost']:,.2f}"
+        business_cost = f"P {self.data.business_data['initial_cost']:,.2f}"
+        daily_expense = f"P {self.data.business_data['daily_expenses']:,.2f}"
+        employee_cost = f"P {self.data.business_data['employee_cost']:,.2f}"
         income_per_customer = \
-            f"P{self.data.business_data['income_per_customer_range'][0]:,.2f} - " \
-            f"P{self.data.business_data['income_per_customer_range'][1]:,.2f}"
+            f"P {self.data.business_data['income_per_customer_range'][0]:,.2f} - " \
+            f"P {self.data.business_data['income_per_customer_range'][1]:,.2f}"
         
         self.left_side_description.set_message([
             f"==================================================",

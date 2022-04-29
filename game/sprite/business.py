@@ -88,8 +88,15 @@ class Business(Button):
             self.employee_frames.append(self.fetch_sprite(f'{self.name_keyword}_employee_{index + 1}.png'))
             
         # Setting the standing animation for the sprite
+        if not self.ownership:
+            self.business_state = "closed"
+        else:
+            is_open = self.progress["businesses"][self.progress["last_location"]][self.name_code]["is_open"]
+            if is_open:
+                self.business_state = "open"
+            else:
+                self.business_state = "closed"
         self.standby_image = self.employee_frames.pop()
-        self.business_state = "open" if self.ownership else "closed"
         self.has_employee = self.progress["businesses"][self.progress["last_location"]][self.name_code]["has_employee"]
         self.is_standby = True
         self.is_serving = False
@@ -224,6 +231,11 @@ class Business(Button):
         
     def set_business_state(self, new_state: str):
         # Open or closed
+        if new_state == "open":
+            self.progress["businesses"][self.progress["last_location"]][self.name_code]["is_open"] = True
+        elif new_state == "closed":
+            self.progress["businesses"][self.progress["last_location"]][self.name_code]["is_open"] = False
+            
         self.business_state = new_state
         self.update_business_images()
         self.set_image_and_rect()

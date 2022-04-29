@@ -71,6 +71,14 @@ class Scene():
             self.memory_debug_id,
             self.main.data.meta["memory_log_timeout"]
         )
+        # FPS Counter
+        self.fps_previous_count = 0
+        self.fps_counter = 0
+        self.fps_counter_id = pygame.USEREVENT + 4
+        pygame.time.set_timer(
+            self.fps_counter_id,
+            1000
+        )
         
         # Logging entry point
         self.main.debug.new_line()
@@ -345,7 +353,7 @@ class Scene():
         if npc_chance <= self.crowd_chance[self.time.time.hour] \
                 and len(self.general_sprites) < self.object_limit: 
             self.footprint_counter += 1 # TODO Deprecated
-            npc_form = str(random.randint(0, 9))
+            npc_form = str(random.randint(0, len(self.main.data.crowd_spritesheets) - 2))
             is_businesses_full = self.check_queues_if_full()
             
             customer_chance = random.randint(0, 100)
@@ -532,11 +540,18 @@ class Scene():
                 elif event.type == self.memory_debug_id:
                     self.main.debug.log(f"[A] Objects in memory: {len(self.general_sprites)}")
                     self.main.debug.memory_log()
+                elif event.type == self.fps_counter_id:
+                    self.fps_previous_count = self.fps_counter
+                    self.fps_counter = 0
+            
+            # FPS Counter increment
+            self.fps_counter += 1
             
             # TODO DEBUGGING ONLY/ considering to turning into feature
             if self.show_debug_info:
                 self.debug_message.set_message(
                     [
+                        f"FPS: {self.fps_previous_count}/{self.main.data.setting['fps']}",
                         f"{self.main.debug.get_highest_usage()}",
                         f"{self.main.debug.get_memory_usage()}",
                         f"{self.main.debug.get_free_usage()}",
