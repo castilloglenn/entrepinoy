@@ -77,7 +77,7 @@ class Scene():
         self.fps_counter_id = pygame.USEREVENT + 4
         pygame.time.set_timer(
             self.fps_counter_id,
-            1000
+            1000 # This is static, does not need to be modified
         )
         
         # Logging entry point
@@ -110,32 +110,15 @@ class Scene():
         for business_name in self.main.data.location[self.location]["businesses"]:
             if business_name == "street_food":
                 business_name = self.main.data.progress["businesses"][self.location]["street_food"]["type"]
-                ownership = self.main.data.progress["businesses"][self.location]["street_food"]["ownership"]
+                # ownership = self.main.data.progress["businesses"][self.location]["street_food"]["ownership"]
                 data = "street_food"
             else:
-                ownership = self.main.data.progress["businesses"][self.location][business_name]["ownership"]
+                # ownership = self.main.data.progress["businesses"][self.location][business_name]["ownership"]
                 data = business_name
                 
             scene_business = Business(
-                self.main.screen, 
-                self.main.data.progress,
-                business_name,
-                self.main.data.setting["fps"],
+                self, business_name,
                 self.business_callback,
-                Button(
-                    self.main.screen, None,
-                    **{
-                        "idle" : self.main.data.scene["serve_button_idle"].convert_alpha(),
-                        "outline" : self.main.data.scene["serve_button_hovered"].convert_alpha()
-                    }
-                ),
-                Message(
-                    self.main.screen,
-                    ["+P0.00"],
-                    self.main.data.large_font, 
-                    self.main.data.colors["yellow"],
-                    outline_thickness=2
-                ),
                 self.main.data.business[data],
                 midbottom_coordinates=(
                     int(self.main.data.setting["game_width"] * self.main.data.business[data]["rel_midbottom_coordinates"][0]),
@@ -179,7 +162,7 @@ class Scene():
             [""],
             self.main.data.small_font, 
             self.main.data.colors["white"],
-            top_left_coordinates=(10, 575), # 575, 450 for ernest
+            top_left_coordinates=(10, 545), # 545, 420 for ernest
             outline_thickness=1
         )
         
@@ -331,7 +314,6 @@ class Scene():
         
     
     def business_callback(self, *args):
-        print(f"{args[0].name} is clicked")
         self.business_menu.set_data(args[0])
         self.business_menu.enable = True
             
@@ -551,7 +533,7 @@ class Scene():
             if self.show_debug_info:
                 self.debug_message.set_message(
                     [
-                        f"Frames per second: {self.fps_previous_count}/{self.main.data.setting['fps']}",
+                        f"FPS: {self.fps_previous_count}/{self.main.data.setting['fps']}",
                         f"{self.main.debug.get_highest_usage()}",
                         f"{self.main.debug.get_memory_usage()}",
                         f"{self.main.debug.get_free_usage()}",

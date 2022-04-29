@@ -1,19 +1,22 @@
-"""
+
 # Calculating idle time
 from datetime import datetime
 
 
-format = "%Y/%m/%d, %H:%M:%S"
-time1 = datetime.strptime("2022/04/05, 07:45:00", format)
-time2 = datetime.strptime("2021/11/28, 06:59:00", format)
+format = "%Y/%m/%d, %H:%M:%S.%f"
+time1 = datetime.strptime("2022/05/06, 08:19:51.247122", format)
+time2 = datetime.strptime("2022/05/06, 19:00:10.447122", format)
 
 time3 = time1 - time2
 
-print(time3.days)
-print(time3.seconds)
-"""
+total_seconds = (time1 - time2).seconds
+print(time1 < time2)
 
-inc = 0.0167
+hour = total_seconds // 3600
+minute = (total_seconds % 3600) // 60
+second = (total_seconds % 3600) % 60
 
-for x in range(1, 61):
-    print(f"n: {x} eval: {(inc * x) % 0.1}")
+print(f"{hour} Hour{'s' if hour > 1 else ''} " \
+    f"{minute} Minute{'s' if minute > 1 else ''} " \
+    f"{second} Second{'s' if second > 1 else ''}")
+

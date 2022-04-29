@@ -1,11 +1,13 @@
-import random
+from game.sprite.message import Message
 from game.sprite.button import Button
+
+from datetime import datetime, timedelta
+import random
 import pygame
 import copy
 
 from pprint import pprint
 
-from game.sprite.message import Message
 
 
 class Business(Button):
@@ -13,16 +15,15 @@ class Business(Button):
     This class handles the business interface in the scene.
     It controls its attributes and the states when it is open or closed.
     """
-    def __init__(self, screen, progress, name, 
-                 fps, callback_function, 
-                 serve_button, income_message,
+    def __init__(self, scene, name, 
+                 callback_function,
                  business_data,
                  top_left_coordinates=None, 
                  center_coordinates=None, 
                  midbottom_coordinates=None,
                  collide_rect=None,
                  **states):
-        super().__init__(screen,
+        super().__init__(scene.main.screen,
             callback_function, 
             top_left_coordinates=top_left_coordinates, 
             center_coordinates=center_coordinates,
@@ -30,8 +31,10 @@ class Business(Button):
             collide_rect=collide_rect,
             **states)
         
+        self.scene = scene
         self.name = name
-        self.progress = progress
+        self.progress = self.scene.main.data.progress
+        self.time = self.scene.time
         
         self.states = states
         self.outline = self.states["outline"].convert_alpha()
@@ -43,6 +46,7 @@ class Business(Button):
         else:
             self.name_code = self.name
         self.ownership = self.progress["businesses"][self.progress["last_location"]][self.name_code]["ownership"]
+        self.open_until = self.progress["businesses"][self.progress["last_location"]][self.name_code]["open_until"]
         self.served_count = 0
         
         self.employee_spritesheet = self.states["employee"]["spritesheet"]
@@ -52,7 +56,7 @@ class Business(Button):
         self.employee_frames = []
         self.employee_index = 0
 
-        self.fps = fps
+        self.fps = self.scene.main.data.setting["fps"]
         self.frame_length = 1 / self.fps
         
         # Serving animation waiting attributes
@@ -63,7 +67,13 @@ class Business(Button):
         # Income display message 
         self.current_income = 0.0
         self.income_visible = False
-        self.income_message = income_message
+        self.income_message = Message(
+            self.scene.main.screen,
+            ["+P0.00"],
+            self.scene.main.data.large_font, 
+            self.scene.main.data.colors["yellow"],
+            outline_thickness=2
+        )
         self.income_travel_distance = 50
         self.income_travel_distance_per_frame = self.income_travel_distance * self.frame_length
         self.income_travel_counter = 0
@@ -90,12 +100,16 @@ class Business(Button):
         # Setting the standing animation for the sprite
         if not self.ownership:
             self.business_state = "closed"
-        else:
+        elif self.ownership:
             is_open = self.progress["businesses"][self.progress["last_location"]][self.name_code]["is_open"]
             if is_open:
                 self.business_state = "open"
             else:
                 self.business_state = "closed"
+        # Final check for business if the business duration is over
+        if self.open_until == "":
+            self.business_state = "closed"
+        
         self.standby_image = self.employee_frames.pop()
         self.has_employee = self.progress["businesses"][self.progress["last_location"]][self.name_code]["has_employee"]
         self.is_standby = True
@@ -107,7 +121,13 @@ class Business(Button):
         super().update()
         
         # Setting up pop-up buttons
-        self.serve_button = serve_button
+        self.serve_button = Button(
+            self.scene.main.screen, None,
+            **{
+                "idle" : self.scene.main.data.scene["serve_button_idle"].convert_alpha(),
+                "outline" : self.scene.main.data.scene["serve_button_hovered"].convert_alpha()
+            }
+        )
         self.serve_button.set_callback(self.serve_customer)
         
         
@@ -139,20 +159,20 @@ class Business(Button):
                     self.serve_customer()
                     
         elif self.is_business_ready_to_serve():
-                if self.queue[0].is_standing:
-                    self.serving_frame_counter += self.frame_length
-                    if int(self.serving_frame_counter) >= 1:
-                        self.serving_frame_counter -= 1
-                        self.serving_seconds_counter += 1
-                        
-                        # Automatic serving when employees is present
-                        if self.serving_seconds_counter >= self.serving_cooldown:
-                            self.serving_seconds_counter = 0
-                            self.set_serve_animation()
+            if self.queue[0].is_standing:
+                self.serving_frame_counter += self.frame_length
+                if int(self.serving_frame_counter) >= 1:
+                    self.serving_frame_counter -= 1
+                    self.serving_seconds_counter += 1
                     
-        else:
+                    # Automatic serving when employees is present
+                    if self.serving_seconds_counter >= self.serving_cooldown:
+                        self.serving_seconds_counter = 0
+                        self.set_serve_animation()
+                    
+        else:    
             self.update_business_images()
-          
+        
         self.set_image_and_rect()
         super().update()
         
@@ -204,6 +224,15 @@ class Business(Button):
             self.serve_button.visible = False
         self.serve_button.update()
         
+         # Checks if the time limit for operation and employment stops
+        if self.business_state == "open":
+            deadline = datetime.strptime(
+                self.progress["businesses"][self.progress["last_location"]][self.name_code]["open_until"],
+                self.time.format)
+            if self.time.time >= deadline:
+                self.set_business_state("closed")
+                self.set_employee_status(False)
+        
         
     def reset_income_display(self):
         # Placing the income message relative to the position of the serve button
@@ -232,11 +261,28 @@ class Business(Button):
     def set_business_state(self, new_state: str):
         # Open or closed
         if new_state == "open":
+            current_in_game_time = self.time.time
+            expiration = current_in_game_time + timedelta(hours=self.scene.main.data.meta["operating_hours"])
+            self.progress["businesses"][self.progress["last_location"]][self.name_code]["open_until"] = \
+                datetime.strftime(expiration, self.time.format)
+            
             self.progress["businesses"][self.progress["last_location"]][self.name_code]["is_open"] = True
         elif new_state == "closed":
+            self.progress["businesses"][self.progress["last_location"]][self.name_code]["open_until"] = ""
             self.progress["businesses"][self.progress["last_location"]][self.name_code]["is_open"] = False
             
         self.business_state = new_state
+        self.update_business_images()
+        self.set_image_and_rect()
+    
+    
+    def set_employee_status(self, employee_status):
+        if employee_status: # is True
+            self.progress["businesses"][self.progress["last_location"]][self.name_code]["has_employee"] = True
+        else:
+            self.progress["businesses"][self.progress["last_location"]][self.name_code]["has_employee"] = False
+            
+        self.has_employee = employee_status
         self.update_business_images()
         self.set_image_and_rect()
     
@@ -306,12 +352,6 @@ class Business(Button):
         image.blit(self.employee_spritesheet,(0, 0),(x, y, width, height))
         self.rect = image.get_rect()
         return image.convert_alpha()
-    
-    
-    def switch_employee_status(self):
-        self.has_employee = not self.has_employee
-        self.update_business_images()
-        self.set_image_and_rect()
         
 
     def generate_income(self):

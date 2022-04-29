@@ -1,42 +1,46 @@
 {
-    "time": "2022/05/04, 07:36:03.247122",
-    "last_login": "2022/04/29, 15:09:29.287576",
+    "time": "2022/05/13, 05:22:08.047122",
+    "last_login": "2022/04/29, 20:48:52.988060",
     "last_location": "location_a",
-    "cash": 4970.75,
+    "cash": 17740.0,
     "businesses": {
         "location_a": {
             "street_food": {
                 "date_acquired": "2022/04/28, 17:43:32.539874",
                 "type": "buko_stall",
                 "ownership": true,
-                "is_open": false,
-                "has_employee": false,
-                "sales": 0,
-                "lifetime_sales": 3247.25
+                "is_open": true,
+                "open_until": "2022/05/13, 08:17:15.247122",
+                "has_employee": true,
+                "sales": 55.5,
+                "lifetime_sales": 8498.0
             },
             "sari_sari_store": {
                 "date_acquired": "2022/04/28, 18:28:16.664546",
                 "ownership": true,
-                "has_employee": false,
-                "is_open": false,
-                "sales": 0,
-                "lifetime_sales": 2928.0
+                "is_open": true,
+                "open_until": "2022/05/13, 08:02:32.047122",
+                "has_employee": true,
+                "sales": 296.5,
+                "lifetime_sales": 10987.5
             },
             "ukay_ukay": {
-                "date_acquired": "",
-                "ownership": false,
-                "has_employee": false,
-                "is_open": false,
-                "sales": 0,
-                "lifetime_sales": 0
+                "date_acquired": "2022/04/29, 18:13:39.041737",
+                "ownership": true,
+                "is_open": true,
+                "open_until": "2022/05/13, 08:07:56.047122",
+                "has_employee": true,
+                "sales": 1068.0,
+                "lifetime_sales": 27511.75
             },
             "food_cart": {
-                "date_acquired": "",
-                "ownership": false,
-                "has_employee": false,
-                "is_open": false,
-                "sales": 0,
-                "lifetime_sales": 0
+                "date_acquired": "2022/04/29, 19:42:35.675143",
+                "ownership": true,
+                "is_open": true,
+                "open_until": "2022/05/13, 08:12:05.647122",
+                "has_employee": true,
+                "sales": 159.5,
+                "lifetime_sales": 8576.75
             }
         }
     }

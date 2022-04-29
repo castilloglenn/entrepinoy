@@ -222,7 +222,6 @@ class Library():
     def create_new_save_file(self, starter):
         self.progress = {
             "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
-            # "time": "2022/01/01, 00:00:00.000000",
             "last_login": "",
             "last_location" : "location_a",
             "cash": 5000.0000000000000,
@@ -230,40 +229,41 @@ class Library():
             "businesses": {
                 "location_a": {
                     "street_food": {
-                        "date_acquired" : datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
+                        "date_acquired": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
                         "type": "buko_stall",
                         "ownership": True,
-                        "has_employee" : False,
-                        # "has_employee" : True,
-                        "sales" : 0,
-                        "lifetime_sales" : 0
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0
                     },
                     "sari_sari_store": {
-                        "date_acquired" : "",
+                        "date_acquired": "",
                         "ownership": False,
-                        "has_employee" : False,
-                        # "ownership": True,
-                        # "has_employee" : True,
-                        "sales" : 0,
-                        "lifetime_sales" : 0
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0
                     },
                     "ukay_ukay": {
-                        "date_acquired" : "",
+                        "date_acquired": "",
                         "ownership": False,
-                        "has_employee" : False,
-                        # "ownership": True,
-                        # "has_employee" : True,
-                        "sales" : 0,
-                        "lifetime_sales" : 0
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0
                     },
                     "food_cart": {
-                        "date_acquired" : "",
+                        "date_acquired": "",
                         "ownership": False,
-                        "has_employee" : False,
-                        # "ownership": True,
-                        # "has_employee" : True,
-                        "sales" : 0,
-                        "lifetime_sales" : 0
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0
                     }
                 }
             }

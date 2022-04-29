@@ -34,7 +34,7 @@ class ConfirmMenu():
             outline_thickness=2,
             center_coordinates=(
                 int(self.canvas_rect.width * 0.50) + self.canvas_rect.x,
-                int(self.canvas_rect.height * 0.22) + self.canvas_rect.y
+                int(self.canvas_rect.height * 0.175) + self.canvas_rect.y
             )
         )
         self.confirmation_message.add(self.objects)

@@ -4,6 +4,7 @@ from game.sprite.button import Button
 import pygame
 
 from datetime import datetime, timedelta
+from numerize.numerize import numerize
 from pprint import pprint
 
 
@@ -164,11 +165,28 @@ class BusinessMenu():
         self.main.data.progress["businesses"][self.location][self.data.name_code]["ownership"] = True
         self.main.data.progress["businesses"][self.location][self.data.name_code]["date_acquired"] = \
             datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f")
+        
+    
+    def start_business(self):
+        self.main.data.progress["cash"] -= self.data.business_data["daily_expenses"]
         self.data.set_business_state("open")
+        
+    
+    def hire_employee(self):
+        self.main.data.progress["cash"] -= self.data.business_data["employee_cost"]
+        self.data.set_employee_status(True)
         
     
     def check_if_business_is_owned(self):
         return self.main.data.progress["businesses"][self.location][self.data.name_code]["ownership"]
+    
+    
+    def check_if_business_is_open(self):
+        return self.main.data.progress["businesses"][self.location][self.data.name_code]["is_open"]
+    
+    
+    def check_if_employee_is_working(self):
+        return self.main.data.progress["businesses"][self.location][self.data.name_code]["has_employee"]
         
         
     def collect_sales_button_callback(self, *args):
@@ -198,14 +216,54 @@ class BusinessMenu():
                  "your bank account.", "",
                  f"You still need P{abs(assumed_balance):,.2f}."])
             self.main.response_menu.run()
-            
-            
-    def hire_employee_button_callback(self, *args):
-        print("hire employee clicked")
         
     
     def start_business_button_callback(self, *args):
-        print("start business clicked")
+        operation_cost = self.data.business_data["daily_expenses"]
+        bank_balance = self.main.data.progress["cash"]
+        assumed_balance = bank_balance - operation_cost
+        
+        if bank_balance >= operation_cost:
+            self.main.confirm_menu.set_message_and_callback(
+                ["Are you sure you",
+                "want to start the", 
+                "business operation?", "",
+                "Your new balance",
+                f"will be: P{assumed_balance:,.2f}"],
+                self.start_business
+            )
+            self.main.confirm_menu.run()
+        else:
+            self.main.response_menu.set_message(
+                ["You do not have ", 
+                 "enough balance on", 
+                 "your bank account.", "",
+                 f"You still need P{abs(assumed_balance):,.2f}."])
+            self.main.response_menu.run()
+            
+            
+    def hire_employee_button_callback(self, *args):
+        employement_cost = self.data.business_data["employee_cost"]
+        bank_balance = self.main.data.progress["cash"]
+        assumed_balance = bank_balance - employement_cost
+        
+        if bank_balance >= employement_cost:
+            self.main.confirm_menu.set_message_and_callback(
+                ["Are you sure you want",
+                "to hire an employee", 
+                "for the business?", "",
+                "Your new balance",
+                f"will be: P{assumed_balance:,.2f}"],
+                self.hire_employee
+            )
+            self.main.confirm_menu.run()
+        else:
+            self.main.response_menu.set_message(
+                ["You do not have ", 
+                 "enough balance on", 
+                 "your bank account.", "",
+                 f"You still need P{abs(assumed_balance):,.2f}."])
+            self.main.response_menu.run()
         
         
     def sell_business_button_callback(self, *args):
@@ -220,14 +278,52 @@ class BusinessMenu():
         if self.check_if_business_is_owned():
             self.purchase_business_button.visible = False
             self.collect_sales_button.visible = True
+            self.sell_business_button.set_is_disabled(False)
+            
+            # For the collect sales button
+            if self.get_sales() <= 0:
+                self.collect_sales_button.set_is_disabled(True)
+            else: # Make the button working
+                self.collect_sales_button.set_is_disabled(False)
+                
+            # For employee hiring button
+            if self.check_if_employee_is_working():
+                self.hire_employee_button.set_is_disabled(True)
+            else: # No employee
+                self.hire_employee_button.set_is_disabled(False)
+            
+            # For start business button and close business button
+            if self.check_if_business_is_open():
+                self.start_business_button.set_is_disabled(True)
+                self.close_business_button.set_is_disabled(False)
+            else: # closed
+                self.start_business_button.set_is_disabled(False)
+                self.hire_employee_button.set_is_disabled(True)
+                self.close_business_button.set_is_disabled(True)
         else:
             self.purchase_business_button.visible = True
             self.collect_sales_button.visible = False
+            
+            self.start_business_button.set_is_disabled(True)
+            self.hire_employee_button.set_is_disabled(True)
+            self.sell_business_button.set_is_disabled(True)
+            self.close_business_button.set_is_disabled(True)
+            
+            
+    def parse_seconds_to_data(self, seconds):
+        hour = 0
+        minute = 0
         
-        if self.get_sales() <= 0:
-            self.collect_sales_button.set_is_disabled(True)
-        else:
-            self.collect_sales_button.set_is_disabled(False)
+        if seconds >= 60:
+            hour = 0
+            minute = seconds // 60
+            
+        if seconds >= 3600:
+            hour = seconds // 3600
+            minute = (seconds % 3600) // 60
+            
+        return f"{hour} Hour{'s' if hour > 1 else ''} " \
+            f"{minute} Minute{'s' if minute > 1 else ''} "
             
             
     def update_data(self):
@@ -236,36 +332,55 @@ class BusinessMenu():
         #   when a sale is made and etc.
         current_income = ""
         if self.check_if_business_is_owned():
-            date_acquired = self.main.data.progress["businesses"][self.location][self.data.name_code]["date_acquired"][:-7]
-            sales = f"P {self.get_sales():,.2f}"
-            if self.get_sales() > 0:
-                current_income = f" +(P {self.data.current_income:,.2f})"
-            lifetime_sales = f"P {self.main.data.progress['businesses'][self.location][self.data.name_code]['lifetime_sales']:,.2f}"
+            open_until_value = self.main.data.progress['businesses'][self.location][self.data.name_code]['open_until']
+            if open_until_value == "":
+                open_until = "Business is closed"
+            else:
+                total_seconds = (datetime.strptime(open_until_value, self.time.format) - self.time.time).seconds
+                open_until = self.parse_seconds_to_data(total_seconds)
+            
+            date_acquired_object = datetime.strptime(
+                self.main.data.progress["businesses"][self.location][self.data.name_code]["date_acquired"],
+                self.time.format
+            )
+            date_acquired = datetime.strftime(date_acquired_object, self.time.date_display_format)
+            sales = f"P{numerize(self.get_sales(), 3)}"
+            
+            if self.get_sales() > 0 and self.data.current_income > 0:
+                current_income = f" +(P{numerize(self.data.current_income, 3)})"
+            lifetime_sales = f"P{numerize(self.main.data.progress['businesses'][self.location][self.data.name_code]['lifetime_sales'], 3)}"
+             
+            if self.data.has_employee:
+                employed_until = "Employee is working"
+            else:
+                employed_until = "No employee"
         else:
+            open_until = "N/A"
             date_acquired = "N/A"
             sales = "N/A"
             lifetime_sales = "N/A"
-        
+            employed_until = "N/A"
+            
         self.left_side_description.set_message([
             f"==================================================",
-            f"Open until:",
-            f"  1:52 AM, April 28, 2022",
-            f"==================================================",
-            f"Business cost",
-            f"  {self.business_cost}",
-            f"Operation cost: (8 hours)",
-            f"  {self.daily_expense} - Status: Not operating",
-            f"Employment cost: (8 hours):",
-            f"  {self.employee_cost} - Status: Not operating",
-            f"Gross income per customer:",
-            f"  {self.income_per_customer}",
             f"Date of acquisition:",
             f"  {date_acquired}",
+            f"Business cost:", 
+            f"  {self.business_cost}",
+            f"Gross income per customer:",
+            f"  {self.income_per_customer}",
             f"==================================================",
-            f"Sales:",
-            f"  {sales}{current_income}",
-            f"Lifetime sales:",
-            f"  {lifetime_sales}",
+            f"Operation Cost: {self.daily_expense} ({self.main.data.meta['operating_hours']} Hours)", 
+            f"  Status: {open_until}",
+            f"",
+            f"Employment Cost: {self.employee_cost} ({self.main.data.meta['operating_hours']} Hours)",
+            f"  Status: {employed_until}",
+            f"==================================================",
+            f"Sales:              Lifetime Sales:",
+            f"  {sales:7s}{current_income:11s}  {lifetime_sales}",
+            f"",
+            f"Last Profit:        Lifetime Profit:",
+            f"  {lifetime_sales:18s}  {lifetime_sales}",
             f"==================================================",
         ])
         
@@ -286,12 +401,12 @@ class BusinessMenu():
         ])
         
         # Attributes that must be shown regardless of ownership
-        self.business_cost = f"P {self.data.business_data['initial_cost']:,.2f}"
-        self.daily_expense = f"P {self.data.business_data['daily_expenses']:,.2f}"
-        self.employee_cost = f"P {self.data.business_data['employee_cost']:,.2f}"
+        self.business_cost = f"P{self.data.business_data['initial_cost']:,.2f}"
+        self.daily_expense = f"P{numerize(self.data.business_data['daily_expenses'], 3)}"
+        self.employee_cost = f"P{numerize(self.data.business_data['employee_cost'], 3)}"
         self.income_per_customer = \
-            f"P {self.data.business_data['income_per_customer_range'][0]:,.2f} - " \
-            f"P {self.data.business_data['income_per_customer_range'][1]:,.2f}"
+            f"P{self.data.business_data['income_per_customer_range'][0]:,.2f} to " \
+            f"P{self.data.business_data['income_per_customer_range'][1]:,.2f}"
         
         # Updating the data
         self.update_data()
