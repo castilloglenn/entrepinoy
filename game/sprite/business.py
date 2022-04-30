@@ -169,7 +169,6 @@ class Business(Button):
                     if self.serving_seconds_counter >= self.serving_cooldown:
                         self.serving_seconds_counter = 0
                         self.set_serve_animation()
-                    
         else:    
             self.update_business_images()
         
@@ -231,7 +230,6 @@ class Business(Button):
                 self.time.format)
             if self.time.time >= deadline:
                 self.set_business_state("closed")
-                self.set_employee_status(False)
         
         
     def reset_income_display(self):
@@ -265,11 +263,25 @@ class Business(Button):
             expiration = current_in_game_time + timedelta(hours=self.scene.main.data.meta["operating_hours"])
             self.progress["businesses"][self.progress["last_location"]][self.name_code]["open_until"] = \
                 datetime.strftime(expiration, self.time.format)
+            self.progress["businesses"][self.progress["last_location"]][self.name_code]["current_operation_sales"] = 0.0
             
             self.progress["businesses"][self.progress["last_location"]][self.name_code]["is_open"] = True
+        
         elif new_state == "closed":
+            current_sales = self.progress["businesses"][self.progress["last_location"]][self.name_code]["current_operation_sales"]
+            operation_cost = self.business_data["daily_expenses"]
+            employment_cost = self.business_data["employee_cost"]
+            
+            if self.has_employee:
+                operation_cost += employment_cost
+            
+            net_profit_or_loss = current_sales - operation_cost
+            
             self.progress["businesses"][self.progress["last_location"]][self.name_code]["open_until"] = ""
             self.progress["businesses"][self.progress["last_location"]][self.name_code]["is_open"] = False
+            self.progress["businesses"][self.progress["last_location"]][self.name_code]["last_profit"] = net_profit_or_loss
+            self.progress["businesses"][self.progress["last_location"]][self.name_code]["lifetime_profit"] += net_profit_or_loss
+            self.set_employee_status(False)
             
         self.business_state = new_state
         self.update_business_images()
@@ -277,11 +289,7 @@ class Business(Button):
     
     
     def set_employee_status(self, employee_status):
-        if employee_status: # is True
-            self.progress["businesses"][self.progress["last_location"]][self.name_code]["has_employee"] = True
-        else:
-            self.progress["businesses"][self.progress["last_location"]][self.name_code]["has_employee"] = False
-            
+        self.progress["businesses"][self.progress["last_location"]][self.name_code]["has_employee"] = employee_status
         self.has_employee = employee_status
         self.update_business_images()
         self.set_image_and_rect()
@@ -318,6 +326,7 @@ class Business(Button):
             
         elif self.business_state == "closed":
             self.is_standby = True
+            self.is_serving = False
             
             self.clear_queue()
             self.idle = self.states["closed"].convert_alpha()
@@ -367,6 +376,7 @@ class Business(Button):
         
         self.progress["businesses"][self.progress["last_location"]][self.name_code]["sales"] += self.current_income
         self.progress["businesses"][self.progress["last_location"]][self.name_code]["lifetime_sales"] += self.current_income
+        self.progress["businesses"][self.progress["last_location"]][self.name_code]["current_operation_sales"] += self.current_income
         
         # Setting the income animation
         self.reset_income_display()

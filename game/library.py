@@ -101,7 +101,7 @@ class Library():
                 "data" : self.get_dict_from_spritesheet("test", "test.json")
             }
         }
-        for crowd_index in range(0, 11):
+        for crowd_index in range(0, 12):
             string_index = str(crowd_index)
             self.crowd_spritesheets[string_index] = {
                 "sheet" : self.get_image("crowd", f"{string_index}.png"),
@@ -236,7 +236,9 @@ class Library():
                         "open_until": "",
                         "has_employee": False,
                         "sales": 0.0,
-                        "lifetime_sales": 0.0
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
                     },
                     "sari_sari_store": {
                         "date_acquired": "",
@@ -245,7 +247,9 @@ class Library():
                         "open_until": "",
                         "has_employee": False,
                         "sales": 0.0,
-                        "lifetime_sales": 0.0
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
                     },
                     "ukay_ukay": {
                         "date_acquired": "",
@@ -254,7 +258,9 @@ class Library():
                         "open_until": "",
                         "has_employee": False,
                         "sales": 0.0,
-                        "lifetime_sales": 0.0
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
                     },
                     "food_cart": {
                         "date_acquired": "",
@@ -263,7 +269,9 @@ class Library():
                         "open_until": "",
                         "has_employee": False,
                         "sales": 0.0,
-                        "lifetime_sales": 0.0
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
                     }
                 }
             }

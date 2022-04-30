@@ -229,25 +229,8 @@ class Scene():
                 data = business_name
                 
             scene_business = Business(
-                self.main.screen, 
-                self.main.data.progress,
-                business_name,
-                self.main.data.setting["fps"],
+                self, business_name,
                 self.business_callback,
-                Button(
-                    self.main.screen, None,
-                    **{
-                        "idle" : self.main.data.scene["serve_button_idle"].convert_alpha(),
-                        "outline" : self.main.data.scene["serve_button_hovered"].convert_alpha()
-                    }
-                ),
-                Message(
-                    self.main.screen,
-                    ["+P0.00"],
-                    self.main.data.large_font, 
-                    self.main.data.colors["yellow"],
-                    outline_thickness=2
-                ),
                 self.main.data.business[data],
                 midbottom_coordinates=(
                     int(self.main.data.setting["game_width"] * self.main.data.business[data]["rel_midbottom_coordinates"][0]),
@@ -431,8 +414,12 @@ class Scene():
                 self.main.debug.log("Debug details hidden")
             
         elif key == pygame.K_F3:
-            pass
+            for business in self.business_data:
+                print(self.business_data[business]["object"].name_code, end=" ")
+                print("is_business_serving: ", self.business_data[business]["object"].is_business_serving(), end=" ")
+                print("is_business_ready_to_serve: ", self.business_data[business]["object"].is_business_ready_to_serve())
             # self.main.debug.log(f"Objects in memory: {len(self.general_sprites)}")
+            print("========END========")
             
         elif key == pygame.K_F4:
             pass

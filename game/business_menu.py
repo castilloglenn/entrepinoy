@@ -208,14 +208,14 @@ class BusinessMenu():
                 f"will be: P{assumed_balance:,.2f}"],
                 self.purchase_business
             )
-            self.main.confirm_menu.run()
+            self.main.confirm_menu.enable = True
         else:
             self.main.response_menu.set_message(
                 ["You do not have ", 
                  "enough balance on", 
                  "your bank account.", "",
                  f"You still need P{abs(assumed_balance):,.2f}."])
-            self.main.response_menu.run()
+            self.main.response_menu.enable = True
         
     
     def start_business_button_callback(self, *args):
@@ -232,14 +232,14 @@ class BusinessMenu():
                 f"will be: P{assumed_balance:,.2f}"],
                 self.start_business
             )
-            self.main.confirm_menu.run()
+            self.main.confirm_menu.enable = True
         else:
             self.main.response_menu.set_message(
                 ["You do not have ", 
                  "enough balance on", 
                  "your bank account.", "",
                  f"You still need P{abs(assumed_balance):,.2f}."])
-            self.main.response_menu.run()
+            self.main.response_menu.enable = True
             
             
     def hire_employee_button_callback(self, *args):
@@ -256,14 +256,14 @@ class BusinessMenu():
                 f"will be: P{assumed_balance:,.2f}"],
                 self.hire_employee
             )
-            self.main.confirm_menu.run()
+            self.main.confirm_menu.enable = True
         else:
             self.main.response_menu.set_message(
                 ["You do not have ", 
                  "enough balance on", 
                  "your bank account.", "",
                  f"You still need P{abs(assumed_balance):,.2f}."])
-            self.main.response_menu.run()
+            self.main.response_menu.enable = True
         
         
     def sell_business_button_callback(self, *args):
@@ -349,17 +349,22 @@ class BusinessMenu():
             if self.get_sales() > 0 and self.data.current_income > 0:
                 current_income = f" +(P{numerize(self.data.current_income, 3)})"
             lifetime_sales = f"P{numerize(self.main.data.progress['businesses'][self.location][self.data.name_code]['lifetime_sales'], 3)}"
-             
+            
             if self.data.has_employee:
                 employed_until = "Employee is working"
             else:
                 employed_until = "No employee"
+                
+            previous_profit = f"P{numerize(self.main.data.progress['businesses'][self.location][self.data.name_code]['last_profit'], 3)}"
+            lifetime_profit = f"P{numerize(self.main.data.progress['businesses'][self.location][self.data.name_code]['lifetime_profit'], 3)}"
         else:
             open_until = "N/A"
             date_acquired = "N/A"
             sales = "N/A"
             lifetime_sales = "N/A"
             employed_until = "N/A"
+            previous_profit = "N/A"
+            lifetime_profit = "N/A"
             
         self.left_side_description.set_message([
             f"==================================================",
@@ -380,7 +385,7 @@ class BusinessMenu():
             f"  {sales:7s}{current_income:11s}  {lifetime_sales}",
             f"",
             f"Last Profit:        Lifetime Profit:",
-            f"  {lifetime_sales:18s}  {lifetime_sales}",
+            f"  {previous_profit:18s}  {lifetime_profit}",
             f"==================================================",
         ])
         
@@ -434,21 +439,25 @@ class BusinessMenu():
     def handle_event(self, event):
         if not self.enable:
             return
-    
-        if event.type == pygame.QUIT: 
-            # Closing the game properly
-            self.main.close_game()
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_ESCAPE:
-                self.background.enable = False
-        elif event.type == pygame.MOUSEMOTION: 
-            for button in self.hoverable_buttons:
-                button.check_hovered(event.pos)
-        elif event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1:
-                mouse_pos = event.pos
-                for button in self.buttons:
-                    button.check_clicked(mouse_pos)
+        if self.main.response_menu.enable:
+            self.main.response_menu.handle_event(event)
+        elif self.main.confirm_menu.enable:
+            self.main.confirm_menu.handle_event(event)
+        else:
+            if event.type == pygame.QUIT: 
+                # Closing the game properly
+                self.main.close_game()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    self.background.enable = False
+            elif event.type == pygame.MOUSEMOTION: 
+                for button in self.hoverable_buttons:
+                    button.check_hovered(event.pos)
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1:
+                    mouse_pos = event.pos
+                    for button in self.buttons:
+                        button.check_clicked(mouse_pos)
         
         if not self.background.enable:
             self.close()
@@ -463,7 +472,11 @@ class BusinessMenu():
             self.update_data()
             
             self.screen.blit(self.main.display_surface, (0, 0)) 
-            self.objects.update() 
+            self.objects.update()
+            
+            # Checking if menus will be displaying
+            self.main.confirm_menu.update()
+            self.main.response_menu.update()
         
         
     def close(self):

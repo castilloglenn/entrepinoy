@@ -206,7 +206,7 @@ class Main():
                 "be reset."],
                 self.create_new_game
             )
-            self.confirm_menu.run()
+            self.confirm_menu.enable = True
         
         
     def create_new_game(self):
@@ -277,16 +277,22 @@ class Main():
             # Updating sprites
             self.buttons.update()
             
+            # Checking if menus will be displaying
+            self.confirm_menu.update()
+            
             # Event processing
             for event in pygame.event.get():
-                if event.type == pygame.QUIT: 
-                    self.running = False
-                elif event.type == pygame.MOUSEBUTTONDOWN: 
-                    self.mouse_click_events(event)
-                elif event.type == pygame.MOUSEMOTION: 
-                    self.mouse_drag_events(event)
-                elif event.type == pygame.KEYDOWN:
-                    self.global_key_down_events(event.key)
+                if self.confirm_menu.enable:
+                    self.confirm_menu.handle_event(event)
+                else:
+                    if event.type == pygame.QUIT: 
+                        self.running = False
+                    elif event.type == pygame.MOUSEBUTTONDOWN: 
+                        self.mouse_click_events(event)
+                    elif event.type == pygame.MOUSEMOTION: 
+                        self.mouse_drag_events(event)
+                    elif event.type == pygame.KEYDOWN:
+                        self.global_key_down_events(event.key)
                 
             # Key pressing events (holding keys applicable)
             keys = pygame.key.get_pressed()
