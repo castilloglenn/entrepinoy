@@ -134,17 +134,17 @@ class BusinessMenu():
                 "disabled" : self.main.data.scene["sell_business_button_disabled"].convert_alpha()
             }
         )
-        self.close_business_button = Button(
+        self.upgrades_button = Button(
             self.screen,
-            self.close_business_button_callback,
+            self.upgrades_button_callback,
             top_left_coordinates=(
                 int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.775) + self.canvas_rect.y
             ),
             **{
-                "idle" : self.main.data.scene["close_business_button_idle"].convert_alpha(),
-                "outline" : self.main.data.scene["close_business_button_hovered"].convert_alpha(),
-                "disabled" : self.main.data.scene["close_business_button_disabled"].convert_alpha()
+                "idle" : self.main.data.scene["upgrades_button_idle"].convert_alpha(),
+                "outline" : self.main.data.scene["upgrades_button_hovered"].convert_alpha(),
+                "disabled" : self.main.data.scene["upgrades_button_disabled"].convert_alpha()
             }
         )
         
@@ -270,8 +270,8 @@ class BusinessMenu():
         print("sell business clicked")
         
     
-    def close_business_button_callback(self, *args):
-        print("close business clicked")
+    def upgrades_button_callback(self, *args):
+        print("upgrades clicked")
             
         
     def set_button_states(self):
@@ -295,11 +295,11 @@ class BusinessMenu():
             # For start business button and close business button
             if self.check_if_business_is_open():
                 self.start_business_button.set_is_disabled(True)
-                self.close_business_button.set_is_disabled(False)
+                self.upgrades_button.set_is_disabled(False)
             else: # closed
                 self.start_business_button.set_is_disabled(False)
                 self.hire_employee_button.set_is_disabled(True)
-                self.close_business_button.set_is_disabled(True)
+                self.upgrades_button.set_is_disabled(True)
         else:
             self.purchase_business_button.visible = True
             self.collect_sales_button.visible = False
@@ -307,7 +307,7 @@ class BusinessMenu():
             self.start_business_button.set_is_disabled(True)
             self.hire_employee_button.set_is_disabled(True)
             self.sell_business_button.set_is_disabled(True)
-            self.close_business_button.set_is_disabled(True)
+            self.upgrades_button.set_is_disabled(True)
             
             
     def parse_seconds_to_data(self, seconds):
@@ -425,7 +425,7 @@ class BusinessMenu():
         self.start_business_button.add(self.objects, self.buttons, self.hoverable_buttons)
         self.hire_employee_button.add(self.objects, self.buttons, self.hoverable_buttons)
         self.sell_business_button.add(self.objects, self.buttons, self.hoverable_buttons)
-        self.close_business_button.add(self.objects, self.buttons, self.hoverable_buttons)
+        self.upgrades_button.add(self.objects, self.buttons, self.hoverable_buttons)
         
         self.background.enable = True
         
