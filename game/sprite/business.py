@@ -146,18 +146,16 @@ class Business(Button):
         
         
     def disown_business(self):
-        self.progress["businesses"][self.progress["last_location"]][self.name_code] \
-            = {
-                "date_acquired": "",
-                "ownership": False,
-                "is_open": False,
-                "open_until": "",
-                "has_employee": False,
-                "sales": 0.0,
-                "lifetime_sales": 0.0,
-                "last_profit" : 0.0,
-                "lifetime_profit" : 0.0
-            }
+        self.progress["businesses"][self.progress["last_location"]][self.name_code]["date_acquired"] = ""
+        self.progress["businesses"][self.progress["last_location"]][self.name_code]["ownership"] = False
+        self.progress["businesses"][self.progress["last_location"]][self.name_code]["is_open"] = False
+        self.progress["businesses"][self.progress["last_location"]][self.name_code]["open_until"] = ""
+        self.progress["businesses"][self.progress["last_location"]][self.name_code]["has_employee"] = False
+        self.progress["businesses"][self.progress["last_location"]][self.name_code]["sales"] = 0.0
+        self.progress["businesses"][self.progress["last_location"]][self.name_code]["lifetime_sales"] = 0.0
+        self.progress["businesses"][self.progress["last_location"]][self.name_code]["last_profit"] = 0.0
+        self.progress["businesses"][self.progress["last_location"]][self.name_code]["lifetime_profit"] = 0.0
+        
         self.reset_data()
         
         
