@@ -23,6 +23,7 @@ class BusinessMenu():
         self.time = time
         self.location = location
         
+        self.sell_back_ratio = 0.5
         self.business_cost = None
         self.daily_expense = None
         self.employee_cost = None
@@ -176,6 +177,12 @@ class BusinessMenu():
         self.main.data.progress["cash"] -= self.data.business_data["employee_cost"]
         self.data.set_employee_status(True)
         
+
+    def sell_business(self):
+        business_selling_price = round(self.data.business_data["initial_cost"] * self.sell_back_ratio, 2)
+        self.main.data.progress["cash"] += business_selling_price
+        self.data.disown_business()
+        
     
     def check_if_business_is_owned(self):
         return self.main.data.progress["businesses"][self.location][self.data.name_code]["ownership"]
@@ -267,7 +274,19 @@ class BusinessMenu():
         
         
     def sell_business_button_callback(self, *args):
-        print("sell business clicked")
+        business_selling_price = round(self.data.business_data["initial_cost"] * self.sell_back_ratio, 2)
+        bank_balance = self.main.data.progress["cash"]
+        assumed_balance = bank_balance + business_selling_price
+        
+        self.main.confirm_menu.set_message_and_callback(
+            ["Are you sure you want",
+            "to sell the business?", "",
+            f"The price will be {self.sell_back_ratio * 100:.0f}% of", 
+            f"its original price. (P{business_selling_price:,.2f})",
+            f"Your New Balance: P{assumed_balance:,.2f}"],
+            self.sell_business
+        )
+        self.main.confirm_menu.enable = True
         
     
     def upgrades_button_callback(self, *args):

@@ -1,58 +1,58 @@
 {
-    "time": "2022/05/08, 21:18:41.274530",
-    "last_login": "2022/04/30, 15:58:55.979251",
+    "time": "2022/05/09, 12:29:00.474530",
+    "last_login": "2022/04/30, 16:38:08.616434",
     "last_location": "location_a",
-    "cash": 51793.5,
+    "cash": 5800.5,
     "businesses": {
         "location_a": {
             "street_food": {
                 "date_acquired": "2022/04/30, 14:06:29.274530",
                 "type": "buko_stall",
                 "ownership": true,
-                "is_open": false,
-                "open_until": "",
-                "has_employee": false,
-                "sales": 0,
-                "lifetime_sales": 5248.75,
-                "last_profit": 80.25,
-                "lifetime_profit": 2248.75,
-                "current_operation_sales": 280.25
+                "is_open": true,
+                "open_until": "2022/05/09, 16:46:19.674530",
+                "has_employee": true,
+                "sales": 201.75,
+                "lifetime_sales": 5769.0,
+                "last_profit": 118.5,
+                "lifetime_profit": 2367.25,
+                "current_operation_sales": 201.75
             },
             "sari_sari_store": {
-                "date_acquired": "2022/04/30, 14:07:16.609370",
+                "date_acquired": "2022/04/30, 16:36:34.446942",
                 "ownership": true,
-                "is_open": false,
-                "open_until": "",
-                "has_employee": false,
-                "sales": 0,
-                "lifetime_sales": 19228.0,
-                "last_profit": 439.0,
-                "lifetime_profit": 10228.0,
-                "current_operation_sales": 1039.0
+                "is_open": true,
+                "open_until": "2022/05/09, 16:54:50.874530",
+                "has_employee": true,
+                "sales": 429.25,
+                "lifetime_sales": 429.25,
+                "last_profit": 0.0,
+                "lifetime_profit": 0.0,
+                "current_operation_sales": 429.25
             },
             "ukay_ukay": {
                 "date_acquired": "2022/04/30, 14:07:18.693172",
                 "ownership": true,
-                "is_open": false,
-                "open_until": "",
-                "has_employee": false,
-                "sales": 0,
-                "lifetime_sales": 37890.0,
-                "last_profit": 1687.5,
-                "lifetime_profit": 17890.0,
-                "current_operation_sales": 2937.5
+                "is_open": true,
+                "open_until": "2022/05/09, 17:01:41.274530",
+                "has_employee": true,
+                "sales": 1376.75,
+                "lifetime_sales": 41777.25,
+                "last_profit": 1260.5,
+                "lifetime_profit": 19150.5,
+                "current_operation_sales": 1376.75
             },
             "food_cart": {
                 "date_acquired": "2022/04/30, 14:23:43.283936",
                 "ownership": true,
-                "is_open": false,
-                "open_until": "",
-                "has_employee": false,
-                "sales": 0,
-                "lifetime_sales": 43826.75,
-                "last_profit": 2244.5,
-                "lifetime_profit": 26226.75,
-                "current_operation_sales": 3844.5
+                "is_open": true,
+                "open_until": "2022/05/09, 17:09:14.874530",
+                "has_employee": true,
+                "sales": 1361.5,
+                "lifetime_sales": 48505.0,
+                "last_profit": 1716.75,
+                "lifetime_profit": 27943.5,
+                "current_operation_sales": 1361.5
             }
         }
     }

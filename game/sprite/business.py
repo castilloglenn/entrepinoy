@@ -33,26 +33,23 @@ class Business(Button):
         
         self.scene = scene
         self.name = name
-        self.progress = self.scene.main.data.progress
         self.time = self.scene.time
+        self.progress = None 
         
         self.states = states
         self.outline = self.states["outline"].convert_alpha()
         
         # Business attributes
         self.business_data = business_data
-        if self.business_data["name"] == "Street Foods Stall":
-            self.name_code = "street_food"
-        else:
-            self.name_code = self.name
-        self.ownership = self.progress["businesses"][self.progress["last_location"]][self.name_code]["ownership"]
-        self.open_until = self.progress["businesses"][self.progress["last_location"]][self.name_code]["open_until"]
-        self.served_count = 0
+        self.name_code = None
+        self.ownership = None
+        self.open_until = None
+        self.business_state = None
+        self.has_employee = None
         
         self.employee_spritesheet = self.states["employee"]["spritesheet"]
         self.employee_json = self.states["employee"]["json"]
         self.serve_button_relative_location = (0.5, 0.5)
-        
         self.employee_frames = []
         self.employee_index = 0
 
@@ -97,6 +94,39 @@ class Business(Button):
         for index in range(len(self.employee_json['frames'])):
             self.employee_frames.append(self.fetch_sprite(f'{self.name_keyword}_employee_{index + 1}.png'))
             
+        self.standby_image = self.employee_frames.pop()
+        self.is_standby = True
+        self.is_serving = False
+        
+        self.queue = []
+        self.queue_limit = 5
+        
+        # Setting up pop-up buttons
+        self.serve_button = Button(
+            self.scene.main.screen, None,
+            **{
+                "idle" : self.scene.main.data.scene["serve_button_idle"].convert_alpha(),
+                "outline" : self.scene.main.data.scene["serve_button_hovered"].convert_alpha()
+            }
+        )
+        self.serve_button.set_callback(self.serve_customer)
+        
+        # Assigning important data to the None variables above
+        self.reset_data()
+        
+    
+    def reset_data(self):
+        self.progress = self.scene.main.data.progress
+        
+        if self.business_data["name"] == "Street Foods Stall":
+            self.name_code = "street_food"
+        else:
+            self.name_code = self.name
+            
+        self.ownership = self.progress["businesses"][self.progress["last_location"]][self.name_code]["ownership"]
+        self.open_until = self.progress["businesses"][self.progress["last_location"]][self.name_code]["open_until"]
+        self.served_count = 0
+            
         # Setting the standing animation for the sprite
         if not self.ownership:
             self.business_state = "closed"
@@ -110,25 +140,25 @@ class Business(Button):
         if self.open_until == "":
             self.business_state = "closed"
         
-        self.standby_image = self.employee_frames.pop()
         self.has_employee = self.progress["businesses"][self.progress["last_location"]][self.name_code]["has_employee"]
-        self.is_standby = True
-        self.is_serving = False
-        
-        self.queue = []
-        self.queue_limit = 5
         
         super().update()
         
-        # Setting up pop-up buttons
-        self.serve_button = Button(
-            self.scene.main.screen, None,
-            **{
-                "idle" : self.scene.main.data.scene["serve_button_idle"].convert_alpha(),
-                "outline" : self.scene.main.data.scene["serve_button_hovered"].convert_alpha()
+        
+    def disown_business(self):
+        self.progress["businesses"][self.progress["last_location"]][self.name_code] \
+            = {
+                "date_acquired": "",
+                "ownership": False,
+                "is_open": False,
+                "open_until": "",
+                "has_employee": False,
+                "sales": 0.0,
+                "lifetime_sales": 0.0,
+                "last_profit" : 0.0,
+                "lifetime_profit" : 0.0
             }
-        )
-        self.serve_button.set_callback(self.serve_customer)
+        self.reset_data()
         
         
     def is_business_serving(self):
