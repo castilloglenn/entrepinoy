@@ -25,7 +25,7 @@ class MenuBackground(Sprite):
         self.image = Surface((self.width,self.height))
         
         if image != None:
-            self.image = transform.scale(image, (self.width, self.height)).convert()
+            self.image = transform.scale(image, (self.width, self.height)).convert_alpha()
             
         self.rect = self.image.get_rect()
         
