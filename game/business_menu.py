@@ -149,9 +149,6 @@ class BusinessMenu():
             }
         )
         
-        # Screen dimming
-        self.main.display_surface.set_alpha(128)
-        
         
     def get_sales(self):
         return self.main.data.progress["businesses"][self.location][self.data.name_code]["sales"]
@@ -490,6 +487,8 @@ class BusinessMenu():
             # Updating the data
             self.update_data()
             
+            # Screen dimming
+            self.main.display_surface.set_alpha(128)
             self.screen.blit(self.main.display_surface, (0, 0)) 
             self.objects.update()
             

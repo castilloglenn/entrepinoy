@@ -112,6 +112,8 @@ class ConfirmMenu():
             return
         
         if self.background.enable:
+            # Screen dimming
+            self.main.display_surface.set_alpha(128)
             self.main.screen.blit(self.main.display_surface, (0, 0)) 
             self.objects.update()
         

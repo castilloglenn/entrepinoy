@@ -51,7 +51,12 @@ class Library():
             "confirm_button_idle" : self.get_image("meta", "confirm_button_idle.png"),
             "confirm_button_hovered" : self.get_image("meta", "confirm_button_hovered.png"),
             "cancel_button_idle" : self.get_image("meta", "cancel_button_idle.png"),
-            "cancel_button_hovered" : self.get_image("meta", "cancel_button_hovered.png")
+            "cancel_button_hovered" : self.get_image("meta", "cancel_button_hovered.png"),
+            "map_button_idle" : self.get_image("meta", "map_button_idle.png"),
+            "map_button_disabled" : self.get_image("meta", "map_button_disabled.png"),
+            "map_button_outline" : self.get_image("meta", "map_button_outline.png"),
+            "sliding_menu_button_idle" : self.get_image("meta", "sliding_menu_button_idle.png"),
+            "sliding_menu_button_hovered" : self.get_image("meta", "sliding_menu_button_hovered.png")
         }
         self.title_screen = {
             "bg" : self.get_image("title_screen", "bg.png"),

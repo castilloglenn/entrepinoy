@@ -168,6 +168,7 @@ class Scene():
         
         # Buttons layering hierarchy (the top layer must be add first)
         self.profile_holder.add(self.buttons)
+        self.main.sliding_menu.sliding_menu_button.add(self.buttons)
         # Loop out the businesses then add them after this line to make the buttons
         #   discovered first before the layer of businesses
         for key, business in self.business_data.items():
@@ -477,6 +478,7 @@ class Scene():
             self.background.update()
             self.general_sprites.draw(self.main.screen)
             self.ui_components.update()
+            self.main.sliding_menu.update()
             
             # Menu overlays
             self.business_menu.update()
@@ -485,6 +487,8 @@ class Scene():
             for event in pygame.event.get():
                 if self.business_menu.enable:
                     self.business_menu.handle_event(event)
+                elif not self.main.sliding_menu.is_tucked:
+                    self.main.sliding_menu.handle_event(event)
                 else:
                     if event.type == pygame.QUIT: 
                         self.running = False

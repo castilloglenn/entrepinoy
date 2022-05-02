@@ -3,7 +3,9 @@ from game.sprite.message import Message
 from game.sprite.button import Button
 
 from game.response_menu import ResponseMenu
+from game.sliding_menu import SlidingMenu
 from game.confirm_menu import ConfirmMenu
+
 from game.debug import Debugger
 from game.library import Library
 
@@ -43,6 +45,11 @@ class Main():
         )
         self.display_surface.fill(self.data.colors["black"])
         self.display_surface.convert_alpha()
+            
+        # Menus
+        self.sliding_menu = SlidingMenu(self)
+        self.confirm_menu = ConfirmMenu(self)
+        self.response_menu = ResponseMenu(self)
         
         # Setting up other windows
         self.scene_window = Scene(self)
@@ -76,10 +83,6 @@ class Main():
         self.continue_button_included = False
         if self.data.progress is not None:
             self.continue_button.add(self.buttons)
-            
-        # Menus
-        self.confirm_menu = ConfirmMenu(self)
-        self.response_menu = ResponseMenu(self)
         
         # Mouse related variable
         self.last_mouse_pos = None

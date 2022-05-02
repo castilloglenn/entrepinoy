@@ -68,6 +68,8 @@ class Button(Sprite):
         else:
             self.rect.topleft = (0, 0)
         
+        self.x_coordinate_offset = 0
+        
         # Collide rect refers to the inner rectangle of the button to where
         #   specifically the triggers function inside the box, this avoids
         #   triggering hover and callback function when targeting the transparent
@@ -117,6 +119,8 @@ class Button(Sprite):
             self.rect.midbottom = self.midbottom_coordinates
         else:
             self.rect.topleft = (0, 0)
+        
+        self.rect.x += self.x_coordinate_offset
             
         self.collide_rect = Rect(
             self.collide_x, self.collide_y,
