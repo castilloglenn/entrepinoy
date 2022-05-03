@@ -1,68 +1,79 @@
-[18:30:19:175] Debug started
-[18:30:19:175] Memory Usage: 30.61MB (69.7%)
-[18:30:19:186] Free Memory: 1,849.09MB
-[18:30:19:193] Highest Usage: 30.61MB
+[20:00:45:241] Debug started
+[20:00:45:241] Memory Usage: 30.93MB (67.9%)
+[20:00:45:248] Free Memory: 1,957.04MB
+[20:00:45:254] Highest Usage: 30.93MB
 
-[18:30:19:742] Game Title: EntrePinoy
-[18:30:19:743] Game Version: 0.0.1
-[18:30:19:780] Display Width: 1280
-[18:30:19:789] Display Height: 720
-[18:30:19:798] Game FPS: 60
-[18:30:19:824] Memory after initialization:
-[18:30:19:832] Memory Usage: 129.96MB (71.7%)
-[18:30:19:841] Free Memory: 1,726.34MB
-[18:30:19:849] Highest Usage: 129.96MB
-[18:30:21:699] Create new game entered
+[20:00:45:690] Game Title: EntrePinoy
+[20:00:45:691] Game Version: 0.0.1
+[20:00:45:722] Display Width: 1280
+[20:00:45:730] Display Height: 720
+[20:00:45:739] Game FPS: 60
 
-[18:30:21:709] 
+[20:00:45:765] 
 Time amplification: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 25.00 seconds in real life = 1 hour in game
 
-[18:30:21:730] Initialized scene
+[20:00:45:791] Initializing scene
+[20:00:45:966] Memory after initialization:
+[20:00:45:967] Memory Usage: 184.17MB (70.3%)
+[20:00:45:974] Free Memory: 1,809.45MB
+[20:00:45:979] Highest Usage: 184.17MB
 
-[18:30:21:916] Re-initializing scene
-[18:30:22:069] Memory Usage: 210.74MB (73.0%)
-[18:30:22:070] Free Memory: 1,646.82MB
-[18:30:22:075] Highest Usage: 210.74MB
+[20:00:46:539] Continue game entered
+[20:00:46:546] Memory Usage: 184.22MB (70.4%)
+[20:00:46:551] Free Memory: 1,806.49MB
+[20:00:46:558] Highest Usage: 184.22MB
 
-[18:30:22:740] WARNING: FPS Dropped 39/60
-[18:30:22:740] Memory Usage: 211.41MB (73.0%)
-[18:30:22:745] Free Memory: 1,645.01MB
-[18:30:22:750] Highest Usage: 211.41MB
-[18:30:25:161] F1 Trigger: Memory check
-[18:30:25:161] Memory Usage: 213.84MB (73.0%)
-[18:30:25:169] Free Memory: 1,659.39MB
-[18:30:25:174] Highest Usage: 214.21MB
-[18:30:25:179] Exited scene via F2-shortcut
-[18:30:25:188] Autosaved progress before going to main menu
+[20:00:46:799] CRITICAL: FPS Plummeted 14/60
+[20:00:46:800] Memory Usage: 184.88MB (70.4%)
+[20:00:46:807] Free Memory: 1,806.82MB
+[20:00:46:812] Highest Usage: 185.27MB
+[20:00:48:273] Hour callback
+[20:00:48:513] Autosaved progress before going to main menu
+[20:00:48:513] Exited scene via Sliding Menu
 
-[18:30:26:079] Continue game entered
-[18:30:26:085] Memory Usage: 190.74MB (72.5%)
-[18:30:26:092] Free Memory: 1,677.45MB
-[18:30:26:098] Highest Usage: 214.21MB
+[20:00:49:837] Continue game entered
+[20:00:49:843] Memory Usage: 184.69MB (70.4%)
+[20:00:49:847] Free Memory: 1,806.65MB
+[20:00:49:853] Highest Usage: 185.45MB
 
-[18:30:26:592] F1 Trigger: Memory check
-[18:30:26:593] Memory Usage: 189.65MB (72.7%)
-[18:30:26:598] Free Memory: 1,665.51MB
-[18:30:26:604] Highest Usage: 214.21MB
-[18:30:26:608] Exited scene via F2-shortcut
-[18:30:26:614] Autosaved progress before going to main menu
+[20:00:50:799] Autosaved progress
+[20:00:51:931] Autosaved progress before going to main menu
+[20:00:51:931] Exited scene via Sliding Menu
 
-[18:30:26:904] Continue game entered
-[18:30:26:913] Memory Usage: 189.65MB (72.7%)
-[18:30:26:921] Free Memory: 1,665.43MB
-[18:30:26:928] Highest Usage: 214.21MB
+[20:00:52:802] Continue game entered
+[20:00:52:808] Memory Usage: 185.50MB (70.4%)
+[20:00:52:814] Free Memory: 1,805.74MB
+[20:00:52:820] Highest Usage: 185.50MB
 
-[18:30:28:075] F1 Trigger: Memory check
-[18:30:28:076] Memory Usage: 190.49MB (72.6%)
-[18:30:28:083] Free Memory: 1,669.04MB
-[18:30:28:091] Highest Usage: 214.21MB
-[18:30:28:097] Exited scene via F2-shortcut
-[18:30:28:106] Autosaved progress before going to main menu
+[20:00:55:798] Autosaved progress
+[20:00:55:830] Autosaved progress before going to main menu
+[20:00:55:836] Exited scene via Sliding Menu
 
-[18:30:53:710] Memory Usage: 195.04MB (72.3%)
-[18:30:53:723] Free Memory: 1,688.70MB
-[18:30:53:734] Highest Usage: 214.21MB
-[18:30:53:746] Debug closed
+[20:00:56:596] Continue game entered
+[20:00:56:602] Memory Usage: 184.97MB (70.3%)
+[20:00:56:608] Free Memory: 1,811.97MB
+[20:00:56:613] Highest Usage: 185.50MB
+
+[20:00:56:791] CRITICAL: FPS Plummeted 13/60
+[20:00:56:791] Memory Usage: 185.51MB (70.3%)
+[20:00:56:797] Free Memory: 1,811.99MB
+[20:00:56:803] Highest Usage: 185.51MB
+[20:00:59:214] Autosaved progress before going to main menu
+[20:00:59:214] Exited scene via Sliding Menu
+
+[20:01:00:116] Continue game entered
+[20:01:00:122] Memory Usage: 184.97MB (70.3%)
+[20:01:00:128] Free Memory: 1,813.15MB
+[20:01:00:133] Highest Usage: 185.51MB
+
+[20:01:00:803] Autosaved progress
+[20:01:02:797] Autosaved progress before going to main menu
+[20:01:02:797] Exited scene via Sliding Menu
+
+[20:01:03:989] Memory Usage: 181.27MB (70.4%)
+[20:01:03:998] Free Memory: 1,803.12MB
+[20:01:04:007] Highest Usage: 185.51MB
+[20:01:04:015] Debug closed

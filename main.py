@@ -243,7 +243,6 @@ class Main():
             self.scene_window = Scene(self)
         else:
             self.scene_window.reset()
-        self.scene_window.reset()
         self.scene_window.run()
         
         

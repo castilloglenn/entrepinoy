@@ -326,7 +326,9 @@ class BusinessMenu():
         if self.check_if_business_is_owned():
             self.purchase_business_button.visible = False
             self.collect_sales_button.visible = True
+            
             self.sell_business_button.set_is_disabled(False)
+            self.upgrades_button.set_is_disabled(False)
             
             # For the collect sales button
             if self.get_sales() <= 0:

@@ -135,7 +135,7 @@ class Button(Sprite):
             self.rect.topleft = self.top_left_coordinates
         elif self.center_coordinates is not None:
             self.rect.center = self.center_coordinates
-        elif self.midbottom_coordinates != None:
+        elif self.midbottom_coordinates is not None:
             self.rect.midbottom = self.midbottom_coordinates
         else:
             self.rect.topleft = (0, 0)

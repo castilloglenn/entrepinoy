@@ -3,7 +3,6 @@ import pygame
 
 
 class SlidingMenu():
-    # TODO THIS WHOLE CLASS
     """
     This class displays a confirmation menu when certain actions have been taken.
     """
@@ -41,14 +40,8 @@ class SlidingMenu():
         self.travel_steps_count = (self.hidden_endpoint - self.visible_endpoint) / self.travel_speed_per_frame
         self.dim_speed_per_frame = self.dim_max_intensity / self.travel_steps_count
         
-        self.update_endpoint()
-        
         self.sliding_menu_button = Button(
             self.main, self.switch_state,
-            top_left_coordinates=(
-                self.sliding_menu_rect.x,
-                self.sliding_menu_rect.y + self.trigger_button_y
-            ),
             **{
                 "idle" : self.main.data.meta_images["sliding_menu_button_idle"],
                 "hovered" : self.main.data.meta_images["sliding_menu_button_hovered"]
@@ -57,12 +50,8 @@ class SlidingMenu():
         self.sliding_menu_button.add(self.objects, self.hoverable_buttons, self.buttons)
         
         # MENU ICON BUTTONS
-        self.map_button = Button( # 0, 0
+        self.map_button = Button(
             self.main, self.map_callback,
-            top_left_coordinates=(
-                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.173),
-                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.0625)
-            ),
             **{
                 "idle" : self.main.data.meta_images["map_button_idle"],
                 "outline" : self.main.data.meta_images["map_button_outline"],
@@ -70,12 +59,8 @@ class SlidingMenu():
                 "tooltip" : ["City Map"]
             }
         )
-        self.mission_button = Button( # 1, 0
+        self.mission_button = Button(
             self.main, self.mission_callback,
-            top_left_coordinates=(
-                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
-                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.0625)
-            ),
             **{
                 "idle" : self.main.data.meta_images["map_button_idle"],
                 "outline" : self.main.data.meta_images["map_button_outline"],
@@ -83,12 +68,8 @@ class SlidingMenu():
                 "tooltip" : ["Missions"]
             }
         )
-        self.event_button = Button( # 2, 0
+        self.event_button = Button(
             self.main, self.event_callback,
-            top_left_coordinates=(
-                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
-                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.0625)
-            ),
             **{
                 "idle" : self.main.data.meta_images["map_button_idle"],
                 "outline" : self.main.data.meta_images["map_button_outline"],
@@ -97,12 +78,8 @@ class SlidingMenu():
             }
         )
         
-        self.bank_button = Button( # 0, 1
+        self.bank_button = Button(
             self.main, self.bank_callback,
-            top_left_coordinates=(
-                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.173),
-                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.2925)
-            ),
             **{
                 "idle" : self.main.data.meta_images["map_button_idle"],
                 "outline" : self.main.data.meta_images["map_button_outline"],
@@ -110,12 +87,8 @@ class SlidingMenu():
                 "tooltip" : ["Bank"]
             }
         )
-        self.casino_button = Button( # 1, 1
+        self.casino_button = Button(
             self.main, self.casino_callback,
-            top_left_coordinates=(
-                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
-                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.2925)
-            ),
             **{
                 "idle" : self.main.data.meta_images["map_button_idle"],
                 "outline" : self.main.data.meta_images["map_button_outline"],
@@ -123,12 +96,8 @@ class SlidingMenu():
                 "tooltip" : ["Casino"]
             }
         )
-        self.residence_button = Button( # 2, 1
+        self.residence_button = Button(
             self.main, self.residence_callback,
-            top_left_coordinates=(
-                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
-                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.2925)
-            ),
             **{
                 "idle" : self.main.data.meta_images["map_button_idle"],
                 "outline" : self.main.data.meta_images["map_button_outline"],
@@ -137,12 +106,8 @@ class SlidingMenu():
             }
         )
         
-        self.news_button = Button( # 0, 2
+        self.news_button = Button(
             self.main, self.news_callback,
-            top_left_coordinates=(
-                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.173),
-                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.524)
-            ),
             **{
                 "idle" : self.main.data.meta_images["map_button_idle"],
                 "outline" : self.main.data.meta_images["map_button_outline"],
@@ -150,12 +115,8 @@ class SlidingMenu():
                 "tooltip" : ["News"]
             }
         )
-        self.crypto_button = Button( # 1, 2
+        self.crypto_button = Button(
             self.main, self.crypto_callback,
-            top_left_coordinates=(
-                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
-                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.524)
-            ),
             **{
                 "idle" : self.main.data.meta_images["map_button_idle"],
                 "outline" : self.main.data.meta_images["map_button_outline"],
@@ -166,12 +127,8 @@ class SlidingMenu():
                 ]
             }
         )
-        self.stock_button = Button( # 2, 2
+        self.stock_button = Button(
             self.main, self.stock_callback,
-            top_left_coordinates=(
-                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
-                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.524)
-            ),
             **{
                 "idle" : self.main.data.meta_images["map_button_idle"],
                 "outline" : self.main.data.meta_images["map_button_outline"],
@@ -183,12 +140,8 @@ class SlidingMenu():
             }
         )
         
-        self.achievement_button = Button( # 0, 3
+        self.achievement_button = Button(
             self.main, self.achievement_callback,
-            top_left_coordinates=(
-                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.173),
-                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.754)
-            ),
             **{
                 "idle" : self.main.data.meta_images["map_button_idle"],
                 "outline" : self.main.data.meta_images["map_button_outline"],
@@ -196,12 +149,8 @@ class SlidingMenu():
                 "tooltip" : ["Achievements"]
             }
         )
-        self.setting_button = Button( # 1, 3
+        self.setting_button = Button(
             self.main, self.setting_callback,
-            top_left_coordinates=(
-                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
-                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.754)
-            ),
             **{
                 "idle" : self.main.data.meta_images["map_button_idle"],
                 "outline" : self.main.data.meta_images["map_button_outline"],
@@ -209,12 +158,8 @@ class SlidingMenu():
                 "tooltip" : ["Settings"]
             }
         )
-        self.main_menu_button = Button( # 2, 3
+        self.main_menu_button = Button(
             self.main, self.main_menu_callback,
-            top_left_coordinates=(
-                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
-                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.754)
-            ),
             **{
                 "idle" : self.main.data.meta_images["map_button_idle"],
                 "outline" : self.main.data.meta_images["map_button_outline"],
@@ -226,12 +171,15 @@ class SlidingMenu():
             }
         )
         
+        # TODO This measures attribute is for reference only
         self.measures = {
             "x_base" : 0.1730,
             "y_base" : 0.0625,
             "x_gap" : 0.2695,
             "y_gap" : 0.2300
         }
+        
+        self.update_endpoint()
         
         self.map_button.add(self.objects, self.hoverable_buttons, self.buttons)
         self.mission_button.add(self.objects, self.hoverable_buttons, self.buttons)
@@ -249,6 +197,8 @@ class SlidingMenu():
         self.setting_button.add(self.objects, self.hoverable_buttons, self.buttons)
         self.main_menu_button.add(self.objects, self.hoverable_buttons, self.buttons)
         
+        for button in self.buttons:
+            button.set_image_and_rect()
         
         
     def map_callback(self, *args):
@@ -296,7 +246,20 @@ class SlidingMenu():
         
         
     def main_menu_callback(self, *args):
-        print("Main menu button clicked")
+        if not self.is_tucked:
+            self.is_moving = False
+            self.is_tucked = True
+            self.dim_intensity = 0
+            self.update_endpoint()
+            
+            for button in self.buttons:
+                button.x_coordinate_offset = 0
+                button.set_image_and_rect()
+        
+        self.main.scene_window.update_data()
+        self.main.scene_window.running = False
+        self.main.debug.log("Autosaved progress before going to main menu")  
+        self.main.debug.log("Exited scene via Sliding Menu")
         
         
     def update_endpoint(self):
@@ -304,6 +267,59 @@ class SlidingMenu():
             self.sliding_menu_rect.x = self.hidden_endpoint
         elif not self.is_tucked:
             self.sliding_menu_rect.x = self.visible_endpoint
+        
+        self.sliding_menu_button.top_left_coordinates = (
+            self.sliding_menu_rect.x,
+            self.sliding_menu_rect.y + self.trigger_button_y
+        )
+        self.map_button.top_left_coordinates = (
+            self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.173),
+            self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.0625)
+        )
+        self.mission_button.top_left_coordinates = (
+            self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
+            self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.0625)
+        )
+        self.event_button.top_left_coordinates = (
+            self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
+            self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.0625)
+        )
+        self.bank_button.top_left_coordinates = (
+            self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.173),
+            self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.2925)
+        )
+        self.casino_button.top_left_coordinates = (
+            self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
+            self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.2925)
+        )
+        self.residence_button.top_left_coordinates = (
+            self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
+            self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.2925)
+        )
+        self.news_button.top_left_coordinates = (
+            self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.173),
+            self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.524)
+        )
+        self.crypto_button.top_left_coordinates = (
+            self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
+            self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.524)
+        )
+        self.stock_button.top_left_coordinates = (
+            self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
+            self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.524)
+        )
+        self.achievement_button.top_left_coordinates = (
+            self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.173),
+            self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.754)
+        )
+        self.setting_button.top_left_coordinates = (
+            self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
+            self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.754)
+        )
+        self.main_menu_button.top_left_coordinates = (
+            self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
+            self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.754)
+        )
             
     
     def switch_state(self, *args):

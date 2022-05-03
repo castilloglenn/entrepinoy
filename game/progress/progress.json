@@ -1,21 +1,22 @@
 {
-    "time": "2022/05/03, 18:41:21.699316",
-    "last_login": "2022/05/03, 18:30:28.105498",
+    "time": "2022/05/04, 02:26:01.987215",
+    "last_login": "2022/05/03, 20:01:02.796496",
     "last_location": "location_a",
-    "cash": 5000.0,
+    "cash": 4714.75,
     "businesses": {
         "location_a": {
             "street_food": {
-                "date_acquired": "2022/05/03, 18:30:21.699316",
+                "date_acquired": "2022/05/03, 19:53:37.987215",
                 "type": "buko_stall",
                 "ownership": true,
-                "is_open": false,
-                "open_until": "",
-                "has_employee": false,
-                "sales": 0.0,
-                "lifetime_sales": 0.0,
+                "is_open": true,
+                "open_until": "2022/05/04, 06:51:30.787215",
+                "has_employee": true,
+                "sales": 0,
+                "lifetime_sales": 14.75,
                 "last_profit": 0.0,
-                "lifetime_profit": 0.0
+                "lifetime_profit": 0.0,
+                "current_operation_sales": 14.75
             },
             "sari_sari_store": {
                 "date_acquired": "",
