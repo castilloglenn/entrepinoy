@@ -29,9 +29,9 @@ class Scene():
         self.main = main
         self.show_debug_info = True
         
-        self.location = self.main.data.progress["last_location"]
-        self.crowd_chance = self.main.data.crowd_statistics[self.location]
-        self.customer_chance = self.main.data.customer_statistics[self.location]
+        self.location = None
+        self.crowd_chance = None
+        self.customer_chance = None
         
         # Setting up the clock
         self.callbacks = {
@@ -80,104 +80,32 @@ class Scene():
             1000 # This is static, does not need to be modified
         )
         
-        # Logging entry point
-        self.main.debug.new_line()
-        self.main.debug.log("Initialized scene")
-        
         # Sprites and sprite groups
         self.general_sprites = SpriteGroup()
         self.ui_components = pygame.sprite.Group()
         self.buttons = pygame.sprite.Group()
         
         # Scene components
-        self.background = SceneBackground(
-            self.main.screen, 
-            self.time, 
-            **self.main.data.background
-        )
+        self.background = None
         
         # Internal variables
         self.available_businesses = 0 # this will be used in limiting customer conversion rate
-        self.business_data = {}
-        self.business_menu = BusinessMenu(self.main, self.time, self.location)
+        self.business_data = None
+        self.business_menu = None
+        
         # Safe spot is somewhere in the middle so that the customers will
         #   go there first before going to the back layer of businesses
         #   to avoid rendering confusions or going through walls
         # This is location-specific
-        self.safe_spot = self.main.data.location[self.location]["safe_spot"]
-        self.object_limit = self.main.data.location[self.location]["object_limit"]
+        self.safe_spot = None
+        self.object_limit = None
         
-        for business_name in self.main.data.location[self.location]["businesses"]:
-            if business_name == "street_food":
-                business_name = self.main.data.progress["businesses"][self.location]["street_food"]["type"]
-                # ownership = self.main.data.progress["businesses"][self.location]["street_food"]["ownership"]
-                data = "street_food"
-            else:
-                # ownership = self.main.data.progress["businesses"][self.location][business_name]["ownership"]
-                data = business_name
-                
-            scene_business = Business(
-                self, business_name,
-                self.business_callback,
-                self.main.data.business[data],
-                midbottom_coordinates=(
-                    int(self.main.data.setting["game_width"] * self.main.data.business[data]["rel_midbottom_coordinates"][0]),
-                    int(self.main.data.setting["game_height"] * self.main.data.business[data]["rel_midbottom_coordinates"][1])
-                ), 
-                collide_rect=self.main.data.business[data]["collide_rect"],
-                **self.main.data.business_images[business_name]
-            )
-            self.business_data[business_name] = {}
-            self.business_data[business_name]["meta"] = self.main.data.business[data]
-            self.business_data[business_name]["object"] = scene_business
-            scene_business.add(self.general_sprites)
+        # UI Compoments
+        self.profile_holder = None
+        self.profile_message = None
+        self.debug_message = None
         
-        self.profile_holder = Button(
-            self.main.screen,
-            self.profile_callback,
-            top_left_coordinates=(10, 10),
-            **{
-                "idle" : self.main.data.scene["profile_holder_idle"],
-                "outline" : self.main.data.scene["profile_holder_outline"]
-            }
-        )
-        self.profile_holder.add(self.ui_components)
-        
-        self.profile_message = Message(
-            self.main.screen, 
-                [
-                    self.time.get_date(), 
-                    self.time.get_time(),
-                    "Bank Balance:",
-                    f"P{self.main.data.progress['cash']:18,.2f}"
-                ], 
-            self.main.data.small_font, 
-            self.main.data.colors["orange"],
-            top_left_coordinates=(165, 75)
-        )
-        self.profile_message.add(self.ui_components)
-        
-        self.debug_message = Message(
-            self.main.screen,
-            [""],
-            self.main.data.small_font, 
-            self.main.data.colors["white"],
-            top_left_coordinates=(10, 545), # 545, 420 for ernest
-            outline_thickness=1
-        )
-        
-        # Buttons layering hierarchy (the top layer must be add first)
-        self.profile_holder.add(self.buttons)
-        self.main.sliding_menu.sliding_menu_button.add(self.buttons)
-        # Loop out the businesses then add them after this line to make the buttons
-        #   discovered first before the layer of businesses
-        for key, business in self.business_data.items():
-            business["object"].add(self.buttons)
-            
-        self.debug_message.add(self.ui_components)
-        
-        # Main loop
-        self.running = False
+        self.reset()
         
         
     def reset(self):
@@ -190,7 +118,7 @@ class Scene():
         
         # Logging entry point
         self.main.debug.new_line()
-        self.main.debug.log("Re-initializing scene")
+        self.main.debug.log("Initializing scene")
         
         # Sprites and sprite groups
         for general_sprite in self.general_sprites:
@@ -215,6 +143,7 @@ class Scene():
         
         # Internal variables
         self.business_data = {}
+        self.business_menu = BusinessMenu(self.main, self.time, self.location)
         # Safe spot is somewhere in the middle so that the customers will
         #   go there first before going to the back layer of businesses
         #   to avoid rendering confusions or going through walls
@@ -244,6 +173,36 @@ class Scene():
             self.business_data[business_name]["meta"] = self.main.data.business[data]
             self.business_data[business_name]["object"] = scene_business
             scene_business.add(self.general_sprites)
+            
+        self.profile_holder = Button(
+            self.main,
+            self.profile_callback,
+            top_left_coordinates=(10, 10),
+            **{
+                "idle" : self.main.data.scene["profile_holder_idle"],
+                "outline" : self.main.data.scene["profile_holder_outline"]
+            }
+        )
+        self.profile_message = Message(
+            self.main.screen, 
+                [
+                    self.time.get_date(), 
+                    self.time.get_time(),
+                    "Bank Balance:",
+                    f"P{self.main.data.progress['cash']:18,.2f}"
+                ], 
+            self.main.data.small_font, 
+            self.main.data.colors["orange"],
+            top_left_coordinates=(165, 75)
+        )
+        self.debug_message = Message(
+            self.main.screen,
+            [""],
+            self.main.data.small_font, 
+            self.main.data.colors["white"],
+            top_left_coordinates=(10, 545), # 545, 420 for ernest
+            outline_thickness=1
+        )
         
         self.profile_holder.add(self.ui_components)
         self.profile_message.add(self.ui_components)
@@ -251,10 +210,13 @@ class Scene():
         
         # Buttons layering hierarchy (the top layer must be add first)
         self.profile_holder.add(self.buttons)
+        self.main.sliding_menu.sliding_menu_button.add(self.buttons)
         # Loop out the businesses then add them after this line to make the buttons
         #   discovered first before the layer of businesses
         for key, business in self.business_data.items():
             business["object"].add(self.buttons)
+            
+        self.debug_message.add(self.ui_components)
         
         # Main loop
         self.running = False
@@ -294,7 +256,7 @@ class Scene():
     
     
     def profile_callback(self, *args):
-        self.main.debug.log("Profile clicked")
+        print("Profile clicked")
         
     
     def business_callback(self, *args):
@@ -400,12 +362,6 @@ class Scene():
         self.main.global_key_down_events(key)
         
         if key == pygame.K_F1:
-            self.main.debug.log("Exited scene via F2-shortcut")
-            self.update_data()
-            self.main.debug.log("Autosaved progress before exit")  
-            self.running = False
-            
-        elif key == pygame.K_F2:
             self.show_debug_info = not self.show_debug_info
             if self.show_debug_info:
                 self.debug_message.add(self.ui_components)
@@ -414,20 +370,14 @@ class Scene():
                 self.debug_message.kill()
                 self.main.debug.log("Debug details hidden")
             
+        elif key == pygame.K_F2:
+            pass
+            
         elif key == pygame.K_F3:
-            for business in self.business_data:
-                print(self.business_data[business]["object"].name_code, end=" ")
-                print("is_business_serving: ", self.business_data[business]["object"].is_business_serving(), end=" ")
-                print("is_business_ready_to_serve: ", self.business_data[business]["object"].is_business_ready_to_serve())
-            # self.main.debug.log(f"Objects in memory: {len(self.general_sprites)}")
-            print("========END========")
+            pass
             
         elif key == pygame.K_F4:
             pass
-            # self.time.set_time("2022/01/01, 00:00:00.000000")
-            
-            # for key, business in self.business_data.items():
-            #     business["object"].served_count = 0
 
 
     def key_hold_events(self, keys):
@@ -516,6 +466,17 @@ class Scene():
                 elif event.type == self.fps_counter_id:
                     self.fps_previous_count = self.fps_counter
                     self.fps_counter = 0
+                    
+                    current_fps = self.main.data.setting["fps"]
+                    if self.fps_previous_count <= int(current_fps * 0.5):
+                        self.main.debug.log(f"CRITICAL: FPS Plummeted {self.fps_previous_count}/{current_fps}")
+                        self.main.debug.memory_log()
+                    elif self.fps_previous_count <= int(current_fps * 0.75):
+                        self.main.debug.log(f"WARNING: FPS Dropped {self.fps_previous_count}/{current_fps}")
+                        self.main.debug.memory_log()
+                    elif self.fps_previous_count <= int(current_fps * 0.9):
+                        self.main.debug.log(f"NOTICE: FPS Unstabled {self.fps_previous_count}/{current_fps}")
+                        self.main.debug.memory_log()
             
             # FPS Counter increment
             self.fps_counter += 1

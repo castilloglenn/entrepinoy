@@ -12,7 +12,8 @@ class Message(Sprite):
                  outline_color: tuple | None = None,
                  outline_thickness: int = 0,
                  center_coordinates=None,
-                 top_left_coordinates=None):
+                 top_left_coordinates=None,
+                 mid_bottom_coordinates=None):
         super().__init__()
         
         self.screen = screen
@@ -38,6 +39,7 @@ class Message(Sprite):
         
         self.center_coordinates = center_coordinates
         self.top_left_coordinates = top_left_coordinates
+        self.mid_bottom_coordinates = mid_bottom_coordinates
         
         # self.update()
         
@@ -82,6 +84,8 @@ class Message(Sprite):
             self.rect.center = self.center_coordinates
         elif self.top_left_coordinates is not None:
             self.rect.topleft = self.top_left_coordinates
+        elif self.mid_bottom_coordinates is not None:
+            self.rect.midtop = self.mid_bottom_coordinates
             
         self.image.set_alpha(self.opacity)
         

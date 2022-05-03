@@ -59,11 +59,16 @@ class Library():
             "sliding_menu_button_hovered" : self.get_image("meta", "sliding_menu_button_hovered.png")
         }
         self.title_screen = {
-            "bg" : self.get_image("title_screen", "bg.png"),
-            "new_game_idle" : self.get_image("title_screen", "new_game_button_idle.png"),
-            "new_game_hovered" : self.get_image("title_screen", "new_game_button_hovered.png"),
-            "continue_idle" : self.get_image("title_screen", "continue_button_idle.png"),
-            "continue_hovered" : self.get_image("title_screen", "continue_button_hovered.png")
+            "title_screen" : self.get_image("title_screen", "title_screen.png"),
+            "new_game_button_idle" : self.get_image("title_screen", "new_game_button_idle.png"),
+            "new_game_button_hovered" : self.get_image("title_screen", "new_game_button_hovered.png"),
+            "continue_button_idle" : self.get_image("title_screen", "continue_button_idle.png"),
+            "continue_button_hovered" : self.get_image("title_screen", "continue_button_hovered.png"),
+            "continue_button_disabled" : self.get_image("title_screen", "continue_button_disabled.png"),
+            "setting_button_idle" : self.get_image("title_screen", "setting_button_idle.png"),
+            "setting_button_hovered" : self.get_image("title_screen", "setting_button_hovered.png"),
+            "exit_button_idle" : self.get_image("title_screen", "exit_button_idle.png"),
+            "exit_button_hovered" : self.get_image("title_screen", "exit_button_hovered.png")
         }
         self.background = {
             "midnight" : self.get_image("scene", "midnight.png"),
@@ -107,7 +112,7 @@ class Library():
                 "data" : self.get_dict_from_spritesheet("test", "test.json")
             }
         }
-        for crowd_index in range(0, 14): # 13 is the last number
+        for crowd_index in range(0, 16): # 15 is the last number
             string_index = str(crowd_index)
             self.crowd_spritesheets[string_index] = {
                 "sheet" : self.get_image("crowd", f"{string_index}.png"),

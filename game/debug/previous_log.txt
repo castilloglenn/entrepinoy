@@ -1,73 +1,106 @@
-[18:08:30:399] Debug started
-[18:08:30:400] Memory Usage: 30.80MB (77.3%)
-[18:08:30:408] Free Memory: 1,382.29MB
-[18:08:30:417] Highest Usage: 30.80MB
+[20:04:53:059] Debug started
+[20:04:53:059] Memory Usage: 31.02MB (69.9%)
+[20:04:53:066] Free Memory: 1,831.86MB
+[20:04:53:072] Highest Usage: 31.02MB
 
-[18:08:32:074] Game Title: EntrePinoy
-[18:08:32:078] Game Version: 0.0.1
-[18:08:32:713] Display Width: 1280
-[18:08:32:721] Display Height: 720
-[18:08:32:728] Game FPS: 60
+[20:04:53:486] Game Title: EntrePinoy
+[20:04:53:487] Game Version: 0.0.1
+[20:04:53:515] Display Width: 1280
+[20:04:53:525] Display Height: 720
+[20:04:53:532] Game FPS: 60
 
-[18:08:32:758] 
+[20:04:53:563] 
 Time amplification: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 25.00 seconds in real life = 1 hour in game
 
-[18:08:32:783] Initialized scene
-[18:08:33:010] Memory after initialization:
-[18:08:33:011] Memory Usage: 180.81MB (79.7%)
-[18:08:33:016] Free Memory: 1,235.26MB
-[18:08:33:024] Highest Usage: 180.81MB
+[20:04:53:588] Initializing scene
+[20:04:53:869] Memory after initialization:
+[20:04:53:870] Memory Usage: 184.38MB (72.2%)
+[20:04:53:880] Free Memory: 1,696.43MB
+[20:04:53:890] Highest Usage: 184.38MB
 
-[18:08:33:860] Continue game entered
-[18:08:33:866] Memory Usage: 180.88MB (79.9%)
-[18:08:33:873] Free Memory: 1,225.43MB
-[18:08:33:881] Highest Usage: 180.88MB
+[20:04:54:414] Continue game entered
+[20:04:54:421] Memory Usage: 184.43MB (72.2%)
+[20:04:54:426] Free Memory: 1,692.58MB
+[20:04:54:430] Highest Usage: 184.43MB
 
-[18:08:35:299] F1 Trigger: Memory check
-[18:08:35:300] Memory Usage: 181.63MB (80.3%)
-[18:08:35:308] Free Memory: 1,203.27MB
-[18:08:35:316] Highest Usage: 182.12MB
-[18:08:35:324] Exited scene via F2-shortcut
-[18:08:35:334] Autosaved progress before exit
+[20:04:54:594] CRITICAL: FPS Plummeted 9/60
+[20:04:54:595] Memory Usage: 184.80MB (72.2%)
+[20:04:54:601] Free Memory: 1,692.60MB
+[20:04:54:606] Highest Usage: 185.36MB
+[20:04:55:281] F1 Trigger: Memory check
+[20:04:55:282] Memory Usage: 185.41MB (72.2%)
+[20:04:55:289] Free Memory: 1,692.69MB
+[20:04:55:294] Highest Usage: 185.41MB
+[20:04:55:299] Debug details hidden
+[20:04:55:706] F1 Trigger: Memory check
+[20:04:55:707] Memory Usage: 184.85MB (72.2%)
+[20:04:55:712] Free Memory: 1,692.66MB
+[20:04:55:717] Highest Usage: 185.41MB
+[20:04:55:722] Debug details shown
+[20:04:55:867] F1 Trigger: Memory check
+[20:04:55:868] Memory Usage: 185.41MB (72.2%)
+[20:04:55:874] Free Memory: 1,692.64MB
+[20:04:55:879] Highest Usage: 185.41MB
+[20:04:55:884] Debug details hidden
+[20:04:56:063] F1 Trigger: Memory check
+[20:04:56:064] Memory Usage: 184.96MB (72.2%)
+[20:04:56:069] Free Memory: 1,692.72MB
+[20:04:56:074] Highest Usage: 185.41MB
+[20:04:56:079] Debug details shown
+[20:04:56:212] F1 Trigger: Memory check
+[20:04:56:212] Memory Usage: 184.96MB (72.2%)
+[20:04:56:218] Free Memory: 1,692.41MB
+[20:04:56:225] Highest Usage: 185.52MB
+[20:04:56:231] Debug details hidden
+[20:04:56:361] F1 Trigger: Memory check
+[20:04:56:361] Memory Usage: 184.98MB (72.2%)
+[20:04:56:368] Free Memory: 1,692.29MB
+[20:04:56:377] Highest Usage: 185.52MB
+[20:04:56:382] Debug details shown
+[20:04:56:530] F1 Trigger: Memory check
+[20:04:56:531] Memory Usage: 185.53MB (72.2%)
+[20:04:56:538] Free Memory: 1,693.28MB
+[20:04:56:544] Highest Usage: 185.53MB
+[20:04:56:549] Debug details hidden
+[20:04:56:711] F1 Trigger: Memory check
+[20:04:56:712] Memory Usage: 185.53MB (72.2%)
+[20:04:56:718] Free Memory: 1,693.32MB
+[20:04:56:723] Highest Usage: 185.53MB
+[20:04:56:728] Debug details shown
+[20:04:56:893] F1 Trigger: Memory check
+[20:04:56:894] Memory Usage: 185.53MB (72.2%)
+[20:04:56:899] Free Memory: 1,693.32MB
+[20:04:56:905] Highest Usage: 185.53MB
+[20:04:56:909] Debug details hidden
+[20:04:57:117] F1 Trigger: Memory check
+[20:04:57:118] Memory Usage: 184.98MB (72.2%)
+[20:04:57:126] Free Memory: 1,693.39MB
+[20:04:57:131] Highest Usage: 185.53MB
+[20:04:57:137] Debug details shown
+[20:04:58:116] Autosaved progress before going to main menu
+[20:04:58:116] Exited scene via Sliding Menu
 
-[18:08:42:087] Continue game entered
-[18:08:42:094] Memory Usage: 181.72MB (79.0%)
-[18:08:42:099] Free Memory: 1,278.53MB
-[18:08:42:105] Highest Usage: 182.12MB
+[20:04:58:972] Continue game entered
+[20:04:58:977] Memory Usage: 185.02MB (72.2%)
+[20:04:58:982] Free Memory: 1,693.52MB
+[20:04:58:988] Highest Usage: 185.55MB
 
-[18:08:42:790] Autosaved progress
-[18:08:47:784] Autosaved progress
-[18:08:52:791] Autosaved progress
-[18:08:57:791] Autosaved progress
-[18:09:02:797] Autosaved progress
-[18:09:03:849] Hour callback
-[18:09:07:790] Autosaved progress
-[18:09:12:799] Autosaved progress
-[18:09:17:783] Autosaved progress
-[18:09:22:785] Autosaved progress
-[18:09:27:786] Autosaved progress
-[18:09:27:967] Profile clicked
-[18:09:29:287] Hour callback
-[18:09:30:865] Debug details hidden
-[18:09:30:913] F1 Trigger: Memory check
-[18:09:30:919] Memory Usage: 194.90MB (79.3%)
-[18:09:30:925] Free Memory: 1,260.43MB
-[18:09:30:931] Highest Usage: 196.28MB
-[18:09:30:937] Exited scene via F2-shortcut
-[18:09:30:943] Autosaved progress before exit
+[20:05:01:036] Hour callback
+[20:05:01:505] Autosaved progress before going to main menu
+[20:05:01:506] Exited scene via Sliding Menu
 
-[18:09:41:597] Continue game entered
-[18:09:41:605] Memory Usage: 194.91MB (79.0%)
-[18:09:41:610] Free Memory: 1,280.87MB
-[18:09:41:616] Highest Usage: 196.28MB
+[20:05:02:174] Continue game entered
+[20:05:02:179] Memory Usage: 185.58MB (72.2%)
+[20:05:02:185] Free Memory: 1,693.42MB
+[20:05:02:191] Highest Usage: 185.58MB
 
-[18:09:42:797] Autosaved progress
-[18:09:44:433] Autosaved progress before exit
+[20:05:03:596] Autosaved progress
+[20:05:03:862] Autosaved progress before exit
 
-[18:09:44:492] Memory Usage: 192.92MB (79.2%)
-[18:09:44:500] Free Memory: 1,268.55MB
-[18:09:44:511] Highest Usage: 196.28MB
-[18:09:44:520] Debug closed
+[20:05:03:931] Memory Usage: 181.59MB (72.2%)
+[20:05:03:941] Free Memory: 1,693.85MB
+[20:05:03:949] Highest Usage: 185.58MB
+[20:05:03:958] Debug closed

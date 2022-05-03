@@ -30,7 +30,7 @@ class ResponseMenu():
         self.confirmation_message = Message(
             self.main.screen, 
             ["No message has been set"],
-            self.main.data.large_font,
+            self.main.data.medium_font,
             self.main.data.colors["white"],
             outline_thickness=2,
             center_coordinates=(
@@ -40,9 +40,9 @@ class ResponseMenu():
         )
         
         self.confirm_button = Button(
-            self.main.screen, self.confirm,
+            self.main, self.confirm,
             center_coordinates=(
-                int(self.canvas_rect.width * 0.52) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.5) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.77) + self.canvas_rect.y
             ),
             **{
