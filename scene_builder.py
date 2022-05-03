@@ -133,7 +133,7 @@ class Scene():
             scene_business.add(self.general_sprites)
         
         self.profile_holder = Button(
-            self.main.screen,
+            self.main,
             self.profile_callback,
             top_left_coordinates=(10, 10),
             **{
@@ -294,7 +294,7 @@ class Scene():
     
     
     def profile_callback(self, *args):
-        self.main.debug.log("Profile clicked")
+        print("Profile clicked")
         
     
     def business_callback(self, *args):

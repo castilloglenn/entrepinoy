@@ -33,6 +33,7 @@ class BusinessMenu():
         self.objects = pygame.sprite.Group()
         self.hoverable_buttons = pygame.sprite.Group()
         self.buttons = pygame.sprite.Group()
+        self.tooltips = pygame.sprite.Group()
         
         # Screen objects
         self.background = MenuBackground(
@@ -71,7 +72,7 @@ class BusinessMenu():
             )
         )
         self.collect_sales_button = Button(
-            self.screen,
+            self.main,
             self.collect_sales_button_callback,
             top_left_coordinates=(
                 int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
@@ -80,11 +81,15 @@ class BusinessMenu():
             **{
                 "idle" : self.main.data.scene["collect_sales_button_idle"].convert_alpha(),
                 "outline" : self.main.data.scene["collect_sales_button_hovered"].convert_alpha(),
-                "disabled" : self.main.data.scene["collect_sales_button_disabled"].convert_alpha()
+                "disabled" : self.main.data.scene["collect_sales_button_disabled"].convert_alpha(),
+                "tooltip" : [
+                    "Collect the current sales",
+                    "of the business."
+                ]
             }
         )
         self.purchase_business_button = Button(
-            self.screen,
+            self.main,
             self.purchase_business_button_callback,
             top_left_coordinates=(
                 int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
@@ -97,7 +102,7 @@ class BusinessMenu():
             }
         )
         self.start_business_button = Button(
-            self.screen,
+            self.main,
             self.start_business_button_callback,
             top_left_coordinates=(
                 int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
@@ -110,7 +115,7 @@ class BusinessMenu():
             }
         )
         self.hire_employee_button = Button(
-            self.screen,
+            self.main,
             self.hire_employee_button_callback,
             top_left_coordinates=(
                 int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
@@ -123,7 +128,7 @@ class BusinessMenu():
             }
         )
         self.sell_business_button = Button(
-            self.screen,
+            self.main,
             self.sell_business_button_callback,
             top_left_coordinates=(
                 int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
@@ -136,7 +141,7 @@ class BusinessMenu():
             }
         )
         self.upgrades_button = Button(
-            self.screen,
+            self.main,
             self.upgrades_button_callback,
             top_left_coordinates=(
                 int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
@@ -436,12 +441,12 @@ class BusinessMenu():
         self.business_title_message.add(self.objects)
         self.business_tier_and_size.add(self.objects)
         self.left_side_description.add(self.objects)
-        self.collect_sales_button.add(self.objects, self.buttons, self.hoverable_buttons)
-        self.purchase_business_button.add(self.objects, self.buttons, self.hoverable_buttons)
-        self.start_business_button.add(self.objects, self.buttons, self.hoverable_buttons)
-        self.hire_employee_button.add(self.objects, self.buttons, self.hoverable_buttons)
-        self.sell_business_button.add(self.objects, self.buttons, self.hoverable_buttons)
-        self.upgrades_button.add(self.objects, self.buttons, self.hoverable_buttons)
+        self.collect_sales_button.add(self.objects, self.buttons, self.hoverable_buttons, self.tooltips)
+        self.purchase_business_button.add(self.objects, self.buttons, self.hoverable_buttons, self.tooltips)
+        self.start_business_button.add(self.objects, self.buttons, self.hoverable_buttons, self.tooltips)
+        self.hire_employee_button.add(self.objects, self.buttons, self.hoverable_buttons, self.tooltips)
+        self.sell_business_button.add(self.objects, self.buttons, self.hoverable_buttons, self.tooltips)
+        self.upgrades_button.add(self.objects, self.buttons, self.hoverable_buttons, self.tooltips)
         
         self.background.enable = True
         
@@ -495,6 +500,9 @@ class BusinessMenu():
             # Checking if menus will be displaying
             self.main.confirm_menu.update()
             self.main.response_menu.update()
+        
+            for button in self.tooltips:
+                button.display_tooltips()
         
         
     def close(self):

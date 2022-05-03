@@ -57,8 +57,7 @@ class Main():
         # Sprites and sprite groups
         self.buttons = pygame.sprite.Group()
         self.new_game_button = Button(
-            self.screen, 
-            self.check_save_file,
+            self, self.check_save_file,
             center_coordinates=
                 (self.data.horizontal_center, 
                 int(self.data.setting["game_height"] * 0.65)),
@@ -70,8 +69,7 @@ class Main():
         self.new_game_button.add(self.buttons)
         
         self.continue_button = Button(
-            self.screen, 
-            self.continue_game,
+            self, self.continue_game,
             center_coordinates=
                 (self.data.horizontal_center, 
                 int(self.data.setting["game_height"] * 0.82)),

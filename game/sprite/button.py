@@ -2,13 +2,15 @@ from pygame.sprite import Sprite
 from pygame import Surface
 from pygame import Rect
 
+from game.sprite.message import Message
+
 
 class Button(Sprite):
     """
     Base class for constructing basic buttons with functionality and different
     states when hovered.
     """
-    def __init__(self, screen, callback_function, 
+    def __init__(self, main, callback_function, 
                  top_left_coordinates=None, 
                  center_coordinates=None, 
                  midbottom_coordinates=None,
@@ -35,11 +37,13 @@ class Button(Sprite):
         
         self.visible = True
         self.is_disabled = False
-        self.screen = screen
+        self.main = main
         self.state = "idle"
         self.callback = callback_function
         
         self.idle = states["idle"].convert_alpha()
+        self.has_tooltip = False
+        self.tooltip = ""
         
         if "hovered" in states:
             self.hovered = states["hovered"].convert_alpha()
@@ -50,6 +54,19 @@ class Button(Sprite):
             
         if "disabled" in states:
             self.disabled = states["disabled"].convert_alpha()
+            
+        if "tooltip" in states:
+            self.has_tooltip = True
+            self.previous_mouse_location = None
+            self.display_gap = 30
+            
+            self.tooltip = Message(
+                self.main.screen, 
+                states["tooltip"],
+                self.main.data.medium_font,
+                self.main.data.colors["white"],
+                outline_thickness=2
+            )
         
         self.top_left_coordinates = top_left_coordinates
         self.center_coordinates = center_coordinates
@@ -96,10 +113,20 @@ class Button(Sprite):
         if self.visible:
             self.collide_x = self.rect.x + self.rect.width * self.collide_rect_rel[0]
             self.collide_y = self.rect.y + self.rect.height * self.collide_rect_rel[1]
-            self.screen.blit(self.image, self.rect)
+            self.main.screen.blit(self.image, self.rect)
         
             if self.show_bound:
-                self.screen.blit(self.hitbox, (self.collide_x, self.collide_y)) 
+                self.main.screen.blit(self.hitbox, (self.collide_x, self.collide_y))
+                
+                
+    def display_tooltips(self):
+        if self.state == "hovered" and self.has_tooltip:
+            self.display_location = \
+                (self.previous_mouse_location[0],
+                    self.previous_mouse_location[1] + self.display_gap)
+                
+            self.tooltip.mid_bottom_coordinates = self.display_location
+            self.tooltip.update()
             
         
     def set_image_and_rect(self):
@@ -135,6 +162,7 @@ class Button(Sprite):
             
     def check_hovered(self, hover_coordinates):
         # Return booleans to prevent overlapping buttons to react the same
+        self.previous_mouse_location = hover_coordinates
         if self.is_disabled or not self.visible:
             return False
         

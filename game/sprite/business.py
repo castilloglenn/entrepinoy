@@ -23,7 +23,7 @@ class Business(Button):
                  midbottom_coordinates=None,
                  collide_rect=None,
                  **states):
-        super().__init__(scene.main.screen,
+        super().__init__(scene.main,
             callback_function, 
             top_left_coordinates=top_left_coordinates, 
             center_coordinates=center_coordinates,
@@ -103,7 +103,7 @@ class Business(Button):
         
         # Setting up pop-up buttons
         self.serve_button = Button(
-            self.scene.main.screen, None,
+            self.scene.main, None,
             **{
                 "idle" : self.scene.main.data.scene["serve_button_idle"].convert_alpha(),
                 "outline" : self.scene.main.data.scene["serve_button_hovered"].convert_alpha()

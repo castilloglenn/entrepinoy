@@ -44,7 +44,7 @@ class SlidingMenu():
         self.update_endpoint()
         
         self.sliding_menu_button = Button(
-            self.main.screen, self.switch_state,
+            self.main, self.switch_state,
             top_left_coordinates=(
                 self.sliding_menu_rect.x,
                 self.sliding_menu_rect.y + self.trigger_button_y
@@ -55,6 +55,26 @@ class SlidingMenu():
             }
         )
         self.sliding_menu_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        
+        # MENU ICON BUTTONS
+        self.map_button = Button(
+            self.main, self.trigger_map,
+            top_left_coordinates=(
+                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.173),
+                self.sliding_menu_rect.y + (self.sliding_menu_rect.width * 0.074)
+            ),
+            **{
+                "idle" : self.main.data.meta_images["map_button_idle"],
+                "outline" : self.main.data.meta_images["map_button_outline"],
+                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "tooltip" : ["Go to map"]
+            }
+        )
+        self.map_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        
+        
+    def trigger_map(self, *args):
+        print("Map button clicked")
         
         
     def update_endpoint(self):
@@ -148,6 +168,9 @@ class SlidingMenu():
         
         self.main.screen.blit(self.sliding_menu_image, self.sliding_menu_rect)
         self.objects.update()
+        
+        for button in self.buttons:
+            button.display_tooltips()
         
     
     def clear(self):
