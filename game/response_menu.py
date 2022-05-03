@@ -42,7 +42,7 @@ class ResponseMenu():
         self.confirm_button = Button(
             self.main, self.confirm,
             center_coordinates=(
-                int(self.canvas_rect.width * 0.52) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.5) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.77) + self.canvas_rect.y
             ),
             **{

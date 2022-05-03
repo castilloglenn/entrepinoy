@@ -40,7 +40,7 @@ class ConfirmMenu():
         self.confirm_button = Button(
             self.main, self.confirm,
             center_coordinates=(
-                int(self.canvas_rect.width * 0.32) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.37) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.77) + self.canvas_rect.y
             ),
             **{
@@ -52,7 +52,7 @@ class ConfirmMenu():
         self.cancel_button = Button(
             self.main, self.cancel,
             center_coordinates=(
-                int(self.canvas_rect.width * 0.73) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.77) + self.canvas_rect.y
             ),
             **{
