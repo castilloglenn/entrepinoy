@@ -47,7 +47,7 @@ class BusinessMenu():
             self.main.data.large_font,
             self.main.data.colors["brown"],
             top_left_coordinates=(
-                int(self.canvas_rect.width * 0.035) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.0775) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.09) + self.canvas_rect.y
             )
         )
@@ -57,7 +57,7 @@ class BusinessMenu():
             self.main.data.medium_font,
             self.main.data.colors["brown"],
             top_left_coordinates=(
-                int(self.canvas_rect.width * 0.035) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.0775) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.15) + self.canvas_rect.y
             )
         )
@@ -67,7 +67,7 @@ class BusinessMenu():
             self.main.data.medium_font,
             self.main.data.colors["brown"],
             top_left_coordinates=(
-                int(self.canvas_rect.width * 0.035) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.05) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.2) + self.canvas_rect.y
             )
         )
@@ -75,7 +75,7 @@ class BusinessMenu():
             self.main,
             self.collect_sales_button_callback,
             top_left_coordinates=(
-                int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.635) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.105) + self.canvas_rect.y
             ),
             **{
@@ -92,65 +92,92 @@ class BusinessMenu():
             self.main,
             self.purchase_business_button_callback,
             top_left_coordinates=(
-                int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.635) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.105) + self.canvas_rect.y
             ),
             **{
                 "idle" : self.main.data.scene["purchase_business_button_idle"].convert_alpha(),
                 "outline" : self.main.data.scene["purchase_business_button_hovered"].convert_alpha(),
-                "disabled" : self.main.data.scene["purchase_business_button_disabled"].convert_alpha()
+                "disabled" : self.main.data.scene["purchase_business_button_disabled"].convert_alpha(),
+                "tooltip" : [
+                    "Get the ownership of",
+                    "the business."
+                ]
             }
         )
         self.start_business_button = Button(
             self.main,
             self.start_business_button_callback,
             top_left_coordinates=(
-                int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.635) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.325) + self.canvas_rect.y
             ),
             **{
                 "idle" : self.main.data.scene["start_business_button_idle"].convert_alpha(),
                 "outline" : self.main.data.scene["start_business_button_hovered"].convert_alpha(),
-                "disabled" : self.main.data.scene["start_business_button_disabled"].convert_alpha()
+                "disabled" : self.main.data.scene["start_business_button_disabled"].convert_alpha(),
+                "tooltip" : [
+                    "To open up the business,",
+                    "You must pay the required",
+                    "operation cost on the",
+                    "products and services."
+                ]
             }
         )
         self.hire_employee_button = Button(
             self.main,
             self.hire_employee_button_callback,
             top_left_coordinates=(
-                int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.635) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.475) + self.canvas_rect.y
             ),
             **{
                 "idle" : self.main.data.scene["hire_employee_button_idle"].convert_alpha(),
                 "outline" : self.main.data.scene["hire_employee_button_hovered"].convert_alpha(),
-                "disabled" : self.main.data.scene["hire_employee_button_disabled"].convert_alpha()
+                "disabled" : self.main.data.scene["hire_employee_button_disabled"].convert_alpha(),
+                "tooltip" : [
+                    "To hasten the business's",
+                    "operations, you can hire an",
+                    "employee to automatically",
+                    "serve the customers as soon",
+                    "as they are in the queue."
+                ]
             }
         )
         self.sell_business_button = Button(
             self.main,
             self.sell_business_button_callback,
             top_left_coordinates=(
-                int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.635) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.625) + self.canvas_rect.y
             ),
             **{
                 "idle" : self.main.data.scene["sell_business_button_idle"].convert_alpha(),
                 "outline" : self.main.data.scene["sell_business_button_hovered"].convert_alpha(),
-                "disabled" : self.main.data.scene["sell_business_button_disabled"].convert_alpha()
+                "disabled" : self.main.data.scene["sell_business_button_disabled"].convert_alpha(),
+                "tooltip" : [
+                    "Sell the ownership of the",
+                    "business with a discounted",
+                    "price. All of the records will",
+                    "be wiped out upon selling."
+                ]
             }
         )
         self.upgrades_button = Button(
             self.main,
             self.upgrades_button_callback,
             top_left_coordinates=(
-                int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.635) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.775) + self.canvas_rect.y
             ),
             **{
                 "idle" : self.main.data.scene["upgrades_button_idle"].convert_alpha(),
                 "outline" : self.main.data.scene["upgrades_button_hovered"].convert_alpha(),
-                "disabled" : self.main.data.scene["upgrades_button_disabled"].convert_alpha()
+                "disabled" : self.main.data.scene["upgrades_button_disabled"].convert_alpha(),
+                "tooltip" : [
+                    "Upgrade your business's attributes",
+                    "to boost overall production."
+                ]
             }
         )
         
@@ -388,26 +415,26 @@ class BusinessMenu():
             lifetime_profit = "N/A"
             
         self.left_side_description.set_message([
-            f"==================================================",
-            f"Date of acquisition:",
-            f"  {date_acquired}",
-            f"Business cost:", 
-            f"  {self.business_cost}",
-            f"Gross income per customer:",
-            f"  {self.income_per_customer}",
-            f"==================================================",
-            f"Operation Cost: {self.daily_expense} ({self.main.data.meta['operating_hours']} Hours)", 
-            f"  Status: {open_until}",
+            f"================================================",
+            f"  Date of acquisition:",
+            f"    {date_acquired}",
+            f"  Business cost:", 
+            f"    {self.business_cost}",
+            f"  Gross income per customer:",
+            f"    {self.income_per_customer}",
+            f"================================================",
+            f"  Operation Cost: {self.daily_expense} ({self.main.data.meta['operating_hours']} Hours)", 
+            f"    Status: {open_until}",
             f"",
-            f"Employment Cost: {self.employee_cost} ({self.main.data.meta['operating_hours']} Hours)",
-            f"  Status: {employed_until}",
-            f"==================================================",
-            f"Sales:              Lifetime Sales:",
-            f"  {sales:7s}{current_income:11s}  {lifetime_sales}",
+            f"  Employment Cost: {self.employee_cost} ({self.main.data.meta['operating_hours']} Hours)",
+            f"    Status: {employed_until}",
+            f"================================================",
+            f"  Sales:              Lifetime Sales:",
+            f"    {sales:7s}{current_income:11s}  {lifetime_sales}",
             f"",
-            f"Last Profit:        Lifetime Profit:",
-            f"  {previous_profit:18s}  {lifetime_profit}",
-            f"==================================================",
+            f"  Last Profit:        Lifetime Profit:",
+            f"    {previous_profit:18s}  {lifetime_profit}",
+            f"================================================",
         ])
         
         self.set_button_states()
@@ -481,6 +508,9 @@ class BusinessMenu():
                         button.check_clicked(mouse_pos)
         
         if not self.background.enable:
+            for button in self.hoverable_buttons:
+                button.state = "idle"
+                button.set_image_and_rect()
             self.close()
         
         

@@ -235,12 +235,12 @@ class Business(Button):
                 if self.business_data["placement"] == "front":
                     new_center = (
                         self.rect.center[0],
-                        self.screen.get_rect().height * 0.43
+                        self.scene.main.screen.get_rect().height * 0.43
                     )
                 elif self.business_data["placement"] == "back":
                     new_center = (
                         self.rect.center[0],
-                        self.screen.get_rect().height * 0.3
+                        self.scene.main.screen.get_rect().height * 0.3
                     )
                 
                 self.serve_button.rect.center = new_center

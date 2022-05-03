@@ -57,24 +57,246 @@ class SlidingMenu():
         self.sliding_menu_button.add(self.objects, self.hoverable_buttons, self.buttons)
         
         # MENU ICON BUTTONS
-        self.map_button = Button(
-            self.main, self.trigger_map,
+        self.map_button = Button( # 0, 0
+            self.main, self.map_callback,
             top_left_coordinates=(
                 self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.173),
-                self.sliding_menu_rect.y + (self.sliding_menu_rect.width * 0.074)
+                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.0625)
             ),
             **{
                 "idle" : self.main.data.meta_images["map_button_idle"],
                 "outline" : self.main.data.meta_images["map_button_outline"],
                 "disabled" : self.main.data.meta_images["map_button_disabled"],
-                "tooltip" : ["Go to map"]
+                "tooltip" : ["City Map"]
             }
         )
+        self.mission_button = Button( # 1, 0
+            self.main, self.mission_callback,
+            top_left_coordinates=(
+                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
+                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.0625)
+            ),
+            **{
+                "idle" : self.main.data.meta_images["map_button_idle"],
+                "outline" : self.main.data.meta_images["map_button_outline"],
+                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "tooltip" : ["Missions"]
+            }
+        )
+        self.event_button = Button( # 2, 0
+            self.main, self.event_callback,
+            top_left_coordinates=(
+                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
+                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.0625)
+            ),
+            **{
+                "idle" : self.main.data.meta_images["map_button_idle"],
+                "outline" : self.main.data.meta_images["map_button_outline"],
+                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "tooltip" : ["Events"]
+            }
+        )
+        
+        self.bank_button = Button( # 0, 1
+            self.main, self.bank_callback,
+            top_left_coordinates=(
+                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.173),
+                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.2925)
+            ),
+            **{
+                "idle" : self.main.data.meta_images["map_button_idle"],
+                "outline" : self.main.data.meta_images["map_button_outline"],
+                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "tooltip" : ["Bank"]
+            }
+        )
+        self.casino_button = Button( # 1, 1
+            self.main, self.casino_callback,
+            top_left_coordinates=(
+                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
+                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.2925)
+            ),
+            **{
+                "idle" : self.main.data.meta_images["map_button_idle"],
+                "outline" : self.main.data.meta_images["map_button_outline"],
+                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "tooltip" : ["Casino"]
+            }
+        )
+        self.residence_button = Button( # 2, 1
+            self.main, self.residence_callback,
+            top_left_coordinates=(
+                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
+                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.2925)
+            ),
+            **{
+                "idle" : self.main.data.meta_images["map_button_idle"],
+                "outline" : self.main.data.meta_images["map_button_outline"],
+                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "tooltip" : ["Residence"]
+            }
+        )
+        
+        self.news_button = Button( # 0, 2
+            self.main, self.news_callback,
+            top_left_coordinates=(
+                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.173),
+                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.524)
+            ),
+            **{
+                "idle" : self.main.data.meta_images["map_button_idle"],
+                "outline" : self.main.data.meta_images["map_button_outline"],
+                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "tooltip" : ["News"]
+            }
+        )
+        self.crypto_button = Button( # 1, 2
+            self.main, self.crypto_callback,
+            top_left_coordinates=(
+                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
+                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.524)
+            ),
+            **{
+                "idle" : self.main.data.meta_images["map_button_idle"],
+                "outline" : self.main.data.meta_images["map_button_outline"],
+                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "tooltip" : [
+                    "Crypto",
+                    "Market"
+                ]
+            }
+        )
+        self.stock_button = Button( # 2, 2
+            self.main, self.stock_callback,
+            top_left_coordinates=(
+                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
+                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.524)
+            ),
+            **{
+                "idle" : self.main.data.meta_images["map_button_idle"],
+                "outline" : self.main.data.meta_images["map_button_outline"],
+                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "tooltip" : [
+                    "Stock", 
+                    "Market"
+                ]
+            }
+        )
+        
+        self.achievement_button = Button( # 0, 3
+            self.main, self.achievement_callback,
+            top_left_coordinates=(
+                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.173),
+                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.754)
+            ),
+            **{
+                "idle" : self.main.data.meta_images["map_button_idle"],
+                "outline" : self.main.data.meta_images["map_button_outline"],
+                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "tooltip" : ["Achievements"]
+            }
+        )
+        self.setting_button = Button( # 1, 3
+            self.main, self.setting_callback,
+            top_left_coordinates=(
+                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
+                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.754)
+            ),
+            **{
+                "idle" : self.main.data.meta_images["map_button_idle"],
+                "outline" : self.main.data.meta_images["map_button_outline"],
+                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "tooltip" : ["Settings"]
+            }
+        )
+        self.main_menu_button = Button( # 2, 3
+            self.main, self.main_menu_callback,
+            top_left_coordinates=(
+                self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
+                self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.754)
+            ),
+            **{
+                "idle" : self.main.data.meta_images["map_button_idle"],
+                "outline" : self.main.data.meta_images["map_button_outline"],
+                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "tooltip" : [
+                    "Return to", 
+                    "main menu"
+                ]
+            }
+        )
+        
+        self.measures = {
+            "x_base" : 0.1730,
+            "y_base" : 0.0625,
+            "x_gap" : 0.2695,
+            "y_gap" : 0.2300
+        }
+        
         self.map_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.mission_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.event_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        
+        self.bank_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.casino_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.residence_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        
+        self.news_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.crypto_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.stock_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        
+        self.achievement_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.setting_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.main_menu_button.add(self.objects, self.hoverable_buttons, self.buttons)
         
         
-    def trigger_map(self, *args):
+        
+    def map_callback(self, *args):
         print("Map button clicked")
+        
+        
+    def mission_callback(self, *args):
+        print("Mission button clicked")
+        
+        
+    def event_callback(self, *args):
+        print("Event button clicked")
+        
+        
+    def bank_callback(self, *args):
+        print("Bank button clicked")
+        
+        
+    def casino_callback(self, *args):
+        print("Casino button clicked")
+        
+        
+    def residence_callback(self, *args):
+        print("Residence button clicked")
+        
+        
+    def news_callback(self, *args):
+        print("News button clicked")
+        
+        
+    def crypto_callback(self, *args):
+        print("Crypto button clicked")
+        
+        
+    def stock_callback(self, *args):
+        print("Stocks button clicked")
+        
+        
+    def achievement_callback(self, *args):
+        print("Achievements button clicked")
+        
+        
+    def setting_callback(self, *args):
+        print("Settings button clicked")
+        
+        
+    def main_menu_callback(self, *args):
+        print("Main menu button clicked")
         
         
     def update_endpoint(self):

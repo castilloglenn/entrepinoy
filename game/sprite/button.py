@@ -120,7 +120,7 @@ class Button(Sprite):
                 
                 
     def display_tooltips(self):
-        if self.state == "hovered" and self.has_tooltip:
+        if self.visible and self.state == "hovered" and self.has_tooltip:
             self.display_location = \
                 (self.previous_mouse_location[0],
                     self.previous_mouse_location[1] + self.display_gap)

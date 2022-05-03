@@ -107,7 +107,7 @@ class Library():
                 "data" : self.get_dict_from_spritesheet("test", "test.json")
             }
         }
-        for crowd_index in range(0, 14): # 13 is the last number
+        for crowd_index in range(0, 16): # 15 is the last number
             string_index = str(crowd_index)
             self.crowd_spritesheets[string_index] = {
                 "sheet" : self.get_image("crowd", f"{string_index}.png"),

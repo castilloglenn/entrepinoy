@@ -30,7 +30,7 @@ class ResponseMenu():
         self.confirmation_message = Message(
             self.main.screen, 
             ["No message has been set"],
-            self.main.data.large_font,
+            self.main.data.medium_font,
             self.main.data.colors["white"],
             outline_thickness=2,
             center_coordinates=(

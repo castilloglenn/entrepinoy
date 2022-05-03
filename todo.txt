@@ -9,6 +9,7 @@ sales limit per business
 profile menu
 notification for logs and mission
 
+music and sfx system
 business repair feature (repair takes days)
 map
 events
