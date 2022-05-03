@@ -362,12 +362,6 @@ class Scene():
         self.main.global_key_down_events(key)
         
         if key == pygame.K_F1:
-            self.main.debug.log("Exited scene via F2-shortcut")
-            self.update_data()
-            self.main.debug.log("Autosaved progress before going to main menu")  
-            self.running = False
-            
-        elif key == pygame.K_F2:
             self.show_debug_info = not self.show_debug_info
             if self.show_debug_info:
                 self.debug_message.add(self.ui_components)
@@ -376,15 +370,14 @@ class Scene():
                 self.debug_message.kill()
                 self.main.debug.log("Debug details hidden")
             
+        elif key == pygame.K_F2:
+            pass
+            
         elif key == pygame.K_F3:
             pass
             
         elif key == pygame.K_F4:
             pass
-            # self.time.set_time("2022/01/01, 00:00:00.000000")
-            
-            # for key, business in self.business_data.items():
-            #     business["object"].served_count = 0
 
 
     def key_hold_events(self, keys):
