@@ -52,35 +52,60 @@ class Main():
         self.response_menu = ResponseMenu(self)
         
         # Setting up other windows
-        self.scene_window = Scene(self)
+        self.scene_window = None
+        if self.data.progress is not None:
+            self.scene_window = Scene(self)
         
         # Sprites and sprite groups
         self.buttons = pygame.sprite.Group()
         self.new_game_button = Button(
             self, self.check_save_file,
-            center_coordinates=
-                (self.data.horizontal_center, 
-                int(self.data.setting["game_height"] * 0.65)),
+            top_left_coordinates=
+                (int(self.data.setting["game_width"] * 0.375), 
+                int(self.data.setting["game_height"] * 0.45)),
             **{
-                "idle" : self.data.title_screen["new_game_idle"],
-                "outline" : self.data.title_screen["new_game_hovered"],
+                "idle" : self.data.title_screen["new_game_button_idle"],
+                "hovered" : self.data.title_screen["new_game_button_hovered"],
             }
         )
         self.new_game_button.add(self.buttons)
         
         self.continue_button = Button(
             self, self.continue_game,
-            center_coordinates=
-                (self.data.horizontal_center, 
-                int(self.data.setting["game_height"] * 0.82)),
+            top_left_coordinates=
+                (int(self.data.setting["game_width"] * 0.375), 
+                int(self.data.setting["game_height"] * 0.57)),
             **{
-                "idle" : self.data.title_screen["continue_idle"],
-                "outline" : self.data.title_screen["continue_hovered"],
+                "idle" : self.data.title_screen["continue_button_idle"],
+                "hovered" : self.data.title_screen["continue_button_hovered"],
+                "disabled" : self.data.title_screen["continue_button_disabled"]
             }
         )
-        self.continue_button_included = False
-        if self.data.progress is not None:
-            self.continue_button.add(self.buttons)
+        self.continue_button.add(self.buttons)
+            
+        self.setting_button = Button(
+            self, self.setting_callback,
+            top_left_coordinates=
+                (int(self.data.setting["game_width"] * 0.375), 
+                int(self.data.setting["game_height"] * 0.69)),
+            **{
+                "idle" : self.data.title_screen["setting_button_idle"],
+                "hovered" : self.data.title_screen["setting_button_hovered"],
+            }
+        )
+        self.setting_button.add(self.buttons)
+            
+        self.exit_button = Button(
+            self, self.exit_callback,
+            top_left_coordinates=
+                (int(self.data.setting["game_width"] * 0.375), 
+                int(self.data.setting["game_height"] * 0.81)),
+            **{
+                "idle" : self.data.title_screen["exit_button_idle"],
+                "hovered" : self.data.title_screen["exit_button_hovered"],
+            }
+        )
+        self.exit_button.add(self.buttons)
         
         # Mouse related variable
         self.last_mouse_pos = None
@@ -214,6 +239,10 @@ class Main():
         self.debug.log("Create new game entered")
         self.data.create_new_save_file("buko_stall")
         
+        if self.scene_window is None:
+            self.scene_window = Scene(self)
+        else:
+            self.scene_window.reset()
         self.scene_window.reset()
         self.scene_window.run()
         
@@ -222,6 +251,14 @@ class Main():
         self.debug.new_line()
         self.debug.log("Continue game entered")
         self.scene_window.run()
+        
+        
+    def setting_callback(self, *args):
+        print("Setting clicked")
+        
+        
+    def exit_callback(self, *args):
+        self.close_game()
         
         
     def present_intro(self):
@@ -273,7 +310,7 @@ class Main():
     def main_loop(self):
         while self.running:
             # Screen rendering
-            self.screen.blit(self.data.title_screen["bg"], (0, 0))
+            self.screen.blit(self.data.title_screen["title_screen"], (0, 0))
             
             # Updating sprites
             self.buttons.update()
@@ -300,9 +337,10 @@ class Main():
             self.key_events(keys)
             
             # Final checks on the continue button for initial game exit to menu
-            if self.data.progress is not None and not self.continue_button_included:
-                self.continue_button_included = True
-                self.continue_button.add(self.buttons)
+            if self.data.progress is None:
+                self.continue_button.set_is_disabled(True)
+            else:
+                self.continue_button.set_is_disabled(False)
             
             # Updating the display
             self.refresh_display()

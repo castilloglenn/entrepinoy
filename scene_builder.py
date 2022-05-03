@@ -402,7 +402,7 @@ class Scene():
         if key == pygame.K_F1:
             self.main.debug.log("Exited scene via F2-shortcut")
             self.update_data()
-            self.main.debug.log("Autosaved progress before exit")  
+            self.main.debug.log("Autosaved progress before going to main menu")  
             self.running = False
             
         elif key == pygame.K_F2:
@@ -415,12 +415,7 @@ class Scene():
                 self.main.debug.log("Debug details hidden")
             
         elif key == pygame.K_F3:
-            for business in self.business_data:
-                print(self.business_data[business]["object"].name_code, end=" ")
-                print("is_business_serving: ", self.business_data[business]["object"].is_business_serving(), end=" ")
-                print("is_business_ready_to_serve: ", self.business_data[business]["object"].is_business_ready_to_serve())
-            # self.main.debug.log(f"Objects in memory: {len(self.general_sprites)}")
-            print("========END========")
+            pass
             
         elif key == pygame.K_F4:
             pass
@@ -516,6 +511,17 @@ class Scene():
                 elif event.type == self.fps_counter_id:
                     self.fps_previous_count = self.fps_counter
                     self.fps_counter = 0
+                    
+                    current_fps = self.main.data.setting["fps"]
+                    if self.fps_previous_count <= int(current_fps * 0.5):
+                        self.main.debug.log(f"CRITICAL: FPS Plummeted {self.fps_previous_count}/{current_fps}")
+                        self.main.debug.memory_log()
+                    elif self.fps_previous_count <= int(current_fps * 0.75):
+                        self.main.debug.log(f"WARNING: FPS Dropped {self.fps_previous_count}/{current_fps}")
+                        self.main.debug.memory_log()
+                    elif self.fps_previous_count <= int(current_fps * 0.9):
+                        self.main.debug.log(f"NOTICE: FPS Unstabled {self.fps_previous_count}/{current_fps}")
+                        self.main.debug.memory_log()
             
             # FPS Counter increment
             self.fps_counter += 1

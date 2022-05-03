@@ -343,11 +343,9 @@ class BusinessMenu():
             # For start business button and close business button
             if self.check_if_business_is_open():
                 self.start_business_button.set_is_disabled(True)
-                self.upgrades_button.set_is_disabled(False)
             else: # closed
                 self.start_business_button.set_is_disabled(False)
                 self.hire_employee_button.set_is_disabled(True)
-                self.upgrades_button.set_is_disabled(True)
         else:
             self.purchase_business_button.visible = True
             self.collect_sales_button.visible = False
