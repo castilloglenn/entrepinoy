@@ -210,6 +210,7 @@ class Scene():
         
         # Buttons layering hierarchy (the top layer must be add first)
         self.profile_holder.add(self.buttons)
+        self.main.sliding_menu.update_endpoint()
         self.main.sliding_menu.sliding_menu_button.add(self.buttons)
         # Loop out the businesses then add them after this line to make the buttons
         #   discovered first before the layer of businesses
@@ -421,6 +422,10 @@ class Scene():
     def run(self):
         self.main.debug.memory_log()
         self.main.debug.new_line()
+        
+        # Check if the sliding button is in the scene yet
+        if self.buttons not in self.main.sliding_menu.sliding_menu_button.groups():
+            self.main.sliding_menu.sliding_menu_button.add(self.buttons)
         
         self.running = True
         while self.running:

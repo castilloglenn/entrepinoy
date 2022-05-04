@@ -23,7 +23,7 @@ class ResponseMenu():
         
         # Screen objects
         self.background = MenuBackground(
-            self.main.screen, 0.45,
+            self.main.screen, 0.3,
             image=self.main.data.meta_images["menu_background"])
         
         self.canvas_rect = self.background.rect
@@ -43,7 +43,7 @@ class ResponseMenu():
             self.main, self.confirm,
             center_coordinates=(
                 int(self.canvas_rect.width * 0.5) + self.canvas_rect.x,
-                int(self.canvas_rect.height * 0.77) + self.canvas_rect.y
+                int(self.canvas_rect.height * 0.79) + self.canvas_rect.y
             ),
             **{
                 "idle" : self.main.data.meta_images["confirm_button_idle"],

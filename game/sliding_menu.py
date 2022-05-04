@@ -47,7 +47,6 @@ class SlidingMenu():
                 "hovered" : self.main.data.meta_images["sliding_menu_button_hovered"]
             }
         )
-        self.sliding_menu_button.add(self.objects, self.hoverable_buttons, self.buttons)
         
         # MENU ICON BUTTONS
         self.map_button = Button(
@@ -181,25 +180,6 @@ class SlidingMenu():
         
         self.update_endpoint()
         
-        self.map_button.add(self.objects, self.hoverable_buttons, self.buttons)
-        self.mission_button.add(self.objects, self.hoverable_buttons, self.buttons)
-        self.event_button.add(self.objects, self.hoverable_buttons, self.buttons)
-        
-        self.bank_button.add(self.objects, self.hoverable_buttons, self.buttons)
-        self.casino_button.add(self.objects, self.hoverable_buttons, self.buttons)
-        self.residence_button.add(self.objects, self.hoverable_buttons, self.buttons)
-        
-        self.news_button.add(self.objects, self.hoverable_buttons, self.buttons)
-        self.crypto_button.add(self.objects, self.hoverable_buttons, self.buttons)
-        self.stock_button.add(self.objects, self.hoverable_buttons, self.buttons)
-        
-        self.achievement_button.add(self.objects, self.hoverable_buttons, self.buttons)
-        self.setting_button.add(self.objects, self.hoverable_buttons, self.buttons)
-        self.main_menu_button.add(self.objects, self.hoverable_buttons, self.buttons)
-        
-        for button in self.buttons:
-            button.set_image_and_rect()
-        
         
     def map_callback(self, *args):
         print("Map button clicked")
@@ -320,6 +300,33 @@ class SlidingMenu():
             self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.754)
         )
+        
+        # Clearing the sprite groups before adding the objects back to it
+        for obj in self.objects:
+            obj.kill()
+            del obj
+        self.objects.empty()
+        
+        self.sliding_menu_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        
+        self.map_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.mission_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.event_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        
+        self.bank_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.casino_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.residence_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        
+        self.news_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.crypto_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.stock_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        
+        self.achievement_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.setting_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.main_menu_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        
+        for button in self.buttons:
+            button.set_image_and_rect()
             
     
     def switch_state(self, *args):
