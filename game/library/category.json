@@ -14,5 +14,13 @@
     "food_cart" : {
         "size" : "small",
         "tier" : "II"
+    },
+    "test_business_a" : {
+        "size" : "test",
+        "tier" : "roman number"
+    },
+    "test_business_b" : {
+        "size" : "test",
+        "tier" : "roman number"
     }
 }

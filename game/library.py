@@ -173,6 +173,24 @@ class Library():
                     "spritesheet" : self.get_image("business", "food_cart_employee.png"),
                     "json" : self.get_dict_from_spritesheet("business", "food_cart_employee.json")
                 }
+            },
+            "test_business_a" : { # 100% complete
+                "idle" : self.get_image("business", "sari_sari_store_idle.png"),
+                "closed" : self.get_image("business", "sari_sari_store_closed.png"),
+                "outline" : self.get_image("business", "sari_sari_store_outline.png"),
+                "employee": {
+                    "spritesheet" : self.get_image("business", "sari_sari_store_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "sari_sari_store_employee.json")
+                }
+            },
+            "test_business_b" : {
+                "idle" : self.get_image("business", "ukay_ukay_idle.png"),
+                "closed" : self.get_image("business", "ukay_ukay_closed.png"),
+                "outline" : self.get_image("business", "ukay_ukay_outline.png"),
+                "employee": {
+                    "spritesheet" : self.get_image("business", "ukay_ukay_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "ukay_ukay_employee.json")
+                }
             }
         }
         
@@ -234,7 +252,7 @@ class Library():
         self.progress = {
             "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
             "last_login": "",
-            "last_location" : "location_a",
+            "last_location" : "location_b",
             "cash": 5000.0000000000000,
     
             "businesses": {
@@ -274,6 +292,30 @@ class Library():
                         "lifetime_profit" : 0.0
                     },
                     "food_cart": {
+                        "date_acquired": "",
+                        "ownership": False,
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
+                    }
+                },
+                "location_b": {
+                    "test_business_a": {
+                        "date_acquired": "",
+                        "ownership": False,
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
+                    },
+                    "test_business_b": {
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,

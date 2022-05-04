@@ -54,5 +54,31 @@
         "daily_expenses" : 400.0,
         "employee_cost": 250.0,
         "income_per_customer_range" : [40.00, 70.00]
+    },
+    "test_business_a" : {
+        "name" : "Test Business A",
+        "image_name" : "sari_sari_store",
+        "rel_midbottom_coordinates" : [0.31, 0.62],
+        "collide_rect" : [0.11, 0.22, 0.77, 0.78],
+        "queuing_point" : 0.4,
+        "queue_direction" : "left",
+        "placement": "back",
+        "initial_cost" : 1.0,
+        "daily_expenses" : 1.0,
+        "employee_cost": 1.0,
+        "income_per_customer_range" : [1000.00, 2000.0]
+    },
+    "test_business_b" : {
+        "name" : "Test Business B",
+        "image_name" : "ukay_ukay",
+        "rel_midbottom_coordinates" : [0.71, 0.62],
+        "collide_rect" : [0.04, 0.21, 0.92, 0.79],
+        "queuing_point" : 0.35,
+        "queue_direction" : "right",
+        "placement": "back",
+        "initial_cost" : 1.0,
+        "daily_expenses" : 1.0,
+        "employee_cost": 1.0,
+        "income_per_customer_range" : [3000.0, 4000.0]
     }
 }

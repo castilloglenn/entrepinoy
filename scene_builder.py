@@ -255,6 +255,7 @@ class Scene():
                     data = business_name
                     
                 if traversal_index > current_businesses_index_limit:
+                    print("created new business")
                     scene_business = Business(
                         self, business_name,
                         self.business_callback,
@@ -273,10 +274,11 @@ class Scene():
                 else:
                     # transfer old key details to new key
                     if business_name not in current_business_keys:
+                        print("created new key and transfered the current index")
                         self.business_data[business_name] = \
-                            self.business_data.pop(
-                                self.business_data[current_business_keys[traversal_index]])
-                        
+                            self.business_data.pop(current_business_keys[traversal_index])
+                    
+                    print("reconstructed data and object")
                     self.business_data[business_name]["meta"] = self.main.data.business[data]
                     self.business_data[business_name]["object"].reconstruct(
                         self, business_name,
@@ -294,9 +296,14 @@ class Scene():
                 # disable the current business
                 # if traversal index <= current_businesses_index_limit
                 #       disable the current business
+                
+                # TODO: Fix the issue regarding index 2 and 3 the businesses where they are suppose to be in index 0 and 1
                 if traversal_index <= current_businesses_index_limit:
+                    print("unvisibilized the object")
                     self.business_data[current_business_keys[traversal_index]]["object"].visible = False
-            
+        
+        print(list(self.business_data.keys()))
+           
         # Refreshing order of buttons after a possible new businesses appreared
         #   in the business_data dictionary object
         for button in self.buttons:
