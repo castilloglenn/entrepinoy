@@ -20,5 +20,25 @@
 #     f"{minute} Minute{'s' if minute > 1 else ''} " \
 #     f"{second} Second{'s' if second > 1 else ''}")
 
-print(f"qwiue {128736.18726387126387123:.0f}")
+
+from pprint import pprint
+
+
+sheesh = {
+    "a" : {
+        "ge" : "lods",
+        "ok" : "lang",
+        "naman" : "ako"
+    },
+    "b" : {
+        "asd" : "qwe",
+        "sgg" : "dsa",
+        "xcv" : "qwes"
+    }
+}
+
+pprint(sheesh)
+sheesh[{"a": "c"}] = sheesh.pop("a")
+print
+pprint(sheesh)
 

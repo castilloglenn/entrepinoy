@@ -242,7 +242,7 @@ class Main():
         if self.scene_window is None:
             self.scene_window = Scene(self)
         else:
-            self.scene_window.reset()
+            self.scene_window.reconstruct(self)
         self.scene_window.run()
         
         

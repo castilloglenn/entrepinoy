@@ -29,9 +29,9 @@ class Scene():
         self.main = main
         self.show_debug_info = True
         
-        self.location = None
-        self.crowd_chance = None
-        self.customer_chance = None
+        self.location = self.main.data.progress["last_location"]
+        self.crowd_chance = self.main.data.crowd_statistics[self.location]
+        self.customer_chance = self.main.data.customer_statistics[self.location]
         
         # Setting up the clock
         self.callbacks = {
@@ -80,59 +80,14 @@ class Scene():
             1000 # This is static, does not need to be modified
         )
         
+        # Logging entry point
+        self.main.debug.new_line()
+        self.main.debug.log("Initialized scene")
+        
         # Sprites and sprite groups
         self.general_sprites = SpriteGroup()
         self.ui_components = pygame.sprite.Group()
         self.buttons = pygame.sprite.Group()
-        
-        # Scene components
-        self.background = None
-        
-        # Internal variables
-        self.available_businesses = 0 # this will be used in limiting customer conversion rate
-        self.business_data = None
-        self.business_menu = None
-        
-        # Safe spot is somewhere in the middle so that the customers will
-        #   go there first before going to the back layer of businesses
-        #   to avoid rendering confusions or going through walls
-        # This is location-specific
-        self.safe_spot = None
-        self.object_limit = None
-        
-        # UI Compoments
-        self.profile_holder = None
-        self.profile_message = None
-        self.debug_message = None
-        
-        self.reset()
-        
-        
-    def reset(self):
-        self.location = self.main.data.progress["last_location"]
-        self.crowd_chance = self.main.data.crowd_statistics[self.location]
-        self.customer_chance = self.main.data.customer_statistics[self.location]
-        
-        # Setting up the clock
-        self.time.set_time(self.main.data.progress["time"])
-        
-        # Logging entry point
-        self.main.debug.new_line()
-        self.main.debug.log("Initializing scene")
-        
-        # Sprites and sprite groups
-        for general_sprite in self.general_sprites:
-            general_sprite.kill()
-            del general_sprite
-        self.general_sprites.empty()
-        for ui_component in self.ui_components:
-            ui_component.kill()
-            del ui_component
-        self.ui_components.empty()
-        for button in self.buttons:
-            button.kill()
-            del button
-        self.buttons.empty()
         
         # Scene components
         self.background = SceneBackground(
@@ -142,6 +97,7 @@ class Scene():
         )
         
         # Internal variables
+        self.available_businesses = 0 # this will be used in limiting customer conversion rate
         self.business_data = {}
         self.business_menu = BusinessMenu(self.main, self.time, self.location)
         # Safe spot is somewhere in the middle so that the customers will
@@ -173,7 +129,7 @@ class Scene():
             self.business_data[business_name]["meta"] = self.main.data.business[data]
             self.business_data[business_name]["object"] = scene_business
             scene_business.add(self.general_sprites)
-            
+        
         self.profile_holder = Button(
             self.main,
             self.profile_callback,
@@ -183,6 +139,8 @@ class Scene():
                 "outline" : self.main.data.scene["profile_holder_outline"]
             }
         )
+        self.profile_holder.add(self.ui_components)
+        
         self.profile_message = Message(
             self.main.screen, 
                 [
@@ -195,6 +153,8 @@ class Scene():
             self.main.data.colors["orange"],
             top_left_coordinates=(165, 75)
         )
+        self.profile_message.add(self.ui_components)
+        
         self.debug_message = Message(
             self.main.screen,
             [""],
@@ -204,13 +164,8 @@ class Scene():
             outline_thickness=1
         )
         
-        self.profile_holder.add(self.ui_components)
-        self.profile_message.add(self.ui_components)
-        self.debug_message.add(self.ui_components)
-        
         # Buttons layering hierarchy (the top layer must be add first)
         self.profile_holder.add(self.buttons)
-        self.main.sliding_menu.update_endpoint()
         self.main.sliding_menu.sliding_menu_button.add(self.buttons)
         # Loop out the businesses then add them after this line to make the buttons
         #   discovered first before the layer of businesses
@@ -219,9 +174,139 @@ class Scene():
             
         self.debug_message.add(self.ui_components)
         
-        # Main loop
-        self.running = False
-    
+        
+    def reconstruct(self, main):
+        # Logging entry point
+        self.main.debug.new_line()
+        self.main.debug.log("Reconstructing scene")
+        
+        self.main = main
+        self.location = self.main.data.progress["last_location"]
+        self.crowd_chance = self.main.data.crowd_statistics[self.location]
+        self.customer_chance = self.main.data.customer_statistics[self.location]
+        
+        self.time.reconstruct(
+            self.main.debug,
+            self.main.data.progress["time"],
+            self.main.data.setting["fps"],
+            self.main.data.meta["time_amplify"],
+            **self.callbacks
+        )
+        
+        self.background.reconstruct(
+            self.main.screen, 
+            self.time, 
+            **self.main.data.background
+        )
+        
+        self.available_businesses = 0
+        # self.business_data = {}
+        self.business_menu.reconstruct(
+            self.main, 
+            self.time, 
+            self.location
+        )
+        
+        self.safe_spot = self.main.data.location[self.location]["safe_spot"]
+        self.object_limit = self.main.data.location[self.location]["object_limit"]
+        
+        # if the new length is longer than the current length: 4 > 2 : 3
+        #   use the new length as traversal index
+        #       replace the current businesses with new ones
+        #       add new index objects to fill the rest
+        
+        # if the new length is shorter than the current length: 2 < 4 : 1
+        #   use the old length as traversal index
+        #       take note of the new_business_index_limit: 1
+        #       replace the current businesses with new ones until
+        #           the new_business_index_limit is reached
+        #       if it has been reached, disabled the succeeding businesses : 2, 3
+        
+        # if both lengths are equal: 4 = 4: 3
+        #   use any length, doesn't matter 
+        #       replace all businesses with new ones
+        
+        # To combine all these conditions
+        #   use the longer index
+        #       if the traversal index <= new_business_index_limit
+        #           if the object is disabled, re-enable it first
+        #           replace the current business with the new one
+        #           if traversal_index > current_businesses_index_limit
+        #               add new index to the business data and insert business
+        #       if the traversal index > new_business_index_limit
+        #           if traversal index <= current_businesses_index_limit
+        #               disable the current business
+
+        current_businesses_length = len(self.business_data)
+        current_businesses_index_limit = current_businesses_length - 1
+        current_business_keys = list(self.business_data.keys())
+        
+        new_businesses_length = len(self.main.data.location[self.location]["businesses"])
+        new_business_index_limit = new_businesses_length - 1 # remember index starts at 0
+        
+        for traversal_index in range(max(current_businesses_length, new_businesses_length)):
+            if traversal_index <= new_business_index_limit:
+                # replace the current business with the new one
+                business_name = self.main.data.location[self.location]["businesses"][traversal_index]
+                if business_name == "street_food":
+                    business_name = self.main.data.progress["businesses"][self.location]["street_food"]["type"]
+                    data = "street_food"
+                else:
+                    data = business_name
+                    
+                if traversal_index > current_businesses_index_limit:
+                    scene_business = Business(
+                        self, business_name,
+                        self.business_callback,
+                        self.main.data.business[data],
+                        midbottom_coordinates=(
+                            int(self.main.data.setting["game_width"] * self.main.data.business[data]["rel_midbottom_coordinates"][0]),
+                            int(self.main.data.setting["game_height"] * self.main.data.business[data]["rel_midbottom_coordinates"][1])
+                        ), 
+                        collide_rect=self.main.data.business[data]["collide_rect"],
+                        **self.main.data.business_images[business_name]
+                    )
+                    self.business_data[business_name] = {}
+                    self.business_data[business_name]["meta"] = self.main.data.business[data]
+                    self.business_data[business_name]["object"] = scene_business
+                    scene_business.add(self.general_sprites)
+                else:
+                    # transfer old key details to new key
+                    if business_name not in current_business_keys:
+                        self.business_data[business_name] = \
+                            self.business_data.pop(
+                                self.business_data[current_business_keys[traversal_index]])
+                        
+                    self.business_data[business_name]["meta"] = self.main.data.business[data]
+                    self.business_data[business_name]["object"].reconstruct(
+                        self, business_name,
+                        self.business_callback,
+                        self.main.data.business[data],
+                        midbottom_coordinates=(
+                            int(self.main.data.setting["game_width"] * self.main.data.business[data]["rel_midbottom_coordinates"][0]),
+                            int(self.main.data.setting["game_height"] * self.main.data.business[data]["rel_midbottom_coordinates"][1])
+                        ), 
+                        collide_rect=self.main.data.business[data]["collide_rect"],
+                        **self.main.data.business_images[business_name]
+                    )
+                    self.business_data[business_name]["object"].visible = True
+            elif traversal_index > new_business_index_limit:
+                # disable the current business
+                # if traversal index <= current_businesses_index_limit
+                #       disable the current business
+                if traversal_index <= current_businesses_index_limit:
+                    self.business_data[current_business_keys[traversal_index]]["object"].visible = False
+            
+        # Refreshing order of buttons after a possible new businesses appreared
+        #   in the business_data dictionary object
+        for button in self.buttons:
+            button.remove(self.buttons)
+        self.profile_holder.add(self.buttons)
+        self.main.sliding_menu.sliding_menu_button.add(self.buttons)
+        for key, business in self.business_data.items():
+            business["object"].add(self.buttons)
+        
+        
     
     def time_callback_seconds(self, time_amplification):
         pass
@@ -497,11 +582,11 @@ class Scene():
                         f"Location: {self.location}",
                         f"Total crowd spawned: {self.footprint_counter}",
                         f"Customers spawned: {self.customers_spawned}",
-                        f"Objects/Max displayed: {len(self.general_sprites)}/{self.object_limit}",
-                        f"Tindahan: {len(self.business_data['sari_sari_store']['object'].queue)}/{self.business_data['sari_sari_store']['object'].queue_limit} Served customers: {self.business_data['sari_sari_store']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['sari_sari_store']['sales']:,.2f}",
-                        f"Food cart: {len(self.business_data['food_cart']['object'].queue)}/{self.business_data['food_cart']['object'].queue_limit} Served customers: {self.business_data['food_cart']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['food_cart']['sales']:,.2f}",
-                        f"Buko stall: {len(self.business_data['buko_stall']['object'].queue)}/{self.business_data['buko_stall']['object'].queue_limit} Served customers: {self.business_data['buko_stall']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['street_food']['sales']:,.2f}",
-                        f"Ukay-ukay: {len(self.business_data['ukay_ukay']['object'].queue)}/{self.business_data['ukay_ukay']['object'].queue_limit} Served customers: {self.business_data['ukay_ukay']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['ukay_ukay']['sales']:,.2f}",
+                        f"Objects/Max displayed: {len(self.general_sprites)}/{self.object_limit}"
+                        # f"Tindahan: {len(self.business_data['sari_sari_store']['object'].queue)}/{self.business_data['sari_sari_store']['object'].queue_limit} Served customers: {self.business_data['sari_sari_store']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['sari_sari_store']['sales']:,.2f}",
+                        # f"Food cart: {len(self.business_data['food_cart']['object'].queue)}/{self.business_data['food_cart']['object'].queue_limit} Served customers: {self.business_data['food_cart']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['food_cart']['sales']:,.2f}",
+                        # f"Buko stall: {len(self.business_data['buko_stall']['object'].queue)}/{self.business_data['buko_stall']['object'].queue_limit} Served customers: {self.business_data['buko_stall']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['street_food']['sales']:,.2f}",
+                        # f"Ukay-ukay: {len(self.business_data['ukay_ukay']['object'].queue)}/{self.business_data['ukay_ukay']['object'].queue_limit} Served customers: {self.business_data['ukay_ukay']['object'].served_count} Sales: P{self.main.data.progress['businesses'][self.location]['ukay_ukay']['sales']:,.2f}",
                     ]
                 )
             

@@ -38,7 +38,24 @@ class Time():
         self.previous_time = {}
         self.callbacks = callbacks
         self.update_previous_time()
-
+        
+        
+    def reconstruct(self, debug, start_time: str, 
+                 fps: int, amplify: int, 
+                 **callbacks):
+        self.increment = 86400 / amplify / fps
+        debug.new_line()
+        debug.log(
+            f"\nTime Reconstruction: \n"
+            f"1 second in real life = {86400 / amplify:,.2f} second(s) in-game\n"
+            f"{amplify / 60:,.2f} minutes in real life = 1 day in game\n"
+            f"{amplify / 24:,.2f} seconds in real life = 1 hour in game")
+        self.time = datetime.strptime(start_time, self.format)
+        self.time_difference = 0
+        self.previous_time = {}
+        self.callbacks = callbacks
+        self.update_previous_time()
+        
         
     def tick(self):
         previous_tick_time = self.time
@@ -66,22 +83,6 @@ class Time():
                 self.previous_time["year"]["function"]()
                 
             self.update_previous_time()
-        
-        
-    def get_date(self):
-        return datetime.strftime(self.time, self.date_display_format)
-        
-    
-    def get_time(self):
-        return datetime.strftime(self.time, self.time_display_format)
-    
-
-    def get_full(self):
-        return datetime.strftime(self.time, self.format)
-    
-    
-    def set_time(self, new_time):
-        self.time = datetime.strptime(new_time, self.format)
     
     
     def update_previous_time(self):
@@ -111,6 +112,22 @@ class Time():
                 "function" : self.callbacks["year"]
             },
         }
+        
+        
+    def get_date(self):
+        return datetime.strftime(self.time, self.date_display_format)
+        
+    
+    def get_time(self):
+        return datetime.strftime(self.time, self.time_display_format)
+    
+
+    def get_full(self):
+        return datetime.strftime(self.time, self.format)
+    
+    
+    def set_time(self, new_time):
+        self.time = datetime.strptime(new_time, self.format)
 
 
 # if __name__ == "__main__":

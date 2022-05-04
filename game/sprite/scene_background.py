@@ -55,6 +55,39 @@ class SceneBackground(Sprite):
         self.check_change()
         
         
+    def reconstruct(self, screen: Surface, time: Time, **data):
+        self.screen = screen
+        self.backgrounds = [
+            {
+                "image" : data["early_morning"].convert_alpha(),
+                "time" : (3, 5)
+            },
+            {
+                "image" : data["morning"].convert_alpha(),
+                "time" : (5, 9)
+            },
+            {
+                "image" : data["noon"].convert_alpha(),
+                "time" : (9, 15)
+            },
+            {
+                "image" : data["afternoon"].convert_alpha(),
+                "time" : (15, 18)
+            },
+            {
+                "image" : data["night"].convert_alpha(),
+                "time" : (18, 21)
+            },
+            {
+                "image" : data["midnight"].convert_alpha(),
+                "time" : (21, 3)
+            }
+        ]
+        
+        self.time = time.time
+        self.check_change()
+        
+        
     def update(self):
         self.screen.blit(self.image, self.rect)
         

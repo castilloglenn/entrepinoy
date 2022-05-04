@@ -102,6 +102,68 @@ class Button(Sprite):
         self.set_image_and_rect()
         
         
+    def reconstruct(self, main, callback_function, 
+                 top_left_coordinates=None, 
+                 center_coordinates=None, 
+                 midbottom_coordinates=None,
+                 collide_rect : tuple[float]=None,
+                 **states):
+        self.main = main
+        self.callback = callback_function
+        self.idle = states["idle"].convert_alpha()
+        
+        if "hovered" in states:
+            self.hovered = states["hovered"].convert_alpha()
+        else:
+            self.hovered = states["idle"].convert_alpha()
+            self.outline = states["outline"].convert_alpha()
+            self.hovered.blit(self.outline, (0, 0))
+            
+        if "disabled" in states:
+            self.disabled = states["disabled"].convert_alpha()
+            
+        if "tooltip" in states:
+            self.has_tooltip = True
+            self.previous_mouse_location = None
+            self.set_tooltip(states["tooltip"])
+        
+        self.top_left_coordinates = top_left_coordinates
+        self.center_coordinates = center_coordinates
+        self.midbottom_coordinates = midbottom_coordinates
+        
+        self.image = self.idle
+        self.rect = self.image.get_rect()
+        self.collide_rect = None
+        
+        if self.top_left_coordinates != None:
+            self.rect.topleft = self.top_left_coordinates
+        elif self.center_coordinates != None:
+            self.rect.center = self.center_coordinates
+        elif self.midbottom_coordinates != None:
+            self.rect.midbottom = self.midbottom_coordinates
+        else:
+            self.rect.topleft = (0, 0)
+        
+        self.x_coordinate_offset = 0
+        
+        self.collide_rect_rel = collide_rect
+        if collide_rect == None:
+            self.collide_rect_rel = (0, 0, 1, 1)
+            
+        self.collide_x = self.rect.x + self.rect.width * self.collide_rect_rel[0]
+        self.collide_y = self.rect.y + self.rect.height * self.collide_rect_rel[1]
+        self.collide_width = self.rect.width * self.collide_rect_rel[2]
+        self.collide_height = self.rect.height * self.collide_rect_rel[3]
+        
+        # Screen surface (for displaying hitbox)
+        self.hitbox = Surface((self.collide_width, self.collide_height))
+        self.hitbox.fill(self.bound_color)
+        self.hitbox.convert_alpha()
+        self.hitbox.set_alpha(self.bound_opacity)
+        
+        self.set_image_and_rect()
+        
+        
     def update(self):
         if self.visible:
             self.collide_x = self.rect.x + self.rect.width * self.collide_rect_rel[0]

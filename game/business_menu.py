@@ -182,6 +182,20 @@ class BusinessMenu():
         )
         
         
+    def reconstruct(self, main, time, location):
+        self.main = main
+        self.screen = self.main.screen
+        self.data = None
+        self.time = time
+        self.location = location
+        
+        self.sell_back_ratio = 0.5
+        self.business_cost = None
+        self.daily_expense = None
+        self.employee_cost = None
+        self.income_per_customer = None
+        
+        
     def get_sales(self):
         return self.main.data.progress["businesses"][self.location][self.data.name_code]["sales"]
     

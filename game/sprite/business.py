@@ -90,7 +90,7 @@ class Business(Button):
         for frame_name, content in self.employee_json['frames'].items():
             self.name_keyword = frame_name.replace("_employee_1.png", "")
             break
-            
+        
         for index in range(len(self.employee_json['frames'])):
             self.employee_frames.append(self.fetch_sprite(f'{self.name_keyword}_employee_{index + 1}.png'))
             
@@ -143,6 +143,80 @@ class Business(Button):
         self.has_employee = self.progress["businesses"][self.progress["last_location"]][self.name_code]["has_employee"]
         
         super().update()
+        
+        
+    def reconstruct(self, scene, name, 
+                 callback_function,
+                 business_data,
+                 top_left_coordinates=None, 
+                 center_coordinates=None, 
+                 midbottom_coordinates=None,
+                 collide_rect=None,
+                 **states):
+        super().__init__(scene.main,
+            callback_function, 
+            top_left_coordinates=top_left_coordinates, 
+            center_coordinates=center_coordinates,
+            midbottom_coordinates=midbottom_coordinates,
+            collide_rect=collide_rect,
+            **states)
+        self.scene = scene
+        self.name = name
+        self.time = self.scene.time
+        self.progress = None 
+        
+        self.states = states
+        self.outline = self.states["outline"].convert_alpha()
+        
+        # Business attributes
+        self.business_data = business_data
+        self.name_code = None
+        self.ownership = None
+        self.open_until = None
+        self.business_state = None
+        self.has_employee = None
+        
+        self.employee_spritesheet = self.states["employee"]["spritesheet"]
+        self.employee_json = self.states["employee"]["json"]
+        self.serve_button_relative_location = (0.5, 0.5)
+        self.employee_frames = []
+        self.employee_index = 0
+
+        self.fps = self.scene.main.data.setting["fps"]
+        self.frame_length = 1 / self.fps
+        
+        # Serving animation waiting attributes
+        self.serving_frame_counter = 0
+        self.serving_seconds_counter = 0
+        
+        # Income display message 
+        self.current_income = 0.0
+        self.income_visible = False
+        self.income_travel_distance_per_frame = self.income_travel_distance * self.frame_length
+        self.income_travel_counter = 0
+        self.income_frame_counter = 0
+        self.income_seconds_counter = 0
+        self.income_decrement = (self.frame_length / self.income_display_fade_duration) * 255
+        
+        self.animate_speed = self.fps * 0.12
+        self.animation_tick = 0
+        
+        # Parsing all the sprites contained in the spritesheet
+        for frame_name, content in self.employee_json['frames'].items():
+            self.name_keyword = frame_name.replace("_employee_1.png", "")
+            break
+        
+        for index in range(len(self.employee_json['frames'])):
+            self.employee_frames.append(self.fetch_sprite(f'{self.name_keyword}_employee_{index + 1}.png'))
+            
+        self.standby_image = self.employee_frames.pop()
+        self.is_standby = True
+        self.is_serving = False
+        
+        self.queue = []
+        
+        # Assigning important data to the None variables above
+        self.reset_data()
         
         
     def disown_business(self):
@@ -324,6 +398,9 @@ class Business(Button):
     
     
     def check_hovered(self, hover_coordinates):
+        if self.is_disabled or not self.visible:
+            return False
+        
         if self.serve_button.check_hovered(hover_coordinates) \
             and self.serve_button.visible:
                 self.state = "idle"
@@ -336,6 +413,9 @@ class Business(Button):
         
     
     def check_clicked(self, click_coordinates):
+        if self.is_disabled or not self.visible:
+            return False
+        
         if self.serve_button.check_clicked(click_coordinates) \
             and self.serve_button.visible:
                 return True
