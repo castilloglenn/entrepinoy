@@ -16,18 +16,18 @@ class Customer(NPC):
                 emojis: dict,
                 fps: int, 
                 safe_spot: tuple[float],
-                **businesses):
+                businesses):
         super().__init__(screen, name, spritesheet, meta_data, fps)
         
-        keys = list(businesses.keys())
         # Randomly selecting businesses
         while True:
-            self.business_target = businesses[random.choice(keys)]
+            self.business_target = businesses[random.randrange(len(businesses))]
             if len(self.business_target["object"].queue) < self.business_target["object"].queue_limit \
-                and self.business_target["object"].business_state == "open":
-                self.queue_number = len(self.business_target["object"].queue)
-                self.business_target["object"].queue.append(self)
-                break
+                and self.business_target["object"].business_state == "open" \
+                and self.business_target["object"].visible:
+                    self.queue_number = len(self.business_target["object"].queue)
+                    self.business_target["object"].queue.append(self)
+                    break
         
         # Customer attributes
         self.happy_emoji = emojis["happy_emoji"].convert_alpha()

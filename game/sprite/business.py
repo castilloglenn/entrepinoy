@@ -490,3 +490,7 @@ class Business(Button):
         self.reset_income_display()
         self.income_message.set_message([f"+P{self.current_income:,.2f}"])
         self.income_visible = True
+        
+        
+    def __str__(self):
+        return f"{self.name_code}: {len(self.queue)}/{self.queue_limit} Served customers: {self.served_count}"

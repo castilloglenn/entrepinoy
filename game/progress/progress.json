@@ -1,12 +1,12 @@
 {
-    "time": "2022/05/04, 23:08:16.604407",
-    "last_login": "2022/05/04, 22:02:01.463699",
+    "time": "2022/05/05, 13:20:13.841772",
+    "last_login": "2022/05/05, 11:56:56.229442",
     "last_location": "location_b",
     "cash": 5000.0,
     "businesses": {
         "location_a": {
             "street_food": {
-                "date_acquired": "2022/05/04, 22:01:33.404407",
+                "date_acquired": "2022/05/05, 11:53:35.441772",
                 "type": "buko_stall",
                 "ownership": true,
                 "is_open": false,

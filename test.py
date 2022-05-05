@@ -23,22 +23,11 @@
 
 from pprint import pprint
 
+a = [
+    "a",
+    "b",
+    "c",
+    list(x for x in range(5))
+]
 
-sheesh = {
-    "a" : {
-        "ge" : "lods",
-        "ok" : "lang",
-        "naman" : "ako"
-    },
-    "b" : {
-        "asd" : "qwe",
-        "sgg" : "dsa",
-        "xcv" : "qwes"
-    }
-}
-
-pprint(sheesh)
-sheesh[{"a": "c"}] = sheesh.pop("a")
-print
-pprint(sheesh)
-
+print(a)
