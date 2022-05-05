@@ -1,3 +1,6 @@
+settings
+location scene background placeholders
+
 create upgrade menu
     operating hours
     gross income per customer

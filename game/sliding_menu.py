@@ -95,13 +95,13 @@ class SlidingMenu():
                 "tooltip" : ["Casino"]
             }
         )
-        self.residence_button = Button(
-            self.main, self.residence_callback,
+        self.my_room_button = Button(
+            self.main, self.my_room_callback,
             **{
                 "idle" : self.main.data.meta_images["map_button_idle"],
                 "outline" : self.main.data.meta_images["map_button_outline"],
                 "disabled" : self.main.data.meta_images["map_button_disabled"],
-                "tooltip" : ["Residence"]
+                "tooltip" : ["My Room"]
             }
         )
         
@@ -151,10 +151,10 @@ class SlidingMenu():
         self.setting_button = Button(
             self.main, self.setting_callback,
             **{
-                "idle" : self.main.data.meta_images["map_button_idle"],
-                "outline" : self.main.data.meta_images["map_button_outline"],
-                "disabled" : self.main.data.meta_images["map_button_disabled"],
-                "tooltip" : ["Settings"]
+                "idle" : self.main.data.meta_images["setting_button_idle"],
+                "outline" : self.main.data.meta_images["setting_button_outline"],
+                "disabled" : self.main.data.meta_images["setting_button_disabled"],
+                "tooltip" : ["Setting"]
             }
         )
         self.main_menu_button = Button(
@@ -209,7 +209,7 @@ class SlidingMenu():
         print("Casino button clicked")
         
         
-    def residence_callback(self, *args):
+    def my_room_callback(self, *args):
         print("Residence button clicked")
         
         
@@ -283,7 +283,7 @@ class SlidingMenu():
             self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.2925)
         )
-        self.residence_button.top_left_coordinates = (
+        self.my_room_button.top_left_coordinates = (
             self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.2925)
         )
@@ -326,7 +326,7 @@ class SlidingMenu():
         
         self.bank_button.add(self.objects, self.hoverable_buttons, self.buttons)
         self.casino_button.add(self.objects, self.hoverable_buttons, self.buttons)
-        self.residence_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.my_room_button.add(self.objects, self.hoverable_buttons, self.buttons)
         
         self.news_button.add(self.objects, self.hoverable_buttons, self.buttons)
         self.crypto_button.add(self.objects, self.hoverable_buttons, self.buttons)

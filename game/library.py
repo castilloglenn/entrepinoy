@@ -45,13 +45,17 @@ class Library():
         # Images 
         self.meta_images = {
             "icon" : self.get_image("meta", "game_icon.png"),
+            
             "studio" : self.get_image("meta", "studio.png"),
             "menu_background" : self.get_image("meta", "menu_background.png"),
+            "window_background" : self.get_image("meta", "window_background.png"),
+            
             "sliding_menu" : self.get_image("meta", "sliding_menu.png"),
             "confirm_button_idle" : self.get_image("meta", "confirm_button_idle.png"),
             "confirm_button_hovered" : self.get_image("meta", "confirm_button_hovered.png"),
             "cancel_button_idle" : self.get_image("meta", "cancel_button_idle.png"),
             "cancel_button_hovered" : self.get_image("meta", "cancel_button_hovered.png"),
+            
             "sliding_menu_button_idle" : self.get_image("meta", "sliding_menu_button_idle.png"),
             "sliding_menu_button_hovered" : self.get_image("meta", "sliding_menu_button_hovered.png"),
             
@@ -69,7 +73,11 @@ class Library():
             
             "achievement_button_idle" : self.get_image("meta", "achievement_icon_idle.png"),
             "achievement_button_disabled" : self.get_image("meta", "achievement_icon_disabled.png"),
-            "achievement_button_outline" : self.get_image("meta", "achievement_icon_outline.png")
+            "achievement_button_outline" : self.get_image("meta", "achievement_icon_outline.png"),
+            
+            "setting_button_idle" : self.get_image("meta", "setting_icon_idle.png"),
+            "setting_button_disabled" : self.get_image("meta", "setting_icon_disabled.png"),
+            "setting_button_outline" : self.get_image("meta", "setting_icon_outline.png")
         }
         self.title_screen = {
             "title_screen" : self.get_image("title_screen", "title_screen.png"),

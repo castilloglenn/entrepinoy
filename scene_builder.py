@@ -28,6 +28,7 @@ class Scene():
         # Settings up the scene
         self.main = main
         self.show_debug_info = True
+        self.running = False
         
         self.location = self.main.data.progress["last_location"]
         self.crowd_chance = self.main.data.crowd_statistics[self.location]
@@ -435,7 +436,10 @@ class Scene():
                 self.main.debug.log("Debug details hidden")
             
         elif key == pygame.K_F2:
-            pass
+            self.main.screen = pygame.display.set_mode(
+                (self.main.data.setting["game_width"],
+                self.main.data.setting["game_height"]), pygame.FULLSCREEN | pygame.SCALED
+            )
             
         elif key == pygame.K_F3:
             pass
@@ -489,9 +493,10 @@ class Scene():
         # Check if the sliding button is in the scene yet
         if self.buttons not in self.main.sliding_menu.sliding_menu_button.groups():
             self.main.sliding_menu.sliding_menu_button.add(self.buttons)
-            
+        
         pygame.mixer.music.load(self.main.data.music["main_menu"])
         pygame.mixer.music.play(-1)
+        pygame.mixer.music.stop()
         
         self.running = True
         while self.running:

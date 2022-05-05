@@ -1,43 +1,27 @@
-[16:42:54:189] Debug started
-[16:42:54:189] Memory Usage: 30.79MB (73.7%)
-[16:42:54:197] Free Memory: 1,602.64MB
-[16:42:54:204] Highest Usage: 30.79MB
+[20:53:54:114] Debug started
+[20:53:54:115] Memory Usage: 31.03MB (66.2%)
+[20:53:54:120] Free Memory: 2,058.45MB
+[20:53:54:131] Highest Usage: 31.03MB
 
-[16:42:54:736] Game Title: EntrePinoy
-[16:42:54:737] Game Version: 0.0.1
-[16:42:54:769] Display Width: 1280
-[16:42:54:778] Display Height: 720
-[16:42:54:787] Game FPS: 60
+[20:53:54:695] Game Title: EntrePinoy
+[20:53:54:696] Game Version: 0.0.1
+[20:53:54:726] Display Width: 1280
+[20:53:54:734] Display Height: 720
+[20:53:54:742] Game FPS: 60
 
-[16:42:54:822] 
+[20:53:54:769] 
 Time amplification: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 25.00 seconds in real life = 1 hour in game
 
-[16:42:54:848] Initialized scene
-[16:42:59:529] Memory after initialization:
-[16:42:59:530] Memory Usage: 206.07MB (76.4%)
-[16:42:59:538] Free Memory: 1,436.77MB
-[16:42:59:543] Highest Usage: 206.07MB
+[20:53:54:795] Initialized scene
+[20:53:54:988] Memory after initialization:
+[20:53:54:988] Memory Usage: 214.40MB (69.3%)
+[20:53:54:995] Free Memory: 1,873.09MB
+[20:53:55:000] Highest Usage: 214.40MB
 
-[16:43:00:643] Continue game entered
-[16:43:00:648] Memory Usage: 206.14MB (76.7%)
-[16:43:00:655] Free Memory: 1,423.09MB
-[16:43:00:662] Highest Usage: 206.14MB
-
-[16:43:00:850] CRITICAL: FPS Plummeted 9/60
-[16:43:00:852] Memory Usage: 206.52MB (76.7%)
-[16:43:00:861] Free Memory: 1,423.09MB
-[16:43:00:870] Highest Usage: 206.52MB
-[16:43:04:852] Autosaved progress
-[16:43:09:851] Autosaved progress
-[16:43:14:375] Hour callback
-[16:43:14:856] Autosaved progress
-[16:43:19:860] Autosaved progress
-[16:43:20:854] Autosaved progress before exit
-
-[16:43:20:914] Memory Usage: 209.88MB (76.5%)
-[16:43:20:927] Free Memory: 1,435.74MB
-[16:43:20:939] Highest Usage: 214.07MB
-[16:43:20:949] Debug closed
+[20:54:06:305] Memory Usage: 211.09MB (68.8%)
+[20:54:06:318] Free Memory: 1,919.54MB
+[20:54:06:329] Highest Usage: 214.40MB
+[20:54:06:337] Debug closed

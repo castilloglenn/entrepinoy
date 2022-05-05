@@ -10,9 +10,11 @@ from game.debug import Debugger
 from game.library import Library
 
 from scene_builder import Scene
+from setting import Setting
 
 import pygame
 import os, sys
+
 
 
 class Main():
@@ -21,7 +23,7 @@ class Main():
     This runs the main menu of the game when played.
     """
     def __init__(self):
-        self.show_studio_intro = True
+        self.show_studio_intro = False
         
         # Setting up the debugger
         self.debug = Debugger()
@@ -57,6 +59,7 @@ class Main():
         self.scene_window = None
         if self.data.progress is not None:
             self.scene_window = Scene(self)
+        self.setting_window = Setting(self)
         
         # Sprites and sprite groups
         self.buttons = pygame.sprite.Group()
@@ -257,7 +260,7 @@ class Main():
         
         
     def setting_callback(self, *args):
-        print("Setting clicked")
+        self.setting_window.run()
         
         
     def exit_callback(self, *args):
