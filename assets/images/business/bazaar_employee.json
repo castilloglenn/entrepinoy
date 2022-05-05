@@ -1,0 +1,195 @@
+{
+	"frames": {
+		"bazaar_employee_1.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 544,
+				"h": 536
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 544,
+				"h": 536
+			},
+			"sourceSize": {
+				"w": 544,
+				"h": 536
+			}
+		},
+		"bazaar_employee_2.png": {
+			"frame": {
+				"x": 547,
+				"y": 1,
+				"w": 544,
+				"h": 536
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 544,
+				"h": 536
+			},
+			"sourceSize": {
+				"w": 544,
+				"h": 536
+			}
+		},
+		"bazaar_employee_3.png": {
+			"frame": {
+				"x": 1,
+				"y": 539,
+				"w": 544,
+				"h": 536
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 544,
+				"h": 536
+			},
+			"sourceSize": {
+				"w": 544,
+				"h": 536
+			}
+		},
+		"bazaar_employee_4.png": {
+			"frame": {
+				"x": 547,
+				"y": 539,
+				"w": 544,
+				"h": 536
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 544,
+				"h": 536
+			},
+			"sourceSize": {
+				"w": 544,
+				"h": 536
+			}
+		},
+		"bazaar_employee_5.png": {
+			"frame": {
+				"x": 1,
+				"y": 1077,
+				"w": 544,
+				"h": 536
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 544,
+				"h": 536
+			},
+			"sourceSize": {
+				"w": 544,
+				"h": 536
+			}
+		},
+		"bazaar_employee_6.png": {
+			"frame": {
+				"x": 547,
+				"y": 1077,
+				"w": 544,
+				"h": 536
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 544,
+				"h": 536
+			},
+			"sourceSize": {
+				"w": 544,
+				"h": 536
+			}
+		},
+		"bazaar_employee_7.png": {
+			"frame": {
+				"x": 1093,
+				"y": 1,
+				"w": 544,
+				"h": 536
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 544,
+				"h": 536
+			},
+			"sourceSize": {
+				"w": 544,
+				"h": 536
+			}
+		},
+		"bazaar_employee_8.png": {
+			"frame": {
+				"x": 1093,
+				"y": 539,
+				"w": 544,
+				"h": 536
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 544,
+				"h": 536
+			},
+			"sourceSize": {
+				"w": 544,
+				"h": 536
+			}
+		},
+		"bazaar_employee_9.png": {
+			"frame": {
+				"x": 1093,
+				"y": 1077,
+				"w": 544,
+				"h": 536
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 544,
+				"h": 536
+			},
+			"sourceSize": {
+				"w": 544,
+				"h": 536
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 1638,
+			"h": 1614
+		},
+		"scale": "1"
+	}
+}
