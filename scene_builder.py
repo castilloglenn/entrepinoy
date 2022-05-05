@@ -489,6 +489,9 @@ class Scene():
         # Check if the sliding button is in the scene yet
         if self.buttons not in self.main.sliding_menu.sliding_menu_button.groups():
             self.main.sliding_menu.sliding_menu_button.add(self.buttons)
+            
+        pygame.mixer.music.load(self.main.data.music["main_menu"])
+        pygame.mixer.music.play(-1)
         
         self.running = True
         while self.running:

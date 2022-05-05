@@ -219,6 +219,12 @@ class Library():
             "yellow" : (255, 215, 0),
             "brown" : (54, 35, 35)
         }
+        
+        # Music BG and SFX
+        self.music = {
+            "studio_intro" : self.get_sfx("SynthChime1.mp3"),
+            "main_menu" : self.get_bgm("Cool-Menu-Loop.mp3")
+        }
     
     
     def get_dict_from_json(self, folder_name: str, json_name: str):
@@ -245,6 +251,17 @@ class Library():
         dirname = os.path.dirname(__file__)
         image_path = os.path.join(dirname, "..", "assets", "images", folder_name, image_name)
         return pygame.image.load(image_path)
+            
+            
+    def get_sfx(self, music_name):
+        dirname = os.path.dirname(__file__)
+        music_path = os.path.join(dirname, "..", "assets", "music", "sfx", music_name)
+        return pygame.mixer.Sound(music_path)
+            
+            
+    def get_bgm(self, music_name):
+        dirname = os.path.dirname(__file__)
+        return os.path.join(dirname, "..", "assets", "music", "bgm", music_name)
     
 
     def get_font(self, font_name: str, size: int):

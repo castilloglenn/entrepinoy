@@ -21,6 +21,8 @@ class Main():
     This runs the main menu of the game when played.
     """
     def __init__(self):
+        self.show_studio_intro = True
+        
         # Setting up the debugger
         self.debug = Debugger()
         
@@ -111,9 +113,10 @@ class Main():
         self.last_mouse_pos = None
         
         # Introduction TODO temporarily disabled
-        # self.intro_duration = self.data.meta["intro_duration"]
-        # self.intro_transition = self.data.meta["intro_transition"]
-        # self.present_intro()
+        self.intro_duration = self.data.meta["intro_duration"]
+        self.intro_transition = self.data.meta["intro_transition"]
+        if self.show_studio_intro:
+            self.present_intro()
         
         # Main loop
         self.debug.log("Memory after initialization:")
@@ -145,6 +148,7 @@ class Main():
         
         # Setting the clock
         self.clock = pygame.time.Clock()
+        
         self.debug.log(f"Game FPS: {self.data.setting['fps']}")
         
     
@@ -268,6 +272,7 @@ class Main():
         increment = (255 / self.data.setting["fps"]) / self.intro_transition
         fade = "in" # values: in, out, hold
         
+        self.data.music["studio_intro"].play()
         while intro:
             # Screen rendering
             self.screen.blit(self.data.meta_images["studio"], (0, 0))
@@ -307,6 +312,8 @@ class Main():
         
         
     def main_loop(self):
+        pygame.mixer.music.load(self.data.music["main_menu"])
+        pygame.mixer.music.play(-1)
         while self.running:
             # Screen rendering
             self.screen.blit(self.data.title_screen["title_screen"], (0, 0))
