@@ -188,6 +188,7 @@ class SlidingMenu():
         elif location == "location_b":
             self.main.data.progress["last_location"] = "location_a"
         
+        self.tuck()
         self.main.scene_window.reconstruct(self.main)
         
         
@@ -232,6 +233,14 @@ class SlidingMenu():
         
         
     def main_menu_callback(self, *args):
+        self.tuck()
+        self.main.scene_window.update_data()
+        self.main.scene_window.running = False
+        self.main.debug.log("Autosaved progress before going to main menu")  
+        self.main.debug.log("Exited scene via Sliding Menu")
+        
+    
+    def tuck(self):
         if not self.is_tucked:
             self.is_moving = False
             self.is_tucked = True
@@ -241,11 +250,6 @@ class SlidingMenu():
             for button in self.buttons:
                 button.x_coordinate_offset = 0
                 button.set_image_and_rect()
-        
-        self.main.scene_window.update_data()
-        self.main.scene_window.running = False
-        self.main.debug.log("Autosaved progress before going to main menu")  
-        self.main.debug.log("Exited scene via Sliding Menu")
         
         
     def update_endpoint(self):

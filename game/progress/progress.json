@@ -1,8 +1,8 @@
 {
-    "time": "2022/05/05, 15:33:39.465258",
-    "last_login": "2022/05/05, 13:06:41.987003",
+    "time": "2022/05/05, 17:51:51.465258",
+    "last_login": "2022/05/05, 13:13:20.395052",
     "last_location": "location_a",
-    "cash": 4694.0,
+    "cash": 4709.25,
     "businesses": {
         "location_a": {
             "street_food": {
@@ -12,11 +12,11 @@
                 "is_open": true,
                 "open_until": "2022/05/05, 21:14:41.865258",
                 "has_employee": true,
-                "sales": 0.0,
-                "lifetime_sales": 0.0,
+                "sales": 30.25,
+                "lifetime_sales": 45.5,
                 "last_profit": 0.0,
                 "lifetime_profit": 0.0,
-                "current_operation_sales": 0.0
+                "current_operation_sales": 45.5
             },
             "sari_sari_store": {
                 "date_acquired": "",
@@ -59,11 +59,11 @@
                 "is_open": true,
                 "open_until": "2022/05/05, 21:59:53.865258",
                 "has_employee": true,
-                "sales": 9308.25,
-                "lifetime_sales": 9308.25,
+                "sales": 11058.0,
+                "lifetime_sales": 11058.0,
                 "last_profit": 0.0,
                 "lifetime_profit": 0.0,
-                "current_operation_sales": 9308.25
+                "current_operation_sales": 11058.0
             },
             "test_business_b": {
                 "date_acquired": "2022/05/05, 13:05:56.369109",
