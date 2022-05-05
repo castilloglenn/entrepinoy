@@ -243,6 +243,9 @@ class Business(Button):
     
     
     def update(self):
+        if not self.visible:
+            return
+        
         if self.is_business_serving():
             self.animation_tick += 1
             if self.animation_tick >= self.animate_speed:

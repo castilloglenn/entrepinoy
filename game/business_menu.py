@@ -84,7 +84,8 @@ class BusinessMenu():
                 "disabled" : self.main.data.scene["collect_sales_button_disabled"].convert_alpha(),
                 "tooltip" : [
                     "Collect the current sales",
-                    "of the business."
+                    "of the business.", "",
+                    "[Keyboard shortcut: C]"
                 ]
             }
         )
@@ -512,6 +513,8 @@ class BusinessMenu():
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     self.background.enable = False
+                if event.key == pygame.K_c:
+                    self.collect_sales_button.force_clicked()
             elif event.type == pygame.MOUSEMOTION: 
                 for button in self.hoverable_buttons:
                     button.check_hovered(event.pos)

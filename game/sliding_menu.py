@@ -189,6 +189,7 @@ class SlidingMenu():
             self.main.data.progress["last_location"] = "location_a"
         
         self.tuck()
+        self.main.scene_window.update_data()
         self.main.scene_window.reconstruct(self.main)
         
         

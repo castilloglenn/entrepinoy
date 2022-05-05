@@ -11,6 +11,7 @@ class Message(Sprite):
                  color: tuple, 
                  outline_color: tuple | None = None,
                  outline_thickness: int = 0,
+                 add_background = False,
                  center_coordinates=None,
                  top_left_coordinates=None,
                  mid_bottom_coordinates=None):
@@ -32,6 +33,7 @@ class Message(Sprite):
         
         self.text_spacing = 3
         self.outline_thickness = outline_thickness
+        self.add_background = add_background
         
         self.image = None
         self.outline_image = None

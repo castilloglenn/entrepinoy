@@ -212,33 +212,6 @@ class Scene():
         self.safe_spot = self.main.data.location[self.location]["safe_spot"]
         self.object_limit = self.main.data.location[self.location]["object_limit"]
         
-        # if the new length is longer than the current length: 4 > 2 : 3
-        #   use the new length as traversal index
-        #       replace the current businesses with new ones
-        #       add new index objects to fill the rest
-        
-        # if the new length is shorter than the current length: 2 < 4 : 1
-        #   use the old length as traversal index
-        #       take note of the new_business_index_limit: 1
-        #       replace the current businesses with new ones until
-        #           the new_business_index_limit is reached
-        #       if it has been reached, disabled the succeeding businesses : 2, 3
-        
-        # if both lengths are equal: 4 = 4: 3
-        #   use any length, doesn't matter 
-        #       replace all businesses with new ones
-        
-        # To combine all these conditions
-        #   use the longer index
-        #       if the traversal index <= new_business_index_limit
-        #           if the object is disabled, re-enable it first
-        #           replace the current business with the new one
-        #           if traversal_index > current_businesses_index_limit
-        #               add new index to the business data and insert business
-        #       if the traversal index > new_business_index_limit
-        #           if traversal index <= current_businesses_index_limit
-        #               disable the current business
-
         self.available_businesses = 0
         self.total_location_businesses = 0
         
@@ -371,7 +344,7 @@ class Scene():
         if npc_chance <= self.crowd_chance[self.time.time.hour] \
                 and len(self.general_sprites) < self.object_limit: 
             self.footprint_counter += 1
-            npc_form = str(random.randint(0, len(self.main.data.crowd_spritesheets) - 2))
+            npc_form = str(random.choice(self.main.data.location[self.location]["npc_indexes"]))
             is_businesses_full = self.check_queues_if_full()
             
             customer_chance = random.randint(0, 100)
@@ -508,7 +481,7 @@ class Scene():
         self.main.debug.log("Autosaved progress before exit")
         self.main.close_game()
         
-        
+    
     def run(self):
         self.main.debug.memory_log()
         self.main.debug.new_line()
@@ -595,5 +568,8 @@ class Scene():
             
             # Updating the display
             self.refresh_display()
+            
+        # Saving the data when exiting the scene
+        self.update_data()
         
     

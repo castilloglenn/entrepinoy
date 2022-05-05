@@ -252,12 +252,16 @@ class Button(Sprite):
             return False
         
         if self.collide_rect.collidepoint(click_coordinates) and self.visible:
-            self.state = "idle"
-            self.set_image_and_rect()
-            self.callback(self)
+            self.force_clicked()
         
         # Return booleans to prevent overlapping buttons to react the same
             return True
         return False
+    
+    
+    def force_clicked(self):
+        self.state = "idle"
+        self.set_image_and_rect()
+        self.callback(self)
         
             

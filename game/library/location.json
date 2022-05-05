@@ -7,7 +7,10 @@
             "ukay_ukay"
         ],
         "safe_spot" : [0.45, 0.55, 0.65, 0.75],
-        "object_limit" : 19
+        "object_limit" : 19,
+        "npc_indexes" : [
+            0, 1, 3, 5, 9, 12, 13, 15, 16
+        ]
     },
     "location_b" : {
         "businesses" : [
@@ -15,7 +18,10 @@
             "test_business_b"
         ],
         "safe_spot" : [0.45, 0.55, 0.65, 0.75],
-        "object_limit" : 29
+        "object_limit" : 29,
+        "npc_indexes" : [
+            2, 4, 6, 7, 8, 10, 11, 14
+        ]
     },
     "location_c" : [
 
