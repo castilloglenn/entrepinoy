@@ -76,6 +76,8 @@ class ResponseMenu():
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 self.background.enable = False
+            if event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER:
+                self.confirm()
         elif event.type == pygame.MOUSEMOTION: 
             for button in self.hoverable_buttons:
                 button.check_hovered(event.pos)

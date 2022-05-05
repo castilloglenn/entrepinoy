@@ -260,7 +260,6 @@ class Scene():
                     data = business_name
                     
                 if traversal_index > current_businesses_index_limit:
-                    print("created new business")
                     scene_business = Business(
                         self, business_name,
                         self.business_callback,
@@ -278,12 +277,6 @@ class Scene():
                     })
                     scene_business.add(self.general_sprites)
                 else:
-                    # if business_name not in current_business_keys:
-                    #     print("created new key and transfered the current index")
-                    #     self.business_data[business_name] = \
-                    #         self.business_data.pop(current_business_keys[traversal_index])
-                    
-                    print("reconstructed data and object")
                     self.business_data[traversal_index]["meta"] = self.main.data.business[data]
                     self.business_data[traversal_index]["object"].reconstruct(
                         self, business_name,
@@ -299,13 +292,7 @@ class Scene():
                     self.business_data[traversal_index]["object"].visible = True
                 self.total_location_businesses += 1
             elif traversal_index > new_business_index_limit:
-                # disable the current business
-                # if traversal index <= current_businesses_index_limit
-                #       disable the current business
-                
-                # TODO: Fix the issue regarding index 2 and 3 the businesses where they are suppose to be in index 0 and 1
                 if traversal_index <= current_businesses_index_limit:
-                    print("unvisibilized the object")
                     self.business_data[traversal_index]["object"].visible = False
            
         # Refreshing order of buttons after a possible new businesses appreared
@@ -318,7 +305,10 @@ class Scene():
         
         for business in self.business_data:
             business["object"].add(self.buttons)
-        
+            
+        for sprite in self.general_sprites:
+            if isinstance(sprite, (Customer, NPC)):
+                sprite.free()
         
     
     def time_callback_seconds(self, time_amplification):
@@ -594,8 +584,8 @@ class Scene():
                     f"{self.main.debug.get_memory_usage()}",
                     f"{self.main.debug.get_free_usage()}",
                     f"Location: {self.location}",
-                    f"Total crowd spawned: {self.footprint_counter}",
-                    f"Customers spawned: {self.customers_spawned}",
+                    f"Businesses Available: {self.available_businesses}/{self.total_location_businesses}",
+                    f"Customers-Crowd Spawned: {self.customers_spawned}/{self.footprint_counter}",
                     f"Objects/Max displayed: {len(self.general_sprites)}/{self.object_limit}"
                 ]
                 for business in self.business_data:

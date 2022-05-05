@@ -52,11 +52,24 @@ class Library():
             "confirm_button_hovered" : self.get_image("meta", "confirm_button_hovered.png"),
             "cancel_button_idle" : self.get_image("meta", "cancel_button_idle.png"),
             "cancel_button_hovered" : self.get_image("meta", "cancel_button_hovered.png"),
-            "map_button_idle" : self.get_image("meta", "map_button_idle.png"),
-            "map_button_disabled" : self.get_image("meta", "map_button_disabled.png"),
-            "map_button_outline" : self.get_image("meta", "map_button_outline.png"),
             "sliding_menu_button_idle" : self.get_image("meta", "sliding_menu_button_idle.png"),
-            "sliding_menu_button_hovered" : self.get_image("meta", "sliding_menu_button_hovered.png")
+            "sliding_menu_button_hovered" : self.get_image("meta", "sliding_menu_button_hovered.png"),
+            
+            "map_button_idle" : self.get_image("meta", "map_icon_idle.png"),
+            "map_button_disabled" : self.get_image("meta", "map_icon_disabled.png"),
+            "map_button_outline" : self.get_image("meta", "map_icon_outline.png"),
+            
+            "mission_button_idle" : self.get_image("meta", "mission_icon_idle.png"),
+            "mission_button_disabled" : self.get_image("meta", "mission_icon_disabled.png"),
+            "mission_button_outline" : self.get_image("meta", "mission_icon_outline.png"),
+            
+            "crypto_button_idle" : self.get_image("meta", "crypto_icon_idle.png"),
+            "crypto_button_disabled" : self.get_image("meta", "crypto_icon_disabled.png"),
+            "crypto_button_outline" : self.get_image("meta", "crypto_icon_outline.png"),
+            
+            "achievement_button_idle" : self.get_image("meta", "achievement_icon_idle.png"),
+            "achievement_button_disabled" : self.get_image("meta", "achievement_icon_disabled.png"),
+            "achievement_button_outline" : self.get_image("meta", "achievement_icon_outline.png")
         }
         self.title_screen = {
             "title_screen" : self.get_image("title_screen", "title_screen.png"),
@@ -252,7 +265,7 @@ class Library():
         self.progress = {
             "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
             "last_login": "",
-            "last_location" : "location_b",
+            "last_location" : "location_a",
             "cash": 5000.0000000000000,
     
             "businesses": {

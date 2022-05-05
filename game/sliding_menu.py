@@ -61,9 +61,9 @@ class SlidingMenu():
         self.mission_button = Button(
             self.main, self.mission_callback,
             **{
-                "idle" : self.main.data.meta_images["map_button_idle"],
-                "outline" : self.main.data.meta_images["map_button_outline"],
-                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "idle" : self.main.data.meta_images["mission_button_idle"],
+                "outline" : self.main.data.meta_images["mission_button_outline"],
+                "disabled" : self.main.data.meta_images["mission_button_disabled"],
                 "tooltip" : ["Missions"]
             }
         )
@@ -117,9 +117,9 @@ class SlidingMenu():
         self.crypto_button = Button(
             self.main, self.crypto_callback,
             **{
-                "idle" : self.main.data.meta_images["map_button_idle"],
-                "outline" : self.main.data.meta_images["map_button_outline"],
-                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "idle" : self.main.data.meta_images["crypto_button_idle"],
+                "outline" : self.main.data.meta_images["crypto_button_outline"],
+                "disabled" : self.main.data.meta_images["crypto_button_disabled"],
                 "tooltip" : [
                     "Crypto",
                     "Market"
@@ -142,9 +142,9 @@ class SlidingMenu():
         self.achievement_button = Button(
             self.main, self.achievement_callback,
             **{
-                "idle" : self.main.data.meta_images["map_button_idle"],
-                "outline" : self.main.data.meta_images["map_button_outline"],
-                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "idle" : self.main.data.meta_images["achievement_button_idle"],
+                "outline" : self.main.data.meta_images["achievement_button_outline"],
+                "disabled" : self.main.data.meta_images["achievement_button_disabled"],
                 "tooltip" : ["Achievements"]
             }
         )
@@ -182,7 +182,13 @@ class SlidingMenu():
         
         
     def map_callback(self, *args):
-        print("Map button clicked")
+        location = self.main.data.progress["last_location"]
+        if location == "location_a":
+            self.main.data.progress["last_location"] = "location_b"
+        elif location == "location_b":
+            self.main.data.progress["last_location"] = "location_a"
+        
+        self.main.scene_window.reconstruct(self.main)
         
         
     def mission_callback(self, *args):
