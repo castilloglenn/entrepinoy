@@ -1,0 +1,195 @@
+{
+	"frames": {
+		"pawnshop_employee_1.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 568,
+				"h": 424
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 568,
+				"h": 424
+			},
+			"sourceSize": {
+				"w": 568,
+				"h": 424
+			}
+		},
+		"pawnshop_employee_2.png": {
+			"frame": {
+				"x": 571,
+				"y": 1,
+				"w": 568,
+				"h": 424
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 568,
+				"h": 424
+			},
+			"sourceSize": {
+				"w": 568,
+				"h": 424
+			}
+		},
+		"pawnshop_employee_3.png": {
+			"frame": {
+				"x": 1,
+				"y": 427,
+				"w": 568,
+				"h": 424
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 568,
+				"h": 424
+			},
+			"sourceSize": {
+				"w": 568,
+				"h": 424
+			}
+		},
+		"pawnshop_employee_4.png": {
+			"frame": {
+				"x": 571,
+				"y": 427,
+				"w": 568,
+				"h": 424
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 568,
+				"h": 424
+			},
+			"sourceSize": {
+				"w": 568,
+				"h": 424
+			}
+		},
+		"pawnshop_employee_5.png": {
+			"frame": {
+				"x": 1,
+				"y": 853,
+				"w": 568,
+				"h": 424
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 568,
+				"h": 424
+			},
+			"sourceSize": {
+				"w": 568,
+				"h": 424
+			}
+		},
+		"pawnshop_employee_6.png": {
+			"frame": {
+				"x": 571,
+				"y": 853,
+				"w": 568,
+				"h": 424
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 568,
+				"h": 424
+			},
+			"sourceSize": {
+				"w": 568,
+				"h": 424
+			}
+		},
+		"pawnshop_employee_7.png": {
+			"frame": {
+				"x": 1141,
+				"y": 1,
+				"w": 568,
+				"h": 424
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 568,
+				"h": 424
+			},
+			"sourceSize": {
+				"w": 568,
+				"h": 424
+			}
+		},
+		"pawnshop_employee_8.png": {
+			"frame": {
+				"x": 1141,
+				"y": 427,
+				"w": 568,
+				"h": 424
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 568,
+				"h": 424
+			},
+			"sourceSize": {
+				"w": 568,
+				"h": 424
+			}
+		},
+		"pawnshop_employee_9.png": {
+			"frame": {
+				"x": 1141,
+				"y": 853,
+				"w": 568,
+				"h": 424
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 568,
+				"h": 424
+			},
+			"sourceSize": {
+				"w": 568,
+				"h": 424
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 1710,
+			"h": 1278
+		},
+		"scale": "1"
+	}
+}

@@ -1,0 +1,195 @@
+{
+	"frames": {
+		"fashion_outlet_outline_1.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_outline_2.png": {
+			"frame": {
+				"x": 687,
+				"y": 1,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_outline_3.png": {
+			"frame": {
+				"x": 1,
+				"y": 363,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_outline_4.png": {
+			"frame": {
+				"x": 687,
+				"y": 363,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_outline_5.png": {
+			"frame": {
+				"x": 1,
+				"y": 725,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_outline_6.png": {
+			"frame": {
+				"x": 687,
+				"y": 725,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_outline_7.png": {
+			"frame": {
+				"x": 1,
+				"y": 1087,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_outline_8.png": {
+			"frame": {
+				"x": 687,
+				"y": 1087,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_outline_9.png": {
+			"frame": {
+				"x": 1373,
+				"y": 1,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 2058,
+			"h": 1448
+		},
+		"scale": "1"
+	}
+}
