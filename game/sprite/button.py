@@ -48,6 +48,7 @@ class Button(Sprite):
         self.has_tooltip = False
         self.tooltip = None
         self.tooltip_display_gap = 30
+        self.previous_mouse_location = (-1, -1)
         
         if "hovered" in states:
             self.hovered = states["hovered"].convert_alpha()
@@ -61,7 +62,6 @@ class Button(Sprite):
             
         if "tooltip" in states:
             self.has_tooltip = True
-            self.previous_mouse_location = (-1, -1)
             self.set_tooltip(states["tooltip"])
             
         self.top_left_coordinates = top_left_coordinates
