@@ -497,7 +497,6 @@ class Scene():
         
         pygame.mixer.music.load(self.main.data.music["main_menu"])
         pygame.mixer.music.play(-1)
-        pygame.mixer.music.stop()
         
         self.running = True
         while self.running:
