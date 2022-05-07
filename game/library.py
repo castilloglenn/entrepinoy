@@ -28,20 +28,6 @@ class Library():
         except FileNotFoundError:
             self.progress = None
         
-        # Fonts
-        self.small_font = {
-            "family" : self.get_font("PixelEmulator-xq08.ttf", 10),
-            "size" : 10
-        }
-        self.medium_font = {
-            "family" : self.get_font("PixelEmulator-xq08.ttf", 18),
-            "size" : 16
-        }
-        self.large_font = {
-            "family" : self.get_font("PixelEmulator-xq08.ttf", 25),
-            "size" : 25
-        }
-        
         # Images 
         self.meta_images = {
             "icon" : self.get_image("meta", "game_icon.png"),
@@ -49,10 +35,14 @@ class Library():
             "studio" : self.get_image("meta", "studio.png"),
             "menu_background" : self.get_image("meta", "menu_background.png"),
             "window_background" : self.get_image("meta", "window_background.png"),
-            
+            "slider" : self.get_image("meta", "slider.png"),
+            "slider_knob_idle" : self.get_image("meta", "slider_knob_idle.png"),
+            "slider_knob_dragged" : self.get_image("meta", "slider_knob_dragged.png"),
             "sliding_menu" : self.get_image("meta", "sliding_menu.png"),
+            
             "confirm_button_idle" : self.get_image("meta", "confirm_button_idle.png"),
             "confirm_button_hovered" : self.get_image("meta", "confirm_button_hovered.png"),
+            
             "cancel_button_idle" : self.get_image("meta", "cancel_button_idle.png"),
             "cancel_button_hovered" : self.get_image("meta", "cancel_button_hovered.png"),
             
@@ -230,8 +220,29 @@ class Library():
         
         # Music BG and SFX
         self.music = {
+            "main_menu" : self.get_bgm("Cool-Menu-Loop.mp3"),
             "studio_intro" : self.get_sfx("SynthChime1.mp3"),
-            "main_menu" : self.get_bgm("Cool-Menu-Loop.mp3")
+            "button_hovered" : self.get_sfx("UI_Quirky20.mp3"),
+            "button_clicked" : self.get_sfx("UI-Quirky_37.mp3"),
+            "earn_coins" : self.get_sfx("Coins2.mp3")
+        }
+        
+        # Fonts
+        self.small_font = {
+            "family" : self.get_font("PixelEmulator-xq08.ttf", 10),
+            "size" : 10
+        }
+        self.medium_font = {
+            "family" : self.get_font("PixelEmulator-xq08.ttf", 18),
+            "size" : 16
+        }
+        self.large_font = {
+            "family" : self.get_font("PixelEmulator-xq08.ttf", 25),
+            "size" : 25
+        }
+        self.title_font = {
+            "family" : self.get_font("PixelEmulator-xq08.ttf", 40),
+            "size" : 40
         }
     
     

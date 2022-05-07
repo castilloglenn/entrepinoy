@@ -475,6 +475,8 @@ class Business(Button):
         
 
     def generate_income(self):
+        self.scene.main.mixer_coins_channel.play(self.scene.main.data.music["earn_coins"])
+        
         self.income_step = 0.25
         self.income_range = (
             int(self.business_data["income_per_customer_range"][0] / self.income_step),

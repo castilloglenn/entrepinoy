@@ -23,8 +23,6 @@ class Main():
     This runs the main menu of the game when played.
     """
     def __init__(self):
-        self.show_studio_intro = False
-        
         # Setting up the debugger
         self.debug = Debugger()
         
@@ -34,6 +32,7 @@ class Main():
         # Setting up the game
         pygame.init()
         pygame.mixer.init()
+        pygame.mixer.set_num_channels(16)
         pygame.mouse.set_cursor(pygame.cursors.tri_left)
         
         # Setting up the data
@@ -41,6 +40,23 @@ class Main():
         self.screen = None
         self.clock = None
         self.initialize_game()
+        
+        self.show_studio_intro = False
+        self.is_full_screen = False
+        self.volume_bgm = self.data.setting["bgm"]
+        self.volume_sfx = self.data.setting["sfx"]
+        
+        self.mixer_buttons_channel = pygame.mixer.Channel(1)
+        self.mixer_coins_channel = pygame.mixer.Channel(2)
+        
+        self.mixer_channels = [
+            self.mixer_buttons_channel,
+            self.mixer_coins_channel
+        ]
+        
+        pygame.mixer.music.set_volume(self.volume_bgm)
+        for channel in self.mixer_channels:
+            channel.set_volume(self.volume_sfx)
         
         # Screen surface (for transitions)
         self.display_surface = pygame.Surface(
@@ -317,6 +333,7 @@ class Main():
     def main_loop(self):
         pygame.mixer.music.load(self.data.music["main_menu"])
         pygame.mixer.music.play(-1)
+            
         while self.running:
             # Screen rendering
             self.screen.blit(self.data.title_screen["title_screen"], (0, 0))

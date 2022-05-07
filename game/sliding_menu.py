@@ -230,7 +230,7 @@ class SlidingMenu():
         
         
     def setting_callback(self, *args):
-        print("Settings button clicked")
+        self.main.setting_window.run()
         
         
     def main_menu_callback(self, *args):

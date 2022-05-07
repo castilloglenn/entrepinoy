@@ -2,6 +2,7 @@ import pygame
 
 from game.sprite.menu_background import MenuBackground
 from game.sprite.message import Message
+from game.sprite.slider import Slider
 
 
 class Setting():
@@ -14,26 +15,69 @@ class Setting():
         
         # Sprite groups
         self.objects = pygame.sprite.Group()
-        self.hoverable_buttons = pygame.sprite.Group()
         self.buttons = pygame.sprite.Group()
+        self.hoverable_buttons = pygame.sprite.Group()
+        self.draggable_buttons = pygame.sprite.Group()
         
         self.background = self.main.data.meta_images["window_background"].convert_alpha()
         self.ui_background_reference = MenuBackground(
             self.main.screen, 0.75,
             image=self.main.data.meta_images["menu_background"])
         self.ui_background = self.ui_background_reference.image
-        self.ui_background_rect = self.ui_background.get_rect()
+        self.ui_background_rect = self.ui_background_reference.rect
         
         self.business_title_message = Message(
             self.main.screen, 
             ["Setting"],
-            self.main.data.large_font,
+            self.main.data.title_font,
             self.main.data.colors["brown"],
             top_left_coordinates=(
-                int(self.ui_background_rect.width * 0.0775) + self.ui_background_rect.x,
+                int(self.ui_background_rect.width * 0.085) + self.ui_background_rect.x,
                 int(self.ui_background_rect.height * 0.09) + self.ui_background_rect.y
             )
         )
+        self.bgm_message = Message(
+            self.main.screen, 
+            ["BGM"],
+            self.main.data.large_font,
+            self.main.data.colors["brown"],
+            top_left_coordinates=(
+                int(self.ui_background_rect.width * 0.085) + self.ui_background_rect.x,
+                int(self.ui_background_rect.height * 0.24) + self.ui_background_rect.y
+            )
+        )
+        self.bgm_slider = Slider(
+            self.main, "bgm",
+            top_left_coordinates=(
+                int(self.ui_background_rect.width * 0.166) + self.ui_background_rect.x,
+                int(self.ui_background_rect.height * 0.2) + self.ui_background_rect.y
+            )
+        )
+        self.sfx_message = Message(
+            self.main.screen, 
+            ["SFX"],
+            self.main.data.large_font,
+            self.main.data.colors["brown"],
+            top_left_coordinates=(
+                int(self.ui_background_rect.width * 0.085) + self.ui_background_rect.x,
+                int(self.ui_background_rect.height * 0.38) + self.ui_background_rect.y
+            )
+        )
+        self.sfx_slider = Slider(
+            self.main, "sfx",
+            top_left_coordinates=(
+                int(self.ui_background_rect.width * 0.166) + self.ui_background_rect.x,
+                int(self.ui_background_rect.height * 0.34) + self.ui_background_rect.y
+            )
+        )
+        
+        
+        # Object additions
+        self.business_title_message.add(self.objects)
+        self.bgm_message.add(self.objects)
+        self.sfx_message.add(self.objects)
+        self.bgm_slider.add(self.objects, self.draggable_buttons)
+        self.sfx_slider.add(self.objects, self.draggable_buttons)
                 
                                 
     def mouse_click_events(self, event):
@@ -66,15 +110,21 @@ class Setting():
         # Making sure the user only holds one button at a time
         if event.buttons[0] + event.buttons[1] + event.buttons[2] == 1:
             # If the user is dragging the mouse with left mouse button
-            if event.buttons[0] == 1: pass
+            if event.buttons[0] == 1:
+                for button in self.draggable_buttons:
+                    if button.check_dragged(self.last_mouse_pos):
+                        break
 
             # If the user is dragging the mouse with the right mouse button
             if event.buttons[2] == 1: pass
             
         # Hovering through display check
         else:
-            for button in self.buttons:
+            for button in self.hoverable_buttons:
                 button.check_hovered(self.last_mouse_pos)
+                
+            for button in self.draggable_buttons:
+                button.undrag()
                 
                 
     def key_down_events(self, key):
@@ -113,7 +163,7 @@ class Setting():
         while self.running:
             # Screen rendering
             self.main.screen.blit(self.background, (0, 0))
-            self.main.screen.blit(self.ui_background, self.ui_background.get_rect())
+            self.main.screen.blit(self.ui_background, self.ui_background_rect)
             
             # Updating sprites
             self.objects.update()
@@ -125,6 +175,7 @@ class Setting():
                 else:
                     if event.type == pygame.QUIT: 
                         self.running = False
+                        self.main.close_game()
                     elif event.type == pygame.MOUSEBUTTONDOWN: 
                         self.mouse_click_events(event)
                     elif event.type == pygame.MOUSEMOTION: 

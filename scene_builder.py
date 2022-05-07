@@ -278,7 +278,8 @@ class Scene():
         self.main.sliding_menu.sliding_menu_button.add(self.buttons)
         
         for business in self.business_data:
-            business["object"].add(self.buttons)
+            if business["object"].visible:
+                business["object"].add(self.buttons)
             
         for sprite in self.general_sprites:
             if isinstance(sprite, (Customer, NPC)):
