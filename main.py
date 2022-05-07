@@ -164,14 +164,12 @@ class Main():
         if self.is_full_screen:
             self.screen = pygame.display.set_mode(
                 (self.data.setting["game_width"],
-                self.data.setting["game_height"], 
+                self.data.setting["game_height"]), 
                 pygame.FULLSCREEN | pygame.SCALED)
-            )
         else:
             self.screen = pygame.display.set_mode(
                 (self.data.setting["game_width"],
-                self.data.setting["game_height"])
-            )
+                self.data.setting["game_height"]))
         self.debug.log(f"Display Width: {self.data.setting['game_width']}")
         self.debug.log(f"Display Height: {self.data.setting['game_height']}")
         
