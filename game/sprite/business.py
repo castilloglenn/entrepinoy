@@ -401,7 +401,7 @@ class Business(Button):
     
     
     def check_hovered(self, hover_coordinates):
-        if self.is_disabled or not self.visible:
+        if self.state == "disabled" or not self.visible:
             return False
         
         if self.serve_button.check_hovered(hover_coordinates) \
@@ -416,7 +416,7 @@ class Business(Button):
         
     
     def check_clicked(self, click_coordinates):
-        if self.is_disabled or not self.visible:
+        if self.state == "disabled" or not self.visible:
             return False
         
         if self.serve_button.check_clicked(click_coordinates) \
@@ -475,6 +475,8 @@ class Business(Button):
         
 
     def generate_income(self):
+        self.scene.main.mixer_coins_channel.play(self.scene.main.data.music["earn_coins"])
+        
         self.income_step = 0.25
         self.income_range = (
             int(self.business_data["income_per_customer_range"][0] / self.income_step),

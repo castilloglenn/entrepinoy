@@ -1,3 +1,4 @@
+import pygame
 from pygame.sprite import Sprite
 from pygame import Surface
 from pygame import Rect
@@ -35,8 +36,10 @@ class Button(Sprite):
         self.bound_color = (255, 255, 255)
         self.bound_opacity = 128
         
+        # SFX Variables
+        self.hovered_sfx_played = False
+        
         self.visible = True
-        self.is_disabled = False
         self.main = main
         self.state = "idle"
         self.callback = callback_function
@@ -45,6 +48,7 @@ class Button(Sprite):
         self.has_tooltip = False
         self.tooltip = None
         self.tooltip_display_gap = 30
+        self.previous_mouse_location = (-1, -1)
         
         if "hovered" in states:
             self.hovered = states["hovered"].convert_alpha()
@@ -58,9 +62,8 @@ class Button(Sprite):
             
         if "tooltip" in states:
             self.has_tooltip = True
-            self.previous_mouse_location = None
             self.set_tooltip(states["tooltip"])
-        
+            
         self.top_left_coordinates = top_left_coordinates
         self.center_coordinates = center_coordinates
         self.midbottom_coordinates = midbottom_coordinates
@@ -185,13 +188,17 @@ class Button(Sprite):
             
         
     def set_image_and_rect(self):
-        if self.is_disabled:
+        if self.state == "disabled":
             self.image = self.disabled
         elif self.state == "idle":
             self.image = self.idle
         elif self.state == "hovered":
             self.image = self.hovered
         
+        self.update_rect()
+        
+        
+    def update_rect(self):
         self.rect = self.image.get_rect()
         if self.top_left_coordinates is not None:
             self.rect.topleft = self.top_left_coordinates
@@ -206,13 +213,16 @@ class Button(Sprite):
             
         self.collide_rect = Rect(
             self.collide_x, self.collide_y,
-            self.collide_width, self.collide_height
-        )
+            self.collide_width, self.collide_height)
         
 
-    def set_is_disabled(self, is_disabled):
-        self.is_disabled = is_disabled
-        self.set_image_and_rect()
+    def set_disabled(self, is_disabled):
+        if is_disabled:
+            self.state = "disabled"
+            self.set_image_and_rect()
+        else:
+            self.state = "idle"
+            self.check_hovered(self.previous_mouse_location)
     
     
     def set_callback(self, new_callback):
@@ -234,24 +244,27 @@ class Button(Sprite):
     def check_hovered(self, hover_coordinates):
         # Return booleans to prevent overlapping buttons to react the same
         self.previous_mouse_location = hover_coordinates
-        if self.is_disabled or not self.visible:
+        if self.state == "disabled" or not self.visible:
             return False
         
         if self.collide_rect.collidepoint(hover_coordinates):
+            self.play_sound("button_hovered")
             self.state = "hovered"
             self.set_image_and_rect()
             return True
         else:
             self.state = "idle"
             self.set_image_and_rect()
+            self.hovered_sfx_played = False
             return False
         
     
     def check_clicked(self, click_coordinates):
-        if self.is_disabled or not self.visible:
+        if self.state == "disabled" or not self.visible:
             return False
         
         if self.collide_rect.collidepoint(click_coordinates) and self.visible:
+            self.play_sound("button_clicked")
             self.force_clicked()
         
         # Return booleans to prevent overlapping buttons to react the same
@@ -263,5 +276,14 @@ class Button(Sprite):
         self.state = "idle"
         self.set_image_and_rect()
         self.callback(self)
+        
+        
+    def play_sound(self, sfx_name):
+        if sfx_name == "button_hovered":
+            if not self.hovered_sfx_played:
+                self.main.mixer_buttons_channel.play(self.main.data.music[sfx_name])
+                self.hovered_sfx_played = True
+        elif sfx_name == "button_clicked":
+            self.main.mixer_buttons_channel.play(self.main.data.music[sfx_name])
         
             

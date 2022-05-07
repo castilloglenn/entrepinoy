@@ -9,6 +9,7 @@ class Debugger():
     """
     def __init__(self):
         self.highest_memory = 0
+        self.highest_cpu = 0.0
         self.save_only_previous_log = True
         
         if self.save_only_previous_log:
@@ -57,6 +58,8 @@ class Debugger():
             
         virtual_mem = psutil.virtual_memory()
         percent = virtual_mem.percent
+        if percent > self.highest_cpu:
+            self.highest_cpu = percent
         return f"Memory Usage: {current_usage:,.2f}MB ({percent}%)"
     
     def get_free_usage(self):
@@ -65,4 +68,4 @@ class Debugger():
         
         
     def get_highest_usage(self):
-        return f"Highest Usage: {self.highest_memory:,.2f}MB"
+        return f"Peak Memory/CPU: {self.highest_memory:,.2f}MB ({self.highest_cpu:,.1f}%)"

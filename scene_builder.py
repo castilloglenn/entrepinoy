@@ -94,7 +94,7 @@ class Scene():
         self.background = SceneBackground(
             self.main.screen, 
             self.time, 
-            **self.main.data.background
+            **self.main.data.background[self.location]
         )
         
         # Internal variables
@@ -200,7 +200,7 @@ class Scene():
         self.background.reconstruct(
             self.main.screen, 
             self.time, 
-            **self.main.data.background
+            **self.main.data.background[self.location]
         )
         
         self.available_businesses = 0
@@ -278,7 +278,8 @@ class Scene():
         self.main.sliding_menu.sliding_menu_button.add(self.buttons)
         
         for business in self.business_data:
-            business["object"].add(self.buttons)
+            if business["object"].visible:
+                business["object"].add(self.buttons)
             
         for sprite in self.general_sprites:
             if isinstance(sprite, (Customer, NPC)):
@@ -496,7 +497,6 @@ class Scene():
         
         pygame.mixer.music.load(self.main.data.music["main_menu"])
         pygame.mixer.music.play(-1)
-        pygame.mixer.music.stop()
         
         self.running = True
         while self.running:

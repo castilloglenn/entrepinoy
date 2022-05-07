@@ -1,0 +1,195 @@
+{
+	"frames": {
+		"restaurant_emp_1.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 616,
+				"h": 316
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 616,
+				"h": 316
+			},
+			"sourceSize": {
+				"w": 616,
+				"h": 316
+			}
+		},
+		"restaurant_emp_2.png": {
+			"frame": {
+				"x": 619,
+				"y": 1,
+				"w": 616,
+				"h": 316
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 616,
+				"h": 316
+			},
+			"sourceSize": {
+				"w": 616,
+				"h": 316
+			}
+		},
+		"restaurant_emp_3.png": {
+			"frame": {
+				"x": 1,
+				"y": 319,
+				"w": 616,
+				"h": 316
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 616,
+				"h": 316
+			},
+			"sourceSize": {
+				"w": 616,
+				"h": 316
+			}
+		},
+		"restaurant_emp_4.png": {
+			"frame": {
+				"x": 619,
+				"y": 319,
+				"w": 616,
+				"h": 316
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 616,
+				"h": 316
+			},
+			"sourceSize": {
+				"w": 616,
+				"h": 316
+			}
+		},
+		"restaurant_emp_5.png": {
+			"frame": {
+				"x": 1,
+				"y": 637,
+				"w": 616,
+				"h": 316
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 616,
+				"h": 316
+			},
+			"sourceSize": {
+				"w": 616,
+				"h": 316
+			}
+		},
+		"restaurant_emp_6.png": {
+			"frame": {
+				"x": 619,
+				"y": 637,
+				"w": 616,
+				"h": 316
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 616,
+				"h": 316
+			},
+			"sourceSize": {
+				"w": 616,
+				"h": 316
+			}
+		},
+		"restaurant_emp_7.png": {
+			"frame": {
+				"x": 1,
+				"y": 955,
+				"w": 616,
+				"h": 316
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 616,
+				"h": 316
+			},
+			"sourceSize": {
+				"w": 616,
+				"h": 316
+			}
+		},
+		"restaurant_emp_8.png": {
+			"frame": {
+				"x": 619,
+				"y": 955,
+				"w": 616,
+				"h": 316
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 616,
+				"h": 316
+			},
+			"sourceSize": {
+				"w": 616,
+				"h": 316
+			}
+		},
+		"restaurant_emp_9.png": {
+			"frame": {
+				"x": 1237,
+				"y": 1,
+				"w": 616,
+				"h": 316
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 616,
+				"h": 316
+			},
+			"sourceSize": {
+				"w": 616,
+				"h": 316
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 1854,
+			"h": 1272
+		},
+		"scale": "1"
+	}
+}
