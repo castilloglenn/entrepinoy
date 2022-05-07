@@ -19,7 +19,7 @@
     "sari_sari_store" : {
         "name" : "Sari Sari Store",
         "image_name" : "sari_sari_store",
-        "rel_midbottom_coordinates" : [0.31, 0.62],
+        "rel_midbottom_coordinates" : [0.27, 0.62],
         "collide_rect" : [0.11, 0.22, 0.77, 0.78],
         "queuing_point" : 0.4,
         "queue_direction" : "left",

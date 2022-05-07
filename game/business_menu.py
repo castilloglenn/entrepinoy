@@ -241,10 +241,12 @@ class BusinessMenu():
         
         
     def collect_sales_button_callback(self, *args):
-        self.main.mixer_coins_channel.play(self.main.data.music["earn_coins"])
-        self.collect_sales_button.set_disabled(True)
-        self.main.data.progress["cash"] += self.main.data.progress["businesses"][self.location][self.data.name_code]["sales"]
-        self.clear_sales()
+        current_sales = self.main.data.progress["businesses"][self.location][self.data.name_code]["sales"]
+        if current_sales > 0:
+            self.main.mixer_coins_channel.play(self.main.data.music["earn_coins"])
+            self.collect_sales_button.set_disabled(True)
+            self.main.data.progress["cash"] += current_sales
+            self.clear_sales()
         
     
     def purchase_business_button_callback(self, *args):

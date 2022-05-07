@@ -94,7 +94,7 @@ class Scene():
         self.background = SceneBackground(
             self.main.screen, 
             self.time, 
-            **self.main.data.background
+            **self.main.data.background[self.location]
         )
         
         # Internal variables
@@ -200,7 +200,7 @@ class Scene():
         self.background.reconstruct(
             self.main.screen, 
             self.time, 
-            **self.main.data.background
+            **self.main.data.background[self.location]
         )
         
         self.available_businesses = 0
