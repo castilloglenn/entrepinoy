@@ -401,7 +401,7 @@ class Business(Button):
     
     
     def check_hovered(self, hover_coordinates):
-        if self.is_disabled or not self.visible:
+        if self.state == "disabled" or not self.visible:
             return False
         
         if self.serve_button.check_hovered(hover_coordinates) \
@@ -416,7 +416,7 @@ class Business(Button):
         
     
     def check_clicked(self, click_coordinates):
-        if self.is_disabled or not self.visible:
+        if self.state == "disabled" or not self.visible:
             return False
         
         if self.serve_button.check_clicked(click_coordinates) \

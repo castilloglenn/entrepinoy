@@ -241,7 +241,8 @@ class BusinessMenu():
         
         
     def collect_sales_button_callback(self, *args):
-        self.collect_sales_button.set_is_disabled(True)
+        self.main.mixer_coins_channel.play(self.main.data.music["earn_coins"])
+        self.collect_sales_button.set_disabled(True)
         self.main.data.progress["cash"] += self.main.data.progress["businesses"][self.location][self.data.name_code]["sales"]
         self.clear_sales()
         
@@ -342,35 +343,35 @@ class BusinessMenu():
             self.purchase_business_button.visible = False
             self.collect_sales_button.visible = True
             
-            self.sell_business_button.set_is_disabled(False)
-            self.upgrades_button.set_is_disabled(False)
+            self.sell_business_button.set_disabled(False)
+            self.upgrades_button.set_disabled(False)
             
             # For the collect sales button
             if self.get_sales() <= 0:
-                self.collect_sales_button.set_is_disabled(True)
+                self.collect_sales_button.set_disabled(True)
             else: # Make the button working
-                self.collect_sales_button.set_is_disabled(False)
+                self.collect_sales_button.set_disabled(False)
                 
             # For employee hiring button
             if self.check_if_employee_is_working():
-                self.hire_employee_button.set_is_disabled(True)
+                self.hire_employee_button.set_disabled(True)
             else: # No employee
-                self.hire_employee_button.set_is_disabled(False)
+                self.hire_employee_button.set_disabled(False)
             
             # For start business button and close business button
             if self.check_if_business_is_open():
-                self.start_business_button.set_is_disabled(True)
+                self.start_business_button.set_disabled(True)
             else: # closed
-                self.start_business_button.set_is_disabled(False)
-                self.hire_employee_button.set_is_disabled(True)
+                self.start_business_button.set_disabled(False)
+                self.hire_employee_button.set_disabled(True)
         else:
             self.purchase_business_button.visible = True
             self.collect_sales_button.visible = False
             
-            self.start_business_button.set_is_disabled(True)
-            self.hire_employee_button.set_is_disabled(True)
-            self.sell_business_button.set_is_disabled(True)
-            self.upgrades_button.set_is_disabled(True)
+            self.start_business_button.set_disabled(True)
+            self.hire_employee_button.set_disabled(True)
+            self.sell_business_button.set_disabled(True)
+            self.upgrades_button.set_disabled(True)
             
             
     def parse_seconds_to_data(self, seconds):

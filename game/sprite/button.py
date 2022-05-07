@@ -40,7 +40,6 @@ class Button(Sprite):
         self.hovered_sfx_played = False
         
         self.visible = True
-        self.is_disabled = False
         self.main = main
         self.state = "idle"
         self.callback = callback_function
@@ -62,7 +61,7 @@ class Button(Sprite):
             
         if "tooltip" in states:
             self.has_tooltip = True
-            self.previous_mouse_location = None
+            self.previous_mouse_location = (-1, -1)
             self.set_tooltip(states["tooltip"])
             
         self.top_left_coordinates = top_left_coordinates
@@ -189,7 +188,7 @@ class Button(Sprite):
             
         
     def set_image_and_rect(self):
-        if self.is_disabled:
+        if self.state == "disabled":
             self.image = self.disabled
         elif self.state == "idle":
             self.image = self.idle
@@ -217,9 +216,13 @@ class Button(Sprite):
             self.collide_width, self.collide_height)
         
 
-    def set_is_disabled(self, is_disabled):
-        self.is_disabled = is_disabled
-        self.set_image_and_rect()
+    def set_disabled(self, is_disabled):
+        if is_disabled:
+            self.state = "disabled"
+            self.set_image_and_rect()
+        else:
+            self.state = "idle"
+            self.check_hovered(self.previous_mouse_location)
     
     
     def set_callback(self, new_callback):
@@ -241,7 +244,7 @@ class Button(Sprite):
     def check_hovered(self, hover_coordinates):
         # Return booleans to prevent overlapping buttons to react the same
         self.previous_mouse_location = hover_coordinates
-        if self.is_disabled or not self.visible:
+        if self.state == "disabled" or not self.visible:
             return False
         
         if self.collide_rect.collidepoint(hover_coordinates):
@@ -257,7 +260,7 @@ class Button(Sprite):
         
     
     def check_clicked(self, click_coordinates):
-        if self.is_disabled or not self.visible:
+        if self.state == "disabled" or not self.visible:
             return False
         
         if self.collide_rect.collidepoint(click_coordinates) and self.visible:

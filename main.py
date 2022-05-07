@@ -38,18 +38,19 @@ class Main():
         # Setting up the data
         self.data = Library()
         self.screen = None
+        self.is_full_screen = self.data.setting["full_screen"]
         self.clock = None
         self.initialize_game()
         
-        self.show_studio_intro = False
-        self.is_full_screen = False
         self.volume_bgm = self.data.setting["bgm"]
         self.volume_sfx = self.data.setting["sfx"]
         
+        self.mixer_meta_channel = pygame.mixer.Channel(0)
         self.mixer_buttons_channel = pygame.mixer.Channel(1)
         self.mixer_coins_channel = pygame.mixer.Channel(2)
         
         self.mixer_channels = [
+            self.mixer_meta_channel,
             self.mixer_buttons_channel,
             self.mixer_coins_channel
         ]
@@ -57,6 +58,8 @@ class Main():
         pygame.mixer.music.set_volume(self.volume_bgm)
         for channel in self.mixer_channels:
             channel.set_volume(self.volume_sfx)
+        
+        self.show_studio_intro = self.data.meta["intro_show"]
         
         # Screen surface (for transitions)
         self.display_surface = pygame.Surface(
@@ -158,10 +161,17 @@ class Main():
         pygame.display.set_icon(self.data.meta_images["icon"])
         
         # Setting the screen size
-        self.screen = pygame.display.set_mode(
-            (self.data.setting["game_width"],
-            self.data.setting["game_height"])
-        )
+        if self.is_full_screen:
+            self.screen = pygame.display.set_mode(
+                (self.data.setting["game_width"],
+                self.data.setting["game_height"], 
+                pygame.FULLSCREEN | pygame.SCALED)
+            )
+        else:
+            self.screen = pygame.display.set_mode(
+                (self.data.setting["game_width"],
+                self.data.setting["game_height"])
+            )
         self.debug.log(f"Display Width: {self.data.setting['game_width']}")
         self.debug.log(f"Display Height: {self.data.setting['game_height']}")
         
@@ -291,7 +301,7 @@ class Main():
         increment = (255 / self.data.setting["fps"]) / self.intro_transition
         fade = "in" # values: in, out, hold
         
-        self.data.music["studio_intro"].play()
+        self.mixer_meta_channel.play(self.data.music["studio_intro"])
         while intro:
             # Screen rendering
             self.screen.blit(self.data.meta_images["studio"], (0, 0))
@@ -364,9 +374,9 @@ class Main():
             
             # Final checks on the continue button for initial game exit to menu
             if self.data.progress is None:
-                self.continue_button.set_is_disabled(True)
+                self.continue_button.set_disabled(True)
             else:
-                self.continue_button.set_is_disabled(False)
+                self.continue_button.set_disabled(False)
             
             # Updating the display
             self.refresh_display()
