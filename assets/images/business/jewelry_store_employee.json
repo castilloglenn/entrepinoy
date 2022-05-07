@@ -1,0 +1,195 @@
+{
+	"frames": {
+		"jewelry_store_employee_1.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 488,
+				"h": 344
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 488,
+				"h": 344
+			},
+			"sourceSize": {
+				"w": 488,
+				"h": 344
+			}
+		},
+		"jewelry_store_employee_2.png": {
+			"frame": {
+				"x": 491,
+				"y": 1,
+				"w": 488,
+				"h": 344
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 488,
+				"h": 344
+			},
+			"sourceSize": {
+				"w": 488,
+				"h": 344
+			}
+		},
+		"jewelry_store_employee_3.png": {
+			"frame": {
+				"x": 1,
+				"y": 347,
+				"w": 488,
+				"h": 344
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 488,
+				"h": 344
+			},
+			"sourceSize": {
+				"w": 488,
+				"h": 344
+			}
+		},
+		"jewelry_store_employee_4.png": {
+			"frame": {
+				"x": 491,
+				"y": 347,
+				"w": 488,
+				"h": 344
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 488,
+				"h": 344
+			},
+			"sourceSize": {
+				"w": 488,
+				"h": 344
+			}
+		},
+		"jewelry_store_employee_5.png": {
+			"frame": {
+				"x": 1,
+				"y": 693,
+				"w": 488,
+				"h": 344
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 488,
+				"h": 344
+			},
+			"sourceSize": {
+				"w": 488,
+				"h": 344
+			}
+		},
+		"jewelry_store_employee_6.png": {
+			"frame": {
+				"x": 491,
+				"y": 693,
+				"w": 488,
+				"h": 344
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 488,
+				"h": 344
+			},
+			"sourceSize": {
+				"w": 488,
+				"h": 344
+			}
+		},
+		"jewelry_store_employee_7.png": {
+			"frame": {
+				"x": 981,
+				"y": 1,
+				"w": 488,
+				"h": 344
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 488,
+				"h": 344
+			},
+			"sourceSize": {
+				"w": 488,
+				"h": 344
+			}
+		},
+		"jewelry_store_employee_8.png": {
+			"frame": {
+				"x": 981,
+				"y": 347,
+				"w": 488,
+				"h": 344
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 488,
+				"h": 344
+			},
+			"sourceSize": {
+				"w": 488,
+				"h": 344
+			}
+		},
+		"jewelry_store_employee_9.png": {
+			"frame": {
+				"x": 981,
+				"y": 693,
+				"w": 488,
+				"h": 344
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 488,
+				"h": 344
+			},
+			"sourceSize": {
+				"w": 488,
+				"h": 344
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 1470,
+			"h": 1038
+		},
+		"scale": "1"
+	}
+}

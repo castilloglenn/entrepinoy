@@ -1,0 +1,195 @@
+{
+	"frames": {
+		"market_emp_1.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 572,
+				"h": 272
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 572,
+				"h": 272
+			},
+			"sourceSize": {
+				"w": 572,
+				"h": 272
+			}
+		},
+		"market_emp_2.png": {
+			"frame": {
+				"x": 575,
+				"y": 1,
+				"w": 572,
+				"h": 272
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 572,
+				"h": 272
+			},
+			"sourceSize": {
+				"w": 572,
+				"h": 272
+			}
+		},
+		"market_emp_3.png": {
+			"frame": {
+				"x": 1,
+				"y": 275,
+				"w": 572,
+				"h": 272
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 572,
+				"h": 272
+			},
+			"sourceSize": {
+				"w": 572,
+				"h": 272
+			}
+		},
+		"market_emp_4.png": {
+			"frame": {
+				"x": 575,
+				"y": 275,
+				"w": 572,
+				"h": 272
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 572,
+				"h": 272
+			},
+			"sourceSize": {
+				"w": 572,
+				"h": 272
+			}
+		},
+		"market_emp_5.png": {
+			"frame": {
+				"x": 1,
+				"y": 549,
+				"w": 572,
+				"h": 272
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 572,
+				"h": 272
+			},
+			"sourceSize": {
+				"w": 572,
+				"h": 272
+			}
+		},
+		"market_emp_6.png": {
+			"frame": {
+				"x": 575,
+				"y": 549,
+				"w": 572,
+				"h": 272
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 572,
+				"h": 272
+			},
+			"sourceSize": {
+				"w": 572,
+				"h": 272
+			}
+		},
+		"market_emp_7.png": {
+			"frame": {
+				"x": 1,
+				"y": 823,
+				"w": 572,
+				"h": 272
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 572,
+				"h": 272
+			},
+			"sourceSize": {
+				"w": 572,
+				"h": 272
+			}
+		},
+		"market_emp_8.png": {
+			"frame": {
+				"x": 575,
+				"y": 823,
+				"w": 572,
+				"h": 272
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 572,
+				"h": 272
+			},
+			"sourceSize": {
+				"w": 572,
+				"h": 272
+			}
+		},
+		"market_emp_9.png": {
+			"frame": {
+				"x": 1149,
+				"y": 1,
+				"w": 572,
+				"h": 272
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 572,
+				"h": 272
+			},
+			"sourceSize": {
+				"w": 572,
+				"h": 272
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 1722,
+			"h": 1096
+		},
+		"scale": "1"
+	}
+}
