@@ -1,6 +1,6 @@
 {
-    "time": "2022/05/10, 06:42:26.740613",
-    "last_login": "2022/05/06, 21:39:09.536040",
+    "time": "2022/05/10, 06:57:12.340613",
+    "last_login": "2022/05/07, 17:25:43.309595",
     "last_location": "location_a",
     "cash": 838.0,
     "businesses": {
@@ -33,25 +33,25 @@
             "ukay_ukay": {
                 "date_acquired": "2022/05/07, 15:22:09.754072",
                 "ownership": true,
-                "is_open": true,
-                "open_until": "2022/05/06, 16:21:02.202401",
-                "has_employee": true,
+                "is_open": false,
+                "open_until": "",
+                "has_employee": false,
                 "sales": 340.25,
                 "lifetime_sales": 340.25,
-                "last_profit": 0.0,
-                "lifetime_profit": 0.0,
+                "last_profit": -409.75,
+                "lifetime_profit": -409.75,
                 "current_operation_sales": 340.25
             },
             "food_cart": {
                 "date_acquired": "2022/05/07, 15:22:08.080625",
                 "ownership": true,
-                "is_open": true,
-                "open_until": "2022/05/06, 16:16:57.402401",
-                "has_employee": true,
+                "is_open": false,
+                "open_until": "",
+                "has_employee": false,
                 "sales": 577.75,
                 "lifetime_sales": 577.75,
-                "last_profit": 0.0,
-                "lifetime_profit": 0.0,
+                "last_profit": -72.25,
+                "lifetime_profit": -72.25,
                 "current_operation_sales": 577.75
             }
         },

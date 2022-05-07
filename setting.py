@@ -111,9 +111,12 @@ class Setting():
         if event.buttons[0] + event.buttons[1] + event.buttons[2] == 1:
             # If the user is dragging the mouse with left mouse button
             if event.buttons[0] == 1:
+                has_dragged = False
                 for button in self.draggable_buttons:
-                    if button.check_dragged(self.last_mouse_pos):
-                        break
+                    if has_dragged:
+                        button.undrag()
+                    elif button.check_dragged(self.last_mouse_pos):
+                        has_dragged = True
 
             # If the user is dragging the mouse with the right mouse button
             if event.buttons[2] == 1: pass
@@ -122,9 +125,8 @@ class Setting():
         else:
             for button in self.hoverable_buttons:
                 button.check_hovered(self.last_mouse_pos)
-                
-            for button in self.draggable_buttons:
-                button.undrag()
+            
+            self.undrag_buttons()
                 
                 
     def key_down_events(self, key):
@@ -157,6 +159,11 @@ class Setting():
         if keys[pygame.K_d]: 
             pass
         
+    
+    def undrag_buttons(self):
+        for button in self.draggable_buttons:
+            button.undrag()
+        
         
     def run(self):
         self.running = True
@@ -182,6 +189,9 @@ class Setting():
                         self.mouse_drag_events(event)
                     elif event.type == pygame.KEYDOWN:
                         self.key_down_events(event.key)
+                    # For windwos with draggable buttons like sliders
+                    elif event.type == pygame.MOUSEBUTTONUP:
+                        self.undrag_buttons()
                 
             # Key pressing events (holding keys applicable)
             keys = pygame.key.get_pressed()
