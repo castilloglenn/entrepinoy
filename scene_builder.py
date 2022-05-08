@@ -386,15 +386,21 @@ class Scene():
                 
                 
     def spawn_vehicle(self):
-        npc_form = str(random.choice(self.main.data.location[self.location]["vehicle_indexes"]))
-        NPC(
-            self.main, 
-            "vehicle", npc_form, 
-            self.main.data.vehicle_spritesheets[npc_form]["sheet"],
-            self.main.data.vehicle_spritesheets[npc_form]["data"],
-            self.main.data.setting["fps"]
-        ).add(self.general_sprites)
-        self.extra_sprites_count += 1
+        vehicle_chance = random.randint(0, 100)
+        weighted_chance = \
+            max(self.main.data.meta["vehicle_min_chance"], 
+                int(self.crowd_chance[self.time.time.hour] 
+                    * self.main.data.meta["vehicle_ratio_to_crowd"]))
+        if vehicle_chance <= weighted_chance:
+            npc_form = str(random.choice(self.main.data.location[self.location]["vehicle_indexes"]))
+            NPC(
+                self.main, 
+                "vehicle", npc_form, 
+                self.main.data.vehicle_spritesheets[npc_form]["sheet"],
+                self.main.data.vehicle_spritesheets[npc_form]["data"],
+                self.main.data.setting["fps"]
+            ).add(self.general_sprites)
+            self.extra_sprites_count += 1
                 
                                 
     def mouse_click_events(self, event):
