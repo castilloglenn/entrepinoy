@@ -67,7 +67,15 @@ class Library():
             
             "setting_button_idle" : self.get_image("meta", "setting_icon_idle.png"),
             "setting_button_disabled" : self.get_image("meta", "setting_icon_disabled.png"),
-            "setting_button_outline" : self.get_image("meta", "setting_icon_outline.png")
+            "setting_button_outline" : self.get_image("meta", "setting_icon_outline.png"),
+            
+            "news_button_idle" : self.get_image("meta", "news_icon_idle.png"),
+            "news_button_disabled" : self.get_image("meta", "news_icon_disabled.png"),
+            "news_button_outline" : self.get_image("meta", "news_icon_outline.png"),
+            
+            "stock_button_idle" : self.get_image("meta", "stocks_icon_idle.png"),
+            "stock_button_disabled" : self.get_image("meta", "stocks_icon_disabled.png"),
+            "stock_button_outline" : self.get_image("meta", "stocks_icon_outline.png")
         }
         self.title_screen = {
             "title_screen" : self.get_image("title_screen", "title_screen.png"),

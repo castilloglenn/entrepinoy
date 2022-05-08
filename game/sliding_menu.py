@@ -108,9 +108,9 @@ class SlidingMenu():
         self.news_button = Button(
             self.main, self.news_callback,
             **{
-                "idle" : self.main.data.meta_images["map_button_idle"],
-                "outline" : self.main.data.meta_images["map_button_outline"],
-                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "idle" : self.main.data.meta_images["news_button_idle"],
+                "outline" : self.main.data.meta_images["news_button_outline"],
+                "disabled" : self.main.data.meta_images["news_button_disabled"],
                 "tooltip" : ["News"]
             }
         )
@@ -129,9 +129,9 @@ class SlidingMenu():
         self.stock_button = Button(
             self.main, self.stock_callback,
             **{
-                "idle" : self.main.data.meta_images["map_button_idle"],
-                "outline" : self.main.data.meta_images["map_button_outline"],
-                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "idle" : self.main.data.meta_images["stock_button_idle"],
+                "outline" : self.main.data.meta_images["stock_button_outline"],
+                "disabled" : self.main.data.meta_images["stock_button_disabled"],
                 "tooltip" : [
                     "Stock", 
                     "Market"
