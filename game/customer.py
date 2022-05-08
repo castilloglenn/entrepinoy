@@ -9,15 +9,17 @@ class Customer(NPC):
     """
     This class handles the behaviors of a customer in the game.
     """
-    def __init__(self, screen: 
-                pygame.Surface, name: str, 
-                spritesheet: pygame.Surface, 
-                meta_data: dict, 
-                emojis: dict,
-                fps: int, 
-                safe_spot: tuple[float],
-                businesses):
-        super().__init__(screen, name, spritesheet, meta_data, fps)
+    def __init__(self, 
+                 main, 
+                 form: str,
+                 name: str, 
+                 spritesheet: pygame.Surface, 
+                 meta_data: dict, 
+                 emojis: dict,
+                 fps: int, 
+                 safe_spot: tuple[float],
+                 businesses):
+        super().__init__(main, form, name, spritesheet, meta_data, fps)
         
         # Randomly selecting businesses
         while True:

@@ -8,6 +8,7 @@
 
     "time_amplify" : 600,
     "crowd_spawn_timeout" : 500,
+    "vehicle_spawn_timeout" : 3500,
     "memory_log_timeout" : 60000,
 
     "operating_hours" : 8

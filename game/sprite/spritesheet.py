@@ -7,7 +7,9 @@ class Spritesheet(Sprite):
     """
     This class handles the spritesheet of a moving object in a screen display.
     """
-    def __init__(self, screen: Surface,
+    def __init__(self, 
+                 main,
+                 form: str,
                  name: str, spritesheet: Surface, 
                  meta_data: dict, fps: int, animation_rate: float, 
                  mid_bottom_coordinates=None,
@@ -15,8 +17,10 @@ class Spritesheet(Sprite):
                  top_left_coordinates=None):
         super().__init__()
         
+        self.form = form
         self.name = name
-        self.screen = screen
+        self.main = main
+        self.screen = self.main.screen
         self.sprite_sheet = spritesheet
         self.data = meta_data
 
@@ -35,7 +39,8 @@ class Spritesheet(Sprite):
         
         # Setting the standing animation for the sprite
         self.is_standing = False
-        self.standing_sprite = self.sprites.pop()
+        if self.form == "people":
+            self.standing_sprite = self.sprites.pop()
             
         self.image = self.sprites[self.sprite_index]
         self.rect = self.image.get_rect()
@@ -86,4 +91,7 @@ class Spritesheet(Sprite):
         
         
     def free(self):
+        if self.form == "vehicle":
+            self.main.scene_window.extra_sprites_count -= 1
+        
         self.kill()

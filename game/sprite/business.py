@@ -499,3 +499,12 @@ class Business(Button):
         
     def __str__(self):
         return f"{self.name_code}: {len(self.queue)}/{self.queue_limit} Served customers: {self.served_count}"
+
+
+    def implicit_earnings_calculation(self):
+        pass
+    
+    
+    def explicit_earnings_calculation(self):
+        pass
+    
