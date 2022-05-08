@@ -1,51 +1,57 @@
-[18:54:51:964] Debug started
-[18:54:51:966] Memory Usage: 31.33MB (76.6%)
-[18:54:51:978] Free Memory: 1,425.63MB
-[18:54:51:987] Peak Memory/CPU: 31.33MB (76.6%)
+[19:02:04:613] Debug started
+[19:02:04:614] Memory Usage: 31.30MB (79.9%)
+[19:02:04:621] Free Memory: 1,225.23MB
+[19:02:04:626] Peak Memory/CPU: 31.30MB (79.9%)
 
-[18:54:52:657] Game Title: EntrePinoy
-[18:54:52:658] Game Version: 0.0.1
-[18:54:52:689] Display Width: 1280
-[18:54:52:696] Display Height: 720
-[18:54:52:706] Game FPS: 60
+[19:02:05:258] Game Title: EntrePinoy
+[19:02:05:259] Game Version: 0.0.1
+[19:02:05:288] Display Width: 1280
+[19:02:05:295] Display Height: 720
+[19:02:05:305] Game FPS: 60
 
-[18:54:52:735] 
+[19:02:05:335] 
 Time amplification: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 25.00 seconds in real life = 1 hour in game
 
-[18:54:52:760] Initialized scene
-[18:54:52:920] Memory after initialization:
-[18:54:52:921] Memory Usage: 234.08MB (79.8%)
-[18:54:52:926] Free Memory: 1,232.99MB
-[18:54:52:933] Peak Memory/CPU: 234.08MB (79.8%)
+[19:02:05:358] Initialized scene
+[19:02:05:518] Memory after initialization:
+[19:02:05:519] Memory Usage: 234.29MB (83.1%)
+[19:02:05:526] Free Memory: 1,031.81MB
+[19:02:05:532] Peak Memory/CPU: 234.29MB (83.1%)
 
-[18:54:54:477] Continue game entered
-[18:54:54:483] Memory Usage: 234.20MB (79.8%)
-[18:54:54:490] Free Memory: 1,228.99MB
-[18:54:54:495] Peak Memory/CPU: 234.20MB (79.8%)
+[19:02:06:439] Continue game entered
+[19:02:06:444] Memory Usage: 234.42MB (83.1%)
+[19:02:06:450] Free Memory: 1,032.93MB
+[19:02:06:455] Peak Memory/CPU: 234.42MB (83.1%)
 
-[18:54:54:773] CRITICAL: FPS Plummeted 16/60
-[18:54:54:774] Memory Usage: 234.34MB (79.8%)
-[18:54:54:784] Free Memory: 1,229.12MB
-[18:54:54:790] Peak Memory/CPU: 234.34MB (79.8%)
-[18:54:55:772] NOTICE: FPS Unstabled 53/60
-[18:54:55:773] Memory Usage: 241.48MB (80.2%)
-[18:54:55:778] Free Memory: 1,204.45MB
-[18:54:55:785] Peak Memory/CPU: 267.08MB (80.6%)
-[18:54:57:774] Autosaved progress
-[18:55:00:770] NOTICE: FPS Unstabled 48/60
-[18:55:00:771] Memory Usage: 249.58MB (80.1%)
-[18:55:00:777] Free Memory: 1,207.29MB
-[18:55:00:783] Peak Memory/CPU: 275.31MB (80.6%)
-[18:55:01:772] NOTICE: FPS Unstabled 54/60
-[18:55:01:773] Memory Usage: 250.41MB (80.2%)
-[18:55:01:779] Free Memory: 1,209.07MB
-[18:55:01:785] Peak Memory/CPU: 276.11MB (80.6%)
-[18:55:02:774] Autosaved progress
 
-[18:55:03:644] Memory Usage: 248.06MB (79.9%)
-[18:55:03:654] Free Memory: 1,222.15MB
-[18:55:03:659] Peak Memory/CPU: 276.11MB (80.6%)
-[18:55:03:669] Debug closed
+[19:02:10:307] Reconstructing scene
+
+[19:02:10:319] 
+Time Reconstruction: 
+1 second in real life = 144.00 second(s) in-game
+10.00 minutes in real life = 1 day in game
+25.00 seconds in real life = 1 hour in game
+[19:02:10:488] Autosaved progress
+
+[19:02:14:225] Reconstructing scene
+
+[19:02:14:235] 
+Time Reconstruction: 
+1 second in real life = 144.00 second(s) in-game
+10.00 minutes in real life = 1 day in game
+25.00 seconds in real life = 1 hour in game
+[19:02:14:378] NOTICE: FPS Unstabled 54/60
+[19:02:14:379] Memory Usage: 258.43MB (83.0%)
+[19:02:14:386] Free Memory: 1,034.03MB
+[19:02:14:394] Peak Memory/CPU: 259.24MB (83.1%)
+[19:02:15:375] Autosaved progress
+[19:02:15:496] Hour callback
+[19:02:16:505] Autosaved progress before exit
+
+[19:02:16:591] Memory Usage: 254.90MB (83.0%)
+[19:02:16:603] Free Memory: 1,036.71MB
+[19:02:16:614] Peak Memory/CPU: 259.25MB (83.5%)
+[19:02:16:624] Debug closed

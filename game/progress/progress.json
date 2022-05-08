@@ -1,8 +1,8 @@
 {
-    "time": "2022/05/08, 22:57:35.422122",
-    "last_login": "2022/05/08, 18:55:02.773249",
-    "last_location": "location_b",
-    "cash": 4694.0,
+    "time": "2022/05/09, 03:02:21.022122",
+    "last_login": "2022/05/08, 19:02:16.504854",
+    "last_location": "test_location",
+    "cash": 44425.0,
     "businesses": {
         "location_a": {
             "street_food": {
@@ -52,18 +52,18 @@
                 "lifetime_profit": 0.0
             }
         },
-        "location_b": {
+        "test_location": {
             "test_business_a": {
                 "date_acquired": "2022/05/08, 18:47:54.457875",
                 "ownership": true,
                 "is_open": true,
                 "open_until": "2022/05/09, 06:14:30.622122",
                 "has_employee": true,
-                "sales": 0.0,
-                "lifetime_sales": 0.0,
+                "sales": 24327.75,
+                "lifetime_sales": 37832.5,
                 "last_profit": 0.0,
                 "lifetime_profit": 0.0,
-                "current_operation_sales": 0.0
+                "current_operation_sales": 37832.5
             },
             "test_business_b": {
                 "date_acquired": "2022/05/08, 18:47:55.836907",
@@ -71,11 +71,11 @@
                 "is_open": true,
                 "open_until": "2022/05/09, 06:17:45.022122",
                 "has_employee": true,
-                "sales": 0.0,
-                "lifetime_sales": 0.0,
+                "sales": 55651.25,
+                "lifetime_sales": 81877.5,
                 "last_profit": 0.0,
                 "lifetime_profit": 0.0,
-                "current_operation_sales": 0.0
+                "current_operation_sales": 81877.5
             }
         }
     }

@@ -15,7 +15,7 @@
             0, 1
         ]
     },
-    "location_b" : {
+    "test_location" : {
         "businesses" : [
             "test_business_a",
             "test_business_b"

@@ -184,8 +184,8 @@ class SlidingMenu():
     def map_callback(self, *args):
         location = self.main.data.progress["last_location"]
         if location == "location_a":
-            self.main.data.progress["last_location"] = "location_b"
-        elif location == "location_b":
+            self.main.data.progress["last_location"] = "test_location"
+        elif location == "test_location":
             self.main.data.progress["last_location"] = "location_a"
         
         self.tuck()

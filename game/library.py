@@ -82,15 +82,7 @@ class Library():
             "exit_button_hovered" : self.get_image("title_screen", "exit_button_hovered.png")
         }
         self.background = {
-            "location_a" : {
-                "midnight" : self.get_image("scene", "location_a_midnight.png"),
-                "early_morning" : self.get_image("scene", "location_a_early_morning.png"),
-                "morning" : self.get_image("scene", "location_a_morning.png"),
-                "noon" : self.get_image("scene", "location_a_noon.png"),
-                "afternoon" : self.get_image("scene", "location_a_afternoon.png"),
-                "night" : self.get_image("scene", "location_a_night.png")
-            },
-            "location_b" : {
+            "test_location" : {
                 "midnight" : self.get_image("scene", "midnight.png"),
                 "early_morning" : self.get_image("scene", "early_morning.png"),
                 "morning" : self.get_image("scene", "morning.png"),
@@ -98,6 +90,14 @@ class Library():
                 "afternoon" : self.get_image("scene", "afternoon.png"),
                 "night" : self.get_image("scene", "night.png")
             },
+            "location_a" : {
+                "midnight" : self.get_image("scene", "location_a_midnight.png"),
+                "early_morning" : self.get_image("scene", "location_a_early_morning.png"),
+                "morning" : self.get_image("scene", "location_a_morning.png"),
+                "noon" : self.get_image("scene", "location_a_noon.png"),
+                "afternoon" : self.get_image("scene", "location_a_afternoon.png"),
+                "night" : self.get_image("scene", "location_a_night.png")
+            }
         }
         self.scene = {
             "profile_holder_idle" : self.get_image("scene", "profile_holder_idle.png"),
@@ -369,7 +369,7 @@ class Library():
                         "lifetime_profit" : 0.0
                     }
                 },
-                "location_b": {
+                "test_location": {
                     "test_business_a": {
                         "date_acquired": "",
                         "ownership": False,
