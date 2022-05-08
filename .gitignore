@@ -2,8 +2,5 @@ __pycache__/
 game/__pycache__/
 game/sprite/__pycache__/
 
-game/debug/*
-game/progress/*
-
-!game/debug/.gitkeep
-!game/progress/.gitkeep
+game/debug/previous_log.txt
+game/progress/progress.json

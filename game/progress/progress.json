@@ -1,8 +1,8 @@
 {
-    "time": "2022/05/09, 03:09:37.822122",
-    "last_login": "2022/05/08, 19:06:01.158956",
+    "time": "2022/05/09, 03:25:11.422122",
+    "last_login": "2022/05/08, 19:09:13.097735",
     "last_location": "test_location",
-    "cash": 44425.0,
+    "cash": 124404.0,
     "businesses": {
         "location_a": {
             "street_food": {
@@ -59,7 +59,7 @@
                 "is_open": true,
                 "open_until": "2022/05/09, 06:14:30.622122",
                 "has_employee": true,
-                "sales": 24327.75,
+                "sales": 0,
                 "lifetime_sales": 37832.5,
                 "last_profit": 0.0,
                 "lifetime_profit": 0.0,
@@ -71,7 +71,7 @@
                 "is_open": true,
                 "open_until": "2022/05/09, 06:17:45.022122",
                 "has_employee": true,
-                "sales": 55651.25,
+                "sales": 0,
                 "lifetime_sales": 81877.5,
                 "last_profit": 0.0,
                 "lifetime_profit": 0.0,
