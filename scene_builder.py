@@ -592,13 +592,22 @@ class Scene():
             # TODO DEBUGGING ONLY/ considering to turning into feature
             if self.show_debug_info:
                 total_limit = self.object_limit + self.extra_sprites_count
+                crowd_chance = self.crowd_chance[self.time.time.hour]
+                customer_chance = self.customer_chance[self.time.time.hour]
+                weighted_customer_chance = \
+                    self.customer_chance[self.time.time.hour] * \
+                    (self.available_businesses / self.total_location_businesses)
+                vehicle_chance = \
+                    max(self.main.data.meta["vehicle_min_chance"], 
+                        int(self.crowd_chance[self.time.time.hour] 
+                            * self.main.data.meta["vehicle_ratio_to_crowd"]))
                 debug_log = [
                     f"FPS: {self.fps_previous_count}/{self.main.data.setting['fps']}",
                     f"{self.main.debug.get_highest_usage()}",
                     f"{self.main.debug.get_memory_usage()}",
                     f"{self.main.debug.get_free_usage()}",
-                    f"Location: {self.location}",
-                    f"Businesses Available: {self.available_businesses}/{self.total_location_businesses}",
+                    f"Location: {self.location} Businesses Available: {self.available_businesses}/{self.total_location_businesses}",
+                    f"Spawn rate; Crowd {crowd_chance}%, Customer {weighted_customer_chance:,.0f}/{customer_chance}%, Vehicle {vehicle_chance}%",
                     f"Customers-Crowd Spawned: {self.customers_spawned}/{self.footprint_counter}",
                     f"Objects: {len(self.general_sprites)}/{total_limit} (Limit: {self.object_limit} + {self.extra_sprites_count} Extras)"
                 ]

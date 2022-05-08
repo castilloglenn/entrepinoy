@@ -60,16 +60,23 @@ class NPC(Spritesheet):
             self.left_road = int(self.screen.get_height() * 0.87)
             self.right_road = int(self.screen.get_height() * 0.97)
             
+            y_adjustments = 10 # To lessen the chance to collide vehicles
             self.direction = random.choice(["left", "right"])
             if self.direction == "left":
                 self.rect.midbottom = (
                     self.screen.get_width() + self.rect.width,
-                    self.left_road)
+                    random.randint(
+                        self.left_road - y_adjustments, 
+                        self.left_road + y_adjustments
+                    ))
             elif self.direction == "right":
                 self.is_flipped = True
                 self.rect.midbottom = (
                     0 - self.rect.width,
-                    self.right_road)
+                    random.randint(
+                        self.right_road - y_adjustments, 
+                        self.right_road + y_adjustments
+                    ))
             
     
     def animate(self):
