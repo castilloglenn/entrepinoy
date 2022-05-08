@@ -467,10 +467,20 @@ class Scene():
                 self.main.debug.log("Debug details hidden")
             
         elif key == pygame.K_F2:
-            self.main.screen = pygame.display.set_mode(
-                (self.main.data.setting["game_width"],
-                self.main.data.setting["game_height"]), pygame.FULLSCREEN | pygame.SCALED
-            )
+            if self.main.data.setting["full_screen"]:
+                self.main.screen = pygame.display.set_mode(
+                    (self.main.data.setting["game_width"],
+                    self.main.data.setting["game_height"])
+                )
+                self.main.data.setting["full_screen"] = False
+            else:
+                self.main.screen = pygame.display.set_mode(
+                    (self.main.data.setting["game_width"],
+                    self.main.data.setting["game_height"]), pygame.FULLSCREEN | pygame.SCALED
+                )
+                self.main.data.setting["full_screen"] = True
+            
+            self.main.data.set_dict_to_json("config", "settings.json", self.main.data.setting)
             
         elif key == pygame.K_F3:
             pass
