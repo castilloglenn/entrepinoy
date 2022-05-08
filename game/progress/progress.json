@@ -1,7 +1,7 @@
 {
-    "time": "2022/05/09, 03:25:11.422122",
-    "last_login": "2022/05/08, 19:09:13.097735",
-    "last_location": "test_location",
+    "time": "2022/05/09, 03:51:30.622122",
+    "last_login": "2022/05/08, 19:21:40.940906",
+    "last_location": "location_a",
     "cash": 124404.0,
     "businesses": {
         "location_a": {
@@ -59,11 +59,11 @@
                 "is_open": true,
                 "open_until": "2022/05/09, 06:14:30.622122",
                 "has_employee": true,
-                "sales": 0,
-                "lifetime_sales": 37832.5,
+                "sales": 1756.25,
+                "lifetime_sales": 39588.75,
                 "last_profit": 0.0,
                 "lifetime_profit": 0.0,
-                "current_operation_sales": 37832.5
+                "current_operation_sales": 39588.75
             },
             "test_business_b": {
                 "date_acquired": "2022/05/08, 18:47:55.836907",

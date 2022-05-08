@@ -3,7 +3,7 @@
     "game_height": 720,
     "fps": 60,
     "autosave_timeout": 5000,
-    "bgm": 0.13,
-    "sfx": 0.56,
+    "bgm": 0.22,
+    "sfx": 0.58,
     "full_screen": false
 }
