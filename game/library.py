@@ -39,6 +39,8 @@ class Library():
             "toggler_on" : self.get_image("meta", "toggler_on.png"),
             "toggler_off" : self.get_image("meta", "toggler_off.png"),
             
+            "back_button_idle" : self.get_image("meta", "back_button_idle.png"),
+            "back_button_hovered" : self.get_image("meta", "back_button_hovered.png"),
             
             "slider" : self.get_image("meta", "slider.png"),
             "slider_knob_idle" : self.get_image("meta", "slider_knob_idle.png"),
@@ -84,13 +86,17 @@ class Library():
         }
         self.title_screen = {
             "title_screen" : self.get_image("title_screen", "title_screen.png"),
+            
             "new_game_button_idle" : self.get_image("title_screen", "new_game_button_idle.png"),
             "new_game_button_hovered" : self.get_image("title_screen", "new_game_button_hovered.png"),
+            
             "continue_button_idle" : self.get_image("title_screen", "continue_button_idle.png"),
             "continue_button_hovered" : self.get_image("title_screen", "continue_button_hovered.png"),
             "continue_button_disabled" : self.get_image("title_screen", "continue_button_disabled.png"),
+            
             "setting_button_idle" : self.get_image("title_screen", "setting_button_idle.png"),
             "setting_button_hovered" : self.get_image("title_screen", "setting_button_hovered.png"),
+            
             "exit_button_idle" : self.get_image("title_screen", "exit_button_idle.png"),
             "exit_button_hovered" : self.get_image("title_screen", "exit_button_hovered.png")
         }
@@ -115,23 +121,30 @@ class Library():
         self.scene = {
             "profile_holder_idle" : self.get_image("scene", "profile_holder_idle.png"),
             "profile_holder_outline" : self.get_image("scene", "profile_holder_outline.png"),
+            
             "serve_button_idle" : self.get_image("scene", "serve_button_idle.png"),
             "serve_button_hovered" : self.get_image("scene", "serve_button_hovered.png"),
+            
             "collect_sales_button_idle" : self.get_image("scene", "collect_sales_button_idle.png"),
             "collect_sales_button_hovered" : self.get_image("scene", "collect_sales_button_hovered.png"),
             "collect_sales_button_disabled" : self.get_image("scene", "collect_sales_button_disabled.png"),
+            
             "upgrades_button_idle" : self.get_image("scene", "upgrades_button_idle.png"),
             "upgrades_button_hovered" : self.get_image("scene", "upgrades_button_hovered.png"),
             "upgrades_button_disabled" : self.get_image("scene", "upgrades_button_disabled.png"),
+            
             "hire_employee_button_idle" : self.get_image("scene", "hire_employee_button_idle.png"),
             "hire_employee_button_hovered" : self.get_image("scene", "hire_employee_button_hovered.png"),
             "hire_employee_button_disabled" : self.get_image("scene", "hire_employee_button_disabled.png"),
+            
             "purchase_business_button_idle" : self.get_image("scene", "purchase_business_button_idle.png"),
             "purchase_business_button_hovered" : self.get_image("scene", "purchase_business_button_hovered.png"),
             "purchase_business_button_disabled" : self.get_image("scene", "purchase_business_button_disabled.png"),
+            
             "sell_business_button_idle" : self.get_image("scene", "sell_business_button_idle.png"),
             "sell_business_button_hovered" : self.get_image("scene", "sell_business_button_hovered.png"),
             "sell_business_button_disabled" : self.get_image("scene", "sell_business_button_disabled.png"),
+            
             "start_business_button_idle" : self.get_image("scene", "start_business_button_idle.png"),
             "start_business_button_hovered" : self.get_image("scene", "start_business_button_hovered.png"),
             "start_business_button_disabled" : self.get_image("scene", "start_business_button_disabled.png")
