@@ -1,118 +1,2613 @@
-<<<<<<< HEAD
-[21:12:46:127] Debug started
-[21:12:46:128] Memory Usage: 19.51MB (93.9%)
-[21:12:46:128] Free Memory: 241.45MB
-[21:12:46:128] Highest Usage: 19.51MB
+[21:06:31:404] Debug started
+[21:06:31:422] Memory Usage: 19.51MB (92.8%)
+[21:06:31:423] Free Memory: 288.97MB
+[21:06:31:423] Peak Memory/CPU: 19.51MB (92.8%)
 
-[21:12:51:666] Game Title: EntrePinoy
-[21:12:51:666] Game Version: 0.0.1
-[21:12:52:258] Display Width: 1280
-[21:12:52:258] Display Height: 720
-[21:12:52:258] Game FPS: 60
+[21:06:36:240] Game Title: EntrePinoy
+[21:06:36:240] Game Version: 0.0.1
+[21:06:37:792] Display Width: 1280
+[21:06:37:792] Display Height: 720
+[21:06:37:793] Game FPS: 60
 
-[21:12:52:367] 
-=======
-[21:00:58:396] Debug started
-[21:00:58:397] Memory Usage: 30.73MB (60.6%)
-[21:00:58:402] Free Memory: 2,402.81MB
-[21:00:58:408] Peak Memory/CPU: 30.73MB (60.6%)
-
-[21:00:59:086] Game Title: EntrePinoy
-[21:00:59:087] Game Version: 0.0.1
-[21:00:59:280] Display Width: 1280
-[21:00:59:280] Display Height: 720
-[21:00:59:288] Game FPS: 60
-
-[21:00:59:315] 
->>>>>>> 3df1d4e6393eaba693d34ff56fee00b2f0e6847b
+[21:06:38:149] 
 Time amplification: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 25.00 seconds in real life = 1 hour in game
 
-<<<<<<< HEAD
-[21:12:52:434] Initialized scene
-[21:12:52:618] Memory after initialization:
-[21:12:52:618] Memory Usage: 197.83MB (96.4%)
-[21:12:52:618] Free Memory: 142.60MB
-[21:12:52:619] Highest Usage: 197.83MB
+[21:06:38:300] Initialized scene
+[21:06:38:509] Memory after initialization:
+[21:06:38:510] Memory Usage: 195.43MB (95.8%)
+[21:06:38:510] Free Memory: 166.87MB
+[21:06:38:510] Peak Memory/CPU: 195.43MB (95.8%)
 
-[21:12:54:826] Continue game entered
-[21:12:54:827] Memory Usage: 198.91MB (94.5%)
-[21:12:54:827] Free Memory: 218.93MB
-[21:12:54:828] Highest Usage: 198.91MB
+[21:08:43:349] Continue game entered
+[21:08:43:350] Memory Usage: 197.16MB (91.3%)
+[21:08:43:350] Free Memory: 347.83MB
+[21:08:43:350] Peak Memory/CPU: 197.16MB (95.8%)
 
-[21:12:55:468] CRITICAL: FPS Plummeted 7/60
-[21:12:55:468] Memory Usage: 199.91MB (94.2%)
-[21:12:55:469] Free Memory: 232.27MB
-[21:12:55:470] Highest Usage: 199.91MB
+[21:08:43:486] Autosaved progress
+[21:08:43:659] CRITICAL: FPS Plummeted 1/60
+[21:08:43:659] Memory Usage: 201.84MB (91.0%)
+[21:08:43:660] Free Memory: 357.70MB
+[21:08:43:660] Peak Memory/CPU: 201.84MB (95.8%)
+[21:08:44:459] CRITICAL: FPS Plummeted 28/60
+[21:08:44:730] Memory Usage: 204.36MB (90.3%)
+[21:08:44:730] Free Memory: 385.93MB
+[21:08:44:730] Peak Memory/CPU: 204.36MB (95.8%)
+[21:08:45:451] WARNING: FPS Dropped 38/60
+[21:08:45:451] Memory Usage: 204.71MB (90.1%)
+[21:08:45:452] Free Memory: 394.17MB
+[21:08:45:452] Peak Memory/CPU: 205.40MB (95.8%)
+[21:08:46:450] NOTICE: FPS Unstabled 54/60
+[21:08:46:451] Memory Usage: 204.98MB (90.0%)
+[21:08:46:451] Free Memory: 398.32MB
+[21:08:46:451] Peak Memory/CPU: 205.68MB (95.8%)
+[21:08:47:463] NOTICE: FPS Unstabled 54/60
+[21:08:47:463] Memory Usage: 205.88MB (90.2%)
+[21:08:47:464] Free Memory: 392.27MB
+[21:08:47:464] Peak Memory/CPU: 207.23MB (95.8%)
+[21:08:48:337] Autosaved progress
+[21:08:48:454] NOTICE: FPS Unstabled 54/60
+[21:08:48:455] Memory Usage: 205.89MB (90.2%)
+[21:08:48:455] Free Memory: 390.15MB
+[21:08:48:455] Peak Memory/CPU: 207.24MB (95.8%)
+[21:08:49:453] NOTICE: FPS Unstabled 51/60
+[21:08:49:453] Memory Usage: 207.24MB (90.2%)
+[21:08:49:454] Free Memory: 390.05MB
+[21:08:49:454] Peak Memory/CPU: 207.24MB (95.8%)
+[21:08:50:480] NOTICE: FPS Unstabled 53/60
+[21:08:50:480] Memory Usage: 207.56MB (90.6%)
+[21:08:50:481] Free Memory: 376.88MB
+[21:08:50:481] Peak Memory/CPU: 207.56MB (95.8%)
+[21:08:51:449] NOTICE: FPS Unstabled 51/60
+[21:08:51:450] Memory Usage: 207.58MB (90.6%)
+[21:08:51:450] Free Memory: 375.16MB
+[21:08:51:450] Peak Memory/CPU: 207.58MB (95.8%)
+[21:08:52:465] NOTICE: FPS Unstabled 47/60
+[21:08:52:466] Memory Usage: 208.27MB (90.6%)
+[21:08:52:466] Free Memory: 373.43MB
+[21:08:52:467] Peak Memory/CPU: 208.27MB (95.8%)
+[21:08:53:324] Autosaved progress
+[21:08:53:449] WARNING: FPS Dropped 44/60
+[21:08:53:450] Memory Usage: 208.27MB (90.6%)
+[21:08:53:450] Free Memory: 373.82MB
+[21:08:53:451] Peak Memory/CPU: 208.27MB (95.8%)
+[21:08:54:470] NOTICE: FPS Unstabled 46/60
+[21:08:54:471] Memory Usage: 208.27MB (90.4%)
+[21:08:54:472] Free Memory: 382.84MB
+[21:08:54:472] Peak Memory/CPU: 208.55MB (95.8%)
+[21:08:55:471] WARNING: FPS Dropped 45/60
+[21:08:55:471] Memory Usage: 208.55MB (90.4%)
+[21:08:55:472] Free Memory: 382.07MB
+[21:08:55:472] Peak Memory/CPU: 208.55MB (95.8%)
+[21:08:56:452] WARNING: FPS Dropped 44/60
+[21:08:56:452] Memory Usage: 209.73MB (90.5%)
+[21:08:56:452] Free Memory: 379.86MB
+[21:08:56:453] Peak Memory/CPU: 210.03MB (95.8%)
+[21:08:57:451] WARNING: FPS Dropped 45/60
+[21:08:57:451] Memory Usage: 210.52MB (90.5%)
+[21:08:57:452] Free Memory: 380.41MB
+[21:08:57:452] Peak Memory/CPU: 210.52MB (95.8%)
+[21:08:58:331] Autosaved progress
+[21:08:58:448] NOTICE: FPS Unstabled 48/60
+[21:08:58:449] Memory Usage: 210.83MB (90.4%)
+[21:08:58:449] Free Memory: 383.45MB
+[21:08:58:449] Peak Memory/CPU: 211.49MB (95.8%)
+[21:08:59:455] NOTICE: FPS Unstabled 50/60
+[21:08:59:456] Memory Usage: 211.58MB (90.4%)
+[21:08:59:456] Free Memory: 383.55MB
+[21:08:59:457] Peak Memory/CPU: 211.58MB (95.8%)
+[21:09:00:463] NOTICE: FPS Unstabled 48/60
+[21:09:00:464] Memory Usage: 211.58MB (90.4%)
+[21:09:00:464] Free Memory: 381.99MB
+[21:09:00:464] Peak Memory/CPU: 211.58MB (95.8%)
+[21:09:01:452] NOTICE: FPS Unstabled 49/60
+[21:09:01:452] Memory Usage: 210.79MB (90.5%)
+[21:09:01:453] Free Memory: 379.56MB
+[21:09:01:453] Peak Memory/CPU: 212.17MB (95.8%)
+[21:09:02:468] NOTICE: FPS Unstabled 50/60
+[21:09:02:469] Memory Usage: 211.90MB (90.4%)
+[21:09:02:469] Free Memory: 383.78MB
+[21:09:02:470] Peak Memory/CPU: 212.72MB (95.8%)
+[21:09:02:890] Hour callback
+[21:09:03:332] Autosaved progress
+[21:09:03:455] NOTICE: FPS Unstabled 50/60
+[21:09:03:456] Memory Usage: 211.35MB (90.4%)
+[21:09:03:457] Free Memory: 382.69MB
+[21:09:03:458] Peak Memory/CPU: 212.73MB (95.8%)
+[21:09:04:455] NOTICE: FPS Unstabled 49/60
+[21:09:04:456] Memory Usage: 213.13MB (90.4%)
+[21:09:04:457] Free Memory: 381.62MB
+[21:09:04:458] Peak Memory/CPU: 213.13MB (95.8%)
+[21:09:05:471] NOTICE: FPS Unstabled 46/60
+[21:09:05:472] Memory Usage: 212.61MB (90.4%)
+[21:09:05:473] Free Memory: 384.60MB
+[21:09:05:474] Peak Memory/CPU: 213.96MB (95.8%)
+[21:09:06:469] NOTICE: FPS Unstabled 46/60
+[21:09:06:469] Memory Usage: 213.96MB (90.4%)
+[21:09:06:470] Free Memory: 384.61MB
+[21:09:06:470] Peak Memory/CPU: 213.96MB (95.8%)
+[21:09:07:473] WARNING: FPS Dropped 45/60
+[21:09:07:474] Memory Usage: 213.96MB (90.4%)
+[21:09:07:475] Free Memory: 383.96MB
+[21:09:07:476] Peak Memory/CPU: 213.96MB (95.8%)
+[21:09:08:340] Autosaved progress
+[21:09:08:473] WARNING: FPS Dropped 43/60
+[21:09:08:473] Memory Usage: 212.86MB (89.7%)
+[21:09:08:473] Free Memory: 410.83MB
+[21:09:08:474] Peak Memory/CPU: 213.96MB (95.8%)
+[21:09:09:456] WARNING: FPS Dropped 45/60
+[21:09:09:456] Memory Usage: 213.96MB (89.6%)
+[21:09:09:457] Free Memory: 413.82MB
+[21:09:09:457] Peak Memory/CPU: 213.96MB (95.8%)
+[21:09:10:457] WARNING: FPS Dropped 45/60
+[21:09:10:458] Memory Usage: 213.96MB (89.6%)
+[21:09:10:478] Free Memory: 412.80MB
+[21:09:10:478] Peak Memory/CPU: 213.96MB (95.8%)
+[21:09:11:474] WARNING: FPS Dropped 44/60
+[21:09:11:475] Memory Usage: 212.89MB (89.6%)
+[21:09:11:477] Free Memory: 414.06MB
+[21:09:11:482] Peak Memory/CPU: 214.24MB (95.8%)
+[21:09:12:471] WARNING: FPS Dropped 44/60
+[21:09:12:472] Memory Usage: 213.14MB (89.6%)
+[21:09:12:472] Free Memory: 413.33MB
+[21:09:12:472] Peak Memory/CPU: 214.24MB (95.8%)
+[21:09:13:334] Autosaved progress
+[21:09:13:452] WARNING: FPS Dropped 43/60
+[21:09:13:453] Memory Usage: 213.43MB (89.7%)
+[21:09:13:453] Free Memory: 412.49MB
+[21:09:13:453] Peak Memory/CPU: 214.25MB (95.8%)
+[21:09:14:467] WARNING: FPS Dropped 44/60
+[21:09:14:468] Memory Usage: 214.25MB (89.7%)
+[21:09:14:468] Free Memory: 411.52MB
+[21:09:14:468] Peak Memory/CPU: 214.25MB (95.8%)
+[21:09:15:451] WARNING: FPS Dropped 43/60
+[21:09:15:452] Memory Usage: 213.90MB (89.7%)
+[21:09:15:452] Free Memory: 412.36MB
+[21:09:15:452] Peak Memory/CPU: 214.59MB (95.8%)
+[21:09:16:455] WARNING: FPS Dropped 41/60
+[21:09:16:456] Memory Usage: 213.58MB (89.5%)
+[21:09:16:457] Free Memory: 419.09MB
+[21:09:16:457] Peak Memory/CPU: 215.00MB (95.8%)
+[21:09:17:463] WARNING: FPS Dropped 40/60
+[21:09:17:464] Memory Usage: 214.12MB (87.4%)
+[21:09:17:465] Free Memory: 501.95MB
+[21:09:17:468] Peak Memory/CPU: 215.00MB (95.8%)
+[21:09:18:345] Autosaved progress
+[21:09:18:469] WARNING: FPS Dropped 40/60
+[21:09:18:469] Memory Usage: 213.08MB (85.4%)
+[21:09:18:470] Free Memory: 580.49MB
+[21:09:18:470] Peak Memory/CPU: 215.00MB (95.8%)
+[21:09:19:465] WARNING: FPS Dropped 39/60
+[21:09:19:465] Memory Usage: 213.48MB (84.9%)
+[21:09:19:466] Free Memory: 603.86MB
+[21:09:19:466] Peak Memory/CPU: 215.00MB (95.8%)
+[21:09:20:473] WARNING: FPS Dropped 45/60
+[21:09:20:474] Memory Usage: 213.61MB (84.9%)
+[21:09:20:474] Free Memory: 604.05MB
+[21:09:20:474] Peak Memory/CPU: 215.00MB (95.8%)
+[21:09:21:463] WARNING: FPS Dropped 44/60
+[21:09:21:463] Memory Usage: 213.44MB (84.9%)
+[21:09:21:464] Free Memory: 603.50MB
+[21:09:21:464] Peak Memory/CPU: 215.00MB (95.8%)
+[21:09:22:455] WARNING: FPS Dropped 44/60
+[21:09:22:457] Memory Usage: 213.43MB (84.9%)
+[21:09:22:458] Free Memory: 601.89MB
+[21:09:22:459] Peak Memory/CPU: 215.00MB (95.8%)
+[21:09:23:334] Autosaved progress
+[21:09:23:479] WARNING: FPS Dropped 44/60
+[21:09:23:482] Memory Usage: 213.15MB (85.0%)
+[21:09:23:482] Free Memory: 598.36MB
+[21:09:23:483] Peak Memory/CPU: 215.00MB (95.8%)
+[21:09:24:469] WARNING: FPS Dropped 43/60
+[21:09:24:470] Memory Usage: 214.24MB (85.0%)
+[21:09:24:470] Free Memory: 597.32MB
+[21:09:24:471] Peak Memory/CPU: 215.00MB (95.8%)
+[21:09:25:457] WARNING: FPS Dropped 43/60
+[21:09:25:459] Memory Usage: 213.43MB (85.0%)
+[21:09:25:463] Free Memory: 597.20MB
+[21:09:25:463] Peak Memory/CPU: 215.00MB (95.8%)
+[21:09:26:467] WARNING: FPS Dropped 45/60
+[21:09:26:468] Memory Usage: 214.78MB (85.1%)
+[21:09:26:468] Free Memory: 595.69MB
+[21:09:26:469] Peak Memory/CPU: 215.00MB (95.8%)
+[21:09:27:469] WARNING: FPS Dropped 44/60
+[21:09:27:469] Memory Usage: 214.57MB (85.1%)
+[21:09:27:470] Free Memory: 595.18MB
+[21:09:27:470] Peak Memory/CPU: 215.10MB (95.8%)
+[21:09:28:356] Autosaved progress
+[21:09:28:473] WARNING: FPS Dropped 44/60
+[21:09:28:474] Memory Usage: 214.49MB (85.1%)
+[21:09:28:475] Free Memory: 595.63MB
+[21:09:28:475] Peak Memory/CPU: 215.18MB (95.8%)
+[21:09:29:470] WARNING: FPS Dropped 44/60
+[21:09:29:470] Memory Usage: 215.18MB (85.1%)
+[21:09:29:471] Free Memory: 595.38MB
+[21:09:29:471] Peak Memory/CPU: 215.18MB (95.8%)
+[21:09:30:476] NOTICE: FPS Unstabled 46/60
+[21:09:30:477] Memory Usage: 214.60MB (85.1%)
+[21:09:30:477] Free Memory: 595.43MB
+[21:09:30:478] Peak Memory/CPU: 215.70MB (95.8%)
+[21:09:31:469] WARNING: FPS Dropped 45/60
+[21:09:31:470] Memory Usage: 215.01MB (85.1%)
+[21:09:31:470] Free Memory: 594.87MB
+[21:09:31:470] Peak Memory/CPU: 215.82MB (95.8%)
+[21:09:32:466] WARNING: FPS Dropped 43/60
+[21:09:32:466] Memory Usage: 216.30MB (85.1%)
+[21:09:32:467] Free Memory: 593.84MB
+[21:09:32:467] Peak Memory/CPU: 216.30MB (95.8%)
+[21:09:33:335] Autosaved progress
+[21:09:33:482] WARNING: FPS Dropped 42/60
+[21:09:33:483] Memory Usage: 214.94MB (85.2%)
+[21:09:33:483] Free Memory: 591.90MB
+[21:09:33:484] Peak Memory/CPU: 216.32MB (95.8%)
+[21:09:34:473] WARNING: FPS Dropped 39/60
+[21:09:34:474] Memory Usage: 217.11MB (85.2%)
+[21:09:34:477] Free Memory: 590.07MB
+[21:09:34:480] Peak Memory/CPU: 217.11MB (95.8%)
+[21:09:35:464] WARNING: FPS Dropped 35/60
+[21:09:35:464] Memory Usage: 216.29MB (85.2%)
+[21:09:35:464] Free Memory: 589.31MB
+[21:09:35:465] Peak Memory/CPU: 217.11MB (95.8%)
+[21:09:36:489] WARNING: FPS Dropped 38/60
+[21:09:36:490] Memory Usage: 217.11MB (85.3%)
+[21:09:36:491] Free Memory: 588.13MB
+[21:09:36:491] Peak Memory/CPU: 217.11MB (95.8%)
+[21:09:37:465] WARNING: FPS Dropped 38/60
+[21:09:37:466] Memory Usage: 215.49MB (85.2%)
+[21:09:37:466] Free Memory: 588.61MB
+[21:09:37:466] Peak Memory/CPU: 217.11MB (95.8%)
+[21:09:37:656] Hour callback
+[21:09:38:308] [A] Objects in memory: 16
+[21:09:38:312] Memory Usage: 215.49MB (85.4%)
+[21:09:38:313] Free Memory: 582.62MB
+[21:09:38:313] Peak Memory/CPU: 217.11MB (95.8%)
+[21:09:38:335] Autosaved progress
+[21:09:38:463] WARNING: FPS Dropped 39/60
+[21:09:38:464] Memory Usage: 215.49MB (85.3%)
+[21:09:38:464] Free Memory: 587.59MB
+[21:09:38:465] Peak Memory/CPU: 217.12MB (95.8%)
+[21:09:39:467] WARNING: FPS Dropped 38/60
+[21:09:39:468] Memory Usage: 216.30MB (85.3%)
+[21:09:39:469] Free Memory: 586.23MB
+[21:09:39:469] Peak Memory/CPU: 217.12MB (95.8%)
+[21:09:40:476] WARNING: FPS Dropped 40/60
+[21:09:40:477] Memory Usage: 217.12MB (85.3%)
+[21:09:40:478] Free Memory: 586.63MB
+[21:09:40:478] Peak Memory/CPU: 217.12MB (95.8%)
+[21:09:41:482] WARNING: FPS Dropped 44/60
+[21:09:41:482] Memory Usage: 216.30MB (85.3%)
+[21:09:41:483] Free Memory: 585.51MB
+[21:09:41:483] Peak Memory/CPU: 217.12MB (95.8%)
+[21:09:42:484] WARNING: FPS Dropped 44/60
+[21:09:42:485] Memory Usage: 216.43MB (85.3%)
+[21:09:42:485] Free Memory: 584.85MB
+[21:09:42:486] Peak Memory/CPU: 217.12MB (95.8%)
+[21:09:43:336] Autosaved progress
+[21:09:43:473] WARNING: FPS Dropped 44/60
+[21:09:43:474] Memory Usage: 216.47MB (85.4%)
+[21:09:43:474] Free Memory: 583.30MB
+[21:09:43:475] Peak Memory/CPU: 217.28MB (95.8%)
+[21:09:44:471] WARNING: FPS Dropped 44/60
+[21:09:44:472] Memory Usage: 216.47MB (85.4%)
+[21:09:44:472] Free Memory: 583.54MB
+[21:09:44:473] Peak Memory/CPU: 217.28MB (95.8%)
+[21:09:45:471] WARNING: FPS Dropped 43/60
+[21:09:45:472] Memory Usage: 216.18MB (85.4%)
+[21:09:45:472] Free Memory: 582.65MB
+[21:09:45:472] Peak Memory/CPU: 217.28MB (95.8%)
+[21:09:46:483] WARNING: FPS Dropped 45/60
+[21:09:46:484] Memory Usage: 217.28MB (85.4%)
+[21:09:46:484] Free Memory: 581.65MB
+[21:09:46:484] Peak Memory/CPU: 217.28MB (95.8%)
+[21:09:47:465] WARNING: FPS Dropped 43/60
+[21:09:47:466] Memory Usage: 216.59MB (85.4%)
+[21:09:47:466] Free Memory: 581.34MB
+[21:09:47:466] Peak Memory/CPU: 217.28MB (95.8%)
+[21:09:48:347] Autosaved progress
+[21:09:48:472] WARNING: FPS Dropped 45/60
+[21:09:48:473] Memory Usage: 217.28MB (85.4%)
+[21:09:48:473] Free Memory: 582.32MB
+[21:09:48:474] Peak Memory/CPU: 217.28MB (95.8%)
+[21:09:49:466] WARNING: FPS Dropped 42/60
+[21:09:49:466] Memory Usage: 217.28MB (85.4%)
+[21:09:49:466] Free Memory: 581.01MB
+[21:09:49:467] Peak Memory/CPU: 217.28MB (95.8%)
+[21:09:50:473] WARNING: FPS Dropped 45/60
+[21:09:50:475] Memory Usage: 216.59MB (85.4%)
+[21:09:50:476] Free Memory: 580.94MB
+[21:09:50:477] Peak Memory/CPU: 217.28MB (95.8%)
+[21:09:51:478] WARNING: FPS Dropped 45/60
+[21:09:51:481] Memory Usage: 215.91MB (85.5%)
+[21:09:51:482] Free Memory: 580.24MB
+[21:09:51:482] Peak Memory/CPU: 217.28MB (95.8%)
+[21:09:52:478] WARNING: FPS Dropped 45/60
+[21:09:52:480] Memory Usage: 216.59MB (85.5%)
+[21:09:52:480] Free Memory: 578.16MB
+[21:09:52:480] Peak Memory/CPU: 217.28MB (95.8%)
+[21:09:53:332] Autosaved progress
+[21:09:53:473] WARNING: FPS Dropped 44/60
+[21:09:53:474] Memory Usage: 215.10MB (85.5%)
+[21:09:53:474] Free Memory: 577.88MB
+[21:09:53:476] Peak Memory/CPU: 217.29MB (95.8%)
+[21:09:54:473] WARNING: FPS Dropped 44/60
+[21:09:54:474] Memory Usage: 216.60MB (85.6%)
+[21:09:54:476] Free Memory: 575.93MB
+[21:09:54:477] Peak Memory/CPU: 217.29MB (95.8%)
+[21:09:55:483] NOTICE: FPS Unstabled 46/60
+[21:09:55:484] Memory Usage: 216.60MB (85.6%)
+[21:09:55:484] Free Memory: 575.47MB
+[21:09:55:484] Peak Memory/CPU: 217.29MB (95.8%)
+[21:09:56:487] WARNING: FPS Dropped 42/60
+[21:09:56:487] Memory Usage: 217.29MB (85.6%)
+[21:09:56:487] Free Memory: 574.82MB
+[21:09:56:488] Peak Memory/CPU: 217.29MB (95.8%)
+[21:09:57:503] WARNING: FPS Dropped 37/60
+[21:09:57:504] Memory Usage: 215.10MB (84.7%)
+[21:09:57:504] Free Memory: 611.57MB
+[21:09:57:504] Peak Memory/CPU: 217.29MB (95.8%)
+[21:09:58:354] Autosaved progress
+[21:09:58:476] WARNING: FPS Dropped 39/60
+[21:09:58:478] Memory Usage: 217.29MB (84.6%)
+[21:09:58:478] Free Memory: 612.79MB
+[21:09:58:479] Peak Memory/CPU: 217.29MB (95.8%)
+[21:09:59:472] WARNING: FPS Dropped 39/60
+[21:09:59:473] Memory Usage: 215.10MB (84.6%)
+[21:09:59:474] Free Memory: 612.41MB
+[21:09:59:475] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:00:469] WARNING: FPS Dropped 40/60
+[21:10:00:470] Memory Usage: 215.10MB (84.7%)
+[21:10:00:470] Free Memory: 610.93MB
+[21:10:00:471] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:01:481] WARNING: FPS Dropped 40/60
+[21:10:01:481] Memory Usage: 215.10MB (84.6%)
+[21:10:01:481] Free Memory: 614.56MB
+[21:10:01:482] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:02:491] WARNING: FPS Dropped 41/60
+[21:10:02:491] Memory Usage: 217.29MB (84.6%)
+[21:10:02:492] Free Memory: 614.61MB
+[21:10:02:492] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:03:335] Autosaved progress
+[21:10:03:483] WARNING: FPS Dropped 40/60
+[21:10:03:484] Memory Usage: 217.29MB (84.6%)
+[21:10:03:485] Free Memory: 614.24MB
+[21:10:03:486] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:04:487] WARNING: FPS Dropped 39/60
+[21:10:04:487] Memory Usage: 215.10MB (84.6%)
+[21:10:04:488] Free Memory: 614.08MB
+[21:10:04:488] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:05:471] WARNING: FPS Dropped 39/60
+[21:10:05:472] Memory Usage: 217.29MB (84.6%)
+[21:10:05:472] Free Memory: 614.72MB
+[21:10:05:472] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:06:474] WARNING: FPS Dropped 40/60
+[21:10:06:476] Memory Usage: 215.10MB (84.5%)
+[21:10:06:479] Free Memory: 617.20MB
+[21:10:06:479] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:07:471] WARNING: FPS Dropped 40/60
+[21:10:07:472] Memory Usage: 214.97MB (84.5%)
+[21:10:07:472] Free Memory: 616.62MB
+[21:10:07:473] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:08:336] Autosaved progress
+[21:10:08:473] WARNING: FPS Dropped 40/60
+[21:10:08:473] Memory Usage: 216.47MB (84.6%)
+[21:10:08:474] Free Memory: 615.97MB
+[21:10:08:474] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:09:473] WARNING: FPS Dropped 40/60
+[21:10:09:474] Memory Usage: 215.91MB (84.6%)
+[21:10:09:474] Free Memory: 614.84MB
+[21:10:09:477] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:10:473] WARNING: FPS Dropped 39/60
+[21:10:10:474] Memory Usage: 217.29MB (84.6%)
+[21:10:10:474] Free Memory: 615.56MB
+[21:10:10:474] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:11:503] WARNING: FPS Dropped 41/60
+[21:10:11:504] Memory Usage: 215.79MB (84.6%)
+[21:10:11:504] Free Memory: 615.23MB
+[21:10:11:504] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:12:476] WARNING: FPS Dropped 39/60
+[21:10:12:477] Memory Usage: 215.91MB (84.6%)
+[21:10:12:477] Free Memory: 615.02MB
+[21:10:12:478] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:13:334] Autosaved progress
+[21:10:13:478] WARNING: FPS Dropped 40/60
+[21:10:13:482] Memory Usage: 216.60MB (84.6%)
+[21:10:13:483] Free Memory: 615.32MB
+[21:10:13:483] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:13:832] Hour callback
+[21:10:14:490] WARNING: FPS Dropped 40/60
+[21:10:14:490] Memory Usage: 217.29MB (84.6%)
+[21:10:14:491] Free Memory: 614.80MB
+[21:10:14:492] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:15:481] WARNING: FPS Dropped 38/60
+[21:10:15:482] Memory Usage: 215.91MB (84.6%)
+[21:10:15:482] Free Memory: 614.91MB
+[21:10:15:482] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:16:488] WARNING: FPS Dropped 39/60
+[21:10:16:488] Memory Usage: 216.60MB (84.6%)
+[21:10:16:489] Free Memory: 615.08MB
+[21:10:16:489] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:17:471] WARNING: FPS Dropped 39/60
+[21:10:17:472] Memory Usage: 216.48MB (84.6%)
+[21:10:17:472] Free Memory: 614.75MB
+[21:10:17:473] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:18:329] Autosaved progress
+[21:10:18:487] WARNING: FPS Dropped 40/60
+[21:10:18:487] Memory Usage: 217.29MB (84.6%)
+[21:10:18:487] Free Memory: 614.24MB
+[21:10:18:488] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:19:486] WARNING: FPS Dropped 36/60
+[21:10:19:486] Memory Usage: 217.29MB (84.6%)
+[21:10:19:487] Free Memory: 615.82MB
+[21:10:19:487] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:20:470] WARNING: FPS Dropped 38/60
+[21:10:20:470] Memory Usage: 216.60MB (84.6%)
+[21:10:20:471] Free Memory: 615.01MB
+[21:10:20:471] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:21:485] WARNING: FPS Dropped 40/60
+[21:10:21:485] Memory Usage: 216.60MB (84.5%)
+[21:10:21:486] Free Memory: 616.97MB
+[21:10:21:486] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:22:486] WARNING: FPS Dropped 39/60
+[21:10:22:487] Memory Usage: 216.60MB (84.6%)
+[21:10:22:487] Free Memory: 614.08MB
+[21:10:22:487] Peak Memory/CPU: 217.29MB (95.8%)
+[21:10:23:346] Autosaved progress
+[21:10:23:487] WARNING: FPS Dropped 39/60
+[21:10:23:487] Memory Usage: 216.58MB (84.7%)
+[21:10:23:488] Free Memory: 608.86MB
+[21:10:23:488] Peak Memory/CPU: 217.68MB (95.8%)
+[21:10:24:483] WARNING: FPS Dropped 40/60
+[21:10:24:483] Memory Usage: 216.99MB (84.8%)
+[21:10:24:483] Free Memory: 608.17MB
+[21:10:24:484] Peak Memory/CPU: 217.68MB (95.8%)
+[21:10:25:484] WARNING: FPS Dropped 40/60
+[21:10:25:484] Memory Usage: 216.99MB (84.8%)
+[21:10:25:485] Free Memory: 607.24MB
+[21:10:25:485] Peak Memory/CPU: 217.68MB (95.8%)
+[21:10:26:480] WARNING: FPS Dropped 40/60
+[21:10:26:483] Memory Usage: 217.24MB (84.8%)
+[21:10:26:483] Free Memory: 607.01MB
+[21:10:26:484] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:27:484] WARNING: FPS Dropped 40/60
+[21:10:27:484] Memory Usage: 217.37MB (84.8%)
+[21:10:27:485] Free Memory: 606.82MB
+[21:10:27:485] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:28:333] Autosaved progress
+[21:10:28:483] WARNING: FPS Dropped 39/60
+[21:10:28:484] Memory Usage: 216.55MB (84.7%)
+[21:10:28:484] Free Memory: 608.46MB
+[21:10:28:484] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:29:484] WARNING: FPS Dropped 40/60
+[21:10:29:484] Memory Usage: 217.24MB (84.7%)
+[21:10:29:484] Free Memory: 608.34MB
+[21:10:29:485] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:30:490] WARNING: FPS Dropped 43/60
+[21:10:30:491] Memory Usage: 217.24MB (84.8%)
+[21:10:30:491] Free Memory: 607.84MB
+[21:10:30:492] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:31:483] WARNING: FPS Dropped 39/60
+[21:10:31:483] Memory Usage: 216.68MB (84.7%)
+[21:10:31:484] Free Memory: 608.30MB
+[21:10:31:484] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:32:482] WARNING: FPS Dropped 39/60
+[21:10:32:483] Memory Usage: 216.55MB (84.8%)
+[21:10:32:483] Free Memory: 608.09MB
+[21:10:32:484] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:33:334] Autosaved progress
+[21:10:33:485] WARNING: FPS Dropped 39/60
+[21:10:33:486] Memory Usage: 217.24MB (84.8%)
+[21:10:33:486] Free Memory: 607.08MB
+[21:10:33:487] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:34:481] WARNING: FPS Dropped 38/60
+[21:10:34:481] Memory Usage: 216.55MB (84.8%)
+[21:10:34:481] Free Memory: 607.75MB
+[21:10:34:482] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:35:483] WARNING: FPS Dropped 39/60
+[21:10:35:484] Memory Usage: 216.68MB (84.8%)
+[21:10:35:484] Free Memory: 607.53MB
+[21:10:35:485] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:36:489] WARNING: FPS Dropped 40/60
+[21:10:36:490] Memory Usage: 217.24MB (84.8%)
+[21:10:36:490] Free Memory: 607.33MB
+[21:10:36:491] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:37:485] WARNING: FPS Dropped 39/60
+[21:10:37:485] Memory Usage: 217.24MB (84.8%)
+[21:10:37:485] Free Memory: 607.86MB
+[21:10:37:486] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:38:317] [A] Objects in memory: 17
+[21:10:38:317] Memory Usage: 215.74MB (84.9%)
+[21:10:38:318] Free Memory: 600.97MB
+[21:10:38:318] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:38:342] Autosaved progress
+[21:10:38:486] WARNING: FPS Dropped 39/60
+[21:10:38:486] Memory Usage: 217.24MB (84.7%)
+[21:10:38:487] Free Memory: 608.26MB
+[21:10:38:487] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:39:500] WARNING: FPS Dropped 40/60
+[21:10:39:501] Memory Usage: 216.68MB (84.8%)
+[21:10:39:501] Free Memory: 607.78MB
+[21:10:39:502] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:40:500] WARNING: FPS Dropped 40/60
+[21:10:40:501] Memory Usage: 215.74MB (84.8%)
+[21:10:40:501] Free Memory: 607.38MB
+[21:10:40:502] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:41:505] WARNING: FPS Dropped 39/60
+[21:10:41:506] Memory Usage: 217.37MB (84.8%)
+[21:10:41:506] Free Memory: 605.86MB
+[21:10:41:507] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:42:498] WARNING: FPS Dropped 43/60
+[21:10:42:500] Memory Usage: 216.68MB (84.8%)
+[21:10:42:500] Free Memory: 604.61MB
+[21:10:42:501] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:43:333] Autosaved progress
+[21:10:43:473] WARNING: FPS Dropped 43/60
+[21:10:43:476] Memory Usage: 215.74MB (84.8%)
+[21:10:43:479] Free Memory: 605.24MB
+[21:10:43:481] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:44:503] WARNING: FPS Dropped 39/60
+[21:10:44:504] Memory Usage: 216.14MB (85.0%)
+[21:10:44:505] Free Memory: 596.77MB
+[21:10:44:505] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:45:484] WARNING: FPS Dropped 39/60
+[21:10:45:484] Memory Usage: 216.43MB (85.1%)
+[21:10:45:485] Free Memory: 594.19MB
+[21:10:45:485] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:46:491] WARNING: FPS Dropped 44/60
+[21:10:46:493] Memory Usage: 217.24MB (85.2%)
+[21:10:46:496] Free Memory: 591.86MB
+[21:10:46:496] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:47:486] WARNING: FPS Dropped 44/60
+[21:10:47:487] Memory Usage: 217.24MB (85.2%)
+[21:10:47:487] Free Memory: 588.44MB
+[21:10:47:487] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:48:335] Autosaved progress
+[21:10:48:483] WARNING: FPS Dropped 44/60
+[21:10:48:484] Memory Usage: 218.05MB (85.2%)
+[21:10:48:484] Free Memory: 588.90MB
+[21:10:48:484] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:49:490] NOTICE: FPS Unstabled 46/60
+[21:10:49:490] Memory Usage: 216.55MB (85.3%)
+[21:10:49:491] Free Memory: 587.71MB
+[21:10:49:493] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:50:480] WARNING: FPS Dropped 45/60
+[21:10:50:481] Memory Usage: 217.24MB (85.3%)
+[21:10:50:481] Free Memory: 586.11MB
+[21:10:50:481] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:51:003] Hour callback
+[21:10:51:485] NOTICE: FPS Unstabled 46/60
+[21:10:51:486] Memory Usage: 217.37MB (85.3%)
+[21:10:51:486] Free Memory: 586.15MB
+[21:10:51:486] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:52:490] NOTICE: FPS Unstabled 46/60
+[21:10:52:492] Memory Usage: 217.37MB (85.3%)
+[21:10:52:496] Free Memory: 586.21MB
+[21:10:52:497] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:53:341] Autosaved progress
+[21:10:53:480] WARNING: FPS Dropped 44/60
+[21:10:53:480] Memory Usage: 216.68MB (85.3%)
+[21:10:53:481] Free Memory: 587.23MB
+[21:10:53:481] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:54:481] WARNING: FPS Dropped 45/60
+[21:10:54:481] Memory Usage: 216.14MB (85.3%)
+[21:10:54:482] Free Memory: 587.06MB
+[21:10:54:482] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:55:491] WARNING: FPS Dropped 45/60
+[21:10:55:492] Memory Usage: 216.14MB (85.3%)
+[21:10:55:495] Free Memory: 585.57MB
+[21:10:55:496] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:56:499] WARNING: FPS Dropped 44/60
+[21:10:56:500] Memory Usage: 217.37MB (85.4%)
+[21:10:56:501] Free Memory: 580.71MB
+[21:10:56:501] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:57:486] WARNING: FPS Dropped 38/60
+[21:10:57:486] Memory Usage: 216.68MB (85.5%)
+[21:10:57:487] Free Memory: 579.74MB
+[21:10:57:487] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:58:353] Autosaved progress
+[21:10:58:482] WARNING: FPS Dropped 37/60
+[21:10:58:482] Memory Usage: 216.43MB (85.3%)
+[21:10:58:483] Free Memory: 585.23MB
+[21:10:58:483] Peak Memory/CPU: 218.05MB (95.8%)
+[21:10:59:507] WARNING: FPS Dropped 40/60
+[21:10:59:507] Memory Usage: 217.24MB (85.3%)
+[21:10:59:508] Free Memory: 585.03MB
+[21:10:59:509] Peak Memory/CPU: 218.05MB (95.8%)
+[21:11:00:486] WARNING: FPS Dropped 38/60
+[21:11:00:487] Memory Usage: 217.37MB (85.3%)
+[21:11:00:487] Free Memory: 584.80MB
+[21:11:00:487] Peak Memory/CPU: 218.05MB (95.8%)
+[21:11:01:489] WARNING: FPS Dropped 36/60
+[21:11:01:489] Memory Usage: 217.37MB (85.3%)
+[21:11:01:490] Free Memory: 584.32MB
+[21:11:01:490] Peak Memory/CPU: 218.06MB (95.8%)
+[21:11:02:506] WARNING: FPS Dropped 37/60
+[21:11:02:507] Memory Usage: 216.56MB (85.4%)
+[21:11:02:508] Free Memory: 584.05MB
+[21:11:02:512] Peak Memory/CPU: 218.06MB (95.8%)
+[21:11:03:338] Autosaved progress
+[21:11:03:489] WARNING: FPS Dropped 36/60
+[21:11:03:489] Memory Usage: 216.56MB (85.4%)
+[21:11:03:490] Free Memory: 583.91MB
+[21:11:03:490] Peak Memory/CPU: 218.06MB (95.8%)
+[21:11:04:507] WARNING: FPS Dropped 36/60
+[21:11:04:508] Memory Usage: 216.56MB (85.4%)
+[21:11:04:508] Free Memory: 583.48MB
+[21:11:04:509] Peak Memory/CPU: 218.06MB (95.8%)
+[21:11:05:502] WARNING: FPS Dropped 37/60
+[21:11:05:503] Memory Usage: 218.06MB (85.4%)
+[21:11:05:503] Free Memory: 582.98MB
+[21:11:05:503] Peak Memory/CPU: 218.06MB (95.8%)
+[21:11:06:504] WARNING: FPS Dropped 37/60
+[21:11:06:505] Memory Usage: 216.15MB (85.4%)
+[21:11:06:505] Free Memory: 582.31MB
+[21:11:06:506] Peak Memory/CPU: 218.06MB (95.8%)
+[21:11:07:490] WARNING: FPS Dropped 36/60
+[21:11:07:490] Memory Usage: 216.15MB (85.4%)
+[21:11:07:491] Free Memory: 582.32MB
+[21:11:07:491] Peak Memory/CPU: 218.06MB (95.8%)
+[21:11:08:339] Autosaved progress
+[21:11:08:503] WARNING: FPS Dropped 37/60
+[21:11:08:504] Memory Usage: 218.06MB (85.4%)
+[21:11:08:504] Free Memory: 581.98MB
+[21:11:08:505] Peak Memory/CPU: 218.06MB (95.8%)
+[21:11:09:503] WARNING: FPS Dropped 37/60
+[21:11:09:503] Memory Usage: 217.25MB (85.4%)
+[21:11:09:503] Free Memory: 581.91MB
+[21:11:09:504] Peak Memory/CPU: 218.06MB (95.8%)
+[21:11:10:507] WARNING: FPS Dropped 37/60
+[21:11:10:510] Memory Usage: 216.43MB (85.4%)
+[21:11:10:512] Free Memory: 582.04MB
+[21:11:10:514] Peak Memory/CPU: 218.06MB (95.8%)
+[21:11:11:511] WARNING: FPS Dropped 37/60
+[21:11:11:512] Memory Usage: 218.06MB (85.4%)
+[21:11:11:512] Free Memory: 581.04MB
+[21:11:11:513] Peak Memory/CPU: 218.06MB (95.8%)
+[21:11:12:502] WARNING: FPS Dropped 38/60
+[21:11:12:503] Memory Usage: 218.06MB (85.4%)
+[21:11:12:503] Free Memory: 581.32MB
+[21:11:12:504] Peak Memory/CPU: 218.06MB (95.8%)
+[21:11:13:335] Autosaved progress
+[21:11:13:499] WARNING: FPS Dropped 41/60
+[21:11:13:500] Memory Usage: 216.16MB (85.4%)
+[21:11:13:500] Free Memory: 582.08MB
+[21:11:13:501] Peak Memory/CPU: 218.07MB (95.8%)
+[21:11:14:497] WARNING: FPS Dropped 45/60
+[21:11:14:498] Memory Usage: 218.07MB (85.4%)
+[21:11:14:498] Free Memory: 581.75MB
+[21:11:14:499] Peak Memory/CPU: 218.07MB (95.8%)
+[21:11:15:485] NOTICE: FPS Unstabled 46/60
+[21:11:15:486] Memory Usage: 218.07MB (85.4%)
+[21:11:15:486] Free Memory: 581.15MB
+[21:11:15:486] Peak Memory/CPU: 218.07MB (95.8%)
+[21:11:16:485] WARNING: FPS Dropped 45/60
+[21:11:16:486] Memory Usage: 216.57MB (85.4%)
+[21:11:16:486] Free Memory: 580.71MB
+[21:11:16:486] Peak Memory/CPU: 218.07MB (95.8%)
+[21:11:17:487] WARNING: FPS Dropped 44/60
+[21:11:17:488] Memory Usage: 216.70MB (85.4%)
+[21:11:17:488] Free Memory: 580.59MB
+[21:11:17:489] Peak Memory/CPU: 218.07MB (95.8%)
+[21:11:18:352] Autosaved progress
+[21:11:18:506] WARNING: FPS Dropped 39/60
+[21:11:18:507] Memory Usage: 216.71MB (85.4%)
+[21:11:18:508] Free Memory: 580.99MB
+[21:11:18:510] Peak Memory/CPU: 218.08MB (95.8%)
+[21:11:19:502] WARNING: FPS Dropped 34/60
+[21:11:19:503] Memory Usage: 216.58MB (85.4%)
+[21:11:19:503] Free Memory: 582.57MB
+[21:11:19:503] Peak Memory/CPU: 218.08MB (95.8%)
+[21:11:20:497] WARNING: FPS Dropped 38/60
+[21:11:20:498] Memory Usage: 216.71MB (85.4%)
+[21:11:20:499] Free Memory: 582.48MB
+[21:11:20:499] Peak Memory/CPU: 218.08MB (95.8%)
+[21:11:21:488] WARNING: FPS Dropped 42/60
+[21:11:21:490] Memory Usage: 216.71MB (85.4%)
+[21:11:21:491] Free Memory: 581.75MB
+[21:11:21:491] Peak Memory/CPU: 218.08MB (95.8%)
+[21:11:22:493] WARNING: FPS Dropped 43/60
+[21:11:22:497] Memory Usage: 217.39MB (85.3%)
+[21:11:22:498] Free Memory: 585.91MB
+[21:11:22:499] Peak Memory/CPU: 218.08MB (95.8%)
+[21:11:23:346] Autosaved progress
+[21:11:23:512] WARNING: FPS Dropped 45/60
+[21:11:23:512] Memory Usage: 217.39MB (85.3%)
+[21:11:23:513] Free Memory: 586.45MB
+[21:11:23:513] Peak Memory/CPU: 218.08MB (95.8%)
+[21:11:24:506] NOTICE: FPS Unstabled 46/60
+[21:11:24:507] Memory Usage: 216.71MB (85.3%)
+[21:11:24:507] Free Memory: 586.51MB
+[21:11:24:507] Peak Memory/CPU: 218.08MB (95.8%)
+[21:11:25:499] WARNING: FPS Dropped 44/60
+[21:11:25:500] Memory Usage: 216.71MB (85.3%)
+[21:11:25:500] Free Memory: 586.93MB
+[21:11:25:500] Peak Memory/CPU: 218.08MB (95.8%)
+[21:11:26:498] WARNING: FPS Dropped 44/60
+[21:11:26:502] Memory Usage: 216.71MB (85.3%)
+[21:11:26:502] Free Memory: 586.99MB
+[21:11:26:503] Peak Memory/CPU: 218.08MB (95.8%)
+[21:11:27:490] WARNING: FPS Dropped 45/60
+[21:11:27:491] Memory Usage: 218.11MB (85.3%)
+[21:11:27:491] Free Memory: 587.28MB
+[21:11:27:495] Peak Memory/CPU: 218.11MB (95.8%)
+[21:11:27:970] Hour callback
+[21:11:28:339] Autosaved progress
+[21:11:28:503] WARNING: FPS Dropped 41/60
+[21:11:28:504] Memory Usage: 216.74MB (85.3%)
+[21:11:28:504] Free Memory: 586.93MB
+[21:11:28:504] Peak Memory/CPU: 218.12MB (95.8%)
+[21:11:29:501] WARNING: FPS Dropped 39/60
+[21:11:29:501] Memory Usage: 218.12MB (85.3%)
+[21:11:29:502] Free Memory: 587.11MB
+[21:11:29:502] Peak Memory/CPU: 218.12MB (95.8%)
+[21:11:30:527] WARNING: FPS Dropped 39/60
+[21:11:30:528] Memory Usage: 216.80MB (85.5%)
+[21:11:30:528] Free Memory: 576.69MB
+[21:11:30:529] Peak Memory/CPU: 218.17MB (95.8%)
+[21:11:31:496] WARNING: FPS Dropped 35/60
+[21:11:31:497] Memory Usage: 218.17MB (85.6%)
+[21:11:31:497] Free Memory: 574.18MB
+[21:11:31:497] Peak Memory/CPU: 218.17MB (95.8%)
+[21:11:32:490] WARNING: FPS Dropped 40/60
+[21:11:32:491] Memory Usage: 218.18MB (85.6%)
+[21:11:32:491] Free Memory: 574.78MB
+[21:11:32:493] Peak Memory/CPU: 218.18MB (95.8%)
+[21:11:33:349] Autosaved progress
+[21:11:33:504] WARNING: FPS Dropped 44/60
+[21:11:33:505] Memory Usage: 218.18MB (85.6%)
+[21:11:33:505] Free Memory: 574.18MB
+[21:11:33:505] Peak Memory/CPU: 218.18MB (95.8%)
+[21:11:34:504] WARNING: FPS Dropped 45/60
+[21:11:34:504] Memory Usage: 216.80MB (85.4%)
+[21:11:34:505] Free Memory: 581.55MB
+[21:11:34:505] Peak Memory/CPU: 218.18MB (95.8%)
+[21:11:35:498] WARNING: FPS Dropped 45/60
+[21:11:35:498] Memory Usage: 218.18MB (85.5%)
+[21:11:35:499] Free Memory: 579.70MB
+[21:11:35:499] Peak Memory/CPU: 218.18MB (95.8%)
+[21:11:36:498] WARNING: FPS Dropped 45/60
+[21:11:36:499] Memory Usage: 216.80MB (85.5%)
+[21:11:36:499] Free Memory: 578.17MB
+[21:11:36:500] Peak Memory/CPU: 218.18MB (95.8%)
+[21:11:37:515] NOTICE: FPS Unstabled 46/60
+[21:11:37:516] Memory Usage: 216.71MB (85.5%)
+[21:11:37:517] Free Memory: 577.80MB
+[21:11:37:517] Peak Memory/CPU: 218.21MB (95.8%)
+[21:11:38:315] [A] Objects in memory: 17
+[21:11:38:316] Memory Usage: 218.21MB (85.7%)
+[21:11:38:316] Free Memory: 570.99MB
+[21:11:38:316] Peak Memory/CPU: 218.21MB (95.8%)
+[21:11:38:340] Autosaved progress
+[21:11:38:520] NOTICE: FPS Unstabled 46/60
+[21:11:38:520] Memory Usage: 217.52MB (85.4%)
+[21:11:38:521] Free Memory: 580.72MB
+[21:11:38:521] Peak Memory/CPU: 218.21MB (95.8%)
+[21:11:39:501] WARNING: FPS Dropped 45/60
+[21:11:39:501] Memory Usage: 217.52MB (85.4%)
+[21:11:39:502] Free Memory: 581.17MB
+[21:11:39:502] Peak Memory/CPU: 218.21MB (95.8%)
+[21:11:40:500] NOTICE: FPS Unstabled 46/60
+[21:11:40:501] Memory Usage: 216.84MB (85.5%)
+[21:11:40:502] Free Memory: 580.24MB
+[21:11:40:502] Peak Memory/CPU: 218.21MB (95.8%)
+[21:11:41:503] NOTICE: FPS Unstabled 46/60
+[21:11:41:504] Memory Usage: 216.71MB (85.5%)
+[21:11:41:504] Free Memory: 580.22MB
+[21:11:41:504] Peak Memory/CPU: 218.21MB (95.8%)
+[21:11:42:503] NOTICE: FPS Unstabled 46/60
+[21:11:42:504] Memory Usage: 217.53MB (85.5%)
+[21:11:42:504] Free Memory: 580.04MB
+[21:11:42:504] Peak Memory/CPU: 218.21MB (95.8%)
+[21:11:43:372] Autosaved progress
+[21:11:43:500] NOTICE: FPS Unstabled 46/60
+[21:11:43:500] Memory Usage: 216.85MB (85.5%)
+[21:11:43:501] Free Memory: 579.33MB
+[21:11:43:501] Peak Memory/CPU: 218.22MB (95.8%)
+[21:11:44:500] WARNING: FPS Dropped 45/60
+[21:11:44:501] Memory Usage: 217.54MB (85.4%)
+[21:11:44:501] Free Memory: 581.22MB
+[21:11:44:501] Peak Memory/CPU: 218.22MB (95.8%)
+[21:11:45:506] NOTICE: FPS Unstabled 46/60
+[21:11:45:507] Memory Usage: 217.41MB (85.4%)
+[21:11:45:508] Free Memory: 580.64MB
+[21:11:45:510] Peak Memory/CPU: 218.22MB (95.8%)
+[21:11:46:500] NOTICE: FPS Unstabled 46/60
+[21:11:46:501] Memory Usage: 218.22MB (85.4%)
+[21:11:46:501] Free Memory: 581.40MB
+[21:11:46:501] Peak Memory/CPU: 218.22MB (95.8%)
+[21:11:47:494] WARNING: FPS Dropped 44/60
+[21:11:47:496] Memory Usage: 217.41MB (85.5%)
+[21:11:47:496] Free Memory: 579.79MB
+[21:11:47:496] Peak Memory/CPU: 218.22MB (95.8%)
+[21:11:48:351] Autosaved progress
+[21:11:48:497] NOTICE: FPS Unstabled 46/60
+[21:11:48:498] Memory Usage: 218.23MB (85.5%)
+[21:11:48:499] Free Memory: 579.85MB
+[21:11:48:499] Peak Memory/CPU: 218.23MB (95.8%)
+[21:11:49:499] WARNING: FPS Dropped 45/60
+[21:11:49:499] Memory Usage: 217.54MB (85.5%)
+[21:11:49:500] Free Memory: 579.03MB
+[21:11:49:500] Peak Memory/CPU: 218.23MB (95.8%)
+[21:11:50:496] WARNING: FPS Dropped 45/60
+[21:11:50:497] Memory Usage: 218.23MB (85.5%)
+[21:11:50:497] Free Memory: 579.08MB
+[21:11:50:497] Peak Memory/CPU: 218.23MB (95.8%)
+[21:11:51:500] NOTICE: FPS Unstabled 47/60
+[21:11:51:501] Memory Usage: 216.73MB (85.5%)
+[21:11:51:502] Free Memory: 579.11MB
+[21:11:51:502] Peak Memory/CPU: 218.23MB (95.8%)
+[21:11:52:500] WARNING: FPS Dropped 42/60
+[21:11:52:500] Memory Usage: 216.73MB (85.5%)
+[21:11:52:501] Free Memory: 577.38MB
+[21:11:52:501] Peak Memory/CPU: 218.23MB (95.8%)
+[21:11:53:366] Autosaved progress
+[21:11:53:518] NOTICE: FPS Unstabled 46/60
+[21:11:53:519] Memory Usage: 217.55MB (85.5%)
+[21:11:53:519] Free Memory: 576.90MB
+[21:11:53:520] Peak Memory/CPU: 218.23MB (95.8%)
+[21:11:54:517] WARNING: FPS Dropped 45/60
+[21:11:54:518] Memory Usage: 218.23MB (85.7%)
+[21:11:54:518] Free Memory: 572.23MB
+[21:11:54:518] Peak Memory/CPU: 218.23MB (95.8%)
+[21:11:55:506] WARNING: FPS Dropped 45/60
+[21:11:55:507] Memory Usage: 217.63MB (85.8%)
+[21:11:55:511] Free Memory: 567.45MB
+[21:11:55:514] Peak Memory/CPU: 218.30MB (95.8%)
+[21:11:56:501] WARNING: FPS Dropped 43/60
+[21:11:56:502] Memory Usage: 217.80MB (85.8%)
+[21:11:56:502] Free Memory: 567.50MB
+[21:11:56:502] Peak Memory/CPU: 218.46MB (95.8%)
+[21:11:57:498] WARNING: FPS Dropped 45/60
+[21:11:57:499] Memory Usage: 217.13MB (85.8%)
+[21:11:57:499] Free Memory: 566.57MB
+[21:11:57:499] Peak Memory/CPU: 218.51MB (95.8%)
+[21:11:58:349] Autosaved progress
+[21:11:58:519] NOTICE: FPS Unstabled 47/60
+[21:11:58:520] Memory Usage: 218.51MB (85.8%)
+[21:11:58:520] Free Memory: 566.71MB
+[21:11:58:521] Peak Memory/CPU: 218.51MB (95.8%)
+[21:11:59:512] WARNING: FPS Dropped 45/60
+[21:11:59:515] Memory Usage: 217.82MB (85.8%)
+[21:11:59:515] Free Memory: 566.04MB
+[21:11:59:516] Peak Memory/CPU: 218.51MB (95.8%)
+[21:12:00:498] WARNING: FPS Dropped 44/60
+[21:12:00:499] Memory Usage: 217.01MB (85.8%)
+[21:12:00:499] Free Memory: 565.84MB
+[21:12:00:499] Peak Memory/CPU: 218.51MB (95.8%)
+[21:12:01:504] WARNING: FPS Dropped 45/60
+[21:12:01:505] Memory Usage: 217.01MB (85.8%)
+[21:12:01:505] Free Memory: 565.02MB
+[21:12:01:506] Peak Memory/CPU: 218.51MB (95.8%)
+[21:12:01:839] Hour callback
+[21:12:02:509] WARNING: FPS Dropped 44/60
+[21:12:02:512] Memory Usage: 217.82MB (85.9%)
+[21:12:02:514] Free Memory: 563.57MB
+[21:12:02:514] Peak Memory/CPU: 218.51MB (95.8%)
+[21:12:03:395] Autosaved progress
+[21:12:03:523] WARNING: FPS Dropped 45/60
+[21:12:03:524] Memory Usage: 217.82MB (85.9%)
+[21:12:03:524] Free Memory: 562.61MB
+[21:12:03:524] Peak Memory/CPU: 218.51MB (95.8%)
+[21:12:04:514] WARNING: FPS Dropped 44/60
+[21:12:04:514] Memory Usage: 218.51MB (85.9%)
+[21:12:04:515] Free Memory: 561.58MB
+[21:12:04:515] Peak Memory/CPU: 218.51MB (95.8%)
+[21:12:05:503] WARNING: FPS Dropped 45/60
+[21:12:05:506] Memory Usage: 217.82MB (85.9%)
+[21:12:05:508] Free Memory: 560.88MB
+[21:12:05:509] Peak Memory/CPU: 218.51MB (95.8%)
+[21:12:06:502] WARNING: FPS Dropped 45/60
+[21:12:06:502] Memory Usage: 217.70MB (85.9%)
+[21:12:06:503] Free Memory: 560.66MB
+[21:12:06:503] Peak Memory/CPU: 218.51MB (95.8%)
+[21:12:07:499] WARNING: FPS Dropped 45/60
+[21:12:07:500] Memory Usage: 217.70MB (85.9%)
+[21:12:07:500] Free Memory: 560.77MB
+[21:12:07:501] Peak Memory/CPU: 218.51MB (95.8%)
+[21:12:08:348] Autosaved progress
+[21:12:08:501] WARNING: FPS Dropped 43/60
+[21:12:08:502] Memory Usage: 218.51MB (85.7%)
+[21:12:08:502] Free Memory: 570.09MB
+[21:12:08:502] Peak Memory/CPU: 218.51MB (95.8%)
+[21:12:09:531] WARNING: FPS Dropped 36/60
+[21:12:09:532] Memory Usage: 218.51MB (84.9%)
+[21:12:09:532] Free Memory: 601.89MB
+[21:12:09:532] Peak Memory/CPU: 218.51MB (95.8%)
+[21:12:10:520] WARNING: FPS Dropped 39/60
+[21:12:10:521] Memory Usage: 217.14MB (84.9%)
+[21:12:10:522] Free Memory: 601.08MB
+[21:12:10:522] Peak Memory/CPU: 218.51MB (95.8%)
+[21:12:11:522] WARNING: FPS Dropped 39/60
+[21:12:11:523] Memory Usage: 218.51MB (84.9%)
+[21:12:11:523] Free Memory: 600.79MB
+[21:12:11:523] Peak Memory/CPU: 218.51MB (95.8%)
+[21:12:12:511] WARNING: FPS Dropped 37/60
+[21:12:12:511] Memory Usage: 217.41MB (84.9%)
+[21:12:12:512] Free Memory: 603.60MB
+[21:12:12:512] Peak Memory/CPU: 218.51MB (95.8%)
+[21:12:13:340] Autosaved progress
+[21:12:13:501] WARNING: FPS Dropped 39/60
+[21:12:13:501] Memory Usage: 218.51MB (84.9%)
+[21:12:13:502] Free Memory: 603.29MB
+[21:12:13:502] Peak Memory/CPU: 218.51MB (95.8%)
+[21:12:14:519] WARNING: FPS Dropped 40/60
+[21:12:14:519] Memory Usage: 218.51MB (84.9%)
+[21:12:14:520] Free Memory: 603.22MB
+[21:12:14:520] Peak Memory/CPU: 218.51MB (95.8%)
+[21:12:15:512] WARNING: FPS Dropped 39/60
+[21:12:15:512] Memory Usage: 217.41MB (84.9%)
+[21:12:15:512] Free Memory: 603.28MB
+[21:12:15:513] Peak Memory/CPU: 218.51MB (95.8%)
+[21:12:16:505] WARNING: FPS Dropped 40/60
+[21:12:16:506] Memory Usage: 217.41MB (84.9%)
+[21:12:16:506] Free Memory: 602.55MB
+[21:12:16:507] Peak Memory/CPU: 218.51MB (95.8%)
+[21:12:17:501] WARNING: FPS Dropped 45/60
+[21:12:17:502] Memory Usage: 218.51MB (84.9%)
+[21:12:17:502] Free Memory: 601.97MB
+[21:12:17:503] Peak Memory/CPU: 218.51MB (95.8%)
+[21:12:18:350] Autosaved progress
+[21:12:18:524] WARNING: FPS Dropped 45/60
+[21:12:18:524] Memory Usage: 217.42MB (84.8%)
+[21:12:18:525] Free Memory: 604.39MB
+[21:12:18:529] Peak Memory/CPU: 218.52MB (95.8%)
+[21:12:19:520] WARNING: FPS Dropped 44/60
+[21:12:19:521] Memory Usage: 217.42MB (84.9%)
+[21:12:19:521] Free Memory: 602.38MB
+[21:12:19:521] Peak Memory/CPU: 218.52MB (95.8%)
+[21:12:20:539] WARNING: FPS Dropped 44/60
+[21:12:20:540] Memory Usage: 217.42MB (84.9%)
+[21:12:20:540] Free Memory: 602.64MB
+[21:12:20:541] Peak Memory/CPU: 218.52MB (95.8%)
+[21:12:21:515] WARNING: FPS Dropped 38/60
+[21:12:21:515] Memory Usage: 217.42MB (84.9%)
+[21:12:21:516] Free Memory: 601.86MB
+[21:12:21:516] Peak Memory/CPU: 218.52MB (95.8%)
+[21:12:22:522] WARNING: FPS Dropped 40/60
+[21:12:22:522] Memory Usage: 217.42MB (84.9%)
+[21:12:22:523] Free Memory: 602.74MB
+[21:12:22:523] Peak Memory/CPU: 218.52MB (95.8%)
+[21:12:23:353] Autosaved progress
+[21:12:23:535] WARNING: FPS Dropped 39/60
+[21:12:23:536] Memory Usage: 218.52MB (84.9%)
+[21:12:23:536] Free Memory: 601.98MB
+[21:12:23:537] Peak Memory/CPU: 218.52MB (95.8%)
+[21:12:24:508] WARNING: FPS Dropped 39/60
+[21:12:24:514] Memory Usage: 217.42MB (84.9%)
+[21:12:24:517] Free Memory: 601.39MB
+[21:12:24:518] Peak Memory/CPU: 218.52MB (95.8%)
+[21:12:25:543] WARNING: FPS Dropped 40/60
+[21:12:25:544] Memory Usage: 217.14MB (84.9%)
+[21:12:25:545] Free Memory: 600.41MB
+[21:12:25:545] Peak Memory/CPU: 218.52MB (95.8%)
+[21:12:26:514] WARNING: FPS Dropped 38/60
+[21:12:26:515] Memory Usage: 217.83MB (85.0%)
+[21:12:26:515] Free Memory: 599.50MB
+[21:12:26:515] Peak Memory/CPU: 218.52MB (95.8%)
+[21:12:27:517] WARNING: FPS Dropped 43/60
+[21:12:27:517] Memory Usage: 218.52MB (85.0%)
+[21:12:27:517] Free Memory: 598.72MB
+[21:12:27:518] Peak Memory/CPU: 218.52MB (95.8%)
+[21:12:28:350] Autosaved progress
+[21:12:28:536] NOTICE: FPS Unstabled 46/60
+[21:12:28:536] Memory Usage: 217.83MB (85.0%)
+[21:12:28:537] Free Memory: 599.17MB
+[21:12:28:537] Peak Memory/CPU: 218.52MB (95.8%)
+[21:12:29:526] WARNING: FPS Dropped 44/60
+[21:12:29:531] Memory Usage: 217.83MB (85.0%)
+[21:12:29:533] Free Memory: 597.80MB
+[21:12:29:534] Peak Memory/CPU: 218.52MB (95.8%)
+[21:12:30:531] WARNING: FPS Dropped 41/60
+[21:12:30:532] Memory Usage: 217.70MB (85.0%)
+[21:12:30:532] Free Memory: 597.64MB
+[21:12:30:533] Peak Memory/CPU: 218.52MB (95.8%)
+[21:12:31:542] WARNING: FPS Dropped 39/60
+[21:12:31:543] Memory Usage: 217.02MB (85.0%)
+[21:12:31:543] Free Memory: 597.08MB
+[21:12:31:544] Peak Memory/CPU: 218.52MB (95.8%)
+[21:12:32:523] WARNING: FPS Dropped 37/60
+[21:12:32:525] Memory Usage: 218.52MB (85.1%)
+[21:12:32:526] Free Memory: 596.01MB
+[21:12:32:527] Peak Memory/CPU: 218.52MB (95.8%)
+[21:12:33:353] Autosaved progress
+[21:12:33:554] WARNING: FPS Dropped 38/60
+[21:12:33:554] Memory Usage: 217.80MB (85.1%)
+[21:12:33:555] Free Memory: 595.38MB
+[21:12:33:555] Peak Memory/CPU: 218.61MB (95.8%)
+[21:12:34:528] WARNING: FPS Dropped 44/60
+[21:12:34:529] Memory Usage: 218.61MB (85.1%)
+[21:12:34:530] Free Memory: 595.08MB
+[21:12:34:531] Peak Memory/CPU: 218.61MB (95.8%)
+[21:12:35:515] WARNING: FPS Dropped 44/60
+[21:12:35:516] Memory Usage: 217.93MB (85.1%)
+[21:12:35:516] Free Memory: 593.41MB
+[21:12:35:516] Peak Memory/CPU: 218.61MB (95.8%)
+[21:12:36:523] WARNING: FPS Dropped 45/60
+[21:12:36:524] Memory Usage: 217.24MB (85.1%)
+[21:12:36:524] Free Memory: 594.09MB
+[21:12:36:524] Peak Memory/CPU: 218.61MB (95.8%)
+[21:12:37:524] WARNING: FPS Dropped 45/60
+[21:12:37:527] Memory Usage: 218.61MB (85.1%)
+[21:12:37:530] Free Memory: 592.59MB
+[21:12:37:531] Peak Memory/CPU: 218.61MB (95.8%)
+[21:12:37:937] Hour callback
+[21:12:38:326] [A] Objects in memory: 18
+[21:12:38:328] Memory Usage: 217.93MB (85.3%)
+[21:12:38:329] Free Memory: 587.07MB
+[21:12:38:330] Peak Memory/CPU: 218.61MB (95.8%)
+[21:12:38:349] Autosaved progress
+[21:12:38:517] WARNING: FPS Dropped 43/60
+[21:12:38:518] Memory Usage: 217.24MB (85.1%)
+[21:12:38:518] Free Memory: 593.09MB
+[21:12:38:518] Peak Memory/CPU: 218.61MB (95.8%)
+[21:12:39:524] WARNING: FPS Dropped 45/60
+[21:12:39:525] Memory Usage: 217.93MB (85.1%)
+[21:12:39:526] Free Memory: 592.36MB
+[21:12:39:530] Peak Memory/CPU: 218.61MB (95.8%)
+[21:12:40:533] WARNING: FPS Dropped 45/60
+[21:12:40:534] Memory Usage: 217.80MB (85.2%)
+[21:12:40:535] Free Memory: 591.54MB
+[21:12:40:535] Peak Memory/CPU: 218.61MB (95.8%)
+[21:12:41:531] WARNING: FPS Dropped 44/60
+[21:12:41:531] Memory Usage: 217.93MB (85.2%)
+[21:12:41:532] Free Memory: 591.01MB
+[21:12:41:532] Peak Memory/CPU: 218.61MB (95.8%)
+[21:12:42:534] WARNING: FPS Dropped 45/60
+[21:12:42:534] Memory Usage: 217.11MB (85.2%)
+[21:12:42:535] Free Memory: 590.62MB
+[21:12:42:535] Peak Memory/CPU: 218.61MB (95.8%)
+[21:12:43:353] Autosaved progress
+[21:12:43:530] WARNING: FPS Dropped 45/60
+[21:12:43:530] Memory Usage: 217.24MB (85.2%)
+[21:12:43:531] Free Memory: 589.63MB
+[21:12:43:531] Peak Memory/CPU: 218.61MB (95.8%)
+[21:12:44:517] WARNING: FPS Dropped 45/60
+[21:12:44:517] Memory Usage: 217.24MB (85.2%)
+[21:12:44:518] Free Memory: 590.39MB
+[21:12:44:519] Peak Memory/CPU: 218.61MB (95.8%)
+[21:12:45:519] NOTICE: FPS Unstabled 46/60
+[21:12:45:519] Memory Usage: 217.93MB (85.2%)
+[21:12:45:520] Free Memory: 589.92MB
+[21:12:45:520] Peak Memory/CPU: 218.61MB (95.8%)
+[21:12:46:549] NOTICE: FPS Unstabled 46/60
+[21:12:46:550] Memory Usage: 217.02MB (85.2%)
+[21:12:46:551] Free Memory: 589.43MB
+[21:12:46:551] Peak Memory/CPU: 218.66MB (95.8%)
+[21:12:47:517] WARNING: FPS Dropped 44/60
+[21:12:47:517] Memory Usage: 218.77MB (85.2%)
+[21:12:47:518] Free Memory: 588.57MB
+[21:12:47:519] Peak Memory/CPU: 218.77MB (95.8%)
+[21:12:48:355] Autosaved progress
+[21:12:48:526] WARNING: FPS Dropped 45/60
+[21:12:48:532] Memory Usage: 217.14MB (85.2%)
+[21:12:48:532] Free Memory: 589.37MB
+[21:12:48:533] Peak Memory/CPU: 218.77MB (95.8%)
+[21:12:49:529] WARNING: FPS Dropped 45/60
+[21:12:49:531] Memory Usage: 218.77MB (85.3%)
+[21:12:49:531] Free Memory: 587.31MB
+[21:12:49:531] Peak Memory/CPU: 218.77MB (95.8%)
+[21:12:50:520] WARNING: FPS Dropped 43/60
+[21:12:50:520] Memory Usage: 217.39MB (85.3%)
+[21:12:50:521] Free Memory: 585.64MB
+[21:12:50:521] Peak Memory/CPU: 218.77MB (95.8%)
+[21:12:51:517] NOTICE: FPS Unstabled 46/60
+[21:12:51:518] Memory Usage: 218.77MB (85.3%)
+[21:12:51:518] Free Memory: 586.21MB
+[21:12:51:518] Peak Memory/CPU: 218.77MB (95.8%)
+[21:12:52:519] NOTICE: FPS Unstabled 46/60
+[21:12:52:519] Memory Usage: 218.77MB (85.3%)
+[21:12:52:519] Free Memory: 586.53MB
+[21:12:52:520] Peak Memory/CPU: 218.77MB (95.8%)
+[21:12:53:365] Autosaved progress
+[21:12:53:542] WARNING: FPS Dropped 45/60
+[21:12:53:543] Memory Usage: 217.14MB (85.4%)
+[21:12:53:547] Free Memory: 582.92MB
+[21:12:53:547] Peak Memory/CPU: 218.77MB (95.8%)
+[21:12:54:519] WARNING: FPS Dropped 42/60
+[21:12:54:520] Memory Usage: 216.86MB (85.5%)
+[21:12:54:520] Free Memory: 579.96MB
+[21:12:54:520] Peak Memory/CPU: 218.77MB (95.8%)
+[21:12:55:550] NOTICE: FPS Unstabled 47/60
+[21:12:55:551] Memory Usage: 218.77MB (85.5%)
+[21:12:55:551] Free Memory: 578.67MB
+[21:12:55:551] Peak Memory/CPU: 218.77MB (95.8%)
+[21:12:56:521] WARNING: FPS Dropped 44/60
+[21:12:56:522] Memory Usage: 218.77MB (85.5%)
+[21:12:56:522] Free Memory: 579.34MB
+[21:12:56:522] Peak Memory/CPU: 218.77MB (95.8%)
+[21:12:57:518] WARNING: FPS Dropped 45/60
+[21:12:57:519] Memory Usage: 216.89MB (85.5%)
+[21:12:57:519] Free Memory: 579.46MB
+[21:12:57:520] Peak Memory/CPU: 218.77MB (95.8%)
+[21:12:58:389] Autosaved progress
+[21:12:58:536] NOTICE: FPS Unstabled 46/60
+[21:12:58:537] Memory Usage: 216.89MB (85.5%)
+[21:12:58:537] Free Memory: 579.51MB
+[21:12:58:537] Peak Memory/CPU: 218.80MB (95.8%)
+[21:12:59:538] WARNING: FPS Dropped 41/60
+[21:12:59:538] Memory Usage: 218.80MB (85.7%)
+[21:12:59:539] Free Memory: 570.66MB
+[21:12:59:540] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:00:521] WARNING: FPS Dropped 43/60
+[21:13:00:521] Memory Usage: 216.89MB (85.8%)
+[21:13:00:522] Free Memory: 567.16MB
+[21:13:00:522] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:01:531] NOTICE: FPS Unstabled 47/60
+[21:13:01:531] Memory Usage: 218.80MB (85.8%)
+[21:13:01:532] Free Memory: 564.81MB
+[21:13:01:532] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:02:540] NOTICE: FPS Unstabled 46/60
+[21:13:02:540] Memory Usage: 217.99MB (85.8%)
+[21:13:02:541] Free Memory: 565.29MB
+[21:13:02:541] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:03:360] Autosaved progress
+[21:13:03:518] WARNING: FPS Dropped 45/60
+[21:13:03:518] Memory Usage: 218.11MB (85.7%)
+[21:13:03:519] Free Memory: 568.73MB
+[21:13:03:519] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:04:552] NOTICE: FPS Unstabled 46/60
+[21:13:04:554] Memory Usage: 218.80MB (85.7%)
+[21:13:04:554] Free Memory: 569.04MB
+[21:13:04:554] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:05:537] WARNING: FPS Dropped 43/60
+[21:13:05:539] Memory Usage: 217.30MB (85.7%)
+[21:13:05:540] Free Memory: 569.80MB
+[21:13:05:541] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:06:534] WARNING: FPS Dropped 44/60
+[21:13:06:535] Memory Usage: 217.43MB (85.7%)
+[21:13:06:535] Free Memory: 569.11MB
+[21:13:06:536] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:07:535] WARNING: FPS Dropped 45/60
+[21:13:07:535] Memory Usage: 218.80MB (85.7%)
+[21:13:07:536] Free Memory: 569.61MB
+[21:13:07:536] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:08:356] Autosaved progress
+[21:13:08:542] WARNING: FPS Dropped 42/60
+[21:13:08:543] Memory Usage: 218.80MB (85.8%)
+[21:13:08:544] Free Memory: 567.09MB
+[21:13:08:545] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:09:534] WARNING: FPS Dropped 39/60
+[21:13:09:534] Memory Usage: 217.43MB (85.8%)
+[21:13:09:535] Free Memory: 568.09MB
+[21:13:09:535] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:10:549] WARNING: FPS Dropped 37/60
+[21:13:10:550] Memory Usage: 218.80MB (85.8%)
+[21:13:10:550] Free Memory: 566.51MB
+[21:13:10:550] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:11:528] WARNING: FPS Dropped 38/60
+[21:13:11:529] Memory Usage: 218.80MB (85.8%)
+[21:13:11:529] Free Memory: 565.61MB
+[21:13:11:529] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:11:951] Hour callback
+[21:13:12:556] WARNING: FPS Dropped 45/60
+[21:13:12:556] Memory Usage: 217.43MB (85.8%)
+[21:13:12:557] Free Memory: 567.08MB
+[21:13:12:557] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:13:345] Autosaved progress
+[21:13:13:540] WARNING: FPS Dropped 37/60
+[21:13:13:541] Memory Usage: 217.99MB (85.8%)
+[21:13:13:541] Free Memory: 566.20MB
+[21:13:13:541] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:14:551] WARNING: FPS Dropped 38/60
+[21:13:14:553] Memory Usage: 217.99MB (85.6%)
+[21:13:14:554] Free Memory: 572.80MB
+[21:13:14:555] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:15:539] WARNING: FPS Dropped 45/60
+[21:13:15:540] Memory Usage: 218.80MB (85.6%)
+[21:13:15:540] Free Memory: 573.52MB
+[21:13:15:540] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:16:530] WARNING: FPS Dropped 39/60
+[21:13:16:531] Memory Usage: 217.43MB (85.8%)
+[21:13:16:531] Free Memory: 565.20MB
+[21:13:16:531] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:17:552] WARNING: FPS Dropped 37/60
+[21:13:17:553] Memory Usage: 218.80MB (85.8%)
+[21:13:17:554] Free Memory: 566.41MB
+[21:13:17:555] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:18:366] Autosaved progress
+[21:13:18:552] WARNING: FPS Dropped 39/60
+[21:13:18:553] Memory Usage: 217.43MB (85.6%)
+[21:13:18:554] Free Memory: 573.77MB
+[21:13:18:555] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:19:536] WARNING: FPS Dropped 36/60
+[21:13:19:536] Memory Usage: 217.43MB (85.6%)
+[21:13:19:536] Free Memory: 572.79MB
+[21:13:19:537] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:20:534] WARNING: FPS Dropped 37/60
+[21:13:20:534] Memory Usage: 218.80MB (85.7%)
+[21:13:20:535] Free Memory: 569.59MB
+[21:13:20:535] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:21:542] WARNING: FPS Dropped 37/60
+[21:13:21:543] Memory Usage: 217.43MB (85.7%)
+[21:13:21:544] Free Memory: 571.00MB
+[21:13:21:545] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:22:536] WARNING: FPS Dropped 39/60
+[21:13:22:537] Memory Usage: 217.43MB (85.6%)
+[21:13:22:537] Free Memory: 574.14MB
+[21:13:22:537] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:23:358] Autosaved progress
+[21:13:23:539] NOTICE: FPS Unstabled 49/60
+[21:13:23:539] Memory Usage: 217.43MB (85.7%)
+[21:13:23:539] Free Memory: 569.85MB
+[21:13:23:540] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:24:528] NOTICE: FPS Unstabled 48/60
+[21:13:24:530] Memory Usage: 217.43MB (85.7%)
+[21:13:24:531] Free Memory: 568.51MB
+[21:13:24:531] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:25:533] NOTICE: FPS Unstabled 50/60
+[21:13:25:534] Memory Usage: 217.43MB (85.8%)
+[21:13:25:534] Free Memory: 566.67MB
+[21:13:25:535] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:26:556] NOTICE: FPS Unstabled 48/60
+[21:13:26:557] Memory Usage: 217.43MB (85.7%)
+[21:13:26:558] Free Memory: 569.99MB
+[21:13:26:559] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:27:552] NOTICE: FPS Unstabled 49/60
+[21:13:27:553] Memory Usage: 217.43MB (85.7%)
+[21:13:27:553] Free Memory: 570.54MB
+[21:13:27:554] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:28:349] Autosaved progress
+[21:13:28:539] NOTICE: FPS Unstabled 49/60
+[21:13:28:540] Memory Usage: 217.43MB (85.7%)
+[21:13:28:541] Free Memory: 570.49MB
+[21:13:28:542] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:29:538] NOTICE: FPS Unstabled 49/60
+[21:13:29:539] Memory Usage: 217.43MB (85.7%)
+[21:13:29:540] Free Memory: 569.30MB
+[21:13:29:541] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:30:531] NOTICE: FPS Unstabled 49/60
+[21:13:30:532] Memory Usage: 217.43MB (85.7%)
+[21:13:30:532] Free Memory: 570.51MB
+[21:13:30:533] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:31:547] NOTICE: FPS Unstabled 48/60
+[21:13:31:550] Memory Usage: 217.43MB (85.7%)
+[21:13:31:551] Free Memory: 570.24MB
+[21:13:31:551] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:32:530] NOTICE: FPS Unstabled 47/60
+[21:13:32:532] Memory Usage: 217.43MB (85.7%)
+[21:13:32:532] Free Memory: 569.06MB
+[21:13:32:533] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:33:352] Autosaved progress
+[21:13:33:540] NOTICE: FPS Unstabled 49/60
+[21:13:33:540] Memory Usage: 217.43MB (85.7%)
+[21:13:33:541] Free Memory: 571.28MB
+[21:13:33:543] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:34:538] NOTICE: FPS Unstabled 50/60
+[21:13:34:539] Memory Usage: 217.43MB (85.9%)
+[21:13:34:539] Free Memory: 561.82MB
+[21:13:34:540] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:35:547] NOTICE: FPS Unstabled 53/60
+[21:13:35:548] Memory Usage: 217.43MB (85.9%)
+[21:13:35:548] Free Memory: 561.64MB
+[21:13:35:549] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:36:551] NOTICE: FPS Unstabled 54/60
+[21:13:36:552] Memory Usage: 217.43MB (85.9%)
+[21:13:36:552] Free Memory: 561.71MB
+[21:13:36:552] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:37:540] NOTICE: FPS Unstabled 51/60
+[21:13:37:540] Memory Usage: 218.12MB (85.9%)
+[21:13:37:541] Free Memory: 561.86MB
+[21:13:37:541] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:38:313] [A] Objects in memory: 18
+[21:13:38:314] Memory Usage: 218.12MB (85.8%)
+[21:13:38:314] Free Memory: 565.01MB
+[21:13:38:315] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:38:354] Autosaved progress
+[21:13:38:533] NOTICE: FPS Unstabled 51/60
+[21:13:38:534] Memory Usage: 218.12MB (85.9%)
+[21:13:38:534] Free Memory: 562.08MB
+[21:13:38:534] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:39:537] NOTICE: FPS Unstabled 54/60
+[21:13:39:538] Memory Usage: 218.12MB (85.9%)
+[21:13:39:538] Free Memory: 562.01MB
+[21:13:39:539] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:40:535] NOTICE: FPS Unstabled 54/60
+[21:13:40:536] Memory Usage: 218.12MB (85.9%)
+[21:13:40:536] Free Memory: 561.88MB
+[21:13:40:536] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:41:538] NOTICE: FPS Unstabled 54/60
+[21:13:41:538] Memory Usage: 218.12MB (85.9%)
+[21:13:41:539] Free Memory: 561.92MB
+[21:13:41:539] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:42:533] NOTICE: FPS Unstabled 52/60
+[21:13:42:535] Memory Usage: 218.12MB (85.9%)
+[21:13:42:536] Free Memory: 561.96MB
+[21:13:42:537] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:43:352] Autosaved progress
+[21:13:43:551] NOTICE: FPS Unstabled 53/60
+[21:13:43:553] Memory Usage: 218.12MB (85.9%)
+[21:13:43:553] Free Memory: 562.04MB
+[21:13:43:554] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:44:108] Hour callback
+[21:13:44:540] NOTICE: FPS Unstabled 52/60
+[21:13:44:541] Memory Usage: 218.12MB (85.9%)
+[21:13:44:541] Free Memory: 561.89MB
+[21:13:44:542] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:45:539] NOTICE: FPS Unstabled 52/60
+[21:13:45:540] Memory Usage: 217.43MB (85.9%)
+[21:13:45:542] Free Memory: 562.45MB
+[21:13:45:542] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:46:556] NOTICE: FPS Unstabled 52/60
+[21:13:46:556] Memory Usage: 217.43MB (85.9%)
+[21:13:46:557] Free Memory: 561.95MB
+[21:13:46:557] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:47:540] NOTICE: FPS Unstabled 51/60
+[21:13:47:541] Memory Usage: 217.99MB (85.9%)
+[21:13:47:541] Free Memory: 561.88MB
+[21:13:47:541] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:48:356] Autosaved progress
+[21:13:48:548] WARNING: FPS Dropped 44/60
+[21:13:48:548] Memory Usage: 218.80MB (85.8%)
+[21:13:48:549] Free Memory: 565.29MB
+[21:13:48:549] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:49:537] WARNING: FPS Dropped 39/60
+[21:13:49:538] Memory Usage: 217.33MB (86.4%)
+[21:13:49:538] Free Memory: 542.23MB
+[21:13:49:538] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:50:536] WARNING: FPS Dropped 41/60
+[21:13:50:537] Memory Usage: 218.14MB (86.4%)
+[21:13:50:537] Free Memory: 542.29MB
+[21:13:50:538] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:51:534] NOTICE: FPS Unstabled 49/60
+[21:13:51:535] Memory Usage: 217.33MB (86.4%)
+[21:13:51:535] Free Memory: 541.89MB
+[21:13:51:535] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:52:539] NOTICE: FPS Unstabled 50/60
+[21:13:52:540] Memory Usage: 216.64MB (86.3%)
+[21:13:52:540] Free Memory: 545.16MB
+[21:13:52:541] Peak Memory/CPU: 218.80MB (95.8%)
+[21:13:53:357] Autosaved progress
+[21:13:53:541] NOTICE: FPS Unstabled 50/60
+[21:13:53:542] Memory Usage: 218.02MB (86.3%)
+[21:13:53:545] Free Memory: 544.66MB
+[21:13:53:549] Peak Memory/CPU: 218.83MB (95.8%)
+[21:13:54:537] NOTICE: FPS Unstabled 46/60
+[21:13:54:539] Memory Usage: 218.02MB (86.4%)
+[21:13:54:540] Free Memory: 542.34MB
+[21:13:54:541] Peak Memory/CPU: 218.83MB (95.8%)
+[21:13:55:550] WARNING: FPS Dropped 45/60
+[21:13:55:550] Memory Usage: 217.46MB (86.4%)
+[21:13:55:551] Free Memory: 543.76MB
+[21:13:55:551] Peak Memory/CPU: 218.83MB (95.8%)
+[21:13:56:540] NOTICE: FPS Unstabled 47/60
+[21:13:56:541] Memory Usage: 217.46MB (86.4%)
+[21:13:56:541] Free Memory: 543.80MB
+[21:13:56:541] Peak Memory/CPU: 218.83MB (95.8%)
+[21:13:57:537] NOTICE: FPS Unstabled 47/60
+[21:13:57:538] Memory Usage: 218.14MB (86.4%)
+[21:13:57:539] Free Memory: 543.71MB
+[21:13:57:539] Peak Memory/CPU: 218.83MB (95.8%)
+[21:13:58:356] Autosaved progress
+[21:13:58:538] NOTICE: FPS Unstabled 49/60
+[21:13:58:539] Memory Usage: 218.14MB (86.4%)
+[21:13:58:540] Free Memory: 543.39MB
+[21:13:58:541] Peak Memory/CPU: 218.83MB (95.8%)
+[21:13:59:541] NOTICE: FPS Unstabled 47/60
+[21:13:59:541] Memory Usage: 218.14MB (86.4%)
+[21:13:59:542] Free Memory: 543.48MB
+[21:13:59:546] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:00:557] WARNING: FPS Dropped 42/60
+[21:14:00:558] Memory Usage: 218.14MB (86.4%)
+[21:14:00:561] Free Memory: 542.69MB
+[21:14:00:563] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:01:555] WARNING: FPS Dropped 41/60
+[21:14:01:556] Memory Usage: 218.14MB (86.5%)
+[21:14:01:557] Free Memory: 540.26MB
+[21:14:01:559] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:02:564] WARNING: FPS Dropped 42/60
+[21:14:02:565] Memory Usage: 218.14MB (86.4%)
+[21:14:02:566] Free Memory: 540.98MB
+[21:14:02:566] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:03:372] Autosaved progress
+[21:14:03:540] WARNING: FPS Dropped 45/60
+[21:14:03:540] Memory Usage: 218.15MB (86.4%)
+[21:14:03:540] Free Memory: 541.50MB
+[21:14:03:541] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:04:537] NOTICE: FPS Unstabled 47/60
+[21:14:04:537] Memory Usage: 218.15MB (86.5%)
+[21:14:04:538] Free Memory: 540.33MB
+[21:14:04:538] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:05:565] NOTICE: FPS Unstabled 47/60
+[21:14:05:566] Memory Usage: 218.15MB (86.4%)
+[21:14:05:566] Free Memory: 541.25MB
+[21:14:05:567] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:06:553] NOTICE: FPS Unstabled 47/60
+[21:14:06:554] Memory Usage: 218.15MB (86.4%)
+[21:14:06:554] Free Memory: 541.54MB
+[21:14:06:555] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:07:549] NOTICE: FPS Unstabled 48/60
+[21:14:07:549] Memory Usage: 217.46MB (86.4%)
+[21:14:07:550] Free Memory: 541.80MB
+[21:14:07:550] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:08:371] Autosaved progress
+[21:14:08:558] NOTICE: FPS Unstabled 47/60
+[21:14:08:559] Memory Usage: 218.15MB (86.4%)
+[21:14:08:563] Free Memory: 541.27MB
+[21:14:08:565] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:09:555] NOTICE: FPS Unstabled 49/60
+[21:14:09:556] Memory Usage: 217.34MB (86.5%)
+[21:14:09:556] Free Memory: 537.27MB
+[21:14:09:556] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:10:540] NOTICE: FPS Unstabled 50/60
+[21:14:10:541] Memory Usage: 217.34MB (86.5%)
+[21:14:10:541] Free Memory: 537.29MB
+[21:14:10:543] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:11:559] NOTICE: FPS Unstabled 52/60
+[21:14:11:559] Memory Usage: 217.34MB (86.5%)
+[21:14:11:560] Free Memory: 537.64MB
+[21:14:11:560] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:12:555] NOTICE: FPS Unstabled 52/60
+[21:14:12:556] Memory Usage: 217.34MB (86.5%)
+[21:14:12:556] Free Memory: 537.93MB
+[21:14:12:556] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:13:355] Autosaved progress
+[21:14:13:556] NOTICE: FPS Unstabled 50/60
+[21:14:13:557] Memory Usage: 217.34MB (86.5%)
+[21:14:13:557] Free Memory: 538.21MB
+[21:14:13:559] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:14:549] NOTICE: FPS Unstabled 50/60
+[21:14:14:549] Memory Usage: 217.34MB (86.7%)
+[21:14:14:550] Free Memory: 530.00MB
+[21:14:14:550] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:15:553] NOTICE: FPS Unstabled 51/60
+[21:14:15:553] Memory Usage: 218.03MB (86.7%)
+[21:14:15:554] Free Memory: 530.00MB
+[21:14:15:554] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:15:707] Hour callback
+[21:14:16:544] NOTICE: FPS Unstabled 50/60
+[21:14:16:551] Memory Usage: 218.03MB (86.7%)
+[21:14:16:552] Free Memory: 529.99MB
+[21:14:16:553] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:17:550] NOTICE: FPS Unstabled 50/60
+[21:14:17:551] Memory Usage: 216.66MB (86.6%)
+[21:14:17:551] Free Memory: 535.71MB
+[21:14:17:551] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:18:356] Autosaved progress
+[21:14:18:595] NOTICE: FPS Unstabled 50/60
+[21:14:18:596] Memory Usage: 217.34MB (84.8%)
+[21:14:18:596] Free Memory: 606.83MB
+[21:14:18:597] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:19:559] NOTICE: FPS Unstabled 46/60
+[21:14:19:565] Memory Usage: 217.34MB (83.1%)
+[21:14:19:565] Free Memory: 672.96MB
+[21:14:19:566] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:20:558] NOTICE: FPS Unstabled 49/60
+[21:14:20:559] Memory Usage: 217.34MB (82.7%)
+[21:14:20:563] Free Memory: 689.53MB
+[21:14:20:565] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:21:566] NOTICE: FPS Unstabled 51/60
+[21:14:21:567] Memory Usage: 216.53MB (82.9%)
+[21:14:21:567] Free Memory: 683.67MB
+[21:14:21:568] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:22:551] NOTICE: FPS Unstabled 52/60
+[21:14:22:552] Memory Usage: 217.47MB (82.8%)
+[21:14:22:552] Free Memory: 685.55MB
+[21:14:22:553] Peak Memory/CPU: 218.83MB (95.8%)
+[21:14:23:357] Autosaved progress
+[21:14:23:551] NOTICE: FPS Unstabled 52/60
+[21:14:23:552] Memory Usage: 218.84MB (82.9%)
+[21:14:23:552] Free Memory: 682.52MB
+[21:14:23:552] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:24:564] NOTICE: FPS Unstabled 51/60
+[21:14:24:565] Memory Usage: 218.84MB (83.0%)
+[21:14:24:565] Free Memory: 679.71MB
+[21:14:24:566] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:25:552] NOTICE: FPS Unstabled 48/60
+[21:14:25:553] Memory Usage: 218.16MB (83.0%)
+[21:14:25:553] Free Memory: 679.78MB
+[21:14:25:553] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:26:563] NOTICE: FPS Unstabled 52/60
+[21:14:26:564] Memory Usage: 218.16MB (83.0%)
+[21:14:26:565] Free Memory: 679.66MB
+[21:14:26:565] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:27:558] NOTICE: FPS Unstabled 50/60
+[21:14:27:561] Memory Usage: 218.16MB (83.0%)
+[21:14:27:563] Free Memory: 678.60MB
+[21:14:27:564] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:28:367] Autosaved progress
+[21:14:28:554] NOTICE: FPS Unstabled 50/60
+[21:14:28:555] Memory Usage: 217.34MB (83.0%)
+[21:14:28:556] Free Memory: 677.00MB
+[21:14:28:557] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:29:585] NOTICE: FPS Unstabled 51/60
+[21:14:29:586] Memory Usage: 217.34MB (83.1%)
+[21:14:29:586] Free Memory: 673.80MB
+[21:14:29:587] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:30:572] NOTICE: FPS Unstabled 50/60
+[21:14:30:573] Memory Usage: 218.16MB (83.1%)
+[21:14:30:573] Free Memory: 673.84MB
+[21:14:30:574] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:31:557] NOTICE: FPS Unstabled 50/60
+[21:14:31:557] Memory Usage: 218.16MB (83.2%)
+[21:14:31:560] Free Memory: 671.19MB
+[21:14:31:562] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:32:554] NOTICE: FPS Unstabled 51/60
+[21:14:32:554] Memory Usage: 218.16MB (83.1%)
+[21:14:32:555] Free Memory: 673.67MB
+[21:14:32:555] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:33:365] Autosaved progress
+[21:14:33:554] NOTICE: FPS Unstabled 52/60
+[21:14:33:555] Memory Usage: 217.34MB (83.1%)
+[21:14:33:556] Free Memory: 673.75MB
+[21:14:33:556] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:34:555] NOTICE: FPS Unstabled 52/60
+[21:14:34:556] Memory Usage: 218.16MB (83.1%)
+[21:14:34:557] Free Memory: 673.75MB
+[21:14:34:558] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:35:555] NOTICE: FPS Unstabled 51/60
+[21:14:35:555] Memory Usage: 218.16MB (83.1%)
+[21:14:35:556] Free Memory: 673.67MB
+[21:14:35:556] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:36:569] NOTICE: FPS Unstabled 51/60
+[21:14:36:569] Memory Usage: 216.53MB (83.0%)
+[21:14:36:570] Free Memory: 676.97MB
+[21:14:36:570] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:37:551] NOTICE: FPS Unstabled 50/60
+[21:14:37:552] Memory Usage: 218.16MB (83.0%)
+[21:14:37:552] Free Memory: 676.52MB
+[21:14:37:553] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:38:329] [A] Objects in memory: 19
+[21:14:38:332] Memory Usage: 218.84MB (83.0%)
+[21:14:38:332] Free Memory: 678.70MB
+[21:14:38:333] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:38:371] Autosaved progress
+[21:14:38:557] NOTICE: FPS Unstabled 50/60
+[21:14:38:557] Memory Usage: 218.84MB (83.0%)
+[21:14:38:558] Free Memory: 676.70MB
+[21:14:38:560] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:39:554] NOTICE: FPS Unstabled 50/60
+[21:14:39:555] Memory Usage: 218.84MB (83.0%)
+[21:14:39:555] Free Memory: 676.85MB
+[21:14:39:556] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:40:565] NOTICE: FPS Unstabled 51/60
+[21:14:40:566] Memory Usage: 218.84MB (83.0%)
+[21:14:40:567] Free Memory: 676.78MB
+[21:14:40:567] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:41:573] NOTICE: FPS Unstabled 53/60
+[21:14:41:573] Memory Usage: 218.84MB (83.0%)
+[21:14:41:574] Free Memory: 676.86MB
+[21:14:41:574] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:42:575] NOTICE: FPS Unstabled 54/60
+[21:14:42:577] Memory Usage: 218.84MB (83.0%)
+[21:14:42:578] Free Memory: 676.82MB
+[21:14:42:579] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:43:352] Autosaved progress
+[21:14:43:563] NOTICE: FPS Unstabled 52/60
+[21:14:43:565] Memory Usage: 218.84MB (83.0%)
+[21:14:43:565] Free Memory: 677.00MB
+[21:14:43:566] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:44:553] NOTICE: FPS Unstabled 52/60
+[21:14:44:554] Memory Usage: 218.84MB (83.0%)
+[21:14:44:554] Free Memory: 677.22MB
+[21:14:44:555] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:45:283] Hour callback
+[21:14:45:566] NOTICE: FPS Unstabled 52/60
+[21:14:45:567] Memory Usage: 217.22MB (83.0%)
+[21:14:45:567] Free Memory: 677.42MB
+[21:14:45:568] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:46:557] NOTICE: FPS Unstabled 52/60
+[21:14:46:558] Memory Usage: 218.84MB (83.0%)
+[21:14:46:560] Free Memory: 677.52MB
+[21:14:46:562] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:47:570] NOTICE: FPS Unstabled 52/60
+[21:14:47:570] Memory Usage: 218.84MB (83.0%)
+[21:14:47:571] Free Memory: 677.48MB
+[21:14:47:571] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:48:352] Autosaved progress
+[21:14:48:584] NOTICE: FPS Unstabled 51/60
+[21:14:48:585] Memory Usage: 218.03MB (83.0%)
+[21:14:48:588] Free Memory: 677.68MB
+[21:14:48:589] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:49:567] NOTICE: FPS Unstabled 51/60
+[21:14:49:568] Memory Usage: 218.84MB (83.0%)
+[21:14:49:568] Free Memory: 677.71MB
+[21:14:49:568] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:50:569] NOTICE: FPS Unstabled 52/60
+[21:14:50:569] Memory Usage: 218.84MB (83.0%)
+[21:14:50:569] Free Memory: 677.87MB
+[21:14:50:570] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:51:573] NOTICE: FPS Unstabled 50/60
+[21:14:51:580] Memory Usage: 218.84MB (83.0%)
+[21:14:51:582] Free Memory: 677.91MB
+[21:14:51:583] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:52:557] NOTICE: FPS Unstabled 51/60
+[21:14:52:558] Memory Usage: 218.84MB (83.0%)
+[21:14:52:559] Free Memory: 677.88MB
+[21:14:52:559] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:53:369] Autosaved progress
+[21:14:53:569] NOTICE: FPS Unstabled 51/60
+[21:14:53:569] Memory Usage: 217.47MB (83.0%)
+[21:14:53:569] Free Memory: 678.86MB
+[21:14:53:570] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:54:566] NOTICE: FPS Unstabled 53/60
+[21:14:54:567] Memory Usage: 217.47MB (83.0%)
+[21:14:54:567] Free Memory: 677.75MB
+[21:14:54:568] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:55:569] NOTICE: FPS Unstabled 53/60
+[21:14:55:569] Memory Usage: 218.16MB (83.0%)
+[21:14:55:569] Free Memory: 677.75MB
+[21:14:55:570] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:56:569] NOTICE: FPS Unstabled 53/60
+[21:14:56:570] Memory Usage: 217.47MB (83.0%)
+[21:14:56:571] Free Memory: 677.78MB
+[21:14:56:572] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:57:570] NOTICE: FPS Unstabled 51/60
+[21:14:57:571] Memory Usage: 218.84MB (83.0%)
+[21:14:57:572] Free Memory: 676.75MB
+[21:14:57:572] Peak Memory/CPU: 218.84MB (95.8%)
+[21:14:58:368] Autosaved progress
+[21:14:58:567] NOTICE: FPS Unstabled 51/60
+[21:14:58:568] Memory Usage: 218.85MB (83.0%)
+[21:14:58:568] Free Memory: 677.04MB
+[21:14:58:569] Peak Memory/CPU: 218.85MB (95.8%)
+[21:14:59:568] NOTICE: FPS Unstabled 51/60
+[21:14:59:569] Memory Usage: 218.85MB (83.0%)
+[21:14:59:569] Free Memory: 677.25MB
+[21:14:59:570] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:00:572] NOTICE: FPS Unstabled 51/60
+[21:15:00:573] Memory Usage: 217.22MB (83.1%)
+[21:15:00:574] Free Memory: 675.69MB
+[21:15:00:575] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:01:566] NOTICE: FPS Unstabled 51/60
+[21:15:01:566] Memory Usage: 218.04MB (83.1%)
+[21:15:01:567] Free Memory: 675.52MB
+[21:15:01:567] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:02:576] NOTICE: FPS Unstabled 49/60
+[21:15:02:577] Memory Usage: 218.85MB (83.1%)
+[21:15:02:578] Free Memory: 674.93MB
+[21:15:02:579] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:03:368] Autosaved progress
+[21:15:03:566] NOTICE: FPS Unstabled 49/60
+[21:15:03:567] Memory Usage: 218.04MB (83.1%)
+[21:15:03:567] Free Memory: 674.20MB
+[21:15:03:568] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:04:565] NOTICE: FPS Unstabled 48/60
+[21:15:04:565] Memory Usage: 217.35MB (83.1%)
+[21:15:04:566] Free Memory: 673.49MB
+[21:15:04:566] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:05:588] NOTICE: FPS Unstabled 47/60
+[21:15:05:589] Memory Usage: 218.04MB (83.0%)
+[21:15:05:590] Free Memory: 675.89MB
+[21:15:05:590] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:06:576] WARNING: FPS Dropped 44/60
+[21:15:06:579] Memory Usage: 218.16MB (83.1%)
+[21:15:06:581] Free Memory: 673.39MB
+[21:15:06:582] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:07:570] NOTICE: FPS Unstabled 49/60
+[21:15:07:571] Memory Usage: 218.16MB (83.1%)
+[21:15:07:571] Free Memory: 673.42MB
+[21:15:07:571] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:08:365] Autosaved progress
+[21:15:08:571] NOTICE: FPS Unstabled 52/60
+[21:15:08:573] Memory Usage: 218.16MB (83.1%)
+[21:15:08:576] Free Memory: 673.08MB
+[21:15:08:582] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:09:569] NOTICE: FPS Unstabled 52/60
+[21:15:09:570] Memory Usage: 218.16MB (83.1%)
+[21:15:09:570] Free Memory: 672.82MB
+[21:15:09:571] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:10:565] NOTICE: FPS Unstabled 54/60
+[21:15:10:566] Memory Usage: 218.16MB (83.1%)
+[21:15:10:567] Free Memory: 672.34MB
+[21:15:10:567] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:11:583] NOTICE: FPS Unstabled 53/60
+[21:15:11:583] Memory Usage: 218.16MB (83.2%)
+[21:15:11:584] Free Memory: 671.85MB
+[21:15:11:584] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:12:569] NOTICE: FPS Unstabled 52/60
+[21:15:12:570] Memory Usage: 218.16MB (83.1%)
+[21:15:12:570] Free Memory: 673.64MB
+[21:15:12:570] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:13:367] Autosaved progress
+[21:15:13:567] NOTICE: FPS Unstabled 52/60
+[21:15:13:568] Memory Usage: 218.44MB (83.1%)
+[21:15:13:568] Free Memory: 673.68MB
+[21:15:13:568] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:14:571] NOTICE: FPS Unstabled 53/60
+[21:15:14:571] Memory Usage: 218.16MB (83.1%)
+[21:15:14:571] Free Memory: 673.63MB
+[21:15:14:572] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:14:703] Hour callback
+[21:15:15:576] NOTICE: FPS Unstabled 52/60
+[21:15:15:580] Memory Usage: 218.16MB (83.1%)
+[21:15:15:581] Free Memory: 673.80MB
+[21:15:15:581] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:16:584] NOTICE: FPS Unstabled 54/60
+[21:15:16:586] Memory Usage: 218.16MB (83.1%)
+[21:15:16:586] Free Memory: 673.75MB
+[21:15:16:586] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:17:584] NOTICE: FPS Unstabled 52/60
+[21:15:17:585] Memory Usage: 218.16MB (83.1%)
+[21:15:17:585] Free Memory: 673.74MB
+[21:15:17:585] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:18:369] Autosaved progress
+[21:15:18:572] NOTICE: FPS Unstabled 51/60
+[21:15:18:573] Memory Usage: 218.16MB (83.1%)
+[21:15:18:574] Free Memory: 675.20MB
+[21:15:18:574] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:19:572] NOTICE: FPS Unstabled 52/60
+[21:15:19:572] Memory Usage: 217.35MB (83.0%)
+[21:15:19:573] Free Memory: 677.51MB
+[21:15:19:573] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:20:589] NOTICE: FPS Unstabled 53/60
+[21:15:20:590] Memory Usage: 218.16MB (83.1%)
+[21:15:20:591] Free Memory: 674.95MB
+[21:15:20:594] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:21:582] NOTICE: FPS Unstabled 51/60
+[21:15:21:583] Memory Usage: 218.85MB (83.1%)
+[21:15:21:584] Free Memory: 674.91MB
+[21:15:21:584] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:22:585] NOTICE: FPS Unstabled 52/60
+[21:15:22:586] Memory Usage: 218.85MB (83.1%)
+[21:15:22:587] Free Memory: 674.97MB
+[21:15:22:588] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:23:367] Autosaved progress
+[21:15:23:592] NOTICE: FPS Unstabled 52/60
+[21:15:23:594] Memory Usage: 218.85MB (83.1%)
+[21:15:23:595] Free Memory: 675.91MB
+[21:15:23:596] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:24:591] NOTICE: FPS Unstabled 52/60
+[21:15:24:593] Memory Usage: 218.85MB (83.1%)
+[21:15:24:597] Free Memory: 674.97MB
+[21:15:24:599] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:25:586] NOTICE: FPS Unstabled 52/60
+[21:15:25:587] Memory Usage: 218.85MB (83.1%)
+[21:15:25:587] Free Memory: 675.55MB
+[21:15:25:588] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:26:585] NOTICE: FPS Unstabled 52/60
+[21:15:26:586] Memory Usage: 218.85MB (83.1%)
+[21:15:26:587] Free Memory: 675.21MB
+[21:15:26:587] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:27:587] NOTICE: FPS Unstabled 52/60
+[21:15:27:588] Memory Usage: 217.22MB (83.0%)
+[21:15:27:588] Free Memory: 676.88MB
+[21:15:27:589] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:28:378] Autosaved progress
+[21:15:28:582] NOTICE: FPS Unstabled 52/60
+[21:15:28:583] Memory Usage: 218.85MB (83.1%)
+[21:15:28:583] Free Memory: 675.74MB
+[21:15:28:583] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:29:599] NOTICE: FPS Unstabled 51/60
+[21:15:29:600] Memory Usage: 217.47MB (83.1%)
+[21:15:29:600] Free Memory: 675.75MB
+[21:15:29:601] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:30:622] NOTICE: FPS Unstabled 51/60
+[21:15:30:623] Memory Usage: 218.16MB (83.1%)
+[21:15:30:623] Free Memory: 674.75MB
+[21:15:30:624] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:31:586] NOTICE: FPS Unstabled 49/60
+[21:15:31:586] Memory Usage: 217.35MB (83.0%)
+[21:15:31:587] Free Memory: 676.32MB
+[21:15:31:587] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:32:587] NOTICE: FPS Unstabled 52/60
+[21:15:32:588] Memory Usage: 218.16MB (83.1%)
+[21:15:32:588] Free Memory: 675.89MB
+[21:15:32:589] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:33:370] Autosaved progress
+[21:15:33:590] NOTICE: FPS Unstabled 51/60
+[21:15:33:590] Memory Usage: 218.16MB (83.1%)
+[21:15:33:591] Free Memory: 673.63MB
+[21:15:33:591] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:34:604] NOTICE: FPS Unstabled 50/60
+[21:15:34:605] Memory Usage: 217.35MB (83.0%)
+[21:15:34:605] Free Memory: 676.11MB
+[21:15:34:605] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:35:585] NOTICE: FPS Unstabled 49/60
+[21:15:35:586] Memory Usage: 218.16MB (83.0%)
+[21:15:35:587] Free Memory: 676.48MB
+[21:15:35:587] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:36:590] NOTICE: FPS Unstabled 52/60
+[21:15:36:591] Memory Usage: 218.16MB (83.1%)
+[21:15:36:592] Free Memory: 672.94MB
+[21:15:36:596] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:37:583] NOTICE: FPS Unstabled 50/60
+[21:15:37:584] Memory Usage: 218.16MB (83.2%)
+[21:15:37:584] Free Memory: 671.71MB
+[21:15:37:584] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:38:320] [A] Objects in memory: 19
+[21:15:38:321] Memory Usage: 218.16MB (83.2%)
+[21:15:38:321] Free Memory: 668.07MB
+[21:15:38:322] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:38:372] Autosaved progress
+[21:15:38:584] WARNING: FPS Dropped 45/60
+[21:15:38:585] Memory Usage: 218.16MB (83.3%)
+[21:15:38:585] Free Memory: 667.97MB
+[21:15:38:586] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:39:583] NOTICE: FPS Unstabled 47/60
+[21:15:39:584] Memory Usage: 218.16MB (83.3%)
+[21:15:39:584] Free Memory: 664.08MB
+[21:15:39:585] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:40:590] WARNING: FPS Dropped 39/60
+[21:15:40:591] Memory Usage: 217.47MB (83.5%)
+[21:15:40:592] Free Memory: 659.43MB
+[21:15:40:596] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:41:581] WARNING: FPS Dropped 39/60
+[21:15:41:581] Memory Usage: 218.16MB (83.5%)
+[21:15:41:582] Free Memory: 656.41MB
+[21:15:41:582] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:42:585] WARNING: FPS Dropped 35/60
+[21:15:42:587] Memory Usage: 218.16MB (83.4%)
+[21:15:42:587] Free Memory: 660.92MB
+[21:15:42:588] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:43:387] Autosaved progress
+[21:15:43:590] WARNING: FPS Dropped 36/60
+[21:15:43:591] Memory Usage: 218.16MB (83.4%)
+[21:15:43:592] Free Memory: 661.71MB
+[21:15:43:625] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:44:599] WARNING: FPS Dropped 36/60
+[21:15:44:600] Memory Usage: 218.16MB (83.4%)
+[21:15:44:600] Free Memory: 661.86MB
+[21:15:44:601] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:45:593] WARNING: FPS Dropped 38/60
+[21:15:45:596] Memory Usage: 218.16MB (83.6%)
+[21:15:45:597] Free Memory: 654.61MB
+[21:15:45:598] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:45:812] Hour callback
+[21:15:46:607] WARNING: FPS Dropped 38/60
+[21:15:46:607] Memory Usage: 218.16MB (83.8%)
+[21:15:46:608] Free Memory: 646.35MB
+[21:15:46:609] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:50:610] CRITICAL: FPS Plummeted 9/60
+[21:15:50:615] Memory Usage: 218.85MB (84.3%)
+[21:15:50:615] Free Memory: 627.44MB
+[21:15:50:616] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:51:586] NOTICE: FPS Unstabled 51/60
+[21:15:51:587] Memory Usage: 218.16MB (84.1%)
+[21:15:51:587] Free Memory: 634.27MB
+[21:15:51:587] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:52:589] NOTICE: FPS Unstabled 50/60
+[21:15:52:590] Memory Usage: 218.16MB (84.1%)
+[21:15:52:590] Free Memory: 634.21MB
+[21:15:52:591] Peak Memory/CPU: 218.85MB (95.8%)
+[21:15:53:353] Autosaved progress before going to main menu
+[21:15:53:353] Exited scene via Sliding Menu
 
-[21:12:57:099] Reconstructing scene
+[21:15:58:084] Continue game entered
+[21:15:58:084] Memory Usage: 217.35MB (84.3%)
+[21:15:58:084] Free Memory: 624.48MB
+[21:15:58:085] Peak Memory/CPU: 218.85MB (95.8%)
 
-[21:12:57:100] 
+[21:15:58:370] Autosaved progress
+[21:15:59:585] NOTICE: FPS Unstabled 50/60
+[21:15:59:586] Memory Usage: 218.16MB (84.2%)
+[21:15:59:586] Free Memory: 628.30MB
+[21:15:59:587] Peak Memory/CPU: 218.85MB (95.8%)
+[21:16:00:588] NOTICE: FPS Unstabled 49/60
+[21:16:00:589] Memory Usage: 218.85MB (84.3%)
+[21:16:00:589] Free Memory: 627.26MB
+[21:16:00:589] Peak Memory/CPU: 218.85MB (95.8%)
+[21:16:01:604] NOTICE: FPS Unstabled 46/60
+[21:16:01:604] Memory Usage: 218.85MB (84.3%)
+[21:16:01:605] Free Memory: 626.27MB
+[21:16:01:605] Peak Memory/CPU: 218.85MB (95.8%)
+[21:16:02:588] NOTICE: FPS Unstabled 52/60
+[21:16:02:589] Memory Usage: 218.85MB (84.3%)
+[21:16:02:589] Free Memory: 626.22MB
+[21:16:02:589] Peak Memory/CPU: 218.85MB (95.8%)
+[21:16:03:385] Autosaved progress
+[21:16:03:601] NOTICE: FPS Unstabled 53/60
+[21:16:03:601] Memory Usage: 217.35MB (84.3%)
+[21:16:03:601] Free Memory: 625.58MB
+[21:16:03:602] Peak Memory/CPU: 218.85MB (95.8%)
+[21:16:04:596] NOTICE: FPS Unstabled 51/60
+[21:16:04:597] Memory Usage: 217.23MB (84.3%)
+[21:16:04:597] Free Memory: 626.08MB
+[21:16:04:598] Peak Memory/CPU: 218.85MB (95.8%)
+[21:16:05:589] NOTICE: FPS Unstabled 51/60
+[21:16:05:589] Memory Usage: 218.85MB (84.3%)
+[21:16:05:590] Free Memory: 625.37MB
+[21:16:05:590] Peak Memory/CPU: 218.85MB (95.8%)
+[21:16:06:600] NOTICE: FPS Unstabled 53/60
+[21:16:06:601] Memory Usage: 218.16MB (84.3%)
+[21:16:06:601] Free Memory: 626.05MB
+[21:16:06:602] Peak Memory/CPU: 218.85MB (95.8%)
+[21:16:07:589] NOTICE: FPS Unstabled 50/60
+[21:16:07:589] Memory Usage: 218.16MB (84.3%)
+[21:16:07:593] Free Memory: 627.09MB
+[21:16:07:597] Peak Memory/CPU: 218.85MB (95.8%)
+[21:16:08:365] Autosaved progress
+[21:16:09:600] NOTICE: FPS Unstabled 53/60
+[21:16:09:601] Memory Usage: 218.17MB (84.3%)
+[21:16:09:601] Free Memory: 625.15MB
+[21:16:09:601] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:10:603] NOTICE: FPS Unstabled 46/60
+[21:16:10:603] Memory Usage: 218.17MB (84.3%)
+[21:16:10:604] Free Memory: 624.30MB
+[21:16:10:604] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:11:598] NOTICE: FPS Unstabled 46/60
+[21:16:11:599] Memory Usage: 218.04MB (84.4%)
+[21:16:11:599] Free Memory: 624.02MB
+[21:16:11:599] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:12:604] NOTICE: FPS Unstabled 47/60
+[21:16:12:605] Memory Usage: 218.86MB (84.3%)
+[21:16:12:605] Free Memory: 626.57MB
+[21:16:12:605] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:13:377] Autosaved progress
+[21:16:13:599] NOTICE: FPS Unstabled 46/60
+[21:16:13:599] Memory Usage: 218.17MB (84.3%)
+[21:16:13:599] Free Memory: 627.08MB
+[21:16:13:600] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:14:591] NOTICE: FPS Unstabled 47/60
+[21:16:14:593] Memory Usage: 218.86MB (84.3%)
+[21:16:14:597] Free Memory: 627.05MB
+[21:16:14:599] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:15:603] NOTICE: FPS Unstabled 48/60
+[21:16:15:603] Memory Usage: 218.86MB (84.3%)
+[21:16:15:604] Free Memory: 626.90MB
+[21:16:15:604] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:16:601] NOTICE: FPS Unstabled 49/60
+[21:16:16:602] Memory Usage: 218.17MB (84.3%)
+[21:16:16:602] Free Memory: 626.55MB
+[21:16:16:602] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:17:597] NOTICE: FPS Unstabled 54/60
+[21:16:17:597] Memory Usage: 218.17MB (84.3%)
+[21:16:17:598] Free Memory: 626.73MB
+[21:16:17:598] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:18:386] Autosaved progress
+[21:16:18:602] NOTICE: FPS Unstabled 53/60
+[21:16:18:603] Memory Usage: 218.86MB (84.3%)
+[21:16:18:603] Free Memory: 627.29MB
+[21:16:18:603] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:19:599] NOTICE: FPS Unstabled 52/60
+[21:16:19:600] Memory Usage: 218.04MB (84.3%)
+[21:16:19:600] Free Memory: 627.07MB
+[21:16:19:601] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:20:601] NOTICE: FPS Unstabled 53/60
+[21:16:20:601] Memory Usage: 218.17MB (84.3%)
+[21:16:20:602] Free Memory: 626.27MB
+[21:16:20:602] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:21:599] NOTICE: FPS Unstabled 53/60
+[21:16:21:599] Memory Usage: 218.86MB (84.3%)
+[21:16:21:600] Free Memory: 625.90MB
+[21:16:21:600] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:22:599] NOTICE: FPS Unstabled 52/60
+[21:16:22:599] Memory Usage: 218.17MB (84.3%)
+[21:16:22:600] Free Memory: 625.43MB
+[21:16:22:600] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:23:368] Autosaved progress
+[21:16:23:615] NOTICE: FPS Unstabled 53/60
+[21:16:23:616] Memory Usage: 218.17MB (84.4%)
+[21:16:23:616] Free Memory: 624.08MB
+[21:16:23:617] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:24:231] Hour callback
+[21:16:24:600] NOTICE: FPS Unstabled 50/60
+[21:16:24:600] Memory Usage: 218.04MB (84.4%)
+[21:16:24:601] Free Memory: 622.99MB
+[21:16:24:601] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:26:606] WARNING: FPS Dropped 41/60
+[21:16:26:607] Memory Usage: 218.04MB (84.3%)
+[21:16:26:607] Free Memory: 625.18MB
+[21:16:26:607] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:27:598] WARNING: FPS Dropped 40/60
+[21:16:27:599] Memory Usage: 218.86MB (84.3%)
+[21:16:27:599] Free Memory: 624.70MB
+[21:16:27:600] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:28:386] Autosaved progress
+[21:16:28:603] WARNING: FPS Dropped 44/60
+[21:16:28:603] Memory Usage: 218.05MB (84.3%)
+[21:16:28:603] Free Memory: 624.75MB
+[21:16:28:604] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:29:607] NOTICE: FPS Unstabled 46/60
+[21:16:29:608] Memory Usage: 218.86MB (84.1%)
+[21:16:29:608] Free Memory: 632.39MB
+[21:16:29:609] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:30:602] WARNING: FPS Dropped 43/60
+[21:16:30:603] Memory Usage: 218.17MB (84.1%)
+[21:16:30:603] Free Memory: 632.49MB
+[21:16:30:604] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:31:605] WARNING: FPS Dropped 39/60
+[21:16:31:606] Memory Usage: 218.18MB (84.1%)
+[21:16:31:606] Free Memory: 632.16MB
+[21:16:31:607] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:32:604] WARNING: FPS Dropped 40/60
+[21:16:32:604] Memory Usage: 218.05MB (84.2%)
+[21:16:32:605] Free Memory: 631.82MB
+[21:16:32:605] Peak Memory/CPU: 218.86MB (95.8%)
+[21:16:33:392] Autosaved progress
+[21:16:33:620] WARNING: FPS Dropped 38/60
+[21:16:33:621] Memory Usage: 218.19MB (84.1%)
+[21:16:33:621] Free Memory: 632.17MB
+[21:16:33:621] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:34:618] WARNING: FPS Dropped 38/60
+[21:16:34:619] Memory Usage: 218.88MB (84.1%)
+[21:16:34:619] Free Memory: 632.31MB
+[21:16:34:619] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:35:613] WARNING: FPS Dropped 40/60
+[21:16:35:614] Memory Usage: 218.19MB (84.1%)
+[21:16:35:614] Free Memory: 633.46MB
+[21:16:35:615] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:36:601] NOTICE: FPS Unstabled 46/60
+[21:16:36:602] Memory Usage: 218.07MB (84.1%)
+[21:16:36:602] Free Memory: 633.27MB
+[21:16:36:603] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:37:603] NOTICE: FPS Unstabled 48/60
+[21:16:37:604] Memory Usage: 218.07MB (84.1%)
+[21:16:37:604] Free Memory: 634.14MB
+[21:16:37:605] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:38:313] [A] Objects in memory: 6
+[21:16:38:313] Memory Usage: 218.88MB (84.1%)
+[21:16:38:314] Free Memory: 632.76MB
+[21:16:38:314] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:38:371] Autosaved progress
+[21:16:38:626] NOTICE: FPS Unstabled 49/60
+[21:16:38:628] Memory Usage: 218.88MB (84.1%)
+[21:16:38:629] Free Memory: 632.83MB
+[21:16:38:629] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:39:615] NOTICE: FPS Unstabled 46/60
+[21:16:39:617] Memory Usage: 218.19MB (84.1%)
+[21:16:39:617] Free Memory: 632.30MB
+[21:16:39:618] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:40:619] WARNING: FPS Dropped 44/60
+[21:16:40:621] Memory Usage: 218.88MB (84.1%)
+[21:16:40:622] Free Memory: 633.51MB
+[21:16:40:623] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:41:619] NOTICE: FPS Unstabled 47/60
+[21:16:41:620] Memory Usage: 217.38MB (84.1%)
+[21:16:41:620] Free Memory: 632.90MB
+[21:16:41:620] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:42:616] NOTICE: FPS Unstabled 46/60
+[21:16:42:617] Memory Usage: 218.19MB (84.1%)
+[21:16:42:617] Free Memory: 632.47MB
+[21:16:42:617] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:43:384] Autosaved progress
+[21:16:43:603] WARNING: FPS Dropped 45/60
+[21:16:43:603] Memory Usage: 218.88MB (84.2%)
+[21:16:43:604] Free Memory: 632.11MB
+[21:16:43:604] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:44:617] WARNING: FPS Dropped 45/60
+[21:16:44:617] Memory Usage: 218.19MB (84.1%)
+[21:16:44:618] Free Memory: 632.46MB
+[21:16:44:618] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:45:605] NOTICE: FPS Unstabled 47/60
+[21:16:45:606] Memory Usage: 218.07MB (84.1%)
+[21:16:45:606] Free Memory: 632.47MB
+[21:16:45:606] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:46:620] NOTICE: FPS Unstabled 48/60
+[21:16:46:620] Memory Usage: 218.07MB (84.1%)
+[21:16:46:621] Free Memory: 634.58MB
+[21:16:46:621] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:47:614] NOTICE: FPS Unstabled 47/60
+[21:16:47:617] Memory Usage: 217.50MB (84.2%)
+[21:16:47:618] Free Memory: 631.85MB
+[21:16:47:619] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:48:371] Autosaved progress
+[21:16:48:618] NOTICE: FPS Unstabled 47/60
+[21:16:48:618] Memory Usage: 218.88MB (84.4%)
+[21:16:48:618] Free Memory: 622.84MB
+[21:16:48:618] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:49:632] NOTICE: FPS Unstabled 47/60
+[21:16:49:633] Memory Usage: 217.38MB (84.5%)
+[21:16:49:633] Free Memory: 616.47MB
+[21:16:49:633] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:50:609] NOTICE: FPS Unstabled 48/60
+[21:16:50:613] Memory Usage: 217.38MB (84.8%)
+[21:16:50:614] Free Memory: 607.66MB
+[21:16:50:615] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:51:621] NOTICE: FPS Unstabled 49/60
+[21:16:51:622] Memory Usage: 218.88MB (84.8%)
+[21:16:51:622] Free Memory: 605.51MB
+[21:16:51:623] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:52:632] NOTICE: FPS Unstabled 47/60
+[21:16:52:633] Memory Usage: 217.38MB (84.9%)
+[21:16:52:634] Free Memory: 600.36MB
+[21:16:52:634] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:53:371] Autosaved progress
+[21:16:53:622] NOTICE: FPS Unstabled 46/60
+[21:16:53:623] Memory Usage: 218.88MB (85.2%)
+[21:16:53:624] Free Memory: 591.48MB
+[21:16:53:626] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:54:622] WARNING: FPS Dropped 44/60
+[21:16:54:623] Memory Usage: 217.50MB (85.4%)
+[21:16:54:624] Free Memory: 583.72MB
+[21:16:54:625] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:55:607] WARNING: FPS Dropped 44/60
+[21:16:55:609] Memory Usage: 218.19MB (85.6%)
+[21:16:55:610] Free Memory: 573.80MB
+[21:16:55:611] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:56:630] WARNING: FPS Dropped 44/60
+[21:16:56:631] Memory Usage: 217.38MB (85.4%)
+[21:16:56:631] Free Memory: 582.04MB
+[21:16:56:631] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:57:590] Hour callback
+[21:16:57:615] WARNING: FPS Dropped 43/60
+[21:16:57:618] Memory Usage: 218.88MB (84.0%)
+[21:16:57:620] Free Memory: 639.32MB
+[21:16:57:621] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:58:370] Autosaved progress
+[21:16:58:617] WARNING: FPS Dropped 44/60
+[21:16:58:617] Memory Usage: 218.07MB (83.7%)
+[21:16:58:618] Free Memory: 651.73MB
+[21:16:58:618] Peak Memory/CPU: 218.88MB (95.8%)
+[21:16:59:623] WARNING: FPS Dropped 45/60
+[21:16:59:624] Memory Usage: 217.38MB (83.3%)
+[21:16:59:624] Free Memory: 667.83MB
+[21:16:59:625] Peak Memory/CPU: 218.88MB (95.8%)
+[21:17:00:629] WARNING: FPS Dropped 45/60
+[21:17:00:632] Memory Usage: 218.88MB (83.0%)
+[21:17:00:632] Free Memory: 677.58MB
+[21:17:00:633] Peak Memory/CPU: 218.88MB (95.8%)
+[21:17:01:622] WARNING: FPS Dropped 44/60
+[21:17:01:623] Memory Usage: 218.07MB (83.3%)
+[21:17:01:623] Free Memory: 666.85MB
+[21:17:01:623] Peak Memory/CPU: 218.88MB (95.8%)
+[21:17:02:632] NOTICE: FPS Unstabled 46/60
+[21:17:02:633] Memory Usage: 218.88MB (83.3%)
+[21:17:02:633] Free Memory: 664.38MB
+[21:17:02:634] Peak Memory/CPU: 218.88MB (95.8%)
+[21:17:03:387] Autosaved progress
+[21:17:03:616] NOTICE: FPS Unstabled 46/60
+[21:17:03:617] Memory Usage: 218.19MB (83.5%)
+[21:17:03:617] Free Memory: 659.29MB
+[21:17:03:618] Peak Memory/CPU: 218.88MB (95.8%)
+[21:17:04:632] NOTICE: FPS Unstabled 47/60
+[21:17:04:633] Memory Usage: 218.19MB (83.5%)
+[21:17:04:633] Free Memory: 657.85MB
+[21:17:04:634] Peak Memory/CPU: 218.88MB (95.8%)
+[21:17:05:619] NOTICE: FPS Unstabled 47/60
+[21:17:05:620] Memory Usage: 218.19MB (83.5%)
+[21:17:05:620] Free Memory: 657.90MB
+[21:17:05:620] Peak Memory/CPU: 218.88MB (95.8%)
+[21:17:06:615] WARNING: FPS Dropped 45/60
+[21:17:06:616] Memory Usage: 218.07MB (83.5%)
+[21:17:06:616] Free Memory: 657.65MB
+[21:17:06:617] Peak Memory/CPU: 218.88MB (95.8%)
+[21:17:07:616] NOTICE: FPS Unstabled 47/60
+[21:17:07:617] Memory Usage: 217.50MB (83.5%)
+[21:17:07:617] Free Memory: 657.23MB
+[21:17:07:617] Peak Memory/CPU: 218.88MB (95.8%)
+[21:17:08:369] Autosaved progress
+[21:17:08:616] NOTICE: FPS Unstabled 46/60
+[21:17:08:617] Memory Usage: 217.38MB (83.4%)
+[21:17:08:617] Free Memory: 660.17MB
+[21:17:08:618] Peak Memory/CPU: 218.88MB (95.8%)
+
+[21:17:08:953] Reconstructing scene
+
+[21:17:08:954] 
 Time Reconstruction: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 25.00 seconds in real life = 1 hour in game
-[21:12:57:454] Autosaved progress
-[21:13:00:099] Autosaved progress before going to main menu
-[21:13:00:099] Exited scene via Sliding Menu
+[21:17:09:622] WARNING: FPS Dropped 40/60
+[21:17:09:623] Memory Usage: 274.56MB (84.7%)
+[21:17:09:623] Free Memory: 609.47MB
+[21:17:09:623] Peak Memory/CPU: 274.56MB (95.8%)
+[21:17:10:622] NOTICE: FPS Unstabled 48/60
+[21:17:10:622] Memory Usage: 275.12MB (84.8%)
+[21:17:10:622] Free Memory: 606.52MB
+[21:17:10:623] Peak Memory/CPU: 275.12MB (95.8%)
+[21:17:11:616] NOTICE: FPS Unstabled 48/60
+[21:17:11:616] Memory Usage: 275.31MB (84.9%)
+[21:17:11:617] Free Memory: 603.92MB
+[21:17:11:617] Peak Memory/CPU: 276.00MB (95.8%)
+[21:17:12:617] NOTICE: FPS Unstabled 47/60
+[21:17:12:618] Memory Usage: 275.31MB (84.9%)
+[21:17:12:618] Free Memory: 602.05MB
+[21:17:12:619] Peak Memory/CPU: 276.00MB (95.8%)
+[21:17:13:375] Autosaved progress
+[21:17:13:614] NOTICE: FPS Unstabled 48/60
+[21:17:13:615] Memory Usage: 276.34MB (84.9%)
+[21:17:13:615] Free Memory: 602.32MB
+[21:17:13:615] Peak Memory/CPU: 277.03MB (95.8%)
+[21:17:14:619] NOTICE: FPS Unstabled 47/60
+[21:17:14:619] Memory Usage: 277.50MB (84.9%)
+[21:17:14:619] Free Memory: 601.65MB
+[21:17:14:619] Peak Memory/CPU: 277.50MB (95.8%)
+[21:17:15:616] NOTICE: FPS Unstabled 46/60
+[21:17:15:617] Memory Usage: 277.79MB (84.9%)
+[21:17:15:617] Free Memory: 600.72MB
+[21:17:15:618] Peak Memory/CPU: 277.79MB (95.8%)
+[21:17:16:621] NOTICE: FPS Unstabled 48/60
+[21:17:16:622] Memory Usage: 277.79MB (84.9%)
+[21:17:16:622] Free Memory: 600.25MB
+[21:17:16:622] Peak Memory/CPU: 277.79MB (95.8%)
+[21:17:17:623] NOTICE: FPS Unstabled 48/60
+[21:17:17:624] Memory Usage: 277.10MB (84.9%)
+[21:17:17:624] Free Memory: 600.53MB
+[21:17:17:625] Peak Memory/CPU: 277.79MB (95.8%)
+[21:17:18:374] Autosaved progress
+[21:17:18:635] WARNING: FPS Dropped 44/60
+[21:17:18:635] Memory Usage: 277.79MB (84.9%)
+[21:17:18:636] Free Memory: 601.67MB
+[21:17:18:636] Peak Memory/CPU: 277.79MB (95.8%)
+[21:17:19:614] WARNING: FPS Dropped 40/60
+[21:17:19:614] Memory Usage: 277.79MB (84.9%)
+[21:17:19:614] Free Memory: 601.88MB
+[21:17:19:615] Peak Memory/CPU: 277.79MB (95.8%)
+[21:17:20:633] NOTICE: FPS Unstabled 46/60
+[21:17:20:634] Memory Usage: 278.05MB (84.9%)
+[21:17:20:634] Free Memory: 601.43MB
+[21:17:20:634] Peak Memory/CPU: 278.05MB (95.8%)
+[21:17:21:626] WARNING: FPS Dropped 45/60
+[21:17:21:627] Memory Usage: 278.69MB (84.9%)
+[21:17:21:627] Free Memory: 600.85MB
+[21:17:21:627] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:22:636] NOTICE: FPS Unstabled 46/60
+[21:17:22:636] Memory Usage: 278.69MB (84.9%)
+[21:17:22:637] Free Memory: 600.62MB
+[21:17:22:637] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:23:385] Autosaved progress
+[21:17:23:618] WARNING: FPS Dropped 44/60
+[21:17:23:618] Memory Usage: 278.69MB (85.0%)
+[21:17:23:619] Free Memory: 599.93MB
+[21:17:23:619] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:24:621] WARNING: FPS Dropped 45/60
+[21:17:24:621] Memory Usage: 278.69MB (85.0%)
+[21:17:24:622] Free Memory: 599.56MB
+[21:17:24:622] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:25:621] WARNING: FPS Dropped 43/60
+[21:17:25:622] Memory Usage: 278.69MB (85.0%)
+[21:17:25:623] Free Memory: 597.91MB
+[21:17:25:624] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:26:619] WARNING: FPS Dropped 45/60
+[21:17:26:620] Memory Usage: 278.69MB (85.0%)
+[21:17:26:620] Free Memory: 597.56MB
+[21:17:26:620] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:27:616] WARNING: FPS Dropped 44/60
+[21:17:27:617] Memory Usage: 278.69MB (85.0%)
+[21:17:27:617] Free Memory: 598.04MB
+[21:17:27:618] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:28:383] Autosaved progress
+[21:17:28:621] NOTICE: FPS Unstabled 46/60
+[21:17:28:622] Memory Usage: 278.69MB (85.0%)
+[21:17:28:622] Free Memory: 597.66MB
+[21:17:28:623] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:29:634] NOTICE: FPS Unstabled 46/60
+[21:17:29:634] Memory Usage: 278.69MB (85.0%)
+[21:17:29:634] Free Memory: 597.24MB
+[21:17:29:635] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:30:581] Hour callback
+[21:17:30:582] Day callback
+[21:17:30:618] WARNING: FPS Dropped 45/60
+[21:17:30:619] Memory Usage: 278.69MB (85.0%)
+[21:17:30:620] Free Memory: 596.73MB
+[21:17:30:620] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:31:638] NOTICE: FPS Unstabled 48/60
+[21:17:31:638] Memory Usage: 278.69MB (85.0%)
+[21:17:31:639] Free Memory: 596.87MB
+[21:17:31:639] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:32:622] NOTICE: FPS Unstabled 47/60
+[21:17:32:623] Memory Usage: 278.69MB (85.0%)
+[21:17:32:623] Free Memory: 596.85MB
+[21:17:32:623] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:33:370] Autosaved progress
+[21:17:33:634] NOTICE: FPS Unstabled 46/60
+[21:17:33:634] Memory Usage: 278.69MB (85.1%)
+[21:17:33:635] Free Memory: 596.22MB
+[21:17:33:635] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:34:634] WARNING: FPS Dropped 44/60
+[21:17:34:635] Memory Usage: 278.69MB (85.1%)
+[21:17:34:635] Free Memory: 595.82MB
+[21:17:34:636] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:35:631] WARNING: FPS Dropped 45/60
+[21:17:35:632] Memory Usage: 278.69MB (85.0%)
+[21:17:35:632] Free Memory: 596.46MB
+[21:17:35:633] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:36:634] WARNING: FPS Dropped 45/60
+[21:17:36:635] Memory Usage: 278.69MB (85.0%)
+[21:17:36:635] Free Memory: 597.12MB
+[21:17:36:635] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:37:618] NOTICE: FPS Unstabled 46/60
+[21:17:37:618] Memory Usage: 278.69MB (85.0%)
+[21:17:37:619] Free Memory: 597.12MB
+[21:17:37:619] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:38:305] [A] Objects in memory: 26
+[21:17:38:306] Memory Usage: 278.69MB (85.0%)
+[21:17:38:306] Free Memory: 596.39MB
+[21:17:38:306] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:38:380] Autosaved progress
+[21:17:38:642] WARNING: FPS Dropped 45/60
+[21:17:38:644] Memory Usage: 278.69MB (85.0%)
+[21:17:38:647] Free Memory: 596.43MB
+[21:17:38:648] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:39:630] WARNING: FPS Dropped 38/60
+[21:17:39:630] Memory Usage: 278.69MB (85.1%)
+[21:17:39:631] Free Memory: 596.17MB
+[21:17:39:631] Peak Memory/CPU: 278.69MB (95.8%)
 
-[21:13:06:986] Memory Usage: 217.58MB (94.4%)
-[21:13:06:989] Free Memory: 222.45MB
-[21:13:06:990] Highest Usage: 217.58MB
-[21:13:06:990] Debug closed
-=======
-[21:00:59:334] Initialized scene
-[21:00:59:513] Memory after initialization:
-[21:00:59:514] Memory Usage: 264.57MB (64.7%)
-[21:00:59:519] Free Memory: 2,151.23MB
-[21:00:59:525] Peak Memory/CPU: 264.57MB (64.7%)
+[21:17:40:301] Reconstructing scene
 
-[21:01:03:726] Continue game entered
-[21:01:03:734] Memory Usage: 265.01MB (64.7%)
-[21:01:03:740] Free Memory: 2,152.15MB
-[21:01:03:745] Peak Memory/CPU: 265.01MB (64.7%)
+[21:17:40:302] 
+Time Reconstruction: 
+1 second in real life = 144.00 second(s) in-game
+10.00 minutes in real life = 1 day in game
+25.00 seconds in real life = 1 hour in game
+[21:17:40:621] WARNING: FPS Dropped 37/60
+[21:17:40:622] Memory Usage: 264.34MB (84.6%)
+[21:17:40:622] Free Memory: 615.50MB
+[21:17:40:622] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:41:622] WARNING: FPS Dropped 44/60
+[21:17:41:622] Memory Usage: 264.34MB (84.7%)
+[21:17:41:622] Free Memory: 610.25MB
+[21:17:41:623] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:42:637] WARNING: FPS Dropped 41/60
+[21:17:42:638] Memory Usage: 263.65MB (84.7%)
+[21:17:42:639] Free Memory: 609.80MB
+[21:17:42:639] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:43:381] Autosaved progress
+[21:17:43:637] WARNING: FPS Dropped 41/60
+[21:17:43:638] Memory Usage: 264.34MB (84.7%)
+[21:17:43:638] Free Memory: 609.73MB
+[21:17:43:639] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:44:648] NOTICE: FPS Unstabled 46/60
+[21:17:44:649] Memory Usage: 264.34MB (84.8%)
+[21:17:44:650] Free Memory: 606.68MB
+[21:17:44:650] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:45:651] NOTICE: FPS Unstabled 47/60
+[21:17:45:652] Memory Usage: 263.52MB (84.8%)
+[21:17:45:652] Free Memory: 606.02MB
+[21:17:45:652] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:46:639] WARNING: FPS Dropped 41/60
+[21:17:46:639] Memory Usage: 264.34MB (84.8%)
+[21:17:46:639] Free Memory: 605.19MB
+[21:17:46:640] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:47:623] WARNING: FPS Dropped 43/60
+[21:17:47:623] Memory Usage: 263.66MB (84.8%)
+[21:17:47:623] Free Memory: 605.89MB
+[21:17:47:624] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:48:389] Autosaved progress
+[21:17:48:639] WARNING: FPS Dropped 43/60
+[21:17:48:640] Memory Usage: 264.34MB (84.8%)
+[21:17:48:640] Free Memory: 607.24MB
+[21:17:48:641] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:49:643] WARNING: FPS Dropped 42/60
+[21:17:49:647] Memory Usage: 264.34MB (84.8%)
+[21:17:49:649] Free Memory: 606.68MB
+[21:17:49:649] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:50:636] WARNING: FPS Dropped 40/60
+[21:17:50:636] Memory Usage: 264.34MB (84.8%)
+[21:17:50:637] Free Memory: 607.57MB
+[21:17:50:637] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:51:629] WARNING: FPS Dropped 45/60
+[21:17:51:632] Memory Usage: 263.66MB (84.8%)
+[21:17:51:632] Free Memory: 606.22MB
+[21:17:51:632] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:52:637] NOTICE: FPS Unstabled 48/60
+[21:17:52:639] Memory Usage: 263.66MB (84.8%)
+[21:17:52:640] Free Memory: 607.25MB
+[21:17:52:640] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:53:371] Autosaved progress
+[21:17:53:645] NOTICE: FPS Unstabled 47/60
+[21:17:53:646] Memory Usage: 264.34MB (84.8%)
+[21:17:53:646] Free Memory: 606.97MB
+[21:17:53:647] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:54:638] NOTICE: FPS Unstabled 46/60
+[21:17:54:639] Memory Usage: 264.34MB (84.8%)
+[21:17:54:639] Free Memory: 606.95MB
+[21:17:54:640] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:55:632] NOTICE: FPS Unstabled 46/60
+[21:17:55:633] Memory Usage: 264.34MB (84.8%)
+[21:17:55:633] Free Memory: 606.66MB
+[21:17:55:634] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:56:636] NOTICE: FPS Unstabled 46/60
+[21:17:56:637] Memory Usage: 264.34MB (84.8%)
+[21:17:56:637] Free Memory: 605.81MB
+[21:17:56:637] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:57:635] NOTICE: FPS Unstabled 46/60
+[21:17:57:636] Memory Usage: 264.34MB (84.8%)
+[21:17:57:636] Free Memory: 605.73MB
+[21:17:57:636] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:58:382] Autosaved progress
+[21:17:58:635] NOTICE: FPS Unstabled 46/60
+[21:17:58:636] Memory Usage: 264.34MB (84.8%)
+[21:17:58:636] Free Memory: 605.72MB
+[21:17:58:637] Peak Memory/CPU: 278.69MB (95.8%)
+[21:17:59:639] NOTICE: FPS Unstabled 46/60
+[21:17:59:640] Memory Usage: 264.34MB (84.6%)
+[21:17:59:640] Free Memory: 612.61MB
+[21:17:59:640] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:00:636] NOTICE: FPS Unstabled 46/60
+[21:18:00:637] Memory Usage: 264.34MB (84.7%)
+[21:18:00:637] Free Memory: 611.30MB
+[21:18:00:638] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:01:640] NOTICE: FPS Unstabled 46/60
+[21:18:01:641] Memory Usage: 264.34MB (84.7%)
+[21:18:01:641] Free Memory: 611.09MB
+[21:18:01:642] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:02:648] WARNING: FPS Dropped 41/60
+[21:18:02:648] Memory Usage: 263.66MB (84.7%)
+[21:18:02:649] Free Memory: 609.84MB
+[21:18:02:650] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:03:373] Autosaved progress
+[21:18:03:639] WARNING: FPS Dropped 42/60
+[21:18:03:640] Memory Usage: 263.66MB (84.7%)
+[21:18:03:640] Free Memory: 611.08MB
+[21:18:03:641] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:04:478] Hour callback
+[21:18:04:634] NOTICE: FPS Unstabled 46/60
+[21:18:04:635] Memory Usage: 263.53MB (84.7%)
+[21:18:04:635] Free Memory: 610.84MB
+[21:18:04:636] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:05:643] NOTICE: FPS Unstabled 47/60
+[21:18:05:647] Memory Usage: 263.53MB (84.7%)
+[21:18:05:649] Free Memory: 610.92MB
+[21:18:05:650] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:06:635] NOTICE: FPS Unstabled 46/60
+[21:18:06:636] Memory Usage: 264.34MB (84.7%)
+[21:18:06:636] Free Memory: 611.94MB
+[21:18:06:637] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:07:635] NOTICE: FPS Unstabled 47/60
+[21:18:07:635] Memory Usage: 263.53MB (84.7%)
+[21:18:07:635] Free Memory: 611.13MB
+[21:18:07:636] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:08:375] Autosaved progress
+[21:18:08:654] WARNING: FPS Dropped 42/60
+[21:18:08:655] Memory Usage: 263.66MB (84.6%)
+[21:18:08:655] Free Memory: 613.45MB
+[21:18:08:656] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:09:641] WARNING: FPS Dropped 40/60
+[21:18:09:641] Memory Usage: 263.66MB (84.7%)
+[21:18:09:642] Free Memory: 609.88MB
+[21:18:09:650] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:10:633] NOTICE: FPS Unstabled 47/60
+[21:18:10:634] Memory Usage: 264.34MB (84.7%)
+[21:18:10:634] Free Memory: 609.50MB
+[21:18:10:634] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:11:633] NOTICE: FPS Unstabled 47/60
+[21:18:11:634] Memory Usage: 263.53MB (84.7%)
+[21:18:11:634] Free Memory: 608.55MB
+[21:18:11:635] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:12:633] WARNING: FPS Dropped 42/60
+[21:18:12:633] Memory Usage: 263.66MB (84.6%)
+[21:18:12:633] Free Memory: 612.77MB
+[21:18:12:634] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:13:387] Autosaved progress
+[21:18:13:633] WARNING: FPS Dropped 45/60
+[21:18:13:634] Memory Usage: 264.34MB (84.6%)
+[21:18:13:634] Free Memory: 612.40MB
+[21:18:13:634] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:14:636] WARNING: FPS Dropped 44/60
+[21:18:14:637] Memory Usage: 263.66MB (84.6%)
+[21:18:14:639] Free Memory: 612.78MB
+[21:18:14:639] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:15:633] NOTICE: FPS Unstabled 46/60
+[21:18:15:633] Memory Usage: 264.34MB (84.6%)
+[21:18:15:634] Free Memory: 612.50MB
+[21:18:15:634] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:16:634] NOTICE: FPS Unstabled 46/60
+[21:18:16:634] Memory Usage: 264.34MB (84.7%)
+[21:18:16:635] Free Memory: 611.91MB
+[21:18:16:635] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:17:642] WARNING: FPS Dropped 43/60
+[21:18:17:644] Memory Usage: 263.66MB (84.7%)
+[21:18:17:648] Free Memory: 612.13MB
+[21:18:17:650] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:18:388] Autosaved progress
+[21:18:18:642] WARNING: FPS Dropped 37/60
+[21:18:18:646] Memory Usage: 264.34MB (84.8%)
+[21:18:18:647] Free Memory: 606.14MB
+[21:18:18:648] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:19:636] WARNING: FPS Dropped 41/60
+[21:18:19:636] Memory Usage: 263.66MB (84.7%)
+[21:18:19:637] Free Memory: 609.23MB
+[21:18:19:637] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:20:652] WARNING: FPS Dropped 43/60
+[21:18:20:653] Memory Usage: 264.34MB (84.7%)
+[21:18:20:655] Free Memory: 609.13MB
+[21:18:20:656] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:21:642] WARNING: FPS Dropped 43/60
+[21:18:21:645] Memory Usage: 264.34MB (84.7%)
+[21:18:21:648] Free Memory: 608.64MB
+[21:18:21:649] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:22:635] WARNING: FPS Dropped 45/60
+[21:18:22:635] Memory Usage: 263.66MB (84.7%)
+[21:18:22:636] Free Memory: 609.40MB
+[21:18:22:636] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:23:383] Autosaved progress
+[21:18:23:639] NOTICE: FPS Unstabled 46/60
+[21:18:23:639] Memory Usage: 263.66MB (84.7%)
+[21:18:23:640] Free Memory: 609.44MB
+[21:18:23:640] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:24:642] NOTICE: FPS Unstabled 46/60
+[21:18:24:643] Memory Usage: 263.66MB (84.8%)
+[21:18:24:647] Free Memory: 607.71MB
+[21:18:24:649] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:25:635] NOTICE: FPS Unstabled 46/60
+[21:18:25:635] Memory Usage: 263.53MB (84.8%)
+[21:18:25:636] Free Memory: 607.58MB
+[21:18:25:636] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:26:640] WARNING: FPS Dropped 40/60
+[21:18:26:640] Memory Usage: 263.66MB (84.8%)
+[21:18:26:641] Free Memory: 606.84MB
+[21:18:26:641] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:27:634] WARNING: FPS Dropped 37/60
+[21:18:27:635] Memory Usage: 264.34MB (84.8%)
+[21:18:27:635] Free Memory: 607.02MB
+[21:18:27:635] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:28:378] Autosaved progress
+[21:18:28:639] WARNING: FPS Dropped 37/60
+[21:18:28:639] Memory Usage: 263.66MB (84.8%)
+[21:18:28:640] Free Memory: 608.13MB
+[21:18:28:640] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:29:637] WARNING: FPS Dropped 36/60
+[21:18:29:638] Memory Usage: 263.66MB (84.8%)
+[21:18:29:639] Free Memory: 607.76MB
+[21:18:29:639] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:30:632] WARNING: FPS Dropped 38/60
+[21:18:30:633] Memory Usage: 263.66MB (84.8%)
+[21:18:30:633] Free Memory: 607.57MB
+[21:18:30:633] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:31:641] WARNING: FPS Dropped 39/60
+[21:18:31:642] Memory Usage: 264.34MB (84.7%)
+[21:18:31:644] Free Memory: 609.80MB
+[21:18:31:647] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:32:640] WARNING: FPS Dropped 37/60
+[21:18:32:641] Memory Usage: 263.66MB (84.7%)
+[21:18:32:641] Free Memory: 609.25MB
+[21:18:32:641] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:33:386] Autosaved progress
+[21:18:33:636] WARNING: FPS Dropped 43/60
+[21:18:33:637] Memory Usage: 264.34MB (84.7%)
+[21:18:33:637] Free Memory: 608.80MB
+[21:18:33:637] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:34:633] WARNING: FPS Dropped 44/60
+[21:18:34:634] Memory Usage: 263.66MB (84.8%)
+[21:18:34:634] Free Memory: 608.16MB
+[21:18:34:635] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:35:645] NOTICE: FPS Unstabled 46/60
+[21:18:35:647] Memory Usage: 264.34MB (84.8%)
+[21:18:35:647] Free Memory: 607.55MB
+[21:18:35:647] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:36:654] NOTICE: FPS Unstabled 48/60
+[21:18:36:654] Memory Usage: 264.34MB (84.7%)
+[21:18:36:654] Free Memory: 609.56MB
+[21:18:36:655] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:37:651] WARNING: FPS Dropped 45/60
+[21:18:37:652] Memory Usage: 263.66MB (84.7%)
+[21:18:37:652] Free Memory: 609.59MB
+[21:18:37:652] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:38:320] [A] Objects in memory: 6
+[21:18:38:320] Memory Usage: 264.34MB (84.7%)
+[21:18:38:320] Free Memory: 609.12MB
+[21:18:38:321] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:38:387] Autosaved progress
+[21:18:38:637] WARNING: FPS Dropped 45/60
+[21:18:38:637] Memory Usage: 264.34MB (84.7%)
+[21:18:38:638] Free Memory: 609.39MB
+[21:18:38:638] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:39:272] Hour callback
+[21:18:39:653] WARNING: FPS Dropped 43/60
+[21:18:39:653] Memory Usage: 263.66MB (84.8%)
+[21:18:39:654] Free Memory: 607.68MB
+[21:18:39:654] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:40:654] WARNING: FPS Dropped 39/60
+[21:18:40:655] Memory Usage: 264.34MB (84.8%)
+[21:18:40:655] Free Memory: 607.51MB
+[21:18:40:656] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:41:641] WARNING: FPS Dropped 45/60
+[21:18:41:641] Memory Usage: 263.66MB (84.8%)
+[21:18:41:642] Free Memory: 607.84MB
+[21:18:41:644] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:42:652] NOTICE: FPS Unstabled 48/60
+[21:18:42:652] Memory Usage: 263.66MB (84.7%)
+[21:18:42:652] Free Memory: 608.27MB
+[21:18:42:653] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:43:385] Autosaved progress
+[21:18:43:647] WARNING: FPS Dropped 45/60
+[21:18:43:648] Memory Usage: 264.34MB (84.8%)
+[21:18:43:648] Free Memory: 607.89MB
+[21:18:43:648] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:44:639] NOTICE: FPS Unstabled 46/60
+[21:18:44:639] Memory Usage: 264.34MB (84.9%)
+[21:18:44:640] Free Memory: 601.13MB
+[21:18:44:640] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:45:654] NOTICE: FPS Unstabled 46/60
+[21:18:45:655] Memory Usage: 264.35MB (85.2%)
+[21:18:45:655] Free Memory: 591.24MB
+[21:18:45:655] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:46:641] WARNING: FPS Dropped 45/60
+[21:18:46:641] Memory Usage: 263.66MB (85.5%)
+[21:18:46:642] Free Memory: 579.66MB
+[21:18:46:642] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:47:648] WARNING: FPS Dropped 44/60
+[21:18:47:648] Memory Usage: 263.66MB (85.6%)
+[21:18:47:649] Free Memory: 575.02MB
+[21:18:47:649] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:47:817] Autosaved progress before going to main menu
+[21:18:47:818] Exited scene via Sliding Menu
 
-[21:01:04:346] Autosaved progress
-[21:01:04:347] CRITICAL: FPS Plummeted 28/60
-[21:01:04:355] Memory Usage: 265.46MB (65.0%)
-[21:01:04:363] Free Memory: 2,131.09MB
-[21:01:04:373] Peak Memory/CPU: 265.46MB (65.0%)
-[21:01:05:347] NOTICE: FPS Unstabled 48/60
-[21:01:05:348] Memory Usage: 265.46MB (64.9%)
-[21:01:05:353] Free Memory: 2,137.34MB
-[21:01:05:361] Peak Memory/CPU: 265.46MB (65.1%)
-[21:01:06:335] NOTICE: FPS Unstabled 51/60
-[21:01:06:336] Memory Usage: 265.47MB (64.9%)
-[21:01:06:345] Free Memory: 2,138.28MB
-[21:01:06:352] Peak Memory/CPU: 265.47MB (65.1%)
-[21:01:07:339] NOTICE: FPS Unstabled 50/60
-[21:01:07:340] Memory Usage: 266.41MB (64.8%)
-[21:01:07:349] Free Memory: 2,142.62MB
-[21:01:07:355] Peak Memory/CPU: 266.41MB (65.1%)
-[21:01:08:336] NOTICE: FPS Unstabled 53/60
-[21:01:08:337] Memory Usage: 265.86MB (64.8%)
-[21:01:08:345] Free Memory: 2,143.28MB
-[21:01:08:351] Peak Memory/CPU: 266.42MB (65.1%)
-[21:01:09:353] Autosaved progress
-[21:01:09:353] NOTICE: FPS Unstabled 52/60
-[21:01:09:363] Memory Usage: 266.67MB (64.8%)
-[21:01:09:371] Free Memory: 2,144.80MB
-[21:01:09:379] Peak Memory/CPU: 266.67MB (65.1%)
-[21:01:10:355] NOTICE: FPS Unstabled 52/60
-[21:01:10:357] Memory Usage: 266.43MB (64.8%)
-[21:01:10:367] Free Memory: 2,146.24MB
-[21:01:10:374] Peak Memory/CPU: 266.84MB (65.1%)
-[21:01:11:354] NOTICE: FPS Unstabled 53/60
-[21:01:11:359] Memory Usage: 266.43MB (64.8%)
-[21:01:11:367] Free Memory: 2,146.26MB
-[21:01:11:374] Peak Memory/CPU: 266.84MB (65.1%)
-[21:01:12:333] Autosaved progress before going to main menu
-[21:01:12:333] Exited scene via Sliding Menu
-
-[21:01:13:310] Memory Usage: 267.39MB (64.8%)
-[21:01:13:318] Free Memory: 2,146.18MB
-[21:01:13:329] Peak Memory/CPU: 267.39MB (65.1%)
-[21:01:13:345] Debug closed
->>>>>>> 3df1d4e6393eaba693d34ff56fee00b2f0e6847b
+[21:18:52:930] Memory Usage: 264.18MB (84.4%)
+[21:18:52:930] Free Memory: 620.39MB
+[21:18:52:930] Peak Memory/CPU: 278.69MB (95.8%)
+[21:18:52:930] Debug closed
