@@ -1,6 +1,6 @@
 {
-    "time": "2022/05/09, 12:03:04.222122",
-    "last_login": "2022/05/08, 22:16:53.588360",
+    "time": "2022/05/09, 15:25:13.822122",
+    "last_login": "2022/05/09, 15:48:29.363962",
     "last_location": "location_a",
     "cash": 106860.25,
     "businesses": {
@@ -12,11 +12,11 @@
                 "is_open": true,
                 "open_until": "2022/05/09, 18:52:49.822122",
                 "has_employee": true,
-                "sales": 103.0,
-                "lifetime_sales": 103.0,
+                "sales": 252.75,
+                "lifetime_sales": 252.75,
                 "last_profit": -270.75,
                 "lifetime_profit": -270.75,
-                "current_operation_sales": 73.75
+                "current_operation_sales": 223.5
             },
             "sari_sari_store": {
                 "date_acquired": "2022/05/08, 22:16:18.470262",
@@ -36,11 +36,11 @@
                 "is_open": true,
                 "open_until": "2022/05/09, 19:11:13.822122",
                 "has_employee": true,
-                "sales": 215.5,
-                "lifetime_sales": 215.5,
+                "sales": 501.75,
+                "lifetime_sales": 501.75,
                 "last_profit": 0.0,
                 "lifetime_profit": 0.0,
-                "current_operation_sales": 215.5
+                "current_operation_sales": 501.75
             },
             "food_cart": {
                 "date_acquired": "2022/05/07, 20:39:59.325294",

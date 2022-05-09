@@ -1,61 +1,83 @@
-[22:15:07:276] Debug started
-[22:15:07:276] Memory Usage: 20.11MB (34.7%)
-[22:15:07:276] Free Memory: 10,624.11MB
-[22:15:07:276] Peak Memory/CPU: 20.11MB (34.7%)
+[15:46:50:915] Debug started
+[15:46:50:915] Memory Usage: 20.45MB (93.8%)
+[15:46:50:915] Free Memory: 245.76MB
+[15:46:50:916] Peak Memory/CPU: 20.45MB (93.8%)
 
-[22:15:13:915] Game Title: EntrePinoy
-[22:15:13:918] Game Version: 0.0.1
-[22:15:13:934] Display Width: 1280
-[22:15:13:938] Display Height: 720
-[22:15:13:941] Game FPS: 60
+[15:46:55:959] Game Title: EntrePinoy
+[15:46:55:959] Game Version: 0.0.1
+[15:46:56:243] Display Width: 1280
+[15:46:56:243] Display Height: 720
+[15:46:56:244] Game FPS: 60
 
-[22:15:14:081] 
+[15:46:56:477] 
 Time amplification: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 25.00 seconds in real life = 1 hour in game
 
-[22:15:14:109] Initialized scene
-[22:15:14:209] Memory after initialization:
-[22:15:14:213] Memory Usage: 222.80MB (35.6%)
-[22:15:14:216] Free Memory: 10,474.84MB
-[22:15:14:220] Peak Memory/CPU: 222.80MB (35.6%)
+[15:46:56:794] Initialized scene
+[15:46:56:951] Memory after initialization:
+[15:46:56:952] Memory Usage: 195.54MB (97.1%)
+[15:46:56:952] Free Memory: 116.99MB
+[15:46:56:952] Peak Memory/CPU: 195.54MB (97.1%)
 
-[22:16:13:184] Continue game entered
-[22:16:13:187] Memory Usage: 223.91MB (37.6%)
-[22:16:13:191] Free Memory: 10,158.51MB
-[22:16:13:194] Peak Memory/CPU: 223.91MB (37.6%)
+[15:47:06:137] Continue game entered
+[15:47:06:137] Memory Usage: 197.00MB (89.9%)
+[15:47:06:138] Free Memory: 401.38MB
+[15:47:06:138] Peak Memory/CPU: 197.00MB (97.1%)
 
-[22:16:14:122] [A] Objects in memory: 3
-[22:16:14:126] Memory Usage: 224.61MB (37.6%)
-[22:16:14:130] Free Memory: 10,149.46MB
-[22:16:14:133] Peak Memory/CPU: 224.61MB (37.6%)
-[22:16:14:137] Autosaved progress
+[15:47:06:811] Autosaved progress
+[15:47:06:811] WARNING: FPS Dropped 38/60
+[15:47:06:812] Memory Usage: 198.78MB (89.7%)
+[15:47:06:812] Free Memory: 412.21MB
+[15:47:06:812] Peak Memory/CPU: 199.41MB (97.1%)
+[15:47:11:819] Autosaved progress
+[15:47:16:811] Autosaved progress
+[15:47:21:801] Autosaved progress
+[15:47:26:816] Autosaved progress
+[15:47:29:538] Hour callback
+[15:47:31:811] Autosaved progress
+[15:47:36:808] Autosaved progress
+[15:47:41:810] Autosaved progress
+[15:47:46:809] Autosaved progress
+[15:47:51:822] Autosaved progress
 
-[22:16:16:161] Reconstructing scene
+[15:47:52:172] Reconstructing scene
 
-[22:16:16:168] 
+[15:47:52:173] 
 Time Reconstruction: 
 1 second in real life = 144.00 second(s) in-game
 10.00 minutes in real life = 1 day in game
 25.00 seconds in real life = 1 hour in game
-[22:16:17:160] NOTICE: FPS Unstabled 54/60
-[22:16:17:163] Memory Usage: 231.32MB (37.7%)
-[22:16:17:166] Free Memory: 10,134.02MB
-[22:16:17:170] Peak Memory/CPU: 232.48MB (37.7%)
-[22:16:19:121] Autosaved progress
-[22:16:24:126] Autosaved progress
-[22:16:26:934] Hour callback
-[22:16:29:124] Autosaved progress
-[22:16:34:128] Autosaved progress
-[22:16:39:127] Autosaved progress
-[22:16:44:129] Autosaved progress
-[22:16:49:121] Autosaved progress
-[22:16:51:647] Hour callback
-[22:16:53:578] Autosaved progress before going to main menu
-[22:16:53:584] Exited scene via Sliding Menu
+[15:47:54:202] Hour callback
+[15:47:56:806] [A] Objects in memory: 15
+[15:47:56:807] Memory Usage: 249.68MB (87.0%)
+[15:47:56:807] Free Memory: 517.73MB
+[15:47:56:807] Peak Memory/CPU: 249.68MB (97.1%)
+[15:47:56:824] Autosaved progress
 
-[22:16:54:452] Memory Usage: 234.64MB (37.8%)
-[22:16:54:458] Free Memory: 10,118.70MB
-[22:16:54:462] Peak Memory/CPU: 240.28MB (37.9%)
-[22:16:54:464] Debug closed
+[15:48:01:142] Reconstructing scene
+
+[15:48:01:143] 
+Time Reconstruction: 
+1 second in real life = 144.00 second(s) in-game
+10.00 minutes in real life = 1 day in game
+25.00 seconds in real life = 1 hour in game
+[15:48:01:813] Autosaved progress
+[15:48:01:829] NOTICE: FPS Unstabled 52/60
+[15:48:01:830] Memory Usage: 236.06MB (86.9%)
+[15:48:01:830] Free Memory: 522.19MB
+[15:48:01:830] Peak Memory/CPU: 250.70MB (97.1%)
+[15:48:06:822] Autosaved progress
+[15:48:11:814] Autosaved progress
+[15:48:16:820] Autosaved progress
+[15:48:18:953] Hour callback
+[15:48:21:811] Autosaved progress
+[15:48:26:815] Autosaved progress
+[15:48:29:356] Autosaved progress before going to main menu
+[15:48:29:356] Exited scene via Sliding Menu
+
+[15:48:30:213] Memory Usage: 235.32MB (87.2%)
+[15:48:30:214] Free Memory: 509.18MB
+[15:48:30:214] Peak Memory/CPU: 250.70MB (97.1%)
+[15:48:30:215] Debug closed
