@@ -31,10 +31,15 @@ class Library():
         # Images 
         self.meta_images = {
             "icon" : self.get_image("meta", "game_icon.png"),
-            
             "studio" : self.get_image("meta", "studio.png"),
+            
             "menu_background" : self.get_image("meta", "menu_background.png"),
             "window_background" : self.get_image("meta", "window_background.png"),
+            
+            "toggler_on" : self.get_image("meta", "toggler_on.png"),
+            "toggler_off" : self.get_image("meta", "toggler_off.png"),
+            
+            
             "slider" : self.get_image("meta", "slider.png"),
             "slider_knob_idle" : self.get_image("meta", "slider_knob_idle.png"),
             "slider_knob_dragged" : self.get_image("meta", "slider_knob_dragged.png"),
