@@ -3,6 +3,7 @@ import pygame
 from game.sprite.menu_background import MenuBackground
 from game.sprite.message import Message
 from game.sprite.slider import Slider
+from game.sprite.toggler import Toggler
 
 
 class Setting():
@@ -33,9 +34,10 @@ class Setting():
             self.main.data.colors["brown"],
             top_left_coordinates=(
                 int(self.ui_background_rect.width * 0.085) + self.ui_background_rect.x,
-                int(self.ui_background_rect.height * 0.09) + self.ui_background_rect.y
+                int(self.ui_background_rect.height * 0.15) + self.ui_background_rect.y
             )
         )
+        
         self.bgm_message = Message(
             self.main.screen, 
             ["BGM"],
@@ -43,16 +45,17 @@ class Setting():
             self.main.data.colors["brown"],
             top_left_coordinates=(
                 int(self.ui_background_rect.width * 0.085) + self.ui_background_rect.x,
-                int(self.ui_background_rect.height * 0.24) + self.ui_background_rect.y
+                int(self.ui_background_rect.height * 0.33) + self.ui_background_rect.y
             )
         )
         self.bgm_slider = Slider(
             self.main, "bgm",
             top_left_coordinates=(
                 int(self.ui_background_rect.width * 0.166) + self.ui_background_rect.x,
-                int(self.ui_background_rect.height * 0.2) + self.ui_background_rect.y
+                int(self.ui_background_rect.height * 0.29) + self.ui_background_rect.y
             )
         )
+        
         self.sfx_message = Message(
             self.main.screen, 
             ["SFX"],
@@ -60,14 +63,33 @@ class Setting():
             self.main.data.colors["brown"],
             top_left_coordinates=(
                 int(self.ui_background_rect.width * 0.085) + self.ui_background_rect.x,
-                int(self.ui_background_rect.height * 0.38) + self.ui_background_rect.y
+                int(self.ui_background_rect.height * 0.49) + self.ui_background_rect.y
             )
         )
         self.sfx_slider = Slider(
             self.main, "sfx",
             top_left_coordinates=(
                 int(self.ui_background_rect.width * 0.166) + self.ui_background_rect.x,
-                int(self.ui_background_rect.height * 0.34) + self.ui_background_rect.y
+                int(self.ui_background_rect.height * 0.45) + self.ui_background_rect.y
+            )
+        )
+        
+        self.full_screen_message = Message(
+            self.main.screen, 
+            ["Full screen"],
+            self.main.data.large_font,
+            self.main.data.colors["brown"],
+            top_left_coordinates=(
+                int(self.ui_background_rect.width * 0.085) + self.ui_background_rect.x,
+                int(self.ui_background_rect.height * 0.69) + self.ui_background_rect.y
+            )
+        )
+        self.full_screen_toggler = Toggler(
+            self.main,
+            "full_screen",
+            top_left_coordinates=(
+                int(self.ui_background_rect.width * 0.32) + self.ui_background_rect.x,
+                int(self.ui_background_rect.height * 0.65) + self.ui_background_rect.y
             )
         )
         
@@ -76,8 +98,10 @@ class Setting():
         self.business_title_message.add(self.objects)
         self.bgm_message.add(self.objects)
         self.sfx_message.add(self.objects)
+        self.full_screen_message.add(self.objects)
         self.bgm_slider.add(self.objects, self.draggable_buttons)
         self.sfx_slider.add(self.objects, self.draggable_buttons)
+        self.full_screen_toggler.add(self.objects, self.buttons)
                 
                                 
     def mouse_click_events(self, event):
@@ -86,7 +110,8 @@ class Setting():
         # If the user clicked on left mouse button
         if event.button == 1: 
             for button in self.buttons:
-                button.check_clicked(click_coordinates)
+                if button.check_clicked(click_coordinates):
+                    break
 
         # If the user clicked on the right mouse button
         if event.button == 3: 
