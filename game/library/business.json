@@ -27,12 +27,12 @@
         "initial_cost" : 6000.0,
         "daily_expenses" : 250.0,
         "employee_cost": 100.0,
-        "income_per_customer_range" : [5.00, 45.0]
+        "income_per_customer_range" : [8.00, 45.0]
     },
     "ukay_ukay" : {
         "name" : "Ukay Ukay",
         "image_name" : "ukay_ukay",
-        "rel_midbottom_coordinates" : [0.71, 0.62],
+        "rel_midbottom_coordinates" : [0.66, 0.625],
         "collide_rect" : [0.04, 0.21, 0.92, 0.79],
         "queuing_point" : 0.35,
         "queue_direction" : "right",
@@ -40,7 +40,7 @@
         "initial_cost" : 12000.0,
         "daily_expenses" : 500.0,
         "employee_cost": 250.0,
-        "income_per_customer_range" : [35.0, 100.0]
+        "income_per_customer_range" : [35.0, 95.0]
     }, 
     "food_cart" : {
         "name" : "Foodcart",
@@ -53,7 +53,7 @@
         "initial_cost" : 10000.0,
         "daily_expenses" : 400.0,
         "employee_cost": 250.0,
-        "income_per_customer_range" : [40.00, 70.00]
+        "income_per_customer_range" : [40.00, 65.00]
     },
     "test_business_a" : {
         "name" : "Test Business A",

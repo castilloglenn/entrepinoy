@@ -108,9 +108,9 @@ class SlidingMenu():
         self.news_button = Button(
             self.main, self.news_callback,
             **{
-                "idle" : self.main.data.meta_images["map_button_idle"],
-                "outline" : self.main.data.meta_images["map_button_outline"],
-                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "idle" : self.main.data.meta_images["news_button_idle"],
+                "outline" : self.main.data.meta_images["news_button_outline"],
+                "disabled" : self.main.data.meta_images["news_button_disabled"],
                 "tooltip" : ["News"]
             }
         )
@@ -129,9 +129,9 @@ class SlidingMenu():
         self.stock_button = Button(
             self.main, self.stock_callback,
             **{
-                "idle" : self.main.data.meta_images["map_button_idle"],
-                "outline" : self.main.data.meta_images["map_button_outline"],
-                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "idle" : self.main.data.meta_images["stock_button_idle"],
+                "outline" : self.main.data.meta_images["stock_button_outline"],
+                "disabled" : self.main.data.meta_images["stock_button_disabled"],
                 "tooltip" : [
                     "Stock", 
                     "Market"
@@ -184,8 +184,8 @@ class SlidingMenu():
     def map_callback(self, *args):
         location = self.main.data.progress["last_location"]
         if location == "location_a":
-            self.main.data.progress["last_location"] = "location_b"
-        elif location == "location_b":
+            self.main.data.progress["last_location"] = "test_location"
+        elif location == "test_location":
             self.main.data.progress["last_location"] = "location_a"
         
         self.tuck()

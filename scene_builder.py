@@ -64,10 +64,16 @@ class Scene():
             self.crowd_spawner_id,
             self.main.data.meta["crowd_spawn_timeout"]
         )
+        # Crowd spawner
+        self.vehicle_spawner_id = pygame.USEREVENT + 3
+        pygame.time.set_timer(
+            self.vehicle_spawner_id,
+            self.main.data.meta["vehicle_spawn_timeout"]
+        )
         # Memory monitoring
         self.footprint_counter = 0
         self.customers_spawned = 0
-        self.memory_debug_id = pygame.USEREVENT + 3
+        self.memory_debug_id = pygame.USEREVENT + 4
         pygame.time.set_timer(
             self.memory_debug_id,
             self.main.data.meta["memory_log_timeout"]
@@ -75,7 +81,7 @@ class Scene():
         # FPS Counter
         self.fps_previous_count = 0
         self.fps_counter = 0
-        self.fps_counter_id = pygame.USEREVENT + 4
+        self.fps_counter_id = pygame.USEREVENT + 5
         pygame.time.set_timer(
             self.fps_counter_id,
             1000 # This is static, does not need to be modified
@@ -86,6 +92,7 @@ class Scene():
         self.main.debug.log("Initialized scene")
         
         # Sprites and sprite groups
+        self.extra_sprites_count = 0
         self.general_sprites = SpriteGroup()
         self.ui_components = pygame.sprite.Group()
         self.buttons = pygame.sprite.Group()
@@ -133,6 +140,7 @@ class Scene():
             })
             scene_business.add(self.general_sprites)
             self.total_location_businesses += 1
+            self.extra_sprites_count += 1
         
         self.profile_holder = Button(
             self.main,
@@ -284,6 +292,8 @@ class Scene():
         for sprite in self.general_sprites:
             if isinstance(sprite, (Customer, NPC)):
                 sprite.free()
+                
+        self.extra_sprites_count = self.total_location_businesses
         
     
     def time_callback_seconds(self, time_amplification):
@@ -344,7 +354,7 @@ class Scene():
     def spawn_crowd_customer(self):
         npc_chance = random.randint(0, 100)
         if npc_chance <= self.crowd_chance[self.time.time.hour] \
-                and len(self.general_sprites) < self.object_limit: 
+                and (len(self.general_sprites) - self.extra_sprites_count) < self.object_limit: 
             self.footprint_counter += 1
             npc_form = str(random.choice(self.main.data.location[self.location]["npc_indexes"]))
             is_businesses_full = self.check_queues_if_full()
@@ -356,7 +366,8 @@ class Scene():
             if customer_chance <= int(weighted_customer_chance) and not is_businesses_full:
                 self.customers_spawned += 1
                 Customer(
-                    self.main.screen, npc_form,
+                    self.main, 
+                    "people", npc_form,
                     self.main.data.crowd_spritesheets[npc_form]["sheet"],
                     self.main.data.crowd_spritesheets[npc_form]["data"],
                     self.main.data.emojis,
@@ -366,11 +377,30 @@ class Scene():
                 ).add(self.general_sprites)
             else:
                 NPC(
-                    self.main.screen, npc_form, 
+                    self.main, 
+                    "people", npc_form, 
                     self.main.data.crowd_spritesheets[npc_form]["sheet"],
                     self.main.data.crowd_spritesheets[npc_form]["data"],
                     self.main.data.setting["fps"]
                 ).add(self.general_sprites)
+                
+                
+    def spawn_vehicle(self):
+        vehicle_chance = random.randint(0, 100)
+        weighted_chance = \
+            max(self.main.data.meta["vehicle_min_chance"], 
+                int(self.crowd_chance[self.time.time.hour] 
+                    * self.main.data.meta["vehicle_ratio_to_crowd"]))
+        if vehicle_chance <= weighted_chance:
+            npc_form = str(random.choice(self.main.data.location[self.location]["vehicle_indexes"]))
+            NPC(
+                self.main, 
+                "vehicle", npc_form, 
+                self.main.data.vehicle_spritesheets[npc_form]["sheet"],
+                self.main.data.vehicle_spritesheets[npc_form]["data"],
+                self.main.data.setting["fps"]
+            ).add(self.general_sprites)
+            self.extra_sprites_count += 1
                 
                                 
     def mouse_click_events(self, event):
@@ -437,10 +467,20 @@ class Scene():
                 self.main.debug.log("Debug details hidden")
             
         elif key == pygame.K_F2:
-            self.main.screen = pygame.display.set_mode(
-                (self.main.data.setting["game_width"],
-                self.main.data.setting["game_height"]), pygame.FULLSCREEN | pygame.SCALED
-            )
+            if self.main.data.setting["full_screen"]:
+                self.main.screen = pygame.display.set_mode(
+                    (self.main.data.setting["game_width"],
+                    self.main.data.setting["game_height"])
+                )
+                self.main.data.setting["full_screen"] = False
+            else:
+                self.main.screen = pygame.display.set_mode(
+                    (self.main.data.setting["game_width"],
+                    self.main.data.setting["game_height"]), pygame.FULLSCREEN | pygame.SCALED
+                )
+                self.main.data.setting["full_screen"] = True
+            
+            self.main.data.set_dict_to_json("config", "settings.json", self.main.data.setting)
             
         elif key == pygame.K_F3:
             pass
@@ -536,6 +576,8 @@ class Scene():
                     self.main.debug.log("Autosaved progress")
                 elif event.type == self.crowd_spawner_id:
                     self.spawn_crowd_customer()
+                elif event.type == self.vehicle_spawner_id:
+                    self.spawn_vehicle()
                 elif event.type == self.memory_debug_id:
                     self.main.debug.log(f"[A] Objects in memory: {len(self.general_sprites)}")
                     self.main.debug.memory_log()
@@ -559,15 +601,25 @@ class Scene():
             
             # TODO DEBUGGING ONLY/ considering to turning into feature
             if self.show_debug_info:
+                total_limit = self.object_limit + self.extra_sprites_count
+                crowd_chance = self.crowd_chance[self.time.time.hour]
+                customer_chance = self.customer_chance[self.time.time.hour]
+                weighted_customer_chance = \
+                    self.customer_chance[self.time.time.hour] * \
+                    (self.available_businesses / self.total_location_businesses)
+                vehicle_chance = \
+                    max(self.main.data.meta["vehicle_min_chance"], 
+                        int(self.crowd_chance[self.time.time.hour] 
+                            * self.main.data.meta["vehicle_ratio_to_crowd"]))
                 debug_log = [
                     f"FPS: {self.fps_previous_count}/{self.main.data.setting['fps']}",
                     f"{self.main.debug.get_highest_usage()}",
                     f"{self.main.debug.get_memory_usage()}",
                     f"{self.main.debug.get_free_usage()}",
-                    f"Location: {self.location}",
-                    f"Businesses Available: {self.available_businesses}/{self.total_location_businesses}",
+                    f"Location: {self.location} Businesses Available: {self.available_businesses}/{self.total_location_businesses}",
+                    f"Spawn rate; Crowd {crowd_chance}%, Customer {weighted_customer_chance:,.0f}/{customer_chance}%, Vehicle {vehicle_chance}%",
                     f"Customers-Crowd Spawned: {self.customers_spawned}/{self.footprint_counter}",
-                    f"Objects/Max displayed: {len(self.general_sprites)}/{self.object_limit}"
+                    f"Objects: {len(self.general_sprites)}/{total_limit} (Limit: {self.object_limit} + {self.extra_sprites_count} Extras)"
                 ]
                 for business in self.business_data:
                     if business["object"].visible:

@@ -67,7 +67,15 @@ class Library():
             
             "setting_button_idle" : self.get_image("meta", "setting_icon_idle.png"),
             "setting_button_disabled" : self.get_image("meta", "setting_icon_disabled.png"),
-            "setting_button_outline" : self.get_image("meta", "setting_icon_outline.png")
+            "setting_button_outline" : self.get_image("meta", "setting_icon_outline.png"),
+            
+            "news_button_idle" : self.get_image("meta", "news_icon_idle.png"),
+            "news_button_disabled" : self.get_image("meta", "news_icon_disabled.png"),
+            "news_button_outline" : self.get_image("meta", "news_icon_outline.png"),
+            
+            "stock_button_idle" : self.get_image("meta", "stocks_icon_idle.png"),
+            "stock_button_disabled" : self.get_image("meta", "stocks_icon_disabled.png"),
+            "stock_button_outline" : self.get_image("meta", "stocks_icon_outline.png")
         }
         self.title_screen = {
             "title_screen" : self.get_image("title_screen", "title_screen.png"),
@@ -82,15 +90,7 @@ class Library():
             "exit_button_hovered" : self.get_image("title_screen", "exit_button_hovered.png")
         }
         self.background = {
-            "location_a" : {
-                "midnight" : self.get_image("scene", "location_a_midnight.png"),
-                "early_morning" : self.get_image("scene", "location_a_early_morning.png"),
-                "morning" : self.get_image("scene", "location_a_morning.png"),
-                "noon" : self.get_image("scene", "location_a_noon.png"),
-                "afternoon" : self.get_image("scene", "location_a_afternoon.png"),
-                "night" : self.get_image("scene", "location_a_night.png")
-            },
-            "location_b" : {
+            "test_location" : {
                 "midnight" : self.get_image("scene", "midnight.png"),
                 "early_morning" : self.get_image("scene", "early_morning.png"),
                 "morning" : self.get_image("scene", "morning.png"),
@@ -98,6 +98,14 @@ class Library():
                 "afternoon" : self.get_image("scene", "afternoon.png"),
                 "night" : self.get_image("scene", "night.png")
             },
+            "location_a" : {
+                "midnight" : self.get_image("scene", "location_a_midnight.png"),
+                "early_morning" : self.get_image("scene", "location_a_early_morning.png"),
+                "morning" : self.get_image("scene", "location_a_morning.png"),
+                "noon" : self.get_image("scene", "location_a_noon.png"),
+                "afternoon" : self.get_image("scene", "location_a_afternoon.png"),
+                "night" : self.get_image("scene", "location_a_night.png")
+            }
         }
         self.scene = {
             "profile_holder_idle" : self.get_image("scene", "profile_holder_idle.png"),
@@ -133,11 +141,18 @@ class Library():
                 "data" : self.get_dict_from_spritesheet("test", "test.json")
             }
         }
-        for crowd_index in range(0, 17): # 16 is the last number
+        for crowd_index in range(0, 19): # 18 is the last number
             string_index = str(crowd_index)
             self.crowd_spritesheets[string_index] = {
                 "sheet" : self.get_image("crowd", f"{string_index}.png"),
                 "data" : self.get_dict_from_spritesheet("crowd", f"{string_index}.json")
+            }
+        self.vehicle_spritesheets = {}
+        for crowd_index in range(0, 2): # 1 is the last number
+            string_index = str(crowd_index)
+            self.vehicle_spritesheets[string_index] = {
+                "sheet" : self.get_image("vehicle", f"{string_index}.png"),
+                "data" : self.get_dict_from_spritesheet("vehicle", f"{string_index}.json")
             }
             
         self.business_images = {
@@ -362,7 +377,7 @@ class Library():
                         "lifetime_profit" : 0.0
                     }
                 },
-                "location_b": {
+                "test_location": {
                     "test_business_a": {
                         "date_acquired": "",
                         "ownership": False,
