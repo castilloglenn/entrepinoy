@@ -1,4 +1,5 @@
 import pygame
+from game.sprite.button import Button
 
 from game.sprite.menu_background import MenuBackground
 from game.sprite.message import Message
@@ -92,7 +93,18 @@ class Setting():
                 int(self.ui_background_rect.height * 0.65) + self.ui_background_rect.y
             )
         )
-        
+        self.back_button = Button(
+            self.main,
+            self.un_run,
+            top_left_coordinates=(
+                int(self.ui_background_rect.width * 0.765) + self.ui_background_rect.x,
+                int(self.ui_background_rect.height * 0.65) + self.ui_background_rect.y
+            ),
+            **{
+                "idle" : self.main.data.meta_images["back_button_idle"].convert_alpha(),
+                "hovered" : self.main.data.meta_images["back_button_hovered"].convert_alpha()
+            }
+        )
         
         # Object additions
         self.business_title_message.add(self.objects)
@@ -102,6 +114,7 @@ class Setting():
         self.bgm_slider.add(self.objects, self.draggable_buttons)
         self.sfx_slider.add(self.objects, self.draggable_buttons)
         self.full_screen_toggler.add(self.objects, self.buttons)
+        self.back_button.add(self.objects, self.buttons, self.hoverable_buttons)
                 
                                 
     def mouse_click_events(self, event):
@@ -188,6 +201,10 @@ class Setting():
     def undrag_buttons(self):
         for button in self.draggable_buttons:
             button.undrag()
+            
+            
+    def un_run(self, *args):
+        self.running = False
         
         
     def run(self):

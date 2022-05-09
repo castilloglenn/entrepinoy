@@ -23,7 +23,6 @@ class Toggler(pygame.sprite.Sprite):
         
         if self.label == "full_screen":
             self.value = self.main.data.setting["full_screen"]
-        print(self.value)    
                 
         self.top_left_coordinates = top_left_coordinates
         self.center_coordinates = center_coordinates
@@ -57,9 +56,7 @@ class Toggler(pygame.sprite.Sprite):
     def check_clicked(self, click_coordinates):
         if self.rect.collidepoint(click_coordinates):
             self.main.mixer_coins_channel.play(self.main.data.music["button_clicked"])
-            print(self.value, end=" ")    
             self.value = not self.value
-            print(self.value)
             self.set_image_and_rect()
             self.update_data()
             
