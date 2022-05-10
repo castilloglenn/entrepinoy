@@ -496,15 +496,23 @@ class Business(Button):
         self.income_message.set_message([f"+P{self.current_income:,.2f}"])
         self.income_visible = True
         
+    
+    def set_last_visited(self):
+        self.progress["businesses"][self.scene.location][self.name_code]["last_visited"] = self.scene.time.get_full()
+
+
+    def earnings_calculation(self):
+        last_visited_string = self.progress["businesses"][self.scene.location][self.name_code]["last_visited"]
+        if last_visited_string != "":
+            last_visited = datetime.strptime(last_visited_string, self.scene.time.format)
+            current_in_game_time = self.scene.time.time
+            real_life_seconds_difference = round((current_in_game_time - last_visited).seconds / self.scene.time.second_ratio)
+            print(f"{self.name_code}: In theory, {real_life_seconds_difference} seconds have passed since you fucking go here.")
+            self.progress["businesses"][self.progress["last_location"]][self.name_code]["last_visited"] = ""
+        else:
+            print(f"{self.name_code}: bro my last visited hasn't been setup yet.")
+        
         
     def __str__(self):
         return f"{self.name_code}: {len(self.queue)}/{self.queue_limit} Served customers: {self.served_count}"
-
-
-    def implicit_earnings_calculation(self):
-        pass
-    
-    
-    def explicit_earnings_calculation(self):
-        pass
     
