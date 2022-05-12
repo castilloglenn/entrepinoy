@@ -503,14 +503,23 @@ class Business(Button):
 
     def earnings_calculation(self):
         last_visited_string = self.progress["businesses"][self.scene.location][self.name_code]["last_visited"]
-        if last_visited_string != "":
-            last_visited = datetime.strptime(last_visited_string, self.scene.time.format)
+        time_until_closed_string = self.progress["businesses"][self.scene.location][self.name_code]["open_until"]
+        
+        if last_visited_string != "" and time_until_closed_string != "":
             current_in_game_time = self.scene.time.time
+            
+            last_visited = datetime.strptime(last_visited_string, self.scene.time.format)
+            time_until_closed = datetime.strptime(time_until_closed_string, self.scene.time.format)
+            
             real_life_seconds_difference = round((current_in_game_time - last_visited).seconds / self.scene.time.second_ratio)
-            print(f"{self.name_code}: In theory, {real_life_seconds_difference} seconds have passed since you fucking go here.")
+            real_life_seconds_before_closed_difference = round((time_until_closed - last_visited).seconds / self.scene.time.second_ratio)
+            
+            simulation_seconds = min(real_life_seconds_difference, real_life_seconds_before_closed_difference)
+            
+            
+            
+            print(f"{self.name_code}: last visited={real_life_seconds_difference}, before_closed={real_life_seconds_before_closed_difference}, simulation_seconds={simulation_seconds}")
             self.progress["businesses"][self.progress["last_location"]][self.name_code]["last_visited"] = ""
-        else:
-            print(f"{self.name_code}: bro my last visited hasn't been setup yet.")
         
         
     def __str__(self):
