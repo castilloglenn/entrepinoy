@@ -1,5 +1,0 @@
-[19:23:23:307] Debug started
-[19:23:23:308] Memory Usage: 19.63MB (75.4%)
-[19:23:23:308] Free Memory: 982.14MB
-[19:23:23:308] Peak Memory/CPU: 19.63MB (75.4%)
-
