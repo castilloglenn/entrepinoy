@@ -1,4 +1,4 @@
-settings
+calculate simulation time for businesses when switched
 location scene background placeholders
 
 create upgrade menu

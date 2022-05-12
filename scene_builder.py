@@ -192,6 +192,9 @@ class Scene():
         self.main.debug.new_line()
         self.main.debug.log("Reconstructing scene")
         
+        # First setting last visited on the current businesses before proceeding
+        self.set_businesses_last_visited()
+        
         self.main = main
         self.location = self.main.data.progress["last_location"]
         self.crowd_chance = self.main.data.crowd_statistics[self.location]
@@ -211,7 +214,6 @@ class Scene():
             **self.main.data.background[self.location]
         )
         
-        self.available_businesses = 0
         self.business_menu.reconstruct(
             self.main, 
             self.time, 
@@ -226,7 +228,6 @@ class Scene():
         
         current_businesses_length = len(self.business_data)
         current_businesses_index_limit = current_businesses_length - 1
-        # current_business_keys = list(self.business_data.keys())
         
         new_businesses_length = len(self.main.data.location[self.location]["businesses"])
         new_business_index_limit = new_businesses_length - 1 # remember index starts at 0
@@ -294,6 +295,21 @@ class Scene():
                 sprite.free()
                 
         self.extra_sprites_count = self.total_location_businesses
+        
+        # Calculate unsimulated earnings of businesses
+        self.calculate_businesses_earnings()
+        
+        
+    def set_businesses_last_visited(self):
+        for business in self.business_data:
+            if business["object"].visible:
+                business["object"].set_last_visited()
+                
+                
+    def calculate_businesses_earnings(self):
+        for business in self.business_data:
+            if business["object"].visible:
+                business["object"].earnings_calculation()
         
     
     def time_callback_seconds(self, time_amplification):

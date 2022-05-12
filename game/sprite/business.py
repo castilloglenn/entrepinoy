@@ -496,15 +496,32 @@ class Business(Button):
         self.income_message.set_message([f"+P{self.current_income:,.2f}"])
         self.income_visible = True
         
+    
+    def set_last_visited(self):
+        self.progress["businesses"][self.scene.location][self.name_code]["last_visited"] = self.scene.time.get_full()
+
+
+    def earnings_calculation(self):
+        last_visited_string = self.progress["businesses"][self.scene.location][self.name_code]["last_visited"]
+        time_until_closed_string = self.progress["businesses"][self.scene.location][self.name_code]["open_until"]
+        
+        if last_visited_string != "" and time_until_closed_string != "":
+            current_in_game_time = self.scene.time.time
+            
+            last_visited = datetime.strptime(last_visited_string, self.scene.time.format)
+            time_until_closed = datetime.strptime(time_until_closed_string, self.scene.time.format)
+            
+            real_life_seconds_difference = round((current_in_game_time - last_visited).seconds / self.scene.time.second_ratio)
+            real_life_seconds_before_closed_difference = round((time_until_closed - last_visited).seconds / self.scene.time.second_ratio)
+            
+            simulation_seconds = min(real_life_seconds_difference, real_life_seconds_before_closed_difference)
+            
+            
+            
+            print(f"{self.name_code}: last visited={real_life_seconds_difference}, before_closed={real_life_seconds_before_closed_difference}, simulation_seconds={simulation_seconds}")
+            self.progress["businesses"][self.progress["last_location"]][self.name_code]["last_visited"] = ""
+        
         
     def __str__(self):
         return f"{self.name_code}: {len(self.queue)}/{self.queue_limit} Served customers: {self.served_count}"
-
-
-    def implicit_earnings_calculation(self):
-        pass
-    
-    
-    def explicit_earnings_calculation(self):
-        pass
     

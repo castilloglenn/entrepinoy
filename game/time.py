@@ -20,13 +20,14 @@ class Time():
         self.format = "%Y/%m/%d, %H:%M:%S.%f"
         self.date_display_format = "%B %d, %Y"
         self.time_display_format = "%I:%M %p"
-        self.increment = 86400 / amplify / fps
+        self.second_ratio = 86400 / amplify
+        self.increment = self.second_ratio / fps
         
         # Recording of data
         debug.new_line()
         debug.log(
             f"\nTime amplification: \n"
-            f"1 second in real life = {86400 / amplify:,.2f} second(s) in-game\n"
+            f"1 second in real life = {self.second_ratio:,.2f} second(s) in-game\n"
             f"{amplify / 60:,.2f} minutes in real life = 1 day in game\n"
             f"{amplify / 24:,.2f} seconds in real life = 1 hour in game")
         

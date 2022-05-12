@@ -351,7 +351,7 @@ class Library():
                 "location_a": {
                     "street_food": {
                         "date_acquired": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
-                        "type": "buko_stall",
+                        "type": starter,
                         "ownership": True,
                         "is_open": False,
                         "open_until": "",
@@ -359,7 +359,8 @@ class Library():
                         "sales": 0.0,
                         "lifetime_sales": 0.0,
                         "last_profit" : 0.0,
-                        "lifetime_profit" : 0.0
+                        "lifetime_profit" : 0.0,
+                        "last_visited" : ""
                     },
                     "sari_sari_store": {
                         "date_acquired": "",
@@ -370,7 +371,8 @@ class Library():
                         "sales": 0.0,
                         "lifetime_sales": 0.0,
                         "last_profit" : 0.0,
-                        "lifetime_profit" : 0.0
+                        "lifetime_profit" : 0.0,
+                        "last_visited" : ""
                     },
                     "ukay_ukay": {
                         "date_acquired": "",
@@ -381,7 +383,8 @@ class Library():
                         "sales": 0.0,
                         "lifetime_sales": 0.0,
                         "last_profit" : 0.0,
-                        "lifetime_profit" : 0.0
+                        "lifetime_profit" : 0.0,
+                        "last_visited" : ""
                     },
                     "food_cart": {
                         "date_acquired": "",
@@ -392,7 +395,8 @@ class Library():
                         "sales": 0.0,
                         "lifetime_sales": 0.0,
                         "last_profit" : 0.0,
-                        "lifetime_profit" : 0.0
+                        "lifetime_profit" : 0.0,
+                        "last_visited" : ""
                     }
                 },
                 "test_location": {
@@ -405,7 +409,8 @@ class Library():
                         "sales": 0.0,
                         "lifetime_sales": 0.0,
                         "last_profit" : 0.0,
-                        "lifetime_profit" : 0.0
+                        "lifetime_profit" : 0.0,
+                        "last_visited" : ""
                     },
                     "test_business_b": {
                         "date_acquired": "",
@@ -416,7 +421,8 @@ class Library():
                         "sales": 0.0,
                         "lifetime_sales": 0.0,
                         "last_profit" : 0.0,
-                        "lifetime_profit" : 0.0
+                        "lifetime_profit" : 0.0,
+                        "last_visited" : ""
                     }
                 }
             }
