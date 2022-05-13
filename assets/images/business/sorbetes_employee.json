@@ -1,11 +1,11 @@
 {
 	"frames": {
-		"sorbetes_1.png": {
+		"01.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
 				"w": 231,
-				"h": 126
+				"h": 174
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -13,19 +13,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 231,
-				"h": 126
+				"h": 174
 			},
 			"sourceSize": {
 				"w": 231,
-				"h": 126
+				"h": 174
 			}
 		},
-		"sorbetes_2.png": {
+		"02.png": {
 			"frame": {
 				"x": 234,
 				"y": 1,
 				"w": 231,
-				"h": 126
+				"h": 174
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -33,19 +33,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 231,
-				"h": 126
+				"h": 174
 			},
 			"sourceSize": {
 				"w": 231,
-				"h": 126
+				"h": 174
 			}
 		},
-		"sorbetes_3.png": {
+		"03.png": {
 			"frame": {
 				"x": 1,
-				"y": 129,
+				"y": 177,
 				"w": 231,
-				"h": 126
+				"h": 174
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -53,19 +53,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 231,
-				"h": 126
+				"h": 174
 			},
 			"sourceSize": {
 				"w": 231,
-				"h": 126
+				"h": 174
 			}
 		},
-		"sorbetes_4.png": {
+		"04.png": {
 			"frame": {
 				"x": 234,
-				"y": 129,
+				"y": 177,
 				"w": 231,
-				"h": 126
+				"h": 174
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -73,19 +73,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 231,
-				"h": 126
+				"h": 174
 			},
 			"sourceSize": {
 				"w": 231,
-				"h": 126
+				"h": 174
 			}
 		},
-		"sorbetes_5.png": {
+		"05.png": {
 			"frame": {
 				"x": 1,
-				"y": 257,
+				"y": 353,
 				"w": 231,
-				"h": 126
+				"h": 174
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -93,19 +93,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 231,
-				"h": 126
+				"h": 174
 			},
 			"sourceSize": {
 				"w": 231,
-				"h": 126
+				"h": 174
 			}
 		},
-		"sorbetes_6.png": {
+		"06.png": {
 			"frame": {
 				"x": 234,
-				"y": 257,
+				"y": 353,
 				"w": 231,
-				"h": 126
+				"h": 174
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -113,59 +113,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 231,
-				"h": 126
+				"h": 174
 			},
 			"sourceSize": {
 				"w": 231,
-				"h": 126
+				"h": 174
 			}
 		},
-		"sorbetes_7.png": {
-			"frame": {
-				"x": 1,
-				"y": 385,
-				"w": 231,
-				"h": 126
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 231,
-				"h": 126
-			},
-			"sourceSize": {
-				"w": 231,
-				"h": 126
-			}
-		},
-		"sorbetes_8.png": {
-			"frame": {
-				"x": 234,
-				"y": 385,
-				"w": 231,
-				"h": 126
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 231,
-				"h": 126
-			},
-			"sourceSize": {
-				"w": 231,
-				"h": 126
-			}
-		},
-		"sorbetes_9.png": {
+		"07.png": {
 			"frame": {
 				"x": 467,
 				"y": 1,
 				"w": 231,
-				"h": 126
+				"h": 174
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -173,11 +133,71 @@
 				"x": 0,
 				"y": 0,
 				"w": 231,
-				"h": 126
+				"h": 174
 			},
 			"sourceSize": {
 				"w": 231,
-				"h": 126
+				"h": 174
+			}
+		},
+		"08.png": {
+			"frame": {
+				"x": 467,
+				"y": 177,
+				"w": 231,
+				"h": 174
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 231,
+				"h": 174
+			},
+			"sourceSize": {
+				"w": 231,
+				"h": 174
+			}
+		},
+		"09.png": {
+			"frame": {
+				"x": 467,
+				"y": 353,
+				"w": 231,
+				"h": 174
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 231,
+				"h": 174
+			},
+			"sourceSize": {
+				"w": 231,
+				"h": 174
+			}
+		},
+		"10.png": {
+			"frame": {
+				"x": 1,
+				"y": 529,
+				"w": 231,
+				"h": 174
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 231,
+				"h": 174
+			},
+			"sourceSize": {
+				"w": 231,
+				"h": 174
 			}
 		}
 	},
@@ -188,7 +208,7 @@
 		"format": "RGBA8888",
 		"size": {
 			"w": 699,
-			"h": 512
+			"h": 704
 		},
 		"scale": "1"
 	}
