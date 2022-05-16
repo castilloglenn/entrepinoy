@@ -1,203 +1,183 @@
 {
 	"frames": {
-		"01.png": {
+		"fishball_stand_employee_1.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			},
 			"sourceSize": {
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			}
 		},
-		"02.png": {
+		"fishball_stand_employee_2.png": {
 			"frame": {
-				"x": 234,
+				"x": 273,
 				"y": 1,
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			},
 			"sourceSize": {
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			}
 		},
-		"03.png": {
+		"fishball_stand_employee_3.png": {
 			"frame": {
 				"x": 1,
-				"y": 177,
-				"w": 231,
-				"h": 174
+				"y": 264,
+				"w": 270,
+				"h": 261
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			},
 			"sourceSize": {
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			}
 		},
-		"04.png": {
+		"fishball_stand_employee_4.png": {
 			"frame": {
-				"x": 234,
-				"y": 177,
-				"w": 231,
-				"h": 174
+				"x": 273,
+				"y": 264,
+				"w": 270,
+				"h": 261
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			},
 			"sourceSize": {
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			}
 		},
-		"05.png": {
+		"fishball_stand_employee_5.png": {
 			"frame": {
 				"x": 1,
-				"y": 353,
-				"w": 231,
-				"h": 174
+				"y": 527,
+				"w": 270,
+				"h": 261
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			},
 			"sourceSize": {
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			}
 		},
-		"06.png": {
+		"fishball_stand_employee_6.png": {
 			"frame": {
-				"x": 234,
-				"y": 353,
-				"w": 231,
-				"h": 174
+				"x": 273,
+				"y": 527,
+				"w": 270,
+				"h": 261
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			},
 			"sourceSize": {
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			}
 		},
-		"07.png": {
+		"fishball_stand_employee_7.png": {
 			"frame": {
-				"x": 467,
+				"x": 545,
 				"y": 1,
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			},
 			"sourceSize": {
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			}
 		},
-		"08.png": {
+		"fishball_stand_employee_8.png": {
 			"frame": {
-				"x": 467,
-				"y": 177,
-				"w": 231,
-				"h": 174
+				"x": 545,
+				"y": 264,
+				"w": 270,
+				"h": 261
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			},
 			"sourceSize": {
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			}
 		},
-		"09.png": {
+		"fishball_stand_employee_9.png": {
 			"frame": {
-				"x": 467,
-				"y": 353,
-				"w": 231,
-				"h": 174
+				"x": 545,
+				"y": 527,
+				"w": 270,
+				"h": 261
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			},
 			"sourceSize": {
-				"w": 231,
-				"h": 174
-			}
-		},
-		"10.png": {
-			"frame": {
-				"x": 1,
-				"y": 529,
-				"w": 231,
-				"h": 174
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 231,
-				"h": 174
-			},
-			"sourceSize": {
-				"w": 231,
-				"h": 174
+				"w": 270,
+				"h": 261
 			}
 		}
 	},
@@ -207,8 +187,8 @@
 		"image": "spritesheet.png",
 		"format": "RGBA8888",
 		"size": {
-			"w": 699,
-			"h": 704
+			"w": 816,
+			"h": 789
 		},
 		"scale": "1"
 	}

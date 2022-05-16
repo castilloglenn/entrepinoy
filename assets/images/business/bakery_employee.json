@@ -4,180 +4,180 @@
 			"frame": {
 				"x": 1,
 				"y": 1,
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			},
 			"sourceSize": {
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			}
 		},
 		"bakery_2.png": {
 			"frame": {
-				"x": 633,
+				"x": 843,
 				"y": 1,
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			},
 			"sourceSize": {
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			}
 		},
 		"bakery_3.png": {
 			"frame": {
 				"x": 1,
-				"y": 330,
-				"w": 630,
-				"h": 327
+				"y": 439,
+				"w": 840,
+				"h": 436
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			},
 			"sourceSize": {
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			}
 		},
 		"bakery_4.png": {
 			"frame": {
-				"x": 633,
-				"y": 330,
-				"w": 630,
-				"h": 327
+				"x": 843,
+				"y": 439,
+				"w": 840,
+				"h": 436
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			},
 			"sourceSize": {
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			}
 		},
 		"bakery_5.png": {
 			"frame": {
 				"x": 1,
-				"y": 659,
-				"w": 630,
-				"h": 327
+				"y": 877,
+				"w": 840,
+				"h": 436
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			},
 			"sourceSize": {
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			}
 		},
 		"bakery_6.png": {
 			"frame": {
-				"x": 633,
-				"y": 659,
-				"w": 630,
-				"h": 327
+				"x": 843,
+				"y": 877,
+				"w": 840,
+				"h": 436
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			},
 			"sourceSize": {
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			}
 		},
 		"bakery_7.png": {
 			"frame": {
 				"x": 1,
-				"y": 988,
-				"w": 630,
-				"h": 327
+				"y": 1315,
+				"w": 840,
+				"h": 436
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			},
 			"sourceSize": {
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			}
 		},
 		"bakery_8.png": {
 			"frame": {
-				"x": 633,
-				"y": 988,
-				"w": 630,
-				"h": 327
+				"x": 843,
+				"y": 1315,
+				"w": 840,
+				"h": 436
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			},
 			"sourceSize": {
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			}
 		},
 		"bakery_9.png": {
 			"frame": {
-				"x": 1265,
+				"x": 1685,
 				"y": 1,
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			},
 			"sourceSize": {
-				"w": 630,
-				"h": 327
+				"w": 840,
+				"h": 436
 			}
 		}
 	},
@@ -187,8 +187,8 @@
 		"image": "spritesheet.png",
 		"format": "RGBA8888",
 		"size": {
-			"w": 1896,
-			"h": 1316
+			"w": 2526,
+			"h": 1752
 		},
 		"scale": "1"
 	}
