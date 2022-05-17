@@ -1,6 +1,6 @@
 {
 	"frames": {
-		"market_emp_1.png": {
+		"market_1.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
@@ -20,7 +20,7 @@
 				"h": 272
 			}
 		},
-		"market_emp_2.png": {
+		"market_2.png": {
 			"frame": {
 				"x": 575,
 				"y": 1,
@@ -40,7 +40,7 @@
 				"h": 272
 			}
 		},
-		"market_emp_3.png": {
+		"market_3.png": {
 			"frame": {
 				"x": 1,
 				"y": 275,
@@ -60,7 +60,7 @@
 				"h": 272
 			}
 		},
-		"market_emp_4.png": {
+		"market_4.png": {
 			"frame": {
 				"x": 575,
 				"y": 275,
@@ -80,7 +80,7 @@
 				"h": 272
 			}
 		},
-		"market_emp_5.png": {
+		"market_5.png": {
 			"frame": {
 				"x": 1,
 				"y": 549,
@@ -100,7 +100,7 @@
 				"h": 272
 			}
 		},
-		"market_emp_6.png": {
+		"market_6.png": {
 			"frame": {
 				"x": 575,
 				"y": 549,
@@ -120,7 +120,7 @@
 				"h": 272
 			}
 		},
-		"market_emp_7.png": {
+		"market_7.png": {
 			"frame": {
 				"x": 1,
 				"y": 823,
@@ -140,7 +140,7 @@
 				"h": 272
 			}
 		},
-		"market_emp_8.png": {
+		"market_8.png": {
 			"frame": {
 				"x": 575,
 				"y": 823,
@@ -160,7 +160,7 @@
 				"h": 272
 			}
 		},
-		"market_emp_9.png": {
+		"market_9.png": {
 			"frame": {
 				"x": 1149,
 				"y": 1,
