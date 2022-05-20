@@ -82,7 +82,11 @@ class Library():
             
             "stock_button_idle" : self.get_image("meta", "stocks_icon_idle.png"),
             "stock_button_disabled" : self.get_image("meta", "stocks_icon_disabled.png"),
-            "stock_button_outline" : self.get_image("meta", "stocks_icon_outline.png")
+            "stock_button_outline" : self.get_image("meta", "stocks_icon_outline.png"),
+            
+            "home_icon_idle" : self.get_image("meta", "home_icon_idle.png"),
+            "home_icon_disabled" : self.get_image("meta", "home_icon_disabled.png"),
+            "home_icon_outline" : self.get_image("meta", "home_icon_outline.png")
         }
         self.title_screen = {
             "title_screen" : self.get_image("title_screen", "title_screen.png"),
@@ -166,8 +170,8 @@ class Library():
                 "data" : self.get_dict_from_spritesheet("crowd", f"{string_index}.json")
             }
         self.vehicle_spritesheets = {}
-        for crowd_index in range(0, 2): # 1 is the last number
-            string_index = str(crowd_index)
+        for vehicle_index in range(0, 4): # 3 is the last number
+            string_index = str(vehicle_index)
             self.vehicle_spritesheets[string_index] = {
                 "sheet" : self.get_image("vehicle", f"{string_index}.png"),
                 "data" : self.get_dict_from_spritesheet("vehicle", f"{string_index}.json")

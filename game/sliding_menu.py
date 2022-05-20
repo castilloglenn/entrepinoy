@@ -98,8 +98,8 @@ class SlidingMenu():
         self.my_room_button = Button(
             self.main, self.my_room_callback,
             **{
-                "idle" : self.main.data.meta_images["map_button_idle"],
-                "outline" : self.main.data.meta_images["map_button_outline"],
+                "idle" : self.main.data.meta_images["home_icon_idle"],
+                "outline" : self.main.data.meta_images["home_icon_outline"],
                 "disabled" : self.main.data.meta_images["map_button_disabled"],
                 "tooltip" : ["My Room"]
             }

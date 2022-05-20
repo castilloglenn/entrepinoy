@@ -515,10 +515,24 @@ class Business(Button):
             real_life_seconds_before_closed_difference = round((time_until_closed - last_visited).seconds / self.scene.time.second_ratio)
             
             simulation_seconds = min(real_life_seconds_difference, real_life_seconds_before_closed_difference)
+            time_after_simulated_seconds = last_visited + timedelta(seconds=simulation_seconds * self.scene.time.second_ratio)
             
+            hours_span = [hour for hour in range(last_visited.hour, time_after_simulated_seconds.hour + 1)]
+            excess_real_life_seconds = simulation_seconds % self.scene.time.seconds_per_hour
             
+            if len(hours_span) == 1:
+                # Calculate the simulation seconds based solely on the statistic of the singular hour stated
+                pass
+            else:
+                pass
             
-            print(f"{self.name_code}: last visited={real_life_seconds_difference}, before_closed={real_life_seconds_before_closed_difference}, simulation_seconds={simulation_seconds}")
+            first_hour_excess = 0
+            last_hour_excess = 0
+            
+            print(f"{self.name_code}: last visited={real_life_seconds_difference}, before_closed={real_life_seconds_before_closed_difference}")
+            print(f"last visited: {last_visited} -> simulation time after: {time_after_simulated_seconds}")
+            print(f"simulation_seconds={simulation_seconds} hour span: {hours_span} excess: {excess_real_life_seconds}\n")
+            
             self.progress["businesses"][self.progress["last_location"]][self.name_code]["last_visited"] = ""
         
         
