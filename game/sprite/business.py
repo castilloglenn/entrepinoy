@@ -474,8 +474,9 @@ class Business(Button):
         return image.convert_alpha()
         
 
-    def generate_income(self):
-        self.scene.main.mixer_coins_channel.play(self.scene.main.data.music["earn_coins"])
+    def generate_income(self, animation=True):
+        if animation:
+            self.scene.main.mixer_coins_channel.play(self.scene.main.data.music["earn_coins"])
         
         self.income_step = 0.25
         self.income_range = (
@@ -491,10 +492,11 @@ class Business(Button):
         self.progress["businesses"][self.progress["last_location"]][self.name_code]["lifetime_sales"] += self.current_income
         self.progress["businesses"][self.progress["last_location"]][self.name_code]["current_operation_sales"] += self.current_income
         
-        # Setting the income animation
-        self.reset_income_display()
-        self.income_message.set_message([f"+P{self.current_income:,.2f}"])
-        self.income_visible = True
+        if animation:
+            # Setting the income animation
+            self.reset_income_display()
+            self.income_message.set_message([f"+P{self.current_income:,.2f}"])
+            self.income_visible = True
         
     
     def set_last_visited(self):
@@ -517,21 +519,35 @@ class Business(Button):
             simulation_seconds = min(real_life_seconds_difference, real_life_seconds_before_closed_difference)
             time_after_simulated_seconds = last_visited + timedelta(seconds=simulation_seconds * self.scene.time.second_ratio)
             
+            customers_spawned = 0
             hours_span = [hour for hour in range(last_visited.hour, time_after_simulated_seconds.hour + 1)]
-            excess_real_life_seconds = simulation_seconds % self.scene.time.seconds_per_hour
+            spawn_chance_per_second = 1 / (self.scene.main.data.meta["crowd_spawn_timeout"] / 1000)
             
-            if len(hours_span) == 1:
-                # Calculate the simulation seconds based solely on the statistic of the singular hour stated
-                pass
-            else:
-                pass
+            for hour in range(last_visited.hour, time_after_simulated_seconds.hour + 1):
+                npc_spawn_rate = self.scene.main.data.crowd_statistics[self.scene.location][hour]
+                npc_spawn_rate = int(npc_spawn_rate / self.scene.total_location_businesses)
+                customer_spawn_rate = self.scene.main.data.customer_statistics[self.scene.location][hour]
+                customer_spawn_rate = int(customer_spawn_rate / self.scene.total_location_businesses)
+                spawn_chances = 60
+                
+                if len(hours_span) == 1:
+                    spawn_chances = time_after_simulated_seconds.minute - last_visited.minute
+                else:
+                    if hour == hours_span[-1]:
+                        spawn_chances = time_after_simulated_seconds.minute
+                    elif hour == hours_span[0]:
+                        spawn_chances = spawn_chances - last_visited.minute
+                
+                converted_chances_per_hour = int(((spawn_chances / 60) * self.scene.time.seconds_per_hour) * spawn_chance_per_second)
+                for chance_randomness_simulation in range(converted_chances_per_hour):
+                    random_npc_spawn_value = random.randint(0, 100)
+                    if random_npc_spawn_value <= npc_spawn_rate:
+                        random_customer_spawn_value = random.randint(0, 100)
+                        if random_customer_spawn_value <= customer_spawn_rate:
+                            customers_spawned += 1
             
-            first_hour_excess = 0
-            last_hour_excess = 0
-            
-            print(f"{self.name_code}: last visited={real_life_seconds_difference}, before_closed={real_life_seconds_before_closed_difference}")
-            print(f"last visited: {last_visited} -> simulation time after: {time_after_simulated_seconds}")
-            print(f"simulation_seconds={simulation_seconds} hour span: {hours_span} excess: {excess_real_life_seconds}\n")
+            for income_generation in range(customers_spawned):
+                self.generate_income(animation=False)
             
             self.progress["businesses"][self.progress["last_location"]][self.name_code]["last_visited"] = ""
         

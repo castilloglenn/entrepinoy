@@ -1,6 +1,6 @@
 {
 	"frames": {
-		"01.png": {
+		"sorbetes_employee_1.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
@@ -20,7 +20,7 @@
 				"h": 174
 			}
 		},
-		"02.png": {
+		"sorbetes_employee_2.png": {
 			"frame": {
 				"x": 234,
 				"y": 1,
@@ -40,7 +40,7 @@
 				"h": 174
 			}
 		},
-		"03.png": {
+		"sorbetes_employee_3.png": {
 			"frame": {
 				"x": 1,
 				"y": 177,
@@ -60,7 +60,7 @@
 				"h": 174
 			}
 		},
-		"04.png": {
+		"sorbetes_employee_4.png": {
 			"frame": {
 				"x": 234,
 				"y": 177,
@@ -80,7 +80,7 @@
 				"h": 174
 			}
 		},
-		"05.png": {
+		"sorbetes_employee_5.png": {
 			"frame": {
 				"x": 1,
 				"y": 353,
@@ -100,7 +100,7 @@
 				"h": 174
 			}
 		},
-		"06.png": {
+		"sorbetes_employee_6.png": {
 			"frame": {
 				"x": 234,
 				"y": 353,
@@ -120,7 +120,7 @@
 				"h": 174
 			}
 		},
-		"07.png": {
+		"sorbetes_employee_7.png": {
 			"frame": {
 				"x": 467,
 				"y": 1,
@@ -140,7 +140,7 @@
 				"h": 174
 			}
 		},
-		"08.png": {
+		"sorbetes_employee_8.png": {
 			"frame": {
 				"x": 467,
 				"y": 177,
@@ -160,7 +160,7 @@
 				"h": 174
 			}
 		},
-		"09.png": {
+		"sorbetes_employee_9.png": {
 			"frame": {
 				"x": 467,
 				"y": 353,
@@ -180,7 +180,7 @@
 				"h": 174
 			}
 		},
-		"10.png": {
+		"sorbetes_employee_10.png": {
 			"frame": {
 				"x": 1,
 				"y": 529,

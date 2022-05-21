@@ -1,6 +1,7 @@
 
 # Calculating idle time
 from datetime import datetime
+from math import floor
 
 
 format = "%Y/%m/%d, %H:%M:%S.%f"
@@ -19,3 +20,6 @@ second = (total_seconds % 3600) % 60
 print(f"{hour} Hour{'s' if hour > 1 else ''} " \
     f"{minute} Minute{'s' if minute > 1 else ''} " \
     f"{second} Second{'s' if second > 1 else ''}")
+
+print(int(5.5))
+

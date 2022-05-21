@@ -546,13 +546,13 @@ class BusinessMenu():
             self.main.display_surface.set_alpha(128)
             self.screen.blit(self.main.display_surface, (0, 0)) 
             self.objects.update()
+
+            for button in self.tooltips:
+                button.display_tooltips()
             
             # Checking if menus will be displaying
             self.main.confirm_menu.update()
             self.main.response_menu.update()
-        
-            for button in self.tooltips:
-                button.display_tooltips()
         
         
     def close(self):

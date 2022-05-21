@@ -84,9 +84,21 @@ class Library():
             "stock_button_disabled" : self.get_image("meta", "stocks_icon_disabled.png"),
             "stock_button_outline" : self.get_image("meta", "stocks_icon_outline.png"),
             
-            "home_icon_idle" : self.get_image("meta", "home_icon_idle.png"),
-            "home_icon_disabled" : self.get_image("meta", "home_icon_disabled.png"),
-            "home_icon_outline" : self.get_image("meta", "home_icon_outline.png")
+            "home_button_idle" : self.get_image("meta", "home_icon_idle.png"),
+            "home_button_disabled" : self.get_image("meta", "home_icon_disabled.png"),
+            "home_button_outline" : self.get_image("meta", "home_icon_outline.png"),
+            
+            "bank_button_idle" : self.get_image("meta", "bank_icon_idle.png"),
+            "bank_button_disabled" : self.get_image("meta", "bank_icon_disabled.png"),
+            "bank_button_outline" : self.get_image("meta", "bank_icon_outline.png"),
+            
+            "events_button_idle" : self.get_image("meta", "events_icon_idle.png"),
+            "events_button_disabled" : self.get_image("meta", "events_icon_disabled.png"),
+            "events_button_outline" : self.get_image("meta", "events_icon_outline.png"),
+            
+            "casino_button_idle" : self.get_image("meta", "casino_icon_idle.png"),
+            "casino_button_disabled" : self.get_image("meta", "casino_icon_disabled.png"),
+            "casino_button_outline" : self.get_image("meta", "casino_icon_outline.png")
         }
         self.title_screen = {
             "title_screen" : self.get_image("title_screen", "title_screen.png"),
@@ -192,8 +204,8 @@ class Library():
                 "closed" : self.get_image("business", "fish_ball_stand_closed.png"),
                 "outline" : self.get_image("business", "fish_ball_stand_outline.png"),
                 "employee": {
-                    "spritesheet" : self.get_image("business", "buko_stall_employee.png"),
-                    "json" : self.get_dict_from_spritesheet("business", "buko_stall_employee.json")
+                    "spritesheet" : self.get_image("business", "fish_ball_stand_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "fish_ball_stand_employee.json")
                 }
             },
             "sorbetes" : {
@@ -201,8 +213,8 @@ class Library():
                 "closed" : self.get_image("business", "sorbetes_closed.png"),
                 "outline" : self.get_image("business", "sorbetes_outline.png"),
                 "employee": {
-                    "spritesheet" : self.get_image("business", "buko_stall_employee.png"),
-                    "json" : self.get_dict_from_spritesheet("business", "buko_stall_employee.json")
+                    "spritesheet" : self.get_image("business", "sorbetes_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "sorbetes_employee.json")
                 }
             },
             "sari_sari_store" : { # 100% complete
