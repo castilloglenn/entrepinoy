@@ -70,9 +70,9 @@ class SlidingMenu():
         self.event_button = Button(
             self.main, self.event_callback,
             **{
-                "idle" : self.main.data.meta_images["map_button_idle"],
-                "outline" : self.main.data.meta_images["map_button_outline"],
-                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "idle" : self.main.data.meta_images["events_button_idle"],
+                "outline" : self.main.data.meta_images["events_button_outline"],
+                "disabled" : self.main.data.meta_images["events_button_disabled"],
                 "tooltip" : ["Events"]
             }
         )
@@ -80,27 +80,27 @@ class SlidingMenu():
         self.bank_button = Button(
             self.main, self.bank_callback,
             **{
-                "idle" : self.main.data.meta_images["map_button_idle"],
-                "outline" : self.main.data.meta_images["map_button_outline"],
-                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "idle" : self.main.data.meta_images["bank_button_idle"],
+                "outline" : self.main.data.meta_images["bank_button_outline"],
+                "disabled" : self.main.data.meta_images["bank_button_disabled"],
                 "tooltip" : ["Bank"]
             }
         )
         self.casino_button = Button(
             self.main, self.casino_callback,
             **{
-                "idle" : self.main.data.meta_images["map_button_idle"],
-                "outline" : self.main.data.meta_images["map_button_outline"],
-                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "idle" : self.main.data.meta_images["casino_button_idle"],
+                "outline" : self.main.data.meta_images["casino_button_outline"],
+                "disabled" : self.main.data.meta_images["casino_button_disabled"],
                 "tooltip" : ["Casino"]
             }
         )
         self.my_room_button = Button(
             self.main, self.my_room_callback,
             **{
-                "idle" : self.main.data.meta_images["map_button_idle"],
-                "outline" : self.main.data.meta_images["map_button_outline"],
-                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "idle" : self.main.data.meta_images["home_button_idle"],
+                "outline" : self.main.data.meta_images["home_button_outline"],
+                "disabled" : self.main.data.meta_images["home_button_disabled"],
                 "tooltip" : ["My Room"]
             }
         )

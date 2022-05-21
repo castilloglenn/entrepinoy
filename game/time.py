@@ -21,6 +21,7 @@ class Time():
         self.date_display_format = "%B %d, %Y"
         self.time_display_format = "%I:%M %p"
         self.second_ratio = 86400 / amplify
+        self.seconds_per_hour = amplify / 24
         self.increment = self.second_ratio / fps
         
         # Recording of data
@@ -29,7 +30,7 @@ class Time():
             f"\nTime amplification: \n"
             f"1 second in real life = {self.second_ratio:,.2f} second(s) in-game\n"
             f"{amplify / 60:,.2f} minutes in real life = 1 day in game\n"
-            f"{amplify / 24:,.2f} seconds in real life = 1 hour in game")
+            f"{self.seconds_per_hour:,.2f} seconds in real life = 1 hour in game")
         
         # Parse time
         self.time = datetime.strptime(start_time, self.format)
