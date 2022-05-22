@@ -525,7 +525,6 @@ class Business(Button):
             
             for hour in range(last_visited.hour, time_after_simulated_seconds.hour + 1):
                 npc_spawn_rate = self.scene.main.data.crowd_statistics[self.scene.location][hour]
-                npc_spawn_rate = int(npc_spawn_rate / self.scene.total_location_businesses)
                 customer_spawn_rate = self.scene.main.data.customer_statistics[self.scene.location][hour]
                 customer_spawn_rate = int(customer_spawn_rate / self.scene.total_location_businesses)
                 spawn_chances = 60
@@ -538,14 +537,19 @@ class Business(Button):
                     elif hour == hours_span[0]:
                         spawn_chances = spawn_chances - last_visited.minute
                 
+                hourly_customers = 0
                 converted_chances_per_hour = int(((spawn_chances / 60) * self.scene.time.seconds_per_hour) * spawn_chance_per_second)
                 for chance_randomness_simulation in range(converted_chances_per_hour):
                     random_npc_spawn_value = random.randint(0, 100)
                     if random_npc_spawn_value <= npc_spawn_rate:
                         random_customer_spawn_value = random.randint(0, 100)
                         if random_customer_spawn_value <= customer_spawn_rate:
-                            customers_spawned += 1
+                            hourly_customers += 1
+                
+                customers_spawned += min(hourly_customers, self.queue_limit)
+                
             
+            print(f"{self.name_code}: income generated {customers_spawned} times.")
             for income_generation in range(customers_spawned):
                 self.generate_income(animation=False)
             
