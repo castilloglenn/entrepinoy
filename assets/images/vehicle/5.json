@@ -1,0 +1,175 @@
+{
+	"frames": {
+		"Food_deliver_riders_1.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 256,
+				"h": 168
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 256,
+				"h": 168
+			},
+			"sourceSize": {
+				"w": 256,
+				"h": 168
+			}
+		},
+		"Food_deliver_riders_2.png": {
+			"frame": {
+				"x": 259,
+				"y": 1,
+				"w": 256,
+				"h": 168
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 256,
+				"h": 168
+			},
+			"sourceSize": {
+				"w": 256,
+				"h": 168
+			}
+		},
+		"Food_deliver_riders_3.png": {
+			"frame": {
+				"x": 1,
+				"y": 171,
+				"w": 256,
+				"h": 168
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 256,
+				"h": 168
+			},
+			"sourceSize": {
+				"w": 256,
+				"h": 168
+			}
+		},
+		"Food_deliver_riders_4.png": {
+			"frame": {
+				"x": 259,
+				"y": 171,
+				"w": 256,
+				"h": 168
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 256,
+				"h": 168
+			},
+			"sourceSize": {
+				"w": 256,
+				"h": 168
+			}
+		},
+		"Food_deliver_riders_5.png": {
+			"frame": {
+				"x": 1,
+				"y": 341,
+				"w": 256,
+				"h": 168
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 256,
+				"h": 168
+			},
+			"sourceSize": {
+				"w": 256,
+				"h": 168
+			}
+		},
+		"Food_deliver_riders_6.png": {
+			"frame": {
+				"x": 259,
+				"y": 341,
+				"w": 256,
+				"h": 168
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 256,
+				"h": 168
+			},
+			"sourceSize": {
+				"w": 256,
+				"h": 168
+			}
+		},
+		"Food_deliver_riders_7.png": {
+			"frame": {
+				"x": 517,
+				"y": 1,
+				"w": 256,
+				"h": 168
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 256,
+				"h": 168
+			},
+			"sourceSize": {
+				"w": 256,
+				"h": 168
+			}
+		},
+		"Food_deliver_riders_8.png": {
+			"frame": {
+				"x": 517,
+				"y": 171,
+				"w": 256,
+				"h": 168
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 256,
+				"h": 168
+			},
+			"sourceSize": {
+				"w": 256,
+				"h": 168
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 774,
+			"h": 510
+		},
+		"scale": "1"
+	}
+}
