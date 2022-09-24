@@ -160,8 +160,8 @@ class SlidingMenu():
         self.main_menu_button = Button(
             self.main, self.main_menu_callback,
             **{
-                "idle" : self.main.data.meta_images["map_button_idle"],
-                "outline" : self.main.data.meta_images["map_button_outline"],
+                "idle" : self.main.data.meta_images["main_menu_button_idle"],
+                "outline" : self.main.data.meta_images["main_menu_button_outline"],
                 "disabled" : self.main.data.meta_images["map_button_disabled"],
                 "tooltip" : [
                     "Return to", 

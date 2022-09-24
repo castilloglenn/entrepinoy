@@ -1,3 +1,4 @@
+# %%
 from game.sprite.menu_background import MenuBackground
 from game.sprite.message import Message
 from game.sprite.button import Button
@@ -385,3 +386,5 @@ class Main():
 
 if __name__ == "__main__":
     Main()
+
+# %%

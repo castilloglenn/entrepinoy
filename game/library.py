@@ -98,7 +98,10 @@ class Library():
             
             "casino_button_idle" : self.get_image("meta", "casino_icon_idle.png"),
             "casino_button_disabled" : self.get_image("meta", "casino_icon_disabled.png"),
-            "casino_button_outline" : self.get_image("meta", "casino_icon_outline.png")
+            "casino_button_outline" : self.get_image("meta", "casino_icon_outline.png"),
+            
+            "main_menu_button_idle" : self.get_image("meta", "main_menu_icon_idle.png"),
+            "main_menu_button_outline" : self.get_image("meta", "main_menu_icon_outline.png")
         }
         self.title_screen = {
             "title_screen" : self.get_image("title_screen", "title_screen.png"),
