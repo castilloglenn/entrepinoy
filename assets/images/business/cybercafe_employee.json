@@ -1,583 +1,583 @@
 {
 	"frames": {
-		"cybercafe_final(animation)_1.png": {
+		"cybercafe_iemp_1.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_10.png": {
+		"cybercafe_iemp_10.png": {
 			"frame": {
-				"x": 335,
+				"x": 671,
 				"y": 1,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_11.png": {
+		"cybercafe_iemp_11.png": {
 			"frame": {
-				"x": 669,
+				"x": 1341,
 				"y": 1,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_12.png": {
+		"cybercafe_iemp_12.png": {
 			"frame": {
-				"x": 1003,
+				"x": 2011,
 				"y": 1,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_13.png": {
+		"cybercafe_iemp_13.png": {
 			"frame": {
 				"x": 1,
-				"y": 243,
-				"w": 332,
-				"h": 240
+				"y": 483,
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_14.png": {
+		"cybercafe_iemp_14.png": {
 			"frame": {
-				"x": 335,
-				"y": 243,
-				"w": 332,
-				"h": 240
+				"x": 671,
+				"y": 483,
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_15.png": {
+		"cybercafe_iemp_15.png": {
 			"frame": {
-				"x": 669,
-				"y": 243,
-				"w": 332,
-				"h": 240
+				"x": 1341,
+				"y": 483,
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_16.png": {
+		"cybercafe_iemp_16.png": {
 			"frame": {
-				"x": 1003,
-				"y": 243,
-				"w": 332,
-				"h": 240
+				"x": 2011,
+				"y": 483,
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_17.png": {
-			"frame": {
-				"x": 1,
-				"y": 485,
-				"w": 332,
-				"h": 240
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 332,
-				"h": 240
-			},
-			"sourceSize": {
-				"w": 332,
-				"h": 240
-			}
-		},
-		"cybercafe_final(animation)_18.png": {
-			"frame": {
-				"x": 335,
-				"y": 485,
-				"w": 332,
-				"h": 240
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 332,
-				"h": 240
-			},
-			"sourceSize": {
-				"w": 332,
-				"h": 240
-			}
-		},
-		"cybercafe_final(animation)_19.png": {
-			"frame": {
-				"x": 669,
-				"y": 485,
-				"w": 332,
-				"h": 240
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 332,
-				"h": 240
-			},
-			"sourceSize": {
-				"w": 332,
-				"h": 240
-			}
-		},
-		"cybercafe_final(animation)_2.png": {
-			"frame": {
-				"x": 1003,
-				"y": 485,
-				"w": 332,
-				"h": 240
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 332,
-				"h": 240
-			},
-			"sourceSize": {
-				"w": 332,
-				"h": 240
-			}
-		},
-		"cybercafe_final(animation)_20.png": {
+		"cybercafe_iemp_17.png": {
 			"frame": {
 				"x": 1,
-				"y": 727,
-				"w": 332,
-				"h": 240
+				"y": 965,
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_21.png": {
+		"cybercafe_iemp_18.png": {
 			"frame": {
-				"x": 335,
-				"y": 727,
-				"w": 332,
-				"h": 240
+				"x": 671,
+				"y": 965,
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_22.png": {
+		"cybercafe_iemp_19.png": {
 			"frame": {
-				"x": 669,
-				"y": 727,
-				"w": 332,
-				"h": 240
+				"x": 1341,
+				"y": 965,
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_23.png": {
+		"cybercafe_iemp_2.png": {
 			"frame": {
-				"x": 1003,
-				"y": 727,
-				"w": 332,
-				"h": 240
+				"x": 2011,
+				"y": 965,
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_24.png": {
-			"frame": {
-				"x": 1,
-				"y": 969,
-				"w": 332,
-				"h": 240
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 332,
-				"h": 240
-			},
-			"sourceSize": {
-				"w": 332,
-				"h": 240
-			}
-		},
-		"cybercafe_final(animation)_25.png": {
-			"frame": {
-				"x": 335,
-				"y": 969,
-				"w": 332,
-				"h": 240
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 332,
-				"h": 240
-			},
-			"sourceSize": {
-				"w": 332,
-				"h": 240
-			}
-		},
-		"cybercafe_final(animation)_26.png": {
-			"frame": {
-				"x": 669,
-				"y": 969,
-				"w": 332,
-				"h": 240
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 332,
-				"h": 240
-			},
-			"sourceSize": {
-				"w": 332,
-				"h": 240
-			}
-		},
-		"cybercafe_final(animation)_27.png": {
-			"frame": {
-				"x": 1003,
-				"y": 969,
-				"w": 332,
-				"h": 240
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 332,
-				"h": 240
-			},
-			"sourceSize": {
-				"w": 332,
-				"h": 240
-			}
-		},
-		"cybercafe_final(animation)_28.png": {
+		"cybercafe_iemp_20.png": {
 			"frame": {
 				"x": 1,
-				"y": 1211,
-				"w": 332,
-				"h": 240
+				"y": 1447,
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_29.png": {
+		"cybercafe_iemp_21.png": {
 			"frame": {
-				"x": 335,
-				"y": 1211,
-				"w": 332,
-				"h": 240
+				"x": 671,
+				"y": 1447,
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_3.png": {
+		"cybercafe_iemp_22.png": {
 			"frame": {
-				"x": 669,
-				"y": 1211,
-				"w": 332,
-				"h": 240
+				"x": 1341,
+				"y": 1447,
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_4.png": {
+		"cybercafe_iemp_23.png": {
 			"frame": {
-				"x": 1003,
-				"y": 1211,
-				"w": 332,
-				"h": 240
+				"x": 2011,
+				"y": 1447,
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_5.png": {
+		"cybercafe_iemp_24.png": {
 			"frame": {
-				"x": 1337,
+				"x": 1,
+				"y": 1929,
+				"w": 668,
+				"h": 480
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 668,
+				"h": 480
+			},
+			"sourceSize": {
+				"w": 668,
+				"h": 480
+			}
+		},
+		"cybercafe_iemp_25.png": {
+			"frame": {
+				"x": 671,
+				"y": 1929,
+				"w": 668,
+				"h": 480
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 668,
+				"h": 480
+			},
+			"sourceSize": {
+				"w": 668,
+				"h": 480
+			}
+		},
+		"cybercafe_iemp_26.png": {
+			"frame": {
+				"x": 1341,
+				"y": 1929,
+				"w": 668,
+				"h": 480
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 668,
+				"h": 480
+			},
+			"sourceSize": {
+				"w": 668,
+				"h": 480
+			}
+		},
+		"cybercafe_iemp_27.png": {
+			"frame": {
+				"x": 2011,
+				"y": 1929,
+				"w": 668,
+				"h": 480
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 668,
+				"h": 480
+			},
+			"sourceSize": {
+				"w": 668,
+				"h": 480
+			}
+		},
+		"cybercafe_iemp_28.png": {
+			"frame": {
+				"x": 1,
+				"y": 2411,
+				"w": 668,
+				"h": 480
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 668,
+				"h": 480
+			},
+			"sourceSize": {
+				"w": 668,
+				"h": 480
+			}
+		},
+		"cybercafe_iemp_29.png": {
+			"frame": {
+				"x": 671,
+				"y": 2411,
+				"w": 668,
+				"h": 480
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 668,
+				"h": 480
+			},
+			"sourceSize": {
+				"w": 668,
+				"h": 480
+			}
+		},
+		"cybercafe_iemp_3.png": {
+			"frame": {
+				"x": 1341,
+				"y": 2411,
+				"w": 668,
+				"h": 480
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 668,
+				"h": 480
+			},
+			"sourceSize": {
+				"w": 668,
+				"h": 480
+			}
+		},
+		"cybercafe_iemp_4.png": {
+			"frame": {
+				"x": 2011,
+				"y": 2411,
+				"w": 668,
+				"h": 480
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 668,
+				"h": 480
+			},
+			"sourceSize": {
+				"w": 668,
+				"h": 480
+			}
+		},
+		"cybercafe_iemp_5.png": {
+			"frame": {
+				"x": 2681,
 				"y": 1,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_6.png": {
+		"cybercafe_iemp_6.png": {
 			"frame": {
-				"x": 1337,
-				"y": 243,
-				"w": 332,
-				"h": 240
+				"x": 2681,
+				"y": 483,
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_7.png": {
+		"cybercafe_iemp_7.png": {
 			"frame": {
-				"x": 1337,
-				"y": 485,
-				"w": 332,
-				"h": 240
+				"x": 2681,
+				"y": 965,
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_8.png": {
+		"cybercafe_iemp_8.png": {
 			"frame": {
-				"x": 1337,
-				"y": 727,
-				"w": 332,
-				"h": 240
+				"x": 2681,
+				"y": 1447,
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		},
-		"cybercafe_final(animation)_9.png": {
+		"cybercafe_iemp_9.png": {
 			"frame": {
-				"x": 1337,
-				"y": 969,
-				"w": 332,
-				"h": 240
+				"x": 2681,
+				"y": 1929,
+				"w": 668,
+				"h": 480
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			},
 			"sourceSize": {
-				"w": 332,
-				"h": 240
+				"w": 668,
+				"h": 480
 			}
 		}
 	},
@@ -587,8 +587,8 @@
 		"image": "spritesheet.png",
 		"format": "RGBA8888",
 		"size": {
-			"w": 1670,
-			"h": 1452
+			"w": 3350,
+			"h": 2892
 		},
 		"scale": "1"
 	}
