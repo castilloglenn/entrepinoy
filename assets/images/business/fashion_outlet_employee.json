@@ -1,6 +1,6 @@
 {
 	"frames": {
-		"fashion_outlet_outline_1.png": {
+		"fashion_outlet_1.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
@@ -20,7 +20,7 @@
 				"h": 360
 			}
 		},
-		"fashion_outlet_outline_2.png": {
+		"fashion_outlet_10.png": {
 			"frame": {
 				"x": 687,
 				"y": 1,
@@ -40,130 +40,430 @@
 				"h": 360
 			}
 		},
-		"fashion_outlet_outline_3.png": {
-			"frame": {
-				"x": 1,
-				"y": 363,
-				"w": 684,
-				"h": 360
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 684,
-				"h": 360
-			},
-			"sourceSize": {
-				"w": 684,
-				"h": 360
-			}
-		},
-		"fashion_outlet_outline_4.png": {
-			"frame": {
-				"x": 687,
-				"y": 363,
-				"w": 684,
-				"h": 360
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 684,
-				"h": 360
-			},
-			"sourceSize": {
-				"w": 684,
-				"h": 360
-			}
-		},
-		"fashion_outlet_outline_5.png": {
-			"frame": {
-				"x": 1,
-				"y": 725,
-				"w": 684,
-				"h": 360
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 684,
-				"h": 360
-			},
-			"sourceSize": {
-				"w": 684,
-				"h": 360
-			}
-		},
-		"fashion_outlet_outline_6.png": {
-			"frame": {
-				"x": 687,
-				"y": 725,
-				"w": 684,
-				"h": 360
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 684,
-				"h": 360
-			},
-			"sourceSize": {
-				"w": 684,
-				"h": 360
-			}
-		},
-		"fashion_outlet_outline_7.png": {
-			"frame": {
-				"x": 1,
-				"y": 1087,
-				"w": 684,
-				"h": 360
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 684,
-				"h": 360
-			},
-			"sourceSize": {
-				"w": 684,
-				"h": 360
-			}
-		},
-		"fashion_outlet_outline_8.png": {
-			"frame": {
-				"x": 687,
-				"y": 1087,
-				"w": 684,
-				"h": 360
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 684,
-				"h": 360
-			},
-			"sourceSize": {
-				"w": 684,
-				"h": 360
-			}
-		},
-		"fashion_outlet_outline_9.png": {
+		"fashion_outlet_11.png": {
 			"frame": {
 				"x": 1373,
 				"y": 1,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_12.png": {
+			"frame": {
+				"x": 1,
+				"y": 363,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_13.png": {
+			"frame": {
+				"x": 687,
+				"y": 363,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_14.png": {
+			"frame": {
+				"x": 1373,
+				"y": 363,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_15.png": {
+			"frame": {
+				"x": 1,
+				"y": 725,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_16.png": {
+			"frame": {
+				"x": 687,
+				"y": 725,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_17.png": {
+			"frame": {
+				"x": 1373,
+				"y": 725,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_18.png": {
+			"frame": {
+				"x": 1,
+				"y": 1087,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_19.png": {
+			"frame": {
+				"x": 687,
+				"y": 1087,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_2.png": {
+			"frame": {
+				"x": 1373,
+				"y": 1087,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_20.png": {
+			"frame": {
+				"x": 1,
+				"y": 1449,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_21.png": {
+			"frame": {
+				"x": 687,
+				"y": 1449,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_22.png": {
+			"frame": {
+				"x": 1373,
+				"y": 1449,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_23.png": {
+			"frame": {
+				"x": 1,
+				"y": 1811,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_24.png": {
+			"frame": {
+				"x": 687,
+				"y": 1811,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_3.png": {
+			"frame": {
+				"x": 1373,
+				"y": 1811,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_4.png": {
+			"frame": {
+				"x": 2059,
+				"y": 1,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_5.png": {
+			"frame": {
+				"x": 2059,
+				"y": 363,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_6.png": {
+			"frame": {
+				"x": 2059,
+				"y": 725,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_7.png": {
+			"frame": {
+				"x": 2059,
+				"y": 1087,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_8.png": {
+			"frame": {
+				"x": 2059,
+				"y": 1449,
+				"w": 684,
+				"h": 360
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 684,
+				"h": 360
+			},
+			"sourceSize": {
+				"w": 684,
+				"h": 360
+			}
+		},
+		"fashion_outlet_9.png": {
+			"frame": {
+				"x": 2059,
+				"y": 1811,
 				"w": 684,
 				"h": 360
 			},
@@ -187,8 +487,8 @@
 		"image": "spritesheet.png",
 		"format": "RGBA8888",
 		"size": {
-			"w": 2058,
-			"h": 1448
+			"w": 2744,
+			"h": 2172
 		},
 		"scale": "1"
 	}
