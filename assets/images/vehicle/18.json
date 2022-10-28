@@ -1,0 +1,195 @@
+{
+	"frames": {
+		"big truck_1.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 628,
+				"h": 348
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 628,
+				"h": 348
+			},
+			"sourceSize": {
+				"w": 628,
+				"h": 348
+			}
+		},
+		"big truck_2.png": {
+			"frame": {
+				"x": 631,
+				"y": 1,
+				"w": 628,
+				"h": 348
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 628,
+				"h": 348
+			},
+			"sourceSize": {
+				"w": 628,
+				"h": 348
+			}
+		},
+		"big truck_3.png": {
+			"frame": {
+				"x": 1,
+				"y": 351,
+				"w": 628,
+				"h": 348
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 628,
+				"h": 348
+			},
+			"sourceSize": {
+				"w": 628,
+				"h": 348
+			}
+		},
+		"big truck_4.png": {
+			"frame": {
+				"x": 631,
+				"y": 351,
+				"w": 628,
+				"h": 348
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 628,
+				"h": 348
+			},
+			"sourceSize": {
+				"w": 628,
+				"h": 348
+			}
+		},
+		"big truck_5.png": {
+			"frame": {
+				"x": 1,
+				"y": 701,
+				"w": 628,
+				"h": 348
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 628,
+				"h": 348
+			},
+			"sourceSize": {
+				"w": 628,
+				"h": 348
+			}
+		},
+		"big truck_6.png": {
+			"frame": {
+				"x": 631,
+				"y": 701,
+				"w": 628,
+				"h": 348
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 628,
+				"h": 348
+			},
+			"sourceSize": {
+				"w": 628,
+				"h": 348
+			}
+		},
+		"big truck_7.png": {
+			"frame": {
+				"x": 1,
+				"y": 1051,
+				"w": 628,
+				"h": 348
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 628,
+				"h": 348
+			},
+			"sourceSize": {
+				"w": 628,
+				"h": 348
+			}
+		},
+		"big truck_8.png": {
+			"frame": {
+				"x": 631,
+				"y": 1051,
+				"w": 628,
+				"h": 348
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 628,
+				"h": 348
+			},
+			"sourceSize": {
+				"w": 628,
+				"h": 348
+			}
+		},
+		"big truck_9.png": {
+			"frame": {
+				"x": 1261,
+				"y": 1,
+				"w": 628,
+				"h": 348
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 628,
+				"h": 348
+			},
+			"sourceSize": {
+				"w": 628,
+				"h": 348
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 1890,
+			"h": 1400
+		},
+		"scale": "1"
+	}
+}
