@@ -17,4 +17,5 @@ xcopy scene_builder.py release\alpha\entrepinoy
 xcopy setting.py release\alpha\entrepinoy
 cd release\alpha\entrepinoy
 main
+cd ../../..
 cmd -k
