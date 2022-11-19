@@ -1,6 +1,7 @@
 @echo off
 pyinstaller main.py --onefile
 del /q release\alpha\*
+copy NUL release\alpha\.gitkeep
 move build release\alpha
 move dist release\alpha
 del main.spec
