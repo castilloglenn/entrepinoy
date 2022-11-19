@@ -1,7 +1,19 @@
 from datetime import datetime
 import pygame
 import json
+import sys
 import os
+
+
+def get_dirname():
+    # Pyinstaller checker for exe files/script run
+    # Source: https://stackoverflow.com/questions/404744/determining-application-path-in-a-python-exe-generated-by-pyinstaller#:~:text=at%2022%3A13-,Rafiq,-1%2C2063
+    # Modified script for game adaptation
+    if getattr(sys, 'frozen', False):
+        exe_dir = os.path.dirname(sys.executable)
+        return os.path.join(exe_dir, "game")
+    else:
+        return os.path.dirname(__file__)
 
 
 class Library():
@@ -309,7 +321,7 @@ class Library():
     
     
     def get_dict_from_json(self, folder_name: str, json_name: str):
-        dirname = os.path.dirname(__file__)
+        dirname = get_dirname()
         json_path = os.path.join(dirname, folder_name, json_name)
 
         with open(json_path) as json_file:
@@ -319,7 +331,7 @@ class Library():
     
     
     def get_dict_from_spritesheet(self, folder_name: str, json_name: str):
-        dirname = os.path.dirname(__file__)
+        dirname = get_dirname()
         json_path = os.path.join(dirname, "..", "assets", "images", folder_name, json_name)
 
         with open(json_path) as json_file:
@@ -329,30 +341,30 @@ class Library():
         
     
     def get_image(self, folder_name: str,image_name: str):
-        dirname = os.path.dirname(__file__)
+        dirname = get_dirname()
         image_path = os.path.join(dirname, "..", "assets", "images", folder_name, image_name)
         return pygame.image.load(image_path)
             
             
     def get_sfx(self, music_name):
-        dirname = os.path.dirname(__file__)
+        dirname = get_dirname()
         music_path = os.path.join(dirname, "..", "assets", "music", "sfx", music_name)
         return pygame.mixer.Sound(music_path)
             
             
     def get_bgm(self, music_name):
-        dirname = os.path.dirname(__file__)
+        dirname = get_dirname()
         return os.path.join(dirname, "..", "assets", "music", "bgm", music_name)
     
 
     def get_font(self, font_name: str, size: int):
-        dirname = os.path.dirname(__file__)
+        dirname = get_dirname()
         font_path = os.path.join(dirname, "..", "assets", "fonts", font_name)
         return pygame.font.Font(font_path, size)
     
     
     def set_dict_to_json(self, folder_name: str, json_name: str, data: dict):
-        dirname = os.path.dirname(__file__)
+        dirname = get_dirname()
         json_path = os.path.join(dirname, folder_name, json_name)
 
         with open(json_path, "w+") as json_file:

@@ -1,3 +1,5 @@
+from game.library import get_dirname
+
 from datetime import datetime
 import psutil
 import os
@@ -16,8 +18,8 @@ class Debugger():
             self.file_name = "previous_log.txt"
         else:
             self.file_name = datetime.today().strftime("%Y%m%d-%H%M%S%f.txt")
-            
-        dirname = os.path.dirname(__file__)
+        
+        dirname = get_dirname()
         self.file_path = os.path.join(dirname, "debug", self.file_name)
         
         if self.save_only_previous_log:
