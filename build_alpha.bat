@@ -1,3 +1,4 @@
+@echo off
 pyinstaller main.py --onefile
 del /q release\alpha\*
 move build release\alpha
