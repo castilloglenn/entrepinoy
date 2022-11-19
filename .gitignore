@@ -1,9 +1,8 @@
-__pycache__/
-game/__pycache__/
-game/sprite/__pycache__/
+*__pycache__*
 
 game/debug/*
 game/progress/*
+release/alpha/*
 
 !game/debug/.gitkeep
 !game/progress/.gitkeep
