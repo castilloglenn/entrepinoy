@@ -1,6 +1,7 @@
 @echo off
 pyinstaller main.py --onefile
-del /q release\alpha\*
+rmdir /s /q release\alpha
+mkdir release\alpha
 copy NUL release\alpha\.gitkeep
 move build release\alpha
 move dist release\alpha
