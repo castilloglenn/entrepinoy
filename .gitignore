@@ -6,3 +6,4 @@ release/alpha/*
 
 !game/debug/.gitkeep
 !game/progress/.gitkeep
+!release/alpha/.gitkeep
