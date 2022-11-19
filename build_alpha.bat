@@ -1,4 +1,5 @@
 pyinstaller main.py --onefile
+del /q release\alpha\*
 move build release\alpha
 move dist release\alpha
 del main.spec
