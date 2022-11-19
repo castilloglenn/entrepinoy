@@ -147,6 +147,46 @@ class Library():
                 "noon" : self.get_image("scene", "location_a_noon.png"),
                 "afternoon" : self.get_image("scene", "location_a_afternoon.png"),
                 "night" : self.get_image("scene", "location_a_night.png")
+            },
+            "location_b" : {
+                "midnight" : self.get_image("scene", "location_b_midnight.png"),
+                "early_morning" : self.get_image("scene", "location_b_early_morning.png"),
+                "morning" : self.get_image("scene", "location_b_morning.png"),
+                "noon" : self.get_image("scene", "location_b_noon.png"),
+                "afternoon" : self.get_image("scene", "location_b_afternoon.png"),
+                "night" : self.get_image("scene", "location_b_night.png")
+            },
+            "location_c" : {
+                "midnight" : self.get_image("scene", "location_c_midnight.png"),
+                "early_morning" : self.get_image("scene", "location_c_early_morning.png"),
+                "morning" : self.get_image("scene", "location_c_morning.png"),
+                "noon" : self.get_image("scene", "location_c_noon.png"),
+                "afternoon" : self.get_image("scene", "location_c_afternoon.png"),
+                "night" : self.get_image("scene", "location_c_night.png")
+            },
+            "location_d" : {
+                "midnight" : self.get_image("scene", "location_d_midnight.png"),
+                "early_morning" : self.get_image("scene", "location_d_early_morning.png"),
+                "morning" : self.get_image("scene", "location_d_morning.png"),
+                "noon" : self.get_image("scene", "location_d_noon.png"),
+                "afternoon" : self.get_image("scene", "location_d_afternoon.png"),
+                "night" : self.get_image("scene", "location_d_night.png")
+            },
+            "location_e" : {
+                "midnight" : self.get_image("scene", "location_e_midnight.png"),
+                "early_morning" : self.get_image("scene", "location_e_early_morning.png"),
+                "morning" : self.get_image("scene", "location_e_morning.png"),
+                "noon" : self.get_image("scene", "location_e_noon.png"),
+                "afternoon" : self.get_image("scene", "location_e_afternoon.png"),
+                "night" : self.get_image("scene", "location_e_night.png")
+            },
+            "location_f" : {
+                "midnight" : self.get_image("scene", "location_f_midnight.png"),
+                "early_morning" : self.get_image("scene", "location_f_early_morning.png"),
+                "morning" : self.get_image("scene", "location_f_morning.png"),
+                "noon" : self.get_image("scene", "location_f_noon.png"),
+                "afternoon" : self.get_image("scene", "location_f_afternoon.png"),
+                "night" : self.get_image("scene", "location_f_night.png")
             }
         }
         self.scene = {
