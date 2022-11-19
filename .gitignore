@@ -1,5 +1,8 @@
 *__pycache__*
 
+build
+dist
+
 game/debug/*
 game/progress/*
 release/alpha/*
