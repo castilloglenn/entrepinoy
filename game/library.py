@@ -131,6 +131,15 @@ class Library():
             "exit_button_idle" : self.get_image("title_screen", "exit_button_idle.png"),
             "exit_button_hovered" : self.get_image("title_screen", "exit_button_hovered.png")
         }
+        self.map = {
+            "region" : self.get_image("map", "region.png"),
+            "location_a_outline" : self.get_image("map", "location_a_outline.png"),
+            "location_b_outline" : self.get_image("map", "location_b_outline.png"),
+            "location_c_outline" : self.get_image("map", "location_c_outline.png"),
+            "location_d_outline" : self.get_image("map", "location_d_outline.png"),
+            "location_e_outline" : self.get_image("map", "location_e_outline.png"),
+            "location_f_outline" : self.get_image("map", "location_f_outline.png")
+        }
         self.background = {
             "test_location" : {
                 "midnight" : self.get_image("scene", "midnight.png"),
