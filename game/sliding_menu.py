@@ -86,13 +86,13 @@ class SlidingMenu():
                 "tooltip" : ["Bank"]
             }
         )
-        self.casino_button = Button(
-            self.main, self.casino_callback,
+        self.part_time_button = Button(
+            self.main, self.part_time_callback,
             **{
-                "idle" : self.main.data.meta_images["casino_button_idle"],
-                "outline" : self.main.data.meta_images["casino_button_outline"],
-                "disabled" : self.main.data.meta_images["casino_button_disabled"],
-                "tooltip" : ["Casino"]
+                "idle" : self.main.data.meta_images["part_time_idle"],
+                "outline" : self.main.data.meta_images["part_time_outline"],
+                "disabled" : self.main.data.meta_images["map_button_disabled"],
+                "tooltip" : ["Part Time"]
             }
         )
         self.my_room_button = Button(
@@ -205,8 +205,8 @@ class SlidingMenu():
         print("Bank button clicked")
         
         
-    def casino_callback(self, *args):
-        print("Casino button clicked")
+    def part_time_callback(self, *args):
+        print("Part Time button clicked")
         
         
     def my_room_callback(self, *args):
@@ -279,7 +279,7 @@ class SlidingMenu():
             self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.173),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.2925)
         )
-        self.casino_button.top_left_coordinates = (
+        self.part_time_button.top_left_coordinates = (
             self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.2925)
         )
@@ -325,7 +325,7 @@ class SlidingMenu():
         self.event_button.add(self.objects, self.hoverable_buttons, self.buttons)
         
         self.bank_button.add(self.objects, self.hoverable_buttons, self.buttons)
-        self.casino_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.part_time_button.add(self.objects, self.hoverable_buttons, self.buttons)
         self.my_room_button.add(self.objects, self.hoverable_buttons, self.buttons)
         
         self.news_button.add(self.objects, self.hoverable_buttons, self.buttons)

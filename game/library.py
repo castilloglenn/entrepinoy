@@ -108,9 +108,8 @@ class Library():
             "events_button_disabled" : self.get_image("meta", "events_icon_disabled.png"),
             "events_button_outline" : self.get_image("meta", "events_icon_outline.png"),
             
-            "casino_button_idle" : self.get_image("meta", "casino_icon_idle.png"),
-            "casino_button_disabled" : self.get_image("meta", "casino_icon_disabled.png"),
-            "casino_button_outline" : self.get_image("meta", "casino_icon_outline.png"),
+            "part_time_idle" : self.get_image("meta", "part_time_icon_idle.png"),
+            "part_time_outline" : self.get_image("meta", "part_time_icon_outline.png"),
             
             "main_menu_button_idle" : self.get_image("meta", "main_menu_icon_idle.png"),
             "main_menu_button_outline" : self.get_image("meta", "main_menu_icon_outline.png")
