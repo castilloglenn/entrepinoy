@@ -95,15 +95,6 @@ class SlidingMenu():
                 "tooltip" : ["Part Time"]
             }
         )
-        self.my_room_button = Button(
-            self.main, self.my_room_callback,
-            **{
-                "idle" : self.main.data.meta_images["home_button_idle"],
-                "outline" : self.main.data.meta_images["home_button_outline"],
-                "disabled" : self.main.data.meta_images["home_button_disabled"],
-                "tooltip" : ["My Room"]
-            }
-        )
         
         self.news_button = Button(
             self.main, self.news_callback,
@@ -209,10 +200,6 @@ class SlidingMenu():
         print("Part Time button clicked")
         
         
-    def my_room_callback(self, *args):
-        print("Residence button clicked")
-        
-        
     def news_callback(self, *args):
         print("News button clicked")
         
@@ -283,7 +270,7 @@ class SlidingMenu():
             self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.2925)
         )
-        self.my_room_button.top_left_coordinates = (
+        self.achievement_button.top_left_coordinates = (
             self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.2925)
         )
@@ -299,16 +286,12 @@ class SlidingMenu():
             self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.524)
         )
-        self.achievement_button.top_left_coordinates = (
-            self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.173),
-            self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.754)
-        )
         self.setting_button.top_left_coordinates = (
-            self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
+            self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.754)
         )
         self.main_menu_button.top_left_coordinates = (
-            self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
+            self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.754)
         )
         
@@ -326,13 +309,12 @@ class SlidingMenu():
         
         self.bank_button.add(self.objects, self.hoverable_buttons, self.buttons)
         self.part_time_button.add(self.objects, self.hoverable_buttons, self.buttons)
-        self.my_room_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.achievement_button.add(self.objects, self.hoverable_buttons, self.buttons)
         
         self.news_button.add(self.objects, self.hoverable_buttons, self.buttons)
         self.crypto_button.add(self.objects, self.hoverable_buttons, self.buttons)
         self.stock_button.add(self.objects, self.hoverable_buttons, self.buttons)
         
-        self.achievement_button.add(self.objects, self.hoverable_buttons, self.buttons)
         self.setting_button.add(self.objects, self.hoverable_buttons, self.buttons)
         self.main_menu_button.add(self.objects, self.hoverable_buttons, self.buttons)
         
