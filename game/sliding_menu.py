@@ -4,7 +4,18 @@ import pygame
 
 class SlidingMenu():
     """
-    This class displays a confirmation menu when certain actions have been taken.
+    This menu will provide different access to other game modules such as:
+    - Region Map
+    - Mission
+    - Events
+    - Bank
+    - Part Time
+    - Achievement
+    - News
+    - Crypto
+    - Stock
+    - Return to Main Menu
+    - Setting
     """
     def __init__(self, main):
         self.enable = True
