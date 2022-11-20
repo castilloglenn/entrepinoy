@@ -193,7 +193,7 @@ class Scene():
         self.main.debug.log("Reconstructing scene")
         
         # First setting last visited on the current businesses before proceeding
-        self.set_businesses_last_visited()
+        self.set_location_last_visited()
         
         self.main = main
         self.location = self.main.data.progress["last_location"]
@@ -300,16 +300,17 @@ class Scene():
         self.calculate_businesses_earnings()
         
         
-    def set_businesses_last_visited(self):
-        for business in self.business_data:
-            if business["object"].visible:
-                business["object"].set_last_visited()
+    def set_location_last_visited(self):
+        self.main.data.progress["businesses"][self.location]["last_visited"] = self.time.get_full()
                 
                 
     def calculate_businesses_earnings(self):
         for business in self.business_data:
             if business["object"].visible:
                 business["object"].earnings_calculation()
+        
+        # Reset location last visited
+        self.main.data.progress["businesses"][self.location]["last_visited"] = ""
         
     
     def time_callback_seconds(self, time_amplification):

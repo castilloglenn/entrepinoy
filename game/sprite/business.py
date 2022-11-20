@@ -498,13 +498,9 @@ class Business(Button):
             self.income_message.set_message([f"+P{self.current_income:,.2f}"])
             self.income_visible = True
         
-    
-    def set_last_visited(self):
-        self.progress["businesses"][self.scene.location][self.name_code]["last_visited"] = self.scene.time.get_full()
-
 
     def earnings_calculation(self):
-        last_visited_string = self.progress["businesses"][self.scene.location][self.name_code]["last_visited"]
+        last_visited_string = self.progress["businesses"][self.scene.location]["last_visited"]
         time_until_closed_string = self.progress["businesses"][self.scene.location][self.name_code]["open_until"]
         
         if last_visited_string != "" and time_until_closed_string != "":
@@ -552,8 +548,6 @@ class Business(Button):
             print(f"{self.name_code}: income generated {customers_spawned} times.")
             for income_generation in range(customers_spawned):
                 self.generate_income(animation=False)
-            
-            self.progress["businesses"][self.progress["last_location"]][self.name_code]["last_visited"] = ""
         
         
     def __str__(self):
