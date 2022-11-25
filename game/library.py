@@ -131,13 +131,22 @@ class Library():
             "exit_button_hovered" : self.get_image("title_screen", "exit_button_hovered.png")
         }
         self.map = {
-            "region" : self.get_image("map", "region.png"),
-            "location_a_outline" : self.get_image("map", "location_a_outline.png"),
-            "location_b_outline" : self.get_image("map", "location_b_outline.png"),
-            "location_c_outline" : self.get_image("map", "location_c_outline.png"),
-            "location_d_outline" : self.get_image("map", "location_d_outline.png"),
-            "location_e_outline" : self.get_image("map", "location_e_outline.png"),
-            "location_f_outline" : self.get_image("map", "location_f_outline.png")
+            "region" : {
+                "midnight" : self.get_image("map", "region_midnight.png"),
+                "early_morning" : self.get_image("map", "region_early_morning.png"),
+                "morning" : self.get_image("map", "region_morning.png"),
+                "noon" : self.get_image("map", "region_noon.png"),
+                "afternoon" : self.get_image("map", "region_afternoon.png"),
+                "night" : self.get_image("map", "region_night.png")
+            },
+            "outline": {
+                "location_a" : self.get_image("map", "location_a_outline.png"),
+                "location_b" : self.get_image("map", "location_b_outline.png"),
+                "location_c" : self.get_image("map", "location_c_outline.png"),
+                "location_d" : self.get_image("map", "location_d_outline.png"),
+                "location_e" : self.get_image("map", "location_e_outline.png"),
+                "location_f" : self.get_image("map", "location_f_outline.png")
+            }
         }
         self.background = {
             "test_location" : {
