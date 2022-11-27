@@ -11,6 +11,7 @@ from game.debug import Debugger
 from game.library import Library
 
 from scene_builder import Scene
+from region import Map
 from setting import Setting
 
 import pygame
@@ -80,6 +81,7 @@ class Main():
         if self.data.progress is not None:
             self.scene_window = Scene(self)
         self.setting_window = Setting(self)
+        self.map_window = Map(self)
         
         # Sprites and sprite groups
         self.buttons = pygame.sprite.Group()
