@@ -262,6 +262,7 @@ class Library():
             }
             
         self.business_images = {
+            # ================================= LOCATION A ==================================
             "buko_stall" : { # 100% complete
                 "idle" : self.get_image("business", "buko_stall_idle.png"),
                 "closed" : self.get_image("business", "buko_stall_closed.png"),
@@ -316,6 +317,18 @@ class Library():
                     "json" : self.get_dict_from_spritesheet("business", "food_cart_employee.json")
                 }
             },
+            
+            # ================================= LOCATION B ==================================
+            
+            # ================================= LOCATION C ==================================
+            
+            # ================================= LOCATION D ==================================
+            
+            # ================================= LOCATION E ==================================
+            
+            # ================================= LOCATION F ==================================
+            
+            # ================================ TEST LOCATION ================================
             "test_business_a" : { # 100% complete
                 "idle" : self.get_image("business", "sari_sari_store_idle.png"),
                 "closed" : self.get_image("business", "sari_sari_store_closed.png"),
