@@ -66,7 +66,7 @@ class SlidingMenu():
                 "idle" : self.main.data.meta_images["map_button_idle"],
                 "outline" : self.main.data.meta_images["map_button_outline"],
                 "disabled" : self.main.data.meta_images["map_button_disabled"],
-                "tooltip" : ["City Map"]
+                "tooltip" : ["Region Map"]
             }
         )
         self.mission_button = Button(
