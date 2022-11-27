@@ -139,6 +139,7 @@ class Library():
                 "afternoon" : self.get_image("map", "region_afternoon.png"),
                 "night" : self.get_image("map", "region_night.png")
             },
+            "base_hover" : self.get_image("map", "base_location_hover.png"),
             "outline": {
                 "location_a" : self.get_image("map", "location_a_outline.png"),
                 "location_b" : self.get_image("map", "location_b_outline.png"),
