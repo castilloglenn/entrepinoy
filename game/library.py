@@ -248,14 +248,14 @@ class Library():
                 "data" : self.get_dict_from_spritesheet("test", "test.json")
             }
         }
-        for crowd_index in range(0, 19): # 18 is the last number
+        for crowd_index in range(0, 35): # 34 is the last number
             string_index = str(crowd_index)
             self.crowd_spritesheets[string_index] = {
                 "sheet" : self.get_image("crowd", f"{string_index}.png"),
                 "data" : self.get_dict_from_spritesheet("crowd", f"{string_index}.json")
             }
         self.vehicle_spritesheets = {}
-        for vehicle_index in range(0, 4): # 3 is the last number
+        for vehicle_index in range(0, 19): # 18 is the last number
             string_index = str(vehicle_index)
             self.vehicle_spritesheets[string_index] = {
                 "sheet" : self.get_image("vehicle", f"{string_index}.png"),
