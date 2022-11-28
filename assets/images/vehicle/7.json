@@ -1,11 +1,11 @@
 {
 	"frames": {
-		"base_canvas_1.png": {
+		"7_1.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
 				"w": 416,
-				"h": 184
+				"h": 192
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -13,19 +13,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 416,
-				"h": 184
+				"h": 192
 			},
 			"sourceSize": {
 				"w": 416,
-				"h": 184
+				"h": 192
 			}
 		},
-		"base_canvas_2.png": {
+		"7_2.png": {
 			"frame": {
 				"x": 1,
-				"y": 187,
+				"y": 195,
 				"w": 416,
-				"h": 184
+				"h": 192
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -33,19 +33,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 416,
-				"h": 184
+				"h": 192
 			},
 			"sourceSize": {
 				"w": 416,
-				"h": 184
+				"h": 192
 			}
 		},
-		"base_canvas_3.png": {
+		"7_3.png": {
 			"frame": {
 				"x": 1,
-				"y": 373,
+				"y": 389,
 				"w": 416,
-				"h": 184
+				"h": 192
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -53,19 +53,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 416,
-				"h": 184
+				"h": 192
 			},
 			"sourceSize": {
 				"w": 416,
-				"h": 184
+				"h": 192
 			}
 		},
-		"base_canvas_4.png": {
+		"7_4.png": {
 			"frame": {
 				"x": 419,
 				"y": 1,
 				"w": 416,
-				"h": 184
+				"h": 192
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -73,19 +73,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 416,
-				"h": 184
+				"h": 192
 			},
 			"sourceSize": {
 				"w": 416,
-				"h": 184
+				"h": 192
 			}
 		},
-		"base_canvas_5.png": {
+		"7_5.png": {
 			"frame": {
 				"x": 419,
-				"y": 187,
+				"y": 195,
 				"w": 416,
-				"h": 184
+				"h": 192
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -93,19 +93,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 416,
-				"h": 184
+				"h": 192
 			},
 			"sourceSize": {
 				"w": 416,
-				"h": 184
+				"h": 192
 			}
 		},
-		"base_canvas_6.png": {
+		"7_6.png": {
 			"frame": {
 				"x": 419,
-				"y": 373,
+				"y": 389,
 				"w": 416,
-				"h": 184
+				"h": 192
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -113,19 +113,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 416,
-				"h": 184
+				"h": 192
 			},
 			"sourceSize": {
 				"w": 416,
-				"h": 184
+				"h": 192
 			}
 		},
-		"base_canvas_7.png": {
+		"7_7.png": {
 			"frame": {
 				"x": 1,
-				"y": 559,
+				"y": 583,
 				"w": 416,
-				"h": 184
+				"h": 192
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -133,11 +133,11 @@
 				"x": 0,
 				"y": 0,
 				"w": 416,
-				"h": 184
+				"h": 192
 			},
 			"sourceSize": {
 				"w": 416,
-				"h": 184
+				"h": 192
 			}
 		}
 	},
@@ -148,7 +148,7 @@
 		"format": "RGBA8888",
 		"size": {
 			"w": 836,
-			"h": 744
+			"h": 776
 		},
 		"scale": "1"
 	}

@@ -1,6 +1,6 @@
 {
 	"frames": {
-		"Food_deliver_riders_1.png": {
+		"5_1.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
@@ -20,7 +20,7 @@
 				"h": 168
 			}
 		},
-		"Food_deliver_riders_2.png": {
+		"5_2.png": {
 			"frame": {
 				"x": 259,
 				"y": 1,
@@ -40,7 +40,7 @@
 				"h": 168
 			}
 		},
-		"Food_deliver_riders_3.png": {
+		"5_3.png": {
 			"frame": {
 				"x": 1,
 				"y": 171,
@@ -60,7 +60,7 @@
 				"h": 168
 			}
 		},
-		"Food_deliver_riders_4.png": {
+		"5_4.png": {
 			"frame": {
 				"x": 259,
 				"y": 171,
@@ -80,7 +80,7 @@
 				"h": 168
 			}
 		},
-		"Food_deliver_riders_5.png": {
+		"5_5.png": {
 			"frame": {
 				"x": 1,
 				"y": 341,
@@ -100,7 +100,7 @@
 				"h": 168
 			}
 		},
-		"Food_deliver_riders_6.png": {
+		"5_6.png": {
 			"frame": {
 				"x": 259,
 				"y": 341,
@@ -120,7 +120,7 @@
 				"h": 168
 			}
 		},
-		"Food_deliver_riders_7.png": {
+		"5_7.png": {
 			"frame": {
 				"x": 517,
 				"y": 1,
@@ -140,7 +140,7 @@
 				"h": 168
 			}
 		},
-		"Food_deliver_riders_8.png": {
+		"5_8.png": {
 			"frame": {
 				"x": 517,
 				"y": 171,
