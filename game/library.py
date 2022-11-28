@@ -264,7 +264,7 @@ class Library():
             
         self.business_images = {
             # ================================= LOCATION A ==================================
-            "buko_stall" : { # 100% complete
+            "buko_stall" : { 
                 "idle" : self.get_image("business", "buko_stall_idle.png"),
                 "closed" : self.get_image("business", "buko_stall_closed.png"),
                 "outline" : self.get_image("business", "buko_stall_closed_outline.png"),
@@ -320,14 +320,132 @@ class Library():
             },
             
             # ================================= LOCATION B ==================================
-            
+            "bakery" : {
+                "idle" : self.get_image("business", "bakery_idle.png"),
+                "closed" : self.get_image("business", "bakery_closed.png"),
+                "outline" : self.get_image("business", "bakery_outline.png"),
+                "employee": {
+                    "spritesheet" : self.get_image("business", "bakery_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "bakery_employee.json")
+                }
+            },
+            "general_merchandise_store" : {
+                "idle" : self.get_image("business", "general_merchandise_store_idle.png"),
+                "closed" : self.get_image("business", "general_merchandise_store_closed.png"),
+                "outline" : self.get_image("business", "general_merchandise_store_outline.png"),
+                "employee": {
+                    "spritesheet" : self.get_image("business", "general_merchandise_store_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "general_merchandise_store_employee.json")
+                }
+            },
+
             # ================================= LOCATION C ==================================
-            
+            "cybercafe" : {
+                "idle" : self.get_image("business", "cybercafe_idle.png"),
+                "closed" : self.get_image("business", "cybercafe_closed.png"),
+                "outline" : self.get_image("business", "cybercafe_outline.png"),
+                "employee": {
+                    "spritesheet" : self.get_image("business", "cybercafe_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "cybercafe_employee.json")
+                }
+            },
+            "clothing_line" : {
+                "idle" : self.get_image("business", "clothing_line_idle.png"),
+                "closed" : self.get_image("business", "clothing_line_closed.png"),
+                "outline" : self.get_image("business", "clothing_line_outline.png"),
+                "employee": {
+                    "spritesheet" : self.get_image("business", "clothing_line_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "clothing_line_employee.json")
+                }
+            },
+            # TODO Kulang pa ng image assets ito, placeholder lamang ang fish balls
+            "convenience_store" : {
+                "idle" : self.get_image("business", "fish_ball_stand_idle.png"),
+                "closed" : self.get_image("business", "fish_ball_stand_closed.png"),
+                "outline" : self.get_image("business", "fish_ball_stand_outline.png"),
+                "employee": {
+                    "spritesheet" : self.get_image("business", "fish_ball_stand_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "fish_ball_stand_employee.json")
+                }
+            },
+
             # ================================= LOCATION D ==================================
+            "pawnshop" : {
+                "idle" : self.get_image("business", "pawnshop_idle.png"),
+                "closed" : self.get_image("business", "pawnshop_closed.png"),
+                "outline" : self.get_image("business", "pawnshop_outline.png"),
+                "employee": {
+                    "spritesheet" : self.get_image("business", "pawnshop_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "pawnshop_employee.json")
+                }
+            },
+            "fashion_outlet" : {
+                "idle" : self.get_image("business", "fashion_outlet_idle.png"),
+                "closed" : self.get_image("business", "fashion_outlet_closed.png"),
+                "outline" : self.get_image("business", "fashion_outlet_outline.png"),
+                "employee": {
+                    "spritesheet" : self.get_image("business", "fashion_outlet_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "fashion_outlet_employee.json")
+                }
+            },
             
             # ================================= LOCATION E ==================================
+            "restaurant" : {
+                "idle" : self.get_image("business", "restaurant_idle.png"),
+                "closed" : self.get_image("business", "restaurant_closed.png"),
+                "outline" : self.get_image("business", "restaurant_outline.png"),
+                "employee": {
+                    "spritesheet" : self.get_image("business", "restaurant_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "restaurant_employee.json")
+                }
+            },
+            "market" : {
+                "idle" : self.get_image("business", "market_idle.png"),
+                "closed" : self.get_image("business", "market_closed.png"),
+                "outline" : self.get_image("business", "market_outline.png"),
+                "employee": {
+                    "spritesheet" : self.get_image("business", "market_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "market_employee.json")
+                }
+            },
+            "bazaar" : {
+                "idle" : self.get_image("business", "bazaar_idle.png"),
+                "closed" : self.get_image("business", "bazaar_closed.png"),
+                "outline" : self.get_image("business", "bazaar_outline.png"),
+                "employee": {
+                    "spritesheet" : self.get_image("business", "bazaar_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "bazaar_employee.json")
+                }
+            },
+            "jewelry_store" : {
+                "idle" : self.get_image("business", "jewelry_store_idle.png"),
+                "closed" : self.get_image("business", "jewelry_store_closed.png"),
+                "outline" : self.get_image("business", "jewelry_store_outline.png"),
+                "employee": {
+                    "spritesheet" : self.get_image("business", "jewelry_store_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "jewelry_store_employee.json")
+                }
+            },
             
             # ================================= LOCATION F ==================================
+            "bank" : {
+                "idle" : self.get_image("business", "bank_idle.png"),
+                "closed" : self.get_image("business", "bank_closed.png"),
+                "outline" : self.get_image("business", "bank_outline.png"),
+                "employee": {
+                    "spritesheet" : self.get_image("business", "bank_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "bank_employee.json")
+                }
+            },
+            "mall" : {
+                "idle" : self.get_image("business", "mall_idle.png"),
+                "closed" : self.get_image("business", "mall_closed.png"),
+                "outline" : self.get_image("business", "mall_outline.png"),
+                "employee": {
+                    "spritesheet" : self.get_image("business", "mall_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "mall_employee.json")
+                }
+            },
             
             # ================================ TEST LOCATION ================================
             "test_business_a" : { # 100% complete
