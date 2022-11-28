@@ -1,6 +1,6 @@
 {
 	"frames": {
-		"restaurant_1.png": {
+		"restaurant_employee_1.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
@@ -20,7 +20,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_10.png": {
+		"restaurant_employee_10.png": {
 			"frame": {
 				"x": 773,
 				"y": 1,
@@ -40,7 +40,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_11.png": {
+		"restaurant_employee_11.png": {
 			"frame": {
 				"x": 1545,
 				"y": 1,
@@ -60,7 +60,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_12.png": {
+		"restaurant_employee_12.png": {
 			"frame": {
 				"x": 1,
 				"y": 398,
@@ -80,7 +80,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_13.png": {
+		"restaurant_employee_13.png": {
 			"frame": {
 				"x": 773,
 				"y": 398,
@@ -100,7 +100,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_14.png": {
+		"restaurant_employee_14.png": {
 			"frame": {
 				"x": 1545,
 				"y": 398,
@@ -120,7 +120,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_15.png": {
+		"restaurant_employee_15.png": {
 			"frame": {
 				"x": 1,
 				"y": 795,
@@ -140,7 +140,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_16.png": {
+		"restaurant_employee_16.png": {
 			"frame": {
 				"x": 773,
 				"y": 795,
@@ -160,7 +160,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_17.png": {
+		"restaurant_employee_17.png": {
 			"frame": {
 				"x": 1545,
 				"y": 795,
@@ -180,7 +180,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_18.png": {
+		"restaurant_employee_18.png": {
 			"frame": {
 				"x": 1,
 				"y": 1192,
@@ -200,7 +200,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_19.png": {
+		"restaurant_employee_19.png": {
 			"frame": {
 				"x": 773,
 				"y": 1192,
@@ -220,7 +220,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_2.png": {
+		"restaurant_employee_2.png": {
 			"frame": {
 				"x": 1545,
 				"y": 1192,
@@ -240,7 +240,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_20.png": {
+		"restaurant_employee_20.png": {
 			"frame": {
 				"x": 1,
 				"y": 1589,
@@ -260,7 +260,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_21.png": {
+		"restaurant_employee_21.png": {
 			"frame": {
 				"x": 773,
 				"y": 1589,
@@ -280,7 +280,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_22.png": {
+		"restaurant_employee_22.png": {
 			"frame": {
 				"x": 1545,
 				"y": 1589,
@@ -300,7 +300,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_23.png": {
+		"restaurant_employee_23.png": {
 			"frame": {
 				"x": 1,
 				"y": 1986,
@@ -320,7 +320,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_3.png": {
+		"restaurant_employee_3.png": {
 			"frame": {
 				"x": 773,
 				"y": 1986,
@@ -340,7 +340,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_4.png": {
+		"restaurant_employee_4.png": {
 			"frame": {
 				"x": 1545,
 				"y": 1986,
@@ -360,7 +360,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_5.png": {
+		"restaurant_employee_5.png": {
 			"frame": {
 				"x": 2317,
 				"y": 1,
@@ -380,7 +380,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_6.png": {
+		"restaurant_employee_6.png": {
 			"frame": {
 				"x": 2317,
 				"y": 398,
@@ -400,7 +400,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_7.png": {
+		"restaurant_employee_7.png": {
 			"frame": {
 				"x": 2317,
 				"y": 795,
@@ -420,7 +420,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_8.png": {
+		"restaurant_employee_8.png": {
 			"frame": {
 				"x": 2317,
 				"y": 1192,
@@ -440,7 +440,7 @@
 				"h": 395
 			}
 		},
-		"restaurant_9.png": {
+		"restaurant_employee_9.png": {
 			"frame": {
 				"x": 2317,
 				"y": 1589,

@@ -1,6 +1,6 @@
 {
 	"frames": {
-		"pawnshop_1.png": {
+		"pawnshop_employee_1.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
@@ -20,7 +20,7 @@
 				"h": 424
 			}
 		},
-		"pawnshop_2.png": {
+		"pawnshop_employee_2.png": {
 			"frame": {
 				"x": 571,
 				"y": 1,
@@ -40,7 +40,7 @@
 				"h": 424
 			}
 		},
-		"pawnshop_3.png": {
+		"pawnshop_employee_3.png": {
 			"frame": {
 				"x": 1,
 				"y": 427,
@@ -60,7 +60,7 @@
 				"h": 424
 			}
 		},
-		"pawnshop_4.png": {
+		"pawnshop_employee_4.png": {
 			"frame": {
 				"x": 571,
 				"y": 427,
@@ -80,7 +80,7 @@
 				"h": 424
 			}
 		},
-		"pawnshop_5.png": {
+		"pawnshop_employee_5.png": {
 			"frame": {
 				"x": 1,
 				"y": 853,
@@ -100,7 +100,7 @@
 				"h": 424
 			}
 		},
-		"pawnshop_6.png": {
+		"pawnshop_employee_6.png": {
 			"frame": {
 				"x": 571,
 				"y": 853,
@@ -120,7 +120,7 @@
 				"h": 424
 			}
 		},
-		"pawnshop_7.png": {
+		"pawnshop_employee_7.png": {
 			"frame": {
 				"x": 1141,
 				"y": 1,
@@ -140,7 +140,7 @@
 				"h": 424
 			}
 		},
-		"pawnshop_8.png": {
+		"pawnshop_employee_8.png": {
 			"frame": {
 				"x": 1141,
 				"y": 427,
@@ -160,7 +160,7 @@
 				"h": 424
 			}
 		},
-		"pawnshop_9.png": {
+		"pawnshop_employee_9.png": {
 			"frame": {
 				"x": 1141,
 				"y": 853,

@@ -1,6 +1,6 @@
 {
 	"frames": {
-		"bakery_1.png": {
+		"bakery_employee_1.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
@@ -20,7 +20,7 @@
 				"h": 436
 			}
 		},
-		"bakery_2.png": {
+		"bakery_employee_2.png": {
 			"frame": {
 				"x": 843,
 				"y": 1,
@@ -40,7 +40,7 @@
 				"h": 436
 			}
 		},
-		"bakery_3.png": {
+		"bakery_employee_3.png": {
 			"frame": {
 				"x": 1,
 				"y": 439,
@@ -60,7 +60,7 @@
 				"h": 436
 			}
 		},
-		"bakery_4.png": {
+		"bakery_employee_4.png": {
 			"frame": {
 				"x": 843,
 				"y": 439,
@@ -80,7 +80,7 @@
 				"h": 436
 			}
 		},
-		"bakery_5.png": {
+		"bakery_employee_5.png": {
 			"frame": {
 				"x": 1,
 				"y": 877,
@@ -100,7 +100,7 @@
 				"h": 436
 			}
 		},
-		"bakery_6.png": {
+		"bakery_employee_6.png": {
 			"frame": {
 				"x": 843,
 				"y": 877,
@@ -120,7 +120,7 @@
 				"h": 436
 			}
 		},
-		"bakery_7.png": {
+		"bakery_employee_7.png": {
 			"frame": {
 				"x": 1,
 				"y": 1315,
@@ -140,7 +140,7 @@
 				"h": 436
 			}
 		},
-		"bakery_8.png": {
+		"bakery_employee_8.png": {
 			"frame": {
 				"x": 843,
 				"y": 1315,
@@ -160,7 +160,7 @@
 				"h": 436
 			}
 		},
-		"bakery_9.png": {
+		"bakery_employee_9.png": {
 			"frame": {
 				"x": 1685,
 				"y": 1,

@@ -1,6 +1,6 @@
 {
 	"frames": {
-		"milktea_shop_1.png": {
+		"milktea_shop_employee_1.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
@@ -20,7 +20,7 @@
 				"h": 328
 			}
 		},
-		"milktea_shop_10.png": {
+		"milktea_shop_employee_10.png": {
 			"frame": {
 				"x": 615,
 				"y": 1,
@@ -40,7 +40,7 @@
 				"h": 328
 			}
 		},
-		"milktea_shop_11.png": {
+		"milktea_shop_employee_11.png": {
 			"frame": {
 				"x": 1,
 				"y": 331,
@@ -60,7 +60,7 @@
 				"h": 328
 			}
 		},
-		"milktea_shop_12.png": {
+		"milktea_shop_employee_12.png": {
 			"frame": {
 				"x": 615,
 				"y": 331,
@@ -80,7 +80,7 @@
 				"h": 328
 			}
 		},
-		"milktea_shop_2.png": {
+		"milktea_shop_employee_2.png": {
 			"frame": {
 				"x": 1,
 				"y": 661,
@@ -100,7 +100,7 @@
 				"h": 328
 			}
 		},
-		"milktea_shop_3.png": {
+		"milktea_shop_employee_3.png": {
 			"frame": {
 				"x": 615,
 				"y": 661,
@@ -120,7 +120,7 @@
 				"h": 328
 			}
 		},
-		"milktea_shop_4.png": {
+		"milktea_shop_employee_4.png": {
 			"frame": {
 				"x": 1,
 				"y": 991,
@@ -140,7 +140,7 @@
 				"h": 328
 			}
 		},
-		"milktea_shop_5.png": {
+		"milktea_shop_employee_5.png": {
 			"frame": {
 				"x": 615,
 				"y": 991,
@@ -160,7 +160,7 @@
 				"h": 328
 			}
 		},
-		"milktea_shop_6.png": {
+		"milktea_shop_employee_6.png": {
 			"frame": {
 				"x": 1229,
 				"y": 1,
@@ -180,7 +180,7 @@
 				"h": 328
 			}
 		},
-		"milktea_shop_7.png": {
+		"milktea_shop_employee_7.png": {
 			"frame": {
 				"x": 1229,
 				"y": 331,
@@ -200,7 +200,7 @@
 				"h": 328
 			}
 		},
-		"milktea_shop_8.png": {
+		"milktea_shop_employee_8.png": {
 			"frame": {
 				"x": 1229,
 				"y": 661,
@@ -220,7 +220,7 @@
 				"h": 328
 			}
 		},
-		"milktea_shop_9.png": {
+		"milktea_shop_employee_9.png": {
 			"frame": {
 				"x": 1229,
 				"y": 991,
