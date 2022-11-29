@@ -32,7 +32,7 @@ class Button(Sprite):
         super().__init__()
         
         # Debugging
-        self.show_bound = True
+        self.show_bound = False
         self.bound_color = (255, 255, 255)
         self.bound_opacity = 128
         
