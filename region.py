@@ -94,27 +94,23 @@ class Map():
         
 
     def location_b_callback(self, *args):
-        self.location_changer("test_location") # location_b
-        
+        self.location_changer("location_b")
+
 
     def location_c_callback(self, *args):
-        # self"".location_changer("location_c")
-        print("Location C clicked")
+        self.location_changer("location_c")
         
 
     def location_d_callback(self, *args):
-        # self.location_changer("location_d")
-        print("Location D clicked")
+        self.location_changer("location_d")
         
 
     def location_e_callback(self, *args):
-        # self.location_changer("location_e")
-        print("Location E clicked")
+        self.location_changer("location_e")
         
 
     def location_f_callback(self, *args):
-        # self.location_changer("location_f")
-        print("Location F clicked")
+        self.location_changer("location_f")
 
 
     def location_changer(self, new_location):
@@ -198,7 +194,7 @@ class Map():
             pass
             
         elif key == pygame.K_F4:
-            pass
+            self.location_changer("test_location")
 
 
     def key_hold_events(self, keys):

@@ -230,7 +230,7 @@ class SlidingMenu():
         self.main.scene_window.running = False
         self.main.debug.log("Autosaved progress before going to main menu")  
         self.main.debug.log("Exited scene via Sliding Menu")
-        
+    
     
     def tuck(self):
         if not self.is_tucked:

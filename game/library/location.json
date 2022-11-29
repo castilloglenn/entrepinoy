@@ -1,4 +1,19 @@
 {
+    "test_location" : {
+        "businesses" : [
+            "test_business_a",
+            "test_business_b"
+        ],
+        "safe_spot" : [0.45, 0.55, 0.65, 0.75],
+        "object_limit" : 25,
+        "npc_indexes" : [
+            2, 4, 6, 7, 8, 10, 11, 14, 18
+        ],
+        "vehicle_indexes" : [
+            0, 1, 2, 3
+        ]
+    },
+
     "location_a" : {
         "businesses" : [
             "street_food",
@@ -15,30 +30,83 @@
             0, 2, 3
         ]
     },
-    "test_location" : {
+
+    "location_b" : {
         "businesses" : [
-            "test_business_a",
-            "test_business_b"
+            "bakery",
+            "general_merchandise_store"
         ],
         "safe_spot" : [0.45, 0.55, 0.65, 0.75],
-        "object_limit" : 25,
+        "object_limit" : 15,
         "npc_indexes" : [
-            2, 4, 6, 7, 8, 10, 11, 14, 18
+            21, 22, 23
         ],
         "vehicle_indexes" : [
-            0, 1, 2, 3
+            11, 12, 13, 14, 15, 16, 17, 18
         ]
     },
-    "location_c" : [
 
-    ],
-    "location_d" : [
-        
-    ],
-    "location_e" : [
-        
-    ],
-    "location_f" : [
-        
-    ]
+    "location_c" : {
+        "businesses" : [
+            "cybercafe",
+            "clothing_line",
+            "milktea_shop",
+            "convenience_store"
+        ],
+        "safe_spot" : [0.45, 0.55, 0.65, 0.75],
+        "object_limit" : 15,
+        "npc_indexes" : [
+            21, 22, 23
+        ],
+        "vehicle_indexes" : [
+            11, 12, 13, 14, 15, 16, 17, 18
+        ]
+    },
+
+    "location_d" : {
+        "businesses" : [
+            "pawnshop",
+            "fashion_outlet"
+        ],
+        "safe_spot" : [0.45, 0.55, 0.65, 0.75],
+        "object_limit" : 15,
+        "npc_indexes" : [
+            21, 22, 23
+        ],
+        "vehicle_indexes" : [
+            11, 12, 13, 14, 15, 16, 17, 18
+        ]
+    },
+
+    "location_e" : {
+        "businesses" : [
+            "market",
+            "bazaar",
+            "restaurant",
+            "jewelry_store"
+        ],
+        "safe_spot" : [0.45, 0.55, 0.65, 0.75],
+        "object_limit" : 15,
+        "npc_indexes" : [
+            21, 22, 23
+        ],
+        "vehicle_indexes" : [
+            11, 12, 13, 14, 15, 16, 17, 18
+        ]
+    },
+
+    "location_f" : {
+        "businesses" : [
+            "bank",
+            "mall"
+        ],
+        "safe_spot" : [0.45, 0.55, 0.65, 0.75],
+        "object_limit" : 15,
+        "npc_indexes" : [
+            21, 22, 23
+        ],
+        "vehicle_indexes" : [
+            11, 12, 13, 14, 15, 16, 17, 18
+        ]
+    }
 }

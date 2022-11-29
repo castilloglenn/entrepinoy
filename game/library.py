@@ -368,6 +368,15 @@ class Library():
                     "json" : self.get_dict_from_spritesheet("business", "fish_ball_stand_employee.json")
                 }
             },
+            "milktea_shop" : {
+                "idle" : self.get_image("business", "milktea_shop_idle.png"),
+                "closed" : self.get_image("business", "milktea_shop_closed.png"),
+                "outline" : self.get_image("business", "milktea_shop_outline.png"),
+                "employee": {
+                    "spritesheet" : self.get_image("business", "milktea_shop_employee.png"),
+                    "json" : self.get_dict_from_spritesheet("business", "milktea_shop_employee.json")
+                }
+            },
 
             # ================================= LOCATION D ==================================
             "pawnshop" : {
@@ -568,6 +577,32 @@ class Library():
             "cash": 5000.0000000000000,
     
             "businesses": {
+                "test_location": {
+                    "last_visited" : "",
+
+                    "test_business_a": {
+                        "date_acquired": "",
+                        "ownership": False,
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
+                    },
+                    "test_business_b": {
+                        "date_acquired": "",
+                        "ownership": False,
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
+                    }
+                },
                 "location_a": {
                     "last_visited" : "",
 
@@ -617,10 +652,10 @@ class Library():
                         "lifetime_profit" : 0.0
                     }
                 },
-                "test_location": {
+                "location_b": {
                     "last_visited" : "",
 
-                    "test_business_a": {
+                    "bakery": {
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
@@ -631,7 +666,155 @@ class Library():
                         "last_profit" : 0.0,
                         "lifetime_profit" : 0.0
                     },
-                    "test_business_b": {
+                    "general_merchandise_store": {
+                        "date_acquired": "",
+                        "ownership": False,
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
+                    }
+                },
+                "location_c": {
+                    "last_visited" : "",
+
+                    "cybercafe": {
+                        "date_acquired": "",
+                        "ownership": False,
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
+                    },
+                    "clothing_line": {
+                        "date_acquired": "",
+                        "ownership": False,
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
+                    },
+                    "milktea_shop": {
+                        "date_acquired": "",
+                        "ownership": False,
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
+                    },
+                    "convenience_store": {
+                        "date_acquired": "",
+                        "ownership": False,
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
+                    }
+                },
+                "location_d": {
+                    "last_visited" : "",
+
+                    "pawnshop": {
+                        "date_acquired": "",
+                        "ownership": False,
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
+                    },
+                    "fashion_outlet": {
+                        "date_acquired": "",
+                        "ownership": False,
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
+                    }
+                },
+                "location_e": {
+                    "last_visited" : "",
+
+                    "market": {
+                        "date_acquired": "",
+                        "ownership": False,
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
+                    },
+                    "bazaar": {
+                        "date_acquired": "",
+                        "ownership": False,
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
+                    },
+                    "restaurant": {
+                        "date_acquired": "",
+                        "ownership": False,
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
+                    },
+                    "jewelry_store": {
+                        "date_acquired": "",
+                        "ownership": False,
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
+                    }
+                },
+                "location_f": {
+                    "last_visited" : "",
+
+                    "bank": {
+                        "date_acquired": "",
+                        "ownership": False,
+                        "is_open": False,
+                        "open_until": "",
+                        "has_employee": False,
+                        "sales": 0.0,
+                        "lifetime_sales": 0.0,
+                        "last_profit" : 0.0,
+                        "lifetime_profit" : 0.0
+                    },
+                    "mall": {
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
