@@ -1,0 +1,475 @@
+{
+	"frames": {
+		"convinience_store_employee_1.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_10.png": {
+			"frame": {
+				"x": 615,
+				"y": 1,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_11.png": {
+			"frame": {
+				"x": 1229,
+				"y": 1,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_12.png": {
+			"frame": {
+				"x": 1,
+				"y": 285,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_13.png": {
+			"frame": {
+				"x": 615,
+				"y": 285,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_14.png": {
+			"frame": {
+				"x": 1229,
+				"y": 285,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_15.png": {
+			"frame": {
+				"x": 1,
+				"y": 569,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_16.png": {
+			"frame": {
+				"x": 615,
+				"y": 569,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_17.png": {
+			"frame": {
+				"x": 1229,
+				"y": 569,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_18.png": {
+			"frame": {
+				"x": 1,
+				"y": 853,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_19.png": {
+			"frame": {
+				"x": 615,
+				"y": 853,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_2.png": {
+			"frame": {
+				"x": 1229,
+				"y": 853,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_20.png": {
+			"frame": {
+				"x": 1,
+				"y": 1137,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_21.png": {
+			"frame": {
+				"x": 615,
+				"y": 1137,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_22.png": {
+			"frame": {
+				"x": 1229,
+				"y": 1137,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_23.png": {
+			"frame": {
+				"x": 1,
+				"y": 1421,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_3.png": {
+			"frame": {
+				"x": 615,
+				"y": 1421,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_4.png": {
+			"frame": {
+				"x": 1229,
+				"y": 1421,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_5.png": {
+			"frame": {
+				"x": 1,
+				"y": 1705,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_6.png": {
+			"frame": {
+				"x": 615,
+				"y": 1705,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_7.png": {
+			"frame": {
+				"x": 1229,
+				"y": 1705,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_8.png": {
+			"frame": {
+				"x": 1843,
+				"y": 1,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		},
+		"convinience_store_employee_9.png": {
+			"frame": {
+				"x": 1843,
+				"y": 285,
+				"w": 612,
+				"h": 282
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 612,
+				"h": 282
+			},
+			"sourceSize": {
+				"w": 612,
+				"h": 282
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 2456,
+			"h": 1988
+		},
+		"scale": "1"
+	}
+}
