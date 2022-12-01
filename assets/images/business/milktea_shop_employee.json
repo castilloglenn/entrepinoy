@@ -4,240 +4,240 @@
 			"frame": {
 				"x": 1,
 				"y": 1,
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			},
 			"sourceSize": {
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			}
 		},
 		"milktea_shop_employee_10.png": {
 			"frame": {
-				"x": 615,
+				"x": 371,
 				"y": 1,
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			},
 			"sourceSize": {
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			}
 		},
 		"milktea_shop_employee_11.png": {
 			"frame": {
-				"x": 1,
-				"y": 331,
-				"w": 612,
-				"h": 328
+				"x": 741,
+				"y": 1,
+				"w": 368,
+				"h": 288
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			},
 			"sourceSize": {
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			}
 		},
 		"milktea_shop_employee_12.png": {
 			"frame": {
-				"x": 615,
-				"y": 331,
-				"w": 612,
-				"h": 328
+				"x": 1,
+				"y": 291,
+				"w": 368,
+				"h": 288
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			},
 			"sourceSize": {
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			}
 		},
 		"milktea_shop_employee_2.png": {
 			"frame": {
-				"x": 1,
-				"y": 661,
-				"w": 612,
-				"h": 328
+				"x": 371,
+				"y": 291,
+				"w": 368,
+				"h": 288
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			},
 			"sourceSize": {
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			}
 		},
 		"milktea_shop_employee_3.png": {
 			"frame": {
-				"x": 615,
-				"y": 661,
-				"w": 612,
-				"h": 328
+				"x": 741,
+				"y": 291,
+				"w": 368,
+				"h": 288
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			},
 			"sourceSize": {
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			}
 		},
 		"milktea_shop_employee_4.png": {
 			"frame": {
 				"x": 1,
-				"y": 991,
-				"w": 612,
-				"h": 328
+				"y": 581,
+				"w": 368,
+				"h": 288
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			},
 			"sourceSize": {
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			}
 		},
 		"milktea_shop_employee_5.png": {
 			"frame": {
-				"x": 615,
-				"y": 991,
-				"w": 612,
-				"h": 328
+				"x": 371,
+				"y": 581,
+				"w": 368,
+				"h": 288
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			},
 			"sourceSize": {
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			}
 		},
 		"milktea_shop_employee_6.png": {
 			"frame": {
-				"x": 1229,
-				"y": 1,
-				"w": 612,
-				"h": 328
+				"x": 741,
+				"y": 581,
+				"w": 368,
+				"h": 288
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			},
 			"sourceSize": {
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			}
 		},
 		"milktea_shop_employee_7.png": {
 			"frame": {
-				"x": 1229,
-				"y": 331,
-				"w": 612,
-				"h": 328
+				"x": 1111,
+				"y": 1,
+				"w": 368,
+				"h": 288
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			},
 			"sourceSize": {
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			}
 		},
 		"milktea_shop_employee_8.png": {
 			"frame": {
-				"x": 1229,
-				"y": 661,
-				"w": 612,
-				"h": 328
+				"x": 1111,
+				"y": 291,
+				"w": 368,
+				"h": 288
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			},
 			"sourceSize": {
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			}
 		},
 		"milktea_shop_employee_9.png": {
 			"frame": {
-				"x": 1229,
-				"y": 991,
-				"w": 612,
-				"h": 328
+				"x": 1111,
+				"y": 581,
+				"w": 368,
+				"h": 288
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			},
 			"sourceSize": {
-				"w": 612,
-				"h": 328
+				"w": 368,
+				"h": 288
 			}
 		}
 	},
@@ -247,8 +247,8 @@
 		"image": "spritesheet.png",
 		"format": "RGBA8888",
 		"size": {
-			"w": 1842,
-			"h": 1320
+			"w": 1480,
+			"h": 870
 		},
 		"scale": "1"
 	}
