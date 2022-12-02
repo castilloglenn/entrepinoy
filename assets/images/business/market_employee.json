@@ -4,180 +4,200 @@
 			"frame": {
 				"x": 1,
 				"y": 1,
-				"w": 572,
-				"h": 272
+				"w": 412,
+				"h": 248
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 572,
-				"h": 272
+				"w": 412,
+				"h": 248
 			},
 			"sourceSize": {
-				"w": 572,
-				"h": 272
+				"w": 412,
+				"h": 248
+			}
+		},
+		"market_employee_10.png": {
+			"frame": {
+				"x": 415,
+				"y": 1,
+				"w": 412,
+				"h": 248
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 412,
+				"h": 248
+			},
+			"sourceSize": {
+				"w": 412,
+				"h": 248
 			}
 		},
 		"market_employee_2.png": {
 			"frame": {
-				"x": 575,
-				"y": 1,
-				"w": 572,
-				"h": 272
+				"x": 1,
+				"y": 251,
+				"w": 412,
+				"h": 248
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 572,
-				"h": 272
+				"w": 412,
+				"h": 248
 			},
 			"sourceSize": {
-				"w": 572,
-				"h": 272
+				"w": 412,
+				"h": 248
 			}
 		},
 		"market_employee_3.png": {
 			"frame": {
-				"x": 1,
-				"y": 275,
-				"w": 572,
-				"h": 272
+				"x": 415,
+				"y": 251,
+				"w": 412,
+				"h": 248
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 572,
-				"h": 272
+				"w": 412,
+				"h": 248
 			},
 			"sourceSize": {
-				"w": 572,
-				"h": 272
+				"w": 412,
+				"h": 248
 			}
 		},
 		"market_employee_4.png": {
 			"frame": {
-				"x": 575,
-				"y": 275,
-				"w": 572,
-				"h": 272
+				"x": 1,
+				"y": 501,
+				"w": 412,
+				"h": 248
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 572,
-				"h": 272
+				"w": 412,
+				"h": 248
 			},
 			"sourceSize": {
-				"w": 572,
-				"h": 272
+				"w": 412,
+				"h": 248
 			}
 		},
 		"market_employee_5.png": {
 			"frame": {
-				"x": 1,
-				"y": 549,
-				"w": 572,
-				"h": 272
+				"x": 415,
+				"y": 501,
+				"w": 412,
+				"h": 248
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 572,
-				"h": 272
+				"w": 412,
+				"h": 248
 			},
 			"sourceSize": {
-				"w": 572,
-				"h": 272
+				"w": 412,
+				"h": 248
 			}
 		},
 		"market_employee_6.png": {
 			"frame": {
-				"x": 575,
-				"y": 549,
-				"w": 572,
-				"h": 272
+				"x": 1,
+				"y": 751,
+				"w": 412,
+				"h": 248
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 572,
-				"h": 272
+				"w": 412,
+				"h": 248
 			},
 			"sourceSize": {
-				"w": 572,
-				"h": 272
+				"w": 412,
+				"h": 248
 			}
 		},
 		"market_employee_7.png": {
 			"frame": {
-				"x": 1,
-				"y": 823,
-				"w": 572,
-				"h": 272
+				"x": 415,
+				"y": 751,
+				"w": 412,
+				"h": 248
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 572,
-				"h": 272
+				"w": 412,
+				"h": 248
 			},
 			"sourceSize": {
-				"w": 572,
-				"h": 272
+				"w": 412,
+				"h": 248
 			}
 		},
 		"market_employee_8.png": {
 			"frame": {
-				"x": 575,
-				"y": 823,
-				"w": 572,
-				"h": 272
+				"x": 829,
+				"y": 1,
+				"w": 412,
+				"h": 248
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 572,
-				"h": 272
+				"w": 412,
+				"h": 248
 			},
 			"sourceSize": {
-				"w": 572,
-				"h": 272
+				"w": 412,
+				"h": 248
 			}
 		},
 		"market_employee_9.png": {
 			"frame": {
-				"x": 1149,
-				"y": 1,
-				"w": 572,
-				"h": 272
+				"x": 829,
+				"y": 251,
+				"w": 412,
+				"h": 248
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 572,
-				"h": 272
+				"w": 412,
+				"h": 248
 			},
 			"sourceSize": {
-				"w": 572,
-				"h": 272
+				"w": 412,
+				"h": 248
 			}
 		}
 	},
@@ -187,8 +207,8 @@
 		"image": "spritesheet.png",
 		"format": "RGBA8888",
 		"size": {
-			"w": 1722,
-			"h": 1096
+			"w": 1242,
+			"h": 1000
 		},
 		"scale": "1"
 	}
