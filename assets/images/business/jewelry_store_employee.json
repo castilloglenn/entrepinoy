@@ -4,580 +4,400 @@
 			"frame": {
 				"x": 1,
 				"y": 1,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		},
 		"jewelry_store_employee_10.png": {
 			"frame": {
-				"x": 491,
+				"x": 483,
 				"y": 1,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		},
 		"jewelry_store_employee_11.png": {
 			"frame": {
-				"x": 981,
+				"x": 965,
 				"y": 1,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		},
 		"jewelry_store_employee_12.png": {
 			"frame": {
-				"x": 1471,
-				"y": 1,
-				"w": 488,
-				"h": 344
+				"x": 1,
+				"y": 307,
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		},
 		"jewelry_store_employee_13.png": {
 			"frame": {
-				"x": 1,
-				"y": 347,
-				"w": 488,
-				"h": 344
+				"x": 483,
+				"y": 307,
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		},
 		"jewelry_store_employee_14.png": {
 			"frame": {
-				"x": 491,
-				"y": 347,
-				"w": 488,
-				"h": 344
+				"x": 965,
+				"y": 307,
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		},
 		"jewelry_store_employee_15.png": {
 			"frame": {
-				"x": 981,
-				"y": 347,
-				"w": 488,
-				"h": 344
+				"x": 1,
+				"y": 613,
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		},
 		"jewelry_store_employee_16.png": {
 			"frame": {
-				"x": 1471,
-				"y": 347,
-				"w": 488,
-				"h": 344
+				"x": 483,
+				"y": 613,
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		},
 		"jewelry_store_employee_17.png": {
 			"frame": {
-				"x": 1,
-				"y": 693,
-				"w": 488,
-				"h": 344
+				"x": 965,
+				"y": 613,
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		},
 		"jewelry_store_employee_18.png": {
 			"frame": {
-				"x": 491,
-				"y": 693,
-				"w": 488,
-				"h": 344
+				"x": 1,
+				"y": 919,
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		},
 		"jewelry_store_employee_19.png": {
 			"frame": {
-				"x": 981,
-				"y": 693,
-				"w": 488,
-				"h": 344
+				"x": 483,
+				"y": 919,
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		},
 		"jewelry_store_employee_2.png": {
 			"frame": {
-				"x": 1471,
-				"y": 693,
-				"w": 488,
-				"h": 344
+				"x": 965,
+				"y": 919,
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		},
 		"jewelry_store_employee_20.png": {
 			"frame": {
 				"x": 1,
-				"y": 1039,
-				"w": 488,
-				"h": 344
+				"y": 1225,
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
-			}
-		},
-		"jewelry_store_employee_21.png": {
-			"frame": {
-				"x": 491,
-				"y": 1039,
-				"w": 488,
-				"h": 344
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 488,
-				"h": 344
-			},
-			"sourceSize": {
-				"w": 488,
-				"h": 344
-			}
-		},
-		"jewelry_store_employee_22.png": {
-			"frame": {
-				"x": 981,
-				"y": 1039,
-				"w": 488,
-				"h": 344
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 488,
-				"h": 344
-			},
-			"sourceSize": {
-				"w": 488,
-				"h": 344
-			}
-		},
-		"jewelry_store_employee_23.png": {
-			"frame": {
-				"x": 1471,
-				"y": 1039,
-				"w": 488,
-				"h": 344
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 488,
-				"h": 344
-			},
-			"sourceSize": {
-				"w": 488,
-				"h": 344
-			}
-		},
-		"jewelry_store_employee_24.png": {
-			"frame": {
-				"x": 1,
-				"y": 1385,
-				"w": 488,
-				"h": 344
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 488,
-				"h": 344
-			},
-			"sourceSize": {
-				"w": 488,
-				"h": 344
-			}
-		},
-		"jewelry_store_employee_25.png": {
-			"frame": {
-				"x": 491,
-				"y": 1385,
-				"w": 488,
-				"h": 344
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 488,
-				"h": 344
-			},
-			"sourceSize": {
-				"w": 488,
-				"h": 344
-			}
-		},
-		"jewelry_store_employee_26.png": {
-			"frame": {
-				"x": 981,
-				"y": 1385,
-				"w": 488,
-				"h": 344
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 488,
-				"h": 344
-			},
-			"sourceSize": {
-				"w": 488,
-				"h": 344
-			}
-		},
-		"jewelry_store_employee_27.png": {
-			"frame": {
-				"x": 1471,
-				"y": 1385,
-				"w": 488,
-				"h": 344
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 488,
-				"h": 344
-			},
-			"sourceSize": {
-				"w": 488,
-				"h": 344
-			}
-		},
-		"jewelry_store_employee_28.png": {
-			"frame": {
-				"x": 1,
-				"y": 1731,
-				"w": 488,
-				"h": 344
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 488,
-				"h": 344
-			},
-			"sourceSize": {
-				"w": 488,
-				"h": 344
-			}
-		},
-		"jewelry_store_employee_29.png": {
-			"frame": {
-				"x": 491,
-				"y": 1731,
-				"w": 488,
-				"h": 344
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 488,
-				"h": 344
-			},
-			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		},
 		"jewelry_store_employee_3.png": {
 			"frame": {
-				"x": 981,
-				"y": 1731,
-				"w": 488,
-				"h": 344
+				"x": 483,
+				"y": 1225,
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		},
 		"jewelry_store_employee_4.png": {
 			"frame": {
-				"x": 1471,
-				"y": 1731,
-				"w": 488,
-				"h": 344
+				"x": 965,
+				"y": 1225,
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		},
 		"jewelry_store_employee_5.png": {
 			"frame": {
-				"x": 1961,
+				"x": 1447,
 				"y": 1,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		},
 		"jewelry_store_employee_6.png": {
 			"frame": {
-				"x": 1961,
-				"y": 347,
-				"w": 488,
-				"h": 344
+				"x": 1447,
+				"y": 307,
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		},
 		"jewelry_store_employee_7.png": {
 			"frame": {
-				"x": 1961,
-				"y": 693,
-				"w": 488,
-				"h": 344
+				"x": 1447,
+				"y": 613,
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		},
 		"jewelry_store_employee_8.png": {
 			"frame": {
-				"x": 1961,
-				"y": 1039,
-				"w": 488,
-				"h": 344
+				"x": 1447,
+				"y": 919,
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		},
 		"jewelry_store_employee_9.png": {
 			"frame": {
-				"x": 1961,
-				"y": 1385,
-				"w": 488,
-				"h": 344
+				"x": 1447,
+				"y": 1225,
+				"w": 480,
+				"h": 304
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			},
 			"sourceSize": {
-				"w": 488,
-				"h": 344
+				"w": 480,
+				"h": 304
 			}
 		}
 	},
@@ -587,8 +407,8 @@
 		"image": "spritesheet.png",
 		"format": "RGBA8888",
 		"size": {
-			"w": 2450,
-			"h": 2076
+			"w": 1928,
+			"h": 1530
 		},
 		"scale": "1"
 	}
