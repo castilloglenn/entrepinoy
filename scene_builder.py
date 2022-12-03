@@ -589,6 +589,9 @@ class Scene:
             # Menu overlays
             self.business_menu.update()
 
+            # Check transition fading, render fade animation
+            self.main.transition.update()
+
             # Event processing
             for event in pygame.event.get():
                 if self.business_menu.enable:
