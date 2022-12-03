@@ -9,6 +9,7 @@ from game.confirm_menu import ConfirmMenu
 
 from game.debug import Debugger
 from game.library import Library
+from game.transition import Transition
 
 from scene_builder import Scene
 from region import Map
@@ -69,6 +70,15 @@ class Main:
         )
         self.display_surface.fill(self.data.colors["black"])
         self.display_surface.convert_alpha()
+
+        # Utility class
+        self.transition = Transition(
+            self,
+            transition_length=self.data.meta["intro_transition"],
+            duration_length=self.data.meta["intro_duration"],
+            display_image=self.data.meta_images["studio"],
+            hold_sfx=self.data.music["studio_intro"],
+        )
 
         # Menus
         self.sliding_menu = SlidingMenu(self)
