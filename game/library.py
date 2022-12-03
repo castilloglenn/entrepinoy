@@ -653,6 +653,16 @@ class Library:
             "size": 40,
         }
 
+        # City names
+        self.city = {
+            "location_a": "IMUS",
+            "location_b": "BACOOR",
+            "location_c": "MOLINO",
+            "location_d": "GENERAL TRIAS",
+            "location_e": "DASMARINAS",
+            "location_f": "INDANG",
+        }
+
     def get_dict_from_json(self, folder_name: str, json_name: str):
         dirname = get_dirname()
         json_path = os.path.join(dirname, folder_name, json_name)
