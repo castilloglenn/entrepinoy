@@ -63,13 +63,6 @@ class Main:
 
         self.show_studio_intro = self.data.meta["intro_show"]
 
-        # Screen surface (for transitions)
-        self.display_surface = pygame.Surface(
-            (self.data.setting["game_width"], self.data.setting["game_height"])
-        )
-        self.display_surface.fill(self.data.colors["black"])
-        self.display_surface.convert_alpha()
-
         # Menus
         self.sliding_menu = SlidingMenu(self)
         self.confirm_menu = ConfirmMenu(self)
@@ -292,6 +285,13 @@ class Main:
     def present_intro(self):
         self.intro_transition = self.data.meta["intro_transition"]
         self.intro_duration = self.data.meta["intro_duration"]
+
+        # Screen surface (for transitions)
+        self.display_surface = pygame.Surface(
+            (self.data.setting["game_width"], self.data.setting["game_height"])
+        )
+        self.display_surface.fill(self.data.colors["black"])
+        self.display_surface.convert_alpha()
 
         intro = True
         second = 0
