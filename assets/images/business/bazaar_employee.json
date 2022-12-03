@@ -5,7 +5,7 @@
 				"x": 1,
 				"y": 1,
 				"w": 544,
-				"h": 536
+				"h": 348
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -13,11 +13,11 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 536
+				"h": 348
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 536
+				"h": 348
 			}
 		},
 		"bazaar_employee_2.png": {
@@ -25,7 +25,7 @@
 				"x": 547,
 				"y": 1,
 				"w": 544,
-				"h": 536
+				"h": 348
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -33,19 +33,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 536
+				"h": 348
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 536
+				"h": 348
 			}
 		},
 		"bazaar_employee_3.png": {
 			"frame": {
 				"x": 1,
-				"y": 539,
+				"y": 351,
 				"w": 544,
-				"h": 536
+				"h": 348
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -53,19 +53,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 536
+				"h": 348
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 536
+				"h": 348
 			}
 		},
 		"bazaar_employee_4.png": {
 			"frame": {
 				"x": 547,
-				"y": 539,
+				"y": 351,
 				"w": 544,
-				"h": 536
+				"h": 348
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -73,19 +73,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 536
+				"h": 348
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 536
+				"h": 348
 			}
 		},
 		"bazaar_employee_5.png": {
 			"frame": {
 				"x": 1,
-				"y": 1077,
+				"y": 701,
 				"w": 544,
-				"h": 536
+				"h": 348
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -93,19 +93,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 536
+				"h": 348
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 536
+				"h": 348
 			}
 		},
 		"bazaar_employee_6.png": {
 			"frame": {
 				"x": 547,
-				"y": 1077,
+				"y": 701,
 				"w": 544,
-				"h": 536
+				"h": 348
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -113,11 +113,11 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 536
+				"h": 348
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 536
+				"h": 348
 			}
 		},
 		"bazaar_employee_7.png": {
@@ -125,7 +125,7 @@
 				"x": 1093,
 				"y": 1,
 				"w": 544,
-				"h": 536
+				"h": 348
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -133,19 +133,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 536
+				"h": 348
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 536
+				"h": 348
 			}
 		},
 		"bazaar_employee_8.png": {
 			"frame": {
 				"x": 1093,
-				"y": 539,
+				"y": 351,
 				"w": 544,
-				"h": 536
+				"h": 348
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -153,19 +153,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 536
+				"h": 348
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 536
+				"h": 348
 			}
 		},
 		"bazaar_employee_9.png": {
 			"frame": {
 				"x": 1093,
-				"y": 1077,
+				"y": 701,
 				"w": 544,
-				"h": 536
+				"h": 348
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -173,11 +173,11 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 536
+				"h": 348
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 536
+				"h": 348
 			}
 		}
 	},
@@ -188,7 +188,7 @@
 		"format": "RGBA8888",
 		"size": {
 			"w": 1638,
-			"h": 1614
+			"h": 1050
 		},
 		"scale": "1"
 	}
