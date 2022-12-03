@@ -228,7 +228,13 @@ class SlidingMenu:
     def main_menu_callback(self, *args):
         self.tuck()
         self.main.scene_window.update_data()
-        self.main.scene_window.running = False
+
+        if self.main.scene_window.running:
+            self.main.scene_window.running = False
+
+        if self.main.map_window.running:
+            self.main.map_window.running = False
+
         self.main.debug.log("Autosaved progress before going to main menu")
         self.main.debug.log("Exited scene via Sliding Menu")
 
