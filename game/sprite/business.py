@@ -36,6 +36,8 @@ class Business(Button):
             collide_rect=collide_rect,
             **states,
         )
+        # Hide the business object as it loads to its proper place
+        self.visible = False
 
         self.scene = scene
         self.name = name
@@ -129,6 +131,9 @@ class Business(Button):
         # Assigning important data to the None variables above
         self.reset_data()
 
+        # Showing back the business after it reconstructs everything back
+        self.visible = True
+
     def reset_data(self):
         self.progress = self.scene.main.data.progress
 
@@ -187,6 +192,9 @@ class Business(Button):
             collide_rect=collide_rect,
             **states,
         )
+        # Hide the business object as it loads to its proper place
+        self.visible = False
+
         self.scene = scene
         self.name = name
         self.time = self.scene.time
@@ -250,6 +258,9 @@ class Business(Button):
 
         # Assigning important data to the None variables above
         self.reset_data()
+
+        # Showing back the business after it reconstructs everything back
+        self.visible = True
 
     def disown_business(self):
         self.progress["businesses"][self.progress["last_location"]][self.name_code][
