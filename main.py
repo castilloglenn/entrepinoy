@@ -145,7 +145,7 @@ class Main:
         self.last_mouse_pos = None
 
         if self.show_studio_intro:
-            self.present_intro()
+            self.transition.run()
 
         # Main loop
         self.debug.log("Memory after initialization:")
@@ -288,55 +288,6 @@ class Main:
 
     def exit_callback(self, *args):
         self.close_game()
-
-    def present_intro(self):
-        self.intro_transition = self.data.meta["intro_transition"]
-        self.intro_duration = self.data.meta["intro_duration"]
-
-        intro = True
-        second = 0
-        frame_count = 0
-        alpha = 255
-        increment = (255 / self.data.setting["fps"]) / self.intro_transition
-        fade = "in"  # values: in, out, hold
-
-        self.mixer_meta_channel.play(self.data.music["studio_intro"])
-        while intro:
-            # Screen rendering
-            self.screen.blit(self.data.meta_images["studio"], (0, 0))
-            self.display_surface.set_alpha(alpha)
-
-            if fade == "in":
-                alpha -= increment
-                alpha = max(alpha, 0)
-            elif fade == "out":
-                alpha += increment
-                alpha = min(alpha, 255)
-
-            self.screen.blit(self.display_surface, (0, 0))
-
-            # Event processing
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    # Closing the game properly
-                    self.close_game()
-
-            # Updating the display
-            self.refresh_display()
-
-            frame_count += 1
-            if frame_count == self.data.setting["fps"]:
-                frame_count = 0
-                second += 1
-
-                if fade == "in" and second >= self.intro_transition:
-                    fade = "hold"
-                    second = 0
-                elif fade == "hold" and second >= self.intro_duration:
-                    fade = "out"
-                    second = 0
-                elif fade == "out" and second >= self.intro_transition:
-                    intro = False
 
     def main_loop(self):
         pygame.mixer.music.load(self.data.music["main_menu"])
