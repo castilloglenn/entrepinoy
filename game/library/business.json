@@ -189,7 +189,7 @@
 	"market": {
 		"name": "Market",
 		"image_name": "market",
-		"rel_midbottom_coordinates": [0.16, 0.72],
+		"rel_midbottom_coordinates": [0.12, 0.72],
 		"collide_rect": [0, 0, 1, 1],
 		"queuing_point": 0.5,
 		"queue_direction": "left",
@@ -202,7 +202,7 @@
 	"bazaar": {
 		"name": "Bazaar",
 		"image_name": "bazaar",
-		"rel_midbottom_coordinates": [0.27, 0.62],
+		"rel_midbottom_coordinates": [0.28, 0.66],
 		"collide_rect": [0, 0, 1, 1],
 		"queuing_point": 0.5,
 		"queue_direction": "right",
@@ -215,7 +215,7 @@
 	"restaurant": {
 		"name": "Restaurant",
 		"image_name": "restaurant",
-		"rel_midbottom_coordinates": [0.66, 0.625],
+		"rel_midbottom_coordinates": [0.70, 0.660],
 		"collide_rect": [0, 0, 0.75, 1],
 		"queuing_point": 0.5,
 		"queue_direction": "left",
@@ -228,7 +228,7 @@
 	"jewelry_store": {
 		"name": "Jewelry Store",
 		"image_name": "jewelry_store",
-		"rel_midbottom_coordinates": [0.84, 0.72],
+		"rel_midbottom_coordinates": [0.89, 0.72],
 		"collide_rect": [0, 0, 0.75, 1],
 		"queuing_point": 0.5,
 		"queue_direction": "left",
