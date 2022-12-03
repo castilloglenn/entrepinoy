@@ -145,7 +145,7 @@ class Main:
         self.last_mouse_pos = None
 
         if self.show_studio_intro:
-            self.present_intro()
+            self.transition.run()
 
         # Main loop
         self.debug.log("Memory after initialization:")
