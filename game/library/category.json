@@ -1,100 +1,88 @@
 {
-    "test_business_a" : {
-        "size" : "test",
-        "tier" : "roman number"
-    },
-    "test_business_b" : {
-        "size" : "test",
-        "tier" : "roman number"
-    },
+	"test_business_a": {
+		"size": "test",
+		"tier": "roman number"
+	},
+	"test_business_b": {
+		"size": "test",
+		"tier": "roman number"
+	},
 
+	"street_food": {
+		"size": "micro",
+		"tier": "I"
+	},
+	"sari_sari_store": {
+		"size": "micro",
+		"tier": "I"
+	},
+	"ukay_ukay": {
+		"size": "small",
+		"tier": "I"
+	},
+	"food_cart": {
+		"size": "micro",
+		"tier": "I"
+	},
 
+	"bakery": {
+		"size": "small",
+		"tier": "II"
+	},
+	"general_merchandise_store": {
+		"size": "small",
+		"tier": "II"
+	},
 
-    "street_food" : {
-        "size" : "micro",
-        "tier" : "I"
-    },
-    "sari_sari_store" : {
-        "size" : "micro",
-        "tier" : "I"
-    },
-    "ukay_ukay" : {
-        "size" : "small",
-        "tier" : "I"
-    },
-    "food_cart" : {
-        "size" : "micro",
-        "tier" : "I"
-    },
+	"cybercafe": {
+		"size": "small",
+		"tier": "III"
+	},
+	"clothing_line": {
+		"size": "medium",
+		"tier": "III"
+	},
+	"milktea_shop": {
+		"size": "medium",
+		"tier": "III"
+	},
+	"convenience_store": {
+		"size": "medium",
+		"tier": "III"
+	},
 
+	"pawnshop": {
+		"size": "medium",
+		"tier": "IV"
+	},
+	"fashion_outlet": {
+		"size": "medium",
+		"tier": "IV"
+	},
 
+	"market": {
+		"size": "small",
+		"tier": "V"
+	},
+	"bazaar": {
+		"size": "small",
+		"tier": "V"
+	},
+	"restaurant": {
+		"size": "medium",
+		"tier": "V"
+	},
+	"jewelry_store": {
+		"size": "small",
+		"tier": "V"
+	},
 
-    "bakery" : {
-        "size" : "small",
-        "tier" : "II"
-    },
-    "general_merchandise_store" : {
-        "size" : "small",
-        "tier" : "II"
-    },
-
-
-
-    "cybercafe" : {
-        "size" : "small",
-        "tier" : "III"
-    },
-    "clothing_line" : {
-        "size" : "medium",
-        "tier" : "III"
-    },
-    "milktea_shop" : {
-        "size" : "medium",
-        "tier" : "III"
-    },
-    "convenience_store" : {
-        "size" : "medium",
-        "tier" : "III"
-    },
-
-
-
-    "pawnshop" : {
-        "size" : "medium",
-        "tier" : "IV"
-    },
-    "fashion_outlet" : {
-        "size" : "medium",
-        "tier" : "IV"
-    },
-
-
-
-    "market" : {
-        "size" : "small",
-        "tier" : "V"
-    },
-    "bazaar" : {
-        "size" : "small",
-        "tier" : "V"
-    },
-    "restaurant" : {
-        "size" : "medium",
-        "tier" : "V"
-    },
-    "jewelry_store" : {
-        "size" : "small",
-        "tier" : "V"
-    },
-
-
-
-    "bank" : {
-        "size" : "large",
-        "tier" : "VI"
-    },
-    "mall" : {
-        "size" : "large",
-        "tier" : "VI"
-    }
+	"bank": {
+		"size": "large",
+		"tier": "VI"
+	},
+	"mall": {
+		"size": "large",
+		"tier": "VI"
+	}
 }

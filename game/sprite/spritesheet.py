@@ -7,16 +7,22 @@ class Spritesheet(Sprite):
     """
     This class handles the spritesheet of a moving object in a screen display.
     """
-    def __init__(self, 
-                 main,
-                 form: str,
-                 name: str, spritesheet: Surface, 
-                 meta_data: dict, fps: int, animation_rate: float, 
-                 mid_bottom_coordinates=None,
-                 center_coordinates=None,
-                 top_left_coordinates=None):
+
+    def __init__(
+        self,
+        main,
+        form: str,
+        name: str,
+        spritesheet: Surface,
+        meta_data: dict,
+        fps: int,
+        animation_rate: float,
+        mid_bottom_coordinates=None,
+        center_coordinates=None,
+        top_left_coordinates=None,
+    ):
         super().__init__()
-        
+
         self.form = form
         self.name = name
         self.main = main
@@ -34,23 +40,23 @@ class Spritesheet(Sprite):
         self.animation_tick = 0
 
         # Parsing all the sprites contained in the spritesheet
-        for index in range(len(self.data['frames'])):
-            self.sprites.append(self.fetch_sprite(f'{self.name}_{index + 1}.png'))
-        
+        for index in range(len(self.data["frames"])):
+            self.sprites.append(self.fetch_sprite(f"{self.name}_{index + 1}.png"))
+
         # Setting the standing animation for the sprite
         self.is_standing = False
         if self.form == "people":
             self.standing_sprite = self.sprites.pop()
-            
+
         self.image = self.sprites[self.sprite_index]
         self.rect = self.image.get_rect()
-        
+
         # Setting the position
         self.mid_bottom_coordinates = mid_bottom_coordinates
         self.center_coordinates = center_coordinates
         self.top_left_coordinates = top_left_coordinates
         self.is_flipped = False
-        
+
         if self.mid_bottom_coordinates is not None:
             self.rect.midbottom = self.mid_bottom_coordinates
         elif self.center_coordinates is not None:
@@ -58,15 +64,13 @@ class Spritesheet(Sprite):
         elif self.top_left_coordinates is not None:
             self.rect.topleft = self.top_left_coordinates
 
-
     def fetch_sprite(self, name):
-        sprite = self.data['frames'][name]['frame']
+        sprite = self.data["frames"][name]["frame"]
         x, y, width, height = sprite["x"], sprite["y"], sprite["w"], sprite["h"]
         image = Surface((width, height), SRCALPHA, 32)
-        image.blit(self.sprite_sheet,(0, 0),(x, y, width, height))
+        image.blit(self.sprite_sheet, (0, 0), (x, y, width, height))
         self.rect = image.get_rect()
         return image.convert_alpha()
-
 
     def update(self):
         if self.is_standing:
@@ -79,19 +83,20 @@ class Spritesheet(Sprite):
             if self.animation_tick >= self.animate_speed:
                 self.animation_tick = 0
                 self.sprite_index = (self.sprite_index + 1) % len(self.sprites)
-                
+
                 if self.is_flipped:
-                    self.image = transform.flip(self.sprites[self.sprite_index], True, False)
+                    self.image = transform.flip(
+                        self.sprites[self.sprite_index], True, False
+                    )
                 else:
                     self.image = self.sprites[self.sprite_index]
-            
+
         # Prevents the self-blitting due to the custom sprite group handles
         #   which sprite blits first based on their y-coordinates
         self.screen.blit(self.image, self.rect)
-        
-        
+
     def free(self):
         if self.form == "vehicle":
             self.main.scene_window.extra_sprites_count -= 1
-        
+
         self.kill()

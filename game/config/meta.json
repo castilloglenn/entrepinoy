@@ -1,17 +1,17 @@
 {
-    "title" : "EntrePinoy",
-    "version" : "0.0.1",
-    
-    "intro_show" : false,
-    "intro_duration" : 1,
-    "intro_transition" : 1,
+	"title": "EntrePinoy",
+	"version": "0.0.1",
 
-    "time_amplify" : 600,
-    "crowd_spawn_timeout" : 500,
-    "vehicle_min_chance" : 5,
-    "vehicle_ratio_to_crowd" : 0.20,
-    "vehicle_spawn_timeout" : 1000,
-    "memory_log_timeout" : 60000,
+	"intro_show": false,
+	"intro_duration": 1,
+	"intro_transition": 1,
 
-    "operating_hours" : 8
+	"time_amplify": 600,
+	"crowd_spawn_timeout": 500,
+	"vehicle_min_chance": 5,
+	"vehicle_ratio_to_crowd": 0.2,
+	"vehicle_spawn_timeout": 1000,
+	"memory_log_timeout": 60000,
+
+	"operating_hours": 8
 }
