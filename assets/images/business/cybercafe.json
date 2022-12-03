@@ -1,11 +1,11 @@
 {
 	"frames": {
-		"cybercafe_employee_1.png": {
+		"Cybercafe_employee_1.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -13,19 +13,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_10.png": {
+		"Cybercafe_employee_10.png": {
 			"frame": {
 				"x": 547,
 				"y": 1,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -33,19 +33,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_11.png": {
+		"Cybercafe_employee_11.png": {
 			"frame": {
 				"x": 1093,
 				"y": 1,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -53,19 +53,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_12.png": {
+		"Cybercafe_employee_12.png": {
 			"frame": {
 				"x": 1639,
 				"y": 1,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -73,19 +73,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_13.png": {
+		"Cybercafe_employee_13.png": {
 			"frame": {
 				"x": 1,
-				"y": 415,
+				"y": 355,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -93,19 +93,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_14.png": {
+		"Cybercafe_employee_14.png": {
 			"frame": {
 				"x": 547,
-				"y": 415,
+				"y": 355,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -113,19 +113,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_15.png": {
+		"Cybercafe_employee_15.png": {
 			"frame": {
 				"x": 1093,
-				"y": 415,
+				"y": 355,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -133,19 +133,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_16.png": {
+		"Cybercafe_employee_16.png": {
 			"frame": {
 				"x": 1639,
-				"y": 415,
+				"y": 355,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -153,19 +153,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_17.png": {
+		"Cybercafe_employee_17.png": {
 			"frame": {
 				"x": 1,
-				"y": 829,
+				"y": 709,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -173,19 +173,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_18.png": {
+		"Cybercafe_employee_18.png": {
 			"frame": {
 				"x": 547,
-				"y": 829,
+				"y": 709,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -193,19 +193,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_19.png": {
+		"Cybercafe_employee_19.png": {
 			"frame": {
 				"x": 1093,
-				"y": 829,
+				"y": 709,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -213,19 +213,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_2.png": {
+		"Cybercafe_employee_2.png": {
 			"frame": {
 				"x": 1639,
-				"y": 829,
+				"y": 709,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -233,19 +233,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_20.png": {
+		"Cybercafe_employee_20.png": {
 			"frame": {
 				"x": 1,
-				"y": 1243,
+				"y": 1063,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -253,19 +253,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_21.png": {
+		"Cybercafe_employee_21.png": {
 			"frame": {
 				"x": 547,
-				"y": 1243,
+				"y": 1063,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -273,19 +273,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_22.png": {
+		"Cybercafe_employee_22.png": {
 			"frame": {
 				"x": 1093,
-				"y": 1243,
+				"y": 1063,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -293,19 +293,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_23.png": {
+		"Cybercafe_employee_23.png": {
 			"frame": {
 				"x": 1639,
-				"y": 1243,
+				"y": 1063,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -313,19 +313,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_24.png": {
+		"Cybercafe_employee_24.png": {
 			"frame": {
 				"x": 1,
-				"y": 1657,
+				"y": 1417,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -333,19 +333,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_25.png": {
+		"Cybercafe_employee_25.png": {
 			"frame": {
 				"x": 547,
-				"y": 1657,
+				"y": 1417,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -353,19 +353,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_26.png": {
+		"Cybercafe_employee_26.png": {
 			"frame": {
 				"x": 1093,
-				"y": 1657,
+				"y": 1417,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -373,19 +373,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_27.png": {
+		"Cybercafe_employee_27.png": {
 			"frame": {
 				"x": 1639,
-				"y": 1657,
+				"y": 1417,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -393,19 +393,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_28.png": {
+		"Cybercafe_employee_28.png": {
 			"frame": {
 				"x": 1,
-				"y": 2071,
+				"y": 1771,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -413,19 +413,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_29.png": {
+		"Cybercafe_employee_29.png": {
 			"frame": {
 				"x": 547,
-				"y": 2071,
+				"y": 1771,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -433,19 +433,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_3.png": {
+		"Cybercafe_employee_3.png": {
 			"frame": {
 				"x": 1093,
-				"y": 2071,
+				"y": 1771,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -453,19 +453,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_4.png": {
+		"Cybercafe_employee_4.png": {
 			"frame": {
 				"x": 1639,
-				"y": 2071,
+				"y": 1771,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -473,19 +473,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_5.png": {
+		"Cybercafe_employee_5.png": {
 			"frame": {
 				"x": 2185,
 				"y": 1,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -493,19 +493,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_6.png": {
+		"Cybercafe_employee_6.png": {
 			"frame": {
 				"x": 2185,
-				"y": 415,
+				"y": 355,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -513,19 +513,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_7.png": {
+		"Cybercafe_employee_7.png": {
 			"frame": {
 				"x": 2185,
-				"y": 829,
+				"y": 709,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -533,19 +533,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_8.png": {
+		"Cybercafe_employee_8.png": {
 			"frame": {
 				"x": 2185,
-				"y": 1243,
+				"y": 1063,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -553,19 +553,19 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		},
-		"cybercafe_employee_9.png": {
+		"Cybercafe_employee_9.png": {
 			"frame": {
 				"x": 2185,
-				"y": 1657,
+				"y": 1417,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"rotated": false,
 			"trimmed": false,
@@ -573,11 +573,11 @@
 				"x": 0,
 				"y": 0,
 				"w": 544,
-				"h": 412
+				"h": 352
 			},
 			"sourceSize": {
 				"w": 544,
-				"h": 412
+				"h": 352
 			}
 		}
 	},
@@ -588,7 +588,7 @@
 		"format": "RGBA8888",
 		"size": {
 			"w": 2730,
-			"h": 2484
+			"h": 2124
 		},
 		"scale": "1"
 	}
