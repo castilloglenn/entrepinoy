@@ -162,7 +162,7 @@
 	"pawnshop": {
 		"name": "Pawnshop",
 		"image_name": "pawnshop",
-		"rel_midbottom_coordinates": [0.16, 0.72],
+		"rel_midbottom_coordinates": [0.14, 0.72],
 		"collide_rect": [0, 0, 1, 1],
 		"queuing_point": 0.5,
 		"queue_direction": "right",
@@ -175,7 +175,7 @@
 	"fashion_outlet": {
 		"name": "Fashion Outlet",
 		"image_name": "fashion_outlet",
-		"rel_midbottom_coordinates": [0.84, 0.72],
+		"rel_midbottom_coordinates": [0.735, 0.67],
 		"collide_rect": [0, 0, 0.75, 1],
 		"queuing_point": 0.5,
 		"queue_direction": "left",
