@@ -44,6 +44,7 @@ class Transition:
         self.HOLD = 1
         self.FADE_OUT = 2
         self.UNFADE = 3
+        self.FINISHED = 4
         self.STATE = self.FADE_IN  # Initial state (At intro)
 
         # Instance variables

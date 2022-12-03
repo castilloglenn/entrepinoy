@@ -156,6 +156,7 @@ class Main:
 
         if self.show_studio_intro:
             self.transition.run()
+            self.transition.change_state(self.transition.FINISHED)
 
         # Main loop
         self.debug.log("Memory after initialization:")
