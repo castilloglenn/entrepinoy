@@ -12,7 +12,7 @@ mkdir release\alpha\entrepinoy\assets
 xcopy /e assets release\alpha\entrepinoy\assets\
 mkdir release\alpha\entrepinoy\game
 xcopy /e game release\alpha\entrepinoy\game\
-xcopy map.py release\alpha\entrepinoy
+xcopy region.py release\alpha\entrepinoy
 xcopy scene_builder.py release\alpha\entrepinoy
 xcopy setting.py release\alpha\entrepinoy
 cd release\alpha\entrepinoy
