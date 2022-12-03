@@ -5,5 +5,5 @@
     "autosave_timeout": 5000,
     "bgm": 0.0,
     "sfx": 0.0,
-    "full_screen": false
+    "full_screen": true
 }
