@@ -144,9 +144,6 @@ class Main:
         # Mouse related variable
         self.last_mouse_pos = None
 
-        # Introduction TODO temporarily disabled
-        self.intro_duration = self.data.meta["intro_duration"]
-        self.intro_transition = self.data.meta["intro_transition"]
         if self.show_studio_intro:
             self.present_intro()
 
@@ -293,6 +290,9 @@ class Main:
         self.close_game()
 
     def present_intro(self):
+        self.intro_transition = self.data.meta["intro_transition"]
+        self.intro_duration = self.data.meta["intro_duration"]
+
         intro = True
         second = 0
         frame_count = 0
