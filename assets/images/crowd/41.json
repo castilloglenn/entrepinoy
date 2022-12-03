@@ -1,183 +1,183 @@
 {
 	"frames": {
-		"bazaar_employee_1.png": {
+		"41_1.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
-				"w": 544,
-				"h": 348
+				"w": 63,
+				"h": 114
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 544,
-				"h": 348
+				"w": 63,
+				"h": 114
 			},
 			"sourceSize": {
-				"w": 544,
-				"h": 348
+				"w": 63,
+				"h": 114
 			}
 		},
-		"bazaar_employee_2.png": {
+		"41_2.png": {
 			"frame": {
-				"x": 547,
+				"x": 66,
 				"y": 1,
-				"w": 544,
-				"h": 348
+				"w": 63,
+				"h": 114
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 544,
-				"h": 348
+				"w": 63,
+				"h": 114
 			},
 			"sourceSize": {
-				"w": 544,
-				"h": 348
+				"w": 63,
+				"h": 114
 			}
 		},
-		"bazaar_employee_3.png": {
+		"41_3.png": {
+			"frame": {
+				"x": 131,
+				"y": 1,
+				"w": 63,
+				"h": 114
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 63,
+				"h": 114
+			},
+			"sourceSize": {
+				"w": 63,
+				"h": 114
+			}
+		},
+		"41_4.png": {
+			"frame": {
+				"x": 196,
+				"y": 1,
+				"w": 63,
+				"h": 114
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 63,
+				"h": 114
+			},
+			"sourceSize": {
+				"w": 63,
+				"h": 114
+			}
+		},
+		"41_5.png": {
 			"frame": {
 				"x": 1,
-				"y": 351,
-				"w": 544,
-				"h": 348
+				"y": 117,
+				"w": 63,
+				"h": 114
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 544,
-				"h": 348
+				"w": 63,
+				"h": 114
 			},
 			"sourceSize": {
-				"w": 544,
-				"h": 348
+				"w": 63,
+				"h": 114
 			}
 		},
-		"bazaar_employee_4.png": {
+		"41_6.png": {
 			"frame": {
-				"x": 547,
-				"y": 351,
-				"w": 544,
-				"h": 348
+				"x": 66,
+				"y": 117,
+				"w": 63,
+				"h": 114
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 544,
-				"h": 348
+				"w": 63,
+				"h": 114
 			},
 			"sourceSize": {
-				"w": 544,
-				"h": 348
+				"w": 63,
+				"h": 114
 			}
 		},
-		"bazaar_employee_5.png": {
+		"41_7.png": {
 			"frame": {
-				"x": 1,
-				"y": 701,
-				"w": 544,
-				"h": 348
+				"x": 131,
+				"y": 117,
+				"w": 63,
+				"h": 114
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 544,
-				"h": 348
+				"w": 63,
+				"h": 114
 			},
 			"sourceSize": {
-				"w": 544,
-				"h": 348
+				"w": 63,
+				"h": 114
 			}
 		},
-		"bazaar_employee_6.png": {
+		"41_8.png": {
 			"frame": {
-				"x": 547,
-				"y": 701,
-				"w": 544,
-				"h": 348
+				"x": 196,
+				"y": 117,
+				"w": 63,
+				"h": 114
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 544,
-				"h": 348
+				"w": 63,
+				"h": 114
 			},
 			"sourceSize": {
-				"w": 544,
-				"h": 348
+				"w": 63,
+				"h": 114
 			}
 		},
-		"bazaar_employee_7.png": {
+		"41_9.png": {
 			"frame": {
-				"x": 1093,
+				"x": 261,
 				"y": 1,
-				"w": 544,
-				"h": 348
+				"w": 63,
+				"h": 114
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 544,
-				"h": 348
+				"w": 63,
+				"h": 114
 			},
 			"sourceSize": {
-				"w": 544,
-				"h": 348
-			}
-		},
-		"bazaar_employee_8.png": {
-			"frame": {
-				"x": 1093,
-				"y": 351,
-				"w": 544,
-				"h": 348
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 544,
-				"h": 348
-			},
-			"sourceSize": {
-				"w": 544,
-				"h": 348
-			}
-		},
-		"bazaar_employee_9.png": {
-			"frame": {
-				"x": 1093,
-				"y": 701,
-				"w": 544,
-				"h": 348
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 544,
-				"h": 348
-			},
-			"sourceSize": {
-				"w": 544,
-				"h": 348
+				"w": 63,
+				"h": 114
 			}
 		}
 	},
@@ -187,8 +187,8 @@
 		"image": "spritesheet.png",
 		"format": "RGBA8888",
 		"size": {
-			"w": 1638,
-			"h": 1050
+			"w": 325,
+			"h": 232
 		},
 		"scale": "1"
 	}
