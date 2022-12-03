@@ -66,7 +66,7 @@ class SlidingMenu:
             **{
                 "idle": self.main.data.meta_images["sliding_menu_button_idle"],
                 "hovered": self.main.data.meta_images["sliding_menu_button_hovered"],
-            }
+            },
         )
 
         # MENU ICON BUTTONS
@@ -78,7 +78,7 @@ class SlidingMenu:
                 "outline": self.main.data.meta_images["map_button_outline"],
                 "disabled": self.main.data.meta_images["map_button_disabled"],
                 "tooltip": ["Region Map"],
-            }
+            },
         )
         self.mission_button = Button(
             self.main,
@@ -88,7 +88,7 @@ class SlidingMenu:
                 "outline": self.main.data.meta_images["mission_button_outline"],
                 "disabled": self.main.data.meta_images["mission_button_disabled"],
                 "tooltip": ["Missions"],
-            }
+            },
         )
         self.event_button = Button(
             self.main,
@@ -98,7 +98,7 @@ class SlidingMenu:
                 "outline": self.main.data.meta_images["events_button_outline"],
                 "disabled": self.main.data.meta_images["events_button_disabled"],
                 "tooltip": ["Events"],
-            }
+            },
         )
 
         self.bank_button = Button(
@@ -109,7 +109,7 @@ class SlidingMenu:
                 "outline": self.main.data.meta_images["bank_button_outline"],
                 "disabled": self.main.data.meta_images["bank_button_disabled"],
                 "tooltip": ["Bank"],
-            }
+            },
         )
         self.part_time_button = Button(
             self.main,
@@ -119,7 +119,7 @@ class SlidingMenu:
                 "outline": self.main.data.meta_images["part_time_outline"],
                 "disabled": self.main.data.meta_images["map_button_disabled"],
                 "tooltip": ["Part Time"],
-            }
+            },
         )
 
         self.news_button = Button(
@@ -130,7 +130,7 @@ class SlidingMenu:
                 "outline": self.main.data.meta_images["news_button_outline"],
                 "disabled": self.main.data.meta_images["news_button_disabled"],
                 "tooltip": ["News"],
-            }
+            },
         )
         self.crypto_button = Button(
             self.main,
@@ -140,7 +140,7 @@ class SlidingMenu:
                 "outline": self.main.data.meta_images["crypto_button_outline"],
                 "disabled": self.main.data.meta_images["crypto_button_disabled"],
                 "tooltip": ["Crypto", "Market"],
-            }
+            },
         )
         self.stock_button = Button(
             self.main,
@@ -150,7 +150,7 @@ class SlidingMenu:
                 "outline": self.main.data.meta_images["stock_button_outline"],
                 "disabled": self.main.data.meta_images["stock_button_disabled"],
                 "tooltip": ["Stock", "Market"],
-            }
+            },
         )
 
         self.achievement_button = Button(
@@ -161,7 +161,7 @@ class SlidingMenu:
                 "outline": self.main.data.meta_images["achievement_button_outline"],
                 "disabled": self.main.data.meta_images["achievement_button_disabled"],
                 "tooltip": ["Achievements"],
-            }
+            },
         )
         self.setting_button = Button(
             self.main,
@@ -171,7 +171,7 @@ class SlidingMenu:
                 "outline": self.main.data.meta_images["setting_button_outline"],
                 "disabled": self.main.data.meta_images["setting_button_disabled"],
                 "tooltip": ["Setting"],
-            }
+            },
         )
         self.main_menu_button = Button(
             self.main,
@@ -181,7 +181,7 @@ class SlidingMenu:
                 "outline": self.main.data.meta_images["main_menu_button_outline"],
                 "disabled": self.main.data.meta_images["map_button_disabled"],
                 "tooltip": ["Return to", "main menu"],
-            }
+            },
         )
 
         # TODO This measures attribute is for reference only
@@ -367,9 +367,10 @@ class SlidingMenu:
         if not self.enable:
             return
 
-        # Screen dimming
-        self.main.display_surface.set_alpha(self.dim_intensity)
-        self.main.screen.blit(self.main.display_surface, (0, 0))
+        if self.is_moving or not self.is_tucked:
+            # Screen dimming
+            self.main.display_surface.set_alpha(self.dim_intensity)
+            self.main.screen.blit(self.main.display_surface, (0, 0))
 
         if self.is_moving:
             if self.is_tucked:
