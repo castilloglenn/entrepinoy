@@ -632,6 +632,7 @@ class Library:
             "button_hovered": self.get_sfx("UI_Quirky20.mp3"),
             "button_clicked": self.get_sfx("UI-Quirky_37.mp3"),
             "earn_coins": self.get_sfx("Coins2.mp3"),
+            "engine_start": self.get_sfx("Car Engine Starting Sound Effect.mp3"),
         }
 
         # Fonts
