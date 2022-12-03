@@ -21,8 +21,11 @@ class Map:
         self.background = SceneBackground(
             self.main.screen,
             self.main.scene_window.time,
-            **self.main.data.map["region"]
+            **self.main.data.map["region"],
         )
+        self.transition_background = self.main.data.meta_images[
+            "window_background"
+        ].convert_alpha()
 
         # Location overlays
         self.location_a_button = Button(
@@ -33,7 +36,7 @@ class Map:
             **{
                 "idle": self.main.data.map["base_hover"],
                 "hovered": self.main.data.map["outline"]["location_a"],
-            }
+            },
         )
         self.location_b_button = Button(
             self.main,
@@ -43,7 +46,7 @@ class Map:
             **{
                 "idle": self.main.data.map["base_hover"],
                 "hovered": self.main.data.map["outline"]["location_b"],
-            }
+            },
         )
         self.location_c_button = Button(
             self.main,
@@ -53,7 +56,7 @@ class Map:
             **{
                 "idle": self.main.data.map["base_hover"],
                 "hovered": self.main.data.map["outline"]["location_c"],
-            }
+            },
         )
         self.location_d_button = Button(
             self.main,
@@ -63,7 +66,7 @@ class Map:
             **{
                 "idle": self.main.data.map["base_hover"],
                 "hovered": self.main.data.map["outline"]["location_d"],
-            }
+            },
         )
         self.location_e_button = Button(
             self.main,
@@ -73,7 +76,7 @@ class Map:
             **{
                 "idle": self.main.data.map["base_hover"],
                 "hovered": self.main.data.map["outline"]["location_e"],
-            }
+            },
         )
         self.location_f_button = Button(
             self.main,
@@ -83,7 +86,7 @@ class Map:
             **{
                 "idle": self.main.data.map["base_hover"],
                 "hovered": self.main.data.map["outline"]["location_f"],
-            }
+            },
         )
 
         # Objects Add
@@ -119,6 +122,17 @@ class Map:
 
             self.main.sliding_menu.tuck()
             self.main.scene_window.update_data()
+
+            self.main.transition.setup_and_run(
+                transition_length=0.5,
+                duration_length=3,
+                display_image=self.transition_background,
+                hold_sfx=self.main.data.music["engine_start"],
+                center_message=[
+                    f"Travelling to {self.main.data.city[new_location]}..."
+                ],
+            )
+
             self.main.scene_window.reconstruct(self.main)
 
         self.running = False
