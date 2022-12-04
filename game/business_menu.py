@@ -209,8 +209,8 @@ class BusinessMenu:
                     "upgrades_button_disabled"
                 ].convert_alpha(),
                 "tooltip": [
-                    "Upgrade your business's attributes",
-                    "to boost overall production.",
+                    "Increase your sales by investing on",
+                    "bigger and latest products.",
                 ],
             },
         )
