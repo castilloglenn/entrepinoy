@@ -82,7 +82,7 @@
 	"bakery": {
 		"name": "Bakery",
 		"image_name": "bakery",
-		"rel_midbottom_coordinates": [0.30, 0.70],
+		"rel_midbottom_coordinates": [0.21, 0.72],
 		"collide_rect": [0, 0, 1, 1],
 		"queuing_point": 0.5,
 		"queue_direction": "right",
@@ -95,7 +95,7 @@
 	"general_merchandise_store": {
 		"name": "General Merchandise Store",
 		"image_name": "general_merchandise_store",
-		"rel_midbottom_coordinates": [0.84, 0.72],
+		"rel_midbottom_coordinates": [0.62, 0.72],
 		"collide_rect": [0, 0, 0.75, 1],
 		"queuing_point": 0.5,
 		"queue_direction": "left",

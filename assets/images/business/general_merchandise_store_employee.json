@@ -4,300 +4,200 @@
 			"frame": {
 				"x": 1,
 				"y": 1,
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			},
 			"sourceSize": {
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			}
 		},
 		"general_merchandise_store_employee_10.png": {
 			"frame": {
-				"x": 739,
+				"x": 515,
 				"y": 1,
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			},
 			"sourceSize": {
-				"w": 736,
-				"h": 356
-			}
-		},
-		"general_merchandise_store_employee_11.png": {
-			"frame": {
-				"x": 1,
-				"y": 359,
-				"w": 736,
-				"h": 356
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 736,
-				"h": 356
-			},
-			"sourceSize": {
-				"w": 736,
-				"h": 356
-			}
-		},
-		"general_merchandise_store_employee_12.png": {
-			"frame": {
-				"x": 739,
-				"y": 359,
-				"w": 736,
-				"h": 356
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 736,
-				"h": 356
-			},
-			"sourceSize": {
-				"w": 736,
-				"h": 356
-			}
-		},
-		"general_merchandise_store_employee_13.png": {
-			"frame": {
-				"x": 1,
-				"y": 717,
-				"w": 736,
-				"h": 356
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 736,
-				"h": 356
-			},
-			"sourceSize": {
-				"w": 736,
-				"h": 356
-			}
-		},
-		"general_merchandise_store_employee_14.png": {
-			"frame": {
-				"x": 739,
-				"y": 717,
-				"w": 736,
-				"h": 356
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 736,
-				"h": 356
-			},
-			"sourceSize": {
-				"w": 736,
-				"h": 356
-			}
-		},
-		"general_merchandise_store_employee_15.png": {
-			"frame": {
-				"x": 1,
-				"y": 1075,
-				"w": 736,
-				"h": 356
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 736,
-				"h": 356
-			},
-			"sourceSize": {
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			}
 		},
 		"general_merchandise_store_employee_2.png": {
 			"frame": {
-				"x": 739,
-				"y": 1075,
-				"w": 736,
-				"h": 356
+				"x": 1,
+				"y": 331,
+				"w": 512,
+				"h": 328
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			},
 			"sourceSize": {
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			}
 		},
 		"general_merchandise_store_employee_3.png": {
 			"frame": {
-				"x": 1,
-				"y": 1433,
-				"w": 736,
-				"h": 356
+				"x": 515,
+				"y": 331,
+				"w": 512,
+				"h": 328
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			},
 			"sourceSize": {
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			}
 		},
 		"general_merchandise_store_employee_4.png": {
 			"frame": {
-				"x": 739,
-				"y": 1433,
-				"w": 736,
-				"h": 356
+				"x": 1,
+				"y": 661,
+				"w": 512,
+				"h": 328
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			},
 			"sourceSize": {
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			}
 		},
 		"general_merchandise_store_employee_5.png": {
 			"frame": {
-				"x": 1477,
-				"y": 1,
-				"w": 736,
-				"h": 356
+				"x": 515,
+				"y": 661,
+				"w": 512,
+				"h": 328
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			},
 			"sourceSize": {
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			}
 		},
 		"general_merchandise_store_employee_6.png": {
 			"frame": {
-				"x": 1477,
-				"y": 359,
-				"w": 736,
-				"h": 356
+				"x": 1029,
+				"y": 1,
+				"w": 512,
+				"h": 328
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			},
 			"sourceSize": {
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			}
 		},
 		"general_merchandise_store_employee_7.png": {
 			"frame": {
-				"x": 1477,
-				"y": 717,
-				"w": 736,
-				"h": 356
+				"x": 1029,
+				"y": 331,
+				"w": 512,
+				"h": 328
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			},
 			"sourceSize": {
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			}
 		},
 		"general_merchandise_store_employee_8.png": {
 			"frame": {
-				"x": 1477,
-				"y": 1075,
-				"w": 736,
-				"h": 356
+				"x": 1029,
+				"y": 661,
+				"w": 512,
+				"h": 328
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			},
 			"sourceSize": {
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			}
 		},
 		"general_merchandise_store_employee_9.png": {
 			"frame": {
-				"x": 1477,
-				"y": 1433,
-				"w": 736,
-				"h": 356
+				"x": 1,
+				"y": 991,
+				"w": 512,
+				"h": 328
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			},
 			"sourceSize": {
-				"w": 736,
-				"h": 356
+				"w": 512,
+				"h": 328
 			}
 		}
 	},
@@ -307,8 +207,8 @@
 		"image": "spritesheet.png",
 		"format": "RGBA8888",
 		"size": {
-			"w": 2214,
-			"h": 1790
+			"w": 1542,
+			"h": 1320
 		},
 		"scale": "1"
 	}
