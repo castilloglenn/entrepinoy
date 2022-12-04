@@ -169,7 +169,9 @@ class Business(Button):
             self.name_code
         ]["has_employee"]
 
+        self.visible = False
         super().update()
+        self.visible = True
 
     def reconstruct(
         self,
