@@ -461,17 +461,16 @@ class Library:
                     ),
                 },
             },
-            # TODO Kulang pa ng image assets ito, placeholder lamang ang fish balls
             "convenience_store": {
-                "idle": self.get_image("business", "fish_ball_stand_idle.png"),
-                "closed": self.get_image("business", "fish_ball_stand_closed.png"),
-                "outline": self.get_image("business", "fish_ball_stand_outline.png"),
+                "idle": self.get_image("business", "convinience_store_idle.png"),
+                "closed": self.get_image("business", "convinience_store_closed.png"),
+                "outline": self.get_image("business", "convinience_store_outline.png"),
                 "employee": {
                     "spritesheet": self.get_image(
-                        "business", "fish_ball_stand_employee.png"
+                        "business", "convinience_store_employee.png"
                     ),
                     "json": self.get_dict_from_spritesheet(
-                        "business", "fish_ball_stand_employee.json"
+                        "business", "convinience_store_employee.json"
                     ),
                 },
             },
