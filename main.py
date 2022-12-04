@@ -87,10 +87,11 @@ class Main:
 
         # Setting up other windows
         self.scene_window = None
+        self.map_window = None
         if self.data.progress is not None:
             self.scene_window = Scene(self)
+            self.map_window = Map(self)
         self.setting_window = Setting(self)
-        self.map_window = Map(self)
 
         # Sprites and sprite groups
         self.buttons = pygame.sprite.Group()
@@ -281,12 +282,16 @@ class Main:
 
     def create_new_game(self):
         self.debug.log("Create new game entered")
+        # NOTE TO BE OVERRIDEN BY THE USER'S CHOICE IN THE BEGINNING
         self.data.create_new_save_file("buko_stall")
 
         if self.scene_window is None:
             self.scene_window = Scene(self)
         else:
             self.scene_window.reconstruct(self)
+
+        if self.map_window is None:
+            self.map_window = Map(self)
         self.scene_window.run()
 
     def continue_game(self, *args):
