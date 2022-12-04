@@ -184,8 +184,14 @@ class Scene:
         self.main.sliding_menu.sliding_menu_button.add(self.buttons)
         # Loop out the businesses then add them after this line to make the buttons
         #   discovered first before the layer of businesses
+
         for business in self.business_data:
-            business["object"].add(self.buttons)
+            if business["object"].visible and business["meta"]["placement"] == "front":
+                business["object"].add(self.buttons)
+
+        for business in self.business_data:
+            if business["object"].visible and business["meta"]["placement"] == "back":
+                business["object"].add(self.buttons)
 
         self.debug_message.add(self.ui_components)
 
@@ -314,12 +320,17 @@ class Scene:
         #   in the business_data dictionary object
         for button in self.buttons:
             button.remove(self.buttons)
+        self.buttons = pygame.sprite.Group()
 
         self.profile_holder.add(self.buttons)
         self.main.sliding_menu.sliding_menu_button.add(self.buttons)
 
         for business in self.business_data:
-            if business["object"].visible:
+            if business["object"].visible and business["meta"]["placement"] == "front":
+                business["object"].add(self.buttons)
+
+        for business in self.business_data:
+            if business["object"].visible and business["meta"]["placement"] == "back":
                 business["object"].add(self.buttons)
 
         for sprite in self.general_sprites:
