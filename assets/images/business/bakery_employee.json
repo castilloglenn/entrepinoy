@@ -4,180 +4,200 @@
 			"frame": {
 				"x": 1,
 				"y": 1,
-				"w": 840,
-				"h": 436
+				"w": 540,
+				"h": 272
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 840,
-				"h": 436
+				"w": 540,
+				"h": 272
 			},
 			"sourceSize": {
-				"w": 840,
-				"h": 436
+				"w": 540,
+				"h": 272
+			}
+		},
+		"bakery_employee_10.png": {
+			"frame": {
+				"x": 543,
+				"y": 1,
+				"w": 540,
+				"h": 272
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 540,
+				"h": 272
+			},
+			"sourceSize": {
+				"w": 540,
+				"h": 272
 			}
 		},
 		"bakery_employee_2.png": {
 			"frame": {
-				"x": 843,
-				"y": 1,
-				"w": 840,
-				"h": 436
+				"x": 1,
+				"y": 275,
+				"w": 540,
+				"h": 272
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 840,
-				"h": 436
+				"w": 540,
+				"h": 272
 			},
 			"sourceSize": {
-				"w": 840,
-				"h": 436
+				"w": 540,
+				"h": 272
 			}
 		},
 		"bakery_employee_3.png": {
 			"frame": {
-				"x": 1,
-				"y": 439,
-				"w": 840,
-				"h": 436
+				"x": 543,
+				"y": 275,
+				"w": 540,
+				"h": 272
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 840,
-				"h": 436
+				"w": 540,
+				"h": 272
 			},
 			"sourceSize": {
-				"w": 840,
-				"h": 436
+				"w": 540,
+				"h": 272
 			}
 		},
 		"bakery_employee_4.png": {
 			"frame": {
-				"x": 843,
-				"y": 439,
-				"w": 840,
-				"h": 436
+				"x": 1,
+				"y": 549,
+				"w": 540,
+				"h": 272
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 840,
-				"h": 436
+				"w": 540,
+				"h": 272
 			},
 			"sourceSize": {
-				"w": 840,
-				"h": 436
+				"w": 540,
+				"h": 272
 			}
 		},
 		"bakery_employee_5.png": {
 			"frame": {
-				"x": 1,
-				"y": 877,
-				"w": 840,
-				"h": 436
+				"x": 543,
+				"y": 549,
+				"w": 540,
+				"h": 272
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 840,
-				"h": 436
+				"w": 540,
+				"h": 272
 			},
 			"sourceSize": {
-				"w": 840,
-				"h": 436
+				"w": 540,
+				"h": 272
 			}
 		},
 		"bakery_employee_6.png": {
 			"frame": {
-				"x": 843,
-				"y": 877,
-				"w": 840,
-				"h": 436
+				"x": 1,
+				"y": 823,
+				"w": 540,
+				"h": 272
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 840,
-				"h": 436
+				"w": 540,
+				"h": 272
 			},
 			"sourceSize": {
-				"w": 840,
-				"h": 436
+				"w": 540,
+				"h": 272
 			}
 		},
 		"bakery_employee_7.png": {
 			"frame": {
-				"x": 1,
-				"y": 1315,
-				"w": 840,
-				"h": 436
+				"x": 543,
+				"y": 823,
+				"w": 540,
+				"h": 272
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 840,
-				"h": 436
+				"w": 540,
+				"h": 272
 			},
 			"sourceSize": {
-				"w": 840,
-				"h": 436
+				"w": 540,
+				"h": 272
 			}
 		},
 		"bakery_employee_8.png": {
 			"frame": {
-				"x": 843,
-				"y": 1315,
-				"w": 840,
-				"h": 436
+				"x": 1085,
+				"y": 1,
+				"w": 540,
+				"h": 272
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 840,
-				"h": 436
+				"w": 540,
+				"h": 272
 			},
 			"sourceSize": {
-				"w": 840,
-				"h": 436
+				"w": 540,
+				"h": 272
 			}
 		},
 		"bakery_employee_9.png": {
 			"frame": {
-				"x": 1685,
-				"y": 1,
-				"w": 840,
-				"h": 436
+				"x": 1085,
+				"y": 275,
+				"w": 540,
+				"h": 272
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 840,
-				"h": 436
+				"w": 540,
+				"h": 272
 			},
 			"sourceSize": {
-				"w": 840,
-				"h": 436
+				"w": 540,
+				"h": 272
 			}
 		}
 	},
@@ -187,8 +207,8 @@
 		"image": "spritesheet.png",
 		"format": "RGBA8888",
 		"size": {
-			"w": 2526,
-			"h": 1752
+			"w": 1626,
+			"h": 1096
 		},
 		"scale": "1"
 	}
