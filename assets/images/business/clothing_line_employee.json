@@ -4,400 +4,400 @@
 			"frame": {
 				"x": 1,
 				"y": 1,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		},
 		"clothing_line_employee_10.png": {
 			"frame": {
-				"x": 501,
+				"x": 667,
 				"y": 1,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		},
 		"clothing_line_employee_11.png": {
 			"frame": {
-				"x": 1001,
+				"x": 1333,
 				"y": 1,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		},
 		"clothing_line_employee_12.png": {
 			"frame": {
 				"x": 1,
-				"y": 378,
-				"w": 498,
-				"h": 375
+				"y": 471,
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		},
 		"clothing_line_employee_13.png": {
 			"frame": {
-				"x": 501,
-				"y": 378,
-				"w": 498,
-				"h": 375
+				"x": 667,
+				"y": 471,
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		},
 		"clothing_line_employee_14.png": {
 			"frame": {
-				"x": 1001,
-				"y": 378,
-				"w": 498,
-				"h": 375
+				"x": 1333,
+				"y": 471,
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		},
 		"clothing_line_employee_15.png": {
 			"frame": {
 				"x": 1,
-				"y": 755,
-				"w": 498,
-				"h": 375
+				"y": 941,
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		},
 		"clothing_line_employee_16.png": {
 			"frame": {
-				"x": 501,
-				"y": 755,
-				"w": 498,
-				"h": 375
+				"x": 667,
+				"y": 941,
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		},
 		"clothing_line_employee_17.png": {
 			"frame": {
-				"x": 1001,
-				"y": 755,
-				"w": 498,
-				"h": 375
+				"x": 1333,
+				"y": 941,
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		},
 		"clothing_line_employee_18.png": {
 			"frame": {
 				"x": 1,
-				"y": 1132,
-				"w": 498,
-				"h": 375
+				"y": 1411,
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		},
 		"clothing_line_employee_19.png": {
 			"frame": {
-				"x": 501,
-				"y": 1132,
-				"w": 498,
-				"h": 375
+				"x": 667,
+				"y": 1411,
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		},
 		"clothing_line_employee_2.png": {
 			"frame": {
-				"x": 1001,
-				"y": 1132,
-				"w": 498,
-				"h": 375
+				"x": 1333,
+				"y": 1411,
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		},
 		"clothing_line_employee_20.png": {
 			"frame": {
 				"x": 1,
-				"y": 1509,
-				"w": 498,
-				"h": 375
+				"y": 1881,
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		},
 		"clothing_line_employee_3.png": {
 			"frame": {
-				"x": 501,
-				"y": 1509,
-				"w": 498,
-				"h": 375
+				"x": 667,
+				"y": 1881,
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		},
 		"clothing_line_employee_4.png": {
 			"frame": {
-				"x": 1001,
-				"y": 1509,
-				"w": 498,
-				"h": 375
+				"x": 1333,
+				"y": 1881,
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		},
 		"clothing_line_employee_5.png": {
 			"frame": {
-				"x": 1501,
+				"x": 1999,
 				"y": 1,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		},
 		"clothing_line_employee_6.png": {
 			"frame": {
-				"x": 1501,
-				"y": 378,
-				"w": 498,
-				"h": 375
+				"x": 1999,
+				"y": 471,
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		},
 		"clothing_line_employee_7.png": {
 			"frame": {
-				"x": 1501,
-				"y": 755,
-				"w": 498,
-				"h": 375
+				"x": 1999,
+				"y": 941,
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		},
 		"clothing_line_employee_8.png": {
 			"frame": {
-				"x": 1501,
-				"y": 1132,
-				"w": 498,
-				"h": 375
+				"x": 1999,
+				"y": 1411,
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		},
 		"clothing_line_employee_9.png": {
 			"frame": {
-				"x": 1501,
-				"y": 1509,
-				"w": 498,
-				"h": 375
+				"x": 1999,
+				"y": 1881,
+				"w": 664,
+				"h": 468
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			},
 			"sourceSize": {
-				"w": 498,
-				"h": 375
+				"w": 664,
+				"h": 468
 			}
 		}
 	},
@@ -407,8 +407,8 @@
 		"image": "spritesheet.png",
 		"format": "RGBA8888",
 		"size": {
-			"w": 2000,
-			"h": 1885
+			"w": 2664,
+			"h": 2350
 		},
 		"scale": "1"
 	}
