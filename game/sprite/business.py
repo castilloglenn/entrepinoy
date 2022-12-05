@@ -169,8 +169,6 @@ class Business(Button):
             self.name_code
         ]["has_employee"]
 
-        super().update()
-
     def reconstruct(
         self,
         scene,

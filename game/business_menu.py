@@ -193,7 +193,7 @@ class BusinessMenu:
                 ],
             },
         )
-        self.upgrades_button = Button(
+        self.upgrade_button = Button(
             self.main,
             self.upgrades_button_callback,
             top_left_coordinates=(
@@ -201,16 +201,16 @@ class BusinessMenu:
                 int(self.canvas_rect.height * 0.775) + self.canvas_rect.y,
             ),
             **{
-                "idle": self.main.data.scene["upgrades_button_idle"].convert_alpha(),
+                "idle": self.main.data.scene["upgrade_button_idle"].convert_alpha(),
                 "outline": self.main.data.scene[
-                    "upgrades_button_hovered"
+                    "upgrade_button_hovered"
                 ].convert_alpha(),
                 "disabled": self.main.data.scene[
-                    "upgrades_button_disabled"
+                    "upgrade_button_disabled"
                 ].convert_alpha(),
                 "tooltip": [
-                    "Upgrade your business's attributes",
-                    "to boost overall production.",
+                    "Increase your sales by investing on",
+                    "bigger and latest products.",
                 ],
             },
         )
@@ -405,7 +405,7 @@ class BusinessMenu:
             self.collect_sales_button.visible = True
 
             self.sell_business_button.set_disabled(False)
-            self.upgrades_button.set_disabled(False)
+            self.upgrade_button.set_disabled(False)
 
             # For the collect sales button
             if self.get_sales() <= 0:
@@ -432,7 +432,7 @@ class BusinessMenu:
             self.start_business_button.set_disabled(True)
             self.hire_employee_button.set_disabled(True)
             self.sell_business_button.set_disabled(True)
-            self.upgrades_button.set_disabled(True)
+            self.upgrade_button.set_disabled(True)
 
     def parse_seconds_to_data(self, seconds):
         hour = 0
@@ -575,7 +575,7 @@ class BusinessMenu:
         self.sell_business_button.add(
             self.objects, self.buttons, self.hoverable_buttons, self.tooltips
         )
-        self.upgrades_button.add(
+        self.upgrade_button.add(
             self.objects, self.buttons, self.hoverable_buttons, self.tooltips
         )
 

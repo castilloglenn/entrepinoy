@@ -261,12 +261,12 @@ class Library:
             "collect_sales_button_disabled": self.get_image(
                 "scene", "collect_sales_button_disabled.png"
             ),
-            "upgrades_button_idle": self.get_image("scene", "upgrades_button_idle.png"),
-            "upgrades_button_hovered": self.get_image(
-                "scene", "upgrades_button_hovered.png"
+            "upgrade_button_idle": self.get_image("scene", "upgrade_button_idle.png"),
+            "upgrade_button_hovered": self.get_image(
+                "scene", "upgrade_button_hovered.png"
             ),
-            "upgrades_button_disabled": self.get_image(
-                "scene", "upgrades_button_disabled.png"
+            "upgrade_button_disabled": self.get_image(
+                "scene", "upgrade_button_disabled.png"
             ),
             "hire_employee_button_idle": self.get_image(
                 "scene", "hire_employee_button_idle.png"
