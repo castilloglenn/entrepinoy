@@ -1,6 +1,6 @@
 {
 	"frames": {
-		"clothingline(rescaled)_1.png": {
+		"clothing_line_employee_1.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
@@ -20,7 +20,7 @@
 				"h": 351
 			}
 		},
-		"clothingline(rescaled)_10.png": {
+		"clothing_line_employee_10.png": {
 			"frame": {
 				"x": 501,
 				"y": 1,
@@ -40,7 +40,7 @@
 				"h": 351
 			}
 		},
-		"clothingline(rescaled)_11.png": {
+		"clothing_line_employee_11.png": {
 			"frame": {
 				"x": 1001,
 				"y": 1,
@@ -60,7 +60,7 @@
 				"h": 351
 			}
 		},
-		"clothingline(rescaled)_12.png": {
+		"clothing_line_employee_12.png": {
 			"frame": {
 				"x": 1,
 				"y": 354,
@@ -80,7 +80,7 @@
 				"h": 351
 			}
 		},
-		"clothingline(rescaled)_13.png": {
+		"clothing_line_employee_13.png": {
 			"frame": {
 				"x": 501,
 				"y": 354,
@@ -100,7 +100,7 @@
 				"h": 351
 			}
 		},
-		"clothingline(rescaled)_14.png": {
+		"clothing_line_employee_14.png": {
 			"frame": {
 				"x": 1001,
 				"y": 354,
@@ -120,7 +120,7 @@
 				"h": 351
 			}
 		},
-		"clothingline(rescaled)_15.png": {
+		"clothing_line_employee_15.png": {
 			"frame": {
 				"x": 1,
 				"y": 707,
@@ -140,7 +140,7 @@
 				"h": 351
 			}
 		},
-		"clothingline(rescaled)_16.png": {
+		"clothing_line_employee_16.png": {
 			"frame": {
 				"x": 501,
 				"y": 707,
@@ -160,7 +160,7 @@
 				"h": 351
 			}
 		},
-		"clothingline(rescaled)_17.png": {
+		"clothing_line_employee_17.png": {
 			"frame": {
 				"x": 1001,
 				"y": 707,
@@ -180,7 +180,7 @@
 				"h": 351
 			}
 		},
-		"clothingline(rescaled)_18.png": {
+		"clothing_line_employee_18.png": {
 			"frame": {
 				"x": 1,
 				"y": 1060,
@@ -200,7 +200,7 @@
 				"h": 351
 			}
 		},
-		"clothingline(rescaled)_19.png": {
+		"clothing_line_employee_19.png": {
 			"frame": {
 				"x": 501,
 				"y": 1060,
@@ -220,7 +220,7 @@
 				"h": 351
 			}
 		},
-		"clothingline(rescaled)_2.png": {
+		"clothing_line_employee_2.png": {
 			"frame": {
 				"x": 1001,
 				"y": 1060,
@@ -240,7 +240,7 @@
 				"h": 351
 			}
 		},
-		"clothingline(rescaled)_20.png": {
+		"clothing_line_employee_20.png": {
 			"frame": {
 				"x": 1,
 				"y": 1413,
@@ -260,7 +260,7 @@
 				"h": 351
 			}
 		},
-		"clothingline(rescaled)_3.png": {
+		"clothing_line_employee_3.png": {
 			"frame": {
 				"x": 501,
 				"y": 1413,
@@ -280,7 +280,7 @@
 				"h": 351
 			}
 		},
-		"clothingline(rescaled)_4.png": {
+		"clothing_line_employee_4.png": {
 			"frame": {
 				"x": 1001,
 				"y": 1413,
@@ -300,7 +300,7 @@
 				"h": 351
 			}
 		},
-		"clothingline(rescaled)_5.png": {
+		"clothing_line_employee_5.png": {
 			"frame": {
 				"x": 1501,
 				"y": 1,
@@ -320,7 +320,7 @@
 				"h": 351
 			}
 		},
-		"clothingline(rescaled)_6.png": {
+		"clothing_line_employee_6.png": {
 			"frame": {
 				"x": 1501,
 				"y": 354,
@@ -340,7 +340,7 @@
 				"h": 351
 			}
 		},
-		"clothingline(rescaled)_7.png": {
+		"clothing_line_employee_7.png": {
 			"frame": {
 				"x": 1501,
 				"y": 707,
@@ -360,7 +360,7 @@
 				"h": 351
 			}
 		},
-		"clothingline(rescaled)_8.png": {
+		"clothing_line_employee_8.png": {
 			"frame": {
 				"x": 1501,
 				"y": 1060,
@@ -380,7 +380,7 @@
 				"h": 351
 			}
 		},
-		"clothingline(rescaled)_9.png": {
+		"clothing_line_employee_9.png": {
 			"frame": {
 				"x": 1501,
 				"y": 1413,
