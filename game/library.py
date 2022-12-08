@@ -38,6 +38,7 @@ class Library:
             "library", "customer_statistics.json"
         )
         self.location = self.get_dict_from_json("library", "location.json")
+        self.upgrade = self.get_dict_from_json("library", "upgrade.json")
 
         # Checking the save data
         try:
@@ -720,6 +721,7 @@ class Library:
                 "test_location": {
                     "last_visited": "",
                     "test_business_a": {
+                        "level": 1,
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
@@ -731,6 +733,7 @@ class Library:
                         "lifetime_profit": 0.0,
                     },
                     "test_business_b": {
+                        "level": 1,
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
@@ -745,6 +748,7 @@ class Library:
                 "location_a": {
                     "last_visited": "",
                     "street_food": {
+                        "level": 1,
                         "date_acquired": datetime.strftime(
                             datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"
                         ),
@@ -759,6 +763,7 @@ class Library:
                         "lifetime_profit": 0.0,
                     },
                     "sari_sari_store": {
+                        "level": 1,
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
@@ -770,6 +775,7 @@ class Library:
                         "lifetime_profit": 0.0,
                     },
                     "ukay_ukay": {
+                        "level": 1,
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
@@ -781,6 +787,7 @@ class Library:
                         "lifetime_profit": 0.0,
                     },
                     "food_cart": {
+                        "level": 1,
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
@@ -795,6 +802,7 @@ class Library:
                 "location_b": {
                     "last_visited": "",
                     "bakery": {
+                        "level": 1,
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
@@ -806,6 +814,7 @@ class Library:
                         "lifetime_profit": 0.0,
                     },
                     "general_merchandise_store": {
+                        "level": 1,
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
@@ -820,6 +829,7 @@ class Library:
                 "location_c": {
                     "last_visited": "",
                     "cybercafe": {
+                        "level": 1,
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
@@ -831,6 +841,7 @@ class Library:
                         "lifetime_profit": 0.0,
                     },
                     "clothing_line": {
+                        "level": 1,
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
@@ -842,6 +853,7 @@ class Library:
                         "lifetime_profit": 0.0,
                     },
                     "milktea_shop": {
+                        "level": 1,
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
@@ -853,6 +865,7 @@ class Library:
                         "lifetime_profit": 0.0,
                     },
                     "convenience_store": {
+                        "level": 1,
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
@@ -867,6 +880,7 @@ class Library:
                 "location_d": {
                     "last_visited": "",
                     "pawnshop": {
+                        "level": 1,
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
@@ -878,6 +892,7 @@ class Library:
                         "lifetime_profit": 0.0,
                     },
                     "fashion_outlet": {
+                        "level": 1,
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
@@ -892,6 +907,7 @@ class Library:
                 "location_e": {
                     "last_visited": "",
                     "market": {
+                        "level": 1,
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
@@ -903,6 +919,7 @@ class Library:
                         "lifetime_profit": 0.0,
                     },
                     "bazaar": {
+                        "level": 1,
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
@@ -914,6 +931,7 @@ class Library:
                         "lifetime_profit": 0.0,
                     },
                     "restaurant": {
+                        "level": 1,
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
@@ -925,6 +943,7 @@ class Library:
                         "lifetime_profit": 0.0,
                     },
                     "jewelry_store": {
+                        "level": 1,
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
@@ -939,6 +958,7 @@ class Library:
                 "location_f": {
                     "last_visited": "",
                     "bank": {
+                        "level": 1,
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,
@@ -950,6 +970,7 @@ class Library:
                         "lifetime_profit": 0.0,
                     },
                     "mall": {
+                        "level": 1,
                         "date_acquired": "",
                         "ownership": False,
                         "is_open": False,

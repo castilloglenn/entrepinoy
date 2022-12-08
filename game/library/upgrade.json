@@ -1,0 +1,27 @@
+{
+	"1": {
+		"income_per_customer_range": [0.0, 0.0],
+		"daily_expenses": 0.0,
+		"upgrade_cost": 0.0
+	},
+	"2": {
+		"income_per_customer_range": [0.05, 0.05],
+		"daily_expenses": 0.025,
+		"upgrade_cost": 0.2
+	},
+	"3": {
+		"income_per_customer_range": [0.1, 0.1],
+		"daily_expenses": 0.5,
+		"upgrade_cost": 0.4
+	},
+	"4": {
+		"income_per_customer_range": [0.15, 0.15],
+		"daily_expenses": 0.075,
+		"upgrade_cost": 0.6
+	},
+	"5": {
+		"income_per_customer_range": [0.05, 0.05],
+		"daily_expenses": 0.1,
+		"upgrade_cost": 0.8
+	}
+}
