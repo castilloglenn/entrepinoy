@@ -19,8 +19,8 @@
 		"businesses": ["bakery", "general_merchandise_store"],
 		"safe_spot": [0.45, 0.55, 0.65, 0.75],
 		"object_limit": 15,
-		"npc_indexes": [21, 22, 23],
-		"vehicle_indexes": [11, 12, 13, 14, 15, 16, 17, 18]
+		"npc_indexes": [0, 1, 2, 3 , 4, 5 , 6 ,7 ,8 ,9 ,10],
+		"vehicle_indexes": [1, 5, 6, 7, 8, 9, 18]
 	},
 
 	"location_c": {
