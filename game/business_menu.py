@@ -222,7 +222,6 @@ class BusinessMenu:
         self.time = time
         self.location = location
 
-        self.sell_back_ratio = 0.8
         self.business_cost = None
         self.daily_expense = None
         self.employee_cost = None
