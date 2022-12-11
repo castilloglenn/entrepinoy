@@ -413,8 +413,14 @@ class Business(Button):
     def reset_income_display(self):
         # Placing the income message relative to the position of the serve button
         self.income_message.center_coordinates = (
-            int(self.rect.center[0]),
-            int(self.rect.top + (self.rect.height * 0.45)),
+            int(
+                self.rect.x
+                + (
+                    self.rect.width
+                    * self.scene.main.data.business[self.name_code]["queuing_point"]
+                )
+            ),
+            int(self.rect.top + (self.rect.height * 0.3)),
         )
 
         self.income_frame_counter = 0
@@ -580,7 +586,7 @@ class Business(Button):
             weights=[1.0, 0.8, 0.4, 0.2, 0.1],
         )[0]
         delta_range = income_range[1] - income_range[0]
-        income_range[1] = delta_range * probability_weight
+        income_range[1] = delta_range * probability_weight + income_range[0]
 
         self.income_step = 0.25  # nudge every atomic value to 25 cents
         self.income_range = (
