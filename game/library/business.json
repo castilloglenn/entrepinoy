@@ -10,7 +10,7 @@
 		"initial_cost": 1.0,
 		"daily_expenses": 1.0,
 		"employee_cost": 1.0,
-		"income_per_customer_range": [1.0, 1.0]
+		"income_per_customer_range": [1.0, 10.0]
 	},
 	"test_business_b": {
 		"name": "Test Business B",
@@ -23,7 +23,7 @@
 		"initial_cost": 1.0,
 		"daily_expenses": 1.0,
 		"employee_cost": 1.0,
-		"income_per_customer_range": [1.0, 1.0]
+		"income_per_customer_range": [1.0, 10.0]
 	},
 
 	"street_food": {
@@ -90,7 +90,7 @@
 		"initial_cost": 1.0,
 		"daily_expenses": 1.0,
 		"employee_cost": 1.0,
-		"income_per_customer_range": [1.0, 1.0]
+		"income_per_customer_range": [1.0, 10.0]
 	},
 	"general_merchandise_store": {
 		"name": "Gen. Merchandise Store",
@@ -103,7 +103,7 @@
 		"initial_cost": 1.0,
 		"daily_expenses": 1.0,
 		"employee_cost": 1.0,
-		"income_per_customer_range": [1.0, 1.0]
+		"income_per_customer_range": [1.0, 10.0]
 	},
 
 	"milktea_shop": {
@@ -114,10 +114,10 @@
 		"queuing_point": 0.7,
 		"queue_direction": "right",
 		"placement": "front",
-		"initial_cost": 1.0,
-		"daily_expenses": 1.0,
-		"employee_cost": 1.0,
-		"income_per_customer_range": [1.0, 1.0]
+		"initial_cost": 100.0,
+		"daily_expenses": 50.0,
+		"employee_cost": 50.0,
+		"income_per_customer_range": [1.0, 10.0]
 	},
 	"cybercafe": {
 		"name": "Cybercafe",
@@ -130,7 +130,7 @@
 		"initial_cost": 1.0,
 		"daily_expenses": 1.0,
 		"employee_cost": 1.0,
-		"income_per_customer_range": [1.0, 1.0]
+		"income_per_customer_range": [1.0, 10.0]
 	},
 	"clothing_line": {
 		"name": "Clothing Line",
@@ -143,7 +143,7 @@
 		"initial_cost": 1.0,
 		"daily_expenses": 1.0,
 		"employee_cost": 1.0,
-		"income_per_customer_range": [1.0, 1.0]
+		"income_per_customer_range": [1.0, 10.0]
 	},
 	"convenience_store": {
 		"name": "Convenience Store",
@@ -156,7 +156,7 @@
 		"initial_cost": 1.0,
 		"daily_expenses": 1.0,
 		"employee_cost": 1.0,
-		"income_per_customer_range": [1.0, 1.0]
+		"income_per_customer_range": [1.0, 10.0]
 	},
 
 	"pawnshop": {
@@ -170,7 +170,7 @@
 		"initial_cost": 1.0,
 		"daily_expenses": 1.0,
 		"employee_cost": 1.0,
-		"income_per_customer_range": [1.0, 1.0]
+		"income_per_customer_range": [1.0, 10.0]
 	},
 	"fashion_outlet": {
 		"name": "Fashion Outlet",
@@ -183,7 +183,7 @@
 		"initial_cost": 1.0,
 		"daily_expenses": 1.0,
 		"employee_cost": 1.0,
-		"income_per_customer_range": [1.0, 1.0]
+		"income_per_customer_range": [1.0, 10.0]
 	},
 
 	"market": {
@@ -197,7 +197,7 @@
 		"initial_cost": 1.0,
 		"daily_expenses": 1.0,
 		"employee_cost": 1.0,
-		"income_per_customer_range": [1.0, 1.0]
+		"income_per_customer_range": [1.0, 10.0]
 	},
 	"bazaar": {
 		"name": "Bazaar",
@@ -210,7 +210,7 @@
 		"initial_cost": 1.0,
 		"daily_expenses": 1.0,
 		"employee_cost": 1.0,
-		"income_per_customer_range": [1.0, 1.0]
+		"income_per_customer_range": [1.0, 10.0]
 	},
 	"restaurant": {
 		"name": "Restaurant",
@@ -223,7 +223,7 @@
 		"initial_cost": 1.0,
 		"daily_expenses": 1.0,
 		"employee_cost": 1.0,
-		"income_per_customer_range": [1.0, 1.0]
+		"income_per_customer_range": [1.0, 10.0]
 	},
 	"jewelry_store": {
 		"name": "Jewelry Store",
@@ -236,7 +236,7 @@
 		"initial_cost": 1.0,
 		"daily_expenses": 1.0,
 		"employee_cost": 1.0,
-		"income_per_customer_range": [1.0, 1.0]
+		"income_per_customer_range": [1.0, 10.0]
 	},
 
 	"bank": {
@@ -250,7 +250,7 @@
 		"initial_cost": 1.0,
 		"daily_expenses": 1.0,
 		"employee_cost": 1.0,
-		"income_per_customer_range": [1.0, 1.0]
+		"income_per_customer_range": [1.0, 10.0]
 	},
 	"mall": {
 		"name": "Mall",
@@ -263,6 +263,6 @@
 		"initial_cost": 1.0,
 		"daily_expenses": 1.0,
 		"employee_cost": 1.0,
-		"income_per_customer_range": [1.0, 1.0]
+		"income_per_customer_range": [1.0, 10.0]
 	}
 }
