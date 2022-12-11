@@ -262,6 +262,9 @@ class Business(Button):
 
     def disown_business(self):
         self.progress["businesses"][self.progress["last_location"]][self.name_code][
+            "level"
+        ] = 1
+        self.progress["businesses"][self.progress["last_location"]][self.name_code][
             "date_acquired"
         ] = ""
         self.progress["businesses"][self.progress["last_location"]][self.name_code][
@@ -560,10 +563,21 @@ class Business(Button):
                 self.scene.main.data.music["earn_coins"]
             )
 
-        self.income_step = 0.25
+        level = self.progress["businesses"][self.progress["last_location"]][
+            self.name_code
+        ]["level"]
+        income_range = self.business_data["income_per_customer_range"]
+        income_amp = self.scene.main.data.upgrade[str(level)][
+            "income_per_customer_range"
+        ]
+        income_range = tuple(
+            irange * iamp for irange, iamp in zip(income_range, income_amp)
+        )
+
+        self.income_step = 0.25  # nudge every atomic value to 25 cents
         self.income_range = (
-            int(self.business_data["income_per_customer_range"][0] / self.income_step),
-            int(self.business_data["income_per_customer_range"][1] / self.income_step),
+            round(income_range[0] / self.income_step),
+            round(income_range[1] / self.income_step),
         )
         self.current_income = (
             random.randint(self.income_range[0], self.income_range[1])
