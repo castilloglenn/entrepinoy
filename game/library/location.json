@@ -11,7 +11,7 @@
 		"businesses": ["street_food", "food_cart", "sari_sari_store", "ukay_ukay"],
 		"safe_spot": [0.5, 0.55, 0.74, 0.765],
 		"object_limit": 15,
-		"npc_indexes": [0, 1, 3, 5, 9, 12, 13, 15, 16, 17],
+		"npc_indexes": [0, 1, 3, 5, 9, 12, 13, 14, 15, 16, 17],
 		"vehicle_indexes": [0, 2, 3]
 	},
 
@@ -20,7 +20,7 @@
 		"safe_spot": [0.5, 0.55, 0.74, 0.765],
 		"object_limit": 15,
 		"npc_indexes": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-		"vehicle_indexes": [1, 5, 6, 7, 8, 9, 18]
+		"vehicle_indexes": [1, 5, 6, 7, 8, 9, 14, 15, 16, 18]
 	},
 
 	"location_c": {
@@ -44,7 +44,7 @@
 		"safe_spot": [0.5, 0.55, 0.74, 0.765],
 		"object_limit": 15,
 		"npc_indexes": [11, 21, 24, 28, 30, 31, 32],
-		"vehicle_indexes": [4, 5, 7, 9, 10, 11, 13]
+		"vehicle_indexes": [4, 5, 7, 9, 10, 11, 13, 14, 15, 16]
 	},
 
 	"location_f": {
@@ -52,6 +52,6 @@
 		"safe_spot": [0.5, 0.55, 0.74, 0.765],
 		"object_limit": 15,
 		"npc_indexes": [31, 32, 33, 34, 35, 36, 37, 38],
-		"vehicle_indexes": [8, 10, 12, 13, 14, 15, 17]
+		"vehicle_indexes": [8, 10, 12, 13, 14, 15, 16, 17]
 	}
 }
