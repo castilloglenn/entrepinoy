@@ -564,13 +564,10 @@ class BusinessMenu:
         self.employee_cost = f"P{numerize(self.data.business_data['employee_cost'], 3)}"
 
         income_range: tuple = self.data.business_data["income_per_customer_range"]
-        print(income_range)
         income_amp = self.main.data.upgrade[str(level)]["income_per_customer_range"]
         income_range = tuple(
             irange * iamp for irange, iamp in zip(income_range, income_amp)
         )
-        print(income_amp)
-        print(income_range)
 
         self.income_per_customer = (
             f"P{income_range[0]:,.2f} to " f"P{income_range[1]:,.2f}"
