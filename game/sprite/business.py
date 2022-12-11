@@ -88,7 +88,7 @@ class Business(Button):
         self.income_frame_counter = 0
         self.income_seconds_counter = 0
         self.income_display_duration = 1  # seconds
-        self.income_display_fade_duration = 1  # seconds
+        self.income_display_fade_duration = 3  # seconds
         self.income_decrement = (
             self.frame_length / self.income_display_fade_duration
         ) * 255
