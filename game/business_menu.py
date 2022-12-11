@@ -228,6 +228,14 @@ class BusinessMenu:
         self.employee_cost = None
         self.income_per_customer = None
 
+    def get_operation_cost(self):
+        operation_cost = self.data.business_data["daily_expenses"]
+        level = self.main.data.progress["businesses"][self.location][
+            self.data.name_code
+        ]["level"]
+        level_amplifier = self.main.data.upgrade[str(level)]["daily_expenses"]
+        return operation_cost * level_amplifier
+
     def get_sales(self):
         return self.main.data.progress["businesses"][self.location][
             self.data.name_code
@@ -317,7 +325,7 @@ class BusinessMenu:
             self.main.response_menu.enable = True
 
     def start_business_button_callback(self, *args):
-        operation_cost = self.data.business_data["daily_expenses"]
+        operation_cost = self.get_operation_cost()
         bank_balance = self.main.data.progress["cash"]
         assumed_balance = bank_balance - operation_cost
 
@@ -534,7 +542,12 @@ class BusinessMenu:
         self.background.add(self.objects, self.buttons)
 
         # Data set
-        self.business_title_message.set_message([self.data.business_data["name"]])
+        level = self.main.data.progress["businesses"][self.location][
+            self.data.name_code
+        ]["level"]
+        self.business_title_message.set_message(
+            [f"Lv {level} {self.data.business_data['name']}"],
+        )
         self.business_tier_and_size.set_message(
             [
                 f"Tier {self.main.data.category[self.data.name_code]['tier']} - "
@@ -544,13 +557,23 @@ class BusinessMenu:
 
         # Attributes that must be shown regardless of ownership
         self.business_cost = f"P{self.data.business_data['initial_cost']:,.2f}"
-        self.daily_expense = (
-            f"P{numerize(self.data.business_data['daily_expenses'], 3)}"
-        )
+
+        operation_cost = self.get_operation_cost()
+        self.daily_expense = f"P{numerize(operation_cost, 3)}"
+
         self.employee_cost = f"P{numerize(self.data.business_data['employee_cost'], 3)}"
+
+        income_range: tuple = self.data.business_data["income_per_customer_range"]
+        print(income_range)
+        income_amp = self.main.data.upgrade[str(level)]["income_per_customer_range"]
+        income_range = tuple(
+            irange * iamp for irange, iamp in zip(income_range, income_amp)
+        )
+        print(income_amp)
+        print(income_range)
+
         self.income_per_customer = (
-            f"P{self.data.business_data['income_per_customer_range'][0]:,.2f} to "
-            f"P{self.data.business_data['income_per_customer_range'][1]:,.2f}"
+            f"P{income_range[0]:,.2f} to " f"P{income_range[1]:,.2f}"
         )
 
         # Updating the data
