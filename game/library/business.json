@@ -93,7 +93,7 @@
 		"income_per_customer_range": [1.0, 1.0]
 	},
 	"general_merchandise_store": {
-		"name": "General Merchandise Store",
+		"name": "Gen. Merchandise Store",
 		"image_name": "general_merchandise_store",
 		"rel_midbottom_coordinates": [0.62, 0.72],
 		"collide_rect": [0, 0, 1, 1],
