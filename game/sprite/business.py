@@ -291,6 +291,9 @@ class Business(Button):
         self.progress["businesses"][self.progress["last_location"]][self.name_code][
             "lifetime_profit"
         ] = 0.0
+        self.progress["businesses"][self.progress["last_location"]][self.name_code][
+            "current_operation_sales"
+        ] = 0.0
 
         self.reset_data()
 
