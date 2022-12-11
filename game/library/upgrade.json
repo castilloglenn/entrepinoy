@@ -1,27 +1,27 @@
 {
 	"1": {
-		"income_per_customer_range": [0.0, 0.0],
-		"daily_expenses": 0.0,
-		"upgrade_cost": 0.0
+		"income_per_customer_range": [1.0, 1.0],
+		"daily_expenses": 1.0,
+		"upgrade_cost": 1.0
 	},
 	"2": {
-		"income_per_customer_range": [0.05, 0.05],
-		"daily_expenses": 0.025,
-		"upgrade_cost": 0.2
+		"income_per_customer_range": [1.05, 1.05],
+		"daily_expenses": 1.025,
+		"upgrade_cost": 1.2
 	},
 	"3": {
-		"income_per_customer_range": [0.1, 0.1],
-		"daily_expenses": 0.5,
-		"upgrade_cost": 0.4
+		"income_per_customer_range": [1.1, 1.1],
+		"daily_expenses": 1.5,
+		"upgrade_cost": 1.4
 	},
 	"4": {
-		"income_per_customer_range": [0.15, 0.15],
-		"daily_expenses": 0.075,
-		"upgrade_cost": 0.6
+		"income_per_customer_range": [1.15, 1.15],
+		"daily_expenses": 1.075,
+		"upgrade_cost": 1.6
 	},
 	"5": {
-		"income_per_customer_range": [0.05, 0.05],
-		"daily_expenses": 0.1,
-		"upgrade_cost": 0.8
+		"income_per_customer_range": [1.05, 1.05],
+		"daily_expenses": 1.1,
+		"upgrade_cost": 1.8
 	}
 }
