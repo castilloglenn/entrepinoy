@@ -573,9 +573,14 @@ class Business(Button):
         income_amp = self.scene.main.data.upgrade[str(level)][
             "income_per_customer_range"
         ]
-        income_range = tuple(
-            irange * iamp for irange, iamp in zip(income_range, income_amp)
-        )
+        income_range = [irange * iamp for irange, iamp in zip(income_range, income_amp)]
+
+        probability_weight = random.choices(
+            population=[0.2, 0.4, 0.6, 0.8, 1.0],
+            weights=[1.0, 0.8, 0.4, 0.2, 0.1],
+        )[0]
+        delta_range = income_range[1] - income_range[0]
+        income_range[1] = delta_range * probability_weight
 
         self.income_step = 0.25  # nudge every atomic value to 25 cents
         self.income_range = (
