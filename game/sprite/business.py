@@ -88,7 +88,7 @@ class Business(Button):
         self.income_frame_counter = 0
         self.income_seconds_counter = 0
         self.income_display_duration = 1  # seconds
-        self.income_display_fade_duration = 1  # seconds
+        self.income_display_fade_duration = 3  # seconds
         self.income_decrement = (
             self.frame_length / self.income_display_fade_duration
         ) * 255
@@ -262,6 +262,9 @@ class Business(Button):
 
     def disown_business(self):
         self.progress["businesses"][self.progress["last_location"]][self.name_code][
+            "level"
+        ] = 1
+        self.progress["businesses"][self.progress["last_location"]][self.name_code][
             "date_acquired"
         ] = ""
         self.progress["businesses"][self.progress["last_location"]][self.name_code][
@@ -287,6 +290,9 @@ class Business(Button):
         ] = 0.0
         self.progress["businesses"][self.progress["last_location"]][self.name_code][
             "lifetime_profit"
+        ] = 0.0
+        self.progress["businesses"][self.progress["last_location"]][self.name_code][
+            "current_operation_sales"
         ] = 0.0
 
         self.reset_data()
@@ -407,8 +413,14 @@ class Business(Button):
     def reset_income_display(self):
         # Placing the income message relative to the position of the serve button
         self.income_message.center_coordinates = (
-            int(self.rect.center[0]),
-            int(self.rect.top + (self.rect.height * 0.45)),
+            int(
+                self.rect.x
+                + (
+                    self.rect.width
+                    * self.scene.main.data.business[self.name_code]["queuing_point"]
+                )
+            ),
+            int(self.rect.top + (self.rect.height * 0.3)),
         )
 
         self.income_frame_counter = 0
@@ -560,10 +572,26 @@ class Business(Button):
                 self.scene.main.data.music["earn_coins"]
             )
 
-        self.income_step = 0.25
+        level = self.progress["businesses"][self.progress["last_location"]][
+            self.name_code
+        ]["level"]
+        income_range = self.business_data["income_per_customer_range"]
+        income_amp = self.scene.main.data.upgrade[str(level)][
+            "income_per_customer_range"
+        ]
+        income_range = [irange * iamp for irange, iamp in zip(income_range, income_amp)]
+
+        probability_weight = random.choices(
+            population=[0.2, 0.4, 0.6, 0.8, 1.0],
+            weights=[1.0, 0.8, 0.4, 0.2, 0.1],
+        )[0]
+        delta_range = income_range[1] - income_range[0]
+        income_range[1] = delta_range * probability_weight + income_range[0]
+
+        self.income_step = 0.25  # nudge every atomic value to 25 cents
         self.income_range = (
-            int(self.business_data["income_per_customer_range"][0] / self.income_step),
-            int(self.business_data["income_per_customer_range"][1] / self.income_step),
+            round(income_range[0] / self.income_step),
+            round(income_range[1] / self.income_step),
         )
         self.current_income = (
             random.randint(self.income_range[0], self.income_range[1])

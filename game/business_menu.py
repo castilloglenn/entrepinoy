@@ -24,7 +24,7 @@ class BusinessMenu:
         self.time = time
         self.location = location
 
-        self.sell_back_ratio = 0.5
+        self.sell_back_ratio = 0.8
         self.business_cost = None
         self.daily_expense = None
         self.employee_cost = None
@@ -222,11 +222,18 @@ class BusinessMenu:
         self.time = time
         self.location = location
 
-        self.sell_back_ratio = 0.5
         self.business_cost = None
         self.daily_expense = None
         self.employee_cost = None
         self.income_per_customer = None
+
+    def get_operation_cost(self):
+        operation_cost = self.data.business_data["daily_expenses"]
+        level = self.main.data.progress["businesses"][self.location][
+            self.data.name_code
+        ]["level"]
+        level_amplifier = self.main.data.upgrade[str(level)]["daily_expenses"]
+        return operation_cost * level_amplifier
 
     def get_sales(self):
         return self.main.data.progress["businesses"][self.location][
@@ -260,7 +267,23 @@ class BusinessMenu:
             self.data.business_data["initial_cost"] * self.sell_back_ratio, 2
         )
         self.main.data.progress["cash"] += business_selling_price
+        self.collect_sales_button.force_clicked()
         self.data.disown_business()
+
+    def upgrade_business(self):
+        level = self.main.data.progress["businesses"][self.location][
+            self.data.name_code
+        ]["level"]
+        business_cost = self.data.business_data["initial_cost"]
+        next_upgrade_data = self.main.data.upgrade[str(level + 1)]
+
+        upgrade_amp = next_upgrade_data["upgrade_cost"]
+        upgrade_cost = business_cost * upgrade_amp
+
+        self.main.data.progress["cash"] -= upgrade_cost
+        self.main.data.progress["businesses"][self.location][self.data.name_code][
+            "level"
+        ] += 1
 
     def check_if_business_is_owned(self):
         return self.main.data.progress["businesses"][self.location][
@@ -317,7 +340,7 @@ class BusinessMenu:
             self.main.response_menu.enable = True
 
     def start_business_button_callback(self, *args):
-        operation_cost = self.data.business_data["daily_expenses"]
+        operation_cost = self.get_operation_cost()
         bank_balance = self.main.data.progress["cash"]
         assumed_balance = bank_balance - operation_cost
 
@@ -397,7 +420,55 @@ class BusinessMenu:
         self.main.confirm_menu.enable = True
 
     def upgrades_button_callback(self, *args):
-        print("upgrades clicked")
+        level = self.main.data.progress["businesses"][self.location][
+            self.data.name_code
+        ]["level"]
+        business_cost = self.data.business_data["initial_cost"]
+        upgrade_data = self.main.data.upgrade[str(level + 1)]
+
+        upgrade_amp = upgrade_data["upgrade_cost"]
+        upgrade_cost = business_cost * upgrade_amp
+
+        min_income = (
+            f"+{(upgrade_data['income_per_customer_range'][0] - 1) * 100:,.2f}%"
+        )
+        max_income = (
+            f"+{(upgrade_data['income_per_customer_range'][1] - 1) * 100:,.2f}%"
+        )
+        operation_cost = f"+{(upgrade_data['daily_expenses'] - 1) * 100:,.2f}%"
+
+        bank_balance = self.main.data.progress["cash"]
+        assumed_balance = bank_balance - upgrade_cost
+
+        if assumed_balance >= 0:
+            self.main.confirm_menu.set_message_and_callback(
+                [
+                    #   Horizontal limit: 32 chars  |
+                    #                               v
+                    "Upgrading business will increase",
+                    "both income and operation cost by:",
+                    f"Min Income:     {min_income}",
+                    f"Max Income:     {max_income}",
+                    f"Operation Cost: {operation_cost}",
+                    f"Upgrade Cost:   P{upgrade_cost:,.2f}",
+                    "Your new balance",
+                    f"will be: P{assumed_balance:,.2f}",
+                    # Vertical limit: 8 lines
+                ],
+                self.upgrade_business,
+            )
+            self.main.confirm_menu.enable = True
+        else:
+            self.main.response_menu.set_message(
+                [
+                    "You do not have ",
+                    "enough balance on",
+                    "your bank account.",
+                    "",
+                    f"You still need P{abs(assumed_balance):,.2f}.",
+                ]
+            )
+            self.main.response_menu.enable = True
 
     def set_button_states(self):
         if self.check_if_business_is_owned():
@@ -425,6 +496,16 @@ class BusinessMenu:
             else:  # closed
                 self.start_business_button.set_disabled(False)
                 self.hire_employee_button.set_disabled(True)
+
+            # For upgrades, disables if level is maxed
+            if (
+                self.main.data.progress["businesses"][self.location][
+                    self.data.name_code
+                ]["level"]
+                == 5
+            ):
+                self.upgrade_button.set_disabled(True)
+
         else:
             self.purchase_business_button.visible = True
             self.collect_sales_button.visible = False
@@ -500,11 +581,28 @@ class BusinessMenu:
             previous_profit = "N/A"
             lifetime_profit = "N/A"
 
+        # Data set
+        level = self.main.data.progress["businesses"][self.location][
+            self.data.name_code
+        ]["level"]
+        income_range: tuple = self.data.business_data["income_per_customer_range"]
+        income_amp = self.main.data.upgrade[str(level)]["income_per_customer_range"]
+        income_range = tuple(
+            irange * iamp for irange, iamp in zip(income_range, income_amp)
+        )
+
+        self.income_per_customer = (
+            f"P{income_range[0]:,.2f} to " f"P{income_range[1]:,.2f}"
+        )
+        self.business_title_message.set_message(
+            [f"Lv {level} {self.data.business_data['name']}"],
+        )
         self.left_side_description.set_message(
             [
                 f"================================================",
                 f"  Date of acquisition:",
                 f"    {date_acquired}",
+                f"================================================",
                 f"  Business cost:",
                 f"    {self.business_cost}",
                 f"  Gross income per customer:",
@@ -512,16 +610,15 @@ class BusinessMenu:
                 f"================================================",
                 f"  Operation Cost: {self.daily_expense} ({self.main.data.meta['operating_hours']} Hours)",
                 f"    Status: {open_until}",
-                f"",
                 f"  Employment Cost: {self.employee_cost} ({self.main.data.meta['operating_hours']} Hours)",
                 f"    Status: {employed_until}",
                 f"================================================",
                 f"  Sales:              Lifetime Sales:",
                 f"    {sales:7s}{current_income:11s}  {lifetime_sales}",
-                f"",
                 f"  Last Profit:        Lifetime Profit:",
                 f"    {previous_profit:18s}  {lifetime_profit}",
                 f"================================================",
+                f"® EntrePinoy",
             ]
         )
 
@@ -534,7 +631,12 @@ class BusinessMenu:
         self.background.add(self.objects, self.buttons)
 
         # Data set
-        self.business_title_message.set_message([self.data.business_data["name"]])
+        level = self.main.data.progress["businesses"][self.location][
+            self.data.name_code
+        ]["level"]
+        self.business_title_message.set_message(
+            [f"Lv {level} {self.data.business_data['name']}"],
+        )
         self.business_tier_and_size.set_message(
             [
                 f"Tier {self.main.data.category[self.data.name_code]['tier']} - "
@@ -544,13 +646,20 @@ class BusinessMenu:
 
         # Attributes that must be shown regardless of ownership
         self.business_cost = f"P{self.data.business_data['initial_cost']:,.2f}"
-        self.daily_expense = (
-            f"P{numerize(self.data.business_data['daily_expenses'], 3)}"
-        )
+
+        operation_cost = self.get_operation_cost()
+        self.daily_expense = f"P{numerize(operation_cost, 3)}"
+
         self.employee_cost = f"P{numerize(self.data.business_data['employee_cost'], 3)}"
+
+        income_range: tuple = self.data.business_data["income_per_customer_range"]
+        income_amp = self.main.data.upgrade[str(level)]["income_per_customer_range"]
+        income_range = tuple(
+            irange * iamp for irange, iamp in zip(income_range, income_amp)
+        )
+
         self.income_per_customer = (
-            f"P{self.data.business_data['income_per_customer_range'][0]:,.2f} to "
-            f"P{self.data.business_data['income_per_customer_range'][1]:,.2f}"
+            f"P{income_range[0]:,.2f} to " f"P{income_range[1]:,.2f}"
         )
 
         # Updating the data
