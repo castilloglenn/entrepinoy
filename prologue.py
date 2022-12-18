@@ -21,17 +21,17 @@ class Prologue:
         # Setting up the assets
         self.main = main
 
-        # 1. Name/Gender Menu
-        self.name = None
-        self.gender = None
-        self.input_menu = NewGameInputMenu(main)
+        # # 1. Name/Gender Menu
+        # self.name = None
+        # self.gender = None
+        # self.input_menu = NewGameInputMenu(main)
 
-        # 2. Starter picks
-        self.starter = None
-        self.starter_menu = NewGameStarterMenu(main)
+        # # 2. Starter picks
+        # self.starter = None
+        # self.starter_menu = NewGameStarterMenu(main)
 
-        # 3. Prologue
-        self.prologue = Slideshow(main)
+        # # 3. Prologue
+        # self.prologue = Slideshow(main)
 
     def create_save_file(self):
         assert self.name
@@ -45,4 +45,13 @@ class Prologue:
         )
 
     def run(self):
-        ...
+        # NOTE Test only
+        self.name = "GLENN"
+        self.gender = "MALE"
+
+        random_choices = ["buko_stall", "fish_ball_stand", "sorbetes"]
+        import random
+
+        self.starter = random.choice(random_choices)
+
+        self.create_save_file()
