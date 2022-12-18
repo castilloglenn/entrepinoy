@@ -19,7 +19,12 @@ class NewGameStarterMenu(GenericMenu):
         ...
 
         # Instantiate buttons and objects
-        ...
+        self.window_background = self.main.data.meta_images[
+            "window_background"
+        ].convert_alpha()
+        self.menu_background = self.main.data.meta_images[
+            "menu_background"
+        ].convert_alpha()
 
     # If reconstructable, add this function
     # def reconstruct(self, args):
