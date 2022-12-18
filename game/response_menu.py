@@ -1,8 +1,9 @@
-import pygame
 from game.sprite.button import Button
 
 from game.sprite.menu_background import MenuBackground
 from game.sprite.message import Message
+
+import pygame
 
 
 class ResponseMenu:

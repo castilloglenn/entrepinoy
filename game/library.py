@@ -29,6 +29,7 @@ class Library:
         self.meta = self.get_dict_from_json("config", "meta.json")
         self.setting = self.get_dict_from_json("config", "settings.json")
         #   library folder
+        self.starter = self.get_dict_from_json("library", "starter.json")
         self.business = self.get_dict_from_json("library", "business.json")
         self.category = self.get_dict_from_json("library", "category.json")
         self.crowd_statistics = self.get_dict_from_json(
@@ -711,8 +712,26 @@ class Library:
         with open(json_path, "w+") as json_file:
             json.dump(data, json_file, indent=4)
 
-    def create_new_save_file(self, starter):
+    def adjust_street_food_attributes(self, starter):
+        new_stats = self.starter[starter]
+        attributes = [
+            "initial_cost",
+            "daily_expenses",
+            "employee_cost",
+            "income_per_customer_range",
+        ]
+
+        for attribute in attributes:
+            self.business["street_food"][attribute] = new_stats[attribute]
+
+        self.set_dict_to_json("library", "business.json", self.business)
+
+    def create_new_save_file(self, name, gender, starter):
+        self.adjust_street_food_attributes(starter=starter)
+
         self.progress = {
+            "name": name,
+            "gender": gender,
             "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
             "last_login": "",
             "last_location": "location_a",

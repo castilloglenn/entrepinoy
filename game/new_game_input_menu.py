@@ -1,6 +1,6 @@
-import pygame
+from game.generic_menu import GenericMenu
 
-from generic_menu import GenericMenu
+import pygame
 
 
 class NewGameInputMenu(GenericMenu):
@@ -16,10 +16,16 @@ class NewGameInputMenu(GenericMenu):
         # close(self)
 
         # Instantiate logical variables
-        ...
+        self.name = None
+        self.gender = None
 
         # Instantiate buttons and objects
-        ...
+        self.window_background = self.main.data.meta_images[
+            "window_background"
+        ].convert_alpha()
+        self.menu_background = self.main.data.meta_images[
+            "menu_background"
+        ].convert_alpha()
 
     # If reconstructable, add this function
     # def reconstruct(self, args):
@@ -42,3 +48,6 @@ class NewGameInputMenu(GenericMenu):
     # Abstract method implementation
     def set_data(self):
         ...
+
+    def get_data(self) -> tuple:
+        return (self.name, self.gender)
