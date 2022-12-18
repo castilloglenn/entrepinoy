@@ -768,11 +768,9 @@ class Library:
                     "last_visited": "",
                     "street_food": {
                         "level": 1,
-                        "date_acquired": datetime.strftime(
-                            datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"
-                        ),
+                        "date_acquired": "",
                         "type": starter,
-                        "ownership": True,
+                        "ownership": False,
                         "is_open": False,
                         "open_until": "",
                         "has_employee": False,
