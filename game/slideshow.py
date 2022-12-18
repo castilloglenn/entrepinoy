@@ -7,5 +7,5 @@ class Slideshow:
     1 photo at a time with a certain duration and a next button.
     """
 
-    def __init__(self) -> None:
-        pass
+    def __init__(self, main) -> None:
+        self.main = main
