@@ -14,6 +14,7 @@ from game.transition import Transition
 from scene_builder import Scene
 from region import Map
 from setting import Setting
+from prologue import Prologue
 
 import pygame
 import os, sys
@@ -282,8 +283,9 @@ class Main:
 
     def create_new_game(self):
         self.debug.log("Create new game entered")
-        # NOTE TO BE OVERRIDEN BY THE USER'S CHOICE IN THE BEGINNING
-        self.data.create_new_save_file("buko_stall")
+
+        self.prologue = Prologue(self)
+        self.prologue.run()
 
         if self.scene_window is None:
             self.scene_window = Scene(self)
@@ -292,6 +294,7 @@ class Main:
 
         if self.map_window is None:
             self.map_window = Map(self)
+
         self.scene_window.run()
 
     def continue_game(self, *args):
