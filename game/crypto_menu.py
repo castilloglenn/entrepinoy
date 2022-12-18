@@ -1,6 +1,6 @@
-import pygame
+from game.generic_menu import GenericMenu
 
-from generic_menu import GenericMenu
+import pygame
 
 
 class CryptoMenu(GenericMenu):
