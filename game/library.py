@@ -713,6 +713,8 @@ class Library:
 
     def create_new_save_file(self, starter):
         self.progress = {
+            "name": "",
+            "gender": "",
             "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
             "last_login": "",
             "last_location": "location_a",
