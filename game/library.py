@@ -716,7 +716,7 @@ class Library:
             "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
             "last_login": "",
             "last_location": "location_a",
-            "cash": 5000.0000000000000,
+            "cash": 1000000.0000000000000,
             "businesses": {
                 "test_location": {
                     "last_visited": "",
