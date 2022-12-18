@@ -1,3 +1,10 @@
+from game.sprite.message import Message
+from game.sprite.button import Button
+
+from game.new_game_input_menu import NewGameInputMenu
+from game.new_game_starter_menu import NewGameStarterMenu
+from game.slideshow import Slideshow
+
 import pygame
 
 
@@ -13,7 +20,29 @@ class Prologue:
     def __init__(self, main) -> None:
         # Setting up the assets
         self.main = main
-        self.running = False
+
+        # 1. Name/Gender Menu
+        self.name = None
+        self.gender = None
+        self.input_menu = NewGameInputMenu(main)
+
+        # 2. Starter picks
+        self.starter = None
+        self.starter_menu = NewGameStarterMenu(main)
+
+        # 3. Prologue
+        self.prologue = Slideshow(main)
+
+    def create_save_file(self):
+        assert self.name
+        assert self.gender
+        assert self.starter
+
+        self.main.data.create_new_save_file(
+            name=self.name,
+            gender=self.gender,
+            starter=self.starter,
+        )
 
     def run(self):
-        pass
+        ...
