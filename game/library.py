@@ -711,10 +711,10 @@ class Library:
         with open(json_path, "w+") as json_file:
             json.dump(data, json_file, indent=4)
 
-    def create_new_save_file(self, starter):
+    def create_new_save_file(self, name, gender, starter):
         self.progress = {
-            "name": "",
-            "gender": "",
+            "name": name,
+            "gender": gender,
             "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
             "last_login": "",
             "last_location": "location_a",
