@@ -735,7 +735,7 @@ class Library:
             "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
             "last_login": "",
             "last_location": "location_a",
-            "cash": 1000000.0000000000000,
+            "cash": 100.0,
             "businesses": {
                 "test_location": {
                     "last_visited": "",
@@ -768,11 +768,9 @@ class Library:
                     "last_visited": "",
                     "street_food": {
                         "level": 1,
-                        "date_acquired": datetime.strftime(
-                            datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"
-                        ),
+                        "date_acquired": "",
                         "type": starter,
-                        "ownership": True,
+                        "ownership": False,
                         "is_open": False,
                         "open_until": "",
                         "has_employee": False,
