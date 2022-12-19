@@ -20,7 +20,7 @@
         "employee_cost": 1.0,
         "income_per_customer_range": [
             1.0,
-            10.0
+            1.0
         ]
     },
     "test_business_b": {
@@ -44,7 +44,7 @@
         "employee_cost": 1.0,
         "income_per_customer_range": [
             1.0,
-            10.0
+            1.0
         ]
     },
     "street_food": {
@@ -68,7 +68,7 @@
         "queue_direction": "right",
         "placement": "front",
         "initial_cost": 10000.0,
-        "daily_expenses": 210.0,
+        "daily_expenses": 200.0,
         "employee_cost": 200.0,
         "income_per_customer_range": [
             10.0,
@@ -91,12 +91,12 @@
         "queuing_point": 0.4,
         "queue_direction": "left",
         "placement": "back",
-        "initial_cost": 6000.0,
-        "daily_expenses": 250.0,
-        "employee_cost": 100.0,
+        "initial_cost": 20000.0,
+        "daily_expenses": 400.0,
+        "employee_cost": 250.0,
         "income_per_customer_range": [
-            8.0,
-            45.0
+            25.0,
+            50.0
         ]
     },
     "ukay_ukay": {
@@ -115,12 +115,12 @@
         "queuing_point": 0.35,
         "queue_direction": "right",
         "placement": "back",
-        "initial_cost": 12000.0,
-        "daily_expenses": 500.0,
-        "employee_cost": 250.0,
+        "initial_cost": 30000.0,
+        "daily_expenses": 1000.0,
+        "employee_cost": 500.0,
         "income_per_customer_range": [
-            35.0,
-            95.0
+            50.0,
+            100.0
         ]
     },
     "food_cart": {
@@ -139,12 +139,12 @@
         "queuing_point": 0.25,
         "queue_direction": "left",
         "placement": "front",
-        "initial_cost": 10000.0,
-        "daily_expenses": 400.0,
-        "employee_cost": 250.0,
+        "initial_cost": 40000.0,
+        "daily_expenses": 1500.0,
+        "employee_cost": 500.0,
         "income_per_customer_range": [
-            40.0,
-            65.0
+            70.0,
+            120.0
         ]
     },
     "bakery": {
@@ -163,12 +163,12 @@
         "queuing_point": 0.45,
         "queue_direction": "right",
         "placement": "front",
-        "initial_cost": 1.0,
-        "daily_expenses": 1.0,
-        "employee_cost": 1.0,
+        "initial_cost": 60000.0,
+        "daily_expenses": 2000.0,
+        "employee_cost": 500.0,
         "income_per_customer_range": [
-            1.0,
-            10.0
+            50.0,
+            130.0
         ]
     },
     "general_merchandise_store": {
@@ -187,12 +187,12 @@
         "queuing_point": 0.23,
         "queue_direction": "right",
         "placement": "front",
-        "initial_cost": 1.0,
-        "daily_expenses": 1.0,
-        "employee_cost": 1.0,
+        "initial_cost": 80000.0,
+        "daily_expenses": 2500.0,
+        "employee_cost": 500.0,
         "income_per_customer_range": [
-            1.0,
-            10.0
+            50.0,
+            150.0
         ]
     },
     "milktea_shop": {
@@ -211,12 +211,12 @@
         "queuing_point": 0.7,
         "queue_direction": "right",
         "placement": "front",
-        "initial_cost": 100.0,
-        "daily_expenses": 50.0,
-        "employee_cost": 50.0,
+        "initial_cost": 100000.0,
+        "daily_expenses": 2500.0,
+        "employee_cost": 600.0,
         "income_per_customer_range": [
-            1.0,
-            10.0
+            110.0,
+            150.0
         ]
     },
     "cybercafe": {
@@ -235,12 +235,12 @@
         "queuing_point": 0.75,
         "queue_direction": "left",
         "placement": "back",
-        "initial_cost": 1.0,
-        "daily_expenses": 1.0,
-        "employee_cost": 1.0,
+        "initial_cost": 120000.0,
+        "daily_expenses": 2700.0,
+        "employee_cost": 600.0,
         "income_per_customer_range": [
             1.0,
-            10.0
+            1.0
         ]
     },
     "clothing_line": {
@@ -256,7 +256,7 @@
             0.91,
             0.845
         ],
-        "queuing_point": 0.25,
+        "queuing_point": 0.5,
         "queue_direction": "right",
         "placement": "back",
         "initial_cost": 1.0,
@@ -264,7 +264,7 @@
         "employee_cost": 1.0,
         "income_per_customer_range": [
             1.0,
-            10.0
+            1.0
         ]
     },
     "convenience_store": {
@@ -288,7 +288,7 @@
         "employee_cost": 1.0,
         "income_per_customer_range": [
             1.0,
-            10.0
+            1.0
         ]
     },
     "pawnshop": {
@@ -312,7 +312,7 @@
         "employee_cost": 1.0,
         "income_per_customer_range": [
             1.0,
-            10.0
+            1.0
         ]
     },
     "fashion_outlet": {
@@ -336,7 +336,7 @@
         "employee_cost": 1.0,
         "income_per_customer_range": [
             1.0,
-            10.0
+            1.0
         ]
     },
     "market": {
@@ -360,7 +360,7 @@
         "employee_cost": 1.0,
         "income_per_customer_range": [
             1.0,
-            10.0
+            1.0
         ]
     },
     "bazaar": {
@@ -384,7 +384,7 @@
         "employee_cost": 1.0,
         "income_per_customer_range": [
             1.0,
-            10.0
+            1.0
         ]
     },
     "restaurant": {
@@ -408,7 +408,7 @@
         "employee_cost": 1.0,
         "income_per_customer_range": [
             1.0,
-            10.0
+            1.0
         ]
     },
     "jewelry_store": {
@@ -432,7 +432,7 @@
         "employee_cost": 1.0,
         "income_per_customer_range": [
             1.0,
-            10.0
+            1.0
         ]
     },
     "bank": {
@@ -456,7 +456,7 @@
         "employee_cost": 1.0,
         "income_per_customer_range": [
             1.0,
-            10.0
+            1.0
         ]
     },
     "mall": {
@@ -480,7 +480,7 @@
         "employee_cost": 1.0,
         "income_per_customer_range": [
             1.0,
-            10.0
+            1.0
         ]
     }
 }
