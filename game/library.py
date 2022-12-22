@@ -129,6 +129,14 @@ class Library:
             "main_menu_button_outline": self.get_image(
                 "meta", "main_menu_icon_outline.png"
             ),
+            "text_box": self.get_image("meta", "text_box.png"),
+            "next_button_idle": self.get_image("meta", "next_button_idle.png"),
+            "next_button_hovered": self.get_image("meta", "next_button_hovered.png"),
+            "next_button_disabled": self.get_image("meta", "next_button_disabled.png"),
+            "radio_button_idle": self.get_image("meta", "radio_button_idle.png"),
+            "radio_button_selected": self.get_image(
+                "meta", "radio_button_selected.png"
+            ),
         }
         self.title_screen = {
             "title_screen": self.get_image("title_screen", "title_screen.png"),
@@ -648,6 +656,10 @@ class Library:
         self.large_font = {
             "family": self.get_font("PixelEmulator-xq08.ttf", 25),
             "size": 25,
+        }
+        self.input_font = {
+            "family": self.get_font("PixelEmulator-xq08.ttf", 36),
+            "size": 36,
         }
         self.title_font = {
             "family": self.get_font("PixelEmulator-xq08.ttf", 40),
