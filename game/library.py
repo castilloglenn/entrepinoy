@@ -137,6 +137,16 @@ class Library:
             "radio_button_selected": self.get_image(
                 "meta", "radio_button_selected.png"
             ),
+            "select_button_idle": self.get_image("meta", "select_button_idle.png"),
+            "select_button_hovered": self.get_image(
+                "meta", "select_button_hovered.png"
+            ),
+            "select_button_disabled": self.get_image(
+                "meta", "select_button_disabled.png"
+            ),
+            "buko_stall": self.get_image("meta", "starter_buko_juice.png"),
+            "fish_ball_stand": self.get_image("meta", "starter_fish_ball_stand.png"),
+            "sorbetes": self.get_image("meta", "starter_sorbetes_icon.png"),
         }
         self.title_screen = {
             "title_screen": self.get_image("title_screen", "title_screen.png"),
