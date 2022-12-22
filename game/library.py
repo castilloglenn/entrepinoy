@@ -176,6 +176,95 @@ class Library:
                 "title_screen", "exit_button_hovered.png"
             ),
         }
+        self.albums = {
+            "prologue": {
+                0: {
+                    "image": {
+                        "MALE": self.get_image(
+                            "story",
+                            "prologue_male_frame_1.png",
+                        ),
+                        "FEMALE": self.get_image(
+                            "story",
+                            "prologue_female_frame_1.png",
+                        ),
+                    },
+                    "text": [
+                        "Sample text",
+                        "prologue frame 1",
+                    ],
+                    "text_rel_coords": [0, 0],
+                },
+                1: {
+                    "image": {
+                        "MALE": self.get_image(
+                            "story",
+                            "prologue_male_frame_2.png",
+                        ),
+                        "FEMALE": self.get_image(
+                            "story",
+                            "prologue_female_frame_2.png",
+                        ),
+                    },
+                    "text": [
+                        "Sample text",
+                        "prologue frame 2",
+                    ],
+                    "text_rel_coords": [0, 0],
+                },
+                2: {
+                    "image": {
+                        "MALE": self.get_image(
+                            "story",
+                            "prologue_male_frame_3.png",
+                        ),
+                        "FEMALE": self.get_image(
+                            "story",
+                            "prologue_female_frame_3.png",
+                        ),
+                    },
+                    "text": [
+                        "Sample text",
+                        "prologue frame 3",
+                    ],
+                    "text_rel_coords": [0, 0],
+                },
+                3: {
+                    "image": {
+                        "MALE": self.get_image(
+                            "story",
+                            "prologue_male_frame_4.png",
+                        ),
+                        "FEMALE": self.get_image(
+                            "story",
+                            "prologue_female_frame_4.png",
+                        ),
+                    },
+                    "text": [
+                        "Sample text",
+                        "prologue frame 4",
+                    ],
+                    "text_rel_coords": [0, 0],
+                },
+                4: {
+                    "image": {
+                        "MALE": self.get_image(
+                            "story",
+                            "prologue_male_frame_5.png",
+                        ),
+                        "FEMALE": self.get_image(
+                            "story",
+                            "prologue_female_frame_5.png",
+                        ),
+                    },
+                    "text": [
+                        "Sample text",
+                        "prologue frame 5",
+                    ],
+                    "text_rel_coords": [0, 0],
+                },
+            },
+        }
         self.map = {
             "region": {
                 "midnight": self.get_image("map", "region_midnight.png"),
