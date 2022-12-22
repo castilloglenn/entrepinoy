@@ -172,19 +172,19 @@ class NewGameInputMenu:
         return (self.name, self.gender)
 
     def validate_fields(self, args):
-        name = self.text_box.get_data()
-        gender = None
+        self.name = self.text_box.get_data()
+        self.gender = None
 
         for radio_button in self.radio_group:
             if radio_button.check_selected():
-                gender = radio_button.get_data()
+                self.gender = radio_button.get_data()
 
         errors = []
-        if len(name) < 4:
+        if len(self.name) < 4:
             errors.append("Name must be 4-10")
             errors.append("characters.")
 
-        if not gender:
+        if not self.gender:
             errors.append("Please select")
             errors.append("a gender.")
 
