@@ -1,3 +1,8 @@
+from game.sprite.button import Button
+from game.sprite.message import Message
+
+from game.transition import Transition
+
 import pygame
 
 
@@ -9,3 +14,103 @@ class Slideshow:
 
     def __init__(self, main) -> None:
         self.main = main
+        self.running = False
+
+        self.albums = self.main.data.albums
+
+        self.album = None
+        self.slide_gen = None
+        self.slide = None
+        self.gender = None
+
+        self.image = None
+        self.text = None
+        self.coords = None
+
+        # States
+        self.INITIAL = 0
+        self.READ = 1
+        self.BUTTON_HOLD = 2
+
+        self.initial_hold = 2  # plus the reading time (depends on the text length)
+        self.words_per_second = 3
+        self.total_hold = 0
+
+    def slide_generator(self):
+        for index, image_data in self.album.items():
+            yield image_data
+
+    def next_slide(self):
+        try:
+            self.slide = next(self.slide_gen)
+
+            self.image = self.slide["image"][self.gender]
+            self.text = self.slide["text"]
+            self.coords = self.slide["text_rel_coords"]
+
+            message = Message(
+                self.image,
+                self.text,
+                self.main.data.large_font,
+                self.main.data.colors["white"],
+                outline_thickness=1,
+                top_left_coordinates=self.coords,
+            )
+            message.update()
+        except StopIteration:
+            self.running = False
+
+    def get_total_hold(self):
+        total = 0
+        for line in self.text:
+            total += len(line.split(" "))
+
+        self.total_hold = self.initial_hold + round(total / self.words_per_second)
+        return self.total_hold
+
+    def set_album(self, album, gender):
+        assert album in self.albums
+        self.album = self.albums[album]
+        self.slide_gen = self.slide_generator()
+        self.gender = gender
+        self.next_slide()
+
+    def run(self):
+
+        self.running = True
+        fps_counter = 0
+        seconds_counter = 0
+
+        while self.running:
+            # Screen rendering
+            self.main.screen.blit(self.image, (0, 0))
+            # self.objects.update()
+
+            # Check transition fading, render fade animation
+            self.main.transition.update()
+
+            # Event processing
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    # Closing the game properly
+                    self.main.close_game()
+
+            # Updating the display
+            self.main.refresh_display()
+
+            # Update timers
+            if self.main.transition.alpha > 0:
+                continue
+
+            fps_counter += 1
+            if fps_counter >= self.main.data.setting["fps"]:
+                fps_counter = 0
+                seconds_counter += 1
+                if seconds_counter == self.total_hold:
+                    seconds_counter = 0
+                    self.next_slide()
+                    self.main.transition.setup_and_fade_out(
+                        transition_length=3,
+                        duration_length=self.get_total_hold(),
+                        display_image=self.image,
+                    )

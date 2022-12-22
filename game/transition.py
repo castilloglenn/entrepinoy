@@ -190,3 +190,42 @@ class Transition:
 
         self.setup()
         self.run()
+
+    def setup_and_fade_out(
+        self,
+        transition_length: float,
+        duration_length: float,
+        display_image: pygame.Surface,
+        fade_current_frame: bool = True,
+        hold_sfx: pygame.mixer.Sound = None,
+        unfade_sfx: pygame.mixer.Sound = None,
+        center_message: str = None,
+    ):
+        self.transition_length = transition_length
+        self.duration_length = duration_length
+        self.display_image = display_image
+        self.fade_current_frame = fade_current_frame
+        self.hold_sfx = hold_sfx
+        self.unfade_sfx = unfade_sfx
+        self.center_message = center_message
+
+        # Override quick fade-out
+        self.alpha = 0
+        self.STATE = self.FADE_OUT
+        self.opacity_unit = self.set_opacity_unit(self.transition_length)
+        self.main.display_surface.set_alpha(self.alpha)
+
+        while self.STATE != self.UNFADE:
+            # Event processing
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    # Closing the game properly
+                    self.main.close_game()
+
+            self.main.screen.blit(self.main.display_surface, (0, 0))
+            self.update_alpha()
+            self.main.refresh_display()
+
+            if self.alpha >= 255:
+                self.change_state(self.UNFADE)
+                self.fade_current_frame = False

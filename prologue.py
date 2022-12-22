@@ -1,6 +1,7 @@
 from game.new_game_input_menu import NewGameInputMenu
 from game.new_game_starter_menu import NewGameStarterMenu
-from game.slideshow import Slideshow
+
+from game.transition import Transition
 
 
 class Prologue:
@@ -26,7 +27,7 @@ class Prologue:
         self.starter_menu = NewGameStarterMenu(main)
 
         # # 3. Prologue
-        self.prologue = Slideshow(main)
+        self.album_name = "prologue"
 
     def create_save_file(self):
         assert self.name
@@ -47,4 +48,11 @@ class Prologue:
         self.starter = self.starter_menu.get_data()
 
         self.create_save_file()
-        self.prologue.run()
+
+        self.main.slide_show.set_album(self.album_name, self.gender)
+        self.main.transition.setup_and_fade_out(
+            transition_length=2,
+            duration_length=self.main.slide_show.get_total_hold(),
+            display_image=self.main.slide_show.image,
+        )
+        self.main.slide_show.run()
