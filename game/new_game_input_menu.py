@@ -167,6 +167,8 @@ class NewGameInputMenu:
         self.female_radio_button.set_radio_group(self.radio_group)
 
     def get_data(self) -> tuple:
+        assert self.name
+        assert self.gender
         return (self.name, self.gender)
 
     def validate_fields(self, args):
