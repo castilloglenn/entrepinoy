@@ -20,6 +20,7 @@ class Button(Sprite):
         center_coordinates=None,
         midbottom_coordinates=None,
         collide_rect: tuple[float] = None,
+        button_ratio: float = None,
         **states
     ):
         """
@@ -48,6 +49,7 @@ class Button(Sprite):
         self.main = main
         self.state = "idle"
         self.callback = callback_function
+        self.button_ratio = button_ratio
 
         self.idle = states["idle"].convert_alpha()
         self.has_tooltip = False
@@ -55,15 +57,20 @@ class Button(Sprite):
         self.tooltip_display_gap = 30
         self.previous_mouse_location = (-1, -1)
 
+        if self.button_ratio is not None:
+            self.width = int(self.idle.get_rect().width * button_ratio)
+            self.height = int(self.idle.get_rect().height * button_ratio)
+            self.idle = self.resize_button(self.idle)
+
         if "hovered" in states:
-            self.hovered = states["hovered"].convert_alpha()
+            self.hovered = self.resize_button(states["hovered"].convert_alpha())
         else:
-            self.hovered = states["idle"].convert_alpha()
-            self.outline = states["outline"].convert_alpha()
+            self.hovered = self.resize_button(states["idle"].convert_alpha())
+            self.outline = self.resize_button(states["outline"].convert_alpha())
             self.hovered.blit(self.outline, (0, 0))
 
         if "disabled" in states:
-            self.disabled = states["disabled"].convert_alpha()
+            self.disabled = self.resize_button(states["disabled"].convert_alpha())
 
         if "tooltip" in states:
             self.has_tooltip = True
@@ -117,21 +124,27 @@ class Button(Sprite):
         center_coordinates=None,
         midbottom_coordinates=None,
         collide_rect: tuple[float] = None,
+        button_ratio: float = None,
         **states
     ):
         self.main = main
         self.callback = callback_function
         self.idle = states["idle"].convert_alpha()
+        self.button_ratio = button_ratio
+
+        if self.button_ratio != None:
+            self.width = int(self.idle.get_rect().width * button_ratio)
+            self.height = int(self.idle.get_rect().height * button_ratio)
 
         if "hovered" in states:
-            self.hovered = states["hovered"].convert_alpha()
+            self.hovered = self.resize_button(states["hovered"].convert_alpha())
         else:
-            self.hovered = states["idle"].convert_alpha()
-            self.outline = states["outline"].convert_alpha()
+            self.hovered = self.resize_button(states["idle"].convert_alpha())
+            self.outline = self.resize_button(states["outline"].convert_alpha())
             self.hovered.blit(self.outline, (0, 0))
 
         if "disabled" in states:
-            self.disabled = states["disabled"].convert_alpha()
+            self.disabled = self.resize_button(states["disabled"].convert_alpha())
 
         if "tooltip" in states:
             self.has_tooltip = True
@@ -173,6 +186,13 @@ class Button(Sprite):
         self.hitbox.set_alpha(self.bound_opacity)
 
         self.set_image_and_rect()
+
+    def resize_button(self, surface) -> Surface:
+        if self.button_ratio is not None:
+            return pygame.transform.scale(
+                surface, (self.width, self.height)
+            ).convert_alpha()
+        return surface
 
     def update(self):
         if self.visible:
