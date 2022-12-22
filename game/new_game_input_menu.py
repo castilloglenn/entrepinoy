@@ -220,8 +220,6 @@ class NewGameInputMenu:
                         self.main.close_game()
 
                     elif event.type == pygame.KEYDOWN:
-                        if event.key == pygame.K_ESCAPE:
-                            self.background.enable = False
                         if event.key == pygame.K_F1:
                             print(self.text_box.get_data())
 
