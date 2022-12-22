@@ -1,5 +1,3 @@
-from game.sprite.message import Message
-
 import pygame
 import re
 
