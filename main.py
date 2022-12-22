@@ -10,6 +10,7 @@ from game.confirm_menu import ConfirmMenu
 from game.debug import Debugger
 from game.library import Library
 from game.transition import Transition
+from game.slideshow import Slideshow
 
 from scene_builder import Scene
 from region import Map
@@ -80,6 +81,7 @@ class Main:
             display_image=self.data.meta_images["studio"],
             hold_sfx=self.data.music["studio_intro"],
         )
+        self.slide_show = Slideshow(self)
 
         # Menus
         self.sliding_menu = SlidingMenu(self)
