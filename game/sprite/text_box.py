@@ -102,6 +102,3 @@ class TextBox(pygame.sprite.Sprite):
         if len(char) == 1:
             self.text += char[0]
         return True
-
-
-# %%
