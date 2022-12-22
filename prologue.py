@@ -1,11 +1,6 @@
-from game.sprite.message import Message
-from game.sprite.button import Button
-
 from game.new_game_input_menu import NewGameInputMenu
 from game.new_game_starter_menu import NewGameStarterMenu
 from game.slideshow import Slideshow
-
-import pygame
 
 
 class Prologue:
@@ -22,16 +17,16 @@ class Prologue:
         self.main = main
 
         # # 1. Name/Gender Menu
-        # self.name = None
-        # self.gender = None
-        # self.input_menu = NewGameInputMenu(main)
+        self.name = None
+        self.gender = None
+        self.input_menu = NewGameInputMenu(main)
 
         # # 2. Starter picks
-        # self.starter = None
-        # self.starter_menu = NewGameStarterMenu(main)
+        self.starter = None
+        self.starter_menu = NewGameStarterMenu(main)
 
         # # 3. Prologue
-        # self.prologue = Slideshow(main)
+        self.prologue = Slideshow(main)
 
     def create_save_file(self):
         assert self.name
@@ -45,13 +40,11 @@ class Prologue:
         )
 
     def run(self):
-        # NOTE Test only
-        self.name = "GLENN"
-        self.gender = "MALE"
+        self.input_menu.run()
+        self.name, self.gender = self.input_menu.get_data()
 
-        random_choices = ["buko_stall", "fish_ball_stand", "sorbetes"]
-        import random
-
-        self.starter = random.choice(random_choices)
+        self.starter_menu.run()
+        self.starter = self.starter_menu.get_data()
 
         self.create_save_file()
+        self.prologue.run()
