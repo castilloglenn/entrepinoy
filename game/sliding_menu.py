@@ -8,7 +8,7 @@ class SlidingMenu:
     This menu will provide different access to other game modules such as:
     - Region Map
     - Mission
-    - Events
+    - Information
     - Bank
     - Part Time
     - Achievement
@@ -91,14 +91,13 @@ class SlidingMenu:
                 "tooltip": ["Missions"],
             },
         )
-        self.event_button = Button(
+        self.information_button = Button(
             self.main,
-            self.event_callback,
+            self.information_callback,
             **{
-                "idle": self.main.data.meta_images["events_button_idle"],
-                "outline": self.main.data.meta_images["events_button_outline"],
-                "disabled": self.main.data.meta_images["events_button_disabled"],
-                "tooltip": ["Events"],
+                "idle": self.main.data.meta_images["information_icon_idle"],
+                "outline": self.main.data.meta_images["information_icon_outline"],
+                "tooltip": ["Tutorial"],
             },
         )
 
@@ -202,8 +201,8 @@ class SlidingMenu:
     def mission_callback(self, *args):
         print("Mission button clicked")
 
-    def event_callback(self, *args):
-        print("Event button clicked")
+    def information_callback(self, *args):
+        print("Information button clicked")
 
     def bank_callback(self, *args):
         print("Bank button clicked")
@@ -260,50 +259,62 @@ class SlidingMenu:
             self.sliding_menu_rect.x,
             self.sliding_menu_rect.y + self.trigger_button_y,
         )
+        # 0,0
         self.map_button.top_left_coordinates = (
             self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.173),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.0625),
         )
+        # 0,1
         self.mission_button.top_left_coordinates = (
             self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.0625),
         )
-        self.event_button.top_left_coordinates = (
+        # 0,2
+        self.achievement_button.top_left_coordinates = (
             self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.0625),
         )
-        self.bank_button.top_left_coordinates = (
+        # 1,0
+        self.part_time_button.top_left_coordinates = (
             self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.173),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.2925),
         )
-        self.part_time_button.top_left_coordinates = (
+        # 1,1
+        self.news_button.top_left_coordinates = (
             self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.2925),
         )
-        self.achievement_button.top_left_coordinates = (
+        # 1,2
+        self.bank_button.top_left_coordinates = (
             self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.2925),
         )
-        self.news_button.top_left_coordinates = (
+        # 2,0
+        self.stock_button.top_left_coordinates = (
             self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.173),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.524),
         )
+        # 2,1
         self.crypto_button.top_left_coordinates = (
             self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.524),
         )
-        self.stock_button.top_left_coordinates = (
+        # 2,2
+        self.setting_button.top_left_coordinates = (
             self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.524),
         )
-        self.setting_button.top_left_coordinates = (
-            self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.712),
+        # 3,0
+        self.main_menu_button.top_left_coordinates = (
+            self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.173),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.754),
         )
-        self.main_menu_button.top_left_coordinates = (
+        # 3,1
+        self.information_button.top_left_coordinates = (
             self.sliding_menu_rect.x + (self.sliding_menu_rect.width * 0.4425),
             self.sliding_menu_rect.y + (self.sliding_menu_rect.height * 0.754),
         )
+        # 3,2
 
         # Clearing the sprite groups before adding the objects back to it
         for obj in self.objects:
@@ -315,7 +326,7 @@ class SlidingMenu:
 
         self.map_button.add(self.objects, self.hoverable_buttons, self.buttons)
         self.mission_button.add(self.objects, self.hoverable_buttons, self.buttons)
-        self.event_button.add(self.objects, self.hoverable_buttons, self.buttons)
+        self.information_button.add(self.objects, self.hoverable_buttons, self.buttons)
 
         self.bank_button.add(self.objects, self.hoverable_buttons, self.buttons)
         self.part_time_button.add(self.objects, self.hoverable_buttons, self.buttons)

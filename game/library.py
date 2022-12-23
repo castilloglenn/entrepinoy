@@ -118,11 +118,12 @@ class Library:
             "bank_button_idle": self.get_image("meta", "bank_icon_idle.png"),
             "bank_button_disabled": self.get_image("meta", "bank_icon_disabled.png"),
             "bank_button_outline": self.get_image("meta", "bank_icon_outline.png"),
-            "events_button_idle": self.get_image("meta", "events_icon_idle.png"),
-            "events_button_disabled": self.get_image(
-                "meta", "events_icon_disabled.png"
+            "information_icon_idle": self.get_image(
+                "meta", "information_icon_idle.png"
             ),
-            "events_button_outline": self.get_image("meta", "events_icon_outline.png"),
+            "information_icon_outline": self.get_image(
+                "meta", "information_icon_outline.png"
+            ),
             "part_time_idle": self.get_image("meta", "part_time_icon_idle.png"),
             "part_time_outline": self.get_image("meta", "part_time_icon_outline.png"),
             "main_menu_button_idle": self.get_image("meta", "main_menu_icon_idle.png"),
