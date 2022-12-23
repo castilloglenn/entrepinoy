@@ -49,7 +49,11 @@ class Prologue:
 
         self.create_save_file()
 
-        self.main.slide_show.set_album(self.album_name, self.gender)
+        self.main.slide_show.set_album(
+            self.album_name,
+            self.name,
+            self.gender,
+        )
         self.main.transition.setup_and_fade_out(
             transition_length=2,
             duration_length=self.main.slide_show.get_total_hold(),

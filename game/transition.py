@@ -209,6 +209,8 @@ class Transition:
         self.unfade_sfx = unfade_sfx
         self.center_message = center_message
 
+        self.last_frame = self.main.screen.copy()
+
         # Override quick fade-out
         self.alpha = 0
         self.STATE = self.FADE_OUT
@@ -222,6 +224,7 @@ class Transition:
                     # Closing the game properly
                     self.main.close_game()
 
+            self.main.screen.blit(self.last_frame, (0, 0))
             self.main.screen.blit(self.main.display_surface, (0, 0))
             self.update_alpha()
             self.main.refresh_display()
