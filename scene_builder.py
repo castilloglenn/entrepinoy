@@ -5,6 +5,7 @@ from game.sprite.message import Message
 from game.sprite.button import Button
 
 from game.business_menu import BusinessMenu
+from game.profile_menu import ProfileMenu
 from game.customer import Customer
 from game.npc import NPC
 
@@ -103,6 +104,7 @@ class Scene:
         )
         self.business_data = []
         self.total_location_businesses = 0
+        self.profile_menu = ProfileMenu(self.main)
         self.business_menu = BusinessMenu(self.main, self.time, self.location)
         # Safe spot is somewhere in the middle so that the customers will
         #   go there first before going to the back layer of businesses
@@ -607,6 +609,8 @@ class Scene:
             for event in pygame.event.get():
                 if self.business_menu.enable:
                     self.business_menu.handle_event(event)
+                elif self.main.sliding_menu.has_active_module:
+                    self.main.sliding_menu.pass_event_to_modules(event)
                 elif not self.main.sliding_menu.is_tucked:
                     self.main.sliding_menu.handle_event(event)
                 else:
