@@ -22,15 +22,12 @@ for event in pygame.event.get():
     if self.business_menu.enable:
         self.business_menu.handle_event(event)
 """
-
-from abc import ABC, abstractmethod
-
 from game.sprite.menu_background import MenuBackground
 
 import pygame
 
 
-class GenericMenu(ABC):
+class GenericMenu:
     """
     Base class for in-game menu system modules. Provides overlay non-stopping
     menu that makes the game run in the background, or also can be used dynamically
@@ -49,30 +46,25 @@ class GenericMenu(ABC):
 
         # Screen objects
         self.background = MenuBackground(
-            self.screen, 0.75, image=self.main.data.meta_images["menu_background"]
+            self.main.screen, 0.75, image=self.main.data.meta_images["menu_background"]
         )
 
         # Buttons, Messages here
 
-    @abstractmethod
+        # Button hierarchy
+
     def set_button_states(self):
         pass
 
-    @abstractmethod
     def update_data(self):
         # This will be called in conjunction with the screen update to always
         #   make the details in the business update and buttons will be enabled
         #   when a sale is made and etc.
         pass
 
-    @abstractmethod
     def set_data(self):
-        pass
-
-    def clear(self):
-        self.objects.empty()
-        self.hoverable_buttons.empty()
-        self.buttons.empty()
+        self.background.add(self.objects, self.buttons)
+        self.background.enable = True
 
     def handle_event(self, event):
         if not self.enable:
@@ -122,7 +114,7 @@ class GenericMenu(ABC):
 
             # Screen dimming
             self.main.display_surface.set_alpha(128)
-            self.screen.blit(self.main.display_surface, (0, 0))
+            self.main.screen.blit(self.main.display_surface, (0, 0))
             self.objects.update()
 
             for button in self.tooltips:
@@ -132,6 +124,12 @@ class GenericMenu(ABC):
             self.main.confirm_menu.update()
             self.main.response_menu.update()
 
+    def clear(self):
+        self.objects.empty()
+        self.hoverable_buttons.empty()
+        self.buttons.empty()
+
     def close(self):
         self.clear()
         self.enable = False
+        self.main.sliding_menu.has_active_module = False
