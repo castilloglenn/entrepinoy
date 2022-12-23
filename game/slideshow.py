@@ -82,8 +82,7 @@ class Slideshow:
         for line in self.text:
             total += len(line.split(" "))
 
-        # self.total_hold = self.initial_hold + round(total / self.words_per_second)
-        self.total_hold = self.initial_hold
+        self.total_hold = self.initial_hold + round(total / self.words_per_second)
         return self.total_hold
 
     def set_album(self, album, name, gender):
