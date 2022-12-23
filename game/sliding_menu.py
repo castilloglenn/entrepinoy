@@ -1,5 +1,14 @@
 from game.sprite.button import Button
 
+from game.mission_menu import MissionMenu
+from game.achievement_menu import AchievementMenu
+from game.part_time_menu import PartTimeMenu
+from game.news_menu import NewsMenu
+from game.bank_menu import BankMenu
+from game.stock_menu import StockMenu
+from game.crypto_menu import CryptoMenu
+from game.info_menu import InformationMenu
+
 import pygame
 
 
@@ -23,9 +32,32 @@ class SlidingMenu:
         self.enable = True
         self.is_tucked = True
         self.is_moving = False
+        self.control_dim = True
 
         self.main = main
         self.callback = None
+
+        # Menu's
+        self.mission_menu = MissionMenu(self.main)
+        self.achievement_menu = AchievementMenu(self.main)
+        self.part_time_menu = PartTimeMenu(self.main)
+        self.news_menu = NewsMenu(self.main)
+        self.bank_menu = BankMenu(self.main)
+        self.stock_menu = StockMenu(self.main)
+        self.crypto_menu = CryptoMenu(self.main)
+        self.info_menu = InformationMenu(self.main)
+
+        self.has_active_module = False
+        self.modules = [
+            self.mission_menu,
+            self.achievement_menu,
+            self.part_time_menu,
+            self.news_menu,
+            self.bank_menu,
+            self.stock_menu,
+            self.crypto_menu,
+            self.info_menu,
+        ]
 
         # Sprite groups
         self.objects = pygame.sprite.Group()
@@ -194,33 +226,54 @@ class SlidingMenu:
 
         self.update_endpoint()
 
+    def show_module(self):
+        self.switch_state()
+        self.control_dim = False
+        self.has_active_module = True
+
     def map_callback(self, *args):
         self.switch_state()
         self.main.map_window.run()
 
     def mission_callback(self, *args):
-        print("Mission button clicked")
+        self.mission_menu.set_data()
+        self.mission_menu.enable = True
+        self.show_module()
 
     def information_callback(self, *args):
-        print("Information button clicked")
+        self.info_menu.set_data()
+        self.info_menu.enable = True
+        self.show_module()
 
     def bank_callback(self, *args):
-        print("Bank button clicked")
+        self.bank_menu.set_data()
+        self.bank_menu.enable = True
+        self.show_module()
 
     def part_time_callback(self, *args):
-        print("Part Time button clicked")
+        self.part_time_menu.set_data()
+        self.part_time_menu.enable = True
+        self.show_module()
 
     def news_callback(self, *args):
-        print("News button clicked")
+        self.news_menu.set_data()
+        self.news_menu.enable = True
+        self.show_module()
 
     def crypto_callback(self, *args):
-        print("Crypto button clicked")
+        self.crypto_menu.set_data()
+        self.crypto_menu.enable = True
+        self.show_module()
 
     def stock_callback(self, *args):
-        print("Stocks button clicked")
+        self.stock_menu.set_data()
+        self.stock_menu.enable = True
+        self.show_module()
 
     def achievement_callback(self, *args):
-        print("Achievements button clicked")
+        self.achievement_menu.set_data()
+        self.achievement_menu.enable = True
+        self.show_module()
 
     def setting_callback(self, *args):
         self.main.setting_window.run()
@@ -345,6 +398,12 @@ class SlidingMenu:
     def switch_state(self, *args):
         self.is_moving = True
 
+    def pass_event_to_modules(self, event):
+        # Sliding menu modules
+        for module in self.modules:
+            if module.enable:
+                module.handle_event(event)
+
     def handle_event(self, event):
         if not self.enable:
             self.close()
@@ -375,13 +434,13 @@ class SlidingMenu:
                 for button in self.buttons:
                     button.check_clicked(mouse_pos)
 
-    def update(self):
-        if not self.enable:
-            return
-
+    def update_sliding(self):
         if self.is_moving or not self.is_tucked:
             # Screen dimming
-            self.main.display_surface.set_alpha(self.dim_intensity)
+            if self.control_dim:
+                self.main.display_surface.set_alpha(self.dim_intensity)
+            else:
+                self.main.display_surface.set_alpha(0)
             self.main.screen.blit(self.main.display_surface, (0, 0))
 
         if self.is_moving:
@@ -427,12 +486,24 @@ class SlidingMenu:
                 if self.sliding_menu_rect.x >= self.hidden_endpoint:
                     self.is_moving = False
                     self.is_tucked = True
+        else:
+            self.control_dim = True
 
+    def update(self):
+        if not self.enable:
+            return
+
+        self.update_sliding()
         self.main.screen.blit(self.sliding_menu_image, self.sliding_menu_rect)
         self.objects.update()
 
         for button in self.buttons:
             button.display_tooltips()
+
+        # Sliding Menu Modules
+        for module in self.modules:
+            if module.enable:
+                module.update()
 
     def clear(self):
         self.objects.empty()
