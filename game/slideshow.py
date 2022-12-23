@@ -21,6 +21,8 @@ class Slideshow:
         self.album = None
         self.slide_gen = None
         self.slide = None
+
+        self.name = None
         self.gender = None
 
         self.image = None
@@ -42,19 +44,34 @@ class Slideshow:
 
     def next_slide(self):
         try:
+            pronouns = {"MALE": "He", "FEMALE": "She"}
+            possessives = {"MALE": "His", "FEMALE": "Her"}
             self.slide = next(self.slide_gen)
 
             self.image = self.slide["image"][self.gender]
-            self.text = self.slide["text"]
+            self.image_rect = self.image.get_rect()
+            self.text = []
+            for line in self.slide["text"]:
+                self.text.append(
+                    line.format(
+                        player_name=self.name,
+                        pronoun=pronouns[self.gender],
+                        possessive=possessives[self.gender],
+                    )
+                )
+
             self.coords = self.slide["text_rel_coords"]
 
             message = Message(
                 self.image,
                 self.text,
-                self.main.data.large_font,
+                self.main.data.medium_font,
                 self.main.data.colors["white"],
                 outline_thickness=1,
-                top_left_coordinates=self.coords,
+                top_left_coordinates=(
+                    self.image_rect.width * self.coords[0],
+                    self.image_rect.height * self.coords[1],
+                ),
             )
             message.update()
         except StopIteration:
@@ -65,13 +82,15 @@ class Slideshow:
         for line in self.text:
             total += len(line.split(" "))
 
-        self.total_hold = self.initial_hold + round(total / self.words_per_second)
+        # self.total_hold = self.initial_hold + round(total / self.words_per_second)
+        self.total_hold = self.initial_hold
         return self.total_hold
 
-    def set_album(self, album, gender):
+    def set_album(self, album, name, gender):
         assert album in self.albums
         self.album = self.albums[album]
         self.slide_gen = self.slide_generator()
+        self.name = name
         self.gender = gender
         self.next_slide()
 

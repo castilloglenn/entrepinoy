@@ -190,10 +190,14 @@ class Library:
                         ),
                     },
                     "text": [
-                        "Sample text",
-                        "prologue frame 1",
+                        "{player_name} is a hardworking student of",
+                        "Cavite State University - Imus Campus",
+                        "studying Bachelor Of Science In ",
+                        "Entrepreneurship. {pronoun} desires to ",
+                        "achieve high grades to graduate with ",
+                        "flying colors.",
                     ],
-                    "text_rel_coords": [0, 0],
+                    "text_rel_coords": [0.5125, 0.5],
                 },
                 1: {
                     "image": {
@@ -207,10 +211,11 @@ class Library:
                         ),
                     },
                     "text": [
-                        "Sample text",
-                        "prologue frame 2",
+                        "After all {possessive} four years of academic",
+                        "struggle, {player_name} finally graduated.",
+                        "{possessive} dreams are one step closer!",
                     ],
-                    "text_rel_coords": [0, 0],
+                    "text_rel_coords": [0.03125, 0.825],
                 },
                 2: {
                     "image": {
@@ -224,10 +229,16 @@ class Library:
                         ),
                     },
                     "text": [
-                        "Sample text",
-                        "prologue frame 3",
+                        "{possessive} dream in life is",
+                        "to become a successful",
+                        "entrepreneur someday ",
+                        "and {pronoun} wants to",
+                        "learn how to handle a ",
+                        "business but {pronoun}",
+                        "doesn't have the skills",
+                        "and knowledge currently.",
                     ],
-                    "text_rel_coords": [0, 0],
+                    "text_rel_coords": [0.725, 0.395],
                 },
                 3: {
                     "image": {
@@ -241,10 +252,12 @@ class Library:
                         ),
                     },
                     "text": [
-                        "Sample text",
-                        "prologue frame 4",
+                        "In order to start {possessive} career, {pronoun}",
+                        "found an online job to save some ",
+                        "funds for the capital of the starting ",
+                        "business that {pronoun} wants.",
                     ],
-                    "text_rel_coords": [0, 0],
+                    "text_rel_coords": [0.25, 0.485],
                 },
                 4: {
                     "image": {
@@ -258,10 +271,15 @@ class Library:
                         ),
                     },
                     "text": [
-                        "Sample text",
-                        "prologue frame 5",
+                        "{pronoun} is saving up money",
+                        "little by little in {possessive}",
+                        "job, and when {pronoun} has ",
+                        "enough money for the capital,",
+                        "{pronoun} can finally start the ",
+                        "small business {pronoun} always ",
+                        "wanted.",
                     ],
-                    "text_rel_coords": [0, 0],
+                    "text_rel_coords": [0.05, 0.625],
                 },
             },
         }
