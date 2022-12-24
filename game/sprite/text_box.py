@@ -95,7 +95,7 @@ class TextBox(pygame.sprite.Sprite):
                 self.text = self.text[:-1]
             return True
 
-        if len(self.text) > self.max_length:
+        if len(self.text) >= self.max_length:
             return True
 
         char = list(event.unicode)
