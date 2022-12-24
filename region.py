@@ -241,6 +241,8 @@ class Map:
             for event in pygame.event.get():
                 if self.main.confirm_menu.enable:
                     self.main.confirm_menu.handle_event(event)
+                elif self.main.sliding_menu.has_active_module:
+                    self.main.sliding_menu.pass_event_to_modules(event)
                 elif not self.main.sliding_menu.is_tucked:
                     self.main.sliding_menu.handle_event(event)
                 else:
