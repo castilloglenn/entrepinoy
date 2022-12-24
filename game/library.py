@@ -40,6 +40,7 @@ class Library:
         )
         self.location = self.get_dict_from_json("library", "location.json")
         self.upgrade = self.get_dict_from_json("library", "upgrade.json")
+        self.word_pool = self.get_dict_from_json("library", "word_pool.json")
 
         # Checking the save data
         try:
@@ -787,6 +788,10 @@ class Library:
         self.title_font = {
             "family": self.get_font("PixelEmulator-xq08.ttf", 40),
             "size": 40,
+        }
+        self.giga_font = {
+            "family": self.get_font("PixelEmulator-xq08.ttf", 60),
+            "size": 60,
         }
 
         # City names
