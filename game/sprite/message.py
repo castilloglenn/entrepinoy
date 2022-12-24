@@ -23,6 +23,7 @@ class Message(Sprite):
         super().__init__()
 
         self.screen = screen
+        self.visible = True
 
         self.messages = messages
         self.opacity = 255
@@ -51,6 +52,9 @@ class Message(Sprite):
         # self.update()
 
     def update(self):
+        if not self.visible:
+            return
+
         for index, message in enumerate(self.messages):
             self.render_image(message)
 
