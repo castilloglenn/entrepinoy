@@ -54,9 +54,7 @@ class TextBox(pygame.sprite.Sprite):
         )
 
     def get_data(self):
-        """Source (Modified): https://stackoverflow.com/questions/1276764/stripping-everything-but-alphanumeric-chars-from-a-string-in-python
-        Explanation: Need to extract alphanumeric values only from a string"""
-        return re.sub(r"\W+", "", self.text.upper())
+        return self.text
 
     def update(self):
         self.main.screen.blit(self.image, self.rect)
@@ -103,4 +101,8 @@ class TextBox(pygame.sprite.Sprite):
         char = list(event.unicode)
         if len(char) == 1:
             self.text += char[0]
+
+        """Source (Modified): https://stackoverflow.com/questions/1276764/stripping-everything-but-alphanumeric-chars-from-a-string-in-python
+        Explanation: Need to extract alphanumeric values only from a string"""
+        self.text = re.sub(r"\W+", "", self.text.upper())
         return True
