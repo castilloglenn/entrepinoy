@@ -11,7 +11,7 @@ Capstone Thesis Proposal, created in Python's Pygame Module.
 
 
 
-![image](https://user-images.githubusercontent.com/120929317/208298093-927850a1-0cb3-476e-8d4d-c5a0504e1a86.png)
+![320514663_674429594321109_1660878520574224523_n](https://user-images.githubusercontent.com/120929317/209428955-7c601815-2462-4250-bba8-f96855a09a42.png)
 <h3 align="center">Title screen</h3>
 This is the main menu of the game, the user can start a new game or continue if they have a saved file.
 
@@ -23,6 +23,19 @@ This is the main menu of the game, the user can start a new game or continue if 
 
 
 
+![profile](https://user-images.githubusercontent.com/120929317/209429919-af575e88-18b7-4143-8592-cddf3b1d816d.png)
+<h3 align="center">Profile</h3>
+<p>The user can setup his profile by putting his/her name and select a gender.</p>
+
+
+
+![starterbusiness](https://user-images.githubusercontent.com/120929317/209430050-64449a61-fd66-4168-86cc-f3511c371ef7.png)
+<h3 align="center">Starter Business</h3>
+<p>The player will choose his/her first business here.</p>
+
+
+
+![prologue](https://user-images.githubusercontent.com/120929317/209430130-b52514b3-61be-499a-8a89-362c3cac5e75.png)
 <h3 align="center">Prologue</h3>
 <p>It shows the main character(user) backstory.</p>
 
@@ -36,7 +49,7 @@ This is the main menu of the game, the user can start a new game or continue if 
 ![image](https://user-images.githubusercontent.com/120929317/208300187-c13e03c6-6eeb-46a5-8e79-540820bd4372.png)
 <h3 align="center">Business Street View</h3>
 <p>Background Design, Businesses, and Non Player Characters(NPC) are shown above.</p>
-<p> Customers, Crowds and Vehicles are the types of NPC. </p>
+<p>Customers, Crowds and Vehicles are the types of NPC. </p>
 
 
 
