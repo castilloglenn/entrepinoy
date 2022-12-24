@@ -148,6 +148,11 @@ class Library:
             "buko_stall": self.get_image("meta", "starter_buko_juice.png"),
             "fish_ball_stand": self.get_image("meta", "starter_fish_ball_stand.png"),
             "sorbetes": self.get_image("meta", "starter_sorbetes_icon.png"),
+            "start_button_idle": self.get_image("meta", "start_button_idle.png"),
+            "start_button_hovered": self.get_image("meta", "start_button_hovered.png"),
+            "start_button_disabled": self.get_image(
+                "meta", "start_button_disabled.png"
+            ),
         }
         self.title_screen = {
             "title_screen": self.get_image("title_screen", "title_screen.png"),
@@ -866,6 +871,28 @@ class Library:
             "last_login": "",
             "last_location": "location_a",
             "cash": 100.0,
+            "bank": {
+                "loan": 0,
+                "loan_balance": 0,
+                "loan_date": "",
+                "balance": 0,
+            },
+            "part_time": {
+                "available": True,
+            },
+            "crypto": {
+                "symbol": "",
+                "price": 0,
+                "shares": 0,
+            },
+            "stocks": {
+                "symbol": "",
+                "price": 0,
+                "shares": 0,
+            },
+            "statistics": {
+                "clicks": 0,
+            },
             "businesses": {
                 "test_location": {
                     "last_visited": "",
