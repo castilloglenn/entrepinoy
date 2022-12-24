@@ -890,6 +890,12 @@ class Library:
                 "price": 0,
                 "shares": 0,
             },
+            "news": {
+                "crypto_trajectory": "up",
+                "crypto_chance": 50,
+                "stock_trajectory": "down",
+                "stock_chance": 50,
+            },
             "mission": {
                 "1": {},
                 "2": {},
