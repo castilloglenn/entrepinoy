@@ -890,6 +890,11 @@ class Library:
                 "price": 0,
                 "shares": 0,
             },
+            "mission": {
+                "1": {},
+                "2": {},
+                "3": {},
+            },
             "statistics": {
                 "clicks": 0,
             },
