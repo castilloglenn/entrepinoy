@@ -16,7 +16,7 @@ class StockMenu(GenericMenu):
         # close(self)
 
         # Instantiate logical variables
-        ...
+        self.data = self.main.data.progress["stocks"]
 
         # Instantiate buttons and objects
         ...
@@ -42,3 +42,4 @@ class StockMenu(GenericMenu):
     # Abstract method implementation
     def set_data(self):
         super().set_data()
+        print(self.data)

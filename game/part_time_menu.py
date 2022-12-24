@@ -16,7 +16,7 @@ class PartTimeMenu(GenericMenu):
         # close(self)
 
         # Instantiate logical variables
-        ...
+        self.data = self.main.data.progress["part_time"]
 
         # Instantiate buttons and objects
         ...
@@ -42,3 +42,4 @@ class PartTimeMenu(GenericMenu):
     # Abstract method implementation
     def set_data(self):
         super().set_data()
+        print(self.data)

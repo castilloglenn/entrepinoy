@@ -16,7 +16,7 @@ class BankMenu(GenericMenu):
         # close(self)
 
         # Instantiate logical variables
-        ...
+        self.data = self.main.data.progress["bank"]
 
         # Instantiate buttons and objects
         ...
@@ -42,3 +42,4 @@ class BankMenu(GenericMenu):
     # Abstract method implementation
     def set_data(self):
         super().set_data()
+        print(self.data)
