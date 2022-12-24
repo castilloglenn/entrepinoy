@@ -36,6 +36,7 @@ class GenericMenu:
 
     def __init__(self, main) -> None:
         self.main = main
+        self.screen = self.main.screen
         self.enable = False
 
         # Sprite groups
@@ -48,6 +49,7 @@ class GenericMenu:
         self.background = MenuBackground(
             self.main.screen, 0.75, image=self.main.data.meta_images["menu_background"]
         )
+        self.canvas_rect = self.background.rect
 
         # Buttons, Messages here
 
@@ -63,6 +65,7 @@ class GenericMenu:
         pass
 
     def set_data(self):
+        self.clear()
         self.background.add(self.objects, self.buttons)
         self.background.enable = True
 
