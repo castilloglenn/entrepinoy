@@ -154,6 +154,23 @@ class Library:
             "start_button_disabled": self.get_image(
                 "meta", "start_button_disabled.png"
             ),
+            "deposit_button_idle": self.get_image("meta", "deposit_button_idle.png"),
+            "deposit_button_hovered": self.get_image(
+                "meta", "deposit_button_hovered.png"
+            ),
+            "deposit_button_disabled": self.get_image(
+                "meta", "deposit_button_disabled.png"
+            ),
+            "withdraw_button_idle": self.get_image("meta", "withdraw_button_idle.png"),
+            "withdraw_button_hovered": self.get_image(
+                "meta", "withdraw_button_hovered.png"
+            ),
+            "withdraw_button_disabled": self.get_image(
+                "meta", "withdraw_button_disabled.png"
+            ),
+            "loan_button_idle": self.get_image("meta", "loan_button_idle.png"),
+            "loan_button_hovered": self.get_image("meta", "loan_button_hovered.png"),
+            "loan_button_disabled": self.get_image("meta", "loan_button_disabled.png"),
         }
         self.title_screen = {
             "title_screen": self.get_image("title_screen", "title_screen.png"),
@@ -880,6 +897,7 @@ class Library:
                 "loan": 0.0,
                 "loan_balance": 0.0,
                 "loan_date": "",
+                "loan_collateral": "",
                 "balance": 0.0,
                 "ledger": [],
             },
