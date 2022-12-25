@@ -372,8 +372,14 @@ class Scene:
 
     def time_callback_hour(self):
         self.main.debug.log("Hour callback")
+
+        # Background update
         self.background.set_time(self.time)
         self.background.check_change()
+
+        # Part time reset update
+        if self.time.time.hour == 8:
+            self.main.data.progress["part_time"]["available"] = True
 
     def time_callback_day(self):
         self.main.debug.log("Day callback")
