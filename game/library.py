@@ -877,23 +877,26 @@ class Library:
             "last_location": "location_a",
             "cash": 100.0,
             "bank": {
-                "loan": 0,
-                "loan_balance": 0,
+                "loan": 0.0,
+                "loan_balance": 0.0,
                 "loan_date": "",
-                "balance": 0,
+                "balance": 0.0,
+                "ledger": [],
             },
             "part_time": {
                 "available": True,
             },
             "crypto": {
                 "symbol": "",
-                "price": 0,
+                "price": 0.0,
                 "shares": 0,
+                "ledger": [],
             },
             "stocks": {
                 "symbol": "",
-                "price": 0,
+                "price": 0.0,
                 "shares": 0,
+                "ledger": [],
             },
             "news": {
                 "crypto_trajectory": "up",
