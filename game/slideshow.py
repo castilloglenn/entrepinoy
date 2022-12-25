@@ -35,7 +35,7 @@ class Slideshow:
         self.BUTTON_HOLD = 2
 
         self.initial_hold = 2  # plus the reading time (depends on the text length)
-        self.words_per_second = 3
+        self.words_per_second = 5
         self.total_hold = 0
 
     def slide_generator(self):
