@@ -223,8 +223,8 @@ class PartTimeMenu(GenericMenu):
             "awpm": [60, 50, 40],
         }
         bonus_weights = {
-            "job_span": 0.3,
-            "accuracy": 0.3,
+            "job_span": 0.2,
+            "accuracy": 0.4,
             "awpm": 0.4,
         }
 
