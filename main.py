@@ -92,6 +92,7 @@ class Main:
         self.scene_window = None
         self.map_window = None
         if self.data.progress is not None:
+            self.sliding_menu.initialize_modules()
             self.scene_window = Scene(self)
             self.map_window = Map(self)
         self.setting_window = Setting(self)
@@ -289,6 +290,7 @@ class Main:
         self.prologue = Prologue(self)
         self.prologue.run()
 
+        self.sliding_menu.initialize_modules()
         if self.scene_window is None:
             self.scene_window = Scene(self)
         else:

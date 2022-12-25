@@ -38,14 +38,15 @@ class SlidingMenu:
         self.callback = None
 
         # Menu's
-        self.mission_menu = MissionMenu(self.main)
-        self.achievement_menu = AchievementMenu(self.main)
-        self.part_time_menu = PartTimeMenu(self.main)
-        self.news_menu = NewsMenu(self.main)
-        self.bank_menu = BankMenu(self.main)
-        self.stock_menu = StockMenu(self.main)
-        self.crypto_menu = CryptoMenu(self.main)
-        self.info_menu = InformationMenu(self.main)
+        self.menu_initialized = False
+        self.mission_menu = None
+        self.achievement_menu = None
+        self.part_time_menu = None
+        self.news_menu = None
+        self.bank_menu = None
+        self.stock_menu = None
+        self.crypto_menu = None
+        self.info_menu = None
 
         self.has_active_module = False
         self.modules = [
@@ -225,6 +226,29 @@ class SlidingMenu:
         }
 
         self.update_endpoint()
+
+    def initialize_modules(self):
+        self.mission_menu = MissionMenu(self.main)
+        self.achievement_menu = AchievementMenu(self.main)
+        self.part_time_menu = PartTimeMenu(self.main)
+        self.news_menu = NewsMenu(self.main)
+        self.bank_menu = BankMenu(self.main)
+        self.stock_menu = StockMenu(self.main)
+        self.crypto_menu = CryptoMenu(self.main)
+        self.info_menu = InformationMenu(self.main)
+
+        self.modules = [
+            self.mission_menu,
+            self.achievement_menu,
+            self.part_time_menu,
+            self.news_menu,
+            self.bank_menu,
+            self.stock_menu,
+            self.crypto_menu,
+            self.info_menu,
+        ]
+
+        self.menu_initialized = True
 
     def show_module(self):
         self.switch_state()
@@ -490,7 +514,7 @@ class SlidingMenu:
             self.control_dim = True
 
     def update(self):
-        if not self.enable:
+        if not self.enable or not self.menu_initialized:
             return
 
         self.update_sliding()
