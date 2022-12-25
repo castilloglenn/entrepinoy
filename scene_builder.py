@@ -384,19 +384,50 @@ class Scene:
     def time_callback_day(self):
         self.main.debug.log("Day callback")
 
-        interest_increase = self.main.sliding_menu.bank_menu._check_savings_interests()
-        print(interest_increase)
+        (
+            interest_increase,
+            account,
+        ) = self.main.sliding_menu.bank_menu._check_savings_interests()
         if interest_increase > 0:
             self.main.response_menu.set_message(
                 [
                     f"Bank Interest Update:",
                     f"P{interest_increase:,.2f} has been",
-                    f"added to your Savings",
+                    f"added to your {account}",
                     f"Account.",
                     f"",
                 ]
             )
             self.main.response_menu.enable = True
+
+        loan_status = self.main.sliding_menu.bank_menu._check_loan_payment()
+        if loan_status != None:
+            message = None
+            if loan_status == "SEIZED":
+                message = [
+                    f"You don't have enough",
+                    f"cash to pay your loan.",
+                    f"The collateral has been",
+                    f"seized by the bank.",
+                    f"",
+                ]
+            else:
+                loan_base_payment, loan_interest, account = loan_status
+                message = [
+                    f"Bank Loan Update:",
+                    f"P{loan_base_payment:,.2f} ",
+                    f"+(P{loan_interest:,.2f})",
+                    f"interest is paid using",
+                    f"your {account} Account.",
+                ]
+
+            if self.main.response_menu.enable:
+                # add to queue
+                self.main.response_menu.queue.append(message)
+            else:
+                # set_message and enable
+                self.main.response_menu.set_message(message)
+                self.main.response_menu.enable = True
 
     def time_callback_month(self):
         self.main.debug.log("Month callback")
