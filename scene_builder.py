@@ -384,7 +384,19 @@ class Scene:
     def time_callback_day(self):
         self.main.debug.log("Day callback")
 
-        # TODO Update reports of each individual owned businesses
+        interest_increase = self.main.sliding_menu.bank_menu._check_savings_interests()
+        print(interest_increase)
+        if interest_increase > 0:
+            self.main.response_menu.set_message(
+                [
+                    f"Bank Interest Update:",
+                    f"P{interest_increase:,.2f} has been",
+                    f"added to your Savings",
+                    f"Account.",
+                    f"",
+                ]
+            )
+            self.main.response_menu.enable = True
 
     def time_callback_month(self):
         self.main.debug.log("Month callback")
@@ -608,12 +620,20 @@ class Scene:
             # Menu overlays
             self.business_menu.update()
 
+            # Checking if menus will be displaying
+            self.main.confirm_menu.update()
+            self.main.response_menu.update()
+
             # Check transition fading, render fade animation
             self.main.transition.update()
 
             # Event processing
             for event in pygame.event.get():
-                if self.business_menu.enable:
+                if self.main.response_menu.enable:
+                    self.main.response_menu.handle_event(event)
+                elif self.main.confirm_menu.enable:
+                    self.main.confirm_menu.handle_event(event)
+                elif self.business_menu.enable:
                     self.business_menu.handle_event(event)
                 elif self.main.sliding_menu.has_active_module:
                     self.main.sliding_menu.pass_event_to_modules(event)
