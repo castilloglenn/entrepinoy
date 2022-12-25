@@ -898,6 +898,7 @@ class Library:
                 "loan_balance": 0.0,
                 "loan_date": "",
                 "loan_collateral": "",
+                "loan_collateral_location": "",
                 "balance": 0.0,
                 "ledger": [],
             },
