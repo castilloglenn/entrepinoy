@@ -216,16 +216,16 @@ class PartTimeMenu(GenericMenu):
         accuracy = self.accuracy
         awpm = self.awpm
 
-        base_pay_per_letter = 3.0
+        base_pay_per_letter = 2.0
         bonus_thresholds = {
-            "job_span": [20, 30, 40],
+            "job_span": [40, 50, 60],
             "accuracy": [98, 95, 90],
             "awpm": [60, 50, 40],
         }
         bonus_weights = {
-            "job_span": 0.2,
-            "accuracy": 0.4,
-            "awpm": 0.4,
+            "job_span": 0.1,
+            "accuracy": 0.2,
+            "awpm": 0.2,
         }
 
         base_pay = self.word_letters_sum * base_pay_per_letter
@@ -265,7 +265,7 @@ class PartTimeMenu(GenericMenu):
         self.main.response_menu.set_message(
             [
                 f"Success! Base Pay: P{base_pay:,.2f}",
-                f"Job Span: {span:,d} (+P{span_bonus:,.2f})",
+                f"Speed: {span:,d} sec (+P{span_bonus:,.2f})",
                 f"Accuracy: {accuracy:,.1f}% (+P{accuracy_bonus:,.2f})",
                 f"AWPM: {awpm:,.1f} (+P{awpm_bonus:,.2f})",
                 f"Client Total Pay: P{total_pay:,.2f}",
@@ -339,7 +339,7 @@ class PartTimeMenu(GenericMenu):
 
             self.word_set = []
             self.word_set_index = 0
-            self.word_set_size = 10
+            self.word_set_size = 20
             self.word_letters_sum = 0
 
             self.word_written = ""
