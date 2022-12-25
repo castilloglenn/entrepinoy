@@ -22,7 +22,7 @@ class PartTimeMenu(GenericMenu):
         # close(self)
 
         # Instantiate logical variables
-        self.data = self.main.data.progress["part_time"]
+        self.data = None
         self.word_pool = self.main.data.word_pool
 
         self.TAB_OVERVIEW = 0
@@ -331,6 +331,7 @@ class PartTimeMenu(GenericMenu):
     # Abstract method implementation
     def set_data(self):
         super().set_data()
+        self.data = self.main.data.progress["part_time"]
 
         if self.TAB_ACTIVE == self.TAB_OVERVIEW:
             self.time_started = None

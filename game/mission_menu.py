@@ -16,7 +16,7 @@ class MissionMenu(GenericMenu):
         # close(self)
 
         # Instantiate logical variables
-        self.data = self.main.data.progress["mission"]
+        self.data = None
 
         # Instantiate buttons and objects
         ...
@@ -42,4 +42,5 @@ class MissionMenu(GenericMenu):
     # Abstract method implementation
     def set_data(self):
         super().set_data()
+        self.data = self.main.data.progress["mission"]
         print(self.data)

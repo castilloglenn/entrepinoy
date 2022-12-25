@@ -16,7 +16,7 @@ class CryptoMenu(GenericMenu):
         # close(self)
 
         # Instantiate logical variables
-        self.data = self.main.data.progress["crypto"]
+        self.data = None
 
         # Instantiate buttons and objects
         ...
@@ -42,4 +42,5 @@ class CryptoMenu(GenericMenu):
     # Abstract method implementation
     def set_data(self):
         super().set_data()
+        self.data = self.main.data.progress["crypto"]
         print(self.data)
