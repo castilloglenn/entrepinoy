@@ -3,7 +3,7 @@ from game.sprite.button import Button
 
 from game.generic_menu import GenericMenu
 
-from datetime import datetime, timedelta
+from datetime import datetime
 import pygame
 import random
 import re
