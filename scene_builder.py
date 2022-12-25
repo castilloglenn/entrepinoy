@@ -163,7 +163,7 @@ class Scene:
             [
                 self.time.get_date(),
                 self.time.get_time(),
-                "Bank Balance:",
+                "E-Cash Balance:",
                 f"P{self.main.data.progress['cash']:18,.2f}",
             ],
             self.main.data.small_font,
@@ -365,7 +365,7 @@ class Scene:
             [
                 self.time.get_date(),
                 self.time.get_time(),
-                "Bank Balance:",
+                "E-Cash Balance:",
                 f"P{self.main.data.progress['cash']:18,.2f}",
             ]
         )
