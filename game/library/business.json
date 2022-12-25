@@ -68,10 +68,10 @@
         "queue_direction": "right",
         "placement": "front",
         "initial_cost": 10000.0,
-        "daily_expenses": 200.0,
-        "employee_cost": 200.0,
+        "daily_expenses": 250.0,
+        "employee_cost": 250.0,
         "income_per_customer_range": [
-            10.0,
+            15.0,
             30.0
         ]
     },
