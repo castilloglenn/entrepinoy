@@ -82,6 +82,9 @@ class Scene:
         pygame.time.set_timer(
             self.fps_counter_id, 1000  # This is static, does not need to be modified
         )
+        # Crypto Updates
+        self.crypto_update_id = pygame.USEREVENT + 6
+        pygame.time.set_timer(self.crypto_update_id, 1000)
 
         # Logging entry point
         self.main.debug.new_line()
@@ -369,9 +372,6 @@ class Scene:
                 f"P{self.main.data.progress['cash']:18,.2f}",
             ]
         )
-
-        # Crypto price update
-        self.main.sliding_menu.crypto_menu._update_price()
 
     def time_callback_hour(self):
         self.main.debug.log("Hour callback")
@@ -722,6 +722,9 @@ class Scene:
                             f"NOTICE: FPS Unstabled {self.fps_previous_count}/{current_fps}"
                         )
                         self.main.debug.memory_log()
+                elif event.type == self.crypto_update_id:
+                    # Crypto price update
+                    self.main.sliding_menu.crypto_menu._update_price()
 
             # FPS Counter increment
             self.fps_counter += 1
