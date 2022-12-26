@@ -240,7 +240,7 @@
         "employee_cost": 650.0,
         "income_per_customer_range": [
             120.0,
-            250.0
+            200.0
         ]
     },
     "clothing_line": {
@@ -259,12 +259,12 @@
         "queuing_point": 0.5,
         "queue_direction": "right",
         "placement": "back",
-        "initial_cost": 1.0,
-        "daily_expenses": 1.0,
-        "employee_cost": 1.0,
+        "initial_cost": 150000.0,
+        "daily_expenses": 3000.0,
+        "employee_cost": 700.0,
         "income_per_customer_range": [
-            1.0,
-            1.0
+            120.0,
+            250.0
         ]
     },
     "convenience_store": {

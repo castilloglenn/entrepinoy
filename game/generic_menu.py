@@ -87,9 +87,6 @@ class GenericMenu:
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     self.background.enable = False
-                if event.key == pygame.K_c:
-                    # self.collect_sales_button.force_clicked()
-                    pass
 
             elif event.type == pygame.MOUSEMOTION:
                 for button in self.hoverable_buttons:

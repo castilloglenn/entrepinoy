@@ -41,6 +41,7 @@ class Library:
         self.location = self.get_dict_from_json("library", "location.json")
         self.upgrade = self.get_dict_from_json("library", "upgrade.json")
         self.word_pool = self.get_dict_from_json("library", "word_pool.json")
+        self.symbols = self.get_dict_from_json("library", "symbols.json")
 
         # Checking the save data
         try:
@@ -154,6 +155,49 @@ class Library:
             "start_button_disabled": self.get_image(
                 "meta", "start_button_disabled.png"
             ),
+            "deposit_button_idle": self.get_image("meta", "deposit_button_idle.png"),
+            "deposit_button_hovered": self.get_image(
+                "meta", "deposit_button_hovered.png"
+            ),
+            "deposit_button_disabled": self.get_image(
+                "meta", "deposit_button_disabled.png"
+            ),
+            "withdraw_button_idle": self.get_image("meta", "withdraw_button_idle.png"),
+            "withdraw_button_hovered": self.get_image(
+                "meta", "withdraw_button_hovered.png"
+            ),
+            "withdraw_button_disabled": self.get_image(
+                "meta", "withdraw_button_disabled.png"
+            ),
+            "loan_button_idle": self.get_image("meta", "loan_button_idle.png"),
+            "loan_button_hovered": self.get_image("meta", "loan_button_hovered.png"),
+            "loan_button_disabled": self.get_image("meta", "loan_button_disabled.png"),
+            "plus_sign_button_idle": self.get_image(
+                "meta", "plus_sign_button_idle.png"
+            ),
+            "plus_sign_button_hovered": self.get_image(
+                "meta", "plus_sign_button_hovered.png"
+            ),
+            "plus_sign_button_disabled": self.get_image(
+                "meta", "plus_sign_button_disabled.png"
+            ),
+            "minus_sign_button_idle": self.get_image(
+                "meta", "minus_sign_button_idle.png"
+            ),
+            "minus_sign_button_hovered": self.get_image(
+                "meta", "minus_sign_button_hovered.png"
+            ),
+            "minus_sign_button_disabled": self.get_image(
+                "meta", "minus_sign_button_disabled.png"
+            ),
+            "buy_button_idle": self.get_image("meta", "buy_button_idle.png"),
+            "buy_button_hovered": self.get_image("meta", "buy_button_hovered.png"),
+            "buy_button_disabled": self.get_image("meta", "buy_button_disabled.png"),
+            "sell_button_idle": self.get_image("meta", "sell_button_idle.png"),
+            "sell_button_hovered": self.get_image("meta", "sell_button_hovered.png"),
+            "sell_button_disabled": self.get_image("meta", "sell_button_disabled.png"),
+            "profile_male": self.get_image("meta", "profile_male.png"),
+            "profile_female": self.get_image("meta", "profile_female.png"),
         }
         self.title_screen = {
             "title_screen": self.get_image("title_screen", "title_screen.png"),
@@ -880,6 +924,9 @@ class Library:
                 "loan": 0.0,
                 "loan_balance": 0.0,
                 "loan_date": "",
+                "loan_collateral_ui": "",
+                "loan_collateral_code": "",
+                "loan_collateral_location": "",
                 "balance": 0.0,
                 "ledger": [],
             },
@@ -888,14 +935,18 @@ class Library:
             },
             "crypto": {
                 "symbol": "",
+                "starting_price": 0.0,
                 "price": 0.0,
                 "shares": 0,
+                "pnl": 0.0,
                 "ledger": [],
             },
             "stocks": {
                 "symbol": "",
+                "starting_price": 0.0,
                 "price": 0.0,
                 "shares": 0,
+                "pnl": 0.0,
                 "ledger": [],
             },
             "news": {

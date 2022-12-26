@@ -370,6 +370,9 @@ class Scene:
             ]
         )
 
+        # Crypto price update
+        self.main.sliding_menu.crypto_menu._update_price()
+
     def time_callback_hour(self):
         self.main.debug.log("Hour callback")
 
@@ -380,11 +383,55 @@ class Scene:
         # Part time reset update
         if self.time.time.hour == 8:
             self.main.data.progress["part_time"]["available"] = True
+            self.main.sliding_menu.crypto_menu._reset_symbol()
 
     def time_callback_day(self):
         self.main.debug.log("Day callback")
 
-        # TODO Update reports of each individual owned businesses
+        (
+            interest_increase,
+            account,
+        ) = self.main.sliding_menu.bank_menu._check_savings_interests()
+        if interest_increase > 0:
+            self.main.response_menu.set_message(
+                [
+                    f"Bank Interest Update:",
+                    f"P{interest_increase:,.2f} has been",
+                    f"added to your {account}",
+                    f"Account.",
+                    f"",
+                ]
+            )
+            self.main.response_menu.enable = True
+
+        loan_status = self.main.sliding_menu.bank_menu._check_loan_payment()
+        if loan_status != None:
+            message = None
+            if loan_status == "SEIZED":
+                message = [
+                    f"You don't have enough",
+                    f"cash to pay your loan.",
+                    f"The collateral has been",
+                    f"seized by the bank.",
+                    f"",
+                ]
+            else:
+                loan_base_payment, loan_interest, account = loan_status
+                message = [
+                    f"Bank Loan Update:",
+                    f"P{loan_base_payment:,.2f} ",
+                    f"+(P{loan_interest:,.2f})",
+                    f"interest is paid using",
+                    f"your {account} Account.",
+                ]
+
+            if self.main.response_menu.enable:
+                # add to queue
+                self.main.response_menu.queue.append(message)
+            else:
+                # set_message and enable
+                self.main.response_menu.set_message(message)
+                self.main.response_menu.enable = True
 
     def time_callback_month(self):
         self.main.debug.log("Month callback")
@@ -608,12 +655,20 @@ class Scene:
             # Menu overlays
             self.business_menu.update()
 
+            # Checking if menus will be displaying
+            self.main.confirm_menu.update()
+            self.main.response_menu.update()
+
             # Check transition fading, render fade animation
             self.main.transition.update()
 
             # Event processing
             for event in pygame.event.get():
-                if self.business_menu.enable:
+                if self.main.response_menu.enable:
+                    self.main.response_menu.handle_event(event)
+                elif self.main.confirm_menu.enable:
+                    self.main.confirm_menu.handle_event(event)
+                elif self.business_menu.enable:
                     self.business_menu.handle_event(event)
                 elif self.main.sliding_menu.has_active_module:
                     self.main.sliding_menu.pass_event_to_modules(event)
