@@ -726,6 +726,9 @@ class Scene:
                     # Crypto price update
                     self.main.sliding_menu.crypto_menu._update_price()
 
+                    # TODO DEBUG ONLY
+                    # self.main.sliding_menu.stock_menu._update_price()
+
             # FPS Counter increment
             self.fps_counter += 1
 
