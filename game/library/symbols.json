@@ -1,0 +1,4 @@
+{
+	"crypto": ["BTC", "ETH", "USDT", "USDC", "BNB", "BUSD", "DOGE", "ADA", "MATIC", "SOL", "SHIB", "SLP", "AXS"],
+	"stocks": ["GOOG", "AMZN", "DIS", "GME", "RBLX", "FB", "MSFT", "ZM", "NVDA", "NFLX", "TSLA"]
+}
