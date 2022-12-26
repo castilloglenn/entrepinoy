@@ -198,6 +198,9 @@ class Library:
             "sell_button_disabled": self.get_image("meta", "sell_button_disabled.png"),
             "profile_male": self.get_image("meta", "profile_male.png"),
             "profile_female": self.get_image("meta", "profile_female.png"),
+            "pay_button_idle": self.get_image("meta", "pay_button_idle.png"),
+            "pay_button_hovered": self.get_image("meta", "pay_button_hovered.png"),
+            "pay_button_disabled": self.get_image("meta", "pay_button_disabled.png"),
         }
         self.title_screen = {
             "title_screen": self.get_image("title_screen", "title_screen.png"),

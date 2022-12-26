@@ -175,6 +175,27 @@ class BankMenu(GenericMenu):
                 ],
             },
         )
+        self.loan_pay_button = Button(
+            self.main,
+            self._loan_pay_button_callback,
+            top_left_coordinates=(
+                int(self.canvas_rect.width * 0.675) + self.canvas_rect.x,
+                int(self.canvas_rect.height * 0.7475) + self.canvas_rect.y,
+            ),
+            **{
+                "idle": self.main.data.meta_images["pay_button_idle"].convert_alpha(),
+                "outline": self.main.data.meta_images[
+                    "pay_button_hovered"
+                ].convert_alpha(),
+                "disabled": self.main.data.meta_images[
+                    "pay_button_disabled"
+                ].convert_alpha(),
+                "tooltip": [
+                    f"Pay your loan's",
+                    f"bill in advance.",
+                ],
+            },
+        )
 
     # If reconstructable, add this function
     # def reconstruct(self, args):
@@ -371,7 +392,7 @@ class BankMenu(GenericMenu):
 
         self.main.scene_window.update_data()
 
-    def _check_loan_payment(self):
+    def _check_loan_payment(self, for_seizing=True, monthly_check=True):
         if self.data["loan"] == 0.0:
             return None
 
@@ -382,19 +403,22 @@ class BankMenu(GenericMenu):
             self.data["loan_date"], self.main.scene_window.time.format
         )
         time_delta = current_date - loan_date
-        if time_delta.days < 30:
+        if time_delta.days < 30 and monthly_check:
             return None
 
-        new_loan_date = loan_date + timedelta(days=30)
+        if monthly_check:
+            new_loan_date = loan_date + timedelta(days=30)
+        else:
+            new_loan_date = current_date
         loan_base_payment = self.data["loan"] / self.loan_months_payable
         loan_interest = loan_base_payment * self.loan_interest
         loan_total_payment = loan_base_payment + loan_interest
 
-        self.data["loan_date"] = new_loan_date.strftime(
-            self.main.scene_window.time.format
-        )
-        self.data["loan_balance"] -= loan_base_payment
         if self.progress["cash"] >= loan_total_payment:
+            self.data["loan_date"] = new_loan_date.strftime(
+                self.main.scene_window.time.format
+            )
+            self.data["loan_balance"] -= loan_base_payment
             self.progress["cash"] -= loan_total_payment
 
             if self.data["loan_balance"] <= 0.0:
@@ -407,6 +431,10 @@ class BankMenu(GenericMenu):
 
             return loan_base_payment, loan_interest, "E-Cash"
         elif self.data["balance"] >= loan_total_payment:
+            self.data["loan_date"] = new_loan_date.strftime(
+                self.main.scene_window.time.format
+            )
+            self.data["loan_balance"] -= loan_base_payment
             self.data["balance"] -= loan_total_payment
 
             ledger_balance = loan_total_payment
@@ -434,9 +462,11 @@ class BankMenu(GenericMenu):
                 self.data["loan_collateral_location"] = ""
 
             return loan_base_payment, loan_interest, "Savings"
-        else:
+        elif for_seizing:
             self._seize_collateral()
             return "SEIZED"
+        else:
+            return "NOT ENOUGH"
 
     def _evaluate_businesses(self):
         highest_business_name = None
@@ -496,6 +526,38 @@ class BankMenu(GenericMenu):
         )
         self.main.response_menu.enable = True
 
+    def _loan_pay_button_callback(self, args):
+        message = None
+        response = self._check_loan_payment(
+            for_seizing=False,
+            monthly_check=False,
+        )
+        if response == "NOT ENOUGH":
+            message = [
+                f"",
+                f"You don't have enough",
+                f"E-Cash or Savings Account",
+                f"balance to pay your loan.",
+                f"",
+            ]
+        else:
+            loan_base_payment, loan_interest, account = response
+            message = [
+                f"Bank Loan Update:",
+                f"P{loan_base_payment:,.2f} ",
+                f"+(P{loan_interest:,.2f})",
+                f"interest is paid using",
+                f"your {account} Account.",
+            ]
+
+        if self.main.response_menu.enable:
+            # add to queue
+            self.main.response_menu.queue.append(message)
+        else:
+            # set_message and enable
+            self.main.response_menu.set_message(message)
+            self.main.response_menu.enable = True
+
     def _loan_button_callback(self, args):
         if self.data["loan"]:
             self.main.response_menu.set_message(
@@ -542,7 +604,9 @@ class BankMenu(GenericMenu):
 
     # Abstract method implementation
     def set_button_states(self):
-        ...
+        self.loan_pay_button.set_disabled(True)
+        if self.data["loan"] > 0.0:
+            self.loan_pay_button.set_disabled(False)
 
     # Abstract method implementation
     def update_data(self):
@@ -556,6 +620,8 @@ class BankMenu(GenericMenu):
         self.savings_balance_message.set_message([f"P{self.data['balance']:,.2f}"])
         self.loan_title_message.set_message([f"Loan Balance {collateral}"])
         self.loan_balance_message.set_message([f"P{self.data['loan_balance']:,.2f}"])
+
+        self.set_button_states()
 
     # Abstract method implementation
     def set_data(self):
@@ -576,6 +642,9 @@ class BankMenu(GenericMenu):
         self.loan_balance_message.add(self.objects)
         self.loan_description_message.add(self.objects)
         self.loan_button.add(
+            self.objects, self.buttons, self.hoverable_buttons, self.tooltips
+        )
+        self.loan_pay_button.add(
             self.objects, self.buttons, self.hoverable_buttons, self.tooltips
         )
 
