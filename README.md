@@ -82,6 +82,22 @@ This is the main menu of the game, the user can start a new game or continue if 
 
 
 
+
+![partimescreenshot1](https://user-images.githubusercontent.com/120929317/209551565-d0e12eab-1c6d-48aa-9840-f4535a9623b5.png)
+![partimescreenshot2](https://user-images.githubusercontent.com/120929317/209551572-9b09b498-f6bb-468b-ac4b-285e1f532cb0.png)
+![partimescreenshot3](https://user-images.githubusercontent.com/120929317/209551579-3e9faf82-188b-428f-933c-9b08728550a4.png)
+<h3 align="center">Part-time</h3>
+<p>The Part-time can be access in the sliding menu. The user can earn extra cash by participating in this minigame. The user will type the word shown and press enter.</p>
+
+
+
+![bankscreenshot1](https://user-images.githubusercontent.com/120929317/209551741-3484406b-47f0-42a7-8e16-f0e0d2c693b2.png)
+![bankscreenshot2](https://user-images.githubusercontent.com/120929317/209551752-d9013950-e29c-446e-a5ec-a02a586cc8d1.png)
+<h3 align="center">Bank</h3>
+<p>The bank is accessible in the sliding menu. The user can deposit its unused money in the savings account and as it is stored there, the bank will pay the interest rate of the stored money. The user can loan money in the bank if the user lacks money and want to buy or upgrade a business.</p>
+
+
+
 ![debug](https://user-images.githubusercontent.com/120929317/208303647-0630fa82-66ef-4e36-aa6a-1934cef76531.png)
 <h3 align="center">Debug Info</h3>
 <p>The developer use this when debugging the game and balancing the business.</p>
