@@ -273,8 +273,9 @@ class PartTimeMenu(GenericMenu):
         )
         self.main.response_menu.enable = True
         self.main.data.progress["cash"] += total_pay
-
         self.data["available"] = False
+
+        self.main.scene_window.update_data()
         self.TAB_ACTIVE = self.TAB_OVERVIEW
         self.set_data()
 

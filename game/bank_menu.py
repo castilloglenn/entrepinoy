@@ -283,6 +283,8 @@ class BankMenu(GenericMenu):
             )
             self.main.response_menu.enable = True
 
+        self.main.scene_window.update_data()
+
     def _withdraw_confirm_callback(self):
         withdrawn_funds = self.data["balance"]
         self.data["balance"] = 0.0
@@ -329,6 +331,8 @@ class BankMenu(GenericMenu):
             )
             self.main.response_menu.enable = True
 
+        self.main.scene_window.update_data()
+
     def _seize_collateral(self):
         location = self.data["loan_collateral_location"]
         business = self.data["loan_collateral_code"]
@@ -364,6 +368,8 @@ class BankMenu(GenericMenu):
         self.data["loan_collateral_ui"] = ""
         self.data["loan_collateral_code"] = ""
         self.data["loan_collateral_location"] = ""
+
+        self.main.scene_window.update_data()
 
     def _check_loan_payment(self):
         if self.data["loan"] == 0.0:
@@ -531,6 +537,8 @@ class BankMenu(GenericMenu):
                 ]
             )
             self.main.response_menu.enable = True
+
+        self.main.scene_window.update_data()
 
     # Abstract method implementation
     def set_button_states(self):
