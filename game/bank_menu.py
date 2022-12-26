@@ -410,6 +410,7 @@ class BankMenu(GenericMenu):
             new_loan_date = loan_date + timedelta(days=30)
         else:
             new_loan_date = current_date
+
         loan_base_payment = self.data["loan"] / self.loan_months_payable
         loan_interest = loan_base_payment * self.loan_interest
         loan_total_payment = loan_base_payment + loan_interest
