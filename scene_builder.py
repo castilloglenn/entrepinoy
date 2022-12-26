@@ -370,6 +370,9 @@ class Scene:
             ]
         )
 
+        # Crypto price update
+        self.main.sliding_menu.crypto_menu._update_price()
+
     def time_callback_hour(self):
         self.main.debug.log("Hour callback")
 
@@ -380,6 +383,7 @@ class Scene:
         # Part time reset update
         if self.time.time.hour == 8:
             self.main.data.progress["part_time"]["available"] = True
+            self.main.sliding_menu.crypto_menu._reset_symbol()
 
     def time_callback_day(self):
         self.main.debug.log("Day callback")
