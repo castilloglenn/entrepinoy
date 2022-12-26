@@ -21,7 +21,8 @@ class CryptoMenu(GenericMenu):
         # close(self)
 
         # Instantiate logical variables
-        self.data = self.main.data.progress["crypto"]
+        self.progress = self.main.data.progress
+        self.data = self.progress["crypto"]
         self.symbols = self.main.data.symbols["crypto"]
         self.ranges = {
             "low": [20, 100],
@@ -35,6 +36,7 @@ class CryptoMenu(GenericMenu):
         self.start_change = 0.0
         self.buy_count = 1
         self.sell_count = 1
+        self.average_position = 0.0
 
         # Mitigate empty symbol (Scene's Day Callback should be the one to update)
         if self.data["symbol"] == "":
@@ -60,7 +62,7 @@ class CryptoMenu(GenericMenu):
             self.main.data.medium_font,
             self.main.data.colors["brown"],
             top_left_coordinates=(
-                int(self.canvas_rect.width * 0.06) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.09) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.27) + self.canvas_rect.y,
             ),
         )
@@ -70,7 +72,7 @@ class CryptoMenu(GenericMenu):
             self.main.data.giga_font,
             self.main.data.colors["brown"],
             top_left_coordinates=(
-                int(self.canvas_rect.width * 0.06) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.09) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.36) + self.canvas_rect.y,
             ),
         )
@@ -80,7 +82,7 @@ class CryptoMenu(GenericMenu):
             self.main.data.title_font,
             self.main.data.colors["brown"],
             top_left_coordinates=(
-                int(self.canvas_rect.width * 0.06) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.09) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.5) + self.canvas_rect.y,
             ),
         )
@@ -90,7 +92,7 @@ class CryptoMenu(GenericMenu):
             self.main.data.title_font,
             self.main.data.colors["brown"],
             top_left_coordinates=(
-                int(self.canvas_rect.width * 0.06) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.09) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.6) + self.canvas_rect.y,
             ),
         )
@@ -100,7 +102,7 @@ class CryptoMenu(GenericMenu):
             self.main.data.medium_font,
             self.main.data.colors["brown"],
             top_left_coordinates=(
-                int(self.canvas_rect.width * 0.06) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.09) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.7) + self.canvas_rect.y,
             ),
         )
@@ -110,7 +112,7 @@ class CryptoMenu(GenericMenu):
             self.main.data.medium_font,
             self.main.data.colors["brown"],
             top_left_coordinates=(
-                int(self.canvas_rect.width * 0.46) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.49) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.305) + self.canvas_rect.y,
             ),
         )
@@ -120,7 +122,7 @@ class CryptoMenu(GenericMenu):
             self.main.data.medium_font,
             self.main.data.colors["brown"],
             top_left_coordinates=(
-                int(self.canvas_rect.width * 0.67) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.7) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.305) + self.canvas_rect.y,
             ),
         )
@@ -130,7 +132,7 @@ class CryptoMenu(GenericMenu):
             self.main.data.giga_font,
             self.main.data.colors["brown"],
             center_coordinates=(
-                int(self.canvas_rect.width * 0.5) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.53) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.425) + self.canvas_rect.y,
             ),
         )
@@ -140,15 +142,15 @@ class CryptoMenu(GenericMenu):
             self.main.data.giga_font,
             self.main.data.colors["brown"],
             center_coordinates=(
-                int(self.canvas_rect.width * 0.77) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.8) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.425) + self.canvas_rect.y,
             ),
         )
         self.buy_button = Button(
             self.main,
-            lambda x: print("buy"),
+            self._buy_share,
             center_coordinates=(
-                int(self.canvas_rect.width * 0.49) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.55) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.58) + self.canvas_rect.y,
             ),
             button_ratio=0.8,
@@ -161,15 +163,15 @@ class CryptoMenu(GenericMenu):
                     "buy_button_disabled"
                 ].convert_alpha(),
                 "tooltip": [
-                    "Buy stock(s) at the current price.",
+                    "Buy share(s) at the current price.",
                 ],
             },
         )
         self.buy_increase_button = Button(
             self.main,
-            lambda x: print("buy increase"),
+            self._increase_buy_count,
             center_coordinates=(
-                int(self.canvas_rect.width * 0.58) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.66) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.58) + self.canvas_rect.y,
             ),
             button_ratio=0.3,
@@ -191,15 +193,15 @@ class CryptoMenu(GenericMenu):
             self.main.data.title_font,
             self.main.data.colors["brown"],
             center_coordinates=(
-                int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.73) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.575) + self.canvas_rect.y,
             ),
         )
         self.buy_decrease_button = Button(
             self.main,
-            lambda x: print("buy decrease"),
+            self._decrease_buy_count,
             center_coordinates=(
-                int(self.canvas_rect.width * 0.72) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.8) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.58) + self.canvas_rect.y,
             ),
             button_ratio=0.3,
@@ -218,9 +220,9 @@ class CryptoMenu(GenericMenu):
 
         self.sell_button = Button(
             self.main,
-            lambda x: print("sell"),
+            self._sell_share,
             center_coordinates=(
-                int(self.canvas_rect.width * 0.49) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.55) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.7) + self.canvas_rect.y,
             ),
             button_ratio=0.8,
@@ -233,15 +235,15 @@ class CryptoMenu(GenericMenu):
                     "sell_button_disabled"
                 ].convert_alpha(),
                 "tooltip": [
-                    "Sell stock(s) at the current price.",
+                    "Sell share(s) at the current price.",
                 ],
             },
         )
         self.sell_increase_button = Button(
             self.main,
-            lambda x: print("sell increase"),
+            self._increase_sell_count,
             center_coordinates=(
-                int(self.canvas_rect.width * 0.58) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.66) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.7) + self.canvas_rect.y,
             ),
             button_ratio=0.3,
@@ -263,15 +265,15 @@ class CryptoMenu(GenericMenu):
             self.main.data.title_font,
             self.main.data.colors["brown"],
             center_coordinates=(
-                int(self.canvas_rect.width * 0.65) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.73) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.695) + self.canvas_rect.y,
             ),
         )
         self.sell_decrease_button = Button(
             self.main,
-            lambda x: print("buy decrease"),
+            self._decrease_sell_count,
             center_coordinates=(
-                int(self.canvas_rect.width * 0.72) + self.canvas_rect.x,
+                int(self.canvas_rect.width * 0.8) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.7) + self.canvas_rect.y,
             ),
             button_ratio=0.3,
@@ -288,11 +290,143 @@ class CryptoMenu(GenericMenu):
             },
         )
 
+        self._update_average_position()
+
     # If reconstructable, add this function
     # def reconstruct(self, args):
     #     ...
 
     # Internal functions here
+    def _update_average_position(self):
+        if len(self.data["ledger"]) == 0:
+            self.average_position = 0.0
+            return
+
+        position_gross_sum = 0.0
+        weights = 0
+        for entry in self.data["ledger"]:
+            weights += entry[1]
+            position_gross_sum += entry[1] * entry[2]
+
+        self.average_position = position_gross_sum / weights
+
+    def _sell_share(self, args, dump_all=False):
+        shares = self.data["shares"]
+        if shares == 0:
+            return
+
+        price = self.data["price"]
+        if dump_all:
+            for entry in self.data["ledger"]:
+                share_count = entry[1]
+                share_price = entry[2] * share_count
+                sell_price = price * share_count
+                delta = sell_price - share_price
+                self.data["pnl"] += delta
+                self.progress["cash"] += sell_price
+
+            message = [
+                f"Crypto Shares Update:",
+                f"Your remaining shares",
+                f"has been sold.",
+                f"Yesterday's PNL:",
+                f"P{self.data['pnl']:,.2f}",
+            ]
+            if self.main.response_menu.enable:
+                # add to queue
+                self.main.response_menu.queue.append(message)
+            else:
+                # set_message and enable
+                self.main.response_menu.set_message(message)
+                self.main.response_menu.enable = True
+
+            self.main.scene_window.update_data()
+            return
+
+        count = self.sell_count
+        if count > shares:
+            self.main.response_menu.set_message(
+                [
+                    f"",
+                    f"You cannot sell more",
+                    f"shares than you have.",
+                    f"",
+                    f"",
+                ]
+            )
+            self.main.response_menu.enable = True
+            return
+
+        for index, entry in enumerate(self.data["ledger"]):
+            sell_count = min(count, self.data["ledger"][index][1])
+            share_price = entry[2] * sell_count
+            sell_price = price * sell_count
+            delta = sell_price - share_price
+
+            self.data["pnl"] += delta
+            self.progress["cash"] += sell_price
+            self.data["shares"] -= sell_count
+            self.data["ledger"][index][1] -= sell_count
+
+            count -= sell_count
+            if count == 0:
+                break
+
+        new_ledger = []
+        for entry in self.data["ledger"]:
+            if entry[1] > 0:
+                new_ledger.append(entry)
+        self.data["ledger"] = new_ledger
+
+        self._update_average_position()
+        self.main.scene_window.update_data()
+
+    def _buy_share(self, args):
+        cost = self.data["price"] * self.buy_count
+        if self.progress["cash"] < cost:
+            self.main.response_menu.set_message(
+                [
+                    f"",
+                    f"Not enough balance in",
+                    f"your E-Cash Account to",
+                    f"pay P{cost:,.2f}.",
+                    f"",
+                ]
+            )
+            self.main.response_menu.enable = True
+            return
+
+        self.progress["cash"] -= cost
+        self.data["shares"] += self.buy_count
+
+        for index, entry in enumerate(self.data["ledger"]):
+            if entry[0] == self.progress["time"] and entry[2] == self.data["price"]:
+                self.data["ledger"][index][1] += self.buy_count
+                break
+        else:
+            self.data["ledger"].append(
+                [
+                    self.progress["time"],
+                    self.buy_count,
+                    self.data["price"],
+                ]
+            )
+
+        self._update_average_position()
+        self.main.scene_window.update_data()
+
+    def _increase_buy_count(self, args):
+        self.buy_count = min(self.buy_count + 1, 99)
+
+    def _decrease_buy_count(self, args):
+        self.buy_count = max(self.buy_count - 1, 1)
+
+    def _increase_sell_count(self, args):
+        self.sell_count = min(self.sell_count + 1, 99)
+
+    def _decrease_sell_count(self, args):
+        self.sell_count = max(self.sell_count - 1, 1)
+
     def _update_price(self):
         changes = [0.01, 0.03, 0.05, 0.1, 0.25, 0.5, 0.75]
         changes_weights = [0.8, 0.1, 0.08, 0.01, 0.008, 0.0015, 0.0005]
@@ -338,12 +472,9 @@ class CryptoMenu(GenericMenu):
                 min(self.traj_weight[1] + exp_balancer, 1.0),
             )
 
-    def _dump_shares(self):
-        ...
-
     def _reset_symbol(self):
         if len(self.data["ledger"]) > 0:
-            self._dump_shares()
+            self._sell_share(None, dump_all=True)
 
         previous_symbol = self.data["symbol"]
         new_symbol = self.data["symbol"]
@@ -362,12 +493,19 @@ class CryptoMenu(GenericMenu):
         self.data["shares"] = 0
         self.data["pnl"] = 0.0
         self.data["ledger"] = []
-
+        self.average_position = 0.0
         self.traj_weight = [0.5, 0.5]
+
+        if self.main.scene_window:
+            self.main.scene_window.update_data()
 
     # Abstract method implementation
     def set_button_states(self):
-        ...
+        self.buy_increase_button.set_disabled(self.buy_count >= 99)
+        self.sell_increase_button.set_disabled(self.sell_count >= 99)
+
+        self.buy_decrease_button.set_disabled(self.buy_count <= 1)
+        self.sell_decrease_button.set_disabled(self.sell_count <= 1)
 
     # Abstract method implementation
     def update_data(self):
@@ -379,14 +517,24 @@ class CryptoMenu(GenericMenu):
 
         change_prefix = "+" if self.traj else "-"
         self.change_message.set_message([f"({change_prefix}{self.change * 100:,.2f}%)"])
+
+        position = ""
+        if self.average_position > 0.0:
+            position = f"Average Position: P{self.average_position:,.2f}"
         self.change_start_message.set_message(
-            [f"{self.start_change:,.2f}% vs. price at 8:00AM"]
+            [
+                f"vs. Price at 8:00AM: {self.start_change:,.2f}%",
+                position,
+            ]
         )
 
         self.shares_message.set_message([f"{numerize(self.data['shares'])}"])
         self.pnl_message.set_message([f"{numerize(self.data['pnl'])}"])
 
         self.buy_indicator_message.set_message([f"{self.buy_count}"])
+        self.sell_indicator_message.set_message([f"{self.sell_count}"])
+
+        self.set_button_states()
 
     # Abstract method implementation
     def set_data(self):
