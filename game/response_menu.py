@@ -16,6 +16,7 @@ class ResponseMenu:
 
         self.main = main
         self.callback = None
+        self.queue = []
 
         # Sprite groups
         self.objects = pygame.sprite.Group()
@@ -54,7 +55,12 @@ class ResponseMenu:
         )
 
     def confirm(self, *args):
-        self.background.enable = False
+        if len(self.queue) > 0:
+            message = self.queue[0]
+            self.set_message(message=message)
+            del self.queue[0]
+        else:
+            self.background.enable = False
 
     def set_message(self, message):
         self.confirmation_message.set_message(message)

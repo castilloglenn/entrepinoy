@@ -400,6 +400,22 @@ class BusinessMenu:
             self.main.response_menu.enable = True
 
     def sell_business_button_callback(self, *args):
+        if (
+            self.main.data.progress["bank"]["loan_collateral_code"]
+            == self.data.name_code
+        ):
+            self.main.response_menu.set_message(
+                [
+                    f"",
+                    f"You cannot sell a",
+                    f"business that is on",
+                    f"collateral.",
+                    f"",
+                ]
+            )
+            self.main.response_menu.enable = True
+            return
+
         business_selling_price = round(
             self.data.business_data["initial_cost"] * self.sell_back_ratio, 2
         )
