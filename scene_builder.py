@@ -388,6 +388,12 @@ class Scene:
     def time_callback_day(self):
         self.main.debug.log("Day callback")
 
+        # Update stock price
+        if self.time.time.day == 1:
+            self.main.sliding_menu.stock_menu._reset_symbol()
+        else:
+            self.main.sliding_menu.stock_menu._update_price()
+
         (
             interest_increase,
             account,
