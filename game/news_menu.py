@@ -167,9 +167,11 @@ class NewsMenu(GenericMenu):
         message.append("")
 
         # Line 13
+        # Guide        "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
         message.append("- News about mission here")
 
         # Line 14
+        # Guide        "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
         message.append("- News about statistics here")
 
         # Message update
