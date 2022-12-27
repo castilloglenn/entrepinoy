@@ -42,6 +42,10 @@ class Library:
         self.upgrade = self.get_dict_from_json("library", "upgrade.json")
         self.word_pool = self.get_dict_from_json("library", "word_pool.json")
         self.symbols = self.get_dict_from_json("library", "symbols.json")
+        self.calendars = {
+            "leap": self.get_dict_from_json("library", "calendar_leap.json"),
+            "regular": self.get_dict_from_json("library", "calendar_regular.json"),
+        }
 
         # Checking the save data
         try:
