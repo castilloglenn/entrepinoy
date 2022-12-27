@@ -14,7 +14,7 @@ from game.debug import Debugger
 from game.time import Time
 
 from datetime import datetime
-from pprint import pprint
+import calendar
 import pygame
 import random
 
@@ -51,6 +51,10 @@ class Scene:
             self.main.data.meta["time_amplify"],
             **self.callbacks,
         )
+
+        # Holiday variables
+        self.holiday = None
+        self._set_holiday()
 
         # CUSTOM EVENTS
         # Setting up the autosave feature
@@ -221,6 +225,9 @@ class Scene:
             **self.callbacks,
         )
 
+        # Holiday variables
+        self._set_holiday()
+
         self.background.reconstruct(
             self.main.screen, self.time, **self.main.data.background[self.location]
         )
@@ -347,6 +354,14 @@ class Scene:
         # Calculate unsimulated earnings of businesses
         self.calculate_businesses_earnings()
 
+    def _set_holiday(self):
+        calendars = self.main.data.calendars
+        year = self.time.time.year
+        day_of_year = int(self.time.time.strftime("%j"))
+        isleap = calendar.isleap(year=year)
+        current_calendar = calendars["leap"] if isleap else calendars["regular"]
+        self.holiday = current_calendar[str(day_of_year)]
+
     def set_location_last_visited(self):
         self.main.data.progress["businesses"][self.location][
             "last_visited"
@@ -387,6 +402,9 @@ class Scene:
 
     def time_callback_day(self):
         self.main.debug.log("Day callback")
+
+        # Update holiday
+        self._set_holiday()
 
         # Update stock price
         if self.time.time.day == 1:
