@@ -487,8 +487,11 @@ class Scene:
 
     def spawn_crowd_customer(self):
         npc_chance = random.randint(0, 100)
+        holiday_boost = 20 if self.holiday != "" else 0
+        crowd_chance = min(self.crowd_chance[self.time.time.hour] + holiday_boost, 100)
+
         if (
-            npc_chance <= self.crowd_chance[self.time.time.hour]
+            npc_chance <= crowd_chance
             and (len(self.general_sprites) - self.extra_sprites_count)
             < self.object_limit
         ):
@@ -759,7 +762,10 @@ class Scene:
             # TODO DEBUGGING ONLY/ considering to turning into feature
             if self.show_debug_info:
                 total_limit = self.object_limit + self.extra_sprites_count
-                crowd_chance = self.crowd_chance[self.time.time.hour]
+                holiday_boost = 20 if self.holiday != "" else 0
+                crowd_chance = min(
+                    self.crowd_chance[self.time.time.hour] + holiday_boost, 100
+                )
                 customer_chance = self.customer_chance[self.time.time.hour]
                 weighted_customer_chance = self.customer_chance[self.time.time.hour] * (
                     self.available_businesses / self.total_location_businesses
