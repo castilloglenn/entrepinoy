@@ -283,12 +283,12 @@
         "queuing_point": 0.35,
         "queue_direction": "left",
         "placement": "front",
-        "initial_cost": 1.0,
-        "daily_expenses": 1.0,
-        "employee_cost": 1.0,
+        "initial_cost": 200000.0,
+        "daily_expenses": 4000.0,
+        "employee_cost": 800.0,
         "income_per_customer_range": [
-            1.0,
-            1.0
+            150.0,
+            300.0
         ]
     },
     "pawnshop": {
