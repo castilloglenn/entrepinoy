@@ -104,7 +104,7 @@ class NewsMenu(GenericMenu):
         holiday = self.main.scene_window.holiday
 
         if holiday != "":
-            message.append(f"- Today is a holiday, the {holiday}")
+            message.append(f"- Its Holiday! {holiday}")
         else:
             message.append(f"- Today is a regular day.")
 
