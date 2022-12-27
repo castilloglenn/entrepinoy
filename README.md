@@ -91,10 +91,31 @@ This is the main menu of the game, the user can start a new game or continue if 
 
 
 
+![newsscreenshot1](https://user-images.githubusercontent.com/120929317/209676758-bc4e62ea-65b8-4558-a4aa-e8ef7c0d52f5.png)
+![newsscreenshot2](https://user-images.githubusercontent.com/120929317/209676766-b1706d0c-4acc-40c3-bf32-e768ccaa1e39.png)
+<h3 align="center">News</h3>
+<p>Users can access the news in the sliding menu. The news tells if it is a regular day or a holiday, and the news also provides some in-game tips for the user.</p>
+
+
+
 ![bankscreenshot1](https://user-images.githubusercontent.com/120929317/209551741-3484406b-47f0-42a7-8e16-f0e0d2c693b2.png)
 ![bankscreenshot2](https://user-images.githubusercontent.com/120929317/209551752-d9013950-e29c-446e-a5ec-a02a586cc8d1.png)
 <h3 align="center">Bank</h3>
 <p>The bank is accessible in the sliding menu. The user can deposit its unused money in the savings account and as it is stored there, the bank will pay the interest rate of the stored money. The user can loan money in the bank if the user lacks money and want to buy or upgrade a business.</p>
+
+
+
+![stockmarketscreenshot1](https://user-images.githubusercontent.com/120929317/209676910-39f584c7-a34f-49e8-8407-c6e6c6326355.png)
+![stockmarketscreenshot2](https://user-images.githubusercontent.com/120929317/209676929-20a5a038-9e69-44c0-8800-e615cffd8ce1.png)
+<h3 align="center">Stock Market</h3>
+<p>The player can buy and sell stocks in the stock market, selling stocks is another way to earn money. The Stock Market can be accessed via the sliding menu. </p>
+
+
+
+![cryptomarketscreenshot1](https://user-images.githubusercontent.com/120929317/209677053-e19f0031-3b88-4fcc-b5c9-ac90c149faad.png)
+![cryptomarketscreenshot2](https://user-images.githubusercontent.com/120929317/209677062-eb011685-2db3-457f-8215-ac5ef18b6d93.png)
+<h3 align="center">Crypto Market</h3>
+<p>Different digital currencies can be exchanged in the crypto market. The player can buy and sell cryptocurrency here.</p>
 
 
 
