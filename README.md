@@ -1,6 +1,6 @@
 # entrepinoy
 <b>NOTE:</b> This game is still on development process.
-Capstone Thesis Proposal, created in Python's Pygame Module.
+Capstone Thesis Project, created in Python's Pygame Module.
 
 <p>A business simulation game that is inspired and adapts heavily on Philippines economics and culture. Contains different Filipino businesses and challenges that would help aspiring young entrepeneurs simulate the business life with enjoyment in this simulation game.</p>
 
