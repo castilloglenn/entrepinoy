@@ -973,6 +973,7 @@ class Library:
                 "crypto_chance": 50,
                 "stock_trajectory": "down",
                 "stock_chance": 50,
+                "earn_pnl": 0.0,
             },
             "mission": {
                 "1": {},
