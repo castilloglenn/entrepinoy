@@ -915,7 +915,7 @@ class Library:
         text = []
         with open(textfile_path, "r") as text_file:
             for line in text_file:
-                text.append(line[:-2])
+                text.append(line.replace("\n", ""))
         return text
 
     def set_dict_to_json(self, folder_name: str, json_name: str, data: dict):
