@@ -85,6 +85,20 @@ class Tracker:
         self.main.scene_window.update_data()
 
     def generate_missions(self):
+        # Collect uncollected rewards
+        for mission in self.progress["mission"]:
+            if not self.progress["mission"][mission]["active"]:
+                continue
+
+            if (
+                self.progress["mission"][mission]["value"]
+                != self.progress["mission"][mission]["requirement"]
+            ):
+                continue
+
+            if self.progress["mission"][mission]["reward"] > 0.0:
+                self.progress["cash"] += self.progress["mission"][mission]["reward"]
+
         self.main.data.progress["mission"] = dict()
         missions_selected = []
         for _ in range(self.max_missions):
@@ -95,6 +109,7 @@ class Tracker:
 
             mission_copy = copy.deepcopy(self.missions[mission_selected])
             self.main.data.progress["mission"][mission_selected] = mission_copy
+
         self.completed_and_notified = []
         self.save()
 
