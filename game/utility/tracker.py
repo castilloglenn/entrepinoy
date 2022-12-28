@@ -52,6 +52,18 @@ class Tracker:
                 "requirement": 20,
                 "reward": 200.0,
             },
+            "serve_manual": {
+                "description": [
+                    # 0123456789ABCDEFGHIJ0123456789A
+                    " Hands-on Manager",
+                    "   Manually serve 10 customers",
+                    "   {value}/10",
+                ],
+                "active": False,
+                "value": 0,
+                "requirement": 10,
+                "reward": 200.0,
+            },
             "earn_pnl": {
                 "description": [
                     # 0123456789ABCDEFGHIJ0123456789A

@@ -545,6 +545,9 @@ class Business(Button):
         if len(self.queue) == 0:
             return
 
+        if len(args) > 0:
+            self.main.tracker.increment_tracker("serve_manual")
+
         if self.queue[0].is_standing:
             self.served_count += 1
             self.queue.pop(0).serve()
