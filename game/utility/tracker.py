@@ -14,6 +14,7 @@ class Tracker:
 
         # Tracker variables
         self.max_missions = 3
+        self.completed_and_notified = []
         self.missions = {
             "business_start": {
                 "description": [
@@ -70,7 +71,29 @@ class Tracker:
 
             mission_copy = copy.deepcopy(self.missions[mission_selected])
             self.main.data.progress["mission"][mission_selected] = mission_copy
+        self.completed_and_notified = []
         self.save()
+
+    def notify_success(self, mission_title: str):
+        if mission_title in self.completed_and_notified:
+            return
+
+        message = [
+            f"Mission Completed:",
+            f"{mission_title.strip()}",
+            f"",
+            f"Please collect",
+            f"your reward.",
+        ]
+        if self.main.response_menu.enable:
+            # add to queue
+            self.main.response_menu.queue.append(message)
+        else:
+            # set_message and enable
+            self.main.response_menu.set_message(message)
+            self.main.response_menu.enable = True
+
+        self.completed_and_notified.append(mission_title)
 
     # Increment statistics data
     def increment_tracker(self, name, increment=None):
@@ -80,6 +103,15 @@ class Tracker:
                     self.progress["mission"][name]["value"] + 1,
                     self.progress["mission"][name]["requirement"],
                 )
+
+                if (
+                    self.progress["mission"][name]["value"]
+                    == self.progress["mission"][name]["requirement"]
+                    and self.progress["mission"][name]["reward"] > 0.0
+                ):
+                    self.notify_success(
+                        self.progress["mission"][name]["description"][0]
+                    )
 
         if name in self.progress["statistics"]:
             if increment:
