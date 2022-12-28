@@ -467,6 +467,8 @@ class Business(Button):
                 operation_cost += employment_cost
 
             net_profit_or_loss = current_sales - operation_cost
+            if net_profit_or_loss > 0.0:
+                self.main.tracker.increment_tracker("business_profit")
 
             self.progress["businesses"][self.progress["last_location"]][self.name_code][
                 "open_until"

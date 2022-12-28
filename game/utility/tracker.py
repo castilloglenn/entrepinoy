@@ -76,6 +76,18 @@ class Tracker:
                 "requirement": 1,
                 "reward": 200.0,
             },
+            "business_profit": {
+                "description": [
+                    # 0123456789ABCDEFGHIJ0123456789A
+                    " Business is boomin'",
+                    "   Earn a profit in business",
+                    "   operation. {value}/1",
+                ],
+                "active": False,
+                "value": 0,
+                "requirement": 1,
+                "reward": 200.0,
+            },
         }
 
         if self.progress["mission"] == {}:

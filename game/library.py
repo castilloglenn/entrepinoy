@@ -985,7 +985,9 @@ class Library:
                 "serve_customer": 0,
                 "hire_employee": 0,
                 "business_start": 0,
+                "earn_pnl": 0.0,
                 "serve_manual": 0,
+                "business_profit": 0.0
             },
             "businesses": {
                 "test_location": {
