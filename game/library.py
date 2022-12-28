@@ -938,7 +938,7 @@ class Library:
             "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
             "last_login": "",
             "last_location": "location_a",
-            "cash": 100.0,
+            "cash": 1000.0,
             "bank": {
                 "loan": 0.0,
                 "loan_balance": 0.0,
@@ -975,11 +975,7 @@ class Library:
                 "stock_chance": 50,
                 "earn_pnl": 0.0,
             },
-            "mission": {
-                "1": {},
-                "2": {},
-                "3": {},
-            },
+            "mission": {},
             "statistics": {
                 "clicks": 0,
                 "serve_customer": 0,
@@ -987,7 +983,7 @@ class Library:
                 "business_start": 0,
                 "earn_pnl": 0.0,
                 "serve_manual": 0,
-                "business_profit": 0.0
+                "business_profit": 0.0,
             },
             "businesses": {
                 "test_location": {

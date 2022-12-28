@@ -89,6 +89,9 @@ class Main:
         self.confirm_menu = ConfirmMenu(self)
         self.response_menu = ResponseMenu(self)
 
+        # Initialize system tracker
+        self.tracker = None
+
         # Setting up other windows
         self.scene_window = None
         self.map_window = None
@@ -96,6 +99,7 @@ class Main:
             self.sliding_menu.initialize_modules()
             self.scene_window = Scene(self)
             self.map_window = Map(self)
+            self.tracker = Tracker(self)
         self.setting_window = Setting(self)
 
         # Sprites and sprite groups
@@ -164,9 +168,6 @@ class Main:
             self.transition.run()
             self.transition.change_state(self.transition.FINISHED)
 
-        # Initialize system tracker
-        self.tracker = Tracker(self)
-
         # Main loop
         self.debug.log("Memory after initialization:")
         self.debug.memory_log()
@@ -218,7 +219,8 @@ class Main:
 
         # If the user clicked on left mouse button
         if event.button == 1:
-            self.tracker.add_click()
+            if self.tracker:
+                self.tracker.add_click()
             for button in self.buttons:
                 button.check_clicked(click_coordinates)
 
@@ -296,6 +298,7 @@ class Main:
         self.prologue.run()
 
         self.sliding_menu.initialize_modules()
+
         if self.scene_window is None:
             self.scene_window = Scene(self)
         else:
@@ -304,6 +307,7 @@ class Main:
         if self.map_window is None:
             self.map_window = Map(self)
 
+        self.tracker = Tracker(self)
         self.scene_window.run()
 
     def continue_game(self, *args):
