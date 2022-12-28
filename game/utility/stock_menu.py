@@ -329,6 +329,12 @@ class StockMenu(GenericMenu):
                 self.data["pnl"] += delta
                 self.progress["cash"] += sell_price
 
+            if self.data["pnl"] > 0.0:
+                self.main.tracker.increment_tracker(
+                    "earn_pnl",
+                    increment=self.data["pnl"],
+                )
+
             message = [
                 f"Stocks Shares Update:",
                 f"Your remaining shares",
@@ -375,6 +381,12 @@ class StockMenu(GenericMenu):
             count -= sell_count
             if count == 0:
                 break
+
+        if self.data["pnl"] > 0.0:
+            self.main.tracker.increment_tracker(
+                "earn_pnl",
+                increment=self.data["pnl"],
+            )
 
         new_ledger = []
         for entry in self.data["ledger"]:
