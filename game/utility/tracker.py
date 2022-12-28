@@ -60,6 +60,8 @@ class Tracker:
 
     def generate_missions(self):
         self.main.data.progress["mission"] = {}
+        self.save()
+
         missions_selected = []
         for _ in range(self.max_missions):
             mission_selected = random.choice(list(self.missions.keys()))

@@ -1,7 +1,7 @@
 from game.sprite.message import Message
 from game.sprite.button import Button
 
-from game.generic_menu import GenericMenu
+from game.utility.generic_menu import GenericMenu
 
 from datetime import datetime
 import pygame

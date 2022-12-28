@@ -3,20 +3,20 @@ from game.sprite.menu_background import MenuBackground
 from game.sprite.message import Message
 from game.sprite.button import Button
 
-from game.response_menu import ResponseMenu
-from game.sliding_menu import SlidingMenu
-from game.confirm_menu import ConfirmMenu
+from game.utility.response_menu import ResponseMenu
+from game.utility.sliding_menu import SlidingMenu
+from game.utility.confirm_menu import ConfirmMenu
 
-from game.debug import Debugger
+from game.utility.debug import Debugger
 from game.library import Library
-from game.tracker import Tracker
-from game.transition import Transition
-from game.slideshow import Slideshow
+from game.utility.tracker import Tracker
+from game.utility.transition import Transition
+from game.utility.slideshow import Slideshow
 
-from scene_builder import Scene
-from region import Map
-from setting import Setting
-from prologue import Prologue
+from game.module.scene_builder import Scene
+from game.module.region import Map
+from game.module.setting import Setting
+from game.module.prologue import Prologue
 
 import pygame
 import os, sys

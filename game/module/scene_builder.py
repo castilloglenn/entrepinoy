@@ -4,14 +4,14 @@ from game.sprite.scene_background import SceneBackground
 from game.sprite.message import Message
 from game.sprite.button import Button
 
-from game.business_menu import BusinessMenu
-from game.profile_menu import ProfileMenu
-from game.customer import Customer
-from game.npc import NPC
+from game.utility.business_menu import BusinessMenu
+from game.utility.profile_menu import ProfileMenu
+from game.utility.customer import Customer
+from game.utility.npc import NPC
 
 from game.library import Library
-from game.debug import Debugger
-from game.time import Time
+from game.utility.debug import Debugger
+from game.utility.time import Time
 
 from datetime import datetime
 import calendar

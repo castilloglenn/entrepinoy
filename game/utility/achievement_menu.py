@@ -1,14 +1,14 @@
 from game.sprite.message import Message
 from game.sprite.button import Button
 
-from game.generic_menu import GenericMenu
+from game.utility.generic_menu import GenericMenu
 
 import pygame
 
 
-class InformationMenu(GenericMenu):
+class AchievementMenu(GenericMenu):
     """
-    Menu showing the TLDR's tutorial documentation of the game.
+    Menu showing the list of achievements the user can obtain throughout the game.
     """
 
     def __init__(self, main) -> None:
@@ -24,7 +24,7 @@ class InformationMenu(GenericMenu):
         # Instantiate buttons and objects
         self.title_message = Message(
             self.screen,
-            ["Game Tutorial"],
+            ["Achievements"],
             self.main.data.large_font,
             self.main.data.colors["brown"],
             top_left_coordinates=(

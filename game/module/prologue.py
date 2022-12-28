@@ -1,7 +1,7 @@
-from game.new_game_input_menu import NewGameInputMenu
-from game.new_game_starter_menu import NewGameStarterMenu
+from game.utility.new_game_input_menu import NewGameInputMenu
+from game.utility.new_game_starter_menu import NewGameStarterMenu
 
-from game.transition import Transition
+from game.utility.transition import Transition
 
 
 class Prologue:

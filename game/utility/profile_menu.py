@@ -1,4 +1,4 @@
-from game.generic_menu import GenericMenu
+from game.utility.generic_menu import GenericMenu
 
 import pygame
 

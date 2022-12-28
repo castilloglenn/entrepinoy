@@ -1,11 +1,10 @@
 from game.sprite.menu_background import MenuBackground
 from game.sprite.message import Message
 from game.sprite.button import Button
-import pygame
 
-from datetime import datetime, timedelta
+from datetime import datetime
 from numerize.numerize import numerize
-from pprint import pprint
+import pygame
 
 
 class BusinessMenu:

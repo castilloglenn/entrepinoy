@@ -1,5 +1,5 @@
-from pprint import pprint
-from game.npc import NPC
+from game.utility.npc import NPC
+
 import pygame
 import random
 import copy

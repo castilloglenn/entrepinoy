@@ -1,7 +1,7 @@
 from pygame.sprite import Sprite
 from pygame.surface import Surface
 
-from game.time import Time
+from game.utility.time import Time
 
 
 class SceneBackground(Sprite):

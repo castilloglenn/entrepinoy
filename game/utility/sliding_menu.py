@@ -1,13 +1,13 @@
 from game.sprite.button import Button
 
-from game.mission_menu import MissionMenu
-from game.achievement_menu import AchievementMenu
-from game.part_time_menu import PartTimeMenu
-from game.news_menu import NewsMenu
-from game.bank_menu import BankMenu
-from game.stock_menu import StockMenu
-from game.crypto_menu import CryptoMenu
-from game.info_menu import InformationMenu
+from game.utility.mission_menu import MissionMenu
+from game.utility.achievement_menu import AchievementMenu
+from game.utility.part_time_menu import PartTimeMenu
+from game.utility.news_menu import NewsMenu
+from game.utility.bank_menu import BankMenu
+from game.utility.stock_menu import StockMenu
+from game.utility.crypto_menu import CryptoMenu
+from game.utility.info_menu import InformationMenu
 
 import pygame
 

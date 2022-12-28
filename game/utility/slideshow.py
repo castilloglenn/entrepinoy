@@ -1,7 +1,7 @@
 from game.sprite.button import Button
 from game.sprite.message import Message
 
-from game.transition import Transition
+from game.utility.transition import Transition
 
 import pygame
 
