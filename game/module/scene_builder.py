@@ -28,7 +28,7 @@ class Scene:
     def __init__(self, main):
         # Settings up the scene
         self.main = main
-        self.show_debug_info = True
+        self.show_debug_info = False
         self.running = False
 
         self.location = self.main.data.progress["last_location"]
@@ -562,7 +562,8 @@ class Scene:
 
         # If the user clicked on left mouse button
         if event.button == 1:
-            self.main.tracker.add_click()
+            if self.main.tracker:
+                self.main.tracker.add_click()
             for button in self.buttons:
                 # Adding halting statement to prevent other buttons to
                 #   react the same way/overlap reactions
