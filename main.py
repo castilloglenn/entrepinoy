@@ -9,6 +9,7 @@ from game.confirm_menu import ConfirmMenu
 
 from game.debug import Debugger
 from game.library import Library
+from game.tracker import Tracker
 from game.transition import Transition
 from game.slideshow import Slideshow
 
@@ -163,6 +164,9 @@ class Main:
             self.transition.run()
             self.transition.change_state(self.transition.FINISHED)
 
+        # Initialize system tracker
+        self.tracker = Tracker(self)
+
         # Main loop
         self.debug.log("Memory after initialization:")
         self.debug.memory_log()
@@ -214,6 +218,7 @@ class Main:
 
         # If the user clicked on left mouse button
         if event.button == 1:
+            self.tracker.add_click()
             for button in self.buttons:
                 button.check_clicked(click_coordinates)
 

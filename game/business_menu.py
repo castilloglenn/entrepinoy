@@ -257,10 +257,12 @@ class BusinessMenu:
     def start_business(self):
         self.main.data.progress["cash"] -= self.data.business_data["daily_expenses"]
         self.data.set_business_state("open")
+        self.main.tracker.increment_tracker("business_start")
 
     def hire_employee(self):
         self.main.data.progress["cash"] -= self.data.business_data["employee_cost"]
         self.data.set_employee_status(True)
+        self.main.tracker.increment_tracker("hire_employee")
 
     def sell_business(self):
         business_selling_price = round(

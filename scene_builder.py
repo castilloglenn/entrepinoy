@@ -406,6 +406,9 @@ class Scene:
         # Update holiday
         self._set_holiday()
 
+        # Reset and generate missions
+        self.main.tracker.generate_missions()
+
         # Update stock price
         if self.time.time.day == 1:
             self.main.sliding_menu.stock_menu._reset_symbol()
@@ -559,6 +562,7 @@ class Scene:
 
         # If the user clicked on left mouse button
         if event.button == 1:
+            self.main.tracker.add_click()
             for button in self.buttons:
                 # Adding halting statement to prevent other buttons to
                 #   react the same way/overlap reactions
@@ -618,7 +622,8 @@ class Scene:
                 self.main.debug.log("Debug details hidden")
 
         elif key == pygame.K_F2:
-            pass
+            # TODO Debug only
+            self.main.tracker.generate_missions()
 
         elif key == pygame.K_F3:
             pass

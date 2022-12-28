@@ -142,6 +142,7 @@ class Map:
 
         # If the user clicked on left mouse button
         if event.button == 1:
+            self.main.tracker.add_click()
             for button in self.buttons:
                 # Adding halting statement to prevent other buttons to
                 #   react the same way/overlap reactions

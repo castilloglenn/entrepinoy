@@ -211,7 +211,9 @@ class Library:
                 "meta", "start_button_disabled.png"
             ),
             "collect_button_idle": self.get_image("meta", "collect_button_idle.png"),
-            "collect_button_hovered": self.get_image("meta", "collect_button_hovered.png"),
+            "collect_button_hovered": self.get_image(
+                "meta", "collect_button_hovered.png"
+            ),
             "collect_button_disabled": self.get_image(
                 "meta", "collect_button_disabled.png"
             ),
@@ -979,6 +981,9 @@ class Library:
             },
             "statistics": {
                 "clicks": 0,
+                "serve_customer": 0,
+                "hire_employee": 0,
+                "business_start": 0,
             },
             "businesses": {
                 "test_location": {

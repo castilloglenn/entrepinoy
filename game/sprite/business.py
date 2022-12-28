@@ -552,6 +552,8 @@ class Business(Button):
             for customer in self.queue:
                 customer.queue_move(-1)
 
+            self.main.tracker.increment_tracker("serve_customer")
+
     def clear_queue(self):
         # Free the queue
         for customer in self.queue:
