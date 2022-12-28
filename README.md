@@ -83,6 +83,20 @@ This is the main menu of the game, the user can start a new game or continue if 
 
 
 
+![missionscreenshot1](https://user-images.githubusercontent.com/120929317/209782655-4fd8eeb2-b0fa-4c0f-858f-719676877e39.png)
+![missionscreenshot2](https://user-images.githubusercontent.com/120929317/209782662-43e6e0d7-b981-4bee-a469-6e841785c790.png)
+<h3 align="center">Missions</h3>
+<p>Player can start a mission and complete it to receive corresponding rewards. Missions is accessible in the sliding menu. </p>
+
+
+
+
+
+<h3 align="center">Achievements</h3>
+<p>Achievements make the game more challenging, and the history of the game is where every part of the game is recorded. Achievements are in sliding menu. </p>
+
+
+
 ![partimescreenshot1](https://user-images.githubusercontent.com/120929317/209551565-d0e12eab-1c6d-48aa-9840-f4535a9623b5.png)
 ![partimescreenshot2](https://user-images.githubusercontent.com/120929317/209551572-9b09b498-f6bb-468b-ac4b-285e1f532cb0.png)
 ![partimescreenshot3](https://user-images.githubusercontent.com/120929317/209551579-3e9faf82-188b-428f-933c-9b08728550a4.png)
