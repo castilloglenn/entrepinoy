@@ -52,6 +52,18 @@ class Tracker:
                 "requirement": 20,
                 "reward": 200.0,
             },
+            "earn_pnl": {
+                "description": [
+                    # 0123456789ABCDEFGHIJ0123456789A
+                    " Trader's Dream",
+                    "   Earn a profit in trading",
+                    "   {value}/1",
+                ],
+                "active": False,
+                "value": 0,
+                "requirement": 1,
+                "reward": 200.0,
+            },
         }
 
         if self.progress["mission"] == {}:
