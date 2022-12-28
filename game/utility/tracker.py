@@ -1,5 +1,6 @@
 import pygame
 import random
+import copy
 
 
 class Tracker:
@@ -59,7 +60,7 @@ class Tracker:
         self.main.scene_window.update_data()
 
     def generate_missions(self):
-        self.main.data.progress["mission"] = {}
+        self.main.data.progress["mission"] = dict()
         self.save()
 
         missions_selected = []
@@ -69,9 +70,8 @@ class Tracker:
                 mission_selected = random.choice(list(self.missions.keys()))
             missions_selected.append(mission_selected)
 
-            self.main.data.progress["mission"][mission_selected] = self.missions[
-                mission_selected
-            ]
+            mission_copy = copy.deepcopy(self.missions[mission_selected])
+            self.main.data.progress["mission"][mission_selected] = mission_copy
         self.save()
 
     # Increment statistics data
