@@ -46,6 +46,7 @@ class Library:
             "leap": self.get_dict_from_json("library", "calendar_leap.json"),
             "regular": self.get_dict_from_json("library", "calendar_regular.json"),
         }
+        self.tutorial_text = self.get_textfile("library", "tutorial.txt")
 
         # Checking the save data
         try:
@@ -907,6 +908,15 @@ class Library:
         dirname = get_dirname()
         font_path = os.path.join(dirname, "..", "assets", "fonts", font_name)
         return pygame.font.Font(font_path, size)
+
+    def get_textfile(self, folder_name: str, textfile_name: str) -> list[str]:
+        dirname = get_dirname()
+        textfile_path = os.path.join(dirname, folder_name, textfile_name)
+        text = []
+        with open(textfile_path, "r") as text_file:
+            for line in text_file:
+                text.append(line[:-2])
+        return text
 
     def set_dict_to_json(self, folder_name: str, json_name: str, data: dict):
         dirname = get_dirname()
