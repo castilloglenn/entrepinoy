@@ -218,6 +218,24 @@ class Library:
             "collect_button_disabled": self.get_image(
                 "meta", "collect_button_disabled.png"
             ),
+            "previous_arrow_button_idle": self.get_image(
+                "meta", "previous_arrow_button_idle.png"
+            ),
+            "previous_arrow_button_hovered": self.get_image(
+                "meta", "previous_arrow_button_hovered.png"
+            ),
+            "previous_arrow_button_disabled": self.get_image(
+                "meta", "previous_arrow_button_disabled.png"
+            ),
+            "next_arrow_button_idle": self.get_image(
+                "meta", "next_arrow_button_idle.png"
+            ),
+            "next_arrow_button_hovered": self.get_image(
+                "meta", "next_arrow_button_hovered.png"
+            ),
+            "next_arrow_button_disabled": self.get_image(
+                "meta", "next_arrow_button_disabled.png"
+            ),
         }
         self.title_screen = {
             "title_screen": self.get_image("title_screen", "title_screen.png"),

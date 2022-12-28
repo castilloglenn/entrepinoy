@@ -66,12 +66,58 @@ class InformationMenu(GenericMenu):
                 int(self.canvas_rect.height * 0.17) + self.canvas_rect.y,
             ),
         )
+        self.previous_button = Button(
+            self.main,
+            self._previous_page,
+            top_left_coordinates=(
+                int(self.canvas_rect.width * 0.06) + self.canvas_rect.x,
+                int(self.canvas_rect.height * 0.8) + self.canvas_rect.y,
+            ),
+            button_ratio=0.8,
+            **{
+                "idle": self.main.data.meta_images[
+                    "previous_arrow_button_idle"
+                ].convert_alpha(),
+                "outline": self.main.data.meta_images[
+                    "previous_arrow_button_hovered"
+                ].convert_alpha(),
+                "disabled": self.main.data.meta_images[
+                    "previous_arrow_button_disabled"
+                ].convert_alpha(),
+            },
+        )
+        self.next_button = Button(
+            self.main,
+            self._next_page,
+            top_left_coordinates=(
+                int(self.canvas_rect.width * 0.85) + self.canvas_rect.x,
+                int(self.canvas_rect.height * 0.8) + self.canvas_rect.y,
+            ),
+            button_ratio=0.8,
+            **{
+                "idle": self.main.data.meta_images[
+                    "next_arrow_button_idle"
+                ].convert_alpha(),
+                "outline": self.main.data.meta_images[
+                    "next_arrow_button_hovered"
+                ].convert_alpha(),
+                "disabled": self.main.data.meta_images[
+                    "next_arrow_button_disabled"
+                ].convert_alpha(),
+            },
+        )
 
     # If reconstructable, add this function
     # def reconstruct(self, args):
     #     ...
 
     # Internal functions here
+    def _previous_page(self, args):
+        self.page_index = max(self.page_index - 1, 0)
+
+    def _next_page(self, args):
+        self.page_index = min(self.page_index + 1, self.page_total - 1)
+
     def _parse_tutorial_text(self):
         formats = [
             "TITLE",
@@ -111,6 +157,7 @@ class InformationMenu(GenericMenu):
 
             elif code == "SUB-TITLE":
                 page = _insert_line(page, "")
+                line = ""
 
                 for word in content:
                     if len(line) + len(word) > self.max_width + 1:
@@ -139,7 +186,6 @@ class InformationMenu(GenericMenu):
                         continue
 
                     line += word + " "
-                    line = ""
 
             if line != "":
                 page = _insert_line(page, line)
@@ -153,7 +199,8 @@ class InformationMenu(GenericMenu):
 
     # Abstract method implementation
     def set_button_states(self):
-        ...
+        self.previous_button.set_disabled(self.page_index == 0)
+        self.next_button.set_disabled(self.page_index == self.page_total - 1)
 
     # Abstract method implementation
     def update_data(self):
@@ -162,11 +209,16 @@ class InformationMenu(GenericMenu):
         #   when a sale is made and etc.
         current_page = copy.deepcopy(self.pages[self.page_index])
         page_number = f"{self.page_index + 1}/{self.page_total}"
-        start_index = self.width_center - int(len(page_number) / 2)
+        start_index = (self.width_center - (int(len(page_number) / 2))) - 1
         line = " " * start_index + page_number + " " * start_index
+        current_page.append("")
         current_page.append(line)
 
         self.information_message.set_message(current_page)
+        self.set_button_states()
+
+        self.previous_button.add(self.objects, self.buttons, self.hoverable_buttons)
+        self.next_button.add(self.objects, self.buttons, self.hoverable_buttons)
 
     # Abstract method implementation
     def set_data(self):
