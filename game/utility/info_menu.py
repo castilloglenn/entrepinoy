@@ -120,10 +120,6 @@ class InformationMenu(GenericMenu):
 
                     line += word + " "
 
-                if line != "":
-                    page = _insert_line(page, line)
-                    line = ""
-
             elif code == "PARAGRAPH":
                 line = "  "
                 for word in content:
@@ -134,10 +130,6 @@ class InformationMenu(GenericMenu):
 
                     line += word + " "
 
-                if line != "":
-                    page = _insert_line(page, line)
-                    line = ""
-
             elif code == "LIST":
                 line = "  - "
                 for word in content:
@@ -147,10 +139,15 @@ class InformationMenu(GenericMenu):
                         continue
 
                     line += word + " "
-
-                if line != "":
-                    page = _insert_line(page, line)
                     line = ""
+
+            if line != "":
+                page = _insert_line(page, line)
+
+        if len(page) > 0:
+            while len(page) < self.max_height:
+                page.append("")
+            self.pages.append(page)
 
         self.page_total = len(self.pages)
 
