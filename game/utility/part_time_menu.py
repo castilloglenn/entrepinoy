@@ -262,6 +262,12 @@ class PartTimeMenu(GenericMenu):
 
         total_pay = base_pay + span_bonus + accuracy_bonus + awpm_bonus
 
+        # Tracker
+        self.main.tracker.increment_tracker(
+            "part_time_income",
+            increment=total_pay,
+        )
+
         self.main.response_menu.queue_message(
             [
                 f"Success! Base Pay: P{base_pay:,.2f}",
