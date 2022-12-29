@@ -98,23 +98,93 @@ class Map:
         self.location_e_button.add(self.objects, self.buttons, self.hoverable_buttons)
         self.location_f_button.add(self.objects, self.buttons, self.hoverable_buttons)
 
+    def _update_tracker(self, location):
+        explored = self.main.data.progress["statistics"]["location_explored"]
+        if location in explored:
+            return
+
+        self.main.data.progress["statistics"]["location_explored"].append(location)
+        new_size = len(self.main.data.progress["statistics"]["location_explored"])
+        self.main.data.progress["achievements"]["location_explored"]["value"] = new_size
+
+        if (
+            self.main.data.progress["achievements"]["location_explored"]["value"]
+            >= self.main.data.progress["achievements"]["location_explored"][
+                "requirement"
+            ]
+        ):
+            self.main.tracker.notify_success(
+                self.main.data.progress["achievements"]["location_explored"][
+                    "description"
+                ][0],
+                title="Achievement",
+            )
+
+    def _check_if_businesses_owned(self, location_check):
+        for business in self.main.data.progress["businesses"][location_check]:
+            if business == "last_visited":
+                continue
+
+            if not self.main.data.progress["businesses"][location_check][business][
+                "ownership"
+            ]:
+                return False
+        return True
+
+    def _denied_access(self):
+        self.main.response_menu.set_message(
+            [
+                f"",
+                f"You must first own all",
+                f"the businesses in the",
+                f"previous location first.",
+                f"",
+            ]
+        )
+        self.main.response_menu.enable = True
+
     def location_a_callback(self, *args):
         self.location_changer("location_a")
 
     def location_b_callback(self, *args):
+        if not self._check_if_businesses_owned("location_a"):
+            self._denied_access()
+            return
+
         self.location_changer("location_b")
+        self._update_tracker("location_b")
 
     def location_c_callback(self, *args):
+        if not self._check_if_businesses_owned("location_b"):
+            self._denied_access()
+            return
+
         self.location_changer("location_c")
+        self._update_tracker("location_c")
 
     def location_d_callback(self, *args):
+        if not self._check_if_businesses_owned("location_c"):
+            self._denied_access()
+            return
+
         self.location_changer("location_d")
+        self._update_tracker("location_d")
 
     def location_e_callback(self, *args):
+        if not self._check_if_businesses_owned("location_d"):
+            self._denied_access()
+            return
+
         self.location_changer("location_e")
+        self._update_tracker("location_e")
 
     def location_f_callback(self, *args):
+        if not self._check_if_businesses_owned("location_e"):
+            self._denied_access()
+            return
+
         self.location_changer("location_f")
+        self._update_tracker("location_f")
 
     def location_changer(self, new_location):
         if self.main.data.progress["last_location"] != new_location:
