@@ -125,12 +125,12 @@ class Tracker:
         self.completed_and_notified = []
         self.save()
 
-    def notify_success(self, mission_title: str):
+    def notify_success(self, mission_title: str, title="Mission"):
         if mission_title in self.completed_and_notified:
             return
 
         message = [
-            f"Mission Completed:",
+            f"{title} Completed:",
             f"{mission_title.strip()}",
             f"",
             f"Please collect",
@@ -165,6 +165,12 @@ class Tracker:
                     )
 
         if name in self.progress["statistics"]:
+            if increment:
+                self.data[name] += increment
+            else:
+                self.data[name] += 1
+
+        if name in self.progress["achievements"]:
             if increment:
                 self.data[name] += increment
             else:

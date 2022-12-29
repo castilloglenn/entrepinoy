@@ -239,9 +239,15 @@ class Map:
             self.objects.update()
             self.main.sliding_menu.update()
 
+            # Checking if menus will be displaying
+            self.main.confirm_menu.update()
+            self.main.response_menu.update()
+
             # Event processing
             for event in pygame.event.get():
-                if self.main.confirm_menu.enable:
+                if self.main.response_menu.enable:
+                    self.main.response_menu.handle_event(event)
+                elif self.main.confirm_menu.enable:
                     self.main.confirm_menu.handle_event(event)
                 elif self.main.sliding_menu.has_active_module:
                     self.main.sliding_menu.pass_event_to_modules(event)
