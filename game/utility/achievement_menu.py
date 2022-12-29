@@ -42,6 +42,8 @@ class AchievementMenu(GenericMenu):
             int(self.canvas_rect.height * 0.652) + self.canvas_rect.y,
         )
         self.bar = "============================================================"
+        self.max_width = len("0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234")
+        self.width_center = int(self.max_width / 2)
         self.page_index = 0
         self.page_total = 2
 
@@ -57,23 +59,26 @@ class AchievementMenu(GenericMenu):
             ),
         )
 
+        page_number = f"{self.page_index + 1}/{self.page_total}"
+        start_index = (self.width_center - (int(len(page_number) / 2))) - 1
+        line = " " * start_index + page_number + " " * start_index
         self.mission_message = Message(
             self.screen,
             [
                 "============================================================",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+                "     0123456789ABCDEFGHIJ012345678           ",
+                "     0123456789ABCDEFGHIJ012345678           ",
+                "     0123456789ABCDEFGHIJ012345678           ",
                 "============================================================",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+                "     0123456789ABCDEFGHIJ012345678           ",
+                "     0123456789ABCDEFGHIJ012345678           ",
+                "     0123456789ABCDEFGHIJ012345678           ",
                 "============================================================",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+                "     0123456789ABCDEFGHIJ012345678           ",
+                "     0123456789ABCDEFGHIJ012345678           ",
+                "     0123456789ABCDEFGHIJ012345678           ",
                 "============================================================",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+                f"{line}",
             ],
             self.main.data.large_font,
             self.main.data.colors["brown"],
