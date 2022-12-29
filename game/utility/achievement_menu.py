@@ -194,6 +194,18 @@ class AchievementMenu(GenericMenu):
     #     ...
 
     # Internal functions here
+    def _notify_success(self, reward):
+        assert isinstance(reward, float)
+        self.main.response_menu.queue_message(
+            [
+                f"",
+                f"You have received the",
+                f"reward amounting to",
+                f"P{reward:,.2f}",
+                f"",
+            ]
+        )
+
     def _previous_page(self, args):
         self.page_index = max(self.page_index - 1, 0)
 
@@ -206,6 +218,7 @@ class AchievementMenu(GenericMenu):
             self.main.data.progress["cash"] += self.data[
                 self.pages[self.page_index][0]
             ]["reward"]
+            self._notify_success(self.data[self.pages[self.page_index][0]]["reward"])
             self.data[self.pages[self.page_index][0]]["reward"] = 0.0
             self.main.mixer_coins_channel.play(self.main.data.music["earn_coins"])
 
@@ -215,6 +228,7 @@ class AchievementMenu(GenericMenu):
             self.main.data.progress["cash"] += self.data[
                 self.pages[self.page_index][1]
             ]["reward"]
+            self._notify_success(self.data[self.pages[self.page_index][1]]["reward"])
             self.data[self.pages[self.page_index][1]]["reward"] = 0.0
             self.main.mixer_coins_channel.play(self.main.data.music["earn_coins"])
 
@@ -224,6 +238,7 @@ class AchievementMenu(GenericMenu):
             self.main.data.progress["cash"] += self.data[
                 self.pages[self.page_index][2]
             ]["reward"]
+            self._notify_success(self.data[self.pages[self.page_index][2]]["reward"])
             self.data[self.pages[self.page_index][2]]["reward"] = 0.0
             self.main.mixer_coins_channel.play(self.main.data.music["earn_coins"])
 
