@@ -1018,6 +1018,80 @@ class Library:
                 "earn_pnl": 0.0,
                 "serve_manual": 0,
                 "business_profit": 0.0,
+                "location_explored": [],
+                "business_owned": 0,
+                "earn_profit": 0.0,
+                "part_time_income": 0.0,
+                "bank_interest": 0.0,
+            },
+            # "     0123456789ABCDEFGHIJ012345678",
+            "achievements": {
+                "location_explored": {
+                    "description": [
+                        "     Great Expedition",
+                        "       Visit all six locations.",
+                        "       operation. {value}/1",
+                    ],
+                    "obtained": False,
+                    "value": 1,
+                    "requirement": 6,
+                    "reward": 10_000.0,
+                },
+                "business_owned": {
+                    "description": [
+                        "     The Leading Corporation",
+                        "       Own every business in the",
+                        "       entire region. {value}/18.",
+                    ],
+                    "obtained": False,
+                    "value": 0,
+                    "requirement": 18,
+                    "reward": 100_000.0,
+                },
+                "earn_profit": {
+                    "description": [
+                        "     Best Financial Strategist",
+                        "       Reach total profits of one",
+                        "       million. {value}/1M",
+                    ],
+                    "obtained": False,
+                    "value": 0,
+                    "requirement": 1_000_000,
+                    "reward": 100_000.0,
+                },
+                "part_time_income": {
+                    "description": [
+                        "     Top Rated Freelancer",
+                        "       Earn one million part time",
+                        "       income. {value}/1M",
+                    ],
+                    "obtained": False,
+                    "value": 0,
+                    "requirement": 1_000_000,
+                    "reward": 100_000.0,
+                },
+                "earn_pnl": {
+                    "description": [
+                        "     Best Shareholder",
+                        "       Earn one million profit in",
+                        "       trading. {value}/1M",
+                    ],
+                    "obtained": False,
+                    "value": 0,
+                    "requirement": 1_000_000,
+                    "reward": 100_000.0,
+                },
+                "bank_interest": {
+                    "description": [
+                        "     Bank's Most Loyal Customer",
+                        "       Receive one million total",
+                        "       interest. {value}/1M",
+                    ],
+                    "obtained": False,
+                    "value": 0,
+                    "requirement": 1_000_000,
+                    "reward": 100_000.0,
+                },
             },
             "businesses": {
                 "test_location": {
