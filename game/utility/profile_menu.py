@@ -43,4 +43,4 @@ class ProfileMenu(GenericMenu):
 
     # Abstract method implementation
     def set_data(self):
-        ...
+        super().set_data()

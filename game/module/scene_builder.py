@@ -460,7 +460,8 @@ class Scene:
         self.main.debug.log("Year callback")
 
     def profile_callback(self, *args):
-        print("Profile clicked")
+        self.profile_menu.set_data()
+        self.profile_menu.enable = True
 
     def business_callback(self, *args):
         self.business_menu.set_data(args[0])
@@ -678,6 +679,9 @@ class Scene:
             self.ui_components.update()
             self.main.sliding_menu.update()
 
+            # Profile Menu
+            self.profile_menu.update()
+
             # Menu overlays
             self.business_menu.update()
 
@@ -694,6 +698,8 @@ class Scene:
                     self.main.response_menu.handle_event(event)
                 elif self.main.confirm_menu.enable:
                     self.main.confirm_menu.handle_event(event)
+                elif self.profile_menu.enable:
+                    self.profile_menu.handle_event(event)
                 elif self.business_menu.enable:
                     self.business_menu.handle_event(event)
                 elif self.main.sliding_menu.has_active_module:
