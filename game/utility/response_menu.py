@@ -57,12 +57,16 @@ class ResponseMenu:
     def confirm(self, *args):
         if len(self.queue) > 0:
             message = self.queue[0]
-            self.set_message(message=message)
+            self.confirmation_message.set_message(message)
             del self.queue[0]
         else:
             self.background.enable = False
 
-    def set_message(self, message):
+    def queue_message(self, message):
+        if self.enable:
+            self.queue.append(message)
+            return
+
         self.confirmation_message.set_message(message)
 
         self.background.add(self.objects, self.buttons)
@@ -70,6 +74,7 @@ class ResponseMenu:
         self.confirm_button.add(self.objects, self.buttons, self.hoverable_buttons)
 
         self.background.enable = True
+        self.enable = True
 
     def handle_event(self, event):
         if not self.enable:

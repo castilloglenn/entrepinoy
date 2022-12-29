@@ -189,8 +189,7 @@ class NewGameInputMenu:
             errors.append("a gender.")
 
         if len(errors) > 0:
-            self.main.response_menu.set_message(errors)
-            self.main.response_menu.enable = True
+            self.main.response_menu.queue_message(errors)
         else:
             self.running = False
 

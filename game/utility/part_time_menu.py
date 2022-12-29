@@ -262,7 +262,7 @@ class PartTimeMenu(GenericMenu):
 
         total_pay = base_pay + span_bonus + accuracy_bonus + awpm_bonus
 
-        self.main.response_menu.set_message(
+        self.main.response_menu.queue_message(
             [
                 f"Success! Base Pay: P{base_pay:,.2f}",
                 f"Speed: {span:,d} sec (+P{span_bonus:,.2f})",
@@ -271,7 +271,6 @@ class PartTimeMenu(GenericMenu):
                 f"Client Total Pay: P{total_pay:,.2f}",
             ],
         )
-        self.main.response_menu.enable = True
         self.main.data.progress["cash"] += total_pay
         self.data["available"] = False
 

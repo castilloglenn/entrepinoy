@@ -129,7 +129,7 @@ class Tracker:
         if mission_title in self.completed_and_notified:
             return
 
-        self.main.mixer_buttons_channel.play(self.main.data.music["success"])
+        self.main.mixer_notifications_channel.play(self.main.data.music["success"])
         message = [
             f"{title} Completed:",
             f"{mission_title.strip()}",
@@ -137,14 +137,7 @@ class Tracker:
             f"Please collect",
             f"your reward.",
         ]
-        if self.main.response_menu.enable:
-            # add to queue
-            self.main.response_menu.queue.append(message)
-        else:
-            # set_message and enable
-            self.main.response_menu.set_message(message)
-            self.main.response_menu.enable = True
-
+        self.main.response_menu.queue_message(message)
         self.completed_and_notified.append(mission_title)
 
     # Increment statistics data
@@ -173,9 +166,21 @@ class Tracker:
 
         if name in self.progress["achievements"]:
             if increment:
-                self.data[name] += increment
+                self.progress["achievements"][name]["value"] += increment
             else:
-                self.data[name] += 1
+                self.progress["achievements"][name]["value"] += 1
+
+            if (
+                self.progress["achievements"][name]["value"]
+                >= self.progress["achievements"][name]["requirement"]
+                and self.progress["achievements"][name]["reward"] > 0.0
+            ):
+                self.notify_success(
+                    self.main.data.progress["achievements"]["earn_profit"][
+                        "description"
+                    ][0],
+                    title="Achievement",
+                )
 
     def add_click(self):
         self.data["clicks"] += 1
