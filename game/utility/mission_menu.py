@@ -171,6 +171,18 @@ class MissionMenu(GenericMenu):
     #     ...
 
     # Internal functions here
+    def _notify_success(self, reward):
+        assert isinstance(reward, float)
+        self.main.response_menu.queue_message(
+            [
+                f"",
+                f"You have received the",
+                f"reward amounting to",
+                f"P{reward:,.2f}",
+                f"",
+            ]
+        )
+
     def _start_mission_1(self, args):
         mission_1 = list(self.data.keys())[0]
         self.main.data.progress["mission"][mission_1]["active"] = True
@@ -179,6 +191,7 @@ class MissionMenu(GenericMenu):
         mission_1 = list(self.data.keys())[0]
         reward = self.data[mission_1]["reward"]
         self.main.data.progress["cash"] += reward
+        self._notify_success(reward=reward)
         self.main.data.progress["mission"][mission_1]["reward"] = 0.0
         self.main.mixer_coins_channel.play(self.main.data.music["earn_coins"])
 
@@ -190,6 +203,7 @@ class MissionMenu(GenericMenu):
         mission_2 = list(self.data.keys())[1]
         reward = self.data[mission_2]["reward"]
         self.main.data.progress["cash"] += reward
+        self._notify_success(reward=reward)
         self.main.data.progress["mission"][mission_2]["reward"] = 0.0
         self.main.mixer_coins_channel.play(self.main.data.music["earn_coins"])
 
@@ -201,6 +215,7 @@ class MissionMenu(GenericMenu):
         mission_3 = list(self.data.keys())[2]
         reward = self.data[mission_3]["reward"]
         self.main.data.progress["cash"] += reward
+        self._notify_success(reward=reward)
         self.main.data.progress["mission"][mission_3]["reward"] = 0.0
         self.main.mixer_coins_channel.play(self.main.data.music["earn_coins"])
 
