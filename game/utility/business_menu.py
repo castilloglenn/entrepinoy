@@ -266,7 +266,6 @@ class BusinessMenu:
             self.main.data.progress["achievements"]["business_owned"]["value"]
             >= self.main.data.progress["achievements"]["business_owned"]["requirement"]
         ):
-            self.main.mixer_buttons_channel.play(self.main.data.music["success"])
             self.main.tracker.notify_success(
                 self.main.data.progress["achievements"]["business_owned"][
                     "description"
@@ -350,7 +349,7 @@ class BusinessMenu:
             )
             self.main.confirm_menu.enable = True
         else:
-            self.main.response_menu.set_message(
+            self.main.response_menu.queue_message(
                 [
                     "You do not have ",
                     "enough balance on",
@@ -359,7 +358,6 @@ class BusinessMenu:
                     f"You still need P{abs(assumed_balance):,.2f}.",
                 ]
             )
-            self.main.response_menu.enable = True
 
     def start_business_button_callback(self, *args):
         operation_cost = self.get_operation_cost()
@@ -380,7 +378,7 @@ class BusinessMenu:
             )
             self.main.confirm_menu.enable = True
         else:
-            self.main.response_menu.set_message(
+            self.main.response_menu.queue_message(
                 [
                     "You do not have ",
                     "enough balance on",
@@ -389,7 +387,6 @@ class BusinessMenu:
                     f"You still need P{abs(assumed_balance):,.2f}.",
                 ]
             )
-            self.main.response_menu.enable = True
 
     def hire_employee_button_callback(self, *args):
         employement_cost = self.data.business_data["employee_cost"]
@@ -410,7 +407,7 @@ class BusinessMenu:
             )
             self.main.confirm_menu.enable = True
         else:
-            self.main.response_menu.set_message(
+            self.main.response_menu.queue_message(
                 [
                     "You do not have ",
                     "enough balance on",
@@ -419,14 +416,13 @@ class BusinessMenu:
                     f"You still need P{abs(assumed_balance):,.2f}.",
                 ]
             )
-            self.main.response_menu.enable = True
 
     def sell_business_button_callback(self, *args):
         if (
             self.main.data.progress["bank"]["loan_collateral_code"]
             == self.data.name_code
         ):
-            self.main.response_menu.set_message(
+            self.main.response_menu.queue_message(
                 [
                     f"",
                     f"You cannot sell a",
@@ -435,7 +431,6 @@ class BusinessMenu:
                     f"",
                 ]
             )
-            self.main.response_menu.enable = True
             return
 
         business_selling_price = round(
@@ -497,7 +492,7 @@ class BusinessMenu:
             )
             self.main.confirm_menu.enable = True
         else:
-            self.main.response_menu.set_message(
+            self.main.response_menu.queue_message(
                 [
                     "You do not have ",
                     "enough balance on",
@@ -506,7 +501,6 @@ class BusinessMenu:
                     f"You still need P{abs(assumed_balance):,.2f}.",
                 ]
             )
-            self.main.response_menu.enable = True
 
     def set_button_states(self):
         if self.check_if_business_is_owned():
