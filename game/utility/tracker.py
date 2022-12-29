@@ -178,9 +178,7 @@ class Tracker:
                     and self.progress["achievements"][name]["reward"] > 0.0
                 ):
                     self.notify_success(
-                        self.main.data.progress["achievements"]["earn_profit"][
-                            "description"
-                        ][0],
+                        self.main.data.progress["achievements"][name]["description"][0],
                         title="Achievement",
                     )
 
