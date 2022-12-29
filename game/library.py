@@ -1019,7 +1019,7 @@ class Library:
                 "serve_manual": 0,
                 "business_profit": 0.0,
                 "location_explored": ["location_a"],
-                "business_owned": 0,
+                "business_owned": [],
                 "earn_profit": 0.0,
                 "part_time_income": 0.0,
                 "bank_interest": 0.0,
