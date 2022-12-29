@@ -165,22 +165,24 @@ class Tracker:
                 self.data[name] += 1
 
         if name in self.progress["achievements"]:
-            if increment:
-                self.progress["achievements"][name]["value"] += increment
-            else:
-                self.progress["achievements"][name]["value"] += 1
-
-            if (
-                self.progress["achievements"][name]["value"]
-                >= self.progress["achievements"][name]["requirement"]
-                and self.progress["achievements"][name]["reward"] > 0.0
-            ):
-                self.notify_success(
-                    self.main.data.progress["achievements"]["earn_profit"][
-                        "description"
-                    ][0],
-                    title="Achievement",
+            if not self.progress["achievements"][name]["obtained"]:
+                increase = increment if increment else 1
+                self.progress["achievements"][name]["value"] = min(
+                    self.progress["achievements"][name]["value"] + increase,
+                    self.progress["achievements"][name]["requirement"],
                 )
+
+                if (
+                    self.progress["achievements"][name]["value"]
+                    >= self.progress["achievements"][name]["requirement"]
+                    and self.progress["achievements"][name]["reward"] > 0.0
+                ):
+                    self.notify_success(
+                        self.main.data.progress["achievements"]["earn_profit"][
+                            "description"
+                        ][0],
+                        title="Achievement",
+                    )
 
     def add_click(self):
         self.data["clicks"] += 1
