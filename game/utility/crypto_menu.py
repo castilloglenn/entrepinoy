@@ -45,7 +45,7 @@ class CryptoMenu(GenericMenu):
         # Instantiate buttons and objects
         self.title_message = Message(
             self.screen,
-            ["Cryptocurrency Market"],
+            ["", "            Cryptocurrency Market"],
             self.main.data.large_font,
             self.main.data.colors["brown"],
             top_left_coordinates=(

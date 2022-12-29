@@ -26,7 +26,7 @@ class NewsMenu(GenericMenu):
         # Instantiate buttons and objects
         self.title_message = Message(
             self.screen,
-            ["Daily News"],
+            ["                 Daily News"],
             self.main.data.large_font,
             self.main.data.colors["brown"],
             top_left_coordinates=(

@@ -34,7 +34,7 @@ class BankMenu(GenericMenu):
         # Instantiate buttons and objects
         self.title_message = Message(
             self.screen,
-            ["Bank"],
+            ["                    Bank"],
             self.main.data.large_font,
             self.main.data.colors["brown"],
             top_left_coordinates=(
