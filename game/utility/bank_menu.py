@@ -216,6 +216,12 @@ class BankMenu(GenericMenu):
                 new_entry_date = entry_date + timedelta(days=30)
                 savings_increase = entry[1] * self.savings_interest
 
+                # Tracker increase (Profits)
+                self.main.tracker.increment_tracker(
+                    "earn_profit",
+                    increment=savings_increase,
+                )
+
                 if self.data["balance"] < self.max_savings_limit:
                     self.data["balance"] += savings_increase
                     self.data["ledger"][index][1] += savings_increase
@@ -251,7 +257,7 @@ class BankMenu(GenericMenu):
             ledger_entry = [self.progress["time"], self.min_deposit]
             self.data["ledger"].append(ledger_entry)
 
-        self.main.response_menu.set_message(
+        self.main.response_menu.queue_message(
             [
                 f"",
                 f"Successfully deposited",
@@ -260,14 +266,13 @@ class BankMenu(GenericMenu):
                 f"",
             ]
         )
-        self.main.response_menu.enable = True
 
     def _deposit_button_callback(self, args):
         cash = self.progress["cash"]
         balance = self.data["balance"]
 
         if balance >= self.max_savings_limit:
-            self.main.response_menu.set_message(
+            self.main.response_menu.queue_message(
                 [
                     f"Maximum limit reached.",
                     f"You can't deposit any",
@@ -276,7 +281,6 @@ class BankMenu(GenericMenu):
                     f"",
                 ]
             )
-            self.main.response_menu.enable = True
         elif cash >= self.min_deposit:
             assumed_balance = cash - self.min_deposit
             self.main.confirm_menu.set_message_and_callback(
@@ -293,7 +297,7 @@ class BankMenu(GenericMenu):
             )
             self.main.confirm_menu.enable = True
         else:
-            self.main.response_menu.set_message(
+            self.main.response_menu.queue_message(
                 [
                     f"",
                     f"You dont have enough",
@@ -302,7 +306,6 @@ class BankMenu(GenericMenu):
                     f"",
                 ]
             )
-            self.main.response_menu.enable = True
 
         self.main.scene_window.update_data()
 
@@ -312,7 +315,7 @@ class BankMenu(GenericMenu):
         self.data["ledger"] = []
 
         self.progress["cash"] += withdrawn_funds
-        self.main.response_menu.set_message(
+        self.main.response_menu.queue_message(
             [
                 f"",
                 f"Successfully withdrawn",
@@ -321,7 +324,6 @@ class BankMenu(GenericMenu):
                 f"",
             ]
         )
-        self.main.response_menu.enable = True
 
     def _withdraw_button_callback(self, args):
         balance = self.data["balance"]
@@ -341,7 +343,7 @@ class BankMenu(GenericMenu):
             )
             self.main.confirm_menu.enable = True
         else:
-            self.main.response_menu.set_message(
+            self.main.response_menu.queue_message(
                 [
                     f"",
                     f"You dont have enough",
@@ -350,7 +352,6 @@ class BankMenu(GenericMenu):
                     f"",
                 ]
             )
-            self.main.response_menu.enable = True
 
         self.main.scene_window.update_data()
 
@@ -516,7 +517,7 @@ class BankMenu(GenericMenu):
         self.data["loan_collateral_code"] = business_code
 
         self.progress["cash"] += business_cost
-        self.main.response_menu.set_message(
+        self.main.response_menu.queue_message(
             [
                 f"",
                 f"Successfully loaned",
@@ -525,7 +526,6 @@ class BankMenu(GenericMenu):
                 f"",
             ]
         )
-        self.main.response_menu.enable = True
 
     def _loan_pay_button_callback(self, args):
         message = None
@@ -551,17 +551,11 @@ class BankMenu(GenericMenu):
                 f"your {account} Account.",
             ]
 
-        if self.main.response_menu.enable:
-            # add to queue
-            self.main.response_menu.queue.append(message)
-        else:
-            # set_message and enable
-            self.main.response_menu.set_message(message)
-            self.main.response_menu.enable = True
+        self.main.response_menu.queue_message(message)
 
     def _loan_button_callback(self, args):
         if self.data["loan"]:
-            self.main.response_menu.set_message(
+            self.main.response_menu.queue_message(
                 [
                     f"",
                     f"You only have one loan",
@@ -570,7 +564,6 @@ class BankMenu(GenericMenu):
                     f"",
                 ]
             )
-            self.main.response_menu.enable = True
             return
 
         self.collateral = self._evaluate_businesses()
@@ -590,7 +583,7 @@ class BankMenu(GenericMenu):
             )
             self.main.confirm_menu.enable = True
         else:
-            self.main.response_menu.set_message(
+            self.main.response_menu.queue_message(
                 [
                     f"",
                     f"You must own atleast one",
@@ -599,7 +592,6 @@ class BankMenu(GenericMenu):
                     f"",
                 ]
             )
-            self.main.response_menu.enable = True
 
         self.main.scene_window.update_data()
 
