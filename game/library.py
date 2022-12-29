@@ -1056,7 +1056,7 @@ class Library:
                     ],
                     "obtained": False,
                     "value": 0,
-                    "requirement": 1_000_000,
+                    "requirement": 1_000_000.0,
                     "reward": 100_000.0,
                 },
                 "part_time_income": {
@@ -1067,7 +1067,7 @@ class Library:
                     ],
                     "obtained": False,
                     "value": 0,
-                    "requirement": 1_000_000,
+                    "requirement": 1_000_000.0,
                     "reward": 100_000.0,
                 },
                 "earn_pnl": {
@@ -1078,7 +1078,7 @@ class Library:
                     ],
                     "obtained": False,
                     "value": 0,
-                    "requirement": 1_000_000,
+                    "requirement": 1_000_000.0,
                     "reward": 100_000.0,
                 },
                 "bank_interest": {
@@ -1089,7 +1089,7 @@ class Library:
                     ],
                     "obtained": False,
                     "value": 0,
-                    "requirement": 1_000_000,
+                    "requirement": 1_000_000.0,
                     "reward": 100_000.0,
                 },
             },
