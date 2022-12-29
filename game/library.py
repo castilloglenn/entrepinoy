@@ -236,6 +236,12 @@ class Library:
             "next_arrow_button_disabled": self.get_image(
                 "meta", "next_arrow_button_disabled.png"
             ),
+            "achievement_trophy_true": self.get_image(
+                "meta", "achievement_trophy_true.png"
+            ),
+            "achievement_trophy_false": self.get_image(
+                "meta", "achievement_trophy_false.png"
+            ),
         }
         self.title_screen = {
             "title_screen": self.get_image("title_screen", "title_screen.png"),
