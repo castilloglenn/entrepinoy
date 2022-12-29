@@ -216,7 +216,9 @@ class PartTimeMenu(GenericMenu):
         accuracy = self.accuracy
         awpm = self.awpm
 
-        base_pay_per_letter = 2.0
+        base_pay_per_letter = 2.0 + len(
+            self.main.data.progress["statistics"]["business_owned"]
+        )
         bonus_thresholds = {
             "job_span": [40, 50, 60],
             "accuracy": [98, 95, 90],
