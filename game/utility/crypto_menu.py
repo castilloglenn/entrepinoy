@@ -325,11 +325,15 @@ class CryptoMenu(GenericMenu):
                 self.data["pnl"] += delta
                 self.progress["cash"] += sell_price
 
-            if self.data["pnl"] > 0.0:
-                self.main.tracker.increment_tracker(
-                    "earn_pnl",
-                    increment=self.data["pnl"],
-                )
+                if delta > 0.0:
+                    self.main.tracker.increment_tracker(
+                        "earn_pnl",
+                        increment=delta,
+                    )
+                    self.main.tracker.increment_tracker(
+                        "earn_profit",
+                        increment=delta,
+                    )
 
             message = [
                 f"Crypto Shares Update:",
@@ -338,20 +342,13 @@ class CryptoMenu(GenericMenu):
                 f"Yesterday's PNL:",
                 f"P{self.data['pnl']:,.2f}",
             ]
-            if self.main.response_menu.enable:
-                # add to queue
-                self.main.response_menu.queue.append(message)
-            else:
-                # set_message and enable
-                self.main.response_menu.set_message(message)
-                self.main.response_menu.enable = True
-
+            self.main.response_menu.queue_message(message)
             self.main.scene_window.update_data()
             return
 
         count = self.sell_count
         if count > shares:
-            self.main.response_menu.set_message(
+            self.main.response_menu.queue_message(
                 [
                     f"",
                     f"You cannot sell more",
@@ -360,7 +357,6 @@ class CryptoMenu(GenericMenu):
                     f"",
                 ]
             )
-            self.main.response_menu.enable = True
             return
 
         for index, entry in enumerate(self.data["ledger"]):
@@ -374,15 +370,19 @@ class CryptoMenu(GenericMenu):
             self.data["shares"] -= sell_count
             self.data["ledger"][index][1] -= sell_count
 
+            if delta > 0.0:
+                self.main.tracker.increment_tracker(
+                    "earn_pnl",
+                    increment=delta,
+                )
+                self.main.tracker.increment_tracker(
+                    "earn_profit",
+                    increment=delta,
+                )
+
             count -= sell_count
             if count == 0:
                 break
-
-        if self.data["pnl"] > 0.0:
-            self.main.tracker.increment_tracker(
-                "earn_pnl",
-                increment=self.data["pnl"],
-            )
 
         new_ledger = []
         for entry in self.data["ledger"]:
@@ -396,7 +396,7 @@ class CryptoMenu(GenericMenu):
     def _buy_share(self, args):
         cost = self.data["price"] * self.buy_count
         if self.progress["cash"] < cost:
-            self.main.response_menu.set_message(
+            self.main.response_menu.queue_message(
                 [
                     f"",
                     f"Not enough balance in",
@@ -405,7 +405,6 @@ class CryptoMenu(GenericMenu):
                     f"",
                 ]
             )
-            self.main.response_menu.enable = True
             return
 
         self.progress["cash"] -= cost
