@@ -180,6 +180,7 @@ class MissionMenu(GenericMenu):
         reward = self.data[mission_1]["reward"]
         self.main.data.progress["cash"] += reward
         self.main.data.progress["mission"][mission_1]["reward"] = 0.0
+        self.main.mixer_coins_channel.play(self.main.data.music["earn_coins"])
 
     def _start_mission_2(self, args):
         mission_2 = list(self.data.keys())[1]
@@ -190,6 +191,7 @@ class MissionMenu(GenericMenu):
         reward = self.data[mission_2]["reward"]
         self.main.data.progress["cash"] += reward
         self.main.data.progress["mission"][mission_2]["reward"] = 0.0
+        self.main.mixer_coins_channel.play(self.main.data.music["earn_coins"])
 
     def _start_mission_3(self, args):
         mission_3 = list(self.data.keys())[2]
@@ -200,6 +202,7 @@ class MissionMenu(GenericMenu):
         reward = self.data[mission_3]["reward"]
         self.main.data.progress["cash"] += reward
         self.main.data.progress["mission"][mission_3]["reward"] = 0.0
+        self.main.mixer_coins_channel.play(self.main.data.music["earn_coins"])
 
     # Abstract method implementation
     def set_button_states(self):
