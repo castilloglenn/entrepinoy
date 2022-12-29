@@ -54,6 +54,7 @@ class Main:
         self.mixer_meta_channel = pygame.mixer.Channel(0)
         self.mixer_buttons_channel = pygame.mixer.Channel(1)
         self.mixer_coins_channel = pygame.mixer.Channel(2)
+        self.mixer_notifications_channel = pygame.mixer.Channel(3)
 
         self.mixer_channels = [
             self.mixer_meta_channel,
