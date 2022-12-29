@@ -253,6 +253,27 @@ class BusinessMenu:
             "date_acquired"
         ] = datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f")
 
+        business = self.data.name_code
+        businesses_bought = self.main.data.progress["statistics"]["business_owned"]
+        if business in businesses_bought:
+            return
+
+        self.main.data.progress["statistics"]["business_owned"].append(business)
+        new_size = len(self.main.data.progress["statistics"]["business_owned"])
+        self.main.data.progress["achievements"]["business_owned"]["value"] = new_size
+
+        if (
+            self.main.data.progress["achievements"]["business_owned"]["value"]
+            >= self.main.data.progress["achievements"]["business_owned"]["requirement"]
+        ):
+            self.main.mixer_buttons_channel.play(self.main.data.music["success"])
+            self.main.tracker.notify_success(
+                self.main.data.progress["achievements"]["business_owned"][
+                    "description"
+                ][0],
+                title="Achievement",
+            )
+
     def start_business(self):
         self.main.data.progress["cash"] -= self.data.business_data["daily_expenses"]
         self.data.set_business_state("open")
