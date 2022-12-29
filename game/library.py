@@ -1030,7 +1030,7 @@ class Library:
                     "description": [
                         "     Great Expedition",
                         "       Visit all six locations.",
-                        "       operation. {value}/1",
+                        "       operation. {value}/6",
                     ],
                     "obtained": False,
                     "value": 1,
