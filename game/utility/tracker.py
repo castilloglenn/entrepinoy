@@ -129,6 +129,7 @@ class Tracker:
         if mission_title in self.completed_and_notified:
             return
 
+        self.main.mixer_buttons_channel.play(self.main.data.music["success"])
         message = [
             f"{title} Completed:",
             f"{mission_title.strip()}",

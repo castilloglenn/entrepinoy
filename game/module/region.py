@@ -113,6 +113,7 @@ class Map:
                 "requirement"
             ]
         ):
+            self.main.mixer_buttons_channel.play(self.main.data.music["success"])
             self.main.tracker.notify_success(
                 self.main.data.progress["achievements"]["location_explored"][
                     "description"
