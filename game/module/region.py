@@ -113,7 +113,6 @@ class Map:
                 "requirement"
             ]
         ):
-            self.main.mixer_buttons_channel.play(self.main.data.music["success"])
             self.main.tracker.notify_success(
                 self.main.data.progress["achievements"]["location_explored"][
                     "description"
@@ -133,7 +132,7 @@ class Map:
         return True
 
     def _denied_access(self):
-        self.main.response_menu.set_message(
+        self.main.response_menu.queue_message(
             [
                 f"",
                 f"You must first own all",
@@ -142,7 +141,6 @@ class Map:
                 f"",
             ]
         )
-        self.main.response_menu.enable = True
 
     def location_a_callback(self, *args):
         self.location_changer("location_a")

@@ -420,7 +420,7 @@ class Scene:
             account,
         ) = self.main.sliding_menu.bank_menu._check_savings_interests()
         if interest_increase > 0:
-            self.main.response_menu.set_message(
+            self.main.response_menu.queue_message(
                 [
                     f"Bank Interest Update:",
                     f"P{interest_increase:,.2f} has been",
@@ -429,7 +429,6 @@ class Scene:
                     f"",
                 ]
             )
-            self.main.response_menu.enable = True
 
         loan_status = self.main.sliding_menu.bank_menu._check_loan_payment()
         if loan_status != None:
@@ -452,13 +451,7 @@ class Scene:
                     f"your {account} Account.",
                 ]
 
-            if self.main.response_menu.enable:
-                # add to queue
-                self.main.response_menu.queue.append(message)
-            else:
-                # set_message and enable
-                self.main.response_menu.set_message(message)
-                self.main.response_menu.enable = True
+            self.main.response_menu.queue_message(message)
 
     def time_callback_month(self):
         self.main.debug.log("Month callback")
