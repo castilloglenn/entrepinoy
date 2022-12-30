@@ -1,4 +1,5 @@
 from game.utility.generic_menu import GenericMenu
+from game.sprite.message import Message
 
 import pygame
 
@@ -18,10 +19,36 @@ class ProfileMenu(GenericMenu):
         # close(self)
 
         # Instantiate logical variables
-        ...
+        self.data = self.main.data.progress
 
         # Instantiate buttons and objects
-        ...
+        self.news_message = Message(
+            self.screen,
+            [
+                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+            ],
+            self.main.data.large_font,
+            self.main.data.colors["brown"],
+            top_left_coordinates=(
+                int(self.canvas_rect.width * 0.06) + self.canvas_rect.x,
+                int(self.canvas_rect.height * 0.09) + self.canvas_rect.y,
+            ),
+        )
 
     # If reconstructable, add this function
     # def reconstruct(self, args):
@@ -44,3 +71,5 @@ class ProfileMenu(GenericMenu):
     # Abstract method implementation
     def set_data(self):
         super().set_data()
+
+        self.news_message.add(self.objects)
