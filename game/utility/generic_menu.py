@@ -94,6 +94,8 @@ class GenericMenu:
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
+                    if self.main.tracker:
+                        self.main.tracker.add_click()
                     mouse_pos = event.pos
                     for button in self.buttons:
                         button.check_clicked(mouse_pos)
