@@ -1,6 +1,7 @@
 from game.utility.generic_menu import GenericMenu
 from game.sprite.message import Message
 
+from numerize.numerize import numerize
 import pygame
 
 
@@ -22,7 +23,7 @@ class ProfileMenu(GenericMenu):
         self.data = self.main.data.progress
 
         # Instantiate buttons and objects
-        self.news_message = Message(
+        self.profile_label_message = Message(
             self.screen,
             [""],
             self.main.data.large_font,
@@ -30,6 +31,16 @@ class ProfileMenu(GenericMenu):
             top_left_coordinates=(
                 int(self.canvas_rect.width * 0.06) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.09) + self.canvas_rect.y,
+            ),
+        )
+        self.profile_values_message = Message(
+            self.screen,
+            [""],
+            self.main.data.large_font,
+            self.main.data.colors["brown"],
+            top_left_coordinates=(
+                int(self.canvas_rect.width * 0.51) + self.canvas_rect.x,
+                int(self.canvas_rect.height * 0.349) + self.canvas_rect.y,
             ),
         )
 
@@ -69,81 +80,102 @@ class ProfileMenu(GenericMenu):
         ]
         max_width = 45
         max_height = 16
-        message = []
+        labels = []
+        values = []
 
         # Line 1
         # Guide        "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        message.append("                  Profile")
+        labels.append("                  Profile")
 
         # Line 2
-        message.append("")
+        labels.append("")
 
         # Line 3
         name = self.data["name"]
         gender = self.data["gender"]
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        message.append(f"Name: {name:<10s}               Gender: {gender:>6s}")
+        labels.append(f"Name: {name:<10s}               Gender: {gender:>6s}")
 
         # Line 4
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        message.append(f"========================STATISTICS=======================")
+        labels.append(f"========================STATISTICS=======================")
 
         # Line 5
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        message.append(f"")
+        labels.append(f"")
 
         # Line 6
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
         location = self.main.data.city[self.data["last_location"]]
-        message.append(f"Current location: {location}")
+        labels.append("Current location:")
+        values.append(location)
 
         # Line 7
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
         e_cash = f"P{self.data['cash']:,.2f}"
-        message.append(f"E-Cash Balance: {e_cash}")
+        labels.append(f"E-Cash Balance:")
+        values.append(e_cash)
 
         # Line 8
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        e_cash = f"P{self.data['bank']['balance']:,.2f}"
-        message.append(f"Savings Balance: {e_cash}")
+        savings = f"P{numerize(self.data['bank']['balance'])}"
+        labels.append(f"Savings Balance:")
+        values.append(savings)
 
         # Line 9
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        mouse_clicks = self.data["statistics"]["clicks"]
-        message.append(f"Total Mouse Clicks: {mouse_clicks}")
+        mouse_clicks = str(self.data["statistics"]["clicks"])
+        labels.append(f"Mouse Clicks:")
+        values.append(mouse_clicks)
 
         # Line 10
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        message.append(f"10")
+        serve_customer = str(self.data["statistics"]["serve_customer"])
+        labels.append(f"Served Customers:")
+        values.append(serve_customer)
 
         # Line 11
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        message.append(f"11")
+        serve_manual = str(self.data["statistics"]["serve_manual"])
+        labels.append(f"Manual Service:")
+        values.append(serve_manual)
 
         # Line 12
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        message.append(f"12")
+        hire_employee = str(self.data["statistics"]["hire_employee"])
+        labels.append(f"Employees Hired:")
+        values.append(hire_employee)
 
         # Line 13
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        message.append(f"13")
+        bank_interest = f"P{numerize(self.data['statistics']['bank_interest'])}"
+        labels.append(f"Interest Profits:")
+        values.append(bank_interest)
 
         # Line 14
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        message.append(f"14")
+        earn_pnl = f"P{numerize(self.data['statistics']['earn_pnl'])}"
+        labels.append(f"Share Profits:")
+        values.append(earn_pnl)
 
         # Line 15
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        message.append(f"15")
+        part_time_income = f"P{numerize(self.data['statistics']['part_time_income'])}"
+        labels.append(f"Part-Time Income:")
+        values.append(part_time_income)
 
         # Line 16
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        message.append(f"16")
+        earn_profit = f"P{numerize(self.data['statistics']['earn_profit'])}"
+        labels.append(f"Overall Profits:")
+        values.append(earn_profit)
 
-        self.news_message.set_message(message)
+        self.profile_label_message.set_message(labels)
+        self.profile_values_message.set_message(values)
 
     # Abstract method implementation
     def set_data(self):
         super().set_data()
 
-        self.news_message.add(self.objects)
+        self.profile_label_message.add(self.objects)
+        self.profile_values_message.add(self.objects)
