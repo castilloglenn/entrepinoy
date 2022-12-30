@@ -172,7 +172,7 @@ class Scene:
         self.profile_gender_rect = self.profile_genders["MALE"].get_rect()
         self.profile_gender_rect.topleft = (
             int(self.main.data.setting["game_width"] * 0.046),
-            int(self.main.data.setting["game_height"] * 0.058),
+            int(self.main.data.setting["game_height"] * 0.0585),
         )
 
         self.profile_message = Message(
