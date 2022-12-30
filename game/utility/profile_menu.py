@@ -76,34 +76,69 @@ class ProfileMenu(GenericMenu):
         message.append("                  Profile")
 
         # Line 2
+        message.append("")
 
         # Line 3
+        name = self.data["name"]
+        gender = self.data["gender"]
+        # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+        message.append(f"Name: {name:<10s}               Gender: {gender:>6s}")
 
         # Line 4
+        # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+        message.append(f"========================STATISTICS=======================")
 
         # Line 5
+        # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+        message.append(f"")
 
         # Line 6
+        # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+        location = self.main.data.city[self.data["last_location"]]
+        message.append(f"Current location: {location}")
 
         # Line 7
+        # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+        e_cash = f"P{self.data['cash']:,.2f}"
+        message.append(f"E-Cash Balance: {e_cash}")
 
         # Line 8
+        # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+        e_cash = f"P{self.data['bank']['balance']:,.2f}"
+        message.append(f"Savings Balance: {e_cash}")
 
         # Line 9
+        # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+        mouse_clicks = self.data["statistics"]["clicks"]
+        message.append(f"Total Mouse Clicks: {mouse_clicks}")
 
         # Line 10
+        # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+        message.append(f"10")
 
         # Line 11
+        # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+        message.append(f"11")
 
         # Line 12
+        # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+        message.append(f"12")
 
         # Line 13
+        # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+        message.append(f"13")
 
         # Line 14
+        # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+        message.append(f"14")
 
         # Line 15
+        # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+        message.append(f"15")
 
         # Line 16
+        # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+        message.append(f"16")
 
         self.news_message.set_message(message)
 
