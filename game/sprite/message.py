@@ -29,6 +29,7 @@ class Message(Sprite):
         self.opacity = 255
         self.font = font["family"]
         self.size = font["size"]
+        self.alignment = None
 
         self.color = color
         if outline_color == None:
@@ -95,11 +96,17 @@ class Message(Sprite):
         self.image = self.font.render(message, False, self.color)
         self.rect = self.image.get_rect()
 
-        if self.center_coordinates is not None:
-            self.rect.center = self.center_coordinates
-        elif self.top_left_coordinates is not None:
-            self.rect.topleft = self.top_left_coordinates
-        elif self.mid_bottom_coordinates is not None:
-            self.rect.midtop = self.mid_bottom_coordinates
+        if self.alignment is not None:
+            if self.alignment == "center":
+                self.rect.center = self.center_coordinates
+            elif self.alignment == "left":
+                self.rect.topleft = self.top_left_coordinates
+        else:
+            if self.center_coordinates is not None:
+                self.rect.center = self.center_coordinates
+            elif self.top_left_coordinates is not None:
+                self.rect.topleft = self.top_left_coordinates
+            elif self.mid_bottom_coordinates is not None:
+                self.rect.midtop = self.mid_bottom_coordinates
 
         self.image.set_alpha(self.opacity)

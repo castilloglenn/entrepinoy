@@ -39,6 +39,10 @@ class ResponseMenu:
                 int(self.canvas_rect.width * 0.50) + self.canvas_rect.x,
                 int(self.canvas_rect.height * 0.22) + self.canvas_rect.y,
             ),
+            top_left_coordinates=(
+                int(self.canvas_rect.width * 0.12) + self.canvas_rect.x,
+                int(self.canvas_rect.height * 0.15) + self.canvas_rect.y,
+            ),
         )
 
         self.confirm_button = Button(
@@ -62,7 +66,8 @@ class ResponseMenu:
         else:
             self.background.enable = False
 
-    def queue_message(self, message):
+    def queue_message(self, message, alignment="center"):
+        self.confirmation_message.alignment = alignment
         if self.enable:
             self.queue.append(message)
             return

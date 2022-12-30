@@ -272,12 +272,13 @@ class PartTimeMenu(GenericMenu):
 
         self.main.response_menu.queue_message(
             [
-                f"Success! Base Pay: P{base_pay:,.2f}",
-                f"Speed: {span:,d} sec (+P{span_bonus:,.2f})",
-                f"Accuracy: {accuracy:,.1f}% (+P{accuracy_bonus:,.2f})",
-                f"AWPM: {awpm:,.1f} (+P{awpm_bonus:,.2f})",
-                f"Client Total Pay: P{total_pay:,.2f}",
+                f"P{base_pay:,.2f} : Base Pay",
+                f"P{span_bonus:,.2f} : Speed {span:,d} sec",
+                f"P{accuracy_bonus:,.2f} : Accuracy {accuracy:,.0f}%",
+                f"P{awpm_bonus:,.2f} : AWPM {awpm:,.0f} words",
+                f"P{total_pay:,.2f} : Total Pay",
             ],
+            alignment="left",
         )
         self.main.data.progress["cash"] += total_pay
         self.data["available"] = False
@@ -346,7 +347,7 @@ class PartTimeMenu(GenericMenu):
 
             self.word_set = []
             self.word_set_index = 0
-            self.word_set_size = 20
+            self.word_set_size = 3
             self.word_letters_sum = 0
 
             self.word_written = ""
