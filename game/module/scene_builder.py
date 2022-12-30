@@ -165,6 +165,16 @@ class Scene:
         )
         self.profile_holder.add(self.ui_components)
 
+        self.profile_genders = {
+            "MALE": self.main.data.meta_images["profile_male"],
+            "FEMALE": self.main.data.meta_images["profile_female"],
+        }
+        self.profile_gender_rect = self.profile_genders["MALE"].get_rect()
+        self.profile_gender_rect.topleft = (
+            int(self.main.data.setting["game_width"] * 0.046),
+            int(self.main.data.setting["game_height"] * 0.058),
+        )
+
         self.profile_message = Message(
             self.main.screen,
             [
@@ -677,6 +687,10 @@ class Scene:
             self.background.update()
             self.general_sprites.draw(self.main.screen)
             self.ui_components.update()
+            self.main.screen.blit(
+                self.profile_genders[self.main.data.progress["gender"]],
+                self.profile_gender_rect,
+            )
             self.main.sliding_menu.update()
 
             # Profile Menu
