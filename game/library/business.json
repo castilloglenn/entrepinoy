@@ -71,8 +71,8 @@
         "daily_expenses": 375.0,
         "employee_cost": 175.0,
         "income_per_customer_range": [
-            35.5,
-            75.5
+            25.5,
+            85.5
         ]
     },
     "sari_sari_store": {
