@@ -1,7 +1,7 @@
 {
     "game_width": 1280,
     "game_height": 720,
-    "fps": 60,
+    "fps": 90,
     "autosave_timeout": 5000,
     "bgm": 0.0,
     "sfx": 0.11,
