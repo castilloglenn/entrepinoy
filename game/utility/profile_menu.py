@@ -1,7 +1,6 @@
 from game.utility.generic_menu import GenericMenu
 from game.sprite.message import Message
 
-from numerize.numerize import numerize
 import pygame
 
 
@@ -118,55 +117,55 @@ class ProfileMenu(GenericMenu):
 
         # Line 8
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        savings = f"P{numerize(self.data['bank']['balance'])}"
+        savings = f"P{self.data['bank']['balance']:,.2f}"
         labels.append(f"Savings Balance:")
         values.append(savings)
 
         # Line 9
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        mouse_clicks = str(self.data["statistics"]["clicks"])
+        mouse_clicks = f"{self.data['statistics']['clicks']:,d}"
         labels.append(f"Mouse Clicks:")
         values.append(mouse_clicks)
 
         # Line 10
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        serve_customer = str(self.data["statistics"]["serve_customer"])
+        serve_customer = f"{self.data['statistics']['serve_customer']:,d}"
         labels.append(f"Served Customers:")
         values.append(serve_customer)
 
         # Line 11
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        serve_manual = str(self.data["statistics"]["serve_manual"])
+        serve_manual = f"{self.data['statistics']['serve_manual']:,d}"
         labels.append(f"Manual Service:")
         values.append(serve_manual)
 
         # Line 12
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        hire_employee = str(self.data["statistics"]["hire_employee"])
+        hire_employee = f"{self.data['statistics']['hire_employee']:,d}"
         labels.append(f"Employees Hired:")
         values.append(hire_employee)
 
         # Line 13
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        bank_interest = f"P{numerize(self.data['statistics']['bank_interest'])}"
+        bank_interest = f"P{self.data['statistics']['bank_interest']:,.2f}"
         labels.append(f"Interest Profits:")
         values.append(bank_interest)
 
         # Line 14
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        earn_pnl = f"P{numerize(self.data['statistics']['earn_pnl'])}"
+        earn_pnl = f"P{self.data['statistics']['earn_pnl']:,.2f}"
         labels.append(f"Share Profits:")
         values.append(earn_pnl)
 
         # Line 15
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        part_time_income = f"P{numerize(self.data['statistics']['part_time_income'])}"
+        part_time_income = f"P{self.data['statistics']['part_time_income']:,.2f}"
         labels.append(f"Part-Time Income:")
         values.append(part_time_income)
 
         # Line 16
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        earn_profit = f"P{numerize(self.data['statistics']['earn_profit'])}"
+        earn_profit = f"P{self.data['statistics']['earn_profit']:,.2f}"
         labels.append(f"Overall Profits:")
         values.append(earn_profit)
 
