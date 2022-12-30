@@ -102,7 +102,13 @@ class ResponseMenu:
                     button.check_clicked(mouse_pos)
 
         if not self.background.enable:
-            self.close()
+            if len(self.queue) > 0:
+                message = self.queue[0]
+                self.confirmation_message.set_message(message)
+                del self.queue[0]
+                self.background.enable = True
+            else:
+                self.close()
 
     def update(self):
         if not self.enable:

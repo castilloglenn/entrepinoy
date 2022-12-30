@@ -165,6 +165,16 @@ class Scene:
         )
         self.profile_holder.add(self.ui_components)
 
+        self.profile_genders = {
+            "MALE": self.main.data.meta_images["profile_male"],
+            "FEMALE": self.main.data.meta_images["profile_female"],
+        }
+        self.profile_gender_rect = self.profile_genders["MALE"].get_rect()
+        self.profile_gender_rect.topleft = (
+            int(self.main.data.setting["game_width"] * 0.046),
+            int(self.main.data.setting["game_height"] * 0.058),
+        )
+
         self.profile_message = Message(
             self.main.screen,
             [
@@ -460,7 +470,8 @@ class Scene:
         self.main.debug.log("Year callback")
 
     def profile_callback(self, *args):
-        print("Profile clicked")
+        self.profile_menu.set_data()
+        self.profile_menu.enable = True
 
     def business_callback(self, *args):
         self.business_menu.set_data(args[0])
@@ -676,7 +687,14 @@ class Scene:
             self.background.update()
             self.general_sprites.draw(self.main.screen)
             self.ui_components.update()
+            self.main.screen.blit(
+                self.profile_genders[self.main.data.progress["gender"]],
+                self.profile_gender_rect,
+            )
             self.main.sliding_menu.update()
+
+            # Profile Menu
+            self.profile_menu.update()
 
             # Menu overlays
             self.business_menu.update()
@@ -694,6 +712,8 @@ class Scene:
                     self.main.response_menu.handle_event(event)
                 elif self.main.confirm_menu.enable:
                     self.main.confirm_menu.handle_event(event)
+                elif self.profile_menu.enable:
+                    self.profile_menu.handle_event(event)
                 elif self.business_menu.enable:
                     self.business_menu.handle_event(event)
                 elif self.main.sliding_menu.has_active_module:

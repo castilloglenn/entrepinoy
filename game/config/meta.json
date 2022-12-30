@@ -10,7 +10,7 @@
 	"crowd_spawn_timeout": 500,
 	"vehicle_min_chance": 5,
 	"vehicle_ratio_to_crowd": 0.2,
-	"vehicle_spawn_timeout": 3000,
+	"vehicle_spawn_timeout": 1500,
 	"memory_log_timeout": 60000,
 
 	"operating_hours": 8

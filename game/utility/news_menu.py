@@ -5,6 +5,7 @@ from game.utility.generic_menu import GenericMenu
 
 from datetime import datetime
 import pygame
+import random
 
 
 class NewsMenu(GenericMenu):
@@ -98,81 +99,104 @@ class NewsMenu(GenericMenu):
         message.append(f"Good {greeting}, {location}!")
 
         # Line 3
-        message.append("")
+        message.append("Events and Latest Traffic")
 
         # Line 4
         holiday = self.main.scene_window.holiday
 
         if holiday != "":
-            message.append(f"- Its Holiday! {holiday}")
+            # Guide        "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+            message.append(f"  Its Holiday! {holiday[:30]}")
         else:
-            message.append(f"- Today is a regular day.")
+            message.append(f"  Today is a regular day")
 
         # Line 5
         crowd_chance = self.main.scene_window.crowd_chance[
             self.main.scene_window.time.time.hour
         ]
         if crowd_chance <= 30:
-            message.append(f"- Quite few people passes the streets.")
+            message.append(f"  Quite few people passes the streets")
         elif crowd_chance <= 60:
-            message.append(f"- The streets are busy.")
+            message.append(f"  The streets are busy.")
         else:
-            message.append(f"- Rush hour can be observed down the road.")
+            message.append(f"  Rush hour can be observed down the road")
 
         # Line 6
-        message.append("")
+        message.append("Finance and Economy")
 
         # Line 7
         bank = self.data["bank"]
         if bank["loan"] > 0.0:
-            message.append(f"- Remember to save some for loan payments!")
+            message.append(f"  Remember to save some for loan payments!")
         elif bank["balance"] == 0.0:
-            message.append(f"- Deposit now to utilize bank interest!")
+            message.append(f"  Deposit now to utilize bank interest")
         else:
-            message.append(f"- Short on budget? Loan at the bank!")
+            message.append(f"  Short on budget? Loan at the bank!")
 
         # Line 8
         part_time = self.data["part_time"]
         if part_time["available"]:
-            message.append(f"- Earn extra with available part time jobs!")
+            message.append(f"  Wanted freelancers to do data encoding.")
         else:
-            message.append(f"- Freelance jobs is a great start in career.")
+            message.append(f"  More job opportunities tomorrow.")
 
         # Line 9
-        message.append("")
+        # Guide        "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+        missions = self.data["mission"]
+        uncollected_missions = 0
+        for mission in missions:
+            if missions[mission]["reward"] > 0.0:
+                uncollected_missions += 1
+
+        if uncollected_missions:
+            message.append("  Local citizens must do missions daily.")
+        else:
+            message.append("  Plan out your strategy tomorrow, citizen!")
 
         # Line 10
+        message.append("Global News")
+
+        # Line 11
         crypto = self.data["crypto"]
         name = crypto["symbol"]
         change = crypto["price"] / crypto["starting_price"] * 100
         if change > 120:
-            message.append(f"- {name} skyrockets to the moon!")
+            message.append(f"  {name} skyrockets to the moon!")
         elif change < 80:
-            message.append(f"- {name} plummets to the floor.")
+            message.append(f"  {name} plummets to the floor.")
         else:
-            message.append(f"- Start trading with {name}, not an ad.")
+            message.append(f"  Start trading with {name}, not an ad.")
 
-        # Line 11
+        # Line 12
         stock = self.data["stocks"]
         name = stock["symbol"]
         change = stock["price"] / stock["starting_price"] * 100
         if change > 110:
-            message.append(f"- Business is boomin' with {name}")
+            message.append(f"  Business is boomin' with {name}")
         elif change < 90:
-            message.append(f"- {name} is unstable in terms of money.")
+            message.append(f"  {name} is unstable in terms of money.")
         else:
-            message.append(f"- Get a hold of {name} shares long term!")
-
-        # Line 12
-        message.append("")
+            message.append(f"  Get a hold of {name} shares long term!")
 
         # Line 13
-        # Guide        "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        message.append("- News about mission here")
+        message.append("Tourism")
 
         # Line 14
-        # Guide        "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        message.append("- News about statistics here")
+        # Guide            "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+        if self.main.data.city[self.data["last_location"]] == "IMUS":
+            message.append("  Imus longganisa is the best longganisa.")
+        elif self.main.data.city[self.data["last_location"]] == "BACOOR":
+            message.append("  Have you tried Digman's Halo-halo in Bacoor?")
+        elif self.main.data.city[self.data["last_location"]] == "MOLINO":
+            message.append("  Come visit Sto. Nino Church in Pag-asa!")
+        elif self.main.data.city[self.data["last_location"]] == "GENERAL TRIAS":
+            message.append("  Visit the Tejeros Convention site!")
+        elif self.main.data.city[self.data["last_location"]] == "DASMARINAS":
+            message.append("  Museo De La Salle is a must go place!")
+        elif self.main.data.city[self.data["last_location"]] == "INDANG":
+            message.append("  Visit the CvSU Main Campus today!")
+        else:
+            message.append("  Philippines is a great country to visit.")
 
         # Message update
         self.news_message.set_message(messages=message)

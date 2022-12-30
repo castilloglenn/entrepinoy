@@ -60,6 +60,7 @@ class Main:
             self.mixer_meta_channel,
             self.mixer_buttons_channel,
             self.mixer_coins_channel,
+            self.mixer_notifications_channel,
         ]
 
         pygame.mixer.music.set_volume(self.volume_bgm)

@@ -222,6 +222,10 @@ class BankMenu(GenericMenu):
                     increment=savings_increase,
                 )
 
+                self.main.tracker.increment_tracker(
+                    "bank_interest", increment=savings_increase
+                )
+
                 if self.data["balance"] < self.max_savings_limit:
                     self.data["balance"] += savings_increase
                     self.data["ledger"][index][1] += savings_increase
