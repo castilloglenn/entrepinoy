@@ -1053,11 +1053,11 @@ class Library:
                     "description": [
                         "     Best Financial Strategist",
                         "       Reach total profits of one",
-                        "       million. {value}/1M",
+                        "       million. {value}/10M",
                     ],
                     "obtained": False,
                     "value": 0,
-                    "requirement": 1_000_000.0,
+                    "requirement": 10_000_000.0,
                     "reward": 100_000.0,
                 },
                 "part_time_income": {

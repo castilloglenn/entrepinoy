@@ -594,8 +594,8 @@ class Business(Button):
         income_range = [irange * iamp for irange, iamp in zip(income_range, income_amp)]
 
         probability_weight = random.choices(
-            population=[0.2, 0.4, 0.6, 0.8, 1.0],
-            weights=[1.0, 0.8, 0.4, 0.2, 0.1],
+            population=[0.5, 0.7, 0.8, 0.9, 1.0],
+            weights=[0.5, 0.2, 0.2, 0.05, 0.05],
         )[0]
         delta_range = income_range[1] - income_range[0]
         income_range[1] = delta_range * probability_weight + income_range[0]
