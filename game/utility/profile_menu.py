@@ -24,24 +24,7 @@ class ProfileMenu(GenericMenu):
         # Instantiate buttons and objects
         self.news_message = Message(
             self.screen,
-            [
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-                "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
-            ],
+            [""],
             self.main.data.large_font,
             self.main.data.colors["brown"],
             top_left_coordinates=(
@@ -66,7 +49,63 @@ class ProfileMenu(GenericMenu):
         # This will be called in conjunction with the screen update to always
         #   make the details in the business update and buttons will be enabled
         #   when a sale is made and etc.
-        ...
+        [
+            "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+            "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+            "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+            "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+            "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+            "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+            "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+            "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+            "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+            "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+            "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+            "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+            "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+            "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+            "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+            "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234",
+        ]
+        max_width = 45
+        max_height = 16
+        message = []
+
+        # Line 1
+        # Guide        "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+        message.append("                  Profile")
+
+        # Line 2
+
+        # Line 3
+
+        # Line 4
+
+        # Line 5
+
+        # Line 6
+
+        # Line 7
+
+        # Line 8
+
+        # Line 9
+
+        # Line 10
+
+        # Line 11
+
+        # Line 12
+
+        # Line 13
+
+        # Line 14
+
+        # Line 15
+
+        # Line 16
+
+        self.news_message.set_message(message)
 
     # Abstract method implementation
     def set_data(self):
