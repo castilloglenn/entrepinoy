@@ -96,6 +96,12 @@ class Tracker:
     def save(self):
         self.main.scene_window.update_data()
 
+    def detect_game_completion(self):
+        for achievement in self.progress["achievements"]:
+            if not self.progress["achievements"][achievement]["obtained"]:
+                return False
+        return True
+
     def generate_missions(self):
         # Collect uncollected rewards
         for mission in self.progress["mission"]:

@@ -89,6 +89,10 @@ class Scene:
         # Crypto Updates
         self.crypto_update_id = pygame.USEREVENT + 6
         pygame.time.set_timer(self.crypto_update_id, 1000)
+        # Epilogue checker
+        # TODO After implementation, change this to 10 or 20 seconds
+        self.progress_check_id = pygame.USEREVENT + 7
+        pygame.time.set_timer(self.progress_check_id, 1_000)
 
         # Logging entry point
         self.main.debug.new_line()
@@ -774,6 +778,9 @@ class Scene:
 
                     # TODO DEBUG ONLY
                     # self.main.sliding_menu.stock_menu._update_price()
+                elif event.type == self.progress_check_id:
+                    if self.main.tracker.detect_game_completion():
+                        ...
 
             # FPS Counter increment
             self.fps_counter += 1
