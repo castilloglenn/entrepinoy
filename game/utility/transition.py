@@ -114,6 +114,9 @@ class Transition:
 
     def run(self):
         while self.STATE != self.UNFADE:
+            # Event processing
+            self.dump_events()
+
             if self.fade_current_frame:
                 self.main.screen.blit(self.main.display_surface, (0, 0))
                 self.update_alpha()
@@ -167,6 +170,9 @@ class Transition:
         self.main.screen.blit(self.main.display_surface, (0, 0))
         self.update_alpha()
 
+        # Event processing
+        self.dump_events()
+
         if self.alpha <= 0:
             self.change_state(self.FADE_OUT)
 
@@ -219,10 +225,7 @@ class Transition:
 
         while self.STATE != self.UNFADE:
             # Event processing
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    # Closing the game properly
-                    self.main.close_game()
+            self.dump_events()
 
             self.main.screen.blit(self.last_frame, (0, 0))
             self.main.screen.blit(self.main.display_surface, (0, 0))
@@ -232,3 +235,11 @@ class Transition:
             if self.alpha >= 255:
                 self.change_state(self.UNFADE)
                 self.fade_current_frame = False
+
+    def dump_events(self):
+        """This will prevent holding events and letting the next frame process it"""
+        # Event processing
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                # Closing the game properly
+                self.main.close_game()
