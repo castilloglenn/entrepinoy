@@ -1,8 +1,6 @@
 from game.utility.new_game_input_menu import NewGameInputMenu
 from game.utility.new_game_starter_menu import NewGameStarterMenu
 
-from game.utility.transition import Transition
-
 
 class Prologue:
     """
@@ -10,7 +8,7 @@ class Prologue:
     new save file/pressing new game button. The sequences will be:
     1. Name and Gender selection/input window
     2. Starting Business selection window
-    3. Prologue Story (Frames) Presentation window
+    3. Prologue Story (Frames) Presentation Window
     """
 
     def __init__(self, main) -> None:

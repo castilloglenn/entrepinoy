@@ -13,6 +13,8 @@ from game.library import Library
 from game.utility.debug import Debugger
 from game.utility.time import Time
 
+from game.module.epilogue import Epilogue
+
 from datetime import datetime
 import calendar
 import pygame
@@ -30,6 +32,7 @@ class Scene:
         self.main = main
         self.show_debug_info = False
         self.running = False
+        self.prologue = Epilogue(self.main)
 
         self.location = self.main.data.progress["last_location"]
         self.crowd_chance = self.main.data.crowd_statistics[self.location]
@@ -779,8 +782,21 @@ class Scene:
                     # TODO DEBUG ONLY
                     # self.main.sliding_menu.stock_menu._update_price()
                 elif event.type == self.progress_check_id:
-                    if self.main.tracker.detect_game_completion():
-                        ...
+                    if (
+                        not self.main.response_menu.enable
+                        and not self.main.confirm_menu.enable
+                        and not self.profile_menu.enable
+                        and not self.business_menu.enable
+                        and not self.main.sliding_menu.has_active_module
+                        and self.main.sliding_menu.is_tucked
+                    ):
+                        if self.main.tracker.detect_game_completion():
+                            # Epilogue roll out (Art frames then credits)
+                            self.prologue.run("good_ending")
+
+                        # elif self.main.data.progress["cash"] < -10_000:
+                        #     # Epilogue roll out (Art frames only then restart the game)
+                        #     self.prologue.run("bad_ending")
 
             # FPS Counter increment
             self.fps_counter += 1

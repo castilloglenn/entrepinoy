@@ -377,6 +377,86 @@ class Library:
                     "text_rel_coords": [0.05, 0.625],
                 },
             },
+            "good_ending": {
+                0: {
+                    "image": {
+                        "MALE": self.get_image(
+                            "story",
+                            "epilogue_male_frame_1.png",
+                        ),
+                        "FEMALE": self.get_image(
+                            "story",
+                            "epilogue_female_frame_1.png",
+                        ),
+                    },
+                    "text": [
+                        "{player_name}",
+                        "{possessive}",
+                        "{pronoun}",
+                        "Frame 1",
+                    ],
+                    "text_rel_coords": [0.5125, 0.5],
+                },
+                1: {
+                    "image": {
+                        "MALE": self.get_image(
+                            "story",
+                            "epilogue_male_frame_2.png",
+                        ),
+                        "FEMALE": self.get_image(
+                            "story",
+                            "epilogue_female_frame_2.png",
+                        ),
+                    },
+                    "text": [
+                        "{player_name}",
+                        "{possessive}",
+                        "{pronoun}",
+                        "Frame 2",
+                    ],
+                    "text_rel_coords": [0.03125, 0.825],
+                },
+                2: {
+                    "image": {
+                        "MALE": self.get_image(
+                            "story",
+                            "epilogue_male_frame_3.png",
+                        ),
+                        "FEMALE": self.get_image(
+                            "story",
+                            "epilogue_female_frame_3.png",
+                        ),
+                    },
+                    "text": [
+                        "{player_name}",
+                        "{possessive}",
+                        "{pronoun}",
+                        "Frame 3",
+                    ],
+                    "text_rel_coords": [0.725, 0.395],
+                },
+            },
+            "bad_ending": {
+                0: {
+                    "image": {
+                        "MALE": self.get_image(
+                            "story",
+                            "epilogue_bad_ending_male_frame_1.png",
+                        ),
+                        "FEMALE": self.get_image(
+                            "story",
+                            "epilogue_bad_ending_female_frame_1.png",
+                        ),
+                    },
+                    "text": [
+                        "{player_name}",
+                        "{possessive}",
+                        "{pronoun}",
+                        "Frame 1",
+                    ],
+                    "text_rel_coords": [0.5125, 0.5],
+                },
+            },
         }
         self.map = {
             "region": {
@@ -974,6 +1054,7 @@ class Library:
             "last_login": "",
             "last_location": "location_a",
             "cash": 1000.0,
+            "credits_shown": False,
             "bank": {
                 "loan": 0.0,
                 "loan_balance": 0.0,
