@@ -530,9 +530,6 @@ class StockMenu(GenericMenu):
         self.symbol_message.set_message([f"{self.data['symbol']}"])
         self.price_message.set_message([f"P{self.data['price']:,.2f}"])
 
-        change_prefix = "+" if self.traj else "-"
-        self.change_message.set_message([f"({change_prefix}{self.change * 100:,.2f}%)"])
-
         position = ""
         if self.average_position > 0.0:
             position = f"Average Position: P{self.average_position:,.2f}"
