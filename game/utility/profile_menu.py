@@ -84,16 +84,18 @@ class ProfileMenu(GenericMenu):
 
         # Line 1
         # Guide        "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        labels.append("                  Profile")
+        labels.append("==========================PROFILE========================")
 
         # Line 2
-        labels.append("")
-
-        # Line 3
         name = self.data["name"]
         gender = self.data["gender"]
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
         labels.append(f"Name: {name:<10s}               Gender: {gender:>6s}")
+
+        # Line 3
+        # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+        location = self.main.data.city[self.data["last_location"]]
+        labels.append(f"Location: {location}")
 
         # Line 4
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
@@ -105,69 +107,66 @@ class ProfileMenu(GenericMenu):
 
         # Line 6
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        location = self.main.data.city[self.data["last_location"]]
-        labels.append("Current location:")
-        values.append(location)
-
-        # Line 7
-        # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
         e_cash = f"P{self.data['cash']:,.2f}"
         labels.append(f"E-Cash Balance:")
         values.append(e_cash)
 
-        # Line 8
+        # Line 7
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
         savings = f"P{self.data['bank']['balance']:,.2f}"
         labels.append(f"Savings Balance:")
         values.append(savings)
 
-        # Line 9
+        # Line 8
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
         mouse_clicks = f"{self.data['statistics']['clicks']:,d}"
         labels.append(f"Mouse Clicks:")
         values.append(mouse_clicks)
 
-        # Line 10
+        # Line 9
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
         serve_customer = f"{self.data['statistics']['serve_customer']:,d}"
         labels.append(f"Served Customers:")
         values.append(serve_customer)
 
-        # Line 11
+        # Line 10
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
         serve_manual = f"{self.data['statistics']['serve_manual']:,d}"
         labels.append(f"Manual Service:")
         values.append(serve_manual)
 
-        # Line 12
+        # Line 11
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
         hire_employee = f"{self.data['statistics']['hire_employee']:,d}"
         labels.append(f"Employees Hired:")
         values.append(hire_employee)
 
-        # Line 13
+        # Line 12
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
         bank_interest = f"P{self.data['statistics']['bank_interest']:,.2f}"
         labels.append(f"Interest Profits:")
         values.append(bank_interest)
 
-        # Line 14
+        # Line 13
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
         earn_pnl = f"P{self.data['statistics']['earn_pnl']:,.2f}"
         labels.append(f"Share Profits:")
         values.append(earn_pnl)
 
-        # Line 15
+        # Line 14
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
         part_time_income = f"P{self.data['statistics']['part_time_income']:,.2f}"
         labels.append(f"Part-Time Income:")
         values.append(part_time_income)
 
-        # Line 16
+        # Line 15
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
         earn_profit = f"P{self.data['statistics']['earn_profit']:,.2f}"
         labels.append(f"Overall Profits:")
         values.append(earn_profit)
+
+        # Line 16
+        labels.append("")
 
         self.profile_label_message.set_message(labels)
         self.profile_values_message.set_message(values)
