@@ -546,6 +546,11 @@ class StockMenu(GenericMenu):
             ]
         )
 
+        change_prefix = "-" if self.start_change < 100.0 else "+"
+        self.change_message.set_message(
+            [f"({change_prefix}{100 - self.start_change:,.2f}%)"]
+        )
+
         self.shares_message.set_message([f"{numerize(self.data['shares'])}"])
         self.pnl_message.set_message([f"{numerize(self.data['pnl'])}"])
 
