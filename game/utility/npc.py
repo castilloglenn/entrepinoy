@@ -27,8 +27,8 @@ class NPC(Spritesheet):
             self.min_animation_speed = 10
             self.max_animation_speed = 12
         elif form == "vehicle":
-            self.min_speed = 230
-            self.max_speed = 280
+            self.min_speed = 460
+            self.max_speed = 560
 
             self.min_animation_speed = 6
             self.max_animation_speed = 8
