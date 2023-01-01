@@ -312,9 +312,14 @@ class Map:
             self.main.confirm_menu.update()
             self.main.response_menu.update()
 
+            # Tutorial Overlays
+            self.main.tutorial_overlay.update()
+
             # Event processing
             for event in pygame.event.get():
-                if self.main.response_menu.enable:
+                if self.main.tutorial_overlay.enable:
+                    self.main.tutorial_overlay.handle_event(event)
+                elif self.main.response_menu.enable:
                     self.main.response_menu.handle_event(event)
                 elif self.main.confirm_menu.enable:
                     self.main.confirm_menu.handle_event(event)

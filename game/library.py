@@ -1055,6 +1055,7 @@ class Library:
             "last_location": "location_a",
             "cash": 1000.0,
             "credits_shown": False,
+            "tutorial_shown": False,
             "bank": {
                 "loan": 0.0,
                 "loan_balance": 0.0,

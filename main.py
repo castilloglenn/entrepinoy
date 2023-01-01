@@ -12,6 +12,7 @@ from game.library import Library
 from game.utility.tracker import Tracker
 from game.utility.transition import Transition
 from game.utility.slideshow import Slideshow
+from game.utility.tutorial_overlay import TutorialOverlay
 
 from game.module.scene_builder import Scene
 from game.module.region import Map
@@ -102,6 +103,7 @@ class Main:
             self.scene_window = Scene(self)
             self.map_window = Map(self)
             self.tracker = Tracker(self)
+        self.tutorial_overlay = TutorialOverlay(self)
         self.setting_window = Setting(self)
 
         # Sprites and sprite groups

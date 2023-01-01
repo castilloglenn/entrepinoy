@@ -8,9 +8,6 @@ from game.utility.business_menu import BusinessMenu
 from game.utility.profile_menu import ProfileMenu
 from game.utility.customer import Customer
 from game.utility.npc import NPC
-
-from game.library import Library
-from game.utility.debug import Debugger
 from game.utility.time import Time
 
 from game.module.epilogue import Epilogue
@@ -685,6 +682,10 @@ class Scene:
         if self.buttons not in self.main.sliding_menu.sliding_menu_button.groups():
             self.main.sliding_menu.sliding_menu_button.add(self.buttons)
 
+        # Check if tutorial has been shown
+        if not self.main.data.progress["tutorial_shown"]:
+            self.main.tutorial_overlay.prologue_sequence()
+
         pygame.mixer.music.load(self.main.data.music["main_menu"])
         pygame.mixer.music.play(-1)
 
@@ -713,9 +714,14 @@ class Scene:
             # Check transition fading, render fade animation
             self.main.transition.update()
 
+            # Tutorial Overlays
+            self.main.tutorial_overlay.update()
+
             # Event processing
             for event in pygame.event.get():
-                if self.main.response_menu.enable:
+                if self.main.tutorial_overlay.enable:
+                    self.main.tutorial_overlay.handle_event(event)
+                elif self.main.response_menu.enable:
                     self.main.response_menu.handle_event(event)
                 elif self.main.confirm_menu.enable:
                     self.main.confirm_menu.handle_event(event)
