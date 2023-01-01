@@ -50,6 +50,13 @@ This is the main menu of the game, the user can start a new game or continue if 
 <br/>
 <br/>
 
+![profilemenuscreenshot1](https://user-images.githubusercontent.com/120929317/210166229-5f692dfb-3ef5-4e4e-9227-867e28a79f42.png)
+![profilemenuscreenshot2](https://user-images.githubusercontent.com/120929317/210166231-35231d59-89a7-429c-97dd-6c8e75cbec85.png)
+<h3 align="center">Profile Statistics</h3>
+<p>The player can see their name and gender, it also displays here the player's statistics like balance, income, profits, location, and more. Profile statistics are located at the top left of the screen.</p>
+<br/>
+<br/>
+
 ![image](https://user-images.githubusercontent.com/120929317/208300187-c13e03c6-6eeb-46a5-8e79-540820bd4372.png)
 <h3 align="center">Business Street View</h3>
 <p>Background Design, Businesses, and Non Player Characters(NPC) are shown above.</p>
