@@ -12,7 +12,7 @@ from game.utility.time import Time
 
 from game.module.epilogue import Epilogue
 
-from datetime import datetime
+from datetime import datetime, timedelta
 import calendar
 import pygame
 import random
@@ -218,6 +218,33 @@ class Scene:
 
         self.debug_message.add(self.ui_components)
 
+    def _simulate_time_skip(self):
+        last_login = datetime.strptime(
+            self.main.data.progress["last_login"], self.time.format
+        )
+        current_time = datetime.now()
+
+        delta = current_time - last_login
+        # print("offline time difference")
+        # print(f"last_login: {last_login}")
+        # print(f"current_time: {current_time}")
+        # print(f"delta: {delta}\n")
+
+        new_time = self.time.time + delta
+        # print("in-game time")
+        # print(f"self.time.time: {self.time.time}")
+        # print(f"new_time: {new_time} (= self.time.time + delta)\n")
+
+        ticks = 0
+        while self.time.time <= new_time:
+            self.time.tick()
+            ticks += 1
+
+        # print(f"total ticks: {ticks}")
+
+        # Calculate unsimulated earnings of businesses
+        self.calculate_businesses_earnings(self.main.data.progress["tutorial_shown"])
+
     def reconstruct(self, main):
         # Logging entry point
         self.main.debug.new_line()
@@ -381,10 +408,22 @@ class Scene:
             "last_visited"
         ] = self.time.get_full()
 
-    def calculate_businesses_earnings(self):
+    def calculate_businesses_earnings(self, show_notification):
+        total_income = 0.0
         for business in self.business_data:
             if business["object"].visible:
-                business["object"].earnings_calculation()
+                total_income += business["object"].earnings_calculation()
+
+        if show_notification:
+            self.main.response_menu.queue_message(
+                [
+                    f"",
+                    f"While you were away,",
+                    f"you have earned:",
+                    f"P{total_income:,.2f}",
+                    f"",
+                ]
+            )
 
         # Reset location last visited
         self.main.data.progress["businesses"][self.location]["last_visited"] = ""
@@ -631,8 +670,7 @@ class Scene:
                 self.main.debug.log("Debug details hidden")
 
         elif key == pygame.K_F2:
-            # TODO Debug only
-            self.main.tracker.generate_missions()
+            pass
 
         elif key == pygame.K_F3:
             pass
@@ -670,8 +708,12 @@ class Scene:
         )
 
     def close_game(self):
+        # Setting last visited on the current location before exiting
+        self.set_location_last_visited()
+
         self.update_data()
         self.main.debug.log("Autosaved progress before exit")
+
         self.main.close_game()
 
     def run(self):
@@ -685,6 +727,9 @@ class Scene:
         # Check if tutorial has been shown
         if not self.main.data.progress["tutorial_shown"]:
             self.main.tutorial_overlay.prologue_sequence()
+
+        # Simulate time skip while offline
+        self._simulate_time_skip()
 
         pygame.mixer.music.load(self.main.data.music["main_menu"])
         pygame.mixer.music.play(-1)
@@ -784,9 +829,6 @@ class Scene:
                 elif event.type == self.crypto_update_id:
                     # Crypto price update
                     self.main.sliding_menu.crypto_menu._update_price()
-
-                    # TODO DEBUG ONLY
-                    # self.main.sliding_menu.stock_menu._update_price()
                 elif event.type == self.progress_check_id:
                     if (
                         not self.main.response_menu.enable
@@ -807,7 +849,6 @@ class Scene:
             # FPS Counter increment
             self.fps_counter += 1
 
-            # TODO DEBUGGING ONLY/ considering to turning into feature
             if self.show_debug_info:
                 total_limit = self.object_limit + self.extra_sprites_count
                 holiday_boost = 20 if self.holiday != "" else 0
