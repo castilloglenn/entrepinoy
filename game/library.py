@@ -390,12 +390,13 @@ class Library:
                         ),
                     },
                     "text": [
-                        "{player_name}",
-                        "{possessive}",
-                        "{pronoun}",
-                        "Frame 1",
+                        "Congratulations {player_name}! Your ",
+                        "corporation is hailed as the number",
+                        "one brand in the region, all your ",
+                        "hardwork and dedication have been ",
+                        "rewarded by countless blessings.",
                     ],
-                    "text_rel_coords": [0.5125, 0.5],
+                    "text_rel_coords": [0.06125, 0.74],
                 },
                 1: {
                     "image": {
@@ -409,12 +410,14 @@ class Library:
                         ),
                     },
                     "text": [
-                        "{player_name}",
-                        "{possessive}",
-                        "{pronoun}",
-                        "Frame 2",
+                        "Looking back when you first started ",
+                        "with nothing, now you have everything. ",
+                        "And all of this is the result of your ",
+                        "non-stop dedication and resiliency ",
+                        "towards the success that you have ",
+                        "right now.",
                     ],
-                    "text_rel_coords": [0.03125, 0.825],
+                    "text_rel_coords": [0.06125, 0.775],
                 },
                 2: {
                     "image": {
@@ -428,12 +431,15 @@ class Library:
                         ),
                     },
                     "text": [
-                        "{player_name}",
-                        "{possessive}",
-                        "{pronoun}",
-                        "Frame 3",
+                        '"The award for the Entrepreneur ',
+                        "of the Year goes to... {player_name}! ",
+                        "The government will forever cherish ",
+                        "and appreciate your dedication ",
+                        "towards the economical improvement ",
+                        'of the country." ',
+                        "-Governor",
                     ],
-                    "text_rel_coords": [0.725, 0.395],
+                    "text_rel_coords": [0.6125, 0.175],
                 },
             },
             "bad_ending": {
@@ -454,7 +460,7 @@ class Library:
                         "{pronoun}",
                         "Frame 1",
                     ],
-                    "text_rel_coords": [0.5125, 0.5],
+                    "text_rel_coords": [0.56, 0.5],
                 },
             },
         }
