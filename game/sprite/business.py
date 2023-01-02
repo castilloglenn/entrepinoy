@@ -626,6 +626,8 @@ class Business(Button):
             self.income_message.set_message([f"+P{self.current_income:,.2f}"])
             self.income_visible = True
 
+        return self.current_income
+
     def earnings_calculation(self):
         last_visited_string = self.progress["businesses"][self.scene.location][
             "last_visited"
@@ -633,6 +635,9 @@ class Business(Button):
         time_until_closed_string = self.progress["businesses"][self.scene.location][
             self.name_code
         ]["open_until"]
+        # print(f"{self.name_code} earnings calculation")
+        # print(f"last_visited_string: {last_visited_string}")
+        # print(f"time_until_closed_string: {time_until_closed_string}")
 
         if last_visited_string != "" and time_until_closed_string != "":
             current_in_game_time = self.scene.time.time
@@ -659,6 +664,7 @@ class Business(Button):
             time_after_simulated_seconds = last_visited + timedelta(
                 seconds=simulation_seconds * self.scene.time.second_ratio
             )
+            # print(f"simulation_seconds: {simulation_seconds}")
 
             customers_spawned = 0
             hours_span = [
@@ -707,9 +713,14 @@ class Business(Button):
 
                 customers_spawned += min(hourly_customers, self.queue_limit)
 
-            print(f"{self.name_code}: income generated {customers_spawned} times.")
+            # print(f"Income generated {customers_spawned} times.\n")
+            total_income = 0.0
             for income_generation in range(customers_spawned):
-                self.generate_income(animation=False)
+                total_income += self.generate_income(animation=False)
+
+            return total_income
+
+        return 0.0
 
     def __str__(self):
         return f"{self.name_code}: {len(self.queue)}/{self.queue_limit} Served customers: {self.served_count}"
