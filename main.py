@@ -100,9 +100,9 @@ class Main:
         self.map_window = None
         if self.data.progress is not None:
             self.sliding_menu.initialize_modules()
+            self.tracker = Tracker(self)
             self.scene_window = Scene(self)
             self.map_window = Map(self)
-            self.tracker = Tracker(self)
         self.tutorial_overlay = TutorialOverlay(self)
         self.setting_window = Setting(self)
 
