@@ -347,7 +347,7 @@ class PartTimeMenu(GenericMenu):
 
             self.word_set = []
             self.word_set_index = 0
-            self.word_set_size = 20
+            self.word_set_size = random.randint(10, 20)
             self.word_letters_sum = 0
 
             self.word_written = ""
