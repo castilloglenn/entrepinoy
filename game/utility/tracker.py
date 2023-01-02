@@ -26,7 +26,7 @@ class Tracker:
                 "active": False,
                 "value": 0,
                 "requirement": 1,
-                "reward": 100.0,
+                "reward": 200.0,
             },
             "hire_employee": {
                 "description": [
@@ -38,7 +38,7 @@ class Tracker:
                 "active": False,
                 "value": 0,
                 "requirement": 1,
-                "reward": 100.0,
+                "reward": 200.0,
             },
             "serve_customer": {
                 "description": [
