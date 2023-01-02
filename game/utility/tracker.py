@@ -129,7 +129,7 @@ class Tracker:
             self.main.data.progress["mission"][mission_selected] = mission_copy
 
         self.completed_and_notified = []
-        self.save()
+        # self.save()
 
     def notify_success(self, mission_title: str, title="Mission"):
         if mission_title in self.completed_and_notified:

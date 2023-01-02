@@ -393,7 +393,7 @@ class Scene:
         self.extra_sprites_count = self.total_location_businesses
 
         # Calculate unsimulated earnings of businesses
-        self.calculate_businesses_earnings()
+        self.calculate_businesses_earnings(self.main.data.progress["tutorial_shown"])
 
     def _set_holiday(self):
         calendars = self.main.data.calendars
@@ -706,7 +706,7 @@ class Scene:
 
         # Saving the json to the save file
         self.main.data.set_dict_to_json(
-            "progress", "progress.json", self.main.data.progress
+            "progress", "progress.save", self.main.data.progress, encrypt=True
         )
 
     def close_game(self):
