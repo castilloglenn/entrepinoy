@@ -1057,7 +1057,7 @@ class Library:
             "name": name,
             "gender": gender,
             "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
-            "last_login": "",
+            "last_login": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
             "last_location": "location_a",
             "cash": 1000.0,
             "credits_shown": False,
