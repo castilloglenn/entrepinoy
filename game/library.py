@@ -1,5 +1,6 @@
 from datetime import datetime
 import pygame
+import base64
 import json
 import sys
 import os
@@ -50,7 +51,9 @@ class Library:
 
         # Checking the save data
         try:
-            self.progress = self.get_dict_from_json("progress", "progress.json")
+            self.progress = self.get_dict_from_json(
+                "progress", "progress.save", encrypted=True
+            )
         except FileNotFoundError:
             self.progress = None
 
@@ -979,14 +982,26 @@ class Library:
             "location_f": "INDANG",
         }
 
-    def get_dict_from_json(self, folder_name: str, json_name: str):
+    def read_encrypted_file(self, file_path) -> dict:
+        with open(file_path, "r+") as save_file:
+            encrypted_data = eval(save_file.read())
+            decrypted_bytes = base64.b64decode(encrypted_data)
+            dict_str = str(decrypted_bytes, encoding="utf-8")
+            return json.loads(dict_str)
+
+    def get_dict_from_json(
+        self, folder_name: str, json_name: str, encrypted: bool = False
+    ):
         dirname = get_dirname()
         json_path = os.path.join(dirname, folder_name, json_name)
 
-        with open(json_path) as json_file:
-            json_dict = json.load(json_file)
+        if encrypted:
+            return self.read_encrypted_file(json_path)
+        else:
+            with open(json_path) as json_file:
+                json_dict = json.load(json_file)
 
-        return json_dict
+            return json_dict
 
     def get_dict_from_spritesheet(self, folder_name: str, json_name: str):
         dirname = get_dirname()
@@ -1029,12 +1044,27 @@ class Library:
                 text.append(line.replace("\n", ""))
         return text
 
-    def set_dict_to_json(self, folder_name: str, json_name: str, data: dict):
+    def save_dict_to_encrypted_file(
+        self,
+        path: str,
+        data: dict,
+    ) -> None:
+        dict_byte = bytes(json.dumps(data), encoding="utf-8")
+        encrypted_data = base64.b64encode(dict_byte)
+        with open(path, "w+") as save_file:
+            save_file.write(str(encrypted_data))
+
+    def set_dict_to_json(
+        self, folder_name: str, json_name: str, data: dict, encrypt: bool = False
+    ):
         dirname = get_dirname()
         json_path = os.path.join(dirname, folder_name, json_name)
 
-        with open(json_path, "w+") as json_file:
-            json.dump(data, json_file, indent=4)
+        if encrypt:
+            self.save_dict_to_encrypted_file(json_path, data)
+        else:
+            with open(json_path, "w+") as json_file:
+                json.dump(data, json_file, indent=4)
 
     def adjust_street_food_attributes(self, starter):
         new_stats = self.starter[starter]
@@ -1448,7 +1478,7 @@ class Library:
             },
         }
 
-        self.set_dict_to_json("progress", "progress.json", self.progress)
+        self.set_dict_to_json("progress", "progress.save", self.progress, encrypt=True)
 
 
 # if __name__ == "__main__":

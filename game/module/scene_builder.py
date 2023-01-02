@@ -706,7 +706,7 @@ class Scene:
 
         # Saving the json to the save file
         self.main.data.set_dict_to_json(
-            "progress", "progress.json", self.main.data.progress
+            "progress", "progress.save", self.main.data.progress, encrypt=True
         )
 
     def close_game(self):
