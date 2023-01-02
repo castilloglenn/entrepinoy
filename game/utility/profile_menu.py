@@ -155,15 +155,15 @@ class ProfileMenu(GenericMenu):
 
         # Line 14
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        part_time_income = f"P{self.data['statistics']['part_time_income']:,.2f}"
-        labels.append(f"Part-Time Income:")
-        values.append(part_time_income)
+        earn_profit = f"P{self.data['statistics']['earn_profit']:,.2f}"
+        labels.append(f"Total Profits:")
+        values.append(earn_profit)
 
         # Line 15
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        earn_profit = f"P{self.data['statistics']['earn_profit']:,.2f}"
-        labels.append(f"Overall Profits:")
-        values.append(earn_profit)
+        part_time_income = f"P{self.data['statistics']['part_time_income']:,.2f}"
+        labels.append(f"Part-Time Income:")
+        values.append(part_time_income)
 
         # Line 16
         labels.append("")
