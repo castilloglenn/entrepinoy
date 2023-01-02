@@ -84,7 +84,7 @@ class PartTimeMenu(GenericMenu):
         )
         self.unavailable_message = Message(
             self.screen,
-            ["Available once daily. Refresh at 8AM the next day."],
+            ["Available once daily. Refresh every hour."],
             self.main.data.medium_font,
             self.main.data.colors["brown"],
             center_coordinates=(

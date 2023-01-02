@@ -360,8 +360,8 @@ class TutorialOverlay:
                 "message": [
                     "You can start working ",
                     "on your daily freelance ",
-                    "jobs here. It resets ",
-                    "daily at 8am and the ",
+                    "jobs here. It posts new ",
+                    "jobs hourly and the ",
                     "rewards scale as you ",
                     "grow your business ",
                     "and freelance portfolio. ",

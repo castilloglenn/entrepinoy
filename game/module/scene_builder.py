@@ -448,9 +448,11 @@ class Scene:
         self.background.set_time(self.time)
         self.background.check_change()
 
-        # Part time reset update
+        # Part time reset update (Every hour)
+        self.main.data.progress["part_time"]["available"] = True
+
+        # Crypto reset update
         if self.time.time.hour == 8:
-            self.main.data.progress["part_time"]["available"] = True
             self.main.sliding_menu.crypto_menu._reset_symbol()
 
     def time_callback_day(self):
