@@ -166,9 +166,9 @@ class Tracker:
 
         if name in self.progress["statistics"]:
             if increment:
-                self.data[name] += increment
+                self.main.data.progress["statistics"][name] += increment
             else:
-                self.data[name] += 1
+                self.main.data.progress["statistics"][name] += 1
 
         if name in self.progress["achievements"]:
             if not self.progress["achievements"][name]["obtained"]:
@@ -189,7 +189,7 @@ class Tracker:
                     )
 
     def add_click(self):
-        self.data["clicks"] += 1
+        self.main.data.progress["statistics"]["clicks"] += 1
 
     # Calculate statistics
     def get_business_owned_count(self):
