@@ -724,7 +724,6 @@ class Business(Button):
                             hourly_customers += 1
 
                 customers_spawned += min(hourly_customers, self.queue_limit)
-            print(customers_spawned)
 
             # print(f"Income generated {customers_spawned} times.\n")
             total_income = 0.0
