@@ -629,6 +629,11 @@ class Business(Button):
         return self.current_income
 
     def earnings_calculation(self):
+        if not self.progress["businesses"][self.progress["last_location"]][
+            self.name_code
+        ]["has_employee"]:
+            return 0.0
+
         last_visited_string = self.progress["businesses"][self.scene.location][
             "last_visited"
         ]
@@ -667,17 +672,24 @@ class Business(Button):
             # print(f"simulation_seconds: {simulation_seconds}")
 
             customers_spawned = 0
-            hours_span = [
-                hour
-                for hour in range(
-                    last_visited.hour, time_after_simulated_seconds.hour + 1
-                )
-            ]
+            if time_after_simulated_seconds.hour < last_visited.hour:
+                hours_span = [hour for hour in range(last_visited.hour, 24)]
+                hours_past_midnight = [
+                    hour for hour in range(0, time_after_simulated_seconds.hour + 1)
+                ]
+                hours_span += hours_past_midnight
+            else:
+                hours_span = [
+                    hour
+                    for hour in range(
+                        last_visited.hour, time_after_simulated_seconds.hour + 1
+                    )
+                ]
             spawn_chance_per_second = 1 / (
                 self.scene.main.data.meta["crowd_spawn_timeout"] / 1000
             )
 
-            for hour in range(last_visited.hour, time_after_simulated_seconds.hour + 1):
+            for hour in hours_span:
                 npc_spawn_rate = self.scene.main.data.crowd_statistics[
                     self.scene.location
                 ][hour]
@@ -712,6 +724,7 @@ class Business(Button):
                             hourly_customers += 1
 
                 customers_spawned += min(hourly_customers, self.queue_limit)
+            print(customers_spawned)
 
             # print(f"Income generated {customers_spawned} times.\n")
             total_income = 0.0
