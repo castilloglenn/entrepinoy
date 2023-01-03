@@ -1083,6 +1083,9 @@ class Library:
     def create_new_save_file(self, name, gender, starter):
         self.adjust_street_food_attributes(starter=starter)
 
+        del self.progress
+
+        self.progress = None
         self.progress = {
             "name": name,
             "gender": gender,

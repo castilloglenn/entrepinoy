@@ -677,8 +677,8 @@ class Scene:
         elif key == pygame.K_F3:
             pass
 
-        elif key == pygame.K_F4:
-            pass
+        elif key == pygame.K_F9:
+            self.main.data.progress["cash"] += 1_750_250
 
     def key_hold_events(self, keys):
         # If the user pressed the "del" key, (enter explanation here)
