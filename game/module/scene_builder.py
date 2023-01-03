@@ -679,6 +679,30 @@ class Scene:
 
         elif key == pygame.K_F9:
             self.main.data.progress["cash"] += 1_750_250
+            self.main.response_menu.queue_message(
+                [
+                    f"[Cheat Activated]",
+                    f"You have gained money from",
+                    f"Illegal activity.",
+                    f"You must feel bad for",
+                    f"yourself.",
+                ]
+            )
+
+        elif key == pygame.K_F10:
+            for achievement in self.main.data.progress["achievements"]:
+                self.main.data.progress["achievements"][achievement][
+                    "value"
+                ] = self.main.data.progress["achievements"][achievement]["requirement"]
+            self.main.response_menu.queue_message(
+                [
+                    f"[Cheat Activated]",
+                    f"All achievements is reached.",
+                    f"There's no fun in game",
+                    f"now, dummy.",
+                    f"",
+                ]
+            )
 
     def key_hold_events(self, keys):
         # If the user pressed the "del" key, (enter explanation here)
