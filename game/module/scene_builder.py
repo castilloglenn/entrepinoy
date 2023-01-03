@@ -281,6 +281,8 @@ class Scene:
         self.available_businesses = 0
         self.total_location_businesses = 0
 
+        self.profile_menu = ProfileMenu(self.main)
+
         current_businesses_length = len(self.business_data)
         current_businesses_index_limit = current_businesses_length - 1
 
@@ -697,10 +699,10 @@ class Scene:
             self.main.response_menu.queue_message(
                 [
                     f"[Cheat Activated]",
-                    f"All achievements is reached.",
+                    f"All achievements has.",
+                    f"now been unlocked.",
                     f"There's no fun in game",
                     f"now, dummy.",
-                    f"",
                 ]
             )
 
