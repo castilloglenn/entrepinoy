@@ -694,6 +694,19 @@ class Scene:
         elif key == pygame.K_F3:
             pass
 
+        elif key == pygame.K_F7 and pygame.key.get_mods() & pygame.KMOD_CTRL:
+            hours_ahead = timedelta(seconds=60 * 60 * 2)
+            self._simulate_time_skip(hack_date=hours_ahead)
+            self.main.response_menu.queue_message(
+                [
+                    f"[Cheat Activated]",
+                    f"Doctor Strange used the",
+                    f"Time Stone to go forward",
+                    f"in time. Two hours had",
+                    f"past.",
+                ]
+            )
+
         elif key == pygame.K_F8 and pygame.key.get_mods() & pygame.KMOD_CTRL:
             hours_ahead = timedelta(seconds=60 * 60 * 12)
             self._simulate_time_skip(hack_date=hours_ahead)
