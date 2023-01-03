@@ -466,7 +466,8 @@ class Scene:
         self.background.check_change()
 
         # Part time reset update (Every hour)
-        self.main.data.progress["part_time"]["available"] = True
+        if self.time.time.hour % 4 == 0:
+            self.main.data.progress["part_time"]["available"] = True
 
         # Crypto reset update
         if self.time.time.hour == 8:

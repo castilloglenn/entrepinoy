@@ -84,7 +84,7 @@ class PartTimeMenu(GenericMenu):
         )
         self.unavailable_message = Message(
             self.screen,
-            ["Clients post jobs every hour. Come back later!"],
+            ["Clients post jobs every four hours. Come back later!"],
             self.main.data.medium_font,
             self.main.data.colors["brown"],
             center_coordinates=(
