@@ -12,6 +12,7 @@ from game.utility.time import Time
 
 from game.module.epilogue import Epilogue
 
+from pprint import pprint
 from datetime import datetime, timedelta
 import calendar
 import pygame
@@ -51,6 +52,7 @@ class Scene:
             self.main.data.meta["time_amplify"],
             **self.callbacks,
         )
+        self.is_time_skipping = False
 
         # Holiday variables
         self.holiday = None
@@ -218,13 +220,15 @@ class Scene:
 
         self.debug_message.add(self.ui_components)
 
-    def _simulate_time_skip(self):
-        last_login = datetime.strptime(
-            self.main.data.progress["last_login"], self.time.format
-        )
-        current_time = datetime.now()
-
-        delta = current_time - last_login
+    def _simulate_time_skip(self, hack_date=None):
+        if hack_date:
+            delta = hack_date
+        else:
+            last_login = datetime.strptime(
+                self.main.data.progress["last_login"], self.time.format
+            )
+            current_time = datetime.now()
+            delta = current_time - last_login
         # print("offline time difference")
         # print(f"last_login: {last_login}")
         # print(f"current_time: {current_time}")
@@ -235,15 +239,34 @@ class Scene:
         # print(f"self.time.time: {self.time.time}")
         # print(f"new_time: {new_time} (= self.time.time + delta)\n")
 
-        ticks = 0
-        while self.time.time <= new_time:
-            self.time.tick()
-            ticks += 1
+        if hack_date:
+            self.set_location_last_visited()
+            self.update_data()
+            self.is_time_skipping = True
+            self.reconstruct(self.main)
+            self.is_time_skipping = False
 
-        # print(f"total ticks: {ticks}")
+            ticks = 0
+            while self.time.time <= new_time:
+                self.time.tick()
+                ticks += 1
 
-        # Calculate unsimulated earnings of businesses
-        self.calculate_businesses_earnings(self.main.data.progress["tutorial_shown"])
+            print(f"total ticks: {ticks}")
+            # Calculate unsimulated earnings of businesses
+            self.calculate_businesses_earnings(
+                self.main.data.progress["tutorial_shown"]
+            )
+        else:
+            ticks = 0
+            while self.time.time <= new_time:
+                self.time.tick()
+                ticks += 1
+
+            print(f"total ticks: {ticks}")
+            # Calculate unsimulated earnings of businesses
+            self.calculate_businesses_earnings(
+                self.main.data.progress["tutorial_shown"]
+            )
 
     def reconstruct(self, main):
         # Logging entry point
@@ -395,7 +418,10 @@ class Scene:
         self.extra_sprites_count = self.total_location_businesses
 
         # Calculate unsimulated earnings of businesses
-        self.calculate_businesses_earnings(self.main.data.progress["tutorial_shown"])
+        if not self.is_time_skipping:
+            self.calculate_businesses_earnings(
+                self.main.data.progress["tutorial_shown"]
+            )
 
     def _set_holiday(self):
         calendars = self.main.data.calendars
@@ -664,7 +690,7 @@ class Scene:
     def key_down_events(self, key):
         self.main.global_key_down_events(key)
 
-        if key == pygame.K_F1:
+        if key == pygame.K_F1 and pygame.key.get_mods() & pygame.KMOD_CTRL:
             self.show_debug_info = not self.show_debug_info
             if self.show_debug_info:
                 self.debug_message.add(self.ui_components)
@@ -673,13 +699,26 @@ class Scene:
                 self.debug_message.kill()
                 self.main.debug.log("Debug details hidden")
 
-        elif key == pygame.K_F2:
-            pass
+        elif key == pygame.K_F2 and pygame.key.get_mods() & pygame.KMOD_CTRL:
+            pprint(self.main.data.progress)
 
         elif key == pygame.K_F3:
             pass
 
-        elif key == pygame.K_F9:
+        elif key == pygame.K_F8 and pygame.key.get_mods() & pygame.KMOD_CTRL:
+            hours_ahead = timedelta(seconds=60 * 60 * 12)
+            self._simulate_time_skip(hack_date=hours_ahead)
+            self.main.response_menu.queue_message(
+                [
+                    f"[Cheat Activated]",
+                    f"Doctor Strange used the",
+                    f"Time Stone to go forward",
+                    f"in time. Twelve hours had",
+                    f"past.",
+                ]
+            )
+
+        elif key == pygame.K_F9 and pygame.key.get_mods() & pygame.KMOD_CTRL:
             self.main.data.progress["cash"] += 1_750_250
             self.main.response_menu.queue_message(
                 [
@@ -691,7 +730,7 @@ class Scene:
                 ]
             )
 
-        elif key == pygame.K_F10:
+        elif key == pygame.K_F10 and pygame.key.get_mods() & pygame.KMOD_CTRL:
             for achievement in self.main.data.progress["achievements"]:
                 self.main.data.progress["achievements"][achievement][
                     "value"
