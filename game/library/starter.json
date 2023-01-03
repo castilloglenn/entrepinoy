@@ -1,20 +1,20 @@
 {
 	"buko_stall": {
 		"initial_cost": 10000.0,
-		"daily_expenses": 325.0,
-		"employee_cost": 225.0,
+		"daily_expenses": 650.0,
+		"employee_cost": 450.0,
 		"income_per_customer_range": [25.5, 85.5]
 	},
 	"fish_ball_stand": {
 		"initial_cost": 10000.0,
-		"daily_expenses": 350.0,
-		"employee_cost": 200.0,
+		"daily_expenses": 700.0,
+		"employee_cost": 400.0,
 		"income_per_customer_range": [30.5, 80.5]
 	},
 	"sorbetes": {
 		"initial_cost": 10000.0,
-		"daily_expenses": 375.0,
-		"employee_cost": 175.0,
+		"daily_expenses": 750.0,
+		"employee_cost": 350.0,
 		"income_per_customer_range": [35.5, 75.5]
 	}
 }
