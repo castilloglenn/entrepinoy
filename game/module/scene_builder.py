@@ -246,27 +246,13 @@ class Scene:
             self.reconstruct(self.main)
             self.is_time_skipping = False
 
-            ticks = 0
-            while self.time.time <= new_time:
-                self.time.tick()
-                ticks += 1
+        ticks = 0
+        while self.time.time <= new_time:
+            self.time.tick()
+            ticks += 1
 
-            print(f"total ticks: {ticks}")
-            # Calculate unsimulated earnings of businesses
-            self.calculate_businesses_earnings(
-                self.main.data.progress["tutorial_shown"]
-            )
-        else:
-            ticks = 0
-            while self.time.time <= new_time:
-                self.time.tick()
-                ticks += 1
-
-            print(f"total ticks: {ticks}")
-            # Calculate unsimulated earnings of businesses
-            self.calculate_businesses_earnings(
-                self.main.data.progress["tutorial_shown"]
-            )
+        # Calculate unsimulated earnings of businesses
+        self.calculate_businesses_earnings(self.main.data.progress["tutorial_shown"])
 
     def reconstruct(self, main):
         # Logging entry point
@@ -396,6 +382,21 @@ class Scene:
 
         # Refreshing order of buttons after a possible new businesses appreared
         #   in the business_data dictionary object
+        self._re_order_buttons_hierarchy()
+
+        for sprite in self.general_sprites:
+            if isinstance(sprite, (Customer, NPC)):
+                sprite.free()
+
+        self.extra_sprites_count = self.total_location_businesses
+
+        # Calculate unsimulated earnings of businesses
+        if not self.is_time_skipping:
+            self.calculate_businesses_earnings(
+                self.main.data.progress["tutorial_shown"]
+            )
+
+    def _re_order_buttons_hierarchy(self):
         for button in self.buttons:
             button.remove(self.buttons)
         self.buttons = pygame.sprite.Group()
@@ -410,18 +411,6 @@ class Scene:
         for business in self.business_data:
             if business["object"].visible and business["meta"]["placement"] == "back":
                 business["object"].add(self.buttons)
-
-        for sprite in self.general_sprites:
-            if isinstance(sprite, (Customer, NPC)):
-                sprite.free()
-
-        self.extra_sprites_count = self.total_location_businesses
-
-        # Calculate unsimulated earnings of businesses
-        if not self.is_time_skipping:
-            self.calculate_businesses_earnings(
-                self.main.data.progress["tutorial_shown"]
-            )
 
     def _set_holiday(self):
         calendars = self.main.data.calendars
@@ -788,8 +777,9 @@ class Scene:
         self.main.debug.new_line()
 
         # Check if the sliding button is in the scene yet
-        if self.buttons not in self.main.sliding_menu.sliding_menu_button.groups():
-            self.main.sliding_menu.sliding_menu_button.add(self.buttons)
+        self._re_order_buttons_hierarchy()
+        # if self.buttons not in self.main.sliding_menu.sliding_menu_button.groups():
+        #     self.main.sliding_menu.sliding_menu_button.add(self.buttons)
 
         # Check if tutorial has been shown
         if not self.main.data.progress["tutorial_shown"]:
