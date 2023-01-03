@@ -729,6 +729,7 @@ class Business(Button):
             total_income = 0.0
             for income_generation in range(customers_spawned):
                 total_income += self.generate_income(animation=False)
+                self.main.tracker.increment_tracker("serve_customer")
 
             return total_income
 
