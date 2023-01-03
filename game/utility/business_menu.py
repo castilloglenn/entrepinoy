@@ -23,6 +23,7 @@ class BusinessMenu:
         self.time = time
         self.location = location
 
+        self.max_upgrade_level = 5
         self.sell_back_ratio = 0.8
         self.business_cost = None
         self.daily_expense = None
@@ -457,7 +458,8 @@ class BusinessMenu:
             self.data.name_code
         ]["level"]
         business_cost = self.data.business_data["initial_cost"]
-        upgrade_data = self.main.data.upgrade[str(level + 1)]
+        new_level = min(self.max_upgrade_level, level + 1)
+        upgrade_data = self.main.data.upgrade[str(new_level)]
 
         upgrade_amp = upgrade_data["upgrade_cost"]
         upgrade_cost = business_cost * upgrade_amp
