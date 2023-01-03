@@ -121,9 +121,10 @@ class ResponseMenu:
 
         if self.background.enable:
             # Screen dimming
-            self.main.display_surface.set_alpha(128)
-            self.main.screen.blit(self.main.display_surface, (0, 0))
-            self.objects.update()
+            if self.main.transition.STATE != self.main.transition.UNFADE:
+                self.main.display_surface.set_alpha(128)
+                self.main.screen.blit(self.main.display_surface, (0, 0))
+                self.objects.update()
 
     def clear(self):
         self.objects.empty()
