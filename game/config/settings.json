@@ -4,6 +4,6 @@
     "fps": 60,
     "autosave_timeout": 5000,
     "bgm": 0.0,
-    "sfx": 0.2,
-    "full_screen": false
+    "sfx": 1.0,
+    "full_screen": true
 }
