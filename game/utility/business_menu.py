@@ -296,6 +296,9 @@ class BusinessMenu:
         level = self.main.data.progress["businesses"][self.location][
             self.data.name_code
         ]["level"]
+        if level >= self.max_upgrade_level:
+            return
+
         business_cost = self.data.business_data["initial_cost"]
         next_upgrade_data = self.main.data.upgrade[str(level + 1)]
 
