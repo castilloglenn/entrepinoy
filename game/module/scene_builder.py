@@ -797,6 +797,7 @@ class Scene:
 
         # Check if tutorial has been shown
         if not self.main.data.progress["tutorial_shown"]:
+            self.time.set_time(datetime.now())
             self.main.tutorial_overlay.prologue_sequence()
 
         # Simulate time skip while offline
