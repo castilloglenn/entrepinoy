@@ -1,7 +1,7 @@
 # entrepinoy
 <b>NOTE:</b> This game is still on development process.
 Capstone Thesis Project, created in Python's Pygame Module.
-
+<br/>
 
 <p>A business simulation game that is inspired and adapts heavily on Philippines economics and culture. Contains different Filipino businesses and challenges that would help aspiring young entrepeneurs simulate the business life with enjoyment in this simulation game.</p>
 <br/>
@@ -140,6 +140,18 @@ This is the main menu of the game, the user can start a new game or continue if 
 ![cryptomarketscreenshot2](https://user-images.githubusercontent.com/120929317/209677062-eb011685-2db3-457f-8215-ac5ef18b6d93.png)
 <h3 align="center">Crypto Market</h3>
 <p>Different digital currencies can be exchanged in the crypto market. The player can buy and sell cryptocurrency here.</p>
+<br/>
+<br/>
+
+![epilogue](https://user-images.githubusercontent.com/120929317/210535954-fefb1493-9bd4-4823-9a4e-8a9e65893f67.png)
+<h3 align="center">Epilogue</h3>
+<p>After the completion of all achievements, the player reaches the end of the game and becomes a certified entrepreneur. The player can still play the game after this.</p>
+<br/>
+<br/>
+
+![creditscreenshott](https://user-images.githubusercontent.com/120929317/210536122-a43cfcd4-ee30-43ca-b346-0e42ad6bd954.png)
+<h3 align="center">Credits</h3>
+<p>This shows the attributes of every member who helped finish the game. The player can still play the game and explore it.</p>
 <br/>
 <br/>
 
