@@ -227,15 +227,15 @@ class SlidingMenu:
 
         self.update_endpoint()
 
-    def initialize_modules(self):
-        self.mission_menu = MissionMenu(self.main)
-        self.achievement_menu = AchievementMenu(self.main)
-        self.part_time_menu = PartTimeMenu(self.main)
-        self.news_menu = NewsMenu(self.main)
-        self.bank_menu = BankMenu(self.main)
-        self.stock_menu = StockMenu(self.main)
-        self.crypto_menu = CryptoMenu(self.main)
-        self.info_menu = InformationMenu(self.main)
+    def initialize_modules(self, main):
+        self.mission_menu = MissionMenu(main)
+        self.achievement_menu = AchievementMenu(main)
+        self.part_time_menu = PartTimeMenu(main)
+        self.news_menu = NewsMenu(main)
+        self.bank_menu = BankMenu(main)
+        self.stock_menu = StockMenu(main)
+        self.crypto_menu = CryptoMenu(main)
+        self.info_menu = InformationMenu(main)
 
         self.modules = [
             self.mission_menu,
