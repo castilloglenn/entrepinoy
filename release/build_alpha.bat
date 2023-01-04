@@ -20,6 +20,7 @@ mkdir release\alpha\entrepinoy\game\library
 xcopy /e game\library release\alpha\entrepinoy\game\library
 mkdir release\alpha\entrepinoy\game\progress
 cd release\alpha\entrepinoy
+ 
 main
 cd ../../..
 cmd -k
