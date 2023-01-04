@@ -802,7 +802,7 @@ class Scene:
         # Simulate time skip while offline
         self._simulate_time_skip()
 
-        pygame.mixer.music.load(self.main.data.music["main_menu"])
+        pygame.mixer.music.load(self.main.data.music["scene"])
         pygame.mixer.music.play(-1)
 
         self.running = True

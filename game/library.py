@@ -938,10 +938,27 @@ class Library:
         # Music BG and SFX
         self.music = {
             "main_menu": self.get_bgm("Cool-Menu-Loop.mp3"),
+            "scene": self.get_bgm("Game-Menu_Looping.mp3"),
+            "prologue": self.get_bgm("Young-Heroes.mp3"),
+            "epilogue": self.get_bgm("Happy-Endings.mp3"),
             "studio_intro": self.get_sfx("SynthChime1.mp3"),
             "button_hovered": self.get_sfx("UI_Quirky20.mp3"),
             "button_clicked": self.get_sfx("UI-Quirky_37.mp3"),
-            "earn_coins": self.get_sfx("Coins2.mp3"),
+            "earn_coins_1": self.get_sfx("Coins1.mp3"),
+            "earn_coins_2": self.get_sfx("Coins2.mp3"),
+            "earn_coins_3": self.get_sfx("Coins3.mp3"),
+            "earn_coins_4": self.get_sfx("Coins4.mp3"),
+            "earn_coins_5": self.get_sfx("Coins5.mp3"),
+            "earn_coins_6": self.get_sfx("Coins6.mp3"),
+            "earn_coins_7": self.get_sfx("Coins7.mp3"),
+            "earn_coins_8": self.get_sfx("Coins8.mp3"),
+            "earn_coins_9": self.get_sfx("Coins9.mp3"),
+            "earn_coins_10": self.get_sfx("Coins10.mp3"),
+            "earn_coins_11": self.get_sfx("Coins11.mp3"),
+            "earn_coins_12": self.get_sfx("Coins12.mp3"),
+            "earn_coins_13": self.get_sfx("Coins13.mp3"),
+            "earn_coins_14": self.get_sfx("Coins14.mp3"),
+            "earn_coins_15": self.get_sfx("Coins15.mp3"),
             "engine_start": self.get_sfx("Car Engine Starting Sound Effect.mp3"),
             "success": self.get_sfx("SynthChime11.mp3"),
         }
@@ -1481,6 +1498,7 @@ class Library:
             },
         }
 
+        print(self.progress)
         self.set_dict_to_json("progress", "progress.save", self.progress, encrypt=True)
 
 

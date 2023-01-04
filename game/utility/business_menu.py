@@ -327,7 +327,7 @@ class BusinessMenu:
             self.data.name_code
         ]["sales"]
         if current_sales > 0:
-            self.main.mixer_coins_channel.play(self.main.data.music["earn_coins"])
+            self.main.play_random_coin_sfx()
             self.collect_sales_button.set_disabled(True)
             self.main.data.progress["cash"] += current_sales
             self.clear_sales()

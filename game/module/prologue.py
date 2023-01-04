@@ -1,6 +1,9 @@
 from game.utility.new_game_input_menu import NewGameInputMenu
 from game.utility.new_game_starter_menu import NewGameStarterMenu
 
+from datetime import datetime
+import pygame
+
 
 class Prologue:
     """
@@ -46,6 +49,9 @@ class Prologue:
         self.starter = self.starter_menu.get_data()
 
         self.create_save_file()
+
+        pygame.mixer.music.load(self.main.data.music["prologue"])
+        pygame.mixer.music.play(-1)
 
         self.main.slide_show.set_album(
             self.album_name,

@@ -580,9 +580,7 @@ class Business(Button):
 
     def generate_income(self, animation=True):
         if animation:
-            self.scene.main.mixer_coins_channel.play(
-                self.scene.main.data.music["earn_coins"]
-            )
+            self.main.play_random_coin_sfx()
 
         level = self.progress["businesses"][self.progress["last_location"]][
             self.name_code

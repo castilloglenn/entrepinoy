@@ -220,7 +220,7 @@ class AchievementMenu(GenericMenu):
             ]["reward"]
             self._notify_success(self.data[self.pages[self.page_index][0]]["reward"])
             self.data[self.pages[self.page_index][0]]["reward"] = 0.0
-            self.main.mixer_coins_channel.play(self.main.data.music["earn_coins"])
+            self.main.play_random_coin_sfx()
 
     def _achievement_2_collect(self, args):
         if len(self.pages[self.page_index]) >= 2:
@@ -230,7 +230,7 @@ class AchievementMenu(GenericMenu):
             ]["reward"]
             self._notify_success(self.data[self.pages[self.page_index][1]]["reward"])
             self.data[self.pages[self.page_index][1]]["reward"] = 0.0
-            self.main.mixer_coins_channel.play(self.main.data.music["earn_coins"])
+            self.main.play_random_coin_sfx()
 
     def _achievement_3_collect(self, args):
         if len(self.pages[self.page_index]) >= 3:
@@ -240,7 +240,7 @@ class AchievementMenu(GenericMenu):
             ]["reward"]
             self._notify_success(self.data[self.pages[self.page_index][2]]["reward"])
             self.data[self.pages[self.page_index][2]]["reward"] = 0.0
-            self.main.mixer_coins_channel.play(self.main.data.music["earn_coins"])
+            self.main.play_random_coin_sfx()
 
     # Abstract method implementation
     def set_button_states(self):

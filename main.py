@@ -21,6 +21,7 @@ from game.module.prologue import Prologue
 
 import pygame
 import os, sys
+import random
 
 
 class Main:
@@ -324,6 +325,10 @@ class Main:
 
     def exit_callback(self, *args):
         self.close_game()
+
+    def play_random_coin_sfx(self):
+        index = str(random.randint(1, 15))
+        self.mixer_coins_channel.play(self.data.music[f"earn_coins_{index}"])
 
     def main_loop(self):
         pygame.mixer.music.load(self.data.music["main_menu"])

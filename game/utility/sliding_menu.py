@@ -315,6 +315,9 @@ class SlidingMenu:
         self.main.debug.log("Autosaved progress before going to main menu")
         self.main.debug.log("Exited scene via Sliding Menu")
 
+        pygame.mixer.music.load(self.main.data.music["main_menu"])
+        pygame.mixer.music.play(-1)
+
     def tuck(self):
         if not self.is_tucked:
             self.is_moving = False
