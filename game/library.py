@@ -1498,7 +1498,6 @@ class Library:
             },
         }
 
-        print(self.progress)
         self.set_dict_to_json("progress", "progress.save", self.progress, encrypt=True)
 
 
