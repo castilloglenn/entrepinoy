@@ -4,7 +4,6 @@ from game.sprite.message import Message
 from game.utility.transition import Transition
 
 import pygame
-import copy
 
 
 class Slideshow:
@@ -17,6 +16,7 @@ class Slideshow:
         self.main = main
         self.running = False
 
+        self.main.data.get_albums()
         self.albums = self.main.data.albums
 
         self.album = None
@@ -49,7 +49,7 @@ class Slideshow:
             possessives = {"MALE": "His", "FEMALE": "Her"}
             self.slide = next(self.slide_gen)
 
-            self.image = copy.deepcopy(self.slide["image"][self.gender])
+            self.image = self.slide["image"][self.gender]
             self.image_rect = self.image.get_rect()
             self.text = []
             for line in self.slide["text"]:
@@ -98,6 +98,7 @@ class Slideshow:
         return self.total_hold
 
     def set_album(self, album, name, gender):
+        self.main.data.get_albums()
         assert album in self.albums
         self.album = self.albums[album]
         self.slide_gen = self.slide_generator()

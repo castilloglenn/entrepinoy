@@ -48,6 +48,8 @@ class Library:
             "regular": self.get_dict_from_json("library", "calendar_regular.json"),
         }
         self.tutorial_text = self.get_textfile("library", "tutorial.txt")
+        self.albums = None
+        self.get_albums()
 
         # Checking the save data
         try:
@@ -273,199 +275,6 @@ class Library:
             "exit_button_hovered": self.get_image(
                 "title_screen", "exit_button_hovered.png"
             ),
-        }
-        self.albums = {
-            "prologue": {
-                0: {
-                    "image": {
-                        "MALE": self.get_image(
-                            "story",
-                            "prologue_male_frame_1.png",
-                        ),
-                        "FEMALE": self.get_image(
-                            "story",
-                            "prologue_female_frame_1.png",
-                        ),
-                    },
-                    "text": [
-                        "{player_name} is a hardworking student of",
-                        "Cavite State University - Imus Campus",
-                        "studying Bachelor Of Science In ",
-                        "Entrepreneurship. {pronoun} desires to ",
-                        "achieve high grades to graduate with ",
-                        "flying colors.",
-                    ],
-                    "text_rel_coords": [0.5125, 0.5],
-                },
-                1: {
-                    "image": {
-                        "MALE": self.get_image(
-                            "story",
-                            "prologue_male_frame_2.png",
-                        ),
-                        "FEMALE": self.get_image(
-                            "story",
-                            "prologue_female_frame_2.png",
-                        ),
-                    },
-                    "text": [
-                        "After all {possessive} four years of academic",
-                        "struggle, {player_name} finally graduated.",
-                        "{possessive} dreams are one step closer!",
-                    ],
-                    "text_rel_coords": [0.03125, 0.825],
-                },
-                2: {
-                    "image": {
-                        "MALE": self.get_image(
-                            "story",
-                            "prologue_male_frame_3.png",
-                        ),
-                        "FEMALE": self.get_image(
-                            "story",
-                            "prologue_female_frame_3.png",
-                        ),
-                    },
-                    "text": [
-                        "{possessive} dream in life is",
-                        "to become a successful",
-                        "entrepreneur someday ",
-                        "and {pronoun} wants to",
-                        "learn how to handle a ",
-                        "business but {pronoun}",
-                        "doesn't have the skills",
-                        "and knowledge currently.",
-                    ],
-                    "text_rel_coords": [0.725, 0.395],
-                },
-                3: {
-                    "image": {
-                        "MALE": self.get_image(
-                            "story",
-                            "prologue_male_frame_4.png",
-                        ),
-                        "FEMALE": self.get_image(
-                            "story",
-                            "prologue_female_frame_4.png",
-                        ),
-                    },
-                    "text": [
-                        "In order to start {possessive} career, {pronoun}",
-                        "found an online job to save some ",
-                        "funds for the capital of the starting ",
-                        "business that {pronoun} wants.",
-                    ],
-                    "text_rel_coords": [0.25, 0.485],
-                },
-                4: {
-                    "image": {
-                        "MALE": self.get_image(
-                            "story",
-                            "prologue_male_frame_5.png",
-                        ),
-                        "FEMALE": self.get_image(
-                            "story",
-                            "prologue_female_frame_5.png",
-                        ),
-                    },
-                    "text": [
-                        "{pronoun} is saving up money",
-                        "little by little in {possessive}",
-                        "job, and when {pronoun} has ",
-                        "enough money for the capital,",
-                        "{pronoun} can finally start the ",
-                        "small business {pronoun} always ",
-                        "wanted.",
-                    ],
-                    "text_rel_coords": [0.05, 0.625],
-                },
-            },
-            "good_ending": {
-                0: {
-                    "image": {
-                        "MALE": self.get_image(
-                            "story",
-                            "epilogue_male_frame_1.png",
-                        ),
-                        "FEMALE": self.get_image(
-                            "story",
-                            "epilogue_female_frame_1.png",
-                        ),
-                    },
-                    "text": [
-                        "Congratulations {player_name}! Your ",
-                        "corporation is hailed as the number",
-                        "one brand in the region, all your ",
-                        "hardwork and dedication have been ",
-                        "rewarded by countless blessings.",
-                    ],
-                    "text_rel_coords": [0.06125, 0.74],
-                },
-                1: {
-                    "image": {
-                        "MALE": self.get_image(
-                            "story",
-                            "epilogue_male_frame_2.png",
-                        ),
-                        "FEMALE": self.get_image(
-                            "story",
-                            "epilogue_female_frame_2.png",
-                        ),
-                    },
-                    "text": [
-                        "Looking back when you first started ",
-                        "with nothing, now you have everything. ",
-                        "And all of this is the result of your ",
-                        "non-stop dedication and resiliency ",
-                        "towards the success that you have ",
-                        "right now.",
-                    ],
-                    "text_rel_coords": [0.06125, 0.775],
-                },
-                2: {
-                    "image": {
-                        "MALE": self.get_image(
-                            "story",
-                            "epilogue_male_frame_3.png",
-                        ),
-                        "FEMALE": self.get_image(
-                            "story",
-                            "epilogue_female_frame_3.png",
-                        ),
-                    },
-                    "text": [
-                        '"The award for the Entrepreneur ',
-                        "of the Year goes to... {player_name}! ",
-                        "The government will forever cherish ",
-                        "and appreciate your dedication ",
-                        "towards the economical improvement ",
-                        'of the country." ',
-                        "-Governor",
-                    ],
-                    "text_rel_coords": [0.6125, 0.175],
-                },
-            },
-            "bad_ending": {
-                0: {
-                    "image": {
-                        "MALE": self.get_image(
-                            "story",
-                            "epilogue_bad_ending_male_frame_1.png",
-                        ),
-                        "FEMALE": self.get_image(
-                            "story",
-                            "epilogue_bad_ending_female_frame_1.png",
-                        ),
-                    },
-                    "text": [
-                        "{player_name}",
-                        "{possessive}",
-                        "{pronoun}",
-                        "Frame 1",
-                    ],
-                    "text_rel_coords": [0.56, 0.5],
-                },
-            },
         }
         self.map = {
             "region": {
@@ -997,6 +806,201 @@ class Library:
             "location_d": "GENERAL TRIAS",
             "location_e": "DASMARINAS",
             "location_f": "INDANG",
+        }
+
+    def get_albums(self):
+        self.albums = {
+            "prologue": {
+                0: {
+                    "image": {
+                        "MALE": self.get_image(
+                            "story",
+                            "prologue_male_frame_1.png",
+                        ),
+                        "FEMALE": self.get_image(
+                            "story",
+                            "prologue_female_frame_1.png",
+                        ),
+                    },
+                    "text": [
+                        "{player_name} is a hardworking student of",
+                        "Cavite State University - Imus Campus",
+                        "studying Bachelor Of Science In ",
+                        "Entrepreneurship. {pronoun} desires to ",
+                        "achieve high grades to graduate with ",
+                        "flying colors.",
+                    ],
+                    "text_rel_coords": [0.5125, 0.5],
+                },
+                1: {
+                    "image": {
+                        "MALE": self.get_image(
+                            "story",
+                            "prologue_male_frame_2.png",
+                        ),
+                        "FEMALE": self.get_image(
+                            "story",
+                            "prologue_female_frame_2.png",
+                        ),
+                    },
+                    "text": [
+                        "After all {possessive} four years of academic",
+                        "struggle, {player_name} finally graduated.",
+                        "{possessive} dreams are one step closer!",
+                    ],
+                    "text_rel_coords": [0.03125, 0.825],
+                },
+                2: {
+                    "image": {
+                        "MALE": self.get_image(
+                            "story",
+                            "prologue_male_frame_3.png",
+                        ),
+                        "FEMALE": self.get_image(
+                            "story",
+                            "prologue_female_frame_3.png",
+                        ),
+                    },
+                    "text": [
+                        "{possessive} dream in life is",
+                        "to become a successful",
+                        "entrepreneur someday ",
+                        "and {pronoun} wants to",
+                        "learn how to handle a ",
+                        "business but {pronoun}",
+                        "doesn't have the skills",
+                        "and knowledge currently.",
+                    ],
+                    "text_rel_coords": [0.725, 0.395],
+                },
+                3: {
+                    "image": {
+                        "MALE": self.get_image(
+                            "story",
+                            "prologue_male_frame_4.png",
+                        ),
+                        "FEMALE": self.get_image(
+                            "story",
+                            "prologue_female_frame_4.png",
+                        ),
+                    },
+                    "text": [
+                        "In order to start {possessive} career, {pronoun}",
+                        "found an online job to save some ",
+                        "funds for the capital of the starting ",
+                        "business that {pronoun} wants.",
+                    ],
+                    "text_rel_coords": [0.25, 0.485],
+                },
+                4: {
+                    "image": {
+                        "MALE": self.get_image(
+                            "story",
+                            "prologue_male_frame_5.png",
+                        ),
+                        "FEMALE": self.get_image(
+                            "story",
+                            "prologue_female_frame_5.png",
+                        ),
+                    },
+                    "text": [
+                        "{pronoun} is saving up money",
+                        "little by little in {possessive}",
+                        "job, and when {pronoun} has ",
+                        "enough money for the capital,",
+                        "{pronoun} can finally start the ",
+                        "small business {pronoun} always ",
+                        "wanted.",
+                    ],
+                    "text_rel_coords": [0.05, 0.625],
+                },
+            },
+            "good_ending": {
+                0: {
+                    "image": {
+                        "MALE": self.get_image(
+                            "story",
+                            "epilogue_male_frame_1.png",
+                        ),
+                        "FEMALE": self.get_image(
+                            "story",
+                            "epilogue_female_frame_1.png",
+                        ),
+                    },
+                    "text": [
+                        "Congratulations {player_name}! Your ",
+                        "corporation is hailed as the number",
+                        "one brand in the region, all your ",
+                        "hardwork and dedication have been ",
+                        "rewarded by countless blessings.",
+                    ],
+                    "text_rel_coords": [0.06125, 0.74],
+                },
+                1: {
+                    "image": {
+                        "MALE": self.get_image(
+                            "story",
+                            "epilogue_male_frame_2.png",
+                        ),
+                        "FEMALE": self.get_image(
+                            "story",
+                            "epilogue_female_frame_2.png",
+                        ),
+                    },
+                    "text": [
+                        "Looking back when you first started ",
+                        "with nothing, now you have everything. ",
+                        "And all of this is the result of your ",
+                        "non-stop dedication and resiliency ",
+                        "towards the success that you have ",
+                        "right now.",
+                    ],
+                    "text_rel_coords": [0.06125, 0.775],
+                },
+                2: {
+                    "image": {
+                        "MALE": self.get_image(
+                            "story",
+                            "epilogue_male_frame_3.png",
+                        ),
+                        "FEMALE": self.get_image(
+                            "story",
+                            "epilogue_female_frame_3.png",
+                        ),
+                    },
+                    "text": [
+                        '"The award for the Entrepreneur ',
+                        "of the Year goes to... {player_name}! ",
+                        "The government will forever cherish ",
+                        "and appreciate your dedication ",
+                        "towards the economical improvement ",
+                        'of the country." ',
+                        "-Governor",
+                    ],
+                    "text_rel_coords": [0.6125, 0.175],
+                },
+            },
+            "bad_ending": {
+                0: {
+                    "image": {
+                        "MALE": self.get_image(
+                            "story",
+                            "epilogue_bad_ending_male_frame_1.png",
+                        ),
+                        "FEMALE": self.get_image(
+                            "story",
+                            "epilogue_bad_ending_female_frame_1.png",
+                        ),
+                    },
+                    "text": [
+                        "{player_name}",
+                        "{possessive}",
+                        "{pronoun}",
+                        "Frame 1",
+                    ],
+                    "text_rel_coords": [0.56, 0.5],
+                },
+            },
         }
 
     def read_encrypted_file(self, file_path) -> dict:
