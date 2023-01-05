@@ -86,7 +86,7 @@ class Main:
             display_image=self.data.meta_images["studio"],
             hold_sfx=self.data.music["studio_intro"],
         )
-        self.slide_show = Slideshow(self)
+        self.slide_show = None
 
         # Menus
         self.sliding_menu = SlidingMenu(self)
@@ -299,6 +299,7 @@ class Main:
     def create_new_game(self):
         self.debug.log("Create new game entered")
 
+        self.slide_show = Slideshow(self)
         self.prologue = Prologue(self)
         self.prologue.run()
 

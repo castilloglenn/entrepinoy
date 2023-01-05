@@ -8,6 +8,7 @@ from game.utility.business_menu import BusinessMenu
 from game.utility.profile_menu import ProfileMenu
 from game.utility.customer import Customer
 from game.utility.npc import NPC
+from game.utility.slideshow import Slideshow
 from game.utility.time import Time
 
 from game.module.epilogue import Epilogue
@@ -30,7 +31,6 @@ class Scene:
         self.main = main
         self.show_debug_info = False
         self.running = False
-        self.prologue = Epilogue(self.main)
 
         self.location = self.main.data.progress["last_location"]
         self.crowd_chance = self.main.data.crowd_statistics[self.location]
@@ -912,6 +912,8 @@ class Scene:
                     ):
                         if self.main.tracker.detect_game_completion():
                             # Epilogue roll out (Art frames then credits)
+                            self.main.slide_show = Slideshow(self.main)
+                            self.prologue = Epilogue(self.main)
                             self.prologue.run("good_ending")
 
                         # elif self.main.data.progress["cash"] < -10_000:
