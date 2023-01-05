@@ -77,6 +77,17 @@ class Slideshow:
         except StopIteration:
             self.running = False
 
+            self.album = None
+            self.slide_gen = None
+            self.slide = None
+
+            self.name = None
+            self.gender = None
+
+            self.image = None
+            self.text = None
+            self.coords = None
+
     def get_total_hold(self):
         total = 0
         for line in self.text:
