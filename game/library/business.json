@@ -68,11 +68,11 @@
         "queue_direction": "right",
         "placement": "front",
         "initial_cost": 10000.0,
-        "daily_expenses": 700.0,
-        "employee_cost": 400.0,
+        "daily_expenses": 650.0,
+        "employee_cost": 450.0,
         "income_per_customer_range": [
-            30.5,
-            80.5
+            25.5,
+            85.5
         ]
     },
     "sari_sari_store": {
