@@ -4,6 +4,7 @@ from game.sprite.message import Message
 from game.utility.transition import Transition
 
 import pygame
+import copy
 
 
 class Slideshow:
@@ -48,7 +49,7 @@ class Slideshow:
             possessives = {"MALE": "His", "FEMALE": "Her"}
             self.slide = next(self.slide_gen)
 
-            self.image = self.slide["image"][self.gender]
+            self.image = copy.deepcopy(self.slide["image"][self.gender])
             self.image_rect = self.image.get_rect()
             self.text = []
             for line in self.slide["text"]:
