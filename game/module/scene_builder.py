@@ -728,8 +728,8 @@ class Scene:
                     f"[Cheat Activated]",
                     f"You have gained money from",
                     f"Illegal activity.",
-                    f"You must feel bad for",
-                    f"yourself.",
+                    f"",
+                    f"",
                 ]
             )
 
@@ -743,8 +743,8 @@ class Scene:
                     f"[Cheat Activated]",
                     f"All achievements has.",
                     f"now been unlocked.",
-                    f"There's no fun in game",
-                    f"now, dummy.",
+                    f"",
+                    f"",
                 ]
             )
 

@@ -156,17 +156,20 @@ class Map:
     def location_a_callback(self, *args):
         self.location_changer("location_a")
 
-    def location_b_callback(self, *args): 
-        if self._check_if_has_business_owned("location_b") or self._check_if_businesses_owned("location_a"):
+    def location_b_callback(self, *args):
+        if self._check_if_has_business_owned(
+            "location_b"
+        ) or self._check_if_businesses_owned("location_a"):
             self.location_changer("location_b")
             self._update_tracker("location_b")
             return
 
         self._denied_access()
 
-
     def location_c_callback(self, *args):
-        if self._check_if_has_business_owned("location_c") or self._check_if_businesses_owned("location_b"):
+        if self._check_if_has_business_owned(
+            "location_c"
+        ) or self._check_if_businesses_owned("location_b"):
             self.location_changer("location_c")
             self._update_tracker("location_c")
             return
@@ -174,7 +177,9 @@ class Map:
         self._denied_access()
 
     def location_d_callback(self, *args):
-        if self._check_if_has_business_owned("location_d") or self._check_if_businesses_owned("location_c"):
+        if self._check_if_has_business_owned(
+            "location_d"
+        ) or self._check_if_businesses_owned("location_c"):
             self.location_changer("location_d")
             self._update_tracker("location_d")
             return
@@ -182,7 +187,9 @@ class Map:
         self._denied_access()
 
     def location_e_callback(self, *args):
-        if self._check_if_has_business_owned("location_e") or self._check_if_businesses_owned("location_d"):
+        if self._check_if_has_business_owned(
+            "location_e"
+        ) or self._check_if_businesses_owned("location_d"):
             self.location_changer("location_e")
             self._update_tracker("location_e")
             return
@@ -190,7 +197,9 @@ class Map:
         self._denied_access()
 
     def location_f_callback(self, *args):
-        if self._check_if_has_business_owned("location_f") or self._check_if_businesses_owned("location_e"):
+        if self._check_if_has_business_owned(
+            "location_f"
+        ) or self._check_if_businesses_owned("location_e"):
             self.location_changer("location_f")
             self._update_tracker("location_f")
             return
