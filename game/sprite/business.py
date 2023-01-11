@@ -670,7 +670,7 @@ class Business(Button):
             # print(f"simulation_seconds: {simulation_seconds}")
 
             customers_spawned = 0
-            if time_after_simulated_seconds.hour < last_visited.hour:
+            if time_after_simulated_seconds.hour <= last_visited.hour:
                 hours_span = [hour for hour in range(last_visited.hour, 24)]
                 hours_past_midnight = [
                     hour for hour in range(0, time_after_simulated_seconds.hour + 1)
