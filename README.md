@@ -6,8 +6,6 @@ Capstone Thesis Project, created in Python's Pygame Module.
 <br/>
 
 <p>A business simulation game that is inspired and adapts heavily on Philippines economics and culture. Contains different Filipino businesses and challenges that would help aspiring young entrepeneurs simulate the business life with enjoyment in this simulation game.</p>
-<br/>
-<br/>
 
 <h3 align="center">Game Modules Snippets</h3>
 
