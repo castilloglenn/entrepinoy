@@ -1,486 +1,262 @@
 {
-    "test_business_a": {
-        "name": "Test Business A",
-        "image_name": "sari_sari_store",
-        "rel_midbottom_coordinates": [
-            0.31,
-            0.66
-        ],
-        "collide_rect": [
-            0.11,
-            0.22,
-            0.77,
-            0.78
-        ],
-        "queuing_point": 0.4,
-        "queue_direction": "left",
-        "placement": "front",
-        "initial_cost": 1.0,
-        "daily_expenses": 1.0,
-        "employee_cost": 1.0,
-        "income_per_customer_range": [
-            1.0,
-            1.0
-        ]
-    },
-    "test_business_b": {
-        "name": "Test Business B",
-        "image_name": "ukay_ukay",
-        "rel_midbottom_coordinates": [
-            0.71,
-            0.66
-        ],
-        "collide_rect": [
-            0.04,
-            0.21,
-            0.92,
-            0.79
-        ],
-        "queuing_point": 0.35,
-        "queue_direction": "right",
-        "placement": "front",
-        "initial_cost": 1.0,
-        "daily_expenses": 1.0,
-        "employee_cost": 1.0,
-        "income_per_customer_range": [
-            1.0,
-            1.0
-        ]
-    },
-    "street_food": {
-        "name": "Street Foods Stall",
-        "image_name": [
-            "buko_stall",
-            "fish_ball_stand",
-            "sorbetes"
-        ],
-        "rel_midbottom_coordinates": [
-            0.16,
-            0.72
-        ],
-        "collide_rect": [
-            0,
-            0.25,
-            1,
-            0.75
-        ],
-        "queuing_point": 0.8,
-        "queue_direction": "right",
-        "placement": "front",
-        "initial_cost": 10000.0,
-        "daily_expenses": 650.0,
-        "employee_cost": 450.0,
-        "income_per_customer_range": [
-            25.5,
-            85.5
-        ]
-    },
-    "sari_sari_store": {
-        "name": "Sari Sari Store",
-        "image_name": "sari_sari_store",
-        "rel_midbottom_coordinates": [
-            0.27,
-            0.66
-        ],
-        "collide_rect": [
-            0.11,
-            0.22,
-            0.77,
-            0.78
-        ],
-        "queuing_point": 0.4,
-        "queue_direction": "left",
-        "placement": "back",
-        "initial_cost": 16250.0,
-        "daily_expenses": 950.0,
-        "employee_cost": 575.0,
-        "income_per_customer_range": [
-            40.75,
-            104.75
-        ]
-    },
-    "ukay_ukay": {
-        "name": "Ukay Ukay",
-        "image_name": "ukay_ukay",
-        "rel_midbottom_coordinates": [
-            0.66,
-            0.66
-        ],
-        "collide_rect": [
-            0.04,
-            0.21,
-            0.92,
-            0.79
-        ],
-        "queuing_point": 0.35,
-        "queue_direction": "right",
-        "placement": "back",
-        "initial_cost": 22500.0,
-        "daily_expenses": 1200.0,
-        "employee_cost": 725.0,
-        "income_per_customer_range": [
-            51.5,
-            132.75
-        ]
-    },
-    "food_cart": {
-        "name": "Foodcart",
-        "image_name": "food_cart",
-        "rel_midbottom_coordinates": [
-            0.84,
-            0.725
-        ],
-        "collide_rect": [
-            0,
-            0,
-            0.7,
-            1
-        ],
-        "queuing_point": 0.25,
-        "queue_direction": "left",
-        "placement": "front",
-        "initial_cost": 31250.0,
-        "daily_expenses": 1525.0,
-        "employee_cost": 925.0,
-        "income_per_customer_range": [
-            65.25,
-            168.0
-        ]
-    },
-    "bakery": {
-        "name": "Bakery",
-        "image_name": "bakery",
-        "rel_midbottom_coordinates": [
-            0.21,
-            0.72
-        ],
-        "collide_rect": [
-            0,
-            0,
-            1,
-            1
-        ],
-        "queuing_point": 0.45,
-        "queue_direction": "right",
-        "placement": "front",
-        "initial_cost": 42500.0,
-        "daily_expenses": 1925.0,
-        "employee_cost": 1175.0,
-        "income_per_customer_range": [
-            82.75,
-            212.75
-        ]
-    },
-    "general_merchandise_store": {
-        "name": "Gen. Merchandise Store",
-        "image_name": "general_merchandise_store",
-        "rel_midbottom_coordinates": [
-            0.62,
-            0.72
-        ],
-        "collide_rect": [
-            0,
-            0,
-            1,
-            1
-        ],
-        "queuing_point": 0.23,
-        "queue_direction": "right",
-        "placement": "front",
-        "initial_cost": 58750.0,
-        "daily_expenses": 2450.0,
-        "employee_cost": 1500.0,
-        "income_per_customer_range": [
-            104.75,
-            269.5
-        ]
-    },
-    "milktea_shop": {
-        "name": "Milktea Shop",
-        "image_name": "milktea_shop",
-        "rel_midbottom_coordinates": [
-            0.1,
-            0.72
-        ],
-        "collide_rect": [
-            0,
-            0,
-            1,
-            1
-        ],
-        "queuing_point": 0.7,
-        "queue_direction": "right",
-        "placement": "front",
-        "initial_cost": 81250.0,
-        "daily_expenses": 3100.0,
-        "employee_cost": 1900.0,
-        "income_per_customer_range": [
-            132.75,
-            341.25
-        ]
-    },
-    "cybercafe": {
-        "name": "Cybercafe",
-        "image_name": "cybercafe",
-        "rel_midbottom_coordinates": [
-            0.27,
-            0.66
-        ],
-        "collide_rect": [
-            0,
-            0.275,
-            1,
-            0.725
-        ],
-        "queuing_point": 0.75,
-        "queue_direction": "left",
-        "placement": "back",
-        "initial_cost": 111250.0,
-        "daily_expenses": 3925.0,
-        "employee_cost": 2400.0,
-        "income_per_customer_range": [
-            168.0,
-            432.0
-        ]
-    },
-    "clothing_line": {
-        "name": "Clothing Line",
-        "image_name": "clothing_line",
-        "rel_midbottom_coordinates": [
-            0.66,
-            0.66
-        ],
-        "collide_rect": [
-            0.045,
-            0.155,
-            0.91,
-            0.845
-        ],
-        "queuing_point": 0.5,
-        "queue_direction": "right",
-        "placement": "back",
-        "initial_cost": 152500.0,
-        "daily_expenses": 4975.0,
-        "employee_cost": 3050.0,
-        "income_per_customer_range": [
-            212.75,
-            547.0
-        ]
-    },
-    "convenience_store": {
-        "name": "Convenience Store",
-        "image_name": "convenience_store",
-        "rel_midbottom_coordinates": [
-            0.95,
-            0.72
-        ],
-        "collide_rect": [
-            0,
-            0,
-            1,
-            1
-        ],
-        "queuing_point": 0.35,
-        "queue_direction": "left",
-        "placement": "front",
-        "initial_cost": 210000.0,
-        "daily_expenses": 6300.0,
-        "employee_cost": 3850.0,
-        "income_per_customer_range": [
-            269.5,
-            692.75
-        ]
-    },
-    "pawnshop": {
-        "name": "Pawnshop",
-        "image_name": "pawnshop",
-        "rel_midbottom_coordinates": [
-            0.14,
-            0.72
-        ],
-        "collide_rect": [
-            0,
-            0,
-            1,
-            1
-        ],
-        "queuing_point": 0.8,
-        "queue_direction": "right",
-        "placement": "front",
-        "initial_cost": 288750.0,
-        "daily_expenses": 7975.0,
-        "employee_cost": 4875.0,
-        "income_per_customer_range": [
-            341.25,
-            877.25
-        ]
-    },
-    "fashion_outlet": {
-        "name": "Fashion Outlet",
-        "image_name": "fashion_outlet",
-        "rel_midbottom_coordinates": [
-            0.735,
-            0.67
-        ],
-        "collide_rect": [
-            0,
-            0,
-            1,
-            1
-        ],
-        "queuing_point": 0.225,
-        "queue_direction": "right",
-        "placement": "front",
-        "initial_cost": 397500.0,
-        "daily_expenses": 10100.0,
-        "employee_cost": 6175.0,
-        "income_per_customer_range": [
-            432.0,
-            1110.75
-        ]
-    },
-    "market": {
-        "name": "Market",
-        "image_name": "market",
-        "rel_midbottom_coordinates": [
-            0.12,
-            0.72
-        ],
-        "collide_rect": [
-            0,
-            0,
-            1,
-            1
-        ],
-        "queuing_point": 0.73,
-        "queue_direction": "left",
-        "placement": "front",
-        "initial_cost": 546250.0,
-        "daily_expenses": 12800.0,
-        "employee_cost": 7825.0,
-        "income_per_customer_range": [
-            547.0,
-            1406.5
-        ]
-    },
-    "bazaar": {
-        "name": "Bazaar",
-        "image_name": "bazaar",
-        "rel_midbottom_coordinates": [
-            0.28,
-            0.66
-        ],
-        "collide_rect": [
-            0,
-            0,
-            1,
-            1
-        ],
-        "queuing_point": 0.7,
-        "queue_direction": "left",
-        "placement": "back",
-        "initial_cost": 751250.0,
-        "daily_expenses": 16200.0,
-        "employee_cost": 9900.0,
-        "income_per_customer_range": [
-            692.75,
-            1781.0
-        ]
-    },
-    "restaurant": {
-        "name": "Restaurant",
-        "image_name": "restaurant",
-        "rel_midbottom_coordinates": [
-            0.7,
-            0.66
-        ],
-        "collide_rect": [
-            0,
-            0,
-            1,
-            1
-        ],
-        "queuing_point": 0.37,
-        "queue_direction": "right",
-        "placement": "back",
-        "initial_cost": 1032500.0,
-        "daily_expenses": 20525.0,
-        "employee_cost": 12525.0,
-        "income_per_customer_range": [
-            877.25,
-            2255.25
-        ]
-    },
-    "jewelry_store": {
-        "name": "Jewelry Store",
-        "image_name": "jewelry_store",
-        "rel_midbottom_coordinates": [
-            0.89,
-            0.72
-        ],
-        "collide_rect": [
-            0,
-            0,
-            1,
-            1
-        ],
-        "queuing_point": 0.26,
-        "queue_direction": "right",
-        "placement": "front",
-        "initial_cost": 1420000.0,
-        "daily_expenses": 26000.0,
-        "employee_cost": 15850.0,
-        "income_per_customer_range": [
-            1110.75,
-            2855.75
-        ]
-    },
-    "bank": {
-        "name": "Bank",
-        "image_name": "bank",
-        "rel_midbottom_coordinates": [
-            0.16,
-            0.72
-        ],
-        "collide_rect": [
-            0,
-            0,
-            1,
-            1
-        ],
-        "queuing_point": 0.7,
-        "queue_direction": "left",
-        "placement": "front",
-        "initial_cost": 1952500.0,
-        "daily_expenses": 32925.0,
-        "employee_cost": 20075.0,
-        "income_per_customer_range": [
-            1406.5,
-            3616.25
-        ]
-    },
-    "mall": {
-        "name": "Mall",
-        "image_name": "mall",
-        "rel_midbottom_coordinates": [
-            0.84,
-            0.72
-        ],
-        "collide_rect": [
-            0,
-            0,
-            1,
-            1
-        ],
-        "queuing_point": 0.35,
-        "queue_direction": "left",
-        "placement": "front",
-        "initial_cost": 2685000.0,
-        "daily_expenses": 41700.0,
-        "employee_cost": 25425.0,
-        "income_per_customer_range": [
-            1781.0,
-            4579.25
-        ]
-    }
+	"test_business_a": {
+		"name": "Test Business A",
+		"image_name": "sari_sari_store",
+		"rel_midbottom_coordinates": [0.31, 0.66],
+		"collide_rect": [0.11, 0.22, 0.77, 0.78],
+		"queuing_point": 0.4,
+		"queue_direction": "left",
+		"placement": "front",
+		"initial_cost": 1.0,
+		"daily_expenses": 1.0,
+		"employee_cost": 1.0,
+		"income_per_customer_range": [1.0, 1.0]
+	},
+	"test_business_b": {
+		"name": "Test Business B",
+		"image_name": "ukay_ukay",
+		"rel_midbottom_coordinates": [0.71, 0.66],
+		"collide_rect": [0.04, 0.21, 0.92, 0.79],
+		"queuing_point": 0.35,
+		"queue_direction": "right",
+		"placement": "front",
+		"initial_cost": 1.0,
+		"daily_expenses": 1.0,
+		"employee_cost": 1.0,
+		"income_per_customer_range": [1.0, 1.0]
+	},
+	"street_food": {
+		"name": "Street Foods Stall",
+		"image_name": ["buko_stall", "fish_ball_stand", "sorbetes"],
+		"rel_midbottom_coordinates": [0.16, 0.72],
+		"collide_rect": [0, 0.25, 1, 0.75],
+		"queuing_point": 0.8,
+		"queue_direction": "right",
+		"placement": "front",
+		"initial_cost": 10000.0,
+		"daily_expenses": 700.0,
+		"employee_cost": 400.0,
+		"income_per_customer_range": [30.5, 80.5]
+	},
+	"sari_sari_store": {
+		"name": "Sari Sari Store",
+		"image_name": "sari_sari_store",
+		"rel_midbottom_coordinates": [0.27, 0.66],
+		"collide_rect": [0.11, 0.22, 0.77, 0.78],
+		"queuing_point": 0.4,
+		"queue_direction": "left",
+		"placement": "back",
+		"initial_cost": 16250.0,
+		"daily_expenses": 950.0,
+		"employee_cost": 575.0,
+		"income_per_customer_range": [40.75, 104.75]
+	},
+	"ukay_ukay": {
+		"name": "Ukay Ukay",
+		"image_name": "ukay_ukay",
+		"rel_midbottom_coordinates": [0.66, 0.66],
+		"collide_rect": [0.04, 0.21, 0.92, 0.79],
+		"queuing_point": 0.35,
+		"queue_direction": "right",
+		"placement": "back",
+		"initial_cost": 22500.0,
+		"daily_expenses": 1200.0,
+		"employee_cost": 725.0,
+		"income_per_customer_range": [51.5, 132.75]
+	},
+	"food_cart": {
+		"name": "Foodcart",
+		"image_name": "food_cart",
+		"rel_midbottom_coordinates": [0.84, 0.725],
+		"collide_rect": [0, 0, 0.7, 1],
+		"queuing_point": 0.25,
+		"queue_direction": "left",
+		"placement": "front",
+		"initial_cost": 31250.0,
+		"daily_expenses": 1525.0,
+		"employee_cost": 925.0,
+		"income_per_customer_range": [65.25, 168.0]
+	},
+	"bakery": {
+		"name": "Bakery",
+		"image_name": "bakery",
+		"rel_midbottom_coordinates": [0.21, 0.72],
+		"collide_rect": [0, 0, 1, 1],
+		"queuing_point": 0.45,
+		"queue_direction": "right",
+		"placement": "front",
+		"initial_cost": 42500.0,
+		"daily_expenses": 1925.0,
+		"employee_cost": 1175.0,
+		"income_per_customer_range": [82.75, 212.75]
+	},
+	"general_merchandise_store": {
+		"name": "Gen. Merchandise Store",
+		"image_name": "general_merchandise_store",
+		"rel_midbottom_coordinates": [0.62, 0.72],
+		"collide_rect": [0, 0, 1, 1],
+		"queuing_point": 0.23,
+		"queue_direction": "right",
+		"placement": "front",
+		"initial_cost": 58750.0,
+		"daily_expenses": 2450.0,
+		"employee_cost": 1500.0,
+		"income_per_customer_range": [104.75, 269.5]
+	},
+	"milktea_shop": {
+		"name": "Milktea Shop",
+		"image_name": "milktea_shop",
+		"rel_midbottom_coordinates": [0.1, 0.72],
+		"collide_rect": [0, 0, 1, 1],
+		"queuing_point": 0.7,
+		"queue_direction": "right",
+		"placement": "front",
+		"initial_cost": 81250.0,
+		"daily_expenses": 3100.0,
+		"employee_cost": 1900.0,
+		"income_per_customer_range": [132.75, 341.25]
+	},
+	"cybercafe": {
+		"name": "Cybercafe",
+		"image_name": "cybercafe",
+		"rel_midbottom_coordinates": [0.27, 0.66],
+		"collide_rect": [0, 0.275, 1, 0.725],
+		"queuing_point": 0.75,
+		"queue_direction": "left",
+		"placement": "back",
+		"initial_cost": 111250.0,
+		"daily_expenses": 3925.0,
+		"employee_cost": 2400.0,
+		"income_per_customer_range": [168.0, 432.0]
+	},
+	"clothing_line": {
+		"name": "Clothing Line",
+		"image_name": "clothing_line",
+		"rel_midbottom_coordinates": [0.66, 0.66],
+		"collide_rect": [0.045, 0.155, 0.91, 0.845],
+		"queuing_point": 0.2,
+		"queue_direction": "right",
+		"placement": "back",
+		"initial_cost": 152500.0,
+		"daily_expenses": 4975.0,
+		"employee_cost": 3050.0,
+		"income_per_customer_range": [212.75, 547.0]
+	},
+	"convenience_store": {
+		"name": "Convenience Store",
+		"image_name": "convenience_store",
+		"rel_midbottom_coordinates": [0.95, 0.72],
+		"collide_rect": [0, 0, 1, 1],
+		"queuing_point": 0.35,
+		"queue_direction": "left",
+		"placement": "front",
+		"initial_cost": 210000.0,
+		"daily_expenses": 6300.0,
+		"employee_cost": 3850.0,
+		"income_per_customer_range": [269.5, 692.75]
+	},
+	"pawnshop": {
+		"name": "Pawnshop",
+		"image_name": "pawnshop",
+		"rel_midbottom_coordinates": [0.14, 0.72],
+		"collide_rect": [0, 0, 1, 1],
+		"queuing_point": 0.8,
+		"queue_direction": "right",
+		"placement": "front",
+		"initial_cost": 288750.0,
+		"daily_expenses": 7975.0,
+		"employee_cost": 4875.0,
+		"income_per_customer_range": [341.25, 877.25]
+	},
+	"fashion_outlet": {
+		"name": "Fashion Outlet",
+		"image_name": "fashion_outlet",
+		"rel_midbottom_coordinates": [0.735, 0.67],
+		"collide_rect": [0, 0, 1, 1],
+		"queuing_point": 0.225,
+		"queue_direction": "right",
+		"placement": "front",
+		"initial_cost": 397500.0,
+		"daily_expenses": 10100.0,
+		"employee_cost": 6175.0,
+		"income_per_customer_range": [432.0, 1110.75]
+	},
+	"market": {
+		"name": "Market",
+		"image_name": "market",
+		"rel_midbottom_coordinates": [0.12, 0.72],
+		"collide_rect": [0, 0, 1, 1],
+		"queuing_point": 0.73,
+		"queue_direction": "left",
+		"placement": "front",
+		"initial_cost": 546250.0,
+		"daily_expenses": 12800.0,
+		"employee_cost": 7825.0,
+		"income_per_customer_range": [547.0, 1406.5]
+	},
+	"bazaar": {
+		"name": "Bazaar",
+		"image_name": "bazaar",
+		"rel_midbottom_coordinates": [0.28, 0.66],
+		"collide_rect": [0, 0, 1, 1],
+		"queuing_point": 0.7,
+		"queue_direction": "left",
+		"placement": "back",
+		"initial_cost": 751250.0,
+		"daily_expenses": 16200.0,
+		"employee_cost": 9900.0,
+		"income_per_customer_range": [692.75, 1781.0]
+	},
+	"restaurant": {
+		"name": "Restaurant",
+		"image_name": "restaurant",
+		"rel_midbottom_coordinates": [0.7, 0.66],
+		"collide_rect": [0, 0, 1, 1],
+		"queuing_point": 0.37,
+		"queue_direction": "right",
+		"placement": "back",
+		"initial_cost": 1032500.0,
+		"daily_expenses": 20525.0,
+		"employee_cost": 12525.0,
+		"income_per_customer_range": [877.25, 2255.25]
+	},
+	"jewelry_store": {
+		"name": "Jewelry Store",
+		"image_name": "jewelry_store",
+		"rel_midbottom_coordinates": [0.89, 0.72],
+		"collide_rect": [0, 0, 1, 1],
+		"queuing_point": 0.26,
+		"queue_direction": "right",
+		"placement": "front",
+		"initial_cost": 1420000.0,
+		"daily_expenses": 26000.0,
+		"employee_cost": 15850.0,
+		"income_per_customer_range": [1110.75, 2855.75]
+	},
+	"bank": {
+		"name": "Bank",
+		"image_name": "bank",
+		"rel_midbottom_coordinates": [0.16, 0.72],
+		"collide_rect": [0, 0, 1, 1],
+		"queuing_point": 0.7,
+		"queue_direction": "left",
+		"placement": "front",
+		"initial_cost": 1952500.0,
+		"daily_expenses": 32925.0,
+		"employee_cost": 20075.0,
+		"income_per_customer_range": [1406.5, 3616.25]
+	},
+	"mall": {
+		"name": "Mall",
+		"image_name": "mall",
+		"rel_midbottom_coordinates": [0.84, 0.72],
+		"collide_rect": [0, 0, 1, 1],
+		"queuing_point": 0.35,
+		"queue_direction": "left",
+		"placement": "front",
+		"initial_cost": 2685000.0,
+		"daily_expenses": 41700.0,
+		"employee_cost": 25425.0,
+		"income_per_customer_range": [1781.0, 4579.25]
+	}
 }
