@@ -247,7 +247,7 @@ class Epilogue:
     def run(self, album):
         assert album in self.albums
 
-        if self.main.data.progress["credits_shown"]:
+        if self.main.data.progress["credits_shown"] and album == "good_ending":
             return
 
         pygame.mixer.music.load(self.main.data.music[album])
