@@ -278,6 +278,7 @@ class Map:
         # Hovering through display check
         else:
             overlapped = False
+            map_changed = False
             for button in self.buttons:
                 # Adding halting statement to prevent other buttons to
                 #   react the same way/overlap reactions
@@ -286,8 +287,10 @@ class Map:
                     button.set_image_and_rect()
                 elif button.check_hovered(self.last_mouse_pos):
                     overlapped = True
+                    if button.name:
+                        map_changed = True
 
-            if not overlapped:
+            if not map_changed:
                 self.current_location_button.check_hovered((0, 0), force=True)
 
     def key_down_events(self, key):
