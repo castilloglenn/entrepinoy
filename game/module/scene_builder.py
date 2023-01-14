@@ -432,15 +432,16 @@ class Scene:
                 total_income += business["object"].earnings_calculation()
 
         if show_notification:
-            self.main.response_menu.queue_message(
-                [
-                    f"",
-                    f"While you were away,",
-                    f"you have earned:",
-                    f"P{total_income:,.2f}",
-                    f"",
-                ]
-            )
+            if not self.main.data.progress["game_over"]:
+                self.main.response_menu.queue_message(
+                    [
+                        f"",
+                        f"While you were away,",
+                        f"you have earned:",
+                        f"P{total_income:,.2f}",
+                        f"",
+                    ]
+                )
 
         # Reset location last visited
         self.main.data.progress["businesses"][self.location]["last_visited"] = ""
