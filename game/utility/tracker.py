@@ -189,7 +189,8 @@ class Tracker:
                     )
 
     def add_click(self):
-        self.main.data.progress["statistics"]["clicks"] += 1
+        if self.main.data.progress:
+            self.main.data.progress["statistics"]["clicks"] += 1
 
     # Calculate statistics
     def get_business_owned_count(self):
