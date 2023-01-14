@@ -505,6 +505,140 @@ class Scene:
                 ]
             )
 
+        # Deduct daily expense
+        if self.main.data.progress["tutorial_shown"]:
+            collateral = self.main.sliding_menu.bank_menu._evaluate_businesses()
+            if not collateral:
+                bankruptcy_limit = -self.main.data.progress["daily_expenses"]
+            else:
+                business_name, business_code, business_cost = collateral
+                business_cost = business_cost * self.business_menu.sell_back_ratio
+                bankruptcy_limit = -business_cost
+
+            bankruptcy_limit = (
+                bankruptcy_limit + self.main.data.progress["daily_expenses"]
+            )
+
+            print(bankruptcy_limit)
+
+            if self.main.data.progress["cash"] >= bankruptcy_limit:
+                self.main.data.progress["cash"] -= self.main.data.progress[
+                    "daily_expenses"
+                ]
+                self.main.response_menu.queue_message(
+                    [
+                        f"Personal Expenses Update:",
+                        f"",
+                        f"P{self.main.data.progress['daily_expenses']:,.2f} has been deducted",
+                        f"in your E-Cash balance",
+                        f"",
+                    ]
+                )
+            elif (
+                self.main.data.progress["bank"]["balance"]
+                >= self.main.data.progress["daily_expenses"]
+            ):
+                self.main.data.progress["bank"]["balance"] -= self.main.data.progress[
+                    "daily_expenses"
+                ]
+                self.main.response_menu.queue_message(
+                    [
+                        f"Personal Expenses Update:",
+                        f"",
+                        f"P{self.main.data.progress['daily_expenses']:,.2f} has been deducted",
+                        f"in your Savings balance",
+                        f"",
+                    ]
+                )
+            else:
+                # Bankruptcy/Game over procedure
+                # If owns a business, the highest capital will be sold forcefully
+                # Else if the daily expense debt reached negative, game over
+                if not collateral:
+                    self.main.response_menu.queue_message(
+                        [
+                            f"You cannot afford your",
+                            f"daily expenses anymore.",
+                            f"You should reconsider",
+                            f"financial decisions in",
+                            f"the next game run.",
+                        ]
+                    )
+                    self.main.data.progress["game_over"] = True
+                else:
+                    name, business, cost = collateral
+                    location = None
+
+                    for location in self.main.data.location:
+                        if (
+                            business_code
+                            in self.main.data.location[location]["businesses"]
+                        ):
+                            business_location = location
+                            break
+
+                    assert business_location
+
+                    self.main.data.progress["businesses"][location][business][
+                        "level"
+                    ] = 1
+                    self.main.data.progress["businesses"][location][business][
+                        "date_acquired"
+                    ] = ""
+                    self.main.data.progress["businesses"][location][business][
+                        "ownership"
+                    ] = False
+                    self.main.data.progress["businesses"][location][business][
+                        "is_open"
+                    ] = False
+                    self.main.data.progress["businesses"][location][business][
+                        "open_until"
+                    ] = ""
+                    self.main.data.progress["businesses"][location][business][
+                        "has_employee"
+                    ] = False
+                    self.main.data.progress["businesses"][location][business][
+                        "sales"
+                    ] = 0.0
+                    self.main.data.progress["businesses"][location][business][
+                        "lifetime_sales"
+                    ] = 0.0
+                    self.main.data.progress["businesses"][location][business][
+                        "last_profit"
+                    ] = 0.0
+                    self.main.data.progress["businesses"][location][business][
+                        "lifetime_profit"
+                    ] = 0.0
+                    self.main.data.progress["businesses"][location][business][
+                        "current_operation_sales"
+                    ] = 0.0
+
+                    if self.main.data.progress["last_location"] == location:
+                        for business_meta in self.business_data:
+                            meta = business_meta["meta"]
+                            if business == "street_food":
+                                if isinstance(meta["image_name"], list):
+                                    business_object = business_meta["object"]
+                                    business_object.reset_data()
+
+                            elif meta["image_name"] == business:
+                                business_object = business_meta["object"]
+                                business_object.reset_data()
+
+                    self.main.data.progress["cash"] = 0
+                    self.update_data()
+
+                    self.main.response_menu.queue_message(
+                        [
+                            f"Personal Expenses Update:",
+                            f"",
+                            f"{name}",
+                            f"has been forcefully",
+                            f"sold to pay off debts.",
+                        ]
+                    )
+
+        # Check bank loan status
         loan_status = self.main.sliding_menu.bank_menu._check_loan_payment()
         if loan_status != None:
             message = None
