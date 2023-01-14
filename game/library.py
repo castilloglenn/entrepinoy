@@ -808,6 +808,27 @@ class Library:
             "location_f": "INDANG",
         }
 
+        """
+        Fare matrix
+        Bacoor-imus= 14 pesos
+        Bacoor-dasma=42 pesos
+        Bacoor-gentri=70 pesos
+        Bacoor-indang=80 pesos
+        Bacoor-molino=25 pesos
+
+        Imus-molino=18 pesos
+        Imus-dasma=30 pesos
+        Imus-gentri=50 pesos
+        Imus-indang=60pesos
+
+        Molino-Gentri=45 pesos
+        molino-indang=40 pesos
+
+        Dasma-molino=15 pesos
+        Dasma-gentri=30 pesos
+        Dasma-indang=25 pesos
+        """
+
     def get_albums(self):
         self.albums = {
             "prologue": {

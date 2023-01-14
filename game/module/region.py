@@ -13,10 +13,6 @@ class Map:
         self.main = main
         self.running = False
 
-        # Logical variables
-        self.base_fare = 12.0
-        self.succeeding_km = 1.5
-
         # Sprite groups
         self.objects = pygame.sprite.Group()
         self.buttons = pygame.sprite.Group()
@@ -165,23 +161,58 @@ class Map:
         )
 
     def _calculate_fare(self, new_location) -> float:
-        index = {
-            "location_a": 0,
-            "location_b": 1,
-            "location_c": 2,
-            "location_d": 3,
-            "location_e": 4,
-            "location_f": 5,
-        }
-
-        current = index[self.main.data.progress["last_location"]]
-        new = index[new_location]
+        current = self.main.data.city[self.main.data.progress["last_location"]]
+        new = self.main.data.city[new_location]
 
         if current == new:
             return None
 
-        delta = abs(new - current)
-        return self.base_fare + (self.succeeding_km * (delta - 1))
+        fare_matrix = {
+            "IMUS": {
+                "BACOOR": 14.0,
+                "MOLINO": 18.0,
+                "DASMARINAS": 30.0,
+                "GENERAL TRIAS": 50.0,
+                "INDANG": 60.0,
+            },
+            "BACOOR": {
+                "IMUS": 14.0,
+                "DASMARINAS": 42.0,
+                "GENERAL TRIAS": 70.0,
+                "INDANG": 80.0,
+                "MOLINO": 25.0,
+            },
+            "MOLINO": {
+                "IMUS": 18.0,
+                "DASMARINAS": 15.0,
+                "GENERAL TRIAS": 45.0,
+                "INDANG": 40.0,
+                "BACOOR": 25.0,
+            },
+            "GENERAL TRIAS": {
+                "IMUS": 50.0,
+                "DASMARINAS": 30.0,
+                "BACOOR": 70.0,
+                "INDANG": 15.0,
+                "MOLINO": 45.0,
+            },
+            "DASMARINAS": {
+                "IMUS": 30.0,
+                "BACOOR": 42.0,
+                "MOLINO": 15.0,
+                "GENERAL TRIAS": 30.0,
+                "INDANG": 25.0,
+            },
+            "INDANG": {
+                "IMUS": 60.0,
+                "DASMARINAS": 25.0,
+                "GENERAL TRIAS": 15.0,
+                "BACOOR": 80.0,
+                "MOLINO": 40.0,
+            },
+        }
+
+        return fare_matrix[current][new]
 
     def _confirm_travel(self, new_location):
         fare = self._calculate_fare(new_location)
