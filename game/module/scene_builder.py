@@ -697,6 +697,18 @@ class Scene:
         elif key == pygame.K_F3:
             pass
 
+        elif key == pygame.K_F6 and pygame.key.get_mods() & pygame.KMOD_CTRL:
+            self.main.data.progress["cash"] = 0
+            self.main.response_menu.queue_message(
+                [
+                    f"[Cheat Activated]",
+                    f"You lost all your money",
+                    f"somewhere.",
+                    f"Congratulations.",
+                    f"",
+                ]
+            )
+
         elif key == pygame.K_F7 and pygame.key.get_mods() & pygame.KMOD_CTRL:
             hours_ahead = timedelta(seconds=60 * 60 * 2)
             self._simulate_time_skip(hack_date=hours_ahead)
