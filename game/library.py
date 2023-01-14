@@ -1222,7 +1222,7 @@ class Library:
                 "earn_profit": {
                     "description": [
                         "     Best Financial Strategist",
-                        "       Reach total profits of one",
+                        "       Reach total profits of ten",
                         "       million. {value}/10M",
                     ],
                     "obtained": False,
@@ -1233,12 +1233,12 @@ class Library:
                 "part_time_income": {
                     "description": [
                         "     Top Rated Freelancer",
-                        "       Earn one million part time",
-                        "       income. {value}/1M",
+                        "       Earn half a million part time",
+                        "       income. {value}/500K",
                     ],
                     "obtained": False,
                     "value": 0,
-                    "requirement": 1_000_000.0,
+                    "requirement": 500_000.0,
                     "reward": 100_000.0,
                 },
                 "earn_pnl": {
@@ -1255,12 +1255,12 @@ class Library:
                 "bank_interest": {
                     "description": [
                         "     Bank's Most Loyal Customer",
-                        "       Receive one million total",
-                        "       interest. {value}/1M",
+                        "       Receive half a million total",
+                        "       interest. {value}/500K",
                     ],
                     "obtained": False,
                     "value": 0,
-                    "requirement": 1_000_000.0,
+                    "requirement": 500_000.0,
                     "reward": 100_000.0,
                 },
             },
