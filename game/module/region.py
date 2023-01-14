@@ -17,6 +17,7 @@ class Map:
         self.objects = pygame.sprite.Group()
         self.buttons = pygame.sprite.Group()
         self.hoverable_buttons = pygame.sprite.Group()
+        self.current_location_button: Button = None
 
         self.background = SceneBackground(
             self.main.screen,
@@ -33,6 +34,7 @@ class Map:
             self.location_a_callback,
             top_left_coordinates=(0, 0),
             collide_rect=[0.116, 0.112, 0.219, 0.265],
+            button_name="location_a",
             **{
                 "idle": self.main.data.map["base_hover"],
                 "hovered": self.main.data.map["outline"]["location_a"],
@@ -43,6 +45,7 @@ class Map:
             self.location_b_callback,
             top_left_coordinates=(0, 0),
             collide_rect=[0.335, 0.134, 0.25, 0.328],
+            button_name="location_b",
             **{
                 "idle": self.main.data.map["base_hover"],
                 "hovered": self.main.data.map["outline"]["location_b"],
@@ -53,6 +56,7 @@ class Map:
             self.location_c_callback,
             top_left_coordinates=(0, 0),
             collide_rect=[0.584, 0.072, 0.306, 0.285],
+            button_name="location_c",
             **{
                 "idle": self.main.data.map["base_hover"],
                 "hovered": self.main.data.map["outline"]["location_c"],
@@ -63,6 +67,7 @@ class Map:
             self.location_d_callback,
             top_left_coordinates=(0, 0),
             collide_rect=[0.584, 0.356, 0.309, 0.288],
+            button_name="location_d",
             **{
                 "idle": self.main.data.map["base_hover"],
                 "hovered": self.main.data.map["outline"]["location_d"],
@@ -73,6 +78,7 @@ class Map:
             self.location_e_callback,
             top_left_coordinates=(0, 0),
             collide_rect=[0.335, 0.462, 0.25, 0.344],
+            button_name="location_e",
             **{
                 "idle": self.main.data.map["base_hover"],
                 "hovered": self.main.data.map["outline"]["location_e"],
@@ -83,6 +89,7 @@ class Map:
             self.location_f_callback,
             top_left_coordinates=(0, 0),
             collide_rect=[0.126, 0.445, 0.209, 0.344],
+            button_name="location_f",
             **{
                 "idle": self.main.data.map["base_hover"],
                 "hovered": self.main.data.map["outline"]["location_f"],
@@ -280,6 +287,9 @@ class Map:
                 elif button.check_hovered(self.last_mouse_pos):
                     overlapped = True
 
+            if not overlapped:
+                self.current_location_button.check_hovered((0, 0), force=True)
+
     def key_down_events(self, key):
         self.main.global_key_down_events(key)
 
@@ -321,6 +331,12 @@ class Map:
         # Check if the sliding button is in the scene yet
         if self.buttons not in self.main.sliding_menu.sliding_menu_button.groups():
             self.main.sliding_menu.sliding_menu_button.add(self.buttons)
+
+        # Highlight location
+        for button in self.buttons:
+            if button.name == self.main.data.progress["last_location"]:
+                self.current_location_button = button
+                self.current_location_button.check_hovered((0, 0), force=True)
 
         self.running = True
         while self.running:
