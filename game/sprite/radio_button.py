@@ -1,10 +1,12 @@
+from typing import *
 import pygame
 import re
 
 
 class RadioButton(pygame.sprite.Sprite):
     """
-    Class to display a simple text box with limit
+    Class to display a single radio button option that requires a radio group
+    to be bounded with.
     """
 
     def __init__(
@@ -19,7 +21,7 @@ class RadioButton(pygame.sprite.Sprite):
         super().__init__()
 
         self.main = main
-        self.value = value
+        self.value: Any = value
         self.is_selected = False
         self.radio_group = None
 
