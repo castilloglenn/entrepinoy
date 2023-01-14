@@ -440,6 +440,10 @@ class Map:
                     elif event.type == pygame.KEYDOWN:
                         self.key_down_events(event.key)
 
+                if event.type == self.main.scene_window.crypto_update_id:
+                    # Crypto price update
+                    self.main.sliding_menu.crypto_menu._update_price()
+
             # Key pressing events (holding keys applicable)
             keys = pygame.key.get_pressed()
             self.key_hold_events(keys)
