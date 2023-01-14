@@ -312,7 +312,8 @@ class Map:
             pass
 
         elif key == pygame.K_F4:
-            self.location_changer("test_location")
+            pass
+            # self.location_changer("test_location")
 
     def key_hold_events(self, keys):
         # If the user pressed the "del" key, (enter explanation here)
