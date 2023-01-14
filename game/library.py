@@ -993,10 +993,7 @@ class Library:
                         ),
                     },
                     "text": [
-                        "{player_name}",
-                        "{possessive}",
-                        "{pronoun}",
-                        "Frame 1",
+                        "",
                     ],
                     "text_rel_coords": [0.56, 0.5],
                 },
