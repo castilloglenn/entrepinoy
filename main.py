@@ -344,10 +344,13 @@ class Main:
 
             # Checking if menus will be displaying
             self.confirm_menu.update()
+            self.response_menu.update()
 
             # Event processing
             for event in pygame.event.get():
-                if self.confirm_menu.enable:
+                if self.response_menu.enable:
+                    self.response_menu.handle_event(event)
+                elif self.confirm_menu.enable:
                     self.confirm_menu.handle_event(event)
                 else:
                     if event.type == pygame.QUIT:
