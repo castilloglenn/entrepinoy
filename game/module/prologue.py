@@ -1,4 +1,5 @@
 from game.utility.new_game_input_menu import NewGameInputMenu
+from game.utility.new_game_expense_menu import NewGameExpenseMenu
 from game.utility.new_game_starter_menu import NewGameStarterMenu
 
 from datetime import datetime
@@ -18,16 +19,20 @@ class Prologue:
         # Setting up the assets
         self.main = main
 
-        # # 1. Name/Gender Menu
+        # 1. Name/Gender Menu
         self.name = None
         self.gender = None
         self.input_menu = NewGameInputMenu(main)
 
-        # # 2. Starter picks
+        # 2. Expense Menu
+        self.expenses = None
+        self.expense_menu = NewGameExpenseMenu(main)
+
+        # 3. Starter picks
         self.starter = None
         self.starter_menu = NewGameStarterMenu(main)
 
-        # # 3. Prologue
+        # 4. Prologue
         self.album_name = "prologue"
 
     def create_save_file(self):
@@ -44,6 +49,9 @@ class Prologue:
     def run(self):
         self.input_menu.run()
         self.name, self.gender = self.input_menu.get_data()
+
+        self.expense_menu.run()
+        self.expenses = self.expense_menu.get_data()
 
         self.starter_menu.run()
         self.starter = self.starter_menu.get_data()
