@@ -1101,7 +1101,7 @@ class Library:
 
         self.set_dict_to_json("library", "business.json", self.business)
 
-    def create_new_save_file(self, name, gender, starter):
+    def create_new_save_file(self, name, gender, expenses, starter):
         self.adjust_street_food_attributes(starter=starter)
 
         del self.progress
@@ -1110,6 +1110,7 @@ class Library:
         self.progress = {
             "name": name,
             "gender": gender,
+            "daily_expenses": expenses,
             "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
             "last_login": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
             "last_location": "location_a",

@@ -39,11 +39,13 @@ class Prologue:
         assert self.name
         assert self.gender
         assert self.starter
+        assert self.expenses
 
         self.main.data.create_new_save_file(
             name=self.name,
             gender=self.gender,
             starter=self.starter,
+            expenses=self.expenses,
         )
 
     def run(self):
