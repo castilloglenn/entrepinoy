@@ -489,6 +489,7 @@ class Scene:
         else:
             self.main.sliding_menu.stock_menu._update_price()
 
+        # Check bank interest income
         (
             interest_increase,
             account,
