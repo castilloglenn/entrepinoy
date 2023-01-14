@@ -187,7 +187,8 @@ class Map:
         fare = self._calculate_fare(new_location)
 
         def _confirm_function():
-            self.main.data.progress["cash"] -= fare
+            if fare:
+                self.main.data.progress["cash"] -= fare
 
             self.location_changer(new_location)
             self._update_tracker(new_location)
