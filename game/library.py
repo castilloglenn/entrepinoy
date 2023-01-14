@@ -1122,9 +1122,10 @@ class Library:
             "time": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
             "last_login": datetime.strftime(datetime.now(), "%Y/%m/%d, %H:%M:%S.%f"),
             "last_location": "location_a",
-            "cash": 1000.0,
+            "cash": expenses,
             "credits_shown": False,
             "tutorial_shown": False,
+            "game_over": False,
             "bank": {
                 "loan": 0.0,
                 "loan_balance": 0.0,
