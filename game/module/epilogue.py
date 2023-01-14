@@ -189,6 +189,8 @@ class Epilogue:
             "",
             '"UI-Quirky20, 37"',
             "",
+            "",
+            "",
             "by Eric Matyas",
             "www.soundimage.org",
             "",
