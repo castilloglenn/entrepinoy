@@ -21,6 +21,7 @@ class Button(Sprite):
         midbottom_coordinates=None,
         collide_rect: tuple[float] = None,
         button_ratio: float = None,
+        button_name: str = None,
         **states
     ):
         """
@@ -45,6 +46,7 @@ class Button(Sprite):
         # SFX Variables
         self.hovered_sfx_played = False
 
+        self.name = button_name
         self.visible = True
         self.main = main
         self.state = "idle"
@@ -263,13 +265,13 @@ class Button(Sprite):
         else:
             self.tooltip.set_message(tooltip)
 
-    def check_hovered(self, hover_coordinates):
+    def check_hovered(self, hover_coordinates, force=False):
         # Return booleans to prevent overlapping buttons to react the same
         self.previous_mouse_location = hover_coordinates
         if self.state == "disabled" or not self.visible:
             return False
 
-        if self.collide_rect.collidepoint(hover_coordinates):
+        if self.collide_rect.collidepoint(hover_coordinates) or force:
             self.play_sound("button_hovered")
             self.state = "hovered"
             self.set_image_and_rect()
