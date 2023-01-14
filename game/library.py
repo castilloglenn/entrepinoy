@@ -1233,8 +1233,8 @@ class Library:
                 "part_time_income": {
                     "description": [
                         "     Top Rated Freelancer",
-                        "       Earn half a million part time",
-                        "       income. {value}/500K",
+                        "       Earn half a million part",
+                        "       time income. {value}/500K",
                     ],
                     "obtained": False,
                     "value": 0,
