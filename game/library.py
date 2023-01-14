@@ -1101,6 +1101,14 @@ class Library:
 
         self.set_dict_to_json("library", "business.json", self.business)
 
+    def delete_save_file(self):
+        dirname = get_dirname()
+        save_file = os.path.join(dirname, "progress", "progress.save")
+
+        self.progress = None
+        if os.path.isfile(save_file):
+            os.remove(save_file)
+
     def create_new_save_file(self, name, gender, expenses, starter):
         self.adjust_street_food_attributes(starter=starter)
 
