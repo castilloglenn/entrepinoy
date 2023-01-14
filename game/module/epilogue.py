@@ -250,7 +250,7 @@ class Epilogue:
         if self.main.data.progress["credits_shown"]:
             return
 
-        pygame.mixer.music.load(self.main.data.music["epilogue"])
+        pygame.mixer.music.load(self.main.data.music[album])
         pygame.mixer.music.play(-1)
 
         self.main.slide_show.set_album(

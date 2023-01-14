@@ -826,8 +826,17 @@ class Scene:
         elif key == pygame.K_F2 and pygame.key.get_mods() & pygame.KMOD_CTRL:
             pprint(self.main.data.progress)
 
-        elif key == pygame.K_F3:
-            pass
+        elif key == pygame.K_F5 and pygame.key.get_mods() & pygame.KMOD_CTRL:
+            self.main.response_menu.queue_message(
+                [
+                    f"[Cheat Activated]",
+                    f"Why did you let yourself",
+                    f"lose all of a sudden?",
+                    f"Now there is no going",
+                    f"back. See ya!",
+                ]
+            )
+            self.main.data.progress["game_over"] = True
 
         elif key == pygame.K_F6 and pygame.key.get_mods() & pygame.KMOD_CTRL:
             self.main.data.progress["cash"] = 0
