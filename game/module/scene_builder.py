@@ -519,8 +519,6 @@ class Scene:
                 bankruptcy_limit + self.main.data.progress["daily_expenses"]
             )
 
-            print(bankruptcy_limit)
-
             if self.main.data.progress["cash"] >= bankruptcy_limit:
                 self.main.data.progress["cash"] -= self.main.data.progress[
                     "daily_expenses"
