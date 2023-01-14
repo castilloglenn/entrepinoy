@@ -13,6 +13,10 @@ class Map:
         self.main = main
         self.running = False
 
+        # Logical variables
+        self.base_fare = 12.0
+        self.succeeding_km = 1.5
+
         # Sprite groups
         self.objects = pygame.sprite.Group()
         self.buttons = pygame.sprite.Group()
@@ -160,15 +164,75 @@ class Map:
             ]
         )
 
+    def _calculate_fare(self, new_location) -> float:
+        index = {
+            "location_a": 0,
+            "location_b": 1,
+            "location_c": 2,
+            "location_d": 3,
+            "location_e": 4,
+            "location_f": 5,
+        }
+
+        current = index[self.main.data.progress["last_location"]]
+        new = index[new_location]
+
+        if current == new:
+            return None
+
+        delta = abs(new - current)
+        return self.base_fare + (self.succeeding_km * (delta - 1))
+
+    def _confirm_travel(self, new_location):
+        fare = self._calculate_fare(new_location)
+
+        def _confirm_function():
+            self.main.data.progress["cash"] -= fare
+
+            self.location_changer(new_location)
+            self._update_tracker(new_location)
+
+        if fare is None:
+            _confirm_function()
+        else:
+            current_location = self.main.data.city[
+                self.main.data.progress["last_location"]
+            ]
+            new_loc = self.main.data.city[new_location]
+
+            if self.main.data.progress["cash"] >= fare:
+                self.main.confirm_menu.set_message_and_callback(
+                    [
+                        f"",
+                        f"The travel fare from",
+                        f"{current_location} to {new_loc}",
+                        f"costs P{fare:,.2f}",
+                        f"Would you like",
+                        f"to proceed?",
+                        f"",
+                    ],
+                    _confirm_function,
+                )
+                self.main.confirm_menu.enable = True
+            else:
+                self.main.response_menu.queue_message(
+                    [
+                        f"",
+                        f"You do not have enough",
+                        f"cash to travel there.",
+                        f"",
+                        f"",
+                    ]
+                )
+
     def location_a_callback(self, *args):
-        self.location_changer("location_a")
+        self._confirm_travel("location_a")
 
     def location_b_callback(self, *args):
         if self._check_if_has_business_owned(
             "location_b"
         ) or self._check_if_businesses_owned("location_a"):
-            self.location_changer("location_b")
-            self._update_tracker("location_b")
+            self._confirm_travel("location_b")
             return
 
         self._denied_access()
@@ -177,8 +241,7 @@ class Map:
         if self._check_if_has_business_owned(
             "location_c"
         ) or self._check_if_businesses_owned("location_b"):
-            self.location_changer("location_c")
-            self._update_tracker("location_c")
+            self._confirm_travel("location_c")
             return
 
         self._denied_access()
@@ -187,8 +250,7 @@ class Map:
         if self._check_if_has_business_owned(
             "location_d"
         ) or self._check_if_businesses_owned("location_c"):
-            self.location_changer("location_d")
-            self._update_tracker("location_d")
+            self._confirm_travel("location_d")
             return
 
         self._denied_access()
@@ -197,8 +259,7 @@ class Map:
         if self._check_if_has_business_owned(
             "location_e"
         ) or self._check_if_businesses_owned("location_d"):
-            self.location_changer("location_e")
-            self._update_tracker("location_e")
+            self._confirm_travel("location_e")
             return
 
         self._denied_access()
@@ -207,8 +268,7 @@ class Map:
         if self._check_if_has_business_owned(
             "location_f"
         ) or self._check_if_businesses_owned("location_e"):
-            self.location_changer("location_f")
-            self._update_tracker("location_f")
+            self._confirm_travel("location_f")
             return
 
         self._denied_access()
