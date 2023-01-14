@@ -39,7 +39,7 @@ class ProfileMenu(GenericMenu):
             self.main.data.colors["brown"],
             top_left_coordinates=(
                 int(self.canvas_rect.width * 0.51) + self.canvas_rect.x,
-                int(self.canvas_rect.height * 0.349) + self.canvas_rect.y,
+                int(self.canvas_rect.height * 0.295) + self.canvas_rect.y,
             ),
         )
 
@@ -103,7 +103,9 @@ class ProfileMenu(GenericMenu):
 
         # Line 5
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        labels.append(f"")
+        daily_expenses = f"P{self.data['daily_expenses']:,.2f}"
+        labels.append(f"Daily Expenses:")
+        values.append(daily_expenses)
 
         # Line 6
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
