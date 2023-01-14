@@ -272,7 +272,8 @@ class Button(Sprite):
             return False
 
         if self.collide_rect.collidepoint(hover_coordinates) or force:
-            self.play_sound("button_hovered")
+            if not force:
+                self.play_sound("button_hovered")
             self.state = "hovered"
             self.set_image_and_rect()
             return True
