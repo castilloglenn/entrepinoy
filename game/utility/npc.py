@@ -96,6 +96,10 @@ class NPC(Spritesheet):
         super().update()
 
     def update(self):
+        if self.form == "people":
+            if self.main.scene_window.weather.state == "rainfall":
+                self.speed_up()
+
         self.speed_tick += self.speed
         if self.speed_tick >= 1:
             absolute_movement = int(self.speed_tick)
