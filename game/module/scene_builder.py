@@ -10,6 +10,7 @@ from game.utility.customer import Customer
 from game.utility.npc import NPC
 from game.utility.slideshow import Slideshow
 from game.utility.time import Time
+from game.utility.weather import Weather
 
 from game.module.epilogue import Epilogue
 
