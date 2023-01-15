@@ -229,7 +229,7 @@ class Weather:
                 "image": random.choice(self.cloud_images),
                 "direction": random.choice(["left", "right"]),
                 "coordinates": [space, 0],
-                "speed": random.randint(1, 2),
+                "speed": random.choices(population=[1, 2], weights=[0.8, 0.2])[0],
             }
 
         # Rainfall animation
@@ -382,6 +382,9 @@ class Weather:
                     self.cloud_objects[cloud]["direction"] = direction
                     self.cloud_objects[cloud]["image"] = random.choice(
                         self.cloud_images
+                    )
+                    self.cloud_objects[cloud]["speed"] = int(
+                        random.choices(population=[1, 2], weights=[0.8, 0.2])[0],
                     )
 
                     width = self.cloud_objects[cloud]["image"].get_rect().width
