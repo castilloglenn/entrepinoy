@@ -1137,9 +1137,17 @@ class Scene:
             if self.show_debug_info:
                 total_limit = self.object_limit + self.extra_sprites_count
                 holiday_boost = 20 if self.holiday != "" else 0
-                crowd_chance = min(
-                    self.crowd_chance[self.time.time.hour] + holiday_boost, 100
-                )
+
+                rainfall_decrease = 0.25
+                heatwave_decrease = 0.5
+
+                weighted_chance = self.crowd_chance[self.time.time.hour] + holiday_boost
+                if self.weather.state == "rainfall":
+                    weighted_chance = round(weighted_chance * rainfall_decrease)
+                elif self.weather.state == "heatwave":
+                    weighted_chance = round(weighted_chance * heatwave_decrease)
+
+                crowd_chance = min(weighted_chance, 100)
                 customer_chance = self.customer_chance[self.time.time.hour]
                 weighted_customer_chance = self.customer_chance[self.time.time.hour] * (
                     self.available_businesses / self.total_location_businesses
@@ -1157,7 +1165,7 @@ class Scene:
                     f"{self.main.debug.get_memory_usage()}",
                     f"{self.main.debug.get_free_usage()}",
                     f"Location: {self.location} Businesses Available: {self.available_businesses}/{self.total_location_businesses}",
-                    f"Spawn rate; Crowd {crowd_chance}%, Customer {weighted_customer_chance:,.0f}/{customer_chance}%, Vehicle {vehicle_chance}%",
+                    f"Spawn rate; Crowd {crowd_chance}/{self.crowd_chance[self.time.time.hour]}%, Customer {weighted_customer_chance:,.0f}/{customer_chance}%, Vehicle {vehicle_chance}%",
                     f"Customers-Crowd Spawned: {self.customers_spawned}/{self.footprint_counter}",
                     f"Objects: {len(self.general_sprites)}/{total_limit} (Limit: {self.object_limit} + {self.extra_sprites_count} Extras)",
                 ]
