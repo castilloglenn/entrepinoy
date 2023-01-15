@@ -1126,6 +1126,14 @@ class Scene:
                         and not self.main.sliding_menu.has_active_module
                         and self.main.sliding_menu.is_tucked
                     ):
+                        # Game completion check
+                        if not self.main.data.progress["credits_shown"]:
+                            if self.main.tracker.detect_game_completion():
+                                # Epilogue roll out (Art frames then credits)
+                                self.main.slide_show = Slideshow(self.main)
+                                self.prologue = Epilogue(self.main)
+                                self.prologue.run("good_ending")
+
                         # Game over check
                         if self.main.data.progress["game_over"]:
                             self.main.slide_show = Slideshow(self.main)
@@ -1138,17 +1146,6 @@ class Scene:
                             pygame.mixer.music.load(self.main.data.music["main_menu"])
                             pygame.mixer.music.play(-1)
                             return
-
-                        # Game completion check
-                        if self.main.tracker.detect_game_completion():
-                            # Epilogue roll out (Art frames then credits)
-                            self.main.slide_show = Slideshow(self.main)
-                            self.prologue = Epilogue(self.main)
-                            self.prologue.run("good_ending")
-
-                        # elif self.main.data.progress["cash"] < -10_000:
-                        #     # Epilogue roll out (Art frames only then restart the game)
-                        #     self.prologue.run("bad_ending")
 
             # FPS Counter increment
             self.fps_counter += 1
