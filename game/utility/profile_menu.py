@@ -99,7 +99,11 @@ class ProfileMenu(GenericMenu):
 
         # Line 4
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        labels.append(f"========================STATISTICS=======================")
+        cheat = self.data["cheater"]
+        if cheat:
+            labels.append(f"======================CHEAT=DETECTED=====================")
+        else:
+            labels.append(f"========================STATISTICS=======================")
 
         # Line 5
         # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
