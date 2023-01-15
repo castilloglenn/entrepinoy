@@ -1007,7 +1007,11 @@ class Scene:
         while self.running:
             # Rendering sprites
             self.background.update()
+            self.weather.render_clouds()
             self.general_sprites.draw(self.main.screen)
+            self.weather.update()
+
+            # UI rendering
             self.ui_components.update()
             self.main.screen.blit(
                 self.profile_genders[self.main.data.progress["gender"]],
