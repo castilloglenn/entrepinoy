@@ -469,6 +469,9 @@ class Scene:
     def time_callback_hour(self):
         self.main.debug.log("Hour callback")
 
+        # Weather changes check
+        self.weather.update_weather()
+
         # Background update
         self.background.set_time(self.time)
         self.background.check_change()
