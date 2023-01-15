@@ -318,6 +318,9 @@ class Customer(NPC):
         if self.animate_queue():
             self.animate_movement()
 
+        if self.main.scene_window.weather.state == "rainfall":
+            super().speed_up()
+
     def serve(self):
         self.is_served = True
         self.business_target["object"].generate_income()
