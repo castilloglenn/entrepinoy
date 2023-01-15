@@ -95,6 +95,29 @@ class NPC(Spritesheet):
     def animate(self):
         super().update()
 
+    def speed_up(self):
+        if not self.hasten:
+            self.min_speed = self.min_speed * 1.5
+            self.max_speed = self.max_speed * 1.5
+
+            self.min_animation_speed = int(self.min_animation_speed / 1.25)
+            self.max_animation_speed = int(self.max_animation_speed / 1.25)
+
+            self.speed_value = random.randint(self.min_speed, self.max_speed)
+            self.speed_ratio = (self.speed_value - self.min_speed) / (
+                self.max_speed - self.min_speed
+            )
+
+            self.animation_scale = self.max_animation_speed - self.min_animation_speed
+            self.animation_rate = (
+                self.max_animation_speed - (self.animation_scale * self.speed_ratio)
+            ) / 100
+
+            self.speed = self.speed_value / self.fps
+            self.animate_speed = self.fps * self.animation_rate
+
+            self.hasten = True
+
     def update(self):
         if self.form == "people":
             if self.main.scene_window.weather.state == "rainfall":
