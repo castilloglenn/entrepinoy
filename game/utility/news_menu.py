@@ -122,9 +122,20 @@ class NewsMenu(GenericMenu):
             message.append(f"  Rush hour can be observed down the road")
 
         # Line 6
-        message.append("Finance and Economy")
+        message.append("Weather News")
 
         # Line 7
+        weather = self.main.data.progress["weather"]
+        if weather["new_weather"] == "":
+            # Guide         "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+            message.append(f"  The weather is in good condition today.")
+        else:
+            message.append(f"  There will be a {weather['new_weather']} today.")
+
+        # Line 8
+        message.append("Finance and Economy")
+
+        # Line 9
         bank = self.data["bank"]
         if bank["loan"] > 0.0:
             message.append(f"  Remember to save some for loan payments!")
@@ -133,14 +144,14 @@ class NewsMenu(GenericMenu):
         else:
             message.append(f"  Short on budget? Loan at the bank!")
 
-        # Line 8
+        # Line 10
         part_time = self.data["part_time"]
         if part_time["available"]:
             message.append(f"  Wanted freelancers to do data encoding.")
         else:
             message.append(f"  More job opportunities tomorrow.")
 
-        # Line 9
+        # Line 11
         # Guide        "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
         missions = self.data["mission"]
         uncollected_missions = 0
@@ -153,10 +164,10 @@ class NewsMenu(GenericMenu):
         else:
             message.append("  Plan out your strategy tomorrow, citizen!")
 
-        # Line 10
+        # Line 12
         message.append("Global News")
 
-        # Line 11
+        # Line 13
         crypto = self.data["crypto"]
         name = crypto["symbol"]
         change = crypto["price"] / crypto["starting_price"] * 100
@@ -167,7 +178,7 @@ class NewsMenu(GenericMenu):
         else:
             message.append(f"  Start trading with {name}, not an ad.")
 
-        # Line 12
+        # Line 14
         stock = self.data["stocks"]
         name = stock["symbol"]
         change = stock["price"] / stock["starting_price"] * 100
@@ -179,24 +190,24 @@ class NewsMenu(GenericMenu):
             message.append(f"  Get a hold of {name} shares long term!")
 
         # Line 13
-        message.append("Tourism")
+        # message.append("Tourism")
 
         # Line 14
-        # Guide            "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
-        if self.main.data.city[self.data["last_location"]] == "IMUS":
-            message.append("  Imus longganisa is the best longganisa.")
-        elif self.main.data.city[self.data["last_location"]] == "BACOOR":
-            message.append("  Have you tried Digman's Halo-halo in Bacoor?")
-        elif self.main.data.city[self.data["last_location"]] == "MOLINO":
-            message.append("  Come visit Sto. Nino Church in Pag-asa!")
-        elif self.main.data.city[self.data["last_location"]] == "GENERAL TRIAS":
-            message.append("  Visit the Tejeros Convention site!")
-        elif self.main.data.city[self.data["last_location"]] == "DASMARINAS":
-            message.append("  Museo De La Salle is a must go place!")
-        elif self.main.data.city[self.data["last_location"]] == "INDANG":
-            message.append("  Visit the CvSU Main Campus today!")
-        else:
-            message.append("  Philippines is a great country to visit.")
+        # # Guide            "0123456789ABCDEFGHIJ0123456789ABCDEFGHIJ01234"
+        # if self.main.data.city[self.data["last_location"]] == "IMUS":
+        #     message.append("  Imus longganisa is the best longganisa.")
+        # elif self.main.data.city[self.data["last_location"]] == "BACOOR":
+        #     message.append("  Have you tried Digman's Halo-halo in Bacoor?")
+        # elif self.main.data.city[self.data["last_location"]] == "MOLINO":
+        #     message.append("  Come visit Sto. Nino Church in Pag-asa!")
+        # elif self.main.data.city[self.data["last_location"]] == "GENERAL TRIAS":
+        #     message.append("  Visit the Tejeros Convention site!")
+        # elif self.main.data.city[self.data["last_location"]] == "DASMARINAS":
+        #     message.append("  Museo De La Salle is a must go place!")
+        # elif self.main.data.city[self.data["last_location"]] == "INDANG":
+        #     message.append("  Visit the CvSU Main Campus today!")
+        # else:
+        #     message.append("  Philippines is a great country to visit.")
 
         # Message update
         self.news_message.set_message(messages=message)
