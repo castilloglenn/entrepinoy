@@ -19,6 +19,9 @@ class NPC(Spritesheet):
         meta_data: dict,
         fps: int,
     ):
+        self.main = main
+        self.form = form
+        self.hasten = False
 
         if form == "people":
             self.min_speed = 90
