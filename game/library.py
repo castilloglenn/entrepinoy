@@ -1155,6 +1155,12 @@ class Library:
             "credits_shown": False,
             "tutorial_shown": False,
             "game_over": False,
+            "weather": {
+                "state": "regular",
+                "new_weather": "",
+                "start": "",
+                "end": "",
+            },
             "bank": {
                 "loan": 0.0,
                 "loan_balance": 0.0,
