@@ -843,6 +843,15 @@ class Scene:
         elif key == pygame.K_F2 and pygame.key.get_mods() & pygame.KMOD_CTRL:
             pprint(self.main.data.progress)
 
+        elif key == pygame.K_F3 and pygame.key.get_mods() & pygame.KMOD_CTRL:
+            state = self.weather.state
+            if state == "rainfall":
+                self.weather.state = "heatwave"
+            elif state == "heatwave":
+                self.weather.state = "regular"
+            elif state == "regular":
+                self.weather.state = "rainfall"
+
         elif key == pygame.K_F5 and pygame.key.get_mods() & pygame.KMOD_CTRL:
             self.main.response_menu.queue_message(
                 [
