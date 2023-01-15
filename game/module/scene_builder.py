@@ -487,6 +487,9 @@ class Scene:
     def time_callback_day(self):
         self.main.debug.log("Day callback")
 
+        # Weather check
+        self.weather.trigger_weather()
+
         # Update holiday
         self._set_holiday()
 
