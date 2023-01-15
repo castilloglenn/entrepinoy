@@ -22,6 +22,7 @@ class Customer(NPC):
         safe_spot: tuple[float],
         businesses,
     ):
+        self.main = main
         super().__init__(main, form, name, spritesheet, meta_data, fps)
 
         # Randomly selecting businesses
