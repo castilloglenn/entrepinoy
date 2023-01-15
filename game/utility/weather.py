@@ -325,7 +325,7 @@ class Weather:
             self.main.data.progress["weather"]["end"], self.time_format
         )
 
-        if current_time >= start_time and current_time <= end_time:
+        if current_time >= start_time and current_time < end_time:
             self.main.data.progress["weather"]["state"] = self.main.data.progress[
                 "weather"
             ]["new_weather"]
