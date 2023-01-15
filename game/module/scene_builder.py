@@ -831,7 +831,7 @@ class Scene:
     def key_down_events(self, key):
         self.main.global_key_down_events(key)
 
-        if key == pygame.K_F1 and pygame.key.get_mods() & pygame.KMOD_CTRL:
+        if key == pygame.K_SPACE and pygame.key.get_mods() & pygame.KMOD_CTRL:
             self.show_debug_info = not self.show_debug_info
             if self.show_debug_info:
                 self.debug_message.add(self.ui_components)
@@ -840,11 +840,12 @@ class Scene:
                 self.debug_message.kill()
                 self.main.debug.log("Debug details hidden")
 
-        elif key == pygame.K_F2 and pygame.key.get_mods() & pygame.KMOD_CTRL:
+        elif key == pygame.K_F1 and pygame.key.get_mods() & pygame.KMOD_CTRL:
             pprint(self.main.data.progress)
 
-        elif key == pygame.K_F3 and pygame.key.get_mods() & pygame.KMOD_CTRL:
+        elif key == pygame.K_F2 and pygame.key.get_mods() & pygame.KMOD_CTRL:
             state = self.weather.state
+
             if state == "rainfall":
                 self.weather.state = "heatwave"
             elif state == "heatwave":
@@ -852,69 +853,43 @@ class Scene:
             elif state == "regular":
                 self.weather.state = "rainfall"
 
-        elif key == pygame.K_F5 and pygame.key.get_mods() & pygame.KMOD_CTRL:
             self.main.response_menu.queue_message(
                 [
                     f"[Cheat Activated]",
-                    f"Why did you let yourself",
-                    f"lose all of a sudden?",
-                    f"Now there is no going",
-                    f"back. See ya!",
-                ]
-            )
-            self.main.data.progress["game_over"] = True
-
-        elif key == pygame.K_F6 and pygame.key.get_mods() & pygame.KMOD_CTRL:
-            self.main.data.progress["cash"] = 0
-            self.main.response_menu.queue_message(
-                [
-                    f"[Cheat Activated]",
-                    f"You lost all your money",
-                    f"somewhere.",
-                    f"Congratulations.",
+                    f"",
+                    f"Weather switched into",
+                    f"{self.weather.state}",
+                    f"",
                     f"",
                 ]
             )
 
-        elif key == pygame.K_F7 and pygame.key.get_mods() & pygame.KMOD_CTRL:
-            hours_ahead = timedelta(seconds=60 * 60 * 2)
-            self._simulate_time_skip(hack_date=hours_ahead)
+        elif key == pygame.K_F3 and pygame.key.get_mods() & pygame.KMOD_CTRL:
+            self.main.data.progress["cash"] += 500_000_000
             self.main.response_menu.queue_message(
                 [
                     f"[Cheat Activated]",
-                    f"Doctor Strange used the",
-                    f"Time Stone to go forward",
-                    f"in time. Two hours had",
-                    f"past.",
+                    f"",
+                    f"You have gained money ",
+                    f"from an illegal",
+                    f"activity.",
                 ]
             )
 
-        elif key == pygame.K_F8 and pygame.key.get_mods() & pygame.KMOD_CTRL:
-            hours_ahead = timedelta(seconds=60 * 60 * 12)
-            self._simulate_time_skip(hack_date=hours_ahead)
+        elif key == pygame.K_F4 and pygame.key.get_mods() & pygame.KMOD_CTRL:
+            self.main.data.progress["cash"] = 0
             self.main.response_menu.queue_message(
                 [
-                    f"[Cheat Activated]",
-                    f"Doctor Strange used the",
-                    f"Time Stone to go forward",
-                    f"in time. Twelve hours had",
-                    f"past.",
+                    f"[Reverse-Cheat Activated]",
+                    f"",
+                    f"All your money has been",
+                    f"confiscated.",
+                    f"",
+                    f"",
                 ]
             )
 
         elif key == pygame.K_F9 and pygame.key.get_mods() & pygame.KMOD_CTRL:
-            self.main.data.progress["cash"] += 1_750_250
-            self.main.response_menu.queue_message(
-                [
-                    f"[Cheat Activated]",
-                    f"You have gained money from",
-                    f"Illegal activity.",
-                    f"",
-                    f"",
-                ]
-            )
-
-        elif key == pygame.K_F10 and pygame.key.get_mods() & pygame.KMOD_CTRL:
             for achievement in self.main.data.progress["achievements"]:
                 self.main.data.progress["achievements"][achievement][
                     "value"
@@ -922,8 +897,49 @@ class Scene:
             self.main.response_menu.queue_message(
                 [
                     f"[Cheat Activated]",
+                    f"",
                     f"All achievements has.",
                     f"now been unlocked.",
+                    f"",
+                ]
+            )
+
+        elif key == pygame.K_F10 and pygame.key.get_mods() & pygame.KMOD_CTRL:
+            self.main.response_menu.queue_message(
+                [
+                    f"[Reverse-Cheat Activated]",
+                    f"",
+                    f"Game over has been",
+                    f"triggered.",
+                    f"",
+                    f"",
+                ]
+            )
+            self.main.data.progress["game_over"] = True
+
+        elif key == pygame.K_RIGHT and pygame.key.get_mods() & pygame.KMOD_CTRL:
+            hours_ahead = timedelta(seconds=60 * 60 * 2)
+            self._simulate_time_skip(hack_date=hours_ahead)
+            self.main.response_menu.queue_message(
+                [
+                    f"[Cheat Activated]",
+                    f"",
+                    f"Time forwarded by",
+                    f"Two Hours.",
+                    f"",
+                    f"",
+                ]
+            )
+
+        elif key == pygame.K_UP and pygame.key.get_mods() & pygame.KMOD_CTRL:
+            hours_ahead = timedelta(seconds=60 * 60 * 12)
+            self._simulate_time_skip(hack_date=hours_ahead)
+            self.main.response_menu.queue_message(
+                [
+                    f"[Cheat Activated]",
+                    f"",
+                    f"Time forwarded by",
+                    f"Twelve Hours.",
                     f"",
                     f"",
                 ]
