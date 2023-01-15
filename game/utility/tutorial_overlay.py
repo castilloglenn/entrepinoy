@@ -541,7 +541,67 @@ class TutorialOverlay:
         # Hacky way to close moving sliding menu
         self.main.sliding_menu.switch_state()
 
-        # Sequence 17
+        # Sequence 18 (Rainfall)
+        self.main.scene_window.weather.state = "rainfall"
+        self.queue.append(
+            {
+                "rect": pygame.Rect(320, 0, 960, 720),
+                "message": [
+                    "This is the rainfall",
+                    "weather, you will",
+                    "experience some of",
+                    "this throughout the",
+                    "game experience.",
+                    "",
+                    "When raining starts,",
+                    "there will be less",
+                    "people on the street,",
+                    "so make sure to always",
+                    "check the news to",
+                    "get the weather",
+                    "",
+                    "People rush to their",
+                    "destinations when it",
+                    "is raining.",
+                ],
+                "force_click": None,
+                "close_after": None,
+                "width": 0.2,
+            }
+        )
+        yield True
+
+        # Sequence 19 (Heatwave)
+        self.main.scene_window.weather.state = "heatwave"
+        self.queue.append(
+            {
+                "rect": pygame.Rect(320, 0, 960, 720),
+                "message": [
+                    "The other weather",
+                    "is the heatwave",
+                    "weather, you will",
+                    "experience some of",
+                    "this throughout the",
+                    "game experience.",
+                    "",
+                    "When heatwave starts,",
+                    "there will be less",
+                    "people on the street,",
+                    "But it will be more than",
+                    "people compare to raining,",
+                    "so make sure to always",
+                    "check the news to",
+                    "get the weather update.",
+                ],
+                "force_click": None,
+                "close_after": None,
+                "width": 0.2,
+            }
+        )
+        yield True
+
+        # Sequence 20
+        self.main.scene_window.weather.state = "regular"
         self.queue.append(
             {
                 "rect": self.main.scene_window.profile_holder.rect,
