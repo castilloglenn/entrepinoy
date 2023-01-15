@@ -59,6 +59,9 @@ class Scene:
         self.holiday = None
         self._set_holiday()
 
+        # Weather system
+        self.weather = Weather(self)
+
         # CUSTOM EVENTS
         # Setting up the autosave feature
         self.autosave_id = pygame.USEREVENT + 1
