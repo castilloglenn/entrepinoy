@@ -424,6 +424,16 @@ class Library:
             "start_business_button_disabled": self.get_image(
                 "scene", "start_business_button_disabled.png"
             ),
+            "weather_rainfall": {
+                "sheet": self.get_image("scene", "weather_rainfall.png"),
+                "data": self.get_dict_from_spritesheet(
+                    "scene", "weather_rainfall.json"
+                ),
+            },
+            "weather_heatwave": self.get_image("scene", "weather_heatwave.png"),
+            "cloud_0": self.get_image("scene", "clouds_0.png"),
+            "cloud_1": self.get_image("scene", "clouds_1.png"),
+            "cloud_2": self.get_image("scene", "clouds_2.png"),
         }
         self.emojis = {
             "happy_emoji": self.get_image("scene", "happy_emoji.png"),
