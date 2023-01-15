@@ -589,7 +589,7 @@ class TutorialOverlay:
                     "people on the street,",
                     "But it will be more",
                     "than people compare ",
-                    "to raining,so make ",
+                    "to raining, so make ",
                     "sure to alwayscheck ",
                     "the news to get the ",
                     "weather update.",
