@@ -1,4 +1,6 @@
+from datetime import datetime
 import pygame
+import random
 
 
 class Weather:
