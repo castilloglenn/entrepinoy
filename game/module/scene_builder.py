@@ -699,7 +699,17 @@ class Scene:
     def spawn_crowd_customer(self):
         npc_chance = random.randint(0, 100)
         holiday_boost = 20 if self.holiday != "" else 0
-        crowd_chance = min(self.crowd_chance[self.time.time.hour] + holiday_boost, 100)
+
+        rainfall_decrease = 0.25
+        heatwave_decrease = 0.5
+
+        weighted_chance = self.crowd_chance[self.time.time.hour] + holiday_boost
+        if self.weather.state == "rainfall":
+            weighted_chance = round(weighted_chance * rainfall_decrease)
+        elif self.weather.state == "heatwave":
+            weighted_chance = round(weighted_chance * heatwave_decrease)
+
+        crowd_chance = min(weighted_chance, 100)
 
         if (
             npc_chance <= crowd_chance
