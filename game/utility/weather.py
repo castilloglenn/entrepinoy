@@ -300,16 +300,17 @@ class Weather:
             )
             self.main.scene_window.update_data()
 
-            notification_format = "%I:%M %p"
-            self.main.response_menu.queue_message(
-                [
-                    f"Weather Update:",
-                    f"",
-                    f"{new_weather} Warning",
-                    f"From {start_time.strftime(notification_format)}",
-                    f"To {end_time.strftime(notification_format)}",
-                ]
-            )
+            if self.main.data.progress["tutorial_shown"]:
+                notification_format = "%I:%M %p"
+                self.main.response_menu.queue_message(
+                    [
+                        f"Weather Update:",
+                        f"",
+                        f"{new_weather} Warning",
+                        f"From {start_time.strftime(notification_format)}",
+                        f"To {end_time.strftime(notification_format)}",
+                    ]
+                )
 
     def update_weather(self):
         # To be called hourly to check weather changes
