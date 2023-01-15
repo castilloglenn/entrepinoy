@@ -834,6 +834,10 @@ class Scene:
                 elif button.check_hovered(self.last_mouse_pos):
                     overlapped = True
 
+    def _set_cheater(self):
+        self.main.data.progress["cheater"] = True
+        self.update_data()
+
     def key_down_events(self, key):
         self.main.global_key_down_events(key)
 
@@ -869,6 +873,7 @@ class Scene:
                     f"",
                 ]
             )
+            self._set_cheater()
 
         elif key == pygame.K_F3 and pygame.key.get_mods() & pygame.KMOD_CTRL:
             self.main.data.progress["cash"] += 500_000_000
@@ -881,6 +886,7 @@ class Scene:
                     f"activity.",
                 ]
             )
+            self._set_cheater()
 
         elif key == pygame.K_F4 and pygame.key.get_mods() & pygame.KMOD_CTRL:
             self.main.data.progress["cash"] = 0
@@ -909,6 +915,7 @@ class Scene:
                     f"",
                 ]
             )
+            self._set_cheater()
 
         elif key == pygame.K_F10 and pygame.key.get_mods() & pygame.KMOD_CTRL:
             self.main.response_menu.queue_message(
@@ -936,6 +943,7 @@ class Scene:
                     f"",
                 ]
             )
+            self._set_cheater()
 
         elif key == pygame.K_UP and pygame.key.get_mods() & pygame.KMOD_CTRL:
             hours_ahead = timedelta(seconds=60 * 60 * 12)
@@ -950,6 +958,7 @@ class Scene:
                     f"",
                 ]
             )
+            self._set_cheater()
 
     def key_hold_events(self, keys):
         # If the user pressed the "del" key, (enter explanation here)

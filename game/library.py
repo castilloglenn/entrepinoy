@@ -1155,6 +1155,7 @@ class Library:
             "credits_shown": False,
             "tutorial_shown": False,
             "game_over": False,
+            "cheater": False,
             "weather": {
                 "state": "regular",
                 "new_weather": "",
