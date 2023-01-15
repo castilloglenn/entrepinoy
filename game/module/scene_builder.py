@@ -282,6 +282,9 @@ class Scene:
         # Holiday variables
         self._set_holiday()
 
+        # Weather system
+        self.weather.reconstruct(self)
+
         self.background.reconstruct(
             self.main.screen, self.time, **self.main.data.background[self.location]
         )
