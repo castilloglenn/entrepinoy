@@ -15,7 +15,7 @@ Capstone Thesis Project, created in Python's Pygame Module.
 <br/>
 <br/>
 
-![320514663_674429594321109_1660878520574224523_n](https://user-images.githubusercontent.com/120929317/209428955-7c601815-2462-4250-bba8-f96855a09a42.png)
+![TitleScreenLatest](https://user-images.githubusercontent.com/120929317/212682043-e456fc4c-4f4d-4d40-ba90-a43ce798e6b3.png)
 <h3 align="center">Title screen</h3>
 <p align="center">This is the main menu of the game, the user can start a new game or continue if they have a saved file.</p>
 <br/>
@@ -51,15 +51,15 @@ Capstone Thesis Project, created in Python's Pygame Module.
 <br/>
 <br/>
 
-![tutorialscreenshot1](https://user-images.githubusercontent.com/120929317/209925476-42519eac-8aa3-41d5-b197-7657cd293d5e.png)
-![tutorialscreenshot2](https://user-images.githubusercontent.com/120929317/209925523-7fe87d0d-bec2-4fa1-8542-8b8addc21285.png)
+![tutoriallatest1](https://user-images.githubusercontent.com/120929317/212682501-c4d6adf0-7d43-4942-a4b8-14b517d0abea.png)
+![tutoriallatest2](https://user-images.githubusercontent.com/120929317/212682513-05f7426d-667b-4760-9278-12a0cf8eb248.png)
 <h3 align="center">Tutorial</h3>
 <p align="center"> These will be the game mechanics that will guide the user throughout the game. </p>
 <br/>
 <br/>
 
-![profilemenuscreenshot1](https://user-images.githubusercontent.com/120929317/210166229-5f692dfb-3ef5-4e4e-9227-867e28a79f42.png)
-![profilemenuscreenshot2](https://user-images.githubusercontent.com/120929317/210166231-35231d59-89a7-429c-97dd-6c8e75cbec85.png)
+![profilestatisticslatest1](https://user-images.githubusercontent.com/120929317/212681947-fcac8508-090c-4c31-81a1-85a760981d65.png)
+![profilestatisticslatest2](https://user-images.githubusercontent.com/120929317/212681958-1fffb8d0-5299-44f5-a342-1b61216e5e94.png)
 <h3 align="center">Profile Statistics</h3>
 <p align="center">The player can see their name and gender, it also displays here the player's statistics like balance, income, profits, location, and more. Profile statistics are located at the top left of the screen.</p>
 <br/>
@@ -72,7 +72,7 @@ Capstone Thesis Project, created in Python's Pygame Module.
 <br/>
 <br/>
 
-![image](https://user-images.githubusercontent.com/120929317/208300187-c13e03c6-6eeb-46a5-8e79-540820bd4372.png)
+![streetviewlatest](https://user-images.githubusercontent.com/120929317/212682136-7f27dc66-2ccb-4740-8655-e35f979d207f.png)
 <h3 align="center">Business Street View</h3>
 <p align="center">Background Design, Businesses, and Non Player Characters(NPC) are shown above.</p>
 <p align="center">Customers, Crowds and Vehicles are the types of NPC. </p>
@@ -80,15 +80,15 @@ Capstone Thesis Project, created in Python's Pygame Module.
 <br/>
 
 ![slidemenu](https://user-images.githubusercontent.com/120929317/208300787-09f4b92f-0d4a-4d57-8b87-650e9230dd32.png)
-![slidemenu2](https://user-images.githubusercontent.com/120929317/208301005-0d29949a-a283-4fe3-befc-c1fcbf4b259c.png)
+![slidingmenulatest](https://user-images.githubusercontent.com/120929317/212682386-2ed3c677-3d7c-4cfd-97fb-ba02e42d2863.png)
 <h3 align="center">Sliding Menu</h3>
 <p align="center">Different parts of the game can be access here in the Sliding Menu.</p>
 <p align="center">Sliding Menu contains: Map, Mission, Bank, Parttime Job, Achievement, News, Crypto and Stock Market. </p>
 <br/>
 <br/>
 
-![business](https://user-images.githubusercontent.com/120929317/208301744-0b47248b-b7a4-40c9-9ebc-564c6c2b1fd0.png)
-![image](https://user-images.githubusercontent.com/120929317/208301825-2ee7aeb4-5191-461c-bdd1-c79947a7b613.png)
+![businesslatest1](https://user-images.githubusercontent.com/120929317/212682587-8178b523-c0bb-480a-a304-81de7a53c29e.png)
+![businesslatest2](https://user-images.githubusercontent.com/120929317/212682596-dbc044d3-7a80-41ab-ae5b-922fe48baba4.png)
 <h3 align="center">Business</h3>
 <p align="center">Clicking a business will show the: business cost, income per customer, operation cost, employment cost, lifetime sales and profit.</p>
 <p align="center"> The user can purchase and start a business he/she want. It can be enhance by upgrading it and hire an employee to run the business automatically.</p>
@@ -107,7 +107,7 @@ Capstone Thesis Project, created in Python's Pygame Module.
 <br/>
 <br/>
 
-![map](https://user-images.githubusercontent.com/120929317/208303322-684a213e-60c0-4625-8a28-dcf753387d9f.png)
+![maplatest1](https://user-images.githubusercontent.com/120929317/212682722-b9cb54b8-56ee-4ebc-a9da-9e13f02722af.png)
 ![image](https://user-images.githubusercontent.com/120929317/208303363-a5a803e7-514c-4709-88fa-2ac4ed267466.png)
 <h3 align="center">Map Module</h3>
 <p align="center"> The user can access Map in the Sliding Menu. The user can go to different location from Location A to F to manage businesses. </p>
