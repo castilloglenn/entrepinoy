@@ -114,6 +114,18 @@ Capstone Thesis Project, created in Python's Pygame Module.
 <br/>
 <br/>
 
+![travel fare](https://user-images.githubusercontent.com/120929317/212907707-c82b65a0-4cbe-49f6-bdb3-abf772d7f94c.png)
+<h3 align="center">Travel Fare</h3>
+<p align="center"> The player must pay for travel fares from location to location; if the player does not have enough balance, they cannot go to another location. </p>
+<br/>
+<br/>
+
+![dailyexpenses](https://user-images.githubusercontent.com/120929317/212907845-9e27c432-eaf4-49b5-88c7-90896c611178.png)
+<h3 align="center">Daily Expenses</h3>
+<p align="center"> The player must pay personal expenses daily that will automatically be deducted from their balance. </p>
+<br/>
+<br/>
+
 ![missionscreenshot1](https://user-images.githubusercontent.com/120929317/209782655-4fd8eeb2-b0fa-4c0f-858f-719676877e39.png)
 ![missionscreenshot2](https://user-images.githubusercontent.com/120929317/209782662-43e6e0d7-b981-4bee-a469-6e841785c790.png)
 <h3 align="center">Missions</h3>
