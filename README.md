@@ -1,3 +1,5 @@
+<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fcastilloglenn%2Fentrepinoy&count_bg=%230C82D3&title_bg=%23555555&icon=myspace.svg&icon_color=%23E7E7E7&title=Visits&edge_flat=false"/></a>
+
 <h1>EntrePinoy: A 2D Idle Simulation Game Dedicated for Entrepreur Students of Cavite State University, Imus Campus</h1>
 
 <b>Initial release official link: https://castilloglenn.itch.io/entrepinoy</b>
